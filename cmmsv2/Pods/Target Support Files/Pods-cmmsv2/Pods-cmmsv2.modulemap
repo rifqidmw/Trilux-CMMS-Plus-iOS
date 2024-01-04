@@ -1,0 +1,6 @@
+framework module Pods_cmmsv2 {
+  umbrella header "Pods-cmmsv2-umbrella.h"
+
+  export *
+  module * { export * }
+}

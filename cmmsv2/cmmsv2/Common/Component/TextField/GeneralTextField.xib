@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="oPF-ff-8A7" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZA-Yy-M4g">
+                    <rect key="frame" x="0.0" y="0.0" width="82" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="p1s-Nh-4Bm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                    <color key="textColor" name="customDarkGray"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7NP-SB-ScZ">
+                    <rect key="frame" x="0.0" y="24" width="382" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="MjF-PL-4gS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="9P3-9g-Vk6"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9P3-9g-Vk6" firstAttribute="trailing" secondItem="7NP-SB-ScZ" secondAttribute="trailing" id="8Wk-xR-OLh"/>
+                <constraint firstItem="7NP-SB-ScZ" firstAttribute="leading" secondItem="9P3-9g-Vk6" secondAttribute="leading" id="Fvt-O8-1WZ"/>
+                <constraint firstItem="TZA-Yy-M4g" firstAttribute="top" secondItem="oPF-ff-8A7" secondAttribute="top" id="hr8-0i-dgU"/>
+                <constraint firstAttribute="trailing" secondItem="TZA-Yy-M4g" secondAttribute="trailing" constant="300" id="lYM-lq-1ds"/>
+                <constraint firstAttribute="bottom" secondItem="7NP-SB-ScZ" secondAttribute="bottom" id="oMz-ke-VdJ"/>
+                <constraint firstItem="TZA-Yy-M4g" firstAttribute="leading" secondItem="oPF-ff-8A7" secondAttribute="leading" id="rNN-Gs-2vo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="textField" destination="7NP-SB-ScZ" id="Qbm-38-zDM"/>
+                <outlet property="titleLabel" destination="TZA-Yy-M4g" id="clx-qo-b02"/>
+            </connections>
+            <point key="canvasLocation" x="101" y="15"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGray">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

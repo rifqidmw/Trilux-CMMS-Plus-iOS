@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (5.7.1)
+  - DropDown (2.3.13)
+  - IQKeyboardManagerSwift (6.5.0)
+  - Kingfisher (6.3.1)
+  - lottie-ios (4.3.4)
+  - netfox (1.21.0)
+  - SDWebImage (5.18.8):
+    - SDWebImage/Core (= 5.18.8)
+  - SDWebImage/Core (5.18.8)
+  - SkeletonView (1.30.4)
+  - SwiftLint (0.43.1)
+
+DEPENDENCIES:
+  - Alamofire (= 5.7.1)
+  - DropDown
+  - IQKeyboardManagerSwift (= 6.5.0)
+  - Kingfisher (~> 6.3.1-xcode13)
+  - lottie-ios
+  - netfox
+  - SDWebImage
+  - SkeletonView
+  - SwiftLint (= 0.43.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DropDown
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - lottie-ios
+    - netfox
+    - SDWebImage
+    - SkeletonView
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  IQKeyboardManagerSwift: 6cd19976c6e871907c4ed9127c2d3affdd4defc2
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
+  netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
+  SDWebImage: a81bbb3ba4ea5f810f4069c68727cb118467a04a
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+
+PODFILE CHECKSUM: 953ed4f8cdc78ec9ef71987cc88866c359fdbc0b
+
+COCOAPODS: 1.14.3

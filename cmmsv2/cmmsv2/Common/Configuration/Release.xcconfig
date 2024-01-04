@@ -1,0 +1,12 @@
+//
+//  Release.xcconfig
+//  cmmsv2
+//
+//  Created by PRO M1 2020 8/256 on 04/01/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = http:/$()/dev.triluxcmms.com/api/v1/
+RS_URL = http:/$()/dev.triluxcmms.com/api/v1/
