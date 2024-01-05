@@ -1,18 +1,22 @@
-Trilux CMMS Plus iOS
+# Trilux CMMS Plus iOS
 
-- Rule create variable
+Trilux Asset Management System application to facilitate all forms of asset management in hospitals.
 
-var titleLabel
-var iconImageView
+## Naming Variable
 
-if when on IBOulet
+Using camelCase for variable name like this one
 
-@IBOulet weak var nextButton: UIButton!
+selectedIndex
+tabCategory
 
-- Rule for naming component
+On IBOutlet like this one
 
-for naming component using title case like this one
+@IBOulet weak var roundedButton: UIButton!
 
-TextField
+## Naming Component
+
+using TitleCase for naming component like this one
+
 GeneralButton
+ProgressBar
 etc.
