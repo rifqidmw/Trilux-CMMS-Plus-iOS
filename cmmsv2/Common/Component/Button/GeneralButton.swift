@@ -24,6 +24,7 @@ class GeneralButton: UIView {
     private func setupView() {
         let view = loadNib()
         view.frame = self.bounds
+        view.makeCornerRadius(8)
         self.addSubview(view)
     }
     
@@ -31,9 +32,20 @@ class GeneralButton: UIView {
 
 extension GeneralButton {
     
-    func configure(title: String) {
+    func configure(title: String, type: GeneralButtonType = .normal) {
         titleLabel.text = title
-        self.makeCornerRadius(8)
+        
+        switch type {
+        case .normal:
+            break
+        case .normalWithShadow:
+            self.addShadow(8)
+        }
     }
     
+}
+
+enum GeneralButtonType {
+    case normal
+    case normalWithShadow
 }

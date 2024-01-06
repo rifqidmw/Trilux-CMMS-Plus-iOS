@@ -54,13 +54,32 @@ extension UIView {
         self.isHidden = false
     }
     
-    func addShadow(_ radius: CGFloat) {
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 1)
+    func addShadow(_ radius: CGFloat, position: ShadowPosition = .defaultShadow, color: CGColor? = UIColor.customPrimaryColor.cgColor) {
+        layer.shadowColor = color
         layer.shadowRadius = radius
-        layer.shadowOpacity = 0.2
+        layer.shadowOpacity = 0.6
         layer.masksToBounds = false
+        
+        switch position {
+        case .left:
+            layer.shadowOffset = CGSize(width: -2.0, height: 0)
+        case .right:
+            layer.shadowOffset = CGSize(width: 2.0, height: 0)
+        case .top:
+            layer.shadowOffset = CGSize(width: 0, height: -2.0)
+        case .bottom:
+            layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        case .defaultShadow:
+            layer.shadowOffset = CGSize(width: 0, height: 0)
+        }
     }
     
 }
 
+enum ShadowPosition {
+    case left
+    case right
+    case top
+    case bottom
+    case defaultShadow
+}

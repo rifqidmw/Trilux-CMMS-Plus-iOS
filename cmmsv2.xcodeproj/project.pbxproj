@@ -21,6 +21,10 @@
 		CE5442942B4727EC0022047D /* GeneralTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5442922B4727EC0022047D /* GeneralTextField.xib */; };
 		CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5442952B4727F50022047D /* GeneralTextField.swift */; };
 		CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5442952B4727F50022047D /* GeneralTextField.swift */; };
+		CE7372A62B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
+		CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
+		CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
+		CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
 		CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */; };
 		CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */; };
 		CE82D4522B47DDB200A54124 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44B2B47DDB200A54124 /* LoginRouter.swift */; };
@@ -160,6 +164,8 @@
 		CE54428F2B4726360022047D /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
 		CE5442922B4727EC0022047D /* GeneralTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralTextField.xib; sourceTree = "<group>"; };
 		CE5442952B4727F50022047D /* GeneralTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTextField.swift; sourceTree = "<group>"; };
+		CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CE82D44B2B47DDB200A54124 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		CE82D44C2B47DDB200A54124 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -394,6 +400,8 @@
 				CECB3E2A2B45E3E6004A260D /* UITapGestureRecognizer+Ext.swift */,
 				CECB3E2D2B45E400004A260D /* Double+Ext.swift */,
 				CECB3E302B45E414004A260D /* UIApplication+Ext.swift */,
+				CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */,
+				CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -749,6 +757,7 @@
 				CECB3E2E2B45E400004A260D /* Double+Ext.swift in Sources */,
 				CECB3E4A2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CECB3E3E2B45E5AB004A260D /* BaseViewController.swift in Sources */,
+				CE7372A62B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
 				CECB3E162B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CECB3E382B45E4B9004A260D /* Constants.swift in Sources */,
@@ -770,6 +779,7 @@
 				CE82D4542B47DDB200A54124 /* LoginInteractor.swift in Sources */,
 				CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
+				CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E532B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */,
 			);
@@ -794,6 +804,7 @@
 				CECB3E2F2B45E400004A260D /* Double+Ext.swift in Sources */,
 				CECB3E4B2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CECB3E3F2B45E5AB004A260D /* BaseViewController.swift in Sources */,
+				CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
 				CECB3E172B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CECB3E392B45E4B9004A260D /* Constants.swift in Sources */,
@@ -815,6 +826,7 @@
 				CE82D4552B47DDB200A54124 /* LoginInteractor.swift in Sources */,
 				CECB3DC32B45DAFF004A260D /* SceneDelegate.swift in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
+				CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E542B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */,
 			);
