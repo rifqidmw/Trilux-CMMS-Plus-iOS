@@ -25,10 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SDImageCache.shared.config.maxDiskAge = 60 * 60 * 24 * 7 // 1 week
         SDImageCache.shared.config.maxMemoryCost = 1024 * 1024 * 20 // 20MB
         
-        // MARK: - Dummy User Defaults
+        // MARK: - AUTH USER DEFAULT
         UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+        UserDefaults.standard.setValue(true, forKey: "isRegistered")
+        
         let view = UINavigationController(rootViewController: SplashScreenView(nibName: String(describing: SplashScreenView.self), bundle: nil))
-        //        let view = UIHostingController(rootView: SplashScreenSwiftUIView())
         self.window?.rootViewController = view
         self.window?.makeKeyAndVisible()
         return true

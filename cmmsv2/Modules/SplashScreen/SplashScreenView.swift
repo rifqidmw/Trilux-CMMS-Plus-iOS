@@ -7,10 +7,35 @@
 
 import UIKit
 
-class SplashScreenView: UIViewController {
+class SplashScreenView: BaseNonNavigationController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var isGestureEnabled = true
+    
+    override func didLoad() {
+        super.didLoad()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.navigateToRegistrationHospital()
+        }
+    }
+    
+}
+
+extension SplashScreenView {
+    
+    private func navigateToRegistrationHospital() {
+        let registrationHospitalVC = RegistrationHospitalRouter().showView()
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            UIApplication.shared.windows.first?.alpha = 0
+        }) { (_) in
+            UIView.animate(withDuration: 0.1) {
+                UIApplication.shared.windows.first?.alpha = 1
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+                UIApplication.shared.windows.first?.rootViewController = registrationHospitalVC
+            }
+        }
     }
     
 }
