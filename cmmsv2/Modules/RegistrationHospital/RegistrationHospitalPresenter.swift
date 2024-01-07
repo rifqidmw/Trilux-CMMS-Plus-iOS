@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class RegistrationHospitalPresenter: BasePresenter {
     
@@ -14,6 +15,14 @@ class RegistrationHospitalPresenter: BasePresenter {
     
     init(interactor: RegistrationHospitalInteractor) {
         self.interactor = interactor
+    }
+    
+}
+
+extension RegistrationHospitalPresenter {
+    
+    func navigateToLoginPage(navigation: UINavigationController) {
+        router.goToLoginPage(navigation: navigation)
     }
     
 }

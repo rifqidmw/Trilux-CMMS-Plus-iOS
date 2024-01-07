@@ -16,84 +16,48 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="K9A-kh-NbP" id="Ufz-fA-L8G"/>
                 <outlet property="view" destination="9xh-8N-WpJ" id="XJW-6Y-fS1"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="9xh-8N-WpJ">
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="9xh-8N-WpJ" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_background" translatesAutoresizingMaskIntoConstraints="NO" id="KJo-jY-mn1">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trilux_logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="xBB-0f-Uvh">
-                    <rect key="frame" x="70" y="125" width="253" height="280"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="xBB-0f-Uvh" secondAttribute="height" multiplier="0.9" constant="1" id="au9-le-z8L"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-bg-gzQ">
-                    <rect key="frame" x="123" y="59" width="147" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Qdx-aY-QXT"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="32N-b7-rsH">
-                    <rect key="frame" x="123" y="421" width="147" height="230"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="230" id="SBV-ea-y1L"/>
-                    </constraints>
-                </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qTc-6A-Vtc">
-                    <rect key="frame" x="100" y="776" width="193" height="40"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K9A-kh-NbP">
+                    <rect key="frame" x="100" y="778" width="193" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7a-N3-WYM">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtE-P2-ViJ">
                             <rect key="frame" x="0.0" y="0.0" width="193" height="20"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT. Trilux Sukses Abadi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfU-aL-m6N">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT. Trilux Sukses Abadi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-ER-25I">
                             <rect key="frame" x="0.0" y="20" width="193" height="20"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="rPK-PF-z47"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="ex2-au-a9a"/>
+                        <constraint firstAttribute="height" constant="40" id="tBQ-Sz-tkJ"/>
                     </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="6eW-7b-Jw0"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="6eW-7b-Jw0" firstAttribute="trailing" secondItem="KJo-jY-mn1" secondAttribute="trailing" id="7nE-NO-Y3g"/>
-                <constraint firstItem="Sqd-bg-gzQ" firstAttribute="leading" secondItem="6eW-7b-Jw0" secondAttribute="leading" constant="123" id="9kf-5k-WcK"/>
-                <constraint firstItem="32N-b7-rsH" firstAttribute="top" secondItem="xBB-0f-Uvh" secondAttribute="bottom" constant="16" id="A5u-pn-jR4"/>
-                <constraint firstItem="6eW-7b-Jw0" firstAttribute="trailing" secondItem="qTc-6A-Vtc" secondAttribute="trailing" constant="100" id="Cfx-U0-KBz"/>
-                <constraint firstAttribute="bottom" secondItem="KJo-jY-mn1" secondAttribute="bottom" id="Ef3-Il-hDC"/>
-                <constraint firstItem="KJo-jY-mn1" firstAttribute="top" secondItem="9xh-8N-WpJ" secondAttribute="top" id="EgC-CI-DiD"/>
-                <constraint firstItem="xBB-0f-Uvh" firstAttribute="leading" secondItem="6eW-7b-Jw0" secondAttribute="leading" constant="70" id="FKX-LA-eRv"/>
-                <constraint firstItem="6eW-7b-Jw0" firstAttribute="trailing" secondItem="xBB-0f-Uvh" secondAttribute="trailing" constant="70" id="H2j-6Z-q2b"/>
-                <constraint firstItem="qTc-6A-Vtc" firstAttribute="leading" secondItem="6eW-7b-Jw0" secondAttribute="leading" constant="100" id="L2f-4g-bwB"/>
-                <constraint firstAttribute="bottom" secondItem="qTc-6A-Vtc" secondAttribute="bottom" constant="36" id="Lfd-5k-LO6"/>
-                <constraint firstItem="xBB-0f-Uvh" firstAttribute="top" secondItem="Sqd-bg-gzQ" secondAttribute="bottom" constant="16" id="SpL-yo-iOR"/>
-                <constraint firstItem="6eW-7b-Jw0" firstAttribute="trailing" secondItem="Sqd-bg-gzQ" secondAttribute="trailing" constant="123" id="Udu-hM-l67"/>
-                <constraint firstItem="Sqd-bg-gzQ" firstAttribute="top" secondItem="6eW-7b-Jw0" secondAttribute="top" id="X8G-Rh-pxu"/>
-                <constraint firstItem="KJo-jY-mn1" firstAttribute="leading" secondItem="6eW-7b-Jw0" secondAttribute="leading" id="hRe-ok-3fq"/>
-                <constraint firstItem="6eW-7b-Jw0" firstAttribute="trailing" secondItem="32N-b7-rsH" secondAttribute="trailing" constant="123" id="mxc-yo-7R8"/>
-                <constraint firstItem="32N-b7-rsH" firstAttribute="leading" secondItem="6eW-7b-Jw0" secondAttribute="leading" constant="123" id="oYl-iI-Wvb"/>
+                <constraint firstItem="6eW-7b-Jw0" firstAttribute="trailing" secondItem="K9A-kh-NbP" secondAttribute="trailing" constant="100" id="8XE-sO-Gj1"/>
+                <constraint firstItem="6eW-7b-Jw0" firstAttribute="bottom" secondItem="K9A-kh-NbP" secondAttribute="bottom" id="ECc-Hb-rY3"/>
+                <constraint firstItem="K9A-kh-NbP" firstAttribute="leading" secondItem="6eW-7b-Jw0" secondAttribute="leading" constant="100" id="fYs-Lz-bjQ"/>
             </constraints>
             <point key="canvasLocation" x="657.25190839694653" y="-52.112676056338032"/>
         </view>
     </objects>
     <resources>
-        <image name="downward_wave_splash" width="174" height="80"/>
-        <image name="ic_trilux_logo_splash" width="251.33332824707031" height="293.33334350585938"/>
-        <image name="splash_screen_background" width="414" height="896"/>
-        <image name="upward_wave_splash" width="174" height="258"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

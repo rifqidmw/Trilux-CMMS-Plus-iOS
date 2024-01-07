@@ -137,6 +137,10 @@
 		CECB3E512B45E6E6004A260D /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3E4F2B45E6E6004A260D /* ApiManager.swift */; };
 		CECB3E532B45E6EF004A260D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3E522B45E6EF004A260D /* Endpoint.swift */; };
 		CECB3E542B45E6EF004A260D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3E522B45E6EF004A260D /* Endpoint.swift */; };
+		CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */; };
+		CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */; };
+		CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */; };
+		CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */; };
 		CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4F052B4930460033D37D /* RegistrationHospitalPresenter.swift */; };
 		CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4F052B4930460033D37D /* RegistrationHospitalPresenter.swift */; };
 		CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4F062B4930460033D37D /* RegistrationHospitalRouter.swift */; };
@@ -225,6 +229,8 @@
 		CECB3E4C2B45E69A004A260D /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
 		CECB3E4F2B45E6E6004A260D /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CECB3E522B45E6EF004A260D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundView.xib; sourceTree = "<group>"; };
+		CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		CEF72EF52B468C0500815E4C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CEF72EF62B468C1E00815E4C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		CEFB4F052B4930460033D37D /* RegistrationHospitalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationHospitalPresenter.swift; sourceTree = "<group>"; };
@@ -476,6 +482,7 @@
 		CECB3E352B45E462004A260D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				CEF5FD212B4A74AE003A72B7 /* Background */,
 				CE54428A2B4724F90022047D /* Button */,
 				CE54428B2B4725000022047D /* TextField */,
 			);
@@ -493,6 +500,15 @@
 				CECB3E462B45E660004A260D /* BaseNonNavigationController.swift */,
 			);
 			path = BaseModule;
+			sourceTree = "<group>";
+		};
+		CEF5FD212B4A74AE003A72B7 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */,
+				CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */,
+			);
+			path = Background;
 			sourceTree = "<group>";
 		};
 		CEF72EEE2B4681D200815E4C /* SplashScreen */ = {
@@ -602,6 +618,7 @@
 				CECB3DEF2B45E119004A260D /* Roboto-Thin.ttf in Resources */,
 				CECB3E052B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
 				CECB3DE12B45E119004A260D /* Roboto-Black.ttf in Resources */,
+				CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CECB3DDF2B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
@@ -639,6 +656,7 @@
 				CECB3DF02B45E119004A260D /* Roboto-Thin.ttf in Resources */,
 				CECB3E062B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
 				CECB3DE22B45E119004A260D /* Roboto-Black.ttf in Resources */,
+				CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CECB3DE02B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
@@ -762,6 +780,7 @@
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CECB3E382B45E4B9004A260D /* Constants.swift in Sources */,
 				CECB3E412B45E62B004A260D /* BasePresenter.swift in Sources */,
+				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CECB3E2B2B45E3E6004A260D /* UITapGestureRecognizer+Ext.swift in Sources */,
 				CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */,
@@ -809,6 +828,7 @@
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CECB3E392B45E4B9004A260D /* Constants.swift in Sources */,
 				CECB3E422B45E62B004A260D /* BasePresenter.swift in Sources */,
+				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CECB3E2C2B45E3E6004A260D /* UITapGestureRecognizer+Ext.swift in Sources */,
 				CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */,

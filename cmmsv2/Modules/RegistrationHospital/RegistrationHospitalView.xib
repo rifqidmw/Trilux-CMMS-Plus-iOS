@@ -17,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationHospitalView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundImageView" destination="RCt-Sq-0nA" id="NTz-i5-Oy2"/>
+                <outlet property="backgroundView" destination="aE5-ky-bBs" id="NLk-Pb-gLy"/>
                 <outlet property="buttonRegister" destination="7CA-xf-jjg" id="Y1f-qZ-Vb0"/>
                 <outlet property="containerView" destination="Fhh-N1-Jy2" id="Vt5-0r-DvQ"/>
                 <outlet property="textField" destination="tIx-47-Css" id="8Pm-AJ-7oW"/>
@@ -29,12 +29,13 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_background" translatesAutoresizingMaskIntoConstraints="NO" id="RCt-Sq-0nA">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE5-ky-bBs" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="730"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="730" id="ich-KN-HVy"/>
+                        <constraint firstAttribute="height" constant="730" id="87h-Pw-sNo"/>
                     </constraints>
-                </imageView>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhh-N1-Jy2">
                     <rect key="frame" x="16" y="746" width="361" height="56"/>
                     <subviews>
@@ -64,53 +65,22 @@
                         <constraint firstAttribute="bottom" secondItem="tIx-47-Css" secondAttribute="bottom" constant="6" id="vw0-rT-aoz"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-5l-wcu">
-                    <rect key="frame" x="123" y="59" width="147" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="LGS-be-5Ag"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trilux_logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Oey-dq-FrT">
-                    <rect key="frame" x="70" y="125" width="253" height="281"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Oey-dq-FrT" secondAttribute="height" multiplier="0.9" id="cXq-Vq-Hcs"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-Ij-gd2">
-                    <rect key="frame" x="123" y="422" width="147" height="230"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="230" id="5wP-W2-Pve"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Oey-dq-FrT" firstAttribute="top" secondItem="gmx-5l-wcu" secondAttribute="bottom" constant="16" id="4kq-aA-MGu"/>
-                <constraint firstItem="gmx-5l-wcu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GOz-TQ-5Az"/>
+                <constraint firstItem="aE5-ky-bBs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4Hj-TP-jo2"/>
+                <constraint firstItem="Fhh-N1-Jy2" firstAttribute="top" secondItem="aE5-ky-bBs" secondAttribute="bottom" constant="16" id="AwE-f4-xSa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fhh-N1-Jy2" secondAttribute="trailing" constant="16" id="IOz-US-pBQ"/>
-                <constraint firstItem="RCt-Sq-0nA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jd0-3o-f8p"/>
-                <constraint firstItem="Oey-dq-FrT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="LN8-dp-0XM"/>
-                <constraint firstItem="Fhh-N1-Jy2" firstAttribute="top" secondItem="RCt-Sq-0nA" secondAttribute="bottom" constant="16" id="QJO-ha-aUr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gmx-5l-wcu" secondAttribute="trailing" constant="123" id="ROC-fh-zMy"/>
-                <constraint firstItem="HbY-Ij-gd2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="123" id="W9T-Sb-cP7"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HbY-Ij-gd2" secondAttribute="trailing" constant="123" id="WPq-Ui-Lfl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Oey-dq-FrT" secondAttribute="trailing" constant="70" id="Wrv-0h-S0b"/>
-                <constraint firstItem="RCt-Sq-0nA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aws-1H-BJm"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RCt-Sq-0nA" secondAttribute="trailing" id="h6p-em-sty"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aE5-ky-bBs" secondAttribute="trailing" id="XEW-9Q-ynK"/>
+                <constraint firstItem="aE5-ky-bBs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hmj-9L-nri"/>
                 <constraint firstItem="Fhh-N1-Jy2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mPv-Xm-BYg"/>
-                <constraint firstItem="HbY-Ij-gd2" firstAttribute="top" secondItem="Oey-dq-FrT" secondAttribute="bottom" constant="16" id="mac-Lq-RCr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fhh-N1-Jy2" secondAttribute="bottom" constant="16" id="ns7-zk-TDQ"/>
-                <constraint firstItem="gmx-5l-wcu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="123" id="tIL-O8-cjB"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="-1.4084507042253522"/>
         </view>
     </objects>
     <resources>
-        <image name="downward_wave_splash" width="174" height="80"/>
-        <image name="ic_trilux_logo_splash" width="251.33332824707031" height="293.33334350585938"/>
-        <image name="splash_screen_background" width="414" height="896"/>
-        <image name="upward_wave_splash" width="174" height="258"/>
         <namedColor name="customLightGray">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
