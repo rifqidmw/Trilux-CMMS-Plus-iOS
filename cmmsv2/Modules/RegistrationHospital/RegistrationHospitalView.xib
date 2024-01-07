@@ -4,13 +4,23 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationHospitalView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="RCt-Sq-0nA" id="NTz-i5-Oy2"/>
+                <outlet property="buttonRegister" destination="7CA-xf-jjg" id="Y1f-qZ-Vb0"/>
+                <outlet property="containerView" destination="Fhh-N1-Jy2" id="Vt5-0r-DvQ"/>
+                <outlet property="textField" destination="tIx-47-Css" id="8Pm-AJ-7oW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,23 +29,94 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOSPITAL REGISTRATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpZ-8c-wfp">
-                    <rect key="frame" x="96" y="415.66666666666669" width="201" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_background" translatesAutoresizingMaskIntoConstraints="NO" id="RCt-Sq-0nA">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="730"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="730" id="ich-KN-HVy"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhh-N1-Jy2">
+                    <rect key="frame" x="16" y="746" width="361" height="56"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CA-xf-jjg" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="210" y="6" width="145" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="145" id="xnL-FH-qWZ"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Masukan kode rumah sakit" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tIx-47-Css">
+                            <rect key="frame" x="16" y="6" width="178" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" name="darkGray"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" name="customLightGray"/>
+                    <constraints>
+                        <constraint firstItem="tIx-47-Css" firstAttribute="top" secondItem="Fhh-N1-Jy2" secondAttribute="top" constant="6" id="JCw-oW-XDu"/>
+                        <constraint firstItem="7CA-xf-jjg" firstAttribute="leading" secondItem="tIx-47-Css" secondAttribute="trailing" constant="16" id="JcC-pm-WH8"/>
+                        <constraint firstAttribute="trailing" secondItem="7CA-xf-jjg" secondAttribute="trailing" constant="6" id="Wgy-80-NdV"/>
+                        <constraint firstItem="7CA-xf-jjg" firstAttribute="top" secondItem="Fhh-N1-Jy2" secondAttribute="top" constant="6" id="bCt-XQ-c7t"/>
+                        <constraint firstItem="tIx-47-Css" firstAttribute="leading" secondItem="Fhh-N1-Jy2" secondAttribute="leading" constant="16" id="e0W-4m-SKV"/>
+                        <constraint firstAttribute="bottom" secondItem="7CA-xf-jjg" secondAttribute="bottom" constant="6" id="fOE-ne-hK9"/>
+                        <constraint firstAttribute="bottom" secondItem="tIx-47-Css" secondAttribute="bottom" constant="6" id="vw0-rT-aoz"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-5l-wcu">
+                    <rect key="frame" x="123" y="59" width="147" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="LGS-be-5Ag"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trilux_logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Oey-dq-FrT">
+                    <rect key="frame" x="70" y="125" width="253" height="281"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Oey-dq-FrT" secondAttribute="height" multiplier="0.9" id="cXq-Vq-Hcs"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-Ij-gd2">
+                    <rect key="frame" x="123" y="422" width="147" height="230"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="230" id="5wP-W2-Pve"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="HpZ-8c-wfp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Fpa-eD-i8H"/>
-                <constraint firstItem="HpZ-8c-wfp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e8t-WM-OwU"/>
+                <constraint firstItem="Oey-dq-FrT" firstAttribute="top" secondItem="gmx-5l-wcu" secondAttribute="bottom" constant="16" id="4kq-aA-MGu"/>
+                <constraint firstItem="gmx-5l-wcu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GOz-TQ-5Az"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fhh-N1-Jy2" secondAttribute="trailing" constant="16" id="IOz-US-pBQ"/>
+                <constraint firstItem="RCt-Sq-0nA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jd0-3o-f8p"/>
+                <constraint firstItem="Oey-dq-FrT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="LN8-dp-0XM"/>
+                <constraint firstItem="Fhh-N1-Jy2" firstAttribute="top" secondItem="RCt-Sq-0nA" secondAttribute="bottom" constant="16" id="QJO-ha-aUr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gmx-5l-wcu" secondAttribute="trailing" constant="123" id="ROC-fh-zMy"/>
+                <constraint firstItem="HbY-Ij-gd2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="123" id="W9T-Sb-cP7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HbY-Ij-gd2" secondAttribute="trailing" constant="123" id="WPq-Ui-Lfl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Oey-dq-FrT" secondAttribute="trailing" constant="70" id="Wrv-0h-S0b"/>
+                <constraint firstItem="RCt-Sq-0nA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aws-1H-BJm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RCt-Sq-0nA" secondAttribute="trailing" id="h6p-em-sty"/>
+                <constraint firstItem="Fhh-N1-Jy2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mPv-Xm-BYg"/>
+                <constraint firstItem="HbY-Ij-gd2" firstAttribute="top" secondItem="Oey-dq-FrT" secondAttribute="bottom" constant="16" id="mac-Lq-RCr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fhh-N1-Jy2" secondAttribute="bottom" constant="16" id="ns7-zk-TDQ"/>
+                <constraint firstItem="gmx-5l-wcu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="123" id="tIL-O8-cjB"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="-1.4084507042253522"/>
         </view>
     </objects>
     <resources>
+        <image name="downward_wave_splash" width="174" height="80"/>
+        <image name="ic_trilux_logo_splash" width="251.33332824707031" height="293.33334350585938"/>
+        <image name="splash_screen_background" width="414" height="896"/>
+        <image name="upward_wave_splash" width="174" height="258"/>
+        <namedColor name="customLightGray">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkGray">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

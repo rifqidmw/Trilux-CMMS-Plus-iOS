@@ -25,14 +25,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEH-Qa-1pp">
-                    <rect key="frame" x="169.33333333333334" y="17.333333333333329" width="43.666666666666657" height="21.666666666666671"/>
-                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                    <rect key="frame" x="174" y="19.666666666666668" width="34" height="17.000000000000004"/>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="JGh-ID-Fsj"/>
-            <color key="backgroundColor" name="customDarkGreen"/>
+            <color key="backgroundColor" name="customPrimaryColor"/>
             <constraints>
                 <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerX" secondItem="QBu-Fm-zlw" secondAttribute="centerX" id="aBv-qN-nGq"/>
                 <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="cpi-Zi-8ZS"/>
@@ -42,8 +42,8 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="customDarkGreen">
-            <color red="0.38039215686274508" green="0.74117647058823533" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="customPrimaryColor">
+            <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
