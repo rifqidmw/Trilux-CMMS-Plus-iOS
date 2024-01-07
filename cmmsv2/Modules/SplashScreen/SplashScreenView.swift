@@ -9,11 +9,12 @@ import UIKit
 
 class SplashScreenView: BaseNonNavigationController {
     
+    @IBOutlet weak var containerView: UIStackView!
     var isGestureEnabled = true
     
     override func didLoad() {
         super.didLoad()
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.navigateToRegistrationHospital()
@@ -25,7 +26,8 @@ class SplashScreenView: BaseNonNavigationController {
 extension SplashScreenView {
     
     private func navigateToRegistrationHospital() {
-        let registrationHospitalVC = RegistrationHospitalRouter().showView()
+        let vc = RegistrationHospitalRouter().showView()
+        let rootController = UINavigationController(rootViewController: vc)
         
         UIView.animate(withDuration: 0.1, animations: {
             UIApplication.shared.windows.first?.alpha = 0
@@ -33,7 +35,7 @@ extension SplashScreenView {
             UIView.animate(withDuration: 0.1) {
                 UIApplication.shared.windows.first?.alpha = 1
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
-                UIApplication.shared.windows.first?.rootViewController = registrationHospitalVC
+                UIApplication.shared.windows.first?.rootViewController = rootController
             }
         }
     }

@@ -92,3 +92,7 @@ iOSInjectionProject/
 # DS_Store
 
 **/.DS_Store
+
+# Ignore Xcode build files
+build/
+XCBuildData/

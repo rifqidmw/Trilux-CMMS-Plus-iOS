@@ -18,3 +18,12 @@ class RegistrationHospitalRouter: BaseRouter {
     }
     
 }
+
+extension RegistrationHospitalRouter {
+    
+    func goToLoginPage(navigation: UINavigationController) {
+        let vc = LoginRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+}

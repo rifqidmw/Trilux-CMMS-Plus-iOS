@@ -9,18 +9,18 @@ import UIKit
 
 class RegistrationHospitalView: BaseViewController {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundView: BackgroundView!
     @IBOutlet weak var buttonRegister: GeneralButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var containerView: UIView!
     
     var presenter: RegistrationHospitalPresenter?
-
+    
     override func didLoad() {
         super.didLoad()
         setupBody()
     }
-
+    
 }
 
 extension RegistrationHospitalView {
@@ -31,7 +31,7 @@ extension RegistrationHospitalView {
     }
     
     private func setupView() {
-        backgroundImageView.makeCornerRadius(24, .bottomCurve)
+        backgroundView.makeCornerRadius(24, .bottomCurve)
         containerView.makeCornerRadius(8)
         buttonRegister.configure(title: "Pasang", type: .normalWithShadow)
     }
@@ -39,8 +39,11 @@ extension RegistrationHospitalView {
     private func setupAction() {
         buttonRegister.gesture()
             .sink { [weak self] _ in
-                guard self != nil else { return }
-                AppLogger.log("TO DO REGISTER HOSPITAL")
+                guard let self,
+                      let navigation = self.navigationController
+                else { return }
+                
+                self.presenter?.navigateToLoginPage(navigation: navigation)
             }
             .store(in: &anyCancellable)
     }
