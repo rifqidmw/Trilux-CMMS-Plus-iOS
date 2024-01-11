@@ -11,10 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundImageView" destination="ZUX-YY-rkF" id="MQJ-yu-xzf"/>
-                <outlet property="downwardWaveImageView" destination="m8E-vC-lH3" id="z7H-dl-lGr"/>
-                <outlet property="logoImageView" destination="Ex3-OA-zLf" id="Plt-UI-t4R"/>
-                <outlet property="upwardImageView" destination="VTT-OH-kAN" id="3ty-dS-oNC"/>
+                <outlet property="ellipseBackgroundImageView" destination="R5V-6V-O4M" id="uTO-vN-xeL"/>
+                <outlet property="homeBackgroundView" destination="ej0-p7-wlz" id="ulw-LX-BZc"/>
+                <outlet property="splashBackgroundImageView" destination="gJK-Gu-4Td" id="jjl-D4-ZFV"/>
+                <outlet property="splashBackgroundView" destination="eyj-05-ZbI" id="htE-u6-qhr"/>
+                <outlet property="triluxLogoImageView" destination="xfx-4g-biJ" id="wyw-sr-2oh"/>
+                <outlet property="waveDownwardImageView" destination="Dvv-jx-U0r" id="Wy6-kb-gGt"/>
+                <outlet property="waveUpwardImageView" destination="Txw-sO-8tI" id="kXu-P7-j69"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,51 +25,85 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_background" id="ZUX-YY-rkF">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="80K-JK-mrk">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="m8E-vC-lH3">
-                    <rect key="frame" x="123" y="59" width="147" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="7fl-C2-8Dk"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trilux_logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Ex3-OA-zLf">
-                    <rect key="frame" x="70" y="125" width="253" height="281"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Ex3-OA-zLf" secondAttribute="height" multiplier="0.9" id="Dlb-fe-Mpw"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="VTT-OH-kAN">
-                    <rect key="frame" x="123" y="422" width="147" height="255"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="255" id="rY2-oc-y8O"/>
-                    </constraints>
-                </imageView>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej0-p7-wlz">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipse_background" translatesAutoresizingMaskIntoConstraints="NO" id="R5V-6V-O4M">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="327.66666666666669"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="R5V-6V-O4M" secondAttribute="height" multiplier="1.2" id="awH-gW-jjH"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="R5V-6V-O4M" firstAttribute="top" secondItem="ej0-p7-wlz" secondAttribute="top" id="8sj-Lo-D3T"/>
+                                <constraint firstItem="R5V-6V-O4M" firstAttribute="leading" secondItem="ej0-p7-wlz" secondAttribute="leading" id="PVG-Ni-oDs"/>
+                                <constraint firstAttribute="trailing" secondItem="R5V-6V-O4M" secondAttribute="trailing" id="vqn-pe-XDp"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyj-05-ZbI">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_background" translatesAutoresizingMaskIntoConstraints="NO" id="gJK-Gu-4Td">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Dvv-jx-U0r">
+                                    <rect key="frame" x="123" y="60" width="147" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="dPg-ZK-V0r"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trilux_logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-4g-biJ">
+                                    <rect key="frame" x="70" y="126" width="253" height="281"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="xfx-4g-biJ" secondAttribute="height" multiplier="0.9" id="NhA-xb-vgi"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Txw-sO-8tI">
+                                    <rect key="frame" x="123" y="423" width="147" height="255"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="255" id="ICn-eh-meU"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Txw-sO-8tI" secondAttribute="trailing" constant="123" id="2nC-WP-rM4"/>
+                                <constraint firstItem="Txw-sO-8tI" firstAttribute="leading" secondItem="eyj-05-ZbI" secondAttribute="leading" constant="123" id="66l-PQ-diM"/>
+                                <constraint firstAttribute="trailing" secondItem="gJK-Gu-4Td" secondAttribute="trailing" id="8mc-mb-9wi"/>
+                                <constraint firstAttribute="trailing" secondItem="xfx-4g-biJ" secondAttribute="trailing" constant="70" id="CIs-J3-OhI"/>
+                                <constraint firstItem="xfx-4g-biJ" firstAttribute="leading" secondItem="eyj-05-ZbI" secondAttribute="leading" constant="70" id="HDl-k8-7HD"/>
+                                <constraint firstItem="xfx-4g-biJ" firstAttribute="top" secondItem="Dvv-jx-U0r" secondAttribute="bottom" constant="16" id="ISI-N4-ts6"/>
+                                <constraint firstAttribute="trailing" secondItem="Dvv-jx-U0r" secondAttribute="trailing" constant="123" id="S6P-7Y-u7G"/>
+                                <constraint firstItem="Txw-sO-8tI" firstAttribute="top" secondItem="xfx-4g-biJ" secondAttribute="bottom" constant="16" id="Vwk-BX-nOq"/>
+                                <constraint firstItem="gJK-Gu-4Td" firstAttribute="leading" secondItem="eyj-05-ZbI" secondAttribute="leading" id="ch6-3D-zPS"/>
+                                <constraint firstAttribute="bottom" secondItem="gJK-Gu-4Td" secondAttribute="bottom" id="fSV-sx-LL2"/>
+                                <constraint firstItem="gJK-Gu-4Td" firstAttribute="top" secondItem="eyj-05-ZbI" secondAttribute="top" id="nMG-Pb-82G"/>
+                                <constraint firstItem="Dvv-jx-U0r" firstAttribute="top" secondItem="eyj-05-ZbI" secondAttribute="top" constant="60" id="prK-UQ-iy1"/>
+                                <constraint firstItem="Dvv-jx-U0r" firstAttribute="leading" secondItem="eyj-05-ZbI" secondAttribute="leading" constant="123" id="rId-Cz-KZH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Z4o-kI-0Ie"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Ex3-OA-zLf" firstAttribute="top" secondItem="m8E-vC-lH3" secondAttribute="bottom" constant="16" id="2Zk-XN-Mug"/>
-                <constraint firstItem="Ex3-OA-zLf" firstAttribute="leading" secondItem="Z4o-kI-0Ie" secondAttribute="leading" constant="70" id="6i6-jq-WZS"/>
-                <constraint firstItem="m8E-vC-lH3" firstAttribute="leading" secondItem="Z4o-kI-0Ie" secondAttribute="leading" constant="123" id="Dda-XF-jTL"/>
-                <constraint firstItem="Z4o-kI-0Ie" firstAttribute="trailing" secondItem="m8E-vC-lH3" secondAttribute="trailing" constant="123" id="GxX-6S-DbC"/>
-                <constraint firstItem="Z4o-kI-0Ie" firstAttribute="trailing" secondItem="VTT-OH-kAN" secondAttribute="trailing" constant="123" id="IQo-aZ-nJA"/>
-                <constraint firstItem="ZUX-YY-rkF" firstAttribute="top" secondItem="uxP-u9-633" secondAttribute="top" id="IZ1-H3-GNo"/>
-                <constraint firstItem="Z4o-kI-0Ie" firstAttribute="trailing" secondItem="Ex3-OA-zLf" secondAttribute="trailing" constant="70" id="TCb-8x-mP5"/>
-                <constraint firstItem="m8E-vC-lH3" firstAttribute="top" secondItem="uxP-u9-633" secondAttribute="top" constant="59" id="ZSh-se-r2V"/>
-                <constraint firstAttribute="trailing" secondItem="ZUX-YY-rkF" secondAttribute="trailing" id="eRv-gb-aDy"/>
-                <constraint firstAttribute="bottom" secondItem="ZUX-YY-rkF" secondAttribute="bottom" id="fpG-WV-fPi"/>
-                <constraint firstItem="VTT-OH-kAN" firstAttribute="top" secondItem="Ex3-OA-zLf" secondAttribute="bottom" constant="16" id="gVV-GT-Rgf"/>
-                <constraint firstItem="VTT-OH-kAN" firstAttribute="leading" secondItem="Z4o-kI-0Ie" secondAttribute="leading" constant="123" id="jGI-gz-4QX"/>
-                <constraint firstItem="ZUX-YY-rkF" firstAttribute="leading" secondItem="uxP-u9-633" secondAttribute="leading" id="oU0-pS-bZf"/>
+                <constraint firstAttribute="bottom" secondItem="80K-JK-mrk" secondAttribute="bottom" id="Rxg-oW-wt1"/>
+                <constraint firstItem="80K-JK-mrk" firstAttribute="leading" secondItem="uxP-u9-633" secondAttribute="leading" id="Wij-rr-LF5"/>
+                <constraint firstItem="80K-JK-mrk" firstAttribute="top" secondItem="uxP-u9-633" secondAttribute="top" id="hwy-yb-EAc"/>
+                <constraint firstAttribute="trailing" secondItem="80K-JK-mrk" secondAttribute="trailing" id="uuw-0s-tdx"/>
             </constraints>
             <point key="canvasLocation" x="38" y="12"/>
         </view>
     </objects>
     <resources>
         <image name="downward_wave_splash" width="174" height="80"/>
+        <image name="ellipse_background" width="414" height="299"/>
         <image name="ic_trilux_logo_splash" width="251.33332824707031" height="293.33334350585938"/>
         <image name="splash_screen_background" width="414" height="896"/>
         <image name="upward_wave_splash" width="174" height="258"/>

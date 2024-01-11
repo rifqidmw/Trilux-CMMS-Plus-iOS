@@ -9,6 +9,9 @@ import UIKit
 
 class GeneralButton: UIView {
     
+    @IBOutlet var containerView: UIView!
+    @IBOutlet weak var iconMagnifyingGlass: UIImageView!
+    @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -32,14 +35,20 @@ class GeneralButton: UIView {
 
 extension GeneralButton {
     
-    func configure(title: String, type: GeneralButtonType = .normal) {
-        titleLabel.text = title
+    func configure(title: String? = nil, type: GeneralButtonType = .normal) {
+        titleLabel.text = title ?? ""
+        searchLabel.isHidden = true
         
         switch type {
         case .normal:
-            break
-        case .normalWithShadow:
-            self.addShadow(8)
+            iconMagnifyingGlass.isHidden = true
+        case .searchbutton:
+            titleLabel.isHidden = true
+            searchLabel.isHidden = false
+            
+            containerView.backgroundColor = UIColor.white
+            containerView.makeCornerRadius(8)
+            containerView.addShadow(4, color: UIColor.customDarkGray.cgColor, opacity: 0.2)
         }
     }
     
@@ -47,5 +56,5 @@ extension GeneralButton {
 
 enum GeneralButtonType {
     case normal
-    case normalWithShadow
+    case searchbutton
 }

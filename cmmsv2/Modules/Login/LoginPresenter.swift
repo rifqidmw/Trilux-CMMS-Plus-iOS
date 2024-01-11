@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class LoginPresenter: BasePresenter {
     
@@ -14,6 +15,14 @@ class LoginPresenter: BasePresenter {
     
     init(interactor: LoginInteractor) {
         self.interactor = interactor
+    }
+    
+}
+
+extension LoginPresenter {
+    
+    func navigateToHomeScreen(navigation: UINavigationController) {
+        router.goToHomeScreen(navigation: navigation)
     }
     
 }

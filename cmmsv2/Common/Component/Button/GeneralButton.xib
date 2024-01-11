@@ -12,10 +12,16 @@
         <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="QBu-Fm-zlw" id="pyr-gj-QeA"/>
+                <outlet property="iconMagnifyingGlass" destination="C0T-TG-1vo" id="J2Z-NI-fVf"/>
+                <outlet property="searchLabel" destination="cgq-Jb-hAu" id="196-rY-vLe"/>
                 <outlet property="titleLabel" destination="PEH-Qa-1pp" id="MiX-9f-wWp"/>
             </connections>
         </placeholder>
@@ -30,20 +36,42 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C0T-TG-1vo">
+                    <rect key="frame" x="16" y="17" width="24" height="22.333333333333336"/>
+                    <color key="tintColor" name="customPrimaryColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="1Gb-5z-pmK"/>
+                        <constraint firstAttribute="width" constant="24" id="dt4-5x-JGG"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cari..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgq-Jb-hAu">
+                    <rect key="frame" x="48" y="18" width="40" height="20"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                    <color key="textColor" name="placeholderColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="JGh-ID-Fsj"/>
             <color key="backgroundColor" name="customPrimaryColor"/>
             <constraints>
+                <constraint firstItem="C0T-TG-1vo" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="S0B-57-EYt"/>
+                <constraint firstItem="C0T-TG-1vo" firstAttribute="leading" secondItem="JGh-ID-Fsj" secondAttribute="leading" constant="16" id="Ypr-7T-hdV"/>
                 <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerX" secondItem="QBu-Fm-zlw" secondAttribute="centerX" id="aBv-qN-nGq"/>
                 <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="cpi-Zi-8ZS"/>
+                <constraint firstItem="cgq-Jb-hAu" firstAttribute="leading" secondItem="C0T-TG-1vo" secondAttribute="trailing" constant="8" id="pfP-ku-I0d"/>
+                <constraint firstItem="cgq-Jb-hAu" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="xLG-J5-NCw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="82" y="32"/>
+            <point key="canvasLocation" x="80.916030534351137" y="31.690140845070424"/>
         </view>
     </objects>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <namedColor name="customPrimaryColor">
             <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="placeholderColor">
+            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

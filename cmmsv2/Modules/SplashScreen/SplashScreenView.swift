@@ -9,11 +9,13 @@ import UIKit
 
 class SplashScreenView: BaseNonNavigationController {
     
+    @IBOutlet var backgroundView: BackgroundView!
     @IBOutlet weak var containerView: UIStackView!
     var isGestureEnabled = true
     
     override func didLoad() {
         super.didLoad()
+        self.backgroundView.backgroundType = .splash
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {

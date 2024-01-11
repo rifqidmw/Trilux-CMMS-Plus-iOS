@@ -31,9 +31,11 @@ extension RegistrationHospitalView {
     }
     
     private func setupView() {
+        backgroundView.backgroundType = .splash
         backgroundView.makeCornerRadius(24, .bottomCurve)
         containerView.makeCornerRadius(8)
-        buttonRegister.configure(title: "Pasang", type: .normalWithShadow)
+        buttonRegister.configure(title: "Pasang")
+        buttonRegister.addShadow(8)
     }
     
     private func setupAction() {

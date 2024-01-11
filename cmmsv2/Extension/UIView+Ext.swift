@@ -54,24 +54,12 @@ extension UIView {
         self.isHidden = false
     }
     
-    func addShadow(_ radius: CGFloat, position: ShadowPosition = .defaultShadow, color: CGColor? = UIColor.customPrimaryColor.cgColor) {
+    func addShadow(_ radius: CGFloat, position: ShadowPosition = .allSides, color: CGColor? = UIColor.customPrimaryColor.cgColor, opacity: Float? = 0.6) {
         layer.shadowColor = color
         layer.shadowRadius = radius
-        layer.shadowOpacity = 0.6
+        layer.shadowOpacity = opacity ?? 0.6
         layer.masksToBounds = false
-        
-        switch position {
-        case .left:
-            layer.shadowOffset = CGSize(width: -2.0, height: 0)
-        case .right:
-            layer.shadowOffset = CGSize(width: 2.0, height: 0)
-        case .top:
-            layer.shadowOffset = CGSize(width: 0, height: -2.0)
-        case .bottom:
-            layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        case .defaultShadow:
-            layer.shadowOffset = CGSize(width: 0, height: 0)
-        }
+        layer.shadowOffset = position.offset
     }
     
 }
@@ -81,5 +69,20 @@ enum ShadowPosition {
     case right
     case top
     case bottom
-    case defaultShadow
+    case allSides
+    
+    var offset: CGSize {
+        switch self {
+        case .left:
+            return CGSize(width: -2.0, height: 0)
+        case .right:
+            return CGSize(width: 2.0, height: 0)
+        case .top:
+            return CGSize(width: 0, height: -2.0)
+        case .bottom:
+            return CGSize(width: 0, height: 2.0)
+        case .allSides:
+            return CGSize(width: 0, height: 0)
+        }
+    }
 }

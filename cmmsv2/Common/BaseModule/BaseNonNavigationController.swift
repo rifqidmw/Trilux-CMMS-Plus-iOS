@@ -22,6 +22,7 @@ class BaseNonNavigationController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: .removeOverlay, object: nil)
     }
 
 }
