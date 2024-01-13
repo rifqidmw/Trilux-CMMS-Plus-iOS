@@ -96,3 +96,7 @@ iOSInjectionProject/
 # Ignore Xcode build files
 build/
 XCBuildData/
+
+# Ignore Xcode internal changes
+*.xcschememanagement.plist
+*.xcuserstate

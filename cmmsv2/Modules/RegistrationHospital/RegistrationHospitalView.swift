@@ -10,7 +10,7 @@ import UIKit
 class RegistrationHospitalView: BaseViewController {
     
     @IBOutlet weak var backgroundView: BackgroundView!
-    @IBOutlet weak var buttonRegister: GeneralButton!
+    @IBOutlet weak var buttonRegister: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var containerView: UIView!
     
@@ -31,9 +31,11 @@ extension RegistrationHospitalView {
     }
     
     private func setupView() {
+        backgroundView.backgroundType = .splash
         backgroundView.makeCornerRadius(24, .bottomCurve)
         containerView.makeCornerRadius(8)
-        buttonRegister.configure(title: "Pasang", type: .normalWithShadow)
+        buttonRegister.makeCornerRadius(8)
+        buttonRegister.addShadow(8)
     }
     
     private func setupAction() {

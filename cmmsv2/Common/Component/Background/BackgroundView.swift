@@ -9,10 +9,20 @@ import UIKit
 
 class BackgroundView: UIView {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var downwardWaveImageView: UIImageView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var upwardImageView: UIImageView!
+    @IBOutlet weak var homeBackgroundView: UIView!
+    @IBOutlet weak var ellipseBackgroundImageView: UIImageView!
+    
+    @IBOutlet weak var splashBackgroundView: UIView!
+    @IBOutlet weak var splashBackgroundImageView: UIImageView!
+    @IBOutlet weak var waveDownwardImageView: UIImageView!
+    @IBOutlet weak var triluxLogoImageView: UIImageView!
+    @IBOutlet weak var waveUpwardImageView: UIImageView!
+    
+    var backgroundType: BackgroundType = .home {
+        didSet {
+            configureBackgroundType()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,4 +41,24 @@ class BackgroundView: UIView {
         self.sendSubviewToBack(contentView)
     }
     
+}
+
+extension BackgroundView {
+    
+    private func configureBackgroundType() {
+        switch backgroundType {
+        case .home:
+            homeBackgroundView.isHidden = false
+            splashBackgroundView.isHidden = true
+        case .splash:
+            splashBackgroundView.isHidden = false
+            homeBackgroundView.isHidden = true
+        }
+    }
+    
+}
+
+enum BackgroundType {
+    case splash
+    case home
 }

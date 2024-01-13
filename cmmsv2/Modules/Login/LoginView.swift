@@ -32,9 +32,11 @@ extension LoginView {
     }
     
     private func setupView() {
+        backgroundView.backgroundType = .splash
+        backgroundView.triluxLogoImageView.isHidden = true
+        
         containerView.makeCornerRadius(24, .topCurve)
         containerView.addShadow(6, position: .top, color: UIColor.darkGray.cgColor)
-        backgroundView.logoImageView.isHidden = true
         
         usernameTextField.configure(title: "Username", placeholder: "Masukan username Anda", type: .normal)
         passwordTextField.configure(title: "Password", placeholder: "Masukan password Anda", type: .password)
@@ -45,8 +47,11 @@ extension LoginView {
     private func setupAction() {
         loginButton.gesture()
             .sink { [weak self] _ in
-                guard self != nil else { return }
-                AppLogger.log("TO DO LOGIN")
+                guard let self,
+                      let navigation = self.navigationController
+                else { return }
+                
+                self.presenter?.navigateToHomeScreen(navigation: navigation)
             }
             .store(in: &anyCancellable)
     }

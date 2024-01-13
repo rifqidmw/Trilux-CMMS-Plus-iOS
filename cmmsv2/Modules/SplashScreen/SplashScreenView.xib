@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="9xh-8N-WpJ" id="Z3E-cY-kIU"/>
                 <outlet property="containerView" destination="K9A-kh-NbP" id="Ufz-fA-L8G"/>
                 <outlet property="view" destination="9xh-8N-WpJ" id="XJW-6Y-fS1"/>
             </connections>

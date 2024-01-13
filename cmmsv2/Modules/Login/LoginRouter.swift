@@ -18,3 +18,12 @@ class LoginRouter: BaseRouter {
     }
     
 }
+
+extension LoginRouter {
+    
+    func goToHomeScreen(navigation: UINavigationController) {
+        let vc = HomeScreenRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+}
