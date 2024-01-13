@@ -54,6 +54,17 @@ extension HomeScreenView {
                 presenter.showBottomSheetDetailInformation(navigation: navigation)
             }
             .store(in: &anyCancellable)
+        
+        navigationView.profileImageView.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let presenter,
+                      let navigation = self.navigationController
+                else { return }
+                
+                presenter.navigateToUserProfile(navigation: navigation)
+            }
+            .store(in: &anyCancellable)
     }
     
 }

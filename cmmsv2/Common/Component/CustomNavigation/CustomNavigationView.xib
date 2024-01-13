@@ -23,10 +23,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="arrowLeftBackButton" destination="B0D-hI-NKQ" id="z6W-Rc-Xtl"/>
                 <outlet property="containerHomeToolbarView" destination="6DK-LA-9lY" id="Ggu-cx-Y9i"/>
+                <outlet property="containerPlainView" destination="WIj-9o-CCO" id="6tO-9J-9Yz"/>
                 <outlet property="notificationDotView" destination="119-gY-1oK" id="nrg-e7-umG"/>
                 <outlet property="notificationLabel" destination="81n-Ly-4iP" id="TUG-ta-Xqu"/>
                 <outlet property="notificationView" destination="y93-og-aot" id="SJC-sI-d2S"/>
+                <outlet property="plainTitleLabel" destination="6pp-tG-leg" id="txy-wt-V4w"/>
                 <outlet property="profileImageView" destination="gJe-Yr-LAh" id="qwf-hX-ktd"/>
                 <outlet property="profileView" destination="BNV-j9-jvL" id="N5E-um-uRz"/>
                 <outlet property="usernameLabel" destination="xQ6-fV-m9K" id="LrG-XE-GvQ"/>
@@ -41,11 +44,11 @@
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFd-ov-vG0">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DK-LA-9lY">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DK-LA-9lY">
+                            <rect key="frame" x="0.0" y="0.0" width="174" height="48"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNV-j9-jvL">
-                                    <rect key="frame" x="329" y="0.0" width="48" height="48"/>
+                                    <rect key="frame" x="110" y="0.0" width="48" height="48"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_profile" translatesAutoresizingMaskIntoConstraints="NO" id="gJe-Yr-LAh">
                                             <rect key="frame" x="2" y="2" width="44" height="44"/>
@@ -61,7 +64,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y93-og-aot">
-                                    <rect key="frame" x="269" y="0.0" width="48" height="48"/>
+                                    <rect key="frame" x="50" y="0.0" width="48" height="48"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="119-gY-1oK">
                                             <rect key="frame" x="30" y="10" width="8" height="8"/>
@@ -109,7 +112,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuZ-kK-HuL">
-                                    <rect key="frame" x="16" y="25.333333333333329" width="219" height="20"/>
+                                    <rect key="frame" x="16" y="25.333333333333329" width="0.0" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="IpS-Gi-pkT"/>
                                     </constraints>
@@ -133,6 +136,32 @@
                                 <constraint firstItem="SuZ-kK-HuL" firstAttribute="leading" secondItem="6DK-LA-9lY" secondAttribute="leading" constant="16" id="zXm-Ko-bZW"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIj-9o-CCO">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-hI-NKQ">
+                                    <rect key="frame" x="16" y="14.999999999999995" width="24" height="18.333333333333364"/>
+                                    <color key="tintColor" name="customDarkGrayColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="4fK-nm-rid"/>
+                                        <constraint firstAttribute="width" constant="24" id="Koh-xY-zFL"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pp-tG-leg">
+                                    <rect key="frame" x="177.66666666666666" y="14.333333333333334" width="38" height="19.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="6pp-tG-leg" firstAttribute="centerX" secondItem="WIj-9o-CCO" secondAttribute="centerX" id="2qF-N5-8KY"/>
+                                <constraint firstItem="B0D-hI-NKQ" firstAttribute="centerY" secondItem="WIj-9o-CCO" secondAttribute="centerY" id="8us-Vi-D3z"/>
+                                <constraint firstItem="6pp-tG-leg" firstAttribute="centerY" secondItem="WIj-9o-CCO" secondAttribute="centerY" id="9ja-Bx-9PU"/>
+                                <constraint firstItem="B0D-hI-NKQ" firstAttribute="leading" secondItem="WIj-9o-CCO" secondAttribute="leading" constant="16" id="mrP-JJ-4yl"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>
@@ -149,8 +178,12 @@
         </view>
     </objects>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="dummy_profile" width="44" height="44"/>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="darkGray">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

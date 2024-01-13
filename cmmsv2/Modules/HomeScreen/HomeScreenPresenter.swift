@@ -36,4 +36,8 @@ extension HomeScreenPresenter {
         router.showDetailInformationBottomSheet(navigation: navigation)
     }
     
+    func navigateToUserProfile(navigation: UINavigationController) {
+        router.goToUserProfile(navigation: navigation)
+    }
+    
 }

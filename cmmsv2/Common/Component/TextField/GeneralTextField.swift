@@ -10,16 +10,15 @@ import Combine
 
 class GeneralTextField: UIView {
     
+    @IBOutlet weak var containerTextFieldView: UIView!
     @IBOutlet weak var showHideButton: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var containerDefaultLabelView: UIView!
+    @IBOutlet weak var defaultLabel: UILabel!
     
     var anyCancellable = Set<AnyCancellable>()
-    var fieldType: GeneralTextFieldType = .normal {
-        didSet {
-            configureFieldType()
-        }
-    }
+    var currentType: GeneralTextFieldType = .normal
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +34,7 @@ class GeneralTextField: UIView {
         let view = loadNib()
         view.frame = self.bounds
         self.addSubview(view)
+        self.textField.delegate = self
         setupAction()
     }
     
@@ -45,14 +45,17 @@ extension GeneralTextField {
     private func setupAction() {
         showHideButton.gesture()
             .sink { [weak self] _ in
-                guard let self else { return }
+                guard let self = self else { return }
                 self.textField.isSecureTextEntry.toggle()
-                showHideButton.image = UIImage(systemName: textField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill")
+                self.showHideButton.makeAnimation {
+                    self.showHideButton.image = self.textField.isSecureTextEntry ? UIImage(systemName: "eye.fill") : UIImage(systemName: "eye.slash.fill")?.withTintColor(UIColor.customPrimaryColor, renderingMode: .alwaysOriginal)
+                }
             }
             .store(in: &anyCancellable)
+        
     }
     
-    func configure(title: String, placeholder: String, type: GeneralTextFieldType) {
+    func configure(title: String, placeholder: String, type: GeneralTextFieldType = .normal) {
         titleLabel.text = title
         textField.configurePlaceHolder(font: UIFont.robotoRegular(14), color: UIColor.customPlaceholderColor, placeHolderText: placeholder)
         
@@ -60,19 +63,45 @@ extension GeneralTextField {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.size.height))
         textField.leftView = paddingView
         textField.leftViewMode = .always
+        currentType = type
         
-        fieldType = type
-    }
-    
-    private func configureFieldType() {
-        switch fieldType {
+        switch type {
         case .normal:
+            containerDefaultLabelView.isHidden = true
             textField.isSecureTextEntry = false
             showHideButton.isHidden = true
         case .password:
+            containerDefaultLabelView.isHidden = true
             textField.isSecureTextEntry = true
             showHideButton.isHidden = false
+        case .phoneNumber:
+            defaultLabel.text = "+62"
+            textField.makeCornerRadius(8, .rightCurve)
+            containerDefaultLabelView.makeCornerRadius(8, .leftCurve)
+            defaultLabel.makeCornerRadius(12)
+            showHideButton.isHidden = true
+            
         }
+    }
+    
+}
+
+extension GeneralTextField: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text, let textRange = Range(range, in: text) else {
+            return false
+        }
+        
+        let updatedText = text.replacingCharacters(in: textRange, with: string)
+        
+        if case .phoneNumber = currentType {
+            let allowedCharacterSet = CharacterSet(charactersIn: "0123456789")
+            let isValidInput = updatedText.rangeOfCharacter(from: allowedCharacterSet.inverted) == nil
+            return isValidInput
+        }
+        
+        return true
     }
     
 }
@@ -80,4 +109,5 @@ extension GeneralTextField {
 enum GeneralTextFieldType {
     case normal
     case password
+    case phoneNumber
 }

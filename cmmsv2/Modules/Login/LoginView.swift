@@ -38,7 +38,7 @@ extension LoginView {
         containerView.makeCornerRadius(24, .topCurve)
         containerView.addShadow(6, position: .top, color: UIColor.darkGray.cgColor)
         
-        usernameTextField.configure(title: "Username", placeholder: "Masukan username Anda", type: .normal)
+        usernameTextField.configure(title: "Username", placeholder: "Masukan username Anda")
         passwordTextField.configure(title: "Password", placeholder: "Masukan password Anda", type: .password)
 
         loginButton.configure(title: "Masuk")

@@ -47,4 +47,9 @@ extension HomeScreenRouter {
         navigation.present(bottomSheet, animated: true)
     }
     
+    func goToUserProfile(navigation: UINavigationController) {
+        let vc = UserProfileRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }
