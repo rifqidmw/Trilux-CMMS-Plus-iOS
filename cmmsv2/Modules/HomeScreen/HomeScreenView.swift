@@ -14,7 +14,7 @@ class HomeScreenView: BaseViewController {
     @IBOutlet weak var categoryView: CategorySectionView!
     @IBOutlet weak var informationCardView: UIView!
     @IBOutlet weak var closeButton: UIImageView!
-    @IBOutlet weak var scanButon: UIView!
+    @IBOutlet weak var scanningButton: GeneralButton!
     
     var presenter: HomeScreenPresenter?
 
@@ -36,13 +36,12 @@ extension HomeScreenView {
         navigationView.configure(username: "John Doe", headline: "RSUD John Doe", type: .homeToolbar)
         searchButton.configure(type: .searchbutton)
         informationCardView.makeCornerRadius(8)
-        scanButon.makeCornerRadius(28)
-        scanButon.addShadow(4, opacity: 0.4)
+        scanningButton.configure(title: "Scanning Alat", type: .withIcon, icon: "ic_scan")
         categoryView.delegate = self
     }
     
     private func setupAction() {
-        scanButon.gesture()
+        scanningButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
                       let navigation = self.navigationController,
@@ -69,14 +68,6 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         presenter.showBottomSheetAllCategories(navigation: navigation)
     }
     
-    func didTapContract() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        self.showOverlay()
-        presenter.showBottomSheetContract(navigation: navigation)
-    }
-    
     func didTapAsset() {
         guard let presenter,
               let navigation = self.navigationController
@@ -85,20 +76,40 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         presenter.showBottomSheetAsset(navigation: navigation)
     }
     
-    func didTapAssetMedic() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        self.showOverlay()
-        presenter.showBottomSheetAssetMedic(navigation: navigation)
+    func didTapComplaint() {
+        AppLogger.log("CLICKED")
     }
     
-    func didTapAssetNonMedic() {
+    func didTapWorkSheet() {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
         self.showOverlay()
-        presenter.showBottomSheetAssetNonMedic(navigation: navigation)
+        presenter.showBottomSheetWorkSheet(navigation: navigation)
+    }
+    
+    func didTapPreventiveMaintenance() {
+        AppLogger.log("CLICKED")
+    }
+    
+    func didTapCalibration() {
+        AppLogger.log("CLICKED")
+    }
+    
+    func didTapHistory() {
+        AppLogger.log("CLICKED")
+    }
+    
+    func didTapLogBook() {
+        AppLogger.log("CLICKED")
+    }
+    
+    func didTapToolSuggestions() {
+        AppLogger.log("CLICKED")
+    }
+    
+    func didTapPreventiveCalendar() {
+        AppLogger.log("CLICKED")
     }
     
 }

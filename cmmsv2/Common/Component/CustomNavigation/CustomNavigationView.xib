@@ -73,7 +73,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" name="customRedColor"/>
+                                            <color key="backgroundColor" name="redColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="81n-Ly-4iP" secondAttribute="trailing" id="5zG-hA-npA"/>
                                                 <constraint firstAttribute="bottom" secondItem="81n-Ly-4iP" secondAttribute="bottom" id="Mg0-Ug-PKg"/>
@@ -105,7 +105,7 @@
                                         <constraint firstAttribute="width" constant="100" id="EY6-nS-KBg"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="16"/>
-                                    <color key="textColor" name="customPrimaryColor"/>
+                                    <color key="textColor" name="primaryColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuZ-kK-HuL">
@@ -114,7 +114,7 @@
                                         <constraint firstAttribute="height" constant="20" id="IpS-Gi-pkT"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                    <color key="textColor" name="customDarkGray"/>
+                                    <color key="textColor" name="darkGray"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -151,13 +151,13 @@
     <resources>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="dummy_profile" width="44" height="44"/>
-        <namedColor name="customDarkGray">
+        <namedColor name="darkGray">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="customPrimaryColor">
+        <namedColor name="primaryColor">
             <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="customRedColor">
+        <namedColor name="redColor">
             <color red="0.99215686274509807" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">

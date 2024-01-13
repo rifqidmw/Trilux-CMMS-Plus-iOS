@@ -24,8 +24,8 @@ extension HomeScreenPresenter {
         router.showAllCategoriesBottomSheet(navigation: navigation)
     }
     
-    func showBottomSheetContract(navigation: UINavigationController) {
-        router.showContractBottomSheet(navigation: navigation)
+    func showBottomSheetWorkSheet(navigation: UINavigationController) {
+        router.showWorkSheetBottomSheet(navigation: navigation)
     }
     
     func showBottomSheetAsset(navigation: UINavigationController) {
@@ -34,14 +34,6 @@ extension HomeScreenPresenter {
     
     func showBottomSheetDetailInformation(navigation: UINavigationController) {
         router.showDetailInformationBottomSheet(navigation: navigation)
-    }
-    
-    func showBottomSheetAssetMedic(navigation: UINavigationController) {
-        router.showAssetMedicBottomSheet(navigation: navigation)
-    }
-    
-    func showBottomSheetAssetNonMedic(navigation: UINavigationController) {
-        router.showAssetNonMedicBottomSheet(navigation: navigation)
     }
     
 }

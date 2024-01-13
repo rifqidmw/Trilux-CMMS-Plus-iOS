@@ -72,13 +72,13 @@ extension CategorySectionView: UICollectionViewDataSource, UICollectionViewDeleg
         case 0:
             self.delegate?.didTapAllCategory()
         case 1:
-            self.delegate?.didTapContract()
-        case 2:
             self.delegate?.didTapAsset()
+        case 2:
+            self.delegate?.didTapComplaint()
         case 3:
-            self.delegate?.didTapAssetMedic()
+            self.delegate?.didTapWorkSheet()
         case 4:
-            self.delegate?.didTapAssetNonMedic()
+            self.delegate?.didTapPreventiveMaintenance()
         default: break
         }
     }

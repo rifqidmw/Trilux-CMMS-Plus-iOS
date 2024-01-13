@@ -42,7 +42,7 @@
                         <constraint firstAttribute="height" constant="20" id="8hA-Ua-RbZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                    <color key="textColor" name="customDarkGray"/>
+                    <color key="textColor" name="darkGray"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -60,11 +60,11 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="customDarkGray">
-            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="customLightGray">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkGray">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="placeholderColor">
             <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

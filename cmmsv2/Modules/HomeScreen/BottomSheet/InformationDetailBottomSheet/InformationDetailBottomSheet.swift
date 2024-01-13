@@ -53,7 +53,7 @@ extension InformationDetailBottomSheet {
     }
     
     private func setupView() {
-        headerView.addBorder(width: 2, colorBorder: UIColor.customLightGray.cgColor)
+        headerView.addBorder(width: 2, colorBorder: UIColor.customLightGrayColor.cgColor)
         headerView.makeCornerRadius(12)
         headerImageView.makeCornerRadius(12)
         

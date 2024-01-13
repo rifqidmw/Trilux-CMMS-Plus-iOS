@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicAssetBottomSheet" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="bottomSheetHeightConstraint" destination="A9z-j6-K1q" id="Vv5-Q3-pSk"/>
                 <outlet property="bottomSheetView" destination="JgM-ID-2vz" id="MEr-oI-ENZ"/>
                 <outlet property="tableView" destination="o4s-Yu-x4b" id="GfP-8V-CoW"/>
                 <outlet property="titleLabel" destination="c14-Ws-OWx" id="jZm-3N-Gg6"/>

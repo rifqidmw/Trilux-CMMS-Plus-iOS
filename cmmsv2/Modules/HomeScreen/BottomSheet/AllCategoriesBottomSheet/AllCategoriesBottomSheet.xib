@@ -22,10 +22,10 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pA-ly-OW3" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="482" width="393" height="370"/>
+                    <rect key="frame" x="0.0" y="368" width="393" height="484"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C2p-vL-01j">
-                            <rect key="frame" x="32" y="52" width="329" height="276"/>
+                            <rect key="frame" x="32" y="52" width="329" height="390"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fQG-5E-lJ2">
                                 <size key="itemSize" width="128" height="128"/>
@@ -38,7 +38,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="C2p-vL-01j" secondAttribute="bottom" constant="42" id="0b6-NL-sfd"/>
-                        <constraint firstAttribute="height" constant="370" id="1D0-4D-Qtn"/>
+                        <constraint firstAttribute="height" constant="484" id="1D0-4D-Qtn"/>
                         <constraint firstItem="C2p-vL-01j" firstAttribute="top" secondItem="4pA-ly-OW3" secondAttribute="top" constant="52" id="86z-52-fh3"/>
                         <constraint firstItem="C2p-vL-01j" firstAttribute="leading" secondItem="4pA-ly-OW3" secondAttribute="leading" constant="32" id="Hwj-Yg-bOF"/>
                         <constraint firstAttribute="trailing" secondItem="C2p-vL-01j" secondAttribute="trailing" constant="32" id="Idk-MW-EOb"/>

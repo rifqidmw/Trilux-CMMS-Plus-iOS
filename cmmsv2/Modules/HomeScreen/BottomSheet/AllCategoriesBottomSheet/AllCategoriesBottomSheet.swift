@@ -33,10 +33,8 @@ extension AllCategoriesBottomSheet {
         collectionView.register(CategoryCardCVC.nib, forCellWithReuseIdentifier: CategoryCardCVC.identifier)
         
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 16
-        layout.minimumInteritemSpacing = 16
-        layout.itemSize = CGSize(width: 72, height: 128)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 12
         
         let totalInteritemSpacing = (4 - 1) * layout.minimumInteritemSpacing
         let width = collectionView.frame.width - totalInteritemSpacing

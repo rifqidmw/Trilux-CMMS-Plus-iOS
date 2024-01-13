@@ -47,7 +47,7 @@ extension CustomNavigationView {
         case .toolbar:
             containerHomeToolbarView.isHidden = true
         case .homeToolbar:
-            let text = NSAttributedString.stylizedText("Hai, ", font: UIFont.latoRegular(14), color: UIColor.customDarkGray)
+            let text = NSAttributedString.stylizedText("Hai, ", font: UIFont.latoRegular(14), color: UIColor.customDarkGrayColor)
             let usernameText = NSAttributedString.stylizedText(username ?? "", font: UIFont.latoBlack(14), color: UIColor.customPrimaryColor)
             
             let fullAttributedText = NSMutableAttributedString()

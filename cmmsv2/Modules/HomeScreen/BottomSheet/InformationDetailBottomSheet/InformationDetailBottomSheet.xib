@@ -52,7 +52,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steril Pouch (Sterilization Pack)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89X-tE-gfO">
                                     <rect key="frame" x="16" y="210" width="313" height="18"/>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                    <color key="textColor" name="customDarkGray"/>
+                                    <color key="textColor" name="darkGray"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -160,7 +160,7 @@
     </objects>
     <resources>
         <image name="unsplash_yo01Z-9HQAw" width="414" height="436"/>
-        <namedColor name="customDarkGray">
+        <namedColor name="darkGray">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">

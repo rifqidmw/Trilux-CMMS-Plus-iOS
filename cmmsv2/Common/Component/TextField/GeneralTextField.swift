@@ -54,7 +54,7 @@ extension GeneralTextField {
     
     func configure(title: String, placeholder: String, type: GeneralTextFieldType) {
         titleLabel.text = title
-        textField.configurePlaceHolder(font: UIFont.robotoRegular(14), color: UIColor.placeholderColor, placeHolderText: placeholder)
+        textField.configurePlaceHolder(font: UIFont.robotoRegular(14), color: UIColor.customPlaceholderColor, placeHolderText: placeholder)
         
         textField.makeCornerRadius(8)
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.size.height))

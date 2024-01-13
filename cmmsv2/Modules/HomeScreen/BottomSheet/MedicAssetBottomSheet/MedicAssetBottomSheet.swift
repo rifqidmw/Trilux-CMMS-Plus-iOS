@@ -10,10 +10,13 @@ import UIKit
 class MedicAssetBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var bottomSheetView: BottomSheetView!
+    @IBOutlet weak var bottomSheetHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var data: [MedicAssetModel] = medicAssetData
+    var dataAsset: [MedicAssetModel] = medicAssetData
+    var dataWorksheet: [MedicAssetModel] = worksheetData
+    
     var type: MedicAssetBottomSheetType?
     
     override func didLoad() {
@@ -46,8 +49,10 @@ extension MedicAssetBottomSheet {
         switch type {
         case .asset:
             titleLabel.text = "Pilih Asset"
-        case .contract:
-            titleLabel.text = "Pilih Kontrak"
+            bottomSheetHeightConstraint.constant = 225
+        case .worksheet:
+            titleLabel.text = "Lembar Kerja"
+            bottomSheetHeightConstraint.constant = 280
         default: break
         }
     }
@@ -66,7 +71,7 @@ extension MedicAssetBottomSheet {
 extension MedicAssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        return type == .asset ? dataAsset.count : dataWorksheet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,7 +80,7 @@ extension MedicAssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        cell.setupCell(data: type == .asset ? dataAsset[indexPath.row] : dataWorksheet[indexPath.row])
         
         return cell
     }

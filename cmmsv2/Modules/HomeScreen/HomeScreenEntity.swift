@@ -9,15 +9,20 @@ import Foundation
 
 protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapAllCategory()
-    func didTapContract()
     func didTapAsset()
-    func didTapAssetMedic()
-    func didTapAssetNonMedic()
+    func didTapComplaint()
+    func didTapWorkSheet()
+    func didTapPreventiveMaintenance()
+    func didTapCalibration()
+    func didTapHistory()
+    func didTapLogBook()
+    func didTapToolSuggestions()
+    func didTapPreventiveCalendar()
 }
 
 enum MedicAssetBottomSheetType {
     case asset
-    case contract
+    case worksheet
 }
 
 struct CategoryModel: Identifiable {
@@ -36,25 +41,37 @@ struct MedicAssetModel: Identifiable {
 
 let categoryData: [CategoryModel] = [
     CategoryModel(image: "ic_sitemap", title: "Lihat Semua Kategori"),
-    CategoryModel(image: "ic_chest_board", title: "Kontrak"),
     CategoryModel(image: "ic_hospital", title: "Aset"),
-    CategoryModel(image: "ic_stethoscope", title: "Data Aset Medik", isUpdated: true),
-    CategoryModel(image: "ic_wheel_chair", title: "Data Aset Non Medik", isUpdated: true)
+    CategoryModel(image: "ic_notes_with_pencil", title: "Pengaduan"),
+    CategoryModel(image: "ic_bill", title: "Lembar Kerja"),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Pemeliharaan Preventif"),
+    CategoryModel(image: "ic_speedometer", title: "Kalibrasi"),
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: "Riwayat")
 ]
 
 let allCategoryData: [CategoryModel] = [
-    CategoryModel(image: "ic_sitemap", title: "Lihat Semua Kategori"),
-    CategoryModel(image: "ic_chest_board", title: "Kontrak"),
     CategoryModel(image: "ic_hospital", title: "Aset"),
-    CategoryModel(image: "ic_stethoscope", title: "Data Aset Medik", isUpdated: true),
-    CategoryModel(image: "ic_wheel_chair", title: "Data Aset Non Medik", isUpdated: true),
-    CategoryModel(image: "ic_printer", title: "Print Label Ruangan"),
-    CategoryModel(image: "ic_bubble_chat", title: "Usulan Alat")
+    CategoryModel(image: "ic_notes_with_pencil", title: "Pengaduan"),
+    CategoryModel(image: "ic_bill", title: "Lembar Kerja"),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Pemeliharaan Preventif"),
+    CategoryModel(image: "ic_speedometer", title: "Kalibrasi"),
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: "Riwayat"),
+    CategoryModel(image: "ic_gear_clock", title: "Korektif Tertunda"),
+    CategoryModel(image: "ic_log_book", title: "Log Book"),
+    CategoryModel(image: "ic_bubble_chat", title: "Usulan Alat"),
+    CategoryModel(image: "ic_calendar_with_wrench", title: "Kalender Preventif")
+    
 ]
 
 let medicAssetData: [MedicAssetModel] = [
     MedicAssetModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Tambah data aset medik"),
     MedicAssetModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Tambah data aset non medik")
+]
+
+let worksheetData: [MedicAssetModel] = [
+    MedicAssetModel(image: "ic_bill_fill", title: "Lembar Kerja", subTitle: "Lihat daftar lembar kerja"),
+    MedicAssetModel(image: "ic_notes_with_pencil_fill", title: "Lembar Kerja Onsite Preventive", subTitle: "Lihat daftar lembar kerja onsite preventive"),
+    MedicAssetModel(image: "ic_notes_with_gear", title: "Lembar Kerja Korektif", subTitle: "Lihat daftar lembar kerja korektif")
 ]
 
 let detailInformationData: [CategoryModel] = [

@@ -60,7 +60,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "DONE"
-        IQKeyboardManager.shared.toolbarTintColor = .customDarkGray
+        IQKeyboardManager.shared.toolbarTintColor = .customDarkGrayColor
     }
     
     func navigationSetup() {}

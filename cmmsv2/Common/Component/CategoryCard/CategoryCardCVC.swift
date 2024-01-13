@@ -33,7 +33,7 @@ extension CategoryCardCVC {
         badgeView.isHidden = !data.isUpdated
         
         categoryImageContainerView.makeCornerRadius(12)
-        categoryImageContainerView.addShadow(2, position: .bottom, color: UIColor.customDarkGray.cgColor, opacity: 0.2)
+        categoryImageContainerView.addShadow(2, position: .bottom, color: UIColor.customDarkGrayColor.cgColor, opacity: 0.2)
         badgeView.makeCornerRadius(8, [.layerMinXMinYCorner, .layerMaxXMaxYCorner])
     }
     

@@ -29,7 +29,7 @@ class BottomSheetView: UIView {
         
         self.handleBarView.makeCornerRadius(4)
         view.makeCornerRadius(32, .topCurve)
-        view.addShadow(4, position: .top, color: UIColor.customDarkGray.cgColor, opacity: 0.2)
+        view.addShadow(4, position: .top, color: UIColor.customDarkGrayColor.cgColor, opacity: 0.2)
         self.sendSubviewToBack(view)
     }
     

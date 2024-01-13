@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="QBu-Fm-zlw" id="pyr-gj-QeA"/>
+                <outlet property="iconImageView" destination="M44-6k-rYg" id="y97-Po-E6o"/>
                 <outlet property="iconMagnifyingGlass" destination="C0T-TG-1vo" id="J2Z-NI-fVf"/>
                 <outlet property="searchLabel" destination="cgq-Jb-hAu" id="196-rY-vLe"/>
                 <outlet property="titleLabel" destination="PEH-Qa-1pp" id="MiX-9f-wWp"/>
@@ -45,19 +45,28 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cari..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgq-Jb-hAu">
-                    <rect key="frame" x="48" y="18" width="40" height="20"/>
+                    <rect key="frame" x="48" y="18.666666666666664" width="40" height="18.666666666666664"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                     <color key="textColor" name="placeholderColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M44-6k-rYg">
+                    <rect key="frame" x="140" y="14" width="26" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="udr-pt-uIP"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="JGh-ID-Fsj"/>
-            <color key="backgroundColor" name="customPrimaryColor"/>
+            <color key="backgroundColor" name="primaryColor"/>
             <constraints>
+                <constraint firstItem="M44-6k-rYg" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="BZs-cQ-1rD"/>
                 <constraint firstItem="C0T-TG-1vo" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="S0B-57-EYt"/>
-                <constraint firstItem="C0T-TG-1vo" firstAttribute="leading" secondItem="JGh-ID-Fsj" secondAttribute="leading" constant="16" id="Ypr-7T-hdV"/>
+                <constraint firstItem="C0T-TG-1vo" firstAttribute="leading" secondItem="QBu-Fm-zlw" secondAttribute="leading" constant="16" id="Ypr-7T-hdV"/>
                 <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerX" secondItem="QBu-Fm-zlw" secondAttribute="centerX" id="aBv-qN-nGq"/>
                 <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="cpi-Zi-8ZS"/>
+                <constraint firstItem="PEH-Qa-1pp" firstAttribute="leading" secondItem="M44-6k-rYg" secondAttribute="trailing" constant="8" id="gTE-QB-sgj"/>
+                <constraint firstAttribute="bottom" secondItem="M44-6k-rYg" secondAttribute="bottom" constant="14" id="ixh-PZ-ybX"/>
+                <constraint firstItem="M44-6k-rYg" firstAttribute="top" secondItem="QBu-Fm-zlw" secondAttribute="top" constant="14" id="lHG-Mz-ndU"/>
                 <constraint firstItem="cgq-Jb-hAu" firstAttribute="leading" secondItem="C0T-TG-1vo" secondAttribute="trailing" constant="8" id="pfP-ku-I0d"/>
                 <constraint firstItem="cgq-Jb-hAu" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="xLG-J5-NCw"/>
             </constraints>
@@ -72,6 +81,9 @@
         </namedColor>
         <namedColor name="placeholderColor">
             <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryColor">
+            <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

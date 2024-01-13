@@ -27,9 +27,9 @@ extension HomeScreenRouter {
         navigation.present(bottomSheet, animated: true)
     }
     
-    func showContractBottomSheet(navigation: UINavigationController) {
+    func showWorkSheetBottomSheet(navigation: UINavigationController) {
         let bottomSheet = MedicAssetBottomSheet(nibName: String(describing: MedicAssetBottomSheet.self), bundle: nil)
-        bottomSheet.type = .contract
+        bottomSheet.type = .worksheet
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
     }
@@ -45,14 +45,6 @@ extension HomeScreenRouter {
         let bottomSheet = InformationDetailBottomSheet(nibName: String(describing: InformationDetailBottomSheet.self), bundle: nil)
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
-    }
-    
-    func showAssetMedicBottomSheet(navigation: UINavigationController) {
-        AppLogger.log("SHOW ASSET MEDIC BOTTOM SHEET")
-    }
-    
-    func showAssetNonMedicBottomSheet(navigation: UINavigationController) {
-        AppLogger.log("SHOW ASSET NON MEDIC BOTTOM SHEET")
     }
     
 }
