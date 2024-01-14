@@ -19,7 +19,7 @@ let profileMenuData: [ProfileMenuModel] = [
     ProfileMenuModel(image: "ic_padlock", title: "Ganti Password", desc: "Ganti password sesuai keinginan Anda")
 ]
 
-let changePictureData: [MedicAssetModel] = [
-    MedicAssetModel(image: "ic_camera_fill", title: "Kamera", subTitle: "Ambil gambar terkini"),
-    MedicAssetModel(image: "ic_gallery_fill", title: "Galeri", subTitle: "Ambil gambar dari galeri")
+let changePictureData: [MenuModel] = [
+    MenuModel(image: "ic_camera_fill", title: "Kamera", subTitle: "Ambil gambar terkini"),
+    MenuModel(image: "ic_gallery_fill", title: "Galeri", subTitle: "Ambil gambar dari galeri")
 ]

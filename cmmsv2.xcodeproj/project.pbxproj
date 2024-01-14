@@ -85,18 +85,14 @@
 		CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DAE2B53148A00240A7D /* LogoutPopUpBottomSheet.xib */; };
 		CE9E7DB22B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DB12B53149100240A7D /* LogoutPopUpBottomSheet.swift */; };
 		CE9E7DB32B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DB12B53149100240A7D /* LogoutPopUpBottomSheet.swift */; };
-		CE9E7DB62B531A5100240A7D /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DB52B531A5100240A7D /* MenuCardView.swift */; };
-		CE9E7DB72B531A5100240A7D /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DB52B531A5100240A7D /* MenuCardView.swift */; };
-		CE9E7DB92B531A5B00240A7D /* MenuCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DB82B531A5B00240A7D /* MenuCardView.xib */; };
-		CE9E7DBA2B531A5B00240A7D /* MenuCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DB82B531A5B00240A7D /* MenuCardView.xib */; };
 		CE9E7DBC2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DBB2B531E4600240A7D /* ChangePictureBottomSheet.xib */; };
 		CE9E7DBD2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DBB2B531E4600240A7D /* ChangePictureBottomSheet.xib */; };
 		CE9E7DC22B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */; };
 		CE9E7DC32B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */; };
-		CE9F90F32B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */; };
-		CE9F90F42B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */; };
-		CE9F90F52B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */; };
-		CE9F90F62B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */; };
+		CE9F90F32B4F776B004C027A /* MenuItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */; };
+		CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */; };
+		CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */; };
+		CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */; };
 		CE9F90F92B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F82B4F851F004C027A /* MedicAssetBottomSheet.xib */; };
 		CE9F90FA2B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F82B4F851F004C027A /* MedicAssetBottomSheet.xib */; };
 		CE9F90FC2B4F8527004C027A /* MedicAssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90FB2B4F8527004C027A /* MedicAssetBottomSheet.swift */; };
@@ -308,12 +304,10 @@
 		CE9E7DA82B530F6D00240A7D /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		CE9E7DAE2B53148A00240A7D /* LogoutPopUpBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutPopUpBottomSheet.xib; sourceTree = "<group>"; };
 		CE9E7DB12B53149100240A7D /* LogoutPopUpBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopUpBottomSheet.swift; sourceTree = "<group>"; };
-		CE9E7DB52B531A5100240A7D /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
-		CE9E7DB82B531A5B00240A7D /* MenuCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCardView.xib; sourceTree = "<group>"; };
 		CE9E7DBB2B531E4600240A7D /* ChangePictureBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePictureBottomSheet.xib; sourceTree = "<group>"; };
 		CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePictureBottomSheet.swift; sourceTree = "<group>"; };
-		CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetItemTVC.swift; sourceTree = "<group>"; };
-		CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicAssetItemTVC.xib; sourceTree = "<group>"; };
+		CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTVC.swift; sourceTree = "<group>"; };
+		CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTVC.xib; sourceTree = "<group>"; };
 		CE9F90F82B4F851F004C027A /* MedicAssetBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicAssetBottomSheet.xib; sourceTree = "<group>"; };
 		CE9F90FB2B4F8527004C027A /* MedicAssetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetBottomSheet.swift; sourceTree = "<group>"; };
 		CE9F90FF2B4F942C004C027A /* BriefInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefInformationCardView.xib; sourceTree = "<group>"; };
@@ -574,22 +568,13 @@
 			path = ChangePictureBottomSheet;
 			sourceTree = "<group>";
 		};
-		CE9E7DB42B531A3D00240A7D /* MenuCard */ = {
+		CE9F90F02B4F758C004C027A /* MenuItem */ = {
 			isa = PBXGroup;
 			children = (
-				CE9E7DB52B531A5100240A7D /* MenuCardView.swift */,
-				CE9E7DB82B531A5B00240A7D /* MenuCardView.xib */,
+				CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */,
+				CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */,
 			);
-			path = MenuCard;
-			sourceTree = "<group>";
-		};
-		CE9F90F02B4F758C004C027A /* MedicAssetItem */ = {
-			isa = PBXGroup;
-			children = (
-				CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */,
-				CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */,
-			);
-			path = MedicAssetItem;
+			path = MenuItem;
 			sourceTree = "<group>";
 		};
 		CE9F90F72B4F84FF004C027A /* MedicAssetBottomSheet */ = {
@@ -830,8 +815,7 @@
 				CEC207AF2B4AFF660073FA1E /* CategoryCard */,
 				CEC207A52B4ADDA40073FA1E /* CustomNavigation */,
 				CE9E7DA42B530F4500240A7D /* BasePopUp */,
-				CE9F90F02B4F758C004C027A /* MedicAssetItem */,
-				CE9E7DB42B531A3D00240A7D /* MenuCard */,
+				CE9F90F02B4F758C004C027A /* MenuItem */,
 				CE54428B2B4725000022047D /* TextField */,
 			);
 			path = Component;
@@ -1003,14 +987,13 @@
 				CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CECB3DDF2B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
-				CE9E7DB92B531A5B00240A7D /* MenuCardView.xib in Resources */,
 				CE9F91002B4F942C004C027A /* BriefInformationCardView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE9F90F92B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */,
 				CE5442932B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB777F2B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
-				CE9F90F52B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */,
+				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91072B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
@@ -1059,14 +1042,13 @@
 				CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CECB3DE02B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
-				CE9E7DBA2B531A5B00240A7D /* MenuCardView.xib in Resources */,
 				CE9F91012B4F942C004C027A /* BriefInformationCardView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE9F90FA2B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */,
 				CE5442942B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB77802B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
-				CE9F90F62B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */,
+				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
@@ -1183,7 +1165,6 @@
 				CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CECB3E102B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CECB3DA92B45D962004A260D /* ViewController.swift in Sources */,
-				CE9E7DB62B531A5100240A7D /* MenuCardView.swift in Sources */,
 				CE9E7D832B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
 				CE9E7D812B529EE800240A7D /* EditProfileRouter.swift in Sources */,
 				CECB3E222B45E378004A260D /* UIViewController+Ext.swift in Sources */,
@@ -1225,7 +1206,7 @@
 				CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E502B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CECB3E282B45E3C8004A260D /* UITextField+Ext.swift in Sources */,
-				CE9F90F32B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */,
+				CE9F90F32B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CECB3E3B2B45E4DD004A260D /* AppLoger.swift in Sources */,
@@ -1267,7 +1248,6 @@
 				CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CECB3E112B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CECB3DC12B45DAFF004A260D /* ViewController.swift in Sources */,
-				CE9E7DB72B531A5100240A7D /* MenuCardView.swift in Sources */,
 				CE9E7D842B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
 				CE9E7D822B529EE800240A7D /* EditProfileRouter.swift in Sources */,
 				CECB3E232B45E378004A260D /* UIViewController+Ext.swift in Sources */,
@@ -1309,7 +1289,7 @@
 				CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E512B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CECB3E292B45E3C8004A260D /* UITextField+Ext.swift in Sources */,
-				CE9F90F42B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */,
+				CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CECB3E3C2B45E4DD004A260D /* AppLoger.swift in Sources */,

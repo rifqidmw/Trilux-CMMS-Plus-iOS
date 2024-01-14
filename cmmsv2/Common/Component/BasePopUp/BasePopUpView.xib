@@ -23,6 +23,7 @@
                 <outlet property="agreeButton" destination="ZOH-a2-5Qj" id="pGd-a3-azO"/>
                 <outlet property="bottomSheetView" destination="E1q-Bs-gYF" id="9t8-M5-8Pa"/>
                 <outlet property="cancelButton" destination="WxH-VX-3bX" id="21X-hP-mjP"/>
+                <outlet property="dismissAreaView" destination="Rnw-Wg-9ak" id="ttX-gj-W3W"/>
                 <outlet property="iconImageView" destination="prc-zk-IWl" id="RD3-YC-bOe"/>
                 <outlet property="messageLabel" destination="rhP-1n-aL9" id="RgP-fb-Hnp"/>
                 <outlet property="titleLabel" destination="rUA-l6-J1O" id="g0v-Ig-Oq8"/>
@@ -33,6 +34,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-Wg-9ak" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="469"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1q-Bs-gYF" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="528" width="393" height="290"/>
                     <subviews>
@@ -77,7 +82,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="o4x-gI-6Pr" secondAttribute="trailing" constant="16" id="6eq-bR-35t"/>
                         <constraint firstAttribute="trailing" secondItem="prc-zk-IWl" secondAttribute="trailing" constant="170" id="Jxx-aW-l6Q"/>
@@ -98,9 +103,13 @@
             <viewLayoutGuide key="safeArea" id="Vqx-8Q-ZBb"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="E1q-Bs-gYF" firstAttribute="top" secondItem="Rnw-Wg-9ak" secondAttribute="bottom" id="4Fc-66-o9R"/>
+                <constraint firstItem="Rnw-Wg-9ak" firstAttribute="leading" secondItem="Vqx-8Q-ZBb" secondAttribute="leading" id="IWt-PL-4cO"/>
+                <constraint firstItem="Rnw-Wg-9ak" firstAttribute="top" secondItem="Vqx-8Q-ZBb" secondAttribute="top" id="Yhh-q2-wzM"/>
                 <constraint firstItem="E1q-Bs-gYF" firstAttribute="leading" secondItem="Vqx-8Q-ZBb" secondAttribute="leading" id="aOB-Ht-bAd"/>
                 <constraint firstItem="Vqx-8Q-ZBb" firstAttribute="bottom" secondItem="E1q-Bs-gYF" secondAttribute="bottom" id="cst-Pq-2oH"/>
                 <constraint firstItem="Vqx-8Q-ZBb" firstAttribute="trailing" secondItem="E1q-Bs-gYF" secondAttribute="trailing" id="itB-zE-DrZ"/>
+                <constraint firstItem="Vqx-8Q-ZBb" firstAttribute="trailing" secondItem="Rnw-Wg-9ak" secondAttribute="trailing" id="w6x-Pm-8Gm"/>
             </constraints>
             <point key="canvasLocation" x="310.68702290076334" y="-155.63380281690141"/>
         </view>

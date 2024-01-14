@@ -7,13 +7,13 @@
 
 import UIKit
 
-class MedicAssetItemTVC: UITableViewCell {
+class MenuItemTVC: UITableViewCell {
     
     @IBOutlet weak var medicAssetImageView: UIImageView!
     @IBOutlet weak var medicAssetTitleLabel: UILabel!
     @IBOutlet weak var medicAssetSubTitleLabel: UILabel!
     
-    static let identifier = String(describing: MedicAssetItemTVC.self)
+    static let identifier = String(describing: MenuItemTVC.self)
     static let nib = {
         UINib(nibName: identifier, bundle: nil)
     }()
@@ -28,9 +28,9 @@ class MedicAssetItemTVC: UITableViewCell {
     
 }
 
-extension MedicAssetItemTVC {
+extension MenuItemTVC {
     
-    func setupCell(data: MedicAssetModel) {
+    func setupCell(data: MenuModel) {
         medicAssetImageView.image = UIImage(named: data.image)
         medicAssetTitleLabel.text = data.title
         medicAssetSubTitleLabel.text = data.subTitle

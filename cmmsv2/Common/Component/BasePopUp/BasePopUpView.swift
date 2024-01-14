@@ -10,6 +10,7 @@ import UIKit
 class BasePopUpView: UIView {
     
     @IBOutlet weak var bottomSheetView: BottomSheetView!
+    @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!

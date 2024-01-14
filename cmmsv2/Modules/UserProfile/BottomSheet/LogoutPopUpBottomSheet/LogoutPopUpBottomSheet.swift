@@ -43,6 +43,20 @@ extension LogoutPopUpBottomSheet {
                 self.dismiss(animated: true)
             }
             .store(in: &anyCancellable)
+        
+        popUpView.bottomSheetView.handleBarArea.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.dismiss(animated: true)
+            }
+            .store(in: &anyCancellable)
+        
+        popUpView.dismissAreaView.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.dismiss(animated: true)
+            }
+            .store(in: &anyCancellable)
     }
     
 }
