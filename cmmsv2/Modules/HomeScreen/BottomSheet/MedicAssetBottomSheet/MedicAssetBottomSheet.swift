@@ -10,12 +10,13 @@ import UIKit
 class MedicAssetBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var bottomSheetView: BottomSheetView!
+    @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var dataAsset: [MedicAssetModel] = medicAssetData
-    var dataWorksheet: [MedicAssetModel] = worksheetData
+    var dataAsset: [MenuModel] = medicAssetData
+    var dataWorksheet: [MenuModel] = worksheetData
     
     var type: MedicAssetBottomSheetType?
     
@@ -37,7 +38,7 @@ extension MedicAssetBottomSheet {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(MedicAssetItemTVC.nib, forCellReuseIdentifier: MedicAssetItemTVC.identifier)
+        tableView.register(MenuItemTVC.nib, forCellReuseIdentifier: MenuItemTVC.identifier)
         tableView.separatorStyle = .none
         tableView.rowHeight = 60
         tableView.isScrollEnabled = false
@@ -64,6 +65,13 @@ extension MedicAssetBottomSheet {
                 self.dismiss(animated: true)
             }
             .store(in: &anyCancellable)
+        
+        dismissAreaView.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.dismiss(animated: true)
+            }
+            .store(in: &anyCancellable)
     }
     
 }
@@ -75,7 +83,7 @@ extension MedicAssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MedicAssetItemTVC.identifier, for: indexPath) as? MedicAssetItemTVC
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTVC.identifier, for: indexPath) as? MenuItemTVC
         else {
             return UITableViewCell()
         }

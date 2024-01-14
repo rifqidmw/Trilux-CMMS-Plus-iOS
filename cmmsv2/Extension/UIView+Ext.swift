@@ -54,12 +54,24 @@ extension UIView {
         self.isHidden = false
     }
     
-    func addShadow(_ radius: CGFloat, position: ShadowPosition = .allSides, color: CGColor? = UIColor.customPrimaryColor.cgColor, opacity: Float? = 0.6) {
+    func addShadow(_ radius: CGFloat, position: ShadowPosition = .allSides, color: CGColor? = UIColor.customDarkGrayColor.cgColor, opacity: Float? = 0.6) {
         layer.shadowColor = color
         layer.shadowRadius = radius
         layer.shadowOpacity = opacity ?? 0.6
         layer.masksToBounds = false
         layer.shadowOffset = position.offset
+    }
+    
+    func makeAnimation(duration: TimeInterval = 0.3, animations: @escaping () -> Void, completion: (() -> Void)? = nil) {
+        UIView.transition(with: self,
+                          duration: duration,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            animations()
+        },
+                          completion: { _ in
+            completion?()
+        })
     }
     
 }

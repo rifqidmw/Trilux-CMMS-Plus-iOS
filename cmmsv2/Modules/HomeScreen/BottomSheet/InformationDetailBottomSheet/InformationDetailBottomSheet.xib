@@ -23,6 +23,7 @@
                 <outlet property="bottomSheetView" destination="x6u-TI-uXQ" id="6Br-Sk-dN4"/>
                 <outlet property="brandView" destination="SMk-ad-5tU" id="vjK-Lq-mEF"/>
                 <outlet property="collectionView" destination="cK5-hE-mo9" id="Yni-k2-7fR"/>
+                <outlet property="dismissAreaView" destination="8HD-Yz-L4A" id="cgZ-cH-dfd"/>
                 <outlet property="headerImageView" destination="Pft-vd-jST" id="S3t-iw-i6F"/>
                 <outlet property="headerTitleLabel" destination="89X-tE-gfO" id="Xez-8Z-phI"/>
                 <outlet property="headerView" destination="IYw-It-0pR" id="8QW-Ra-H8H"/>
@@ -37,6 +38,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HD-Yz-L4A" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6u-TI-uXQ" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="108" width="393" height="744"/>
                     <subviews>
@@ -151,9 +156,13 @@
             <viewLayoutGuide key="safeArea" id="5zQ-j3-kZp"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="5zQ-j3-kZp" firstAttribute="trailing" secondItem="8HD-Yz-L4A" secondAttribute="trailing" id="AMg-m3-wCZ"/>
                 <constraint firstItem="5zQ-j3-kZp" firstAttribute="trailing" secondItem="x6u-TI-uXQ" secondAttribute="trailing" id="Ah8-bp-Enh"/>
+                <constraint firstItem="x6u-TI-uXQ" firstAttribute="top" secondItem="8HD-Yz-L4A" secondAttribute="bottom" id="Gx2-qp-NHS"/>
                 <constraint firstItem="x6u-TI-uXQ" firstAttribute="leading" secondItem="5zQ-j3-kZp" secondAttribute="leading" id="OGd-so-PWT"/>
                 <constraint firstAttribute="bottom" secondItem="x6u-TI-uXQ" secondAttribute="bottom" id="dHo-CH-JSG"/>
+                <constraint firstItem="8HD-Yz-L4A" firstAttribute="leading" secondItem="5zQ-j3-kZp" secondAttribute="leading" id="o5Q-2s-VQ7"/>
+                <constraint firstItem="8HD-Yz-L4A" firstAttribute="top" secondItem="5zQ-j3-kZp" secondAttribute="top" id="zSD-Xs-L2q"/>
             </constraints>
             <point key="canvasLocation" x="330.53435114503816" y="-283.0985915492958"/>
         </view>

@@ -35,7 +35,7 @@ extension RegistrationHospitalView {
         backgroundView.makeCornerRadius(24, .bottomCurve)
         containerView.makeCornerRadius(8)
         buttonRegister.makeCornerRadius(8)
-        buttonRegister.addShadow(8)
+        buttonRegister.addShadow(8, color: UIColor.customPrimaryColor.cgColor)
     }
     
     private func setupAction() {

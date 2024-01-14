@@ -37,10 +37,62 @@
 		CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE82D44E2B47DDB200A54124 /* LoginView.xib */; };
 		CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44F2B47DDB200A54124 /* LoginEntity.swift */; };
 		CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44F2B47DDB200A54124 /* LoginEntity.swift */; };
-		CE9F90F32B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */; };
-		CE9F90F42B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */; };
-		CE9F90F52B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */; };
-		CE9F90F62B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */; };
+		CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D672B529EB300240A7D /* ChangePasswordPresenter.swift */; };
+		CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D672B529EB300240A7D /* ChangePasswordPresenter.swift */; };
+		CE9E7D6F2B529EB300240A7D /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D682B529EB300240A7D /* ChangePasswordRouter.swift */; };
+		CE9E7D702B529EB300240A7D /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D682B529EB300240A7D /* ChangePasswordRouter.swift */; };
+		CE9E7D712B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D692B529EB300240A7D /* ChangePasswordInteractor.swift */; };
+		CE9E7D722B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D692B529EB300240A7D /* ChangePasswordInteractor.swift */; };
+		CE9E7D732B529EB300240A7D /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D6A2B529EB300240A7D /* ChangePasswordView.swift */; };
+		CE9E7D742B529EB300240A7D /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D6A2B529EB300240A7D /* ChangePasswordView.swift */; };
+		CE9E7D752B529EB300240A7D /* ChangePasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D6B2B529EB300240A7D /* ChangePasswordView.xib */; };
+		CE9E7D762B529EB300240A7D /* ChangePasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D6B2B529EB300240A7D /* ChangePasswordView.xib */; };
+		CE9E7D772B529EB300240A7D /* ChangePasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D6C2B529EB300240A7D /* ChangePasswordEntity.swift */; };
+		CE9E7D782B529EB300240A7D /* ChangePasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D6C2B529EB300240A7D /* ChangePasswordEntity.swift */; };
+		CE9E7D7F2B529EE800240A7D /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D792B529EE800240A7D /* EditProfilePresenter.swift */; };
+		CE9E7D802B529EE800240A7D /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D792B529EE800240A7D /* EditProfilePresenter.swift */; };
+		CE9E7D812B529EE800240A7D /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7A2B529EE800240A7D /* EditProfileRouter.swift */; };
+		CE9E7D822B529EE800240A7D /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7A2B529EE800240A7D /* EditProfileRouter.swift */; };
+		CE9E7D832B529EE800240A7D /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7B2B529EE800240A7D /* EditProfileInteractor.swift */; };
+		CE9E7D842B529EE800240A7D /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7B2B529EE800240A7D /* EditProfileInteractor.swift */; };
+		CE9E7D852B529EE800240A7D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7C2B529EE800240A7D /* EditProfileView.swift */; };
+		CE9E7D862B529EE800240A7D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7C2B529EE800240A7D /* EditProfileView.swift */; };
+		CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D7D2B529EE800240A7D /* EditProfileView.xib */; };
+		CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D7D2B529EE800240A7D /* EditProfileView.xib */; };
+		CE9E7D892B529EE800240A7D /* EditProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7E2B529EE800240A7D /* EditProfileEntity.swift */; };
+		CE9E7D8A2B529EE800240A7D /* EditProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D7E2B529EE800240A7D /* EditProfileEntity.swift */; };
+		CE9E7D912B529F4500240A7D /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8B2B529F4500240A7D /* UserProfilePresenter.swift */; };
+		CE9E7D922B529F4500240A7D /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8B2B529F4500240A7D /* UserProfilePresenter.swift */; };
+		CE9E7D932B529F4500240A7D /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8C2B529F4500240A7D /* UserProfileRouter.swift */; };
+		CE9E7D942B529F4500240A7D /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8C2B529F4500240A7D /* UserProfileRouter.swift */; };
+		CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8D2B529F4500240A7D /* UserProfileInteractor.swift */; };
+		CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8D2B529F4500240A7D /* UserProfileInteractor.swift */; };
+		CE9E7D972B529F4500240A7D /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8E2B529F4500240A7D /* UserProfileView.swift */; };
+		CE9E7D982B529F4500240A7D /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D8E2B529F4500240A7D /* UserProfileView.swift */; };
+		CE9E7D992B529F4500240A7D /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D8F2B529F4500240A7D /* UserProfileView.xib */; };
+		CE9E7D9A2B529F4500240A7D /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D8F2B529F4500240A7D /* UserProfileView.xib */; };
+		CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D902B529F4500240A7D /* UserProfileEntity.swift */; };
+		CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D902B529F4500240A7D /* UserProfileEntity.swift */; };
+		CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D9E2B52B80500240A7D /* ProfileMenuTVC.swift */; };
+		CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7D9E2B52B80500240A7D /* ProfileMenuTVC.swift */; };
+		CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D9F2B52B80500240A7D /* ProfileMenuTVC.xib */; };
+		CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7D9F2B52B80500240A7D /* ProfileMenuTVC.xib */; };
+		CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DA52B530F6100240A7D /* BasePopUpView.xib */; };
+		CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DA52B530F6100240A7D /* BasePopUpView.xib */; };
+		CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DA82B530F6D00240A7D /* BasePopUpView.swift */; };
+		CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DA82B530F6D00240A7D /* BasePopUpView.swift */; };
+		CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DAE2B53148A00240A7D /* LogoutPopUpBottomSheet.xib */; };
+		CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DAE2B53148A00240A7D /* LogoutPopUpBottomSheet.xib */; };
+		CE9E7DB22B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DB12B53149100240A7D /* LogoutPopUpBottomSheet.swift */; };
+		CE9E7DB32B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DB12B53149100240A7D /* LogoutPopUpBottomSheet.swift */; };
+		CE9E7DBC2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DBB2B531E4600240A7D /* ChangePictureBottomSheet.xib */; };
+		CE9E7DBD2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9E7DBB2B531E4600240A7D /* ChangePictureBottomSheet.xib */; };
+		CE9E7DC22B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */; };
+		CE9E7DC32B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */; };
+		CE9F90F32B4F776B004C027A /* MenuItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */; };
+		CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */; };
+		CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */; };
+		CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */; };
 		CE9F90F92B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F82B4F851F004C027A /* MedicAssetBottomSheet.xib */; };
 		CE9F90FA2B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F82B4F851F004C027A /* MedicAssetBottomSheet.xib */; };
 		CE9F90FC2B4F8527004C027A /* MedicAssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90FB2B4F8527004C027A /* MedicAssetBottomSheet.swift */; };
@@ -228,8 +280,34 @@
 		CE82D44D2B47DDB200A54124 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE82D44E2B47DDB200A54124 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		CE82D44F2B47DDB200A54124 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
-		CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetItemTVC.swift; sourceTree = "<group>"; };
-		CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicAssetItemTVC.xib; sourceTree = "<group>"; };
+		CE9E7D672B529EB300240A7D /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		CE9E7D682B529EB300240A7D /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
+		CE9E7D692B529EB300240A7D /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
+		CE9E7D6A2B529EB300240A7D /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		CE9E7D6B2B529EB300240A7D /* ChangePasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordView.xib; sourceTree = "<group>"; };
+		CE9E7D6C2B529EB300240A7D /* ChangePasswordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordEntity.swift; sourceTree = "<group>"; };
+		CE9E7D792B529EE800240A7D /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		CE9E7D7A2B529EE800240A7D /* EditProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRouter.swift; sourceTree = "<group>"; };
+		CE9E7D7B2B529EE800240A7D /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
+		CE9E7D7C2B529EE800240A7D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		CE9E7D7D2B529EE800240A7D /* EditProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileView.xib; sourceTree = "<group>"; };
+		CE9E7D7E2B529EE800240A7D /* EditProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileEntity.swift; sourceTree = "<group>"; };
+		CE9E7D8B2B529F4500240A7D /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
+		CE9E7D8C2B529F4500240A7D /* UserProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
+		CE9E7D8D2B529F4500240A7D /* UserProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
+		CE9E7D8E2B529F4500240A7D /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		CE9E7D8F2B529F4500240A7D /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
+		CE9E7D902B529F4500240A7D /* UserProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEntity.swift; sourceTree = "<group>"; };
+		CE9E7D9E2B52B80500240A7D /* ProfileMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTVC.swift; sourceTree = "<group>"; };
+		CE9E7D9F2B52B80500240A7D /* ProfileMenuTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMenuTVC.xib; sourceTree = "<group>"; };
+		CE9E7DA52B530F6100240A7D /* BasePopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasePopUpView.xib; sourceTree = "<group>"; };
+		CE9E7DA82B530F6D00240A7D /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
+		CE9E7DAE2B53148A00240A7D /* LogoutPopUpBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutPopUpBottomSheet.xib; sourceTree = "<group>"; };
+		CE9E7DB12B53149100240A7D /* LogoutPopUpBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopUpBottomSheet.swift; sourceTree = "<group>"; };
+		CE9E7DBB2B531E4600240A7D /* ChangePictureBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePictureBottomSheet.xib; sourceTree = "<group>"; };
+		CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePictureBottomSheet.swift; sourceTree = "<group>"; };
+		CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTVC.swift; sourceTree = "<group>"; };
+		CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTVC.xib; sourceTree = "<group>"; };
 		CE9F90F82B4F851F004C027A /* MedicAssetBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicAssetBottomSheet.xib; sourceTree = "<group>"; };
 		CE9F90FB2B4F8527004C027A /* MedicAssetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetBottomSheet.swift; sourceTree = "<group>"; };
 		CE9F90FF2B4F942C004C027A /* BriefInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefInformationCardView.xib; sourceTree = "<group>"; };
@@ -404,13 +482,99 @@
 			path = RegistrationHospital;
 			sourceTree = "<group>";
 		};
-		CE9F90F02B4F758C004C027A /* MedicAssetItem */ = {
+		CE9E7D642B529D9400240A7D /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				CE9F90F12B4F776B004C027A /* MedicAssetItemTVC.swift */,
-				CE9F90F22B4F776B004C027A /* MedicAssetItemTVC.xib */,
+				CE9E7DAB2B53141E00240A7D /* BottomSheet */,
+				CE9E7D9D2B52B7DD00240A7D /* Cell */,
+				CE9E7D8B2B529F4500240A7D /* UserProfilePresenter.swift */,
+				CE9E7D8C2B529F4500240A7D /* UserProfileRouter.swift */,
+				CE9E7D8D2B529F4500240A7D /* UserProfileInteractor.swift */,
+				CE9E7D8E2B529F4500240A7D /* UserProfileView.swift */,
+				CE9E7D8F2B529F4500240A7D /* UserProfileView.xib */,
+				CE9E7D902B529F4500240A7D /* UserProfileEntity.swift */,
 			);
-			path = MedicAssetItem;
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		CE9E7D652B529D9E00240A7D /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E7D792B529EE800240A7D /* EditProfilePresenter.swift */,
+				CE9E7D7A2B529EE800240A7D /* EditProfileRouter.swift */,
+				CE9E7D7B2B529EE800240A7D /* EditProfileInteractor.swift */,
+				CE9E7D7C2B529EE800240A7D /* EditProfileView.swift */,
+				CE9E7D7D2B529EE800240A7D /* EditProfileView.xib */,
+				CE9E7D7E2B529EE800240A7D /* EditProfileEntity.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		CE9E7D662B529DFB00240A7D /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E7D672B529EB300240A7D /* ChangePasswordPresenter.swift */,
+				CE9E7D682B529EB300240A7D /* ChangePasswordRouter.swift */,
+				CE9E7D692B529EB300240A7D /* ChangePasswordInteractor.swift */,
+				CE9E7D6A2B529EB300240A7D /* ChangePasswordView.swift */,
+				CE9E7D6B2B529EB300240A7D /* ChangePasswordView.xib */,
+				CE9E7D6C2B529EB300240A7D /* ChangePasswordEntity.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		CE9E7D9D2B52B7DD00240A7D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E7D9E2B52B80500240A7D /* ProfileMenuTVC.swift */,
+				CE9E7D9F2B52B80500240A7D /* ProfileMenuTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE9E7DA42B530F4500240A7D /* BasePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E7DA52B530F6100240A7D /* BasePopUpView.xib */,
+				CE9E7DA82B530F6D00240A7D /* BasePopUpView.swift */,
+			);
+			path = BasePopUp;
+			sourceTree = "<group>";
+		};
+		CE9E7DAB2B53141E00240A7D /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E7DAD2B53146200240A7D /* ChangePictureBottomSheet */,
+				CE9E7DAC2B53145200240A7D /* LogoutPopUpBottomSheet */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		CE9E7DAC2B53145200240A7D /* LogoutPopUpBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E7DAE2B53148A00240A7D /* LogoutPopUpBottomSheet.xib */,
+				CE9E7DB12B53149100240A7D /* LogoutPopUpBottomSheet.swift */,
+			);
+			path = LogoutPopUpBottomSheet;
+			sourceTree = "<group>";
+		};
+		CE9E7DAD2B53146200240A7D /* ChangePictureBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E7DBB2B531E4600240A7D /* ChangePictureBottomSheet.xib */,
+				CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */,
+			);
+			path = ChangePictureBottomSheet;
+			sourceTree = "<group>";
+		};
+		CE9F90F02B4F758C004C027A /* MenuItem */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */,
+				CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */,
+			);
+			path = MenuItem;
 			sourceTree = "<group>";
 		};
 		CE9F90F72B4F84FF004C027A /* MedicAssetBottomSheet */ = {
@@ -540,10 +704,13 @@
 		CECB3DBA2B45DA39004A260D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE9E7D662B529DFB00240A7D /* ChangePassword */,
+				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CEC207922B4AD64E0073FA1E /* HomeScreen */,
 				CE82D4482B47DD8600A54124 /* Login */,
 				CE82D4492B47DD8E00A54124 /* RegistrationHospital */,
 				CEF72EEE2B4681D200815E4C /* SplashScreen */,
+				CE9E7D642B529D9400240A7D /* UserProfile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -647,7 +814,8 @@
 				CE54428A2B4724F90022047D /* Button */,
 				CEC207AF2B4AFF660073FA1E /* CategoryCard */,
 				CEC207A52B4ADDA40073FA1E /* CustomNavigation */,
-				CE9F90F02B4F758C004C027A /* MedicAssetItem */,
+				CE9E7DA42B530F4500240A7D /* BasePopUp */,
+				CE9F90F02B4F758C004C027A /* MenuItem */,
 				CE54428B2B4725000022047D /* TextField */,
 			);
 			path = Component;
@@ -803,12 +971,15 @@
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CECB3DB12B45D963004A260D /* LaunchScreen.storyboard in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
+				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0B2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
 				CECB3DDD2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CECB3DEB2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CE5442872B47163B0022047D /* SplashScreenView.xib in Resources */,
 				CECB3E0D2B45E137004A260D /* Lato-Bold.ttf in Resources */,
+				CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
+				CE9E7D752B529EB300240A7D /* ChangePasswordView.xib in Resources */,
 				CECB3E032B45E137004A260D /* Lato-Italic.ttf in Resources */,
 				CECB3DEF2B45E119004A260D /* Roboto-Thin.ttf in Resources */,
 				CECB3E052B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
@@ -818,20 +989,24 @@
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CE9F91002B4F942C004C027A /* BriefInformationCardView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE9F90F92B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */,
 				CE5442932B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB777F2B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
-				CE9F90F52B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */,
+				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91072B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
+				CE9E7D992B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DD92B45E119004A260D /* Roboto-Regular.ttf in Resources */,
 				CECB77742B4C75DA0069AC05 /* BottomSheetView.xib in Resources */,
 				CEC207A72B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
+				CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CECB3DE72B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CE82D4582B47DDB200A54124 /* LoginView.xib in Resources */,
 				CECB3DAC2B45D962004A260D /* Main.storyboard in Resources */,
+				CE9E7DBC2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */,
 				CECB3DFD2B45E137004A260D /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,12 +1026,15 @@
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CECB3DC62B45DAFF004A260D /* LaunchScreen.storyboard in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
+				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0C2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
 				CECB3DDE2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CECB3DEC2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CE5442882B47163B0022047D /* SplashScreenView.xib in Resources */,
 				CECB3E0E2B45E137004A260D /* Lato-Bold.ttf in Resources */,
+				CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
+				CE9E7D762B529EB300240A7D /* ChangePasswordView.xib in Resources */,
 				CECB3E042B45E137004A260D /* Lato-Italic.ttf in Resources */,
 				CECB3DF02B45E119004A260D /* Roboto-Thin.ttf in Resources */,
 				CECB3E062B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
@@ -866,20 +1044,24 @@
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CE9F91012B4F942C004C027A /* BriefInformationCardView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE9F90FA2B4F851F004C027A /* MedicAssetBottomSheet.xib in Resources */,
 				CE5442942B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB77802B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
-				CE9F90F62B4F776B004C027A /* MedicAssetItemTVC.xib in Resources */,
+				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
+				CE9E7D9A2B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DDA2B45E119004A260D /* Roboto-Regular.ttf in Resources */,
 				CECB77752B4C75DA0069AC05 /* BottomSheetView.xib in Resources */,
 				CEC207A82B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
+				CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CECB3DE82B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */,
 				CECB3DC82B45DAFF004A260D /* Main.storyboard in Resources */,
+				CE9E7DBD2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */,
 				CECB3DFE2B45E137004A260D /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -973,17 +1155,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECB3E252B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
+				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CE5442842B4715810022047D /* SplashScreenView.swift in Sources */,
 				CE5442902B4726360022047D /* GeneralButton.swift in Sources */,
 				CEC207B22B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
 				CEC207AD2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
+				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CECB3E102B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CECB3DA92B45D962004A260D /* ViewController.swift in Sources */,
+				CE9E7D832B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
+				CE9E7D812B529EE800240A7D /* EditProfileRouter.swift in Sources */,
 				CECB3E222B45E378004A260D /* UIViewController+Ext.swift in Sources */,
+				CE9E7D912B529F4500240A7D /* UserProfilePresenter.swift in Sources */,
 				CECB77852B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
 				CE82D4522B47DDB200A54124 /* LoginRouter.swift in Sources */,
+				CE9E7D732B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91032B4F9434004C027A /* BriefInformationCardView.swift in Sources */,
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
@@ -992,6 +1180,7 @@
 				CEC2079F2B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CECB3E2E2B45E400004A260D /* Double+Ext.swift in Sources */,
 				CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
+				CE9E7D972B529F4500240A7D /* UserProfileView.swift in Sources */,
 				CECB3E4A2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE9F90FC2B4F8527004C027A /* MedicAssetBottomSheet.swift in Sources */,
 				CECB3E3E2B45E5AB004A260D /* BaseViewController.swift in Sources */,
@@ -999,32 +1188,44 @@
 				CECB3E162B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CEC2079B2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CE9E7DC22B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
 				CECB3E382B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A32B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CECB3E412B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
+				CE9E7D852B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CE9E7D6F2B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
 				CECB3E2B2B45E3E6004A260D /* UITapGestureRecognizer+Ext.swift in Sources */,
 				CEC207AA2B4AE98B0073FA1E /* CustomNavigationView.swift in Sources */,
 				CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */,
+				CE9E7D7F2B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CEC2079D2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
+				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
+				CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E502B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CECB3E282B45E3C8004A260D /* UITextField+Ext.swift in Sources */,
-				CE9F90F32B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */,
+				CE9F90F32B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CECB3E3B2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CEFB4F152B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
 				CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CECB3E4D2B45E69A004A260D /* BaseEntity.swift in Sources */,
+				CE9E7DB22B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
+				CE9E7D892B529EE800240A7D /* EditProfileEntity.swift in Sources */,
 				CECB77822B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
 				CECB3E192B45E2EF004A260D /* GesturePublisher.swift in Sources */,
+				CE9E7D772B529EB300240A7D /* ChangePasswordEntity.swift in Sources */,
+				CE9E7D932B529F4500240A7D /* UserProfileRouter.swift in Sources */,
 				CECB3E132B45E292004A260D /* CGFloat+Ext.swift in Sources */,
 				CECB3E1C2B45E312004A260D /* UILabel+Ext.swift in Sources */,
 				CE82D4542B47DDB200A54124 /* LoginInteractor.swift in Sources */,
+				CE9E7D712B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
+				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E532B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */,
@@ -1037,17 +1238,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECB3E262B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
+				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CE5442852B4715810022047D /* SplashScreenView.swift in Sources */,
 				CE5442912B4726360022047D /* GeneralButton.swift in Sources */,
 				CEC207B32B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
 				CEC207AE2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
+				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CECB3E112B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CECB3DC12B45DAFF004A260D /* ViewController.swift in Sources */,
+				CE9E7D842B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
+				CE9E7D822B529EE800240A7D /* EditProfileRouter.swift in Sources */,
 				CECB3E232B45E378004A260D /* UIViewController+Ext.swift in Sources */,
+				CE9E7D922B529F4500240A7D /* UserProfilePresenter.swift in Sources */,
 				CECB77862B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
 				CE82D4532B47DDB200A54124 /* LoginRouter.swift in Sources */,
+				CE9E7D742B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91042B4F9434004C027A /* BriefInformationCardView.swift in Sources */,
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
@@ -1056,6 +1263,7 @@
 				CEC207A02B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CECB3E2F2B45E400004A260D /* Double+Ext.swift in Sources */,
 				CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
+				CE9E7D982B529F4500240A7D /* UserProfileView.swift in Sources */,
 				CECB3E4B2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE9F90FD2B4F8527004C027A /* MedicAssetBottomSheet.swift in Sources */,
 				CECB3E3F2B45E5AB004A260D /* BaseViewController.swift in Sources */,
@@ -1063,32 +1271,44 @@
 				CECB3E172B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CEC2079C2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CE9E7DC32B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
 				CECB3E392B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A42B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CECB3E422B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
+				CE9E7D862B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CE9E7D702B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
 				CECB3E2C2B45E3E6004A260D /* UITapGestureRecognizer+Ext.swift in Sources */,
 				CEC207AB2B4AE98B0073FA1E /* CustomNavigationView.swift in Sources */,
 				CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */,
+				CE9E7D802B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CEC2079E2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
+				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
+				CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E512B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CECB3E292B45E3C8004A260D /* UITextField+Ext.swift in Sources */,
-				CE9F90F42B4F776B004C027A /* MedicAssetItemTVC.swift in Sources */,
+				CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CECB3E3C2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CEFB4F162B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
 				CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CECB3E4E2B45E69A004A260D /* BaseEntity.swift in Sources */,
+				CE9E7DB32B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
+				CE9E7D8A2B529EE800240A7D /* EditProfileEntity.swift in Sources */,
 				CECB77832B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
 				CECB3E1A2B45E2EF004A260D /* GesturePublisher.swift in Sources */,
+				CE9E7D782B529EB300240A7D /* ChangePasswordEntity.swift in Sources */,
+				CE9E7D942B529F4500240A7D /* UserProfileRouter.swift in Sources */,
 				CECB3E142B45E292004A260D /* CGFloat+Ext.swift in Sources */,
 				CECB3E1D2B45E312004A260D /* UILabel+Ext.swift in Sources */,
 				CE82D4552B47DDB200A54124 /* LoginInteractor.swift in Sources */,
+				CE9E7D722B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CECB3DC32B45DAFF004A260D /* SceneDelegate.swift in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
+				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E542B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE9F910B2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */,

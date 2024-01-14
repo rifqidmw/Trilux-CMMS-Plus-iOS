@@ -10,7 +10,7 @@ import UIKit
 class InformationDetailBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var bottomSheetView: BottomSheetView!
-    
+    @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerTitleLabel: UILabel!
@@ -65,6 +65,13 @@ extension InformationDetailBottomSheet {
     
     private func setupAction() {
         bottomSheetView.handleBarArea.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.dismiss(animated: true)
+            }
+            .store(in: &anyCancellable)
+        
+        dismissAreaView.gesture()
             .sink { [weak self] _ in
                 guard let self else { return }
                 self.dismiss(animated: true)

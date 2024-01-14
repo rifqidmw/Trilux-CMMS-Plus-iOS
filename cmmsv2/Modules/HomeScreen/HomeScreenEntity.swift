@@ -32,7 +32,7 @@ struct CategoryModel: Identifiable {
     var isUpdated: Bool = false
 }
 
-struct MedicAssetModel: Identifiable {
+struct MenuModel: Identifiable {
     let id = UUID()
     let image: String
     let title: String
@@ -63,15 +63,15 @@ let allCategoryData: [CategoryModel] = [
     
 ]
 
-let medicAssetData: [MedicAssetModel] = [
-    MedicAssetModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Tambah data aset medik"),
-    MedicAssetModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Tambah data aset non medik")
+let medicAssetData: [MenuModel] = [
+    MenuModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Tambah data aset medik"),
+    MenuModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Tambah data aset non medik")
 ]
 
-let worksheetData: [MedicAssetModel] = [
-    MedicAssetModel(image: "ic_bill_fill", title: "Lembar Kerja", subTitle: "Lihat daftar lembar kerja"),
-    MedicAssetModel(image: "ic_notes_with_pencil_fill", title: "Lembar Kerja Onsite Preventive", subTitle: "Lihat daftar lembar kerja onsite preventive"),
-    MedicAssetModel(image: "ic_notes_with_gear", title: "Lembar Kerja Korektif", subTitle: "Lihat daftar lembar kerja korektif")
+let worksheetData: [MenuModel] = [
+    MenuModel(image: "ic_bill_fill", title: "Lembar Kerja", subTitle: "Lihat daftar lembar kerja"),
+    MenuModel(image: "ic_notes_with_pencil_fill", title: "Lembar Kerja Onsite Preventive", subTitle: "Lihat daftar lembar kerja onsite preventive"),
+    MenuModel(image: "ic_notes_with_gear", title: "Lembar Kerja Korektif", subTitle: "Lihat daftar lembar kerja korektif")
 ]
 
 let detailInformationData: [CategoryModel] = [

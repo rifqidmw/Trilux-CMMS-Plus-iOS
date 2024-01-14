@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="bottomSheetHeightConstraint" destination="A9z-j6-K1q" id="Vv5-Q3-pSk"/>
                 <outlet property="bottomSheetView" destination="JgM-ID-2vz" id="MEr-oI-ENZ"/>
+                <outlet property="dismissAreaView" destination="F7E-G2-LlF" id="1aJ-md-g8R"/>
                 <outlet property="tableView" destination="o4s-Yu-x4b" id="GfP-8V-CoW"/>
                 <outlet property="titleLabel" destination="c14-Ws-OWx" id="jZm-3N-Gg6"/>
                 <outlet property="view" destination="dCb-4d-fMU" id="vZu-Um-58u"/>
@@ -28,6 +29,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7E-G2-LlF" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgM-ID-2vz" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="627" width="393" height="225"/>
                     <subviews>
@@ -63,7 +68,11 @@
             <constraints>
                 <constraint firstItem="uLj-ZW-HRS" firstAttribute="trailing" secondItem="JgM-ID-2vz" secondAttribute="trailing" id="0Ve-Y9-NuO"/>
                 <constraint firstAttribute="bottom" secondItem="JgM-ID-2vz" secondAttribute="bottom" id="4Bg-FG-g7m"/>
+                <constraint firstItem="JgM-ID-2vz" firstAttribute="top" secondItem="F7E-G2-LlF" secondAttribute="bottom" id="7lv-Np-4rI"/>
+                <constraint firstItem="uLj-ZW-HRS" firstAttribute="trailing" secondItem="F7E-G2-LlF" secondAttribute="trailing" id="FPe-wE-nUP"/>
                 <constraint firstItem="JgM-ID-2vz" firstAttribute="leading" secondItem="uLj-ZW-HRS" secondAttribute="leading" id="XvB-Zn-FMl"/>
+                <constraint firstItem="F7E-G2-LlF" firstAttribute="leading" secondItem="uLj-ZW-HRS" secondAttribute="leading" id="ZgC-K7-ijM"/>
+                <constraint firstItem="F7E-G2-LlF" firstAttribute="top" secondItem="uLj-ZW-HRS" secondAttribute="top" id="hbR-Bn-J9a"/>
             </constraints>
             <point key="canvasLocation" x="224" y="-4"/>
         </view>

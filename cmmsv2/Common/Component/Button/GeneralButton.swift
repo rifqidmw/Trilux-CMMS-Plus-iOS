@@ -36,7 +36,7 @@ class GeneralButton: UIView {
 
 extension GeneralButton {
     
-    func configure(title: String? = nil, type: GeneralButtonType = .normal, icon: String? = nil) {
+    func configure(title: String? = nil, type: GeneralButtonType = .normal, icon: String? = nil, backgroundColor: UIColor? = UIColor.customPrimaryColor, titleColor: UIColor? = UIColor.white) {
         titleLabel.text = title ?? ""
         iconImageView.image = UIImage(named: icon ?? "")
         
@@ -48,17 +48,23 @@ extension GeneralButton {
         switch type {
         case .normal:
             titleLabel.isHidden = false
+            titleLabel.textColor = titleColor
+            containerView.backgroundColor = backgroundColor
         case .searchbutton:
             titleLabel.isHidden = true
             searchLabel.isHidden = false
             iconMagnifyingGlass.isHidden = false
-            
             containerView.backgroundColor = UIColor.white
             containerView.makeCornerRadius(8)
             containerView.addShadow(4, color: UIColor.customDarkGrayColor.cgColor, opacity: 0.2)
         case .withIcon:
             titleLabel.isHidden = false
             iconImageView.isHidden = false
+        case .bordered:
+            containerView.addBorder(width: 1, colorBorder: UIColor.customPlaceholderColor.cgColor)
+            containerView.backgroundColor = .clear
+            titleLabel.isHidden = false
+            titleLabel.textColor = UIColor.customPlaceholderColor
             
         }
     }
@@ -69,4 +75,5 @@ enum GeneralButtonType {
     case normal
     case withIcon
     case searchbutton
+    case bordered
 }

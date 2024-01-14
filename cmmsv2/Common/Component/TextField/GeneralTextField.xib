@@ -6,18 +6,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
         </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
             <connections>
-                <outlet property="showHideButton" destination="e5c-yX-ELs" id="Fwq-3y-7lv"/>
-                <outlet property="textField" destination="7NP-SB-ScZ" id="RPw-mN-0Wt"/>
+                <outlet property="containerDefaultLabelView" destination="AHi-9N-ccN" id="ge1-En-vn4"/>
+                <outlet property="containerTextFieldView" destination="Vzv-ui-C3A" id="Auu-4g-yrb"/>
+                <outlet property="defaultLabel" destination="L2g-eJ-R1L" id="yO8-gs-I8s"/>
+                <outlet property="showHideButton" destination="Dku-Ag-btF" id="4Xe-Iq-B5U"/>
+                <outlet property="textField" destination="UnE-6n-tdk" id="lvD-Lp-nlC"/>
                 <outlet property="titleLabel" destination="TZA-Yy-M4g" id="I50-0b-drg"/>
             </connections>
         </placeholder>
@@ -35,35 +42,69 @@
                     <color key="textColor" name="darkGray"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7NP-SB-ScZ">
-                    <rect key="frame" x="0.0" y="24" width="382" height="56"/>
-                    <color key="backgroundColor" name="customLightGray"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="56" id="MjF-PL-4gS"/>
-                    </constraints>
-                    <color key="textColor" name="customDarkGray"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                </textField>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e5c-yX-ELs">
-                    <rect key="frame" x="342" y="40" width="24" height="22"/>
-                    <color key="tintColor" name="darkGray"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="24" id="S7d-ZW-zDP"/>
-                    </constraints>
-                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQt-Qn-7au">
+                    <rect key="frame" x="0.0" y="22" width="382" height="58"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHi-9N-ccN">
+                            <rect key="frame" x="0.0" y="0.0" width="56" height="58"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+62" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-eJ-R1L">
+                                    <rect key="frame" x="0.0" y="0.0" width="56" height="58"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            <constraints>
+                                <constraint firstItem="L2g-eJ-R1L" firstAttribute="top" secondItem="AHi-9N-ccN" secondAttribute="top" id="DxC-t4-NCC"/>
+                                <constraint firstAttribute="width" constant="56" id="NGT-cJ-Xcj"/>
+                                <constraint firstAttribute="bottom" secondItem="L2g-eJ-R1L" secondAttribute="bottom" id="RTJ-Kw-bmS"/>
+                                <constraint firstItem="L2g-eJ-R1L" firstAttribute="leading" secondItem="AHi-9N-ccN" secondAttribute="leading" id="oSY-ke-24X"/>
+                                <constraint firstAttribute="trailing" secondItem="L2g-eJ-R1L" secondAttribute="trailing" id="v2b-CA-eBg"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vzv-ui-C3A">
+                            <rect key="frame" x="56" y="0.0" width="326" height="58"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnE-6n-tdk">
+                                    <rect key="frame" x="0.0" y="0.0" width="326" height="58"/>
+                                    <color key="backgroundColor" name="customLightGray"/>
+                                    <color key="textColor" name="customDarkGray"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                </textField>
+                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dku-Ag-btF">
+                                    <rect key="frame" x="286" y="18" width="24" height="22"/>
+                                    <color key="tintColor" name="darkGray"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="epO-Ee-EKA"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="UnE-6n-tdk" secondAttribute="trailing" id="0gZ-0L-n9v"/>
+                                <constraint firstItem="UnE-6n-tdk" firstAttribute="leading" secondItem="Vzv-ui-C3A" secondAttribute="leading" id="1Oc-V0-KaG"/>
+                                <constraint firstAttribute="bottom" secondItem="Dku-Ag-btF" secondAttribute="bottom" constant="16" id="JGL-Oi-5AV"/>
+                                <constraint firstAttribute="trailing" secondItem="Dku-Ag-btF" secondAttribute="trailing" constant="16" id="JLY-6a-218"/>
+                                <constraint firstItem="Dku-Ag-btF" firstAttribute="top" secondItem="Vzv-ui-C3A" secondAttribute="top" constant="16" id="Uq5-SC-utY"/>
+                                <constraint firstItem="UnE-6n-tdk" firstAttribute="top" secondItem="Vzv-ui-C3A" secondAttribute="top" id="Zwv-xI-uuR"/>
+                                <constraint firstAttribute="bottom" secondItem="UnE-6n-tdk" secondAttribute="bottom" id="ghF-CP-wvL"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="9P3-9g-Vk6"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="9P3-9g-Vk6" firstAttribute="trailing" secondItem="7NP-SB-ScZ" secondAttribute="trailing" id="8Wk-xR-OLh"/>
-                <constraint firstItem="7NP-SB-ScZ" firstAttribute="leading" secondItem="9P3-9g-Vk6" secondAttribute="leading" id="Fvt-O8-1WZ"/>
-                <constraint firstAttribute="bottom" secondItem="e5c-yX-ELs" secondAttribute="bottom" constant="16" id="HmT-NH-CBi"/>
-                <constraint firstItem="e5c-yX-ELs" firstAttribute="top" secondItem="TZA-Yy-M4g" secondAttribute="bottom" constant="24" id="Oxf-aG-aTC"/>
-                <constraint firstItem="9P3-9g-Vk6" firstAttribute="trailing" secondItem="e5c-yX-ELs" secondAttribute="trailing" constant="16" id="Y23-qR-4SN"/>
+                <constraint firstItem="VQt-Qn-7au" firstAttribute="leading" secondItem="9P3-9g-Vk6" secondAttribute="leading" id="5WD-8R-n2a"/>
+                <constraint firstItem="9P3-9g-Vk6" firstAttribute="trailing" secondItem="VQt-Qn-7au" secondAttribute="trailing" id="AGZ-NC-Zeq"/>
+                <constraint firstItem="VQt-Qn-7au" firstAttribute="top" secondItem="TZA-Yy-M4g" secondAttribute="bottom" constant="8" id="HXW-jx-O8j"/>
+                <constraint firstAttribute="bottom" secondItem="VQt-Qn-7au" secondAttribute="bottom" id="UrH-QG-U1Y"/>
                 <constraint firstItem="TZA-Yy-M4g" firstAttribute="top" secondItem="oPF-ff-8A7" secondAttribute="top" id="hr8-0i-dgU"/>
                 <constraint firstAttribute="trailing" secondItem="TZA-Yy-M4g" secondAttribute="trailing" id="lYM-lq-1ds"/>
-                <constraint firstAttribute="bottom" secondItem="7NP-SB-ScZ" secondAttribute="bottom" id="oMz-ke-VdJ"/>
                 <constraint firstItem="TZA-Yy-M4g" firstAttribute="leading" secondItem="oPF-ff-8A7" secondAttribute="leading" id="rNN-Gs-2vo"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -75,11 +116,20 @@
         <namedColor name="customDarkGray">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="customLightGray">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="darkGray">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

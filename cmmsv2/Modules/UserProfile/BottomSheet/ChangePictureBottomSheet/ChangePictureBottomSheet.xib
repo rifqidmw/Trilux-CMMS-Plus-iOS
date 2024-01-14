@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangePictureBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="973-8T-veq" id="9Oo-46-p62"/>
+                <outlet property="dismissAreaView" destination="YYN-XF-jxt" id="b2q-KV-73r"/>
+                <outlet property="tableView" destination="1K0-1r-Mm8" id="Wsp-lF-Vf2"/>
+                <outlet property="view" destination="axA-GA-GT7" id="3JZ-mS-CQj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="axA-GA-GT7">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="973-8T-veq" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="627" width="393" height="225"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ganti Gambar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIs-Mj-JJ6">
+                            <rect key="frame" x="24" y="24" width="100" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="4mn-nn-bJB"/>
+                                <constraint firstAttribute="height" constant="20" id="K6D-xD-XAC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1K0-1r-Mm8">
+                            <rect key="frame" x="24" y="68" width="345" height="133"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="225" id="4yd-BI-VSL"/>
+                        <constraint firstAttribute="bottom" secondItem="1K0-1r-Mm8" secondAttribute="bottom" constant="24" id="DRN-SJ-WVc"/>
+                        <constraint firstItem="CIs-Mj-JJ6" firstAttribute="top" secondItem="973-8T-veq" secondAttribute="top" constant="24" id="GZJ-Sd-VIi"/>
+                        <constraint firstItem="1K0-1r-Mm8" firstAttribute="leading" secondItem="973-8T-veq" secondAttribute="leading" constant="24" id="LV3-DJ-15j"/>
+                        <constraint firstAttribute="trailing" secondItem="1K0-1r-Mm8" secondAttribute="trailing" constant="24" id="iO0-Um-UpA"/>
+                        <constraint firstItem="1K0-1r-Mm8" firstAttribute="top" secondItem="CIs-Mj-JJ6" secondAttribute="bottom" constant="24" id="kVK-T6-pZb"/>
+                        <constraint firstItem="CIs-Mj-JJ6" firstAttribute="leading" secondItem="973-8T-veq" secondAttribute="leading" constant="24" id="ujJ-Aq-bjY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYN-XF-jxt" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="oTc-NY-dIQ"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YYN-XF-jxt" firstAttribute="leading" secondItem="oTc-NY-dIQ" secondAttribute="leading" id="5FG-0r-eGW"/>
+                <constraint firstAttribute="bottom" secondItem="973-8T-veq" secondAttribute="bottom" id="FhH-Dd-vcX"/>
+                <constraint firstItem="oTc-NY-dIQ" firstAttribute="trailing" secondItem="YYN-XF-jxt" secondAttribute="trailing" id="KLl-tT-bIG"/>
+                <constraint firstItem="oTc-NY-dIQ" firstAttribute="trailing" secondItem="973-8T-veq" secondAttribute="trailing" id="PZ1-w9-NQ7"/>
+                <constraint firstItem="YYN-XF-jxt" firstAttribute="top" secondItem="oTc-NY-dIQ" secondAttribute="top" id="YSo-su-oBo"/>
+                <constraint firstItem="973-8T-veq" firstAttribute="leading" secondItem="axA-GA-GT7" secondAttribute="leading" id="aID-DN-h6v"/>
+                <constraint firstItem="973-8T-veq" firstAttribute="top" secondItem="YYN-XF-jxt" secondAttribute="bottom" id="k43-qy-NN9"/>
+            </constraints>
+            <point key="canvasLocation" x="63" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

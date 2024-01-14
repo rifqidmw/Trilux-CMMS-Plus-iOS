@@ -10,6 +10,7 @@ import UIKit
 class AllCategoriesBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var bottomSheetView: BottomSheetView!
+    @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     var data: [CategoryModel] = allCategoryData
     
@@ -45,6 +46,13 @@ extension AllCategoriesBottomSheet {
     
     private func setupAction() {
         bottomSheetView.handleBarArea.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.dismiss(animated: true)
+            }
+            .store(in: &anyCancellable)
+        
+        dismissAreaView.gesture()
             .sink { [weak self] _ in
                 guard let self else { return }
                 self.dismiss(animated: true)
