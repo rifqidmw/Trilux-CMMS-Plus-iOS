@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSheetBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="DtP-GZ-fTl" id="0iM-88-GrX"/>
+                <outlet property="dismissAreaView" destination="JL0-Jv-s1D" id="B7Z-4A-G1S"/>
+                <outlet property="tableView" destination="gWw-Ym-NIQ" id="KCy-LK-Xgr"/>
+                <outlet property="view" destination="b0p-7v-YTv" id="JOf-L0-dAj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="b0p-7v-YTv">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JL0-Jv-s1D" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="572"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtP-GZ-fTl" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="572" width="393" height="280"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lembar Kerja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgo-it-M7A">
+                            <rect key="frame" x="24" y="24" width="100" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="2aP-YX-Kn7"/>
+                                <constraint firstAttribute="width" constant="100" id="CrE-Ea-FT2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gWw-Ym-NIQ">
+                            <rect key="frame" x="24" y="68" width="345" height="188"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="280" id="0XW-SK-WRy"/>
+                        <constraint firstAttribute="trailing" secondItem="gWw-Ym-NIQ" secondAttribute="trailing" constant="24" id="N3i-K3-LcZ"/>
+                        <constraint firstItem="qgo-it-M7A" firstAttribute="leading" secondItem="DtP-GZ-fTl" secondAttribute="leading" constant="24" id="XMF-L4-lmO"/>
+                        <constraint firstItem="gWw-Ym-NIQ" firstAttribute="top" secondItem="qgo-it-M7A" secondAttribute="bottom" constant="24" id="ceq-Ra-YhM"/>
+                        <constraint firstItem="qgo-it-M7A" firstAttribute="top" secondItem="DtP-GZ-fTl" secondAttribute="top" constant="24" id="dcl-RE-Bub"/>
+                        <constraint firstAttribute="bottom" secondItem="gWw-Ym-NIQ" secondAttribute="bottom" constant="24" id="fQg-mb-EgK"/>
+                        <constraint firstItem="gWw-Ym-NIQ" firstAttribute="leading" secondItem="DtP-GZ-fTl" secondAttribute="leading" constant="24" id="q6k-yk-xie"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="S5t-OA-vcX"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="DtP-GZ-fTl" firstAttribute="top" secondItem="JL0-Jv-s1D" secondAttribute="bottom" id="0hm-mx-gt3"/>
+                <constraint firstItem="DtP-GZ-fTl" firstAttribute="top" secondItem="JL0-Jv-s1D" secondAttribute="bottom" id="Ik6-bi-Hnu"/>
+                <constraint firstItem="JL0-Jv-s1D" firstAttribute="leading" secondItem="S5t-OA-vcX" secondAttribute="leading" id="Ohc-Xd-PfF"/>
+                <constraint firstAttribute="bottom" secondItem="DtP-GZ-fTl" secondAttribute="bottom" id="Qm5-Vi-6NQ"/>
+                <constraint firstItem="DtP-GZ-fTl" firstAttribute="leading" secondItem="S5t-OA-vcX" secondAttribute="leading" id="WMy-Gu-3xd"/>
+                <constraint firstItem="JL0-Jv-s1D" firstAttribute="top" secondItem="b0p-7v-YTv" secondAttribute="top" id="Y2j-ov-D3F"/>
+                <constraint firstItem="JL0-Jv-s1D" firstAttribute="trailing" secondItem="S5t-OA-vcX" secondAttribute="trailing" id="ZEA-PY-C0o"/>
+                <constraint firstItem="DtP-GZ-fTl" firstAttribute="trailing" secondItem="S5t-OA-vcX" secondAttribute="trailing" id="eoA-mR-vvN"/>
+                <constraint firstItem="DtP-GZ-fTl" firstAttribute="top" secondItem="JL0-Jv-s1D" secondAttribute="bottom" id="r3e-2J-TYj"/>
+            </constraints>
+            <point key="canvasLocation" x="197.70992366412213" y="-294.36619718309862"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

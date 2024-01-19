@@ -1,0 +1,113 @@
+//
+//  WorkSheetListEntity.swift
+//  cmmsv2
+//
+//  Created by PRO M1 2020 8/256 on 14/01/24.
+//
+
+import Foundation
+
+enum WorkSheetCategory: String, Codable {
+    case calibration = "Kalibrasi"
+    case preventive = "Preventif"
+    case corrective = "Korektif"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Kalibrasi": self = .calibration
+        case "Preventif": self = .preventive
+        case "Korektif": self = .corrective
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+enum WorkSheetStatus: String, Codable {
+    case done = "Selesai, Bisa digunakan kembali"
+    case open = "Open"
+    case ongoing = "Dalam proses pengerjaan"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Selesai, Bisa digunakan kembali": self = .done
+        case "Open": self = .open
+        case "Dalam proses pengerjaan": self = .ongoing
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+struct WorkSheetListEntity {
+    let id = UUID()
+    let uniqueNumber: String
+    let workName: String
+    let workDesc: String
+    var isApproved: Bool
+    let category: WorkSheetCategory
+    let status: WorkSheetStatus
+}
+
+// MARK: - DUMMY DATA
+let workSheetData: [WorkSheetListEntity] = [
+    WorkSheetListEntity(
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "Syringe Pump",
+        workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
+        isApproved: false,
+        category: .calibration,
+        status: .done),
+    WorkSheetListEntity(
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "Bed-side Monitor / Bed-patient Monitor / Patient Monit...",
+        workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
+        isApproved: true,
+        category: .preventive,
+        status: .open),
+    WorkSheetListEntity(
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "X-Ray Film Viewer",
+        workDesc: "Pelayanan Rawat Inap - Ruangan Persia",
+        isApproved: true,
+        category: .corrective,
+        status: .done),
+    WorkSheetListEntity(
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "LK.2021.11.PI010",
+        workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
+        isApproved: false,
+        category: .preventive,
+        status: .open),
+    WorkSheetListEntity(
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "Ventilitator",
+        workDesc: "No#666787 - Pelayanan Bedah Sentral (OK) - Ruangan Persia",
+        isApproved: false,
+        category: .corrective,
+        status: .ongoing),
+    WorkSheetListEntity(
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "Bronchoscope and Accessories",
+        workDesc: "Pelayanan Rawat Inap - Ruangan Persia",
+        isApproved: false,
+        category: .corrective,
+        status: .open),
+    WorkSheetListEntity(
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "Tensimeter",
+        workDesc: "No#666787 - Pelayanan Bedah Sentral (OK) - Ruangan Persia",
+        isApproved: true,
+        category: .calibration,
+        status: .ongoing)
+]
