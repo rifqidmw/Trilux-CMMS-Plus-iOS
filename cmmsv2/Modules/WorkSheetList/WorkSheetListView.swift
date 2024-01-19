@@ -67,7 +67,7 @@ extension WorkSheetListView: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        cell.setupCell(data: data[indexPath.row], type: .normal)
         
         return cell
     }

@@ -486,15 +486,6 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		CE7249FC2B5715FC008147D4 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CE7249FD2B571702008147D4 /* WorkSheetItemTVC.swift */,
-				CE7249FE2B571702008147D4 /* WorkSheetItemTVC.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		CE82D4482B47DD8600A54124 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,6 +839,7 @@
 				CE9E7DA42B530F4500240A7D /* BasePopUp */,
 				CE9F90F02B4F758C004C027A /* MenuItem */,
 				CE54428B2B4725000022047D /* TextField */,
+				CEFA5BD92B5ADF54009266C9 /* WorkSheetCell */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -897,7 +889,6 @@
 		CEE67D1E2B5438FF00D0844B /* WorkSheetList */ = {
 			isa = PBXGroup;
 			children = (
-				CE7249FC2B5715FC008147D4 /* Cell */,
 				CEE67D1F2B54394900D0844B /* WorkSheetListPresenter.swift */,
 				CEE67D202B54394900D0844B /* WorkSheetListRouter.swift */,
 				CEE67D212B54394900D0844B /* WorkSheetListInteractor.swift */,
@@ -942,6 +933,15 @@
 				CE5442862B47163B0022047D /* SplashScreenView.xib */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		CEFA5BD92B5ADF54009266C9 /* WorkSheetCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE7249FD2B571702008147D4 /* WorkSheetItemTVC.swift */,
+				CE7249FE2B571702008147D4 /* WorkSheetItemTVC.xib */,
+			);
+			path = WorkSheetCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
