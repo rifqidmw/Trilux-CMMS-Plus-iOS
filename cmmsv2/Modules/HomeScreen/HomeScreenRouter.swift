@@ -28,15 +28,13 @@ extension HomeScreenRouter {
     }
     
     func showWorkSheetBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = MedicAssetBottomSheet(nibName: String(describing: MedicAssetBottomSheet.self), bundle: nil)
-        bottomSheet.type = .worksheet
+        let bottomSheet = WorkSheetBottomSheet(nibName: String(describing: WorkSheetBottomSheet.self), bundle: nil)
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
     }
     
     func showAssetBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = MedicAssetBottomSheet(nibName: String(describing: MedicAssetBottomSheet.self), bundle: nil)
-        bottomSheet.type = .asset
+        let bottomSheet = AssetBottomSheet(nibName: String(describing: AssetBottomSheet.self), bundle: nil)
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
     }

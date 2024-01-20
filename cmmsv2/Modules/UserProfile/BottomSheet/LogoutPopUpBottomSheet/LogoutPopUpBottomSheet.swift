@@ -26,9 +26,9 @@ extension LogoutPopUpBottomSheet {
     }
     
     private func setupView() {
-        popUpView.configureView(icon: "ic_door_leave_circle", title: "Konfirmasi Keluar", message: "Apakah Anda yakin untuk Keluar dari aplikasi?", leftButtonTitle: "Ya, Keluar", rightButtonTitle: "Tidak")
+        popUpView.configureView(icon: "ic_door_leave_circle", title: "Konfirmasi Keluar", firstMessage: "Apakah Anda yakin untuk ", boldText: "Keluar ", secondMessage: "dari aplikasi?", leftButtonTitle: "Ya, Keluar", rightButtonTitle: "Tidak")
     }
-    
+        
     private func setupAction() {
         popUpView.agreeButton.gesture()
             .sink { [weak self] _ in

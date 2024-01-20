@@ -20,9 +20,10 @@ protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapPreventiveCalendar()
 }
 
-enum MedicAssetBottomSheetType {
-    case asset
-    case worksheet
+protocol WorkSheetBottomSheetDelegate: AnyObject {
+    func didTapWorkSheetList()
+    func didTapWorkSheetOnsitePreventive()
+    func didTapWorkSheetCorrective()
 }
 
 struct CategoryModel: Identifiable {
@@ -63,7 +64,7 @@ let allCategoryData: [CategoryModel] = [
     
 ]
 
-let medicAssetData: [MenuModel] = [
+let assetData: [MenuModel] = [
     MenuModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Tambah data aset medik"),
     MenuModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Tambah data aset non medik")
 ]
