@@ -85,7 +85,9 @@ extension WorkSheetBottomSheet: UITableViewDataSource, UITableViewDelegate {
             let rootController = UINavigationController(rootViewController: vc)
             UIApplication.shared.windows.first?.rootViewController = rootController
         case 1:
-            AppLogger.log("GO TO WORK SHEET ONSITE PREVENTIVE")
+            let vc = WorkSheetOnsitePreventiveListRouter().showView()
+            let rootController = UINavigationController(rootViewController: vc)
+            UIApplication.shared.windows.first?.rootViewController = rootController
         case 2:
             AppLogger.log("GO TO WORK SHEET CORRECTIVE")
         default: break

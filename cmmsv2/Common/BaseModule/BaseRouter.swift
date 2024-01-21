@@ -12,4 +12,10 @@ class BaseRouter {
     func backToPreviousPage(navigation: UINavigationController) {
         navigation.popViewController(animated: true)
     }
+    
+    func backToHomeScreen() {
+        let vc = HomeScreenRouter().showView()
+        let rootController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.windows.first?.rootViewController = rootController
+    }
 }
