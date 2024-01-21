@@ -27,4 +27,11 @@ extension WorkSheetListRouter {
         UIApplication.shared.windows.first?.rootViewController = rootController
     }
     
+    func showPreviewWorkSheetBottomSheet(navigation: UINavigationController) {
+        let bottomSheet = WorkSheetPreviewBottomSheet(nibName: String(describing: WorkSheetPreviewBottomSheet.self), bundle: nil)
+        //  bottomSheet.data = // entered data here
+        bottomSheet.modalPresentationStyle = .overCurrentContext
+        navigation.present(bottomSheet, animated: true)
+    }
+    
 }

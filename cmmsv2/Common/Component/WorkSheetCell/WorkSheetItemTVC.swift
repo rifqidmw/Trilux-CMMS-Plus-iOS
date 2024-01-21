@@ -64,9 +64,7 @@ extension WorkSheetItemTVC {
         markView.isHidden = !data.isApproved
         
         switch type {
-        case .normal:
-            badgeView.isHidden = false
-            markView.isHidden = false
+        case .normal: break
         case .preventive:
             badgeView.isHidden = true
             markView.isHidden = true
