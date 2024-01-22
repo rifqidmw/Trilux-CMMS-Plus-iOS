@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectActionBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetHeightConstraint" destination="6oZ-nX-2Ou" id="BsP-k1-e0i"/>
+                <outlet property="bottomSheetView" destination="rfJ-Sf-izq" id="PNO-VY-EgZ"/>
+                <outlet property="dismissAreaView" destination="L2n-SP-6th" id="4wE-wT-sqg"/>
+                <outlet property="seeDetailButton" destination="P7l-FV-pAQ" id="Pft-4N-Nim"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="workButton" destination="WbY-nw-dCt" id="SOy-L6-v1k"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2n-SP-6th" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="563"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfJ-Sf-izq" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="622" width="393" height="230"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Aksi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-CK-iSt">
+                            <rect key="frame" x="24" y="24" width="345" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="UPi-Rn-9SG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                            <color key="textColor" name="customDarkGrayColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lPq-7i-c3Z">
+                            <rect key="frame" x="24" y="76" width="345" height="118"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-nw-dCt" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="51"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7l-FV-pAQ" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="67" width="345" height="51"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="230" id="6oZ-nX-2Ou"/>
+                        <constraint firstItem="w0L-CK-iSt" firstAttribute="leading" secondItem="rfJ-Sf-izq" secondAttribute="leading" constant="24" id="8pm-aO-KpM"/>
+                        <constraint firstAttribute="bottom" secondItem="lPq-7i-c3Z" secondAttribute="bottom" constant="36" id="I7b-W7-Isk"/>
+                        <constraint firstAttribute="trailing" secondItem="w0L-CK-iSt" secondAttribute="trailing" constant="24" id="Ilo-6D-wgV"/>
+                        <constraint firstItem="lPq-7i-c3Z" firstAttribute="leading" secondItem="rfJ-Sf-izq" secondAttribute="leading" constant="24" id="eV4-p2-iQT"/>
+                        <constraint firstItem="lPq-7i-c3Z" firstAttribute="top" secondItem="w0L-CK-iSt" secondAttribute="bottom" constant="36" id="lhr-FR-2Pc"/>
+                        <constraint firstAttribute="trailing" secondItem="lPq-7i-c3Z" secondAttribute="trailing" constant="24" id="moU-TN-Fed"/>
+                        <constraint firstItem="w0L-CK-iSt" firstAttribute="top" secondItem="rfJ-Sf-izq" secondAttribute="top" constant="24" id="v4k-hn-k2n"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rfJ-Sf-izq" secondAttribute="bottom" id="16p-i7-6aM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rfJ-Sf-izq" secondAttribute="trailing" id="91B-K8-ds2"/>
+                <constraint firstItem="L2n-SP-6th" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DUl-4f-bSb"/>
+                <constraint firstItem="rfJ-Sf-izq" firstAttribute="top" secondItem="L2n-SP-6th" secondAttribute="bottom" id="Lor-hb-VpJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L2n-SP-6th" secondAttribute="trailing" id="MVN-yP-xAU"/>
+                <constraint firstItem="rfJ-Sf-izq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZQj-Aj-r4b"/>
+                <constraint firstItem="L2n-SP-6th" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k0b-bu-rit"/>
+            </constraints>
+            <point key="canvasLocation" x="52.671755725190835" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
