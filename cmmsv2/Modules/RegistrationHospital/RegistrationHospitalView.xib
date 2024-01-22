@@ -74,6 +74,7 @@
                         <constraint firstItem="7CA-xf-jjg" firstAttribute="top" secondItem="Fhh-N1-Jy2" secondAttribute="top" constant="6" id="bCt-XQ-c7t"/>
                         <constraint firstItem="tIx-47-Css" firstAttribute="leading" secondItem="Fhh-N1-Jy2" secondAttribute="leading" constant="16" id="e0W-4m-SKV"/>
                         <constraint firstAttribute="bottom" secondItem="7CA-xf-jjg" secondAttribute="bottom" constant="6" id="fOE-ne-hK9"/>
+                        <constraint firstAttribute="height" constant="56" id="ncy-nM-Wyd"/>
                         <constraint firstAttribute="bottom" secondItem="tIx-47-Css" secondAttribute="bottom" constant="6" id="vw0-rT-aoz"/>
                     </constraints>
                 </view>
@@ -87,7 +88,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aE5-ky-bBs" secondAttribute="trailing" id="XEW-9Q-ynK"/>
                 <constraint firstItem="aE5-ky-bBs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hmj-9L-nri"/>
                 <constraint firstItem="Fhh-N1-Jy2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mPv-Xm-BYg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fhh-N1-Jy2" secondAttribute="bottom" constant="16" id="ns7-zk-TDQ"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="-1.4084507042253522"/>
         </view>

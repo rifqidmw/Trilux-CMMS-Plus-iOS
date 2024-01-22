@@ -15,6 +15,7 @@ class LoginView: BaseViewController {
     @IBOutlet var backgroundView: BackgroundView!
     @IBOutlet weak var containerView: UIStackView!
     
+    var data: Hospital?
     var presenter: LoginPresenter?
 
     override func didLoad() {

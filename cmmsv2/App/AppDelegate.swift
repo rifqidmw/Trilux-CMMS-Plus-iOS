@@ -26,8 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SDImageCache.shared.config.maxMemoryCost = 1024 * 1024 * 20 // 20MB
         
         // MARK: - AUTH USER DEFAULT
-        UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
-        UserDefaults.standard.setValue(true, forKey: "isRegistered")
+        UserDefaults.standard.setValue(false, forKey: "isLoggedIn")
         
         let view = UINavigationController(rootViewController: SplashScreenView(nibName: String(describing: SplashScreenView.self), bundle: nil))
         self.window?.rootViewController = view

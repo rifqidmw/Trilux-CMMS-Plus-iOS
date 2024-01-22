@@ -1,4 +1,4 @@
-// 
+//
 //  RegistrationHospitalView.swift
 //  cmmsv2
 //
@@ -15,6 +15,7 @@ class RegistrationHospitalView: BaseViewController {
     @IBOutlet weak var containerView: UIView!
     
     var presenter: RegistrationHospitalPresenter?
+    private var code: String = ""
     
     override func didLoad() {
         super.didLoad()
@@ -28,6 +29,7 @@ extension RegistrationHospitalView {
     private func setupBody() {
         setupView()
         setupAction()
+        showFailMessage()
     }
     
     private func setupView() {
@@ -42,10 +44,28 @@ extension RegistrationHospitalView {
         buttonRegister.gesture()
             .sink { [weak self] _ in
                 guard let self,
+                      let presenter,
                       let navigation = self.navigationController
                 else { return }
                 
-                self.presenter?.navigateToLoginPage(navigation: navigation)
+                if code == "" {
+                    self.showAlert(title: "Terjadi Kesalahan", message: "Mohon masukan kode rumah sakit.")
+                }
+                
+                self.code = self.textField.text ?? ""
+                presenter.registerHospital(code: self.code, navigation: navigation)
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func showFailMessage() {
+        guard let presenter else { return }
+        presenter.$isError
+            .sink { [weak self] error in
+                guard let self else { return}
+                if error {
+                    self.showAlert(title: "Terjadi Kesalahan", message: "Gagal registrasi, kode tidak sesuai.")
+                }
             }
             .store(in: &anyCancellable)
     }

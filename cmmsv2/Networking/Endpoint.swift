@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 enum Endpoint {
+    case registerHospital(code: String)
     case list
-    case post(params: ServiceTest)
 }
 
 // MARK: - PATH URL
@@ -18,10 +18,10 @@ extension Endpoint {
     // swiftlint:disable cyclomatic_complexity
     func path() -> String {
         switch self {
+        case .registerHospital:
+            return "auth/rs"
         case .list:
             return "list"
-        case .post(let params):
-            return "post/\(params)"
         }
     }
 }
@@ -30,7 +30,7 @@ extension Endpoint {
 extension Endpoint {
     func method() -> HTTPMethod {
         switch self {
-        case .post:
+        case .registerHospital:
             return .post
         default:
             return .get
@@ -42,13 +42,9 @@ extension Endpoint {
 extension Endpoint {
     var parameter: [String: Any]? {
         switch self {
-        case .post(let param):
+        case .registerHospital(let code):
             let params: [String: Any] = [
-                "createdAt": param.createdAt,
-                "name": param.name,
-                "avatar": param.avatar,
-                "id": param.id,
-                "count": param.count
+                "code": code
             ]
             return params
         default:
@@ -61,15 +57,15 @@ extension Endpoint {
 extension Endpoint {
     var header: HTTPHeaders {
         switch self {
-        case .post:
+        case .registerHospital:
             let params: HTTPHeaders = [
-                "Content-Type": "application/json"
+                "Authorizations": "TokenTriluxCMMS+",
+                "Content-Type": "application/json",
+                "Accept": "*/*"
             ]
             return params
         default:
             let params: HTTPHeaders = [
-                // "token": token,
-                // "Content-Type": "application/json"
                 "Accept": "*/*"
             ]
             return params
@@ -77,9 +73,12 @@ extension Endpoint {
     }
 }
 
+// MARK: - GENERATE URL
 extension Endpoint {
     func urlString() -> String {
         switch self {
+        case .registerHospital:
+            return Constants.rsURL + path()
         default:
             return Constants.baseURL + path()
         }
