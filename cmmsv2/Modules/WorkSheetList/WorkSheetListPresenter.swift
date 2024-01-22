@@ -24,4 +24,8 @@ extension WorkSheetListPresenter {
         router.backToHomeScreen()
     }
     
+    func showBottomSheetPreviewWorkSheet(navigation: UINavigationController) {
+        router.showPreviewWorkSheetBottomSheet(navigation: navigation)
+    }
+    
 }

@@ -18,3 +18,14 @@ class WorkSheetListRouter: BaseRouter {
     }
     
 }
+
+extension WorkSheetListRouter {
+    
+    func showPreviewWorkSheetBottomSheet(navigation: UINavigationController) {
+        let bottomSheet = WorkSheetPreviewBottomSheet(nibName: String(describing: WorkSheetPreviewBottomSheet.self), bundle: nil)
+        //  bottomSheet.data = // entered data here
+        bottomSheet.modalPresentationStyle = .overCurrentContext
+        navigation.present(bottomSheet, animated: true)
+    }
+    
+}
