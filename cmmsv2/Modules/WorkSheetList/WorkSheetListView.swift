@@ -72,4 +72,12 @@ extension WorkSheetListView: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        self.showOverlay()
+        presenter.showBottomSheetPreviewWorkSheet(navigation: navigation)
+    }
+    
 }

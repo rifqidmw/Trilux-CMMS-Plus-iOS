@@ -38,6 +38,7 @@ extension GeneralButton {
     
     func configure(title: String? = nil, type: GeneralButtonType = .normal, icon: String? = nil, backgroundColor: UIColor? = UIColor.customPrimaryColor, titleColor: UIColor? = UIColor.white) {
         titleLabel.text = title ?? ""
+        titleLabel.textColor = titleColor
         iconImageView.image = UIImage(named: icon ?? "")
         
         searchLabel.isHidden = true
@@ -48,7 +49,6 @@ extension GeneralButton {
         switch type {
         case .normal:
             titleLabel.isHidden = false
-            titleLabel.textColor = titleColor
             containerView.backgroundColor = backgroundColor
         case .searchbutton:
             titleLabel.isHidden = true
@@ -65,7 +65,11 @@ extension GeneralButton {
             containerView.backgroundColor = .clear
             titleLabel.isHidden = false
             titleLabel.textColor = UIColor.customPlaceholderColor
-            
+        case .borderedWithIcon:
+            containerView.addBorder(width: 1, colorBorder: UIColor.customPlaceholderColor.cgColor)
+            containerView.backgroundColor = .clear
+            titleLabel.isHidden = false
+            iconImageView.isHidden = false
         }
     }
     
@@ -76,4 +80,5 @@ enum GeneralButtonType {
     case withIcon
     case searchbutton
     case bordered
+    case borderedWithIcon
 }
