@@ -13,7 +13,7 @@ class RegistrationHospitalPresenter: BasePresenter {
     private let interactor: RegistrationHospitalInteractor
     private let router = RegistrationHospitalRouter()
     
-    @Published public var hospitalData: Hospital?
+    @Published public var hospitalData: HospitalDetail?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -43,12 +43,18 @@ extension RegistrationHospitalPresenter {
                     }
                 },
                 receiveValue: { hospital in
-                    self.hospitalData = hospital
+                    guard let hospitalData = hospital.data,
+                          let hospitalDetail = hospitalData.hospital
+                    else { return }
                     
                     switch hospital.message {
                     case .success:
                         UserDefaults.standard.setValue(true, forKey: "isRegistered")
-                        self.navigateToLoginPage(navigation: navigation, data: hospital)
+                        UserDefaults.standard.setValue(hospitalDetail.logo, forKey: "triluxLogo")
+                        UserDefaults.standard.setValue(hospitalDetail.tagline, forKey: "tagLine")
+                        
+                        let data = HospitalTheme(logo: hospitalDetail.logo, tagline: hospitalDetail.tagline)
+                        self.navigateToLoginPage(navigation: navigation, data: data)
                     default: break
                     }
                 }
@@ -60,7 +66,7 @@ extension RegistrationHospitalPresenter {
 
 extension RegistrationHospitalPresenter {
     
-    func navigateToLoginPage(navigation: UINavigationController, data: Hospital) {
+    func navigateToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
         router.goToLoginPage(navigation: navigation, data: data)
     }
     

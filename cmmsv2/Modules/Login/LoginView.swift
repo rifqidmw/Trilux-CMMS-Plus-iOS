@@ -9,13 +9,15 @@ import UIKit
 
 class LoginView: BaseViewController {
     
+    @IBOutlet weak var triluxLogoImageView: UIImageView!
     @IBOutlet weak var usernameTextField: GeneralTextField!
     @IBOutlet weak var passwordTextField: GeneralTextField!
     @IBOutlet weak var loginButton: GeneralButton!
     @IBOutlet var backgroundView: BackgroundView!
+    @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var containerView: UIStackView!
     
-    var data: Hospital?
+    var data: HospitalTheme?
     var presenter: LoginPresenter?
 
     override func didLoad() {
@@ -38,6 +40,8 @@ extension LoginView {
         
         containerView.makeCornerRadius(24, .topCurve)
         containerView.addShadow(6, position: .top, color: UIColor.darkGray.cgColor)
+        
+        taglineLabel.text = data?.tagline ?? ""
         
         usernameTextField.configure(title: "Username", placeholder: "Masukan username Anda")
         passwordTextField.configure(title: "Password", placeholder: "Masukan password Anda", type: .password)

@@ -165,10 +165,10 @@
 		CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */; };
 		CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */; };
 		CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */; };
-		CE9F91002B4F942C004C027A /* BriefInformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90FF2B4F942C004C027A /* BriefInformationCardView.xib */; };
-		CE9F91012B4F942C004C027A /* BriefInformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90FF2B4F942C004C027A /* BriefInformationCardView.xib */; };
-		CE9F91032B4F9434004C027A /* BriefInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91022B4F9434004C027A /* BriefInformationCardView.swift */; };
-		CE9F91042B4F9434004C027A /* BriefInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91022B4F9434004C027A /* BriefInformationCardView.swift */; };
+		CE9F91002B4F942C004C027A /* InformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90FF2B4F942C004C027A /* InformationCardView.xib */; };
+		CE9F91012B4F942C004C027A /* InformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90FF2B4F942C004C027A /* InformationCardView.xib */; };
+		CE9F91032B4F9434004C027A /* InformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91022B4F9434004C027A /* InformationCardView.swift */; };
+		CE9F91042B4F9434004C027A /* InformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91022B4F9434004C027A /* InformationCardView.swift */; };
 		CE9F91072B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */; };
 		CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */; };
 		CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
@@ -434,8 +434,8 @@
 		CE9E7DC12B531E5800240A7D /* ChangePictureBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePictureBottomSheet.swift; sourceTree = "<group>"; };
 		CE9F90F12B4F776B004C027A /* MenuItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTVC.swift; sourceTree = "<group>"; };
 		CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTVC.xib; sourceTree = "<group>"; };
-		CE9F90FF2B4F942C004C027A /* BriefInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefInformationCardView.xib; sourceTree = "<group>"; };
-		CE9F91022B4F9434004C027A /* BriefInformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefInformationCardView.swift; sourceTree = "<group>"; };
+		CE9F90FF2B4F942C004C027A /* InformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationCardView.xib; sourceTree = "<group>"; };
+		CE9F91022B4F9434004C027A /* InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCardView.swift; sourceTree = "<group>"; };
 		CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationDetailBottomSheet.xib; sourceTree = "<group>"; };
 		CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailBottomSheet.swift; sourceTree = "<group>"; };
 		CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
@@ -853,13 +853,13 @@
 			path = MenuItem;
 			sourceTree = "<group>";
 		};
-		CE9F90FE2B4F919F004C027A /* BriefInformationCard */ = {
+		CE9F90FE2B4F919F004C027A /* InformationCard */ = {
 			isa = PBXGroup;
 			children = (
-				CE9F91022B4F9434004C027A /* BriefInformationCardView.swift */,
-				CE9F90FF2B4F942C004C027A /* BriefInformationCardView.xib */,
+				CE9F91022B4F9434004C027A /* InformationCardView.swift */,
+				CE9F90FF2B4F942C004C027A /* InformationCardView.xib */,
 			);
-			path = BriefInformationCard;
+			path = InformationCard;
 			sourceTree = "<group>";
 		};
 		CE9F91052B4F96AC004C027A /* InformationDetailBottomSheet */ = {
@@ -990,8 +990,8 @@
 			isa = PBXGroup;
 			children = (
 				CECB3E1E2B45E35E004A260D /* CACornerMask+Ext.swift */,
-				CECB3E0F2B45E273004A260D /* CGSize+Ext.swift */,
 				CECB3E122B45E292004A260D /* CGFloat+Ext.swift */,
+				CECB3E0F2B45E273004A260D /* CGSize+Ext.swift */,
 				CECB3E2D2B45E400004A260D /* Double+Ext.swift */,
 				CECB3E182B45E2EF004A260D /* GesturePublisher.swift */,
 				CEC207AC2B4AF4420073FA1E /* NSAttributedString+Ext.swift */,
@@ -1062,8 +1062,8 @@
 		CECB3E332B45E444004A260D /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				CECB3E372B45E4B9004A260D /* Constants.swift */,
 				CECB3E3A2B45E4DD004A260D /* AppLoger.swift */,
+				CECB3E372B45E4B9004A260D /* Constants.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1083,11 +1083,11 @@
 				CEF5FD212B4A74AE003A72B7 /* Background */,
 				CE9E7DA42B530F4500240A7D /* BasePopUp */,
 				CECB77722B4C75CD0069AC05 /* BottomSheet */,
-				CE9F90FE2B4F919F004C027A /* BriefInformationCard */,
 				CE54428A2B4724F90022047D /* Button */,
 				CEC207AF2B4AFF660073FA1E /* CategoryCard */,
 				CEC207A52B4ADDA40073FA1E /* CustomNavigation */,
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
+				CE9F90FE2B4F919F004C027A /* InformationCard */,
 				CE9F90F02B4F758C004C027A /* MenuItem */,
 				CE54428B2B4725000022047D /* TextField */,
 				CEFA5BD92B5ADF54009266C9 /* WorkSheetCell */,
@@ -1098,12 +1098,12 @@
 		CECB3E362B45E468004A260D /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
-				CECB3E3D2B45E5AB004A260D /* BaseViewController.swift */,
-				CECB3E432B45E637004A260D /* BaseInteractor.swift */,
-				CECB3E402B45E62B004A260D /* BasePresenter.swift */,
 				CECB3E4C2B45E69A004A260D /* BaseEntity.swift */,
-				CECB3E492B45E681004A260D /* BaseRouter.swift */,
+				CECB3E432B45E637004A260D /* BaseInteractor.swift */,
 				CECB3E462B45E660004A260D /* BaseNonNavigationController.swift */,
+				CECB3E402B45E62B004A260D /* BasePresenter.swift */,
+				CECB3E492B45E681004A260D /* BaseRouter.swift */,
+				CECB3E3D2B45E5AB004A260D /* BaseViewController.swift */,
 			);
 			path = BaseModule;
 			sourceTree = "<group>";
@@ -1312,7 +1312,7 @@
 				CE2FA5252B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
 				CECB3DDF2B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
-				CE9F91002B4F942C004C027A /* BriefInformationCardView.xib in Resources */,
+				CE9F91002B4F942C004C027A /* InformationCardView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE2FA51B2B5CBD5C00756586 /* WorkSheetDetailView.xib in Resources */,
@@ -1381,7 +1381,7 @@
 				CE2FA5262B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
 				CECB3DE02B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
-				CE9F91012B4F942C004C027A /* BriefInformationCardView.xib in Resources */,
+				CE9F91012B4F942C004C027A /* InformationCardView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE2FA51C2B5CBD5C00756586 /* WorkSheetDetailView.xib in Resources */,
@@ -1523,7 +1523,7 @@
 				CECB77852B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
 				CE82D4522B47DDB200A54124 /* LoginRouter.swift in Sources */,
 				CE9E7D732B529EB300240A7D /* ChangePasswordView.swift in Sources */,
-				CE9F91032B4F9434004C027A /* BriefInformationCardView.swift in Sources */,
+				CE9F91032B4F9434004C027A /* InformationCardView.swift in Sources */,
 				CE4012532B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
@@ -1637,7 +1637,7 @@
 				CECB77862B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
 				CE82D4532B47DDB200A54124 /* LoginRouter.swift in Sources */,
 				CE9E7D742B529EB300240A7D /* ChangePasswordView.swift in Sources */,
-				CE9F91042B4F9434004C027A /* BriefInformationCardView.swift in Sources */,
+				CE9F91042B4F9434004C027A /* InformationCardView.swift in Sources */,
 				CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,

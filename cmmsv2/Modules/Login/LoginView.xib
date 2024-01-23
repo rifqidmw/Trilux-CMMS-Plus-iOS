@@ -23,6 +23,8 @@
                 <outlet property="containerView" destination="6ec-Q8-1BL" id="E2L-4p-N2k"/>
                 <outlet property="loginButton" destination="ZKs-ma-c4S" id="PcO-op-zcX"/>
                 <outlet property="passwordTextField" destination="s8k-AC-HNK" id="VXp-qn-rHN"/>
+                <outlet property="taglineLabel" destination="ZfA-vb-td1" id="tlD-mw-l3c"/>
+                <outlet property="triluxLogoImageView" destination="7Dg-ou-h3f" id="I4y-r5-dX3"/>
                 <outlet property="usernameTextField" destination="tvM-c0-uvl" id="qGL-zj-gmq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -110,10 +112,10 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZt-2R-Lct">
-                    <rect key="frame" x="70" y="312" width="253" height="50"/>
+                    <rect key="frame" x="50" y="312" width="293" height="50"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_quotation_right" translatesAutoresizingMaskIntoConstraints="NO" id="9jh-Ac-bep">
-                            <rect key="frame" x="229" y="26" width="24" height="24"/>
+                            <rect key="frame" x="269" y="26" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="24" id="p6f-Oe-cVb"/>
                                 <constraint firstAttribute="height" constant="24" id="zW9-I9-C0r"/>
@@ -127,7 +129,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfA-vb-td1">
-                            <rect key="frame" x="24" y="0.0" width="205" height="50"/>
+                            <rect key="frame" x="24" y="0.0" width="245" height="50"/>
                             <string key="text">Semua Kemudahan dalam
 Satu Genggaman</string>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
@@ -155,12 +157,12 @@ Satu Genggaman</string>
                 <constraint firstItem="7Dg-ou-h3f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="115" id="1Kx-58-rKl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6ec-Q8-1BL" secondAttribute="trailing" id="9GP-g7-HgA"/>
                 <constraint firstItem="6ec-Q8-1BL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QLV-ea-5ht"/>
-                <constraint firstItem="ZZt-2R-Lct" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="Yq3-hq-wbH"/>
+                <constraint firstItem="ZZt-2R-Lct" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Yq3-hq-wbH"/>
                 <constraint firstItem="7Dg-ou-h3f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="eB5-cw-JvG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Dg-ou-h3f" secondAttribute="trailing" constant="115" id="eS1-0H-167"/>
                 <constraint firstAttribute="bottom" secondItem="6ec-Q8-1BL" secondAttribute="bottom" id="jF3-x1-2sa"/>
                 <constraint firstItem="ZZt-2R-Lct" firstAttribute="top" secondItem="7Dg-ou-h3f" secondAttribute="bottom" constant="16" id="p8E-EE-Nij"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZZt-2R-Lct" secondAttribute="trailing" constant="70" id="qXI-v6-pXI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZZt-2R-Lct" secondAttribute="trailing" constant="50" id="qXI-v6-pXI"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="0.0"/>
         </view>

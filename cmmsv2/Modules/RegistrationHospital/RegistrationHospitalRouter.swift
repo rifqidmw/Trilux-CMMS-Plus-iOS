@@ -21,7 +21,7 @@ class RegistrationHospitalRouter: BaseRouter {
 
 extension RegistrationHospitalRouter {
     
-    func goToLoginPage(navigation: UINavigationController, data: Hospital) {
+    func goToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
         DispatchQueue.main.async {
             let vc = LoginRouter().showView()
             vc.data = data

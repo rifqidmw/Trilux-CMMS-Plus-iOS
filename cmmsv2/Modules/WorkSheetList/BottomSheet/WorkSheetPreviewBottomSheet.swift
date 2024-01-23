@@ -12,12 +12,12 @@ class WorkSheetPreviewBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var imageCardView: ImageCardView!
-    @IBOutlet weak var serialNumberView: BriefInformationCardView!
-    @IBOutlet weak var roomView: BriefInformationCardView!
-    @IBOutlet weak var brandView: BriefInformationCardView!
-    @IBOutlet weak var typeView: BriefInformationCardView!
-    @IBOutlet weak var reporterView: BriefInformationCardView!
-    @IBOutlet weak var chronologyView: BriefInformationCardView!
+    @IBOutlet weak var serialNumberView: InformationCardView!
+    @IBOutlet weak var roomView: InformationCardView!
+    @IBOutlet weak var brandView: InformationCardView!
+    @IBOutlet weak var typeView: InformationCardView!
+    @IBOutlet weak var reporterView: InformationCardView!
+    @IBOutlet weak var chronologyView: InformationCardView!
     @IBOutlet weak var workButton: GeneralButton!
     @IBOutlet weak var resumeWorkButton: GeneralButton!
     @IBOutlet weak var seeWorkButton: GeneralButton!

@@ -15,10 +15,10 @@ class InformationDetailBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerTitleLabel: UILabel!
     
-    @IBOutlet weak var serialNumberView: BriefInformationCardView!
-    @IBOutlet weak var roomView: BriefInformationCardView!
-    @IBOutlet weak var brandView: BriefInformationCardView!
-    @IBOutlet weak var typeView: BriefInformationCardView!
+    @IBOutlet weak var serialNumberView: InformationCardView!
+    @IBOutlet weak var roomView: InformationCardView!
+    @IBOutlet weak var brandView: InformationCardView!
+    @IBOutlet weak var typeView: InformationCardView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     

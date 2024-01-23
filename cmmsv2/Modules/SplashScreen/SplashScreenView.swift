@@ -19,10 +19,13 @@ class SplashScreenView: BaseNonNavigationController {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         let isRegistered = UserDefaults.standard.bool(forKey: "isRegistered")
+        let logo = UserDefaults.standard.string(forKey: "triluxLogo")
+        let tagline = UserDefaults.standard.string(forKey: "tagLine")
+        let data = HospitalTheme(logo: logo, tagline: tagline)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             if isRegistered {
-                self.navigateToLoginPage()
+                self.navigateToLoginPage(data: data)
             } else {
                 self.navigateToRegistrationHospital()
             }
@@ -39,8 +42,9 @@ extension SplashScreenView {
         UIApplication.shared.setRootViewController(rootViewController)
     }
     
-    private func navigateToLoginPage() {
+    private func navigateToLoginPage(data: HospitalTheme) {
         let vc = LoginRouter().showView()
+        vc.data = data
         let rootViewController = UINavigationController(rootViewController: vc)
         UIApplication.shared.setRootViewController(rootViewController)
     }

@@ -11,7 +11,7 @@ import Kingfisher
 import SDWebImage
 
 extension UIImageView {
-    func loadImageUrl(_ url: String, placeholder: String = "ic_auto2000") {
+    func loadImageUrl(_ url: String, placeholder: String = "ic_trilux_logo_splash") {
         self.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: placeholder), options: [.continueInBackground])
     }
 }
