@@ -121,17 +121,17 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a3t-iQ-hHa">
                                     <rect key="frame" x="0.0" y="0.0" width="329" height="58"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grF-FI-ABL" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grF-FI-ABL" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="160.66666666666666" height="58"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33c-pC-uZO" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33c-pC-uZO" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="168.66666666666663" y="0.0" width="160.33333333333337" height="58"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
                                 </stackView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0N5-WU-wvZ" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0N5-WU-wvZ" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="66" width="329" height="58"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>

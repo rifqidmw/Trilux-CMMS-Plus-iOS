@@ -21,7 +21,8 @@ class ApiManager {
     private static let session: Session = {
         let evaluator: [String: ServerTrustEvaluating] = [
             "dev.triluxcmms.com": DisabledTrustEvaluator(),
-            "triluxcmms.com": DisabledTrustEvaluator()
+            "triluxcmms.com": DisabledTrustEvaluator(),
+            "trilux.id": DisabledTrustEvaluator()
         ]
         let manager = ServerTrustManager(evaluators: evaluator)
         let session = Session(serverTrustManager: manager)

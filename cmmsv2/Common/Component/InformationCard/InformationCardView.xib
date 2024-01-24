@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="titleLabel" destination="Au4-Lt-PIR" id="KLu-BT-peS"/>
                 <outlet property="valueLabel" destination="5qI-Wz-Sf4" id="9aM-9E-npt"/>

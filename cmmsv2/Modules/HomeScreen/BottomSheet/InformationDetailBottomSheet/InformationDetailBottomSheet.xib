@@ -86,22 +86,22 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nQG-E7-NNH" userLabel="Brief Section Stack View">
                             <rect key="frame" x="24" y="328" width="345" height="220"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfz-uk-WeO" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfz-uk-WeO" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="68"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SB2-Zz-un2" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SB2-Zz-un2" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="76" width="345" height="68"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rnb-gt-qut">
                                     <rect key="frame" x="0.0" y="152" width="345" height="68"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMk-ad-5tU" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMk-ad-5tU" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="68"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieC-bq-MF0" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieC-bq-MF0" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="176.66666666666663" y="0.0" width="168.33333333333337" height="68"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>

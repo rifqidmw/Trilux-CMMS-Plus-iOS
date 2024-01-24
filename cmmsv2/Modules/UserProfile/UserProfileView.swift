@@ -1,4 +1,4 @@
-// 
+//
 //  UserProfileView.swift
 //  cmmsv2
 //
@@ -17,21 +17,21 @@ class UserProfileView: BaseViewController {
     @IBOutlet weak var userPhoneNumberLabel: UILabel!
     @IBOutlet weak var copyToClipboardButton: UIView!
     @IBOutlet weak var changeImageButton: GeneralButton!
-    @IBOutlet weak var workUnitView: BriefInformationCardView!
-    @IBOutlet weak var positionView: BriefInformationCardView!
-    @IBOutlet weak var jobView: BriefInformationCardView!
+    @IBOutlet weak var workUnitView: InformationCardView!
+    @IBOutlet weak var positionView: InformationCardView!
+    @IBOutlet weak var jobView: InformationCardView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var logoutButton: GeneralButton!
     
     var presenter: UserProfilePresenter?
     var data: [ProfileMenuModel] = profileMenuData
-
+    
     override func didLoad() {
         super.didLoad()
         setupBody()
     }
-
+    
 }
 
 extension UserProfileView {

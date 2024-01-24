@@ -9,4 +9,4 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 BASE_URL = http:/$()/dev.triluxcmms.com/api/v1/
-RS_URL = http:/$()/dev.triluxcmms.com/api/v1/
+RS_URL = http:/$()/triluxcmms.com/api/v1/

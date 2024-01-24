@@ -1,5 +1,5 @@
 //
-//  BriefInformationCardView.swift
+//  InformationCardView.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 11/01/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BriefInformationCardView: UIView {
+class InformationCardView: UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
@@ -31,7 +31,7 @@ class BriefInformationCardView: UIView {
     
 }
 
-extension BriefInformationCardView {
+extension InformationCardView {
     
     func configureView(title: String, value: String) {
         titleLabel.text = title

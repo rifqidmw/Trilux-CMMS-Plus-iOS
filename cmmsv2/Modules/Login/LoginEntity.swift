@@ -7,6 +7,12 @@
 
 import Foundation
 
-struct LoginEntity {
+struct HospitalTheme: Codable {
+    let logo: String?
+    let tagline: String?
     
+    enum CodingKeys: CodingKey {
+        case logo
+        case tagline
+    }
 }

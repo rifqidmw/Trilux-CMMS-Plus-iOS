@@ -86,22 +86,22 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ac6-ak-TAr">
                                                     <rect key="frame" x="24" y="28" width="345" height="216"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhZ-uq-KN4" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhZ-uq-KN4" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="345" height="66.666666666666671"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yd-mi-4sa" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yd-mi-4sa" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="74.666666666666686" width="345" height="66.666666666666686"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-Mk-YJA">
                                                             <rect key="frame" x="0.0" y="149.33333333333337" width="345" height="66.666666666666686"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBh-Qf-VY4" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBh-Qf-VY4" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="66.666666666666671"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-yr-qlB" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-yr-qlB" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                                                     <rect key="frame" x="176.66666666666663" y="0.0" width="168.33333333333337" height="66.666666666666671"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
@@ -124,11 +124,11 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iXw-K0-zJh">
                                                     <rect key="frame" x="24" y="296" width="345" height="180"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzp-0W-W9h" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzp-0W-W9h" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="345" height="72"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LY4-Ge-Qwp" customClass="BriefInformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LY4-Ge-Qwp" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="80" width="345" height="100"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
