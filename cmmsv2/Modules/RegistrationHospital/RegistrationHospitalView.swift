@@ -10,6 +10,7 @@ import UIKit
 class RegistrationHospitalView: BaseViewController {
     
     @IBOutlet weak var backgroundView: BackgroundView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var buttonRegister: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var containerView: UIView!
@@ -38,22 +39,39 @@ extension RegistrationHospitalView {
         containerView.makeCornerRadius(8)
         buttonRegister.makeCornerRadius(8)
         buttonRegister.addShadow(8, color: UIColor.customPrimaryColor.cgColor)
+        
+        presenter?.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                self.showSpinner(isLoading)
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func showSpinner(_ isShow: Bool) {
+        DispatchQueue.main.async {
+            self.spinner.isHidden = !isShow
+            
+            isShow ? self.showOverlay() : self.removeOverlay()
+            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
+        }
     }
     
     private func setupAction() {
         buttonRegister.gesture()
             .sink { [weak self] _ in
-                guard let self,
-                      let presenter,
+                guard let self = self,
+                      let presenter = self.presenter,
                       let navigation = self.navigationController
                 else { return }
                 
-                if code == "" {
-                    self.showAlert(title: "Terjadi Kesalahan", message: "Mohon masukan kode rumah sakit.")
-                }
+                let code = self.textField.text ?? ""
                 
-                self.code = self.textField.text ?? ""
-                presenter.registerHospital(code: self.code, navigation: navigation)
+                if code.isEmpty {
+                    self.showAlert(title: "Terjadi Kesalahan", message: "Mohon masukkan kode rumah sakit!")
+                } else {
+                    presenter.registerHospital(code: code, navigation: navigation)
+                }
             }
             .store(in: &anyCancellable)
     }
@@ -64,7 +82,7 @@ extension RegistrationHospitalView {
             .sink { [weak self] error in
                 guard let self else { return}
                 if error {
-                    self.showAlert(title: "Terjadi Kesalahan", message: "Gagal registrasi, kode tidak sesuai.")
+                    self.showAlert(title: "Terjadi Kesalahan", message: "Gagal registrasi, kode tidak sesuai!")
                 }
             }
             .store(in: &anyCancellable)

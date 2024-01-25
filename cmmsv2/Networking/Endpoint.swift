@@ -10,18 +10,20 @@ import Alamofire
 
 enum Endpoint {
     case registerHospital(code: String)
-    case list
+    case loginUser(username: String, password: String)
+    case getProfile
 }
 
 // MARK: - PATH URL
 extension Endpoint {
-    // swiftlint:disable cyclomatic_complexity
     func path() -> String {
         switch self {
         case .registerHospital:
             return "auth/rs"
-        case .list:
-            return "list"
+        case .loginUser:
+            return "auth/user"
+        case .getProfile:
+            return "profile"
         }
     }
 }
@@ -30,7 +32,8 @@ extension Endpoint {
 extension Endpoint {
     func method() -> HTTPMethod {
         switch self {
-        case .registerHospital:
+        case .registerHospital,
+                .loginUser:
             return .post
         default:
             return .get
@@ -45,6 +48,12 @@ extension Endpoint {
         case .registerHospital(let code):
             let params: [String: Any] = [
                 "code": code
+            ]
+            return params
+        case .loginUser(let username, let password):
+            let params: [String: Any] = [
+                "username": username,
+                "password": password
             ]
             return params
         default:
@@ -66,6 +75,7 @@ extension Endpoint {
             return params
         default:
             let params: HTTPHeaders = [
+                "Content-Type": "application/json",
                 "Accept": "*/*"
             ]
             return params
