@@ -77,10 +77,6 @@
 		CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4012512B5D9A0D00517F7C /* SelectActionBottomSheet.swift */; };
 		CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */; };
 		CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */; };
-		CE5442842B4715810022047D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5442832B4715810022047D /* SplashScreenView.swift */; };
-		CE5442852B4715810022047D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5442832B4715810022047D /* SplashScreenView.swift */; };
-		CE5442872B47163B0022047D /* SplashScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5442862B47163B0022047D /* SplashScreenView.xib */; };
-		CE5442882B47163B0022047D /* SplashScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5442862B47163B0022047D /* SplashScreenView.xib */; };
 		CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54428C2B47262D0022047D /* GeneralButton.xib */; };
 		CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54428C2B47262D0022047D /* GeneralButton.xib */; };
 		CE5442902B4726360022047D /* GeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54428F2B4726360022047D /* GeneralButton.swift */; };
@@ -173,6 +169,14 @@
 		CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */; };
 		CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
 		CE9F910B2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
+		CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
+		CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
+		CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */; };
+		CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */; };
+		CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */; };
+		CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */; };
+		CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
+		CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
 		CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079B2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */; };
@@ -329,6 +333,18 @@
 		CEE67D3B2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE67D392B5442BF00D0844B /* AssetBottomSheet.xib */; };
 		CEE67D3D2B5442C300D0844B /* AssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D3C2B5442C300D0844B /* AssetBottomSheet.swift */; };
 		CEE67D3E2B5442C300D0844B /* AssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D3C2B5442C300D0844B /* AssetBottomSheet.swift */; };
+		CEF5D7C32B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */; };
+		CEF5D7C42B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */; };
+		CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */; };
+		CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */; };
+		CEF5D7C72B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BF2B6D311700FDE752 /* SplashScreenInteractor.swift */; };
+		CEF5D7C82B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BF2B6D311700FDE752 /* SplashScreenInteractor.swift */; };
+		CEF5D7C92B6D311700FDE752 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7C02B6D311700FDE752 /* SplashScreenView.swift */; };
+		CEF5D7CA2B6D311700FDE752 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7C02B6D311700FDE752 /* SplashScreenView.swift */; };
+		CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF5D7C12B6D311700FDE752 /* SplashScreenView.xib */; };
+		CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF5D7C12B6D311700FDE752 /* SplashScreenView.xib */; };
+		CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7C22B6D311700FDE752 /* SplashScreenEntity.swift */; };
+		CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7C22B6D311700FDE752 /* SplashScreenEntity.swift */; };
 		CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */; };
 		CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */; };
 		CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */; };
@@ -389,8 +405,6 @@
 		CE4012422B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveListEntity.swift; sourceTree = "<group>"; };
 		CE4012512B5D9A0D00517F7C /* SelectActionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionBottomSheet.swift; sourceTree = "<group>"; };
 		CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectActionBottomSheet.xib; sourceTree = "<group>"; };
-		CE5442832B4715810022047D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		CE5442862B47163B0022047D /* SplashScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenView.xib; sourceTree = "<group>"; };
 		CE5442892B471FF50022047D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		CE54428C2B47262D0022047D /* GeneralButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralButton.xib; sourceTree = "<group>"; };
 		CE54428F2B4726360022047D /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
@@ -438,6 +452,10 @@
 		CE9F91022B4F9434004C027A /* InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCardView.swift; sourceTree = "<group>"; };
 		CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationDetailBottomSheet.xib; sourceTree = "<group>"; };
 		CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailBottomSheet.swift; sourceTree = "<group>"; };
+		CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HospitalModel.xcdatamodel; sourceTree = "<group>"; };
+		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
+		CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Ext.swift"; sourceTree = "<group>"; };
 		CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
 		CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouter.swift; sourceTree = "<group>"; };
 		CEC207952B4AD6870073FA1E /* HomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractor.swift; sourceTree = "<group>"; };
@@ -519,6 +537,12 @@
 		CEE67D352B54426E00D0844B /* WorkSheetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetBottomSheet.swift; sourceTree = "<group>"; };
 		CEE67D392B5442BF00D0844B /* AssetBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetBottomSheet.xib; sourceTree = "<group>"; };
 		CEE67D3C2B5442C300D0844B /* AssetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetBottomSheet.swift; sourceTree = "<group>"; };
+		CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
+		CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenRouter.swift; sourceTree = "<group>"; };
+		CEF5D7BF2B6D311700FDE752 /* SplashScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenInteractor.swift; sourceTree = "<group>"; };
+		CEF5D7C02B6D311700FDE752 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		CEF5D7C12B6D311700FDE752 /* SplashScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenView.xib; sourceTree = "<group>"; };
+		CEF5D7C22B6D311700FDE752 /* SplashScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenEntity.swift; sourceTree = "<group>"; };
 		CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundView.xib; sourceTree = "<group>"; };
 		CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		CEF72EF52B468C0500815E4C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -604,6 +628,15 @@
 				CE2FA5122B5CBD5C00756586 /* WorkSheetDetailEntity.swift */,
 			);
 			path = WorkSheetDetail;
+			sourceTree = "<group>";
+		};
+		CE2C82762B681FDE00053933 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */,
+				CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CE2F2CE62B5D4294001D312F /* DetailComplaintSection */ = {
@@ -995,7 +1028,9 @@
 				CECB3E2D2B45E400004A260D /* Double+Ext.swift */,
 				CECB3E182B45E2EF004A260D /* GesturePublisher.swift */,
 				CEC207AC2B4AF4420073FA1E /* NSAttributedString+Ext.swift */,
+				CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */,
 				CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */,
+				CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */,
 				CECB3E302B45E414004A260D /* UIApplication+Ext.swift */,
 				CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */,
 				CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */,
@@ -1016,6 +1051,7 @@
 				CECB3E362B45E468004A260D /* BaseModule */,
 				CECB3E352B45E462004A260D /* Component */,
 				CECB3E342B45E450004A260D /* Configuration */,
+				CE2C82762B681FDE00053933 /* Models */,
 				CECB3E332B45E444004A260D /* Other */,
 			);
 			path = Common;
@@ -1181,8 +1217,12 @@
 		CEF72EEE2B4681D200815E4C /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE5442832B4715810022047D /* SplashScreenView.swift */,
-				CE5442862B47163B0022047D /* SplashScreenView.xib */,
+				CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */,
+				CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */,
+				CEF5D7BF2B6D311700FDE752 /* SplashScreenInteractor.swift */,
+				CEF5D7C02B6D311700FDE752 /* SplashScreenView.swift */,
+				CEF5D7C12B6D311700FDE752 /* SplashScreenView.xib */,
+				CEF5D7C22B6D311700FDE752 /* SplashScreenEntity.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -1298,7 +1338,6 @@
 				CE4012302B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE40121F2B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
 				CECB3DEB2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
-				CE5442872B47163B0022047D /* SplashScreenView.xib in Resources */,
 				CECB3E0D2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21B2B5C38620034B9FE /* ImageCardView.xib in Resources */,
@@ -1332,6 +1371,7 @@
 				CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CE14C2172B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
+				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CECB3DE72B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE67D2D2B54394900D0844B /* WorkSheetListView.xib in Resources */,
 				CE82D4582B47DDB200A54124 /* LoginView.xib in Resources */,
@@ -1367,7 +1407,6 @@
 				CE4012312B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE4012202B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
 				CECB3DEC2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
-				CE5442882B47163B0022047D /* SplashScreenView.xib in Resources */,
 				CECB3E0E2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */,
@@ -1401,6 +1440,7 @@
 				CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CE14C2182B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
+				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CECB3DE82B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE67D2E2B54394900D0844B /* WorkSheetListView.xib in Resources */,
 				CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */,
@@ -1500,7 +1540,6 @@
 			files = (
 				CECB3E252B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
-				CE5442842B4715810022047D /* SplashScreenView.swift in Sources */,
 				CE5442902B4726360022047D /* GeneralButton.swift in Sources */,
 				CEC207B22B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
 				CEE67D2B2B54394900D0844B /* WorkSheetListView.swift in Sources */,
@@ -1510,11 +1549,13 @@
 				CE4012452B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE4012432B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
 				CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */,
+				CEF5D7C92B6D311700FDE752 /* SplashScreenView.swift in Sources */,
 				CEE67D272B54394900D0844B /* WorkSheetListRouter.swift in Sources */,
 				CECB3E102B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CE2FA5172B5CBD5C00756586 /* WorkSheetDetailInteractor.swift in Sources */,
 				CE14C21E2B5C38680034B9FE /* ImageCardView.swift in Sources */,
 				CE7249FF2B571702008147D4 /* WorkSheetItemTVC.swift in Sources */,
+				CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */,
 				CECB3DA92B45D962004A260D /* ViewController.swift in Sources */,
 				CE9E7D832B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
 				CE9E7D812B529EE800240A7D /* EditProfileRouter.swift in Sources */,
@@ -1545,14 +1586,19 @@
 				CE2F2CE82B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D362B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
+				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
+				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE2FA51D2B5CBD5C00756586 /* WorkSheetDetailEntity.swift in Sources */,
 				CE9E7DC22B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
 				CECB3E382B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A32B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CECB3E412B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
+				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CE9E7D852B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CEF5D7C72B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */,
 				CE9E7D6F2B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
 				CE4012322B5D7E7C00517F7C /* FullScreenPictureEntity.swift in Sources */,
 				CE4012382B5D875100517F7C /* AllEvidenceBottomSheet.swift in Sources */,
@@ -1573,6 +1619,7 @@
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D252B54394900D0844B /* WorkSheetListPresenter.swift in Sources */,
+				CEF5D7C32B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */,
 				CECB3E3B2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CE2FA5222B5CBFC600756586 /* ImageCardSectionView.swift in Sources */,
 				CEFB4F152B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
@@ -1597,6 +1644,7 @@
 				CE4012282B5D7E7C00517F7C /* FullScreenPicturePresenter.swift in Sources */,
 				CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */,
 				CEE67D2F2B54394900D0844B /* WorkSheetListEntity.swift in Sources */,
+				CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
@@ -1614,7 +1662,6 @@
 			files = (
 				CECB3E262B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
-				CE5442852B4715810022047D /* SplashScreenView.swift in Sources */,
 				CE5442912B4726360022047D /* GeneralButton.swift in Sources */,
 				CEC207B32B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
 				CEE67D2C2B54394900D0844B /* WorkSheetListView.swift in Sources */,
@@ -1624,11 +1671,13 @@
 				CE4012462B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE4012442B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
 				CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */,
+				CEF5D7CA2B6D311700FDE752 /* SplashScreenView.swift in Sources */,
 				CEE67D282B54394900D0844B /* WorkSheetListRouter.swift in Sources */,
 				CECB3E112B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CE2FA5182B5CBD5C00756586 /* WorkSheetDetailInteractor.swift in Sources */,
 				CE14C21F2B5C38680034B9FE /* ImageCardView.swift in Sources */,
 				CE724A002B571702008147D4 /* WorkSheetItemTVC.swift in Sources */,
+				CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */,
 				CECB3DC12B45DAFF004A260D /* ViewController.swift in Sources */,
 				CE9E7D842B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
 				CE9E7D822B529EE800240A7D /* EditProfileRouter.swift in Sources */,
@@ -1659,14 +1708,19 @@
 				CE2F2CE92B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D372B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
+				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
+				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE2FA51E2B5CBD5C00756586 /* WorkSheetDetailEntity.swift in Sources */,
 				CE9E7DC32B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
 				CECB3E392B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A42B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CECB3E422B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
+				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CE9E7D862B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CEF5D7C82B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */,
 				CE9E7D702B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
 				CE4012332B5D7E7C00517F7C /* FullScreenPictureEntity.swift in Sources */,
 				CE4012392B5D875100517F7C /* AllEvidenceBottomSheet.swift in Sources */,
@@ -1687,6 +1741,7 @@
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D262B54394900D0844B /* WorkSheetListPresenter.swift in Sources */,
+				CEF5D7C42B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */,
 				CECB3E3C2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CE2FA5232B5CBFC600756586 /* ImageCardSectionView.swift in Sources */,
 				CEFB4F162B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
@@ -1711,6 +1766,7 @@
 				CE4012292B5D7E7C00517F7C /* FullScreenPicturePresenter.swift in Sources */,
 				CECB3DC32B45DAFF004A260D /* SceneDelegate.swift in Sources */,
 				CEE67D302B54394900D0844B /* WorkSheetListEntity.swift in Sources */,
+				CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
@@ -2010,6 +2066,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */,
+			);
+			currentVersion = CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */;
+			path = HospitalModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */,
+			);
+			currentVersion = CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */;
+			path = UserModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CECB3D992B45D962004A260D /* Project object */;
 }

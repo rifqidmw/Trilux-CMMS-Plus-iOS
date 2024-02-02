@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginView: BaseViewController {
     
@@ -72,18 +73,14 @@ extension LoginView {
             .sink { [weak self] _ in
                 guard let self = self,
                       let presenter = self.presenter,
-                      let navigation = self.navigationController
+                      let navigation = self.navigationController,
+                      let username = self.usernameTextField.textField.text,
+                      let password = self.passwordTextField.textField.text
                 else { return }
-                
-                let username = self.usernameTextField.textField.text ?? ""
-                let password = self.passwordTextField.textField.text ?? ""
                 
                 if username.isEmpty || password.isEmpty {
                     self.showAlert(title: "Terjadi Kesalahan", message: "Harap masukkan username dan password!")
                 } else {
-                    self.username = username
-                    self.password = password
-                    
                     presenter.loginUser(username: username, password: password, navigation: navigation)
                 }
             }

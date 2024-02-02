@@ -15,4 +15,8 @@ struct Constants {
     public static var rsURL: String {
         return Bundle.main.infoDictionary?["RS_URL"] as? String ?? ""
     }
+    
+    public static var token: String {
+        return UserDefaults.standard.string(forKey: "valToken") ?? ""
+    }
 }

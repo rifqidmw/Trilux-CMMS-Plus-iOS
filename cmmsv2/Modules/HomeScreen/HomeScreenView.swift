@@ -1,4 +1,4 @@
-// 
+//
 //  HomeScreenView.swift
 //  cmmsv2
 //
@@ -17,12 +17,12 @@ class HomeScreenView: BaseViewController {
     @IBOutlet weak var scanningButton: GeneralButton!
     
     var presenter: HomeScreenPresenter?
-
+    
     override func didLoad() {
         super.didLoad()
         setupBody()
     }
-
+    
 }
 
 extension HomeScreenView {
@@ -33,7 +33,12 @@ extension HomeScreenView {
     }
     
     private func setupView() {
-        navigationView.configure(username: "John Doe", headline: "RSUD John Doe", type: .homeToolbar)
+        guard let txtName = UserDefaults.standard.string(forKey: "txtName"),
+              let hospitalName = UserDefaults.standard.string(forKey: "hospitalName"),
+              let image = UserDefaults.standard.string(forKey: "valImage")
+        else { return }
+        
+        navigationView.configure(username: txtName, headline: hospitalName, image: image, type: .homeToolbar)
         searchButton.configure(type: .searchbutton)
         informationCardView.makeCornerRadius(8)
         scanningButton.configure(title: "Scanning Alat", type: .withIcon, icon: "ic_scan")

@@ -18,6 +18,7 @@
                 <outlet property="navigationView" destination="l3z-iI-r60" id="ap2-CQ-kiq"/>
                 <outlet property="phoneNumberTextField" destination="ild-o7-FFP" id="EXY-3O-JYU"/>
                 <outlet property="saveButton" destination="UVE-Pr-qY5" id="8zF-Js-Zft"/>
+                <outlet property="spinner" destination="I5l-Rt-lBb" id="lCN-S9-ohu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="workUnitTextField" destination="2MU-Dy-FTK" id="9Td-eG-M4r"/>
             </connections>
@@ -85,6 +86,9 @@
                         <constraint firstItem="UVE-Pr-qY5" firstAttribute="leading" secondItem="7G2-oo-hJf" secondAttribute="leading" constant="16" id="lqo-yL-yXo"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="I5l-Rt-lBb">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -97,6 +101,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dbe-J9-zrr" secondAttribute="trailing" constant="16" id="Mhu-bH-1W3"/>
                 <constraint firstItem="dbe-J9-zrr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="P8g-di-JYV"/>
                 <constraint firstItem="l3z-iI-r60" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ui1-0a-PcR"/>
+                <constraint firstItem="I5l-Rt-lBb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Wc8-0Z-6F9"/>
+                <constraint firstItem="I5l-Rt-lBb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cea-ch-YJx"/>
                 <constraint firstItem="l3z-iI-r60" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mHl-Tg-4i4"/>
             </constraints>
             <point key="canvasLocation" x="114" y="-1"/>

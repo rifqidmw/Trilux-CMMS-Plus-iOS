@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 struct GesturePublisher: Publisher {
+    
     typealias Output = GestureType
     typealias Failure = Never
     private let view: UIView
@@ -20,15 +21,16 @@ struct GesturePublisher: Publisher {
     }
     
     func receive<S>(subscriber: S) where S: Subscriber,
-                                            GesturePublisher.Failure == S.Failure,
-                                            GesturePublisher.Output == S.Input {
-        let subscription = GestureSubscription(
-            subscriber: subscriber,
-            view: view,
-            gestureType: gestureType
-        )
-        subscriber.receive(subscription: subscription)
-    }
+                                         GesturePublisher.Failure == S.Failure,
+                                         GesturePublisher.Output == S.Input {
+                                             let subscription = GestureSubscription(
+                                                subscriber: subscriber,
+                                                view: view,
+                                                gestureType: gestureType
+                                             )
+                                             subscriber.receive(subscription: subscription)
+                                         }
+    
 }
 
 enum GestureType {
@@ -53,7 +55,7 @@ enum GestureType {
             return pinchGesture
         case let .edge(edgePanGesture):
             return edgePanGesture
-       }
+        }
     }
 }
 

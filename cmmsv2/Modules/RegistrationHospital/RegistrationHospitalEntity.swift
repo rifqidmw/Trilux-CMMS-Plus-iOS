@@ -5,25 +5,6 @@
 //  Created by PRO M1 2020 8/256 on 06/01/24.
 //
 
-enum MessageType: String, Codable {
-    case success = "Success"
-    case errors = "Unauthorized"
-    case none = ""
-    
-    init?(rawValue: String) {
-        switch rawValue {
-        case "Success": self = .success
-        case "Unauthorized": self = .errors
-        case "": self = .none
-        default: self = .none
-        }
-    }
-    
-    func getStringValue() -> String {
-        return rawValue
-    }
-}
-
 struct Hospital: Codable {
     let data: HospitalData?
     let message: MessageType?

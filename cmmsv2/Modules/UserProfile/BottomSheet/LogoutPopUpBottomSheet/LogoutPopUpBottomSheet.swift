@@ -5,11 +5,17 @@
 //  Created by PRO M1 2020 8/256 on 14/01/24.
 //
 
+import Combine
 import UIKit
+
+protocol LogoutPopUpBottomSheetDelegate: AnyObject {
+    func didTapLogout()
+}
 
 class LogoutPopUpBottomSheet: BaseNonNavigationController {
     
     @IBOutlet var popUpView: BasePopUpView!
+    weak var delegate: LogoutPopUpBottomSheetDelegate?
     
     override func didLoad() {
         super.didLoad()
@@ -28,35 +34,27 @@ extension LogoutPopUpBottomSheet {
     private func setupView() {
         popUpView.configureView(icon: "ic_door_leave_circle", title: "Konfirmasi Keluar", firstMessage: "Apakah Anda yakin untuk ", boldText: "Keluar ", secondMessage: "dari aplikasi?", leftButtonTitle: "Ya, Keluar", rightButtonTitle: "Tidak")
     }
-        
+    
     private func setupAction() {
         popUpView.agreeButton.gesture()
             .sink { [weak self] _ in
-                guard self != nil else { return}
-                AppLogger.log("TO DO LOGOUT")
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                
+                delegate.didTapLogout()
             }
             .store(in: &anyCancellable)
         
-        popUpView.cancelButton.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
-        
-        popUpView.bottomSheetView.handleBarArea.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
-        
-        popUpView.dismissAreaView.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
+        Publishers.Merge3(
+            popUpView.cancelButton.gesture(),
+            popUpView.bottomSheetView.handleBarArea.gesture(),
+            popUpView.dismissAreaView.gesture())
+        .sink { [weak self] _ in
+            guard let self else { return }
+            self.dismiss(animated: true)
+        }
+        .store(in: &anyCancellable)
     }
     
 }

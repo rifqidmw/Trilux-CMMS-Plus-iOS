@@ -7,21 +7,6 @@
 
 import Foundation
 
-struct BaseEntity {
-    let id = UUID()
-    let title: String?
-}
-
-struct ServiceTest: Codable {
-    let createdAt, name, avatar, id, requestID: String
-    let count: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case createdAt, name, avatar, id, count
-        case requestID = "requestId"
-    }
-}
-
 enum WorkSheetCategory: String, Codable {
     case calibration = "Kalibrasi"
     case preventive = "Preventif"
@@ -54,6 +39,25 @@ enum WorkSheetStatus: String, Codable {
         case "Selesai, Bisa digunakan kembali": self = .done
         case "Open": self = .open
         case "Dalam proses pengerjaan": self = .ongoing
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+enum MessageType: String, Codable {
+    case success = "Success"
+    case errors = "Unauthorized"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Success": self = .success
+        case "Unauthorized": self = .errors
         case "": self = .none
         default: self = .none
         }

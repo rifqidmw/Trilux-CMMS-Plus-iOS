@@ -7,7 +7,6 @@
 
 import UIKit
 import netfox
-import SwiftUI
 import SDWebImage
 import DropDown
 
@@ -26,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SDImageCache.shared.config.maxMemoryCost = 1024 * 1024 * 20 // 20MB
         
         // MARK: - AUTH USER DEFAULT
-        let view = UINavigationController(rootViewController: SplashScreenView(nibName: String(describing: SplashScreenView.self), bundle: nil))
+        let view = SplashScreenRouter().showView()
         self.window?.rootViewController = view
         self.window?.makeKeyAndVisible()
         return true

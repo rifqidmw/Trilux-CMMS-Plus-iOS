@@ -8,10 +8,11 @@
 import UIKit
 
 extension CACornerMask {
+    
     static let topCurve: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     static let bottomCurve: CACornerMask = [.layerMinXMaxYCorner, layerMaxXMaxYCorner]
     static let leftCurve: CACornerMask = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
     static let rightCurve: CACornerMask = [.layerMaxXMinYCorner, layerMaxXMaxYCorner]
     static let bottomRightCurve: CACornerMask = [.layerMaxXMaxYCorner]
+    
 }
-

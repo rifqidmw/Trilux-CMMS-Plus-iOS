@@ -62,10 +62,9 @@ extension RegistrationHospitalView {
             .sink { [weak self] _ in
                 guard let self = self,
                       let presenter = self.presenter,
-                      let navigation = self.navigationController
+                      let navigation = self.navigationController,
+                      let code = self.textField.text
                 else { return }
-                
-                let code = self.textField.text ?? ""
                 
                 if code.isEmpty {
                     self.showAlert(title: "Terjadi Kesalahan", message: "Mohon masukkan kode rumah sakit!")

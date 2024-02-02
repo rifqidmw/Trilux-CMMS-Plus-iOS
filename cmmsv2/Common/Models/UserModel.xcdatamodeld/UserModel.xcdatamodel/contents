@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="isPolisi" optional="YES" attributeType="String"/>
+        <attribute name="ttd" optional="YES" attributeType="String"/>
+        <attribute name="txtDescriptions" optional="YES" attributeType="String"/>
+        <attribute name="txtJabatan" optional="YES" attributeType="String"/>
+        <attribute name="txtJob" optional="YES" attributeType="String"/>
+        <attribute name="txtName" optional="YES" attributeType="String"/>
+        <attribute name="txtTelepon" optional="YES" attributeType="String"/>
+        <attribute name="txtUnitKerja" optional="YES" attributeType="String"/>
+        <attribute name="txtUsername" optional="YES" attributeType="String"/>
+        <attribute name="valDeviceToken" optional="YES" attributeType="String"/>
+        <attribute name="valImage" optional="YES" attributeType="String"/>
+        <attribute name="valImageId" optional="YES" attributeType="String"/>
+        <attribute name="valImageThumbnail" optional="YES" attributeType="String"/>
+        <attribute name="valPosition" optional="YES" attributeType="String"/>
+        <attribute name="valToken" optional="YES" attributeType="String"/>
+    </entity>
+</model>

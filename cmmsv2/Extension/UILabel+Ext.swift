@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UILabel {
+    
     func textWidth(font: UIFont, text: String) -> CGFloat {
         let myText = text as NSString
         
@@ -29,4 +30,5 @@ extension UILabel {
         
         self.attributedText = attributedString
     }
+    
 }

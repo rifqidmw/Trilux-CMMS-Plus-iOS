@@ -18,5 +18,5 @@ extension UITextField {
         let attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: attributes)
         self.attributedPlaceholder = attributedPlaceholder
     }
+    
 }
-

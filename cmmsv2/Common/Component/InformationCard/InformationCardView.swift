@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class InformationCardView: UIView {
     
@@ -27,6 +28,14 @@ class InformationCardView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
         view.makeCornerRadius(8)
+        self.makeCornerRadius(8)
+        
+        self.isSkeletonable = true
+        self.showAnimatedGradientSkeleton()
+        
+        self.valueLabel.isSkeletonable = true
+        self.valueLabel.showAnimatedGradientSkeleton()
+        
     }
     
 }
@@ -34,6 +43,9 @@ class InformationCardView: UIView {
 extension InformationCardView {
     
     func configureView(title: String, value: String) {
+        self.hideSkeleton()
+        self.valueLabel.hideSkeleton()
+        
         titleLabel.text = title
         valueLabel.text = value
     }

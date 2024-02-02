@@ -8,6 +8,7 @@
 import Foundation
 
 extension Double {
+    
     func formatDoubleWithSeparator() -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -15,5 +16,5 @@ extension Double {
 
         return formatter.string(from: NSNumber(value: self))
     }
+    
 }
-

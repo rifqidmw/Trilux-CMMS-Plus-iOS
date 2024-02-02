@@ -1,4 +1,4 @@
-// 
+//
 //  ChangePasswordView.swift
 //  cmmsv2
 //
@@ -16,14 +16,15 @@ class ChangePasswordView: BaseViewController {
     @IBOutlet weak var newPasswordConfirmTextField: GeneralTextField!
     @IBOutlet weak var bottomContainerView: UIView!
     @IBOutlet weak var saveButton: GeneralButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: ChangePasswordPresenter?
-
+    
     override func didLoad() {
         super.didLoad()
         setupBody()
     }
-
+    
 }
 
 extension ChangePasswordView {
@@ -31,6 +32,7 @@ extension ChangePasswordView {
     private func setupBody() {
         setupView()
         setupAction()
+        showFailMessage()
     }
     
     private func setupView() {
@@ -42,6 +44,13 @@ extension ChangePasswordView {
         newPasswordConfirmTextField.configure(title: "Ulangi Password Baru", placeholder: "Masukan konfirmasi password", type: .password)
         bottomContainerView.addShadow(1, position: .top, opacity: 0.2)
         saveButton.configure(title: "Simpan")
+        
+        presenter?.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                self.showSpinner(isLoading)
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupAction() {
@@ -53,6 +62,50 @@ extension ChangePasswordView {
                 else { return }
                 
                 presenter.backToPreviousPage(navigation: navigation)
+            }
+            .store(in: &anyCancellable)
+        
+        saveButton.gesture()
+            .sink { [weak self] _ in
+                guard let self = self,
+                      let presenter = self.presenter,
+                      let navigation = self.navigationController,
+                      let oldPassword = self.oldPasswordTextField.textField.text,
+                      let newPassword = self.newPasswordTextField.textField.text,
+                      let confirmPassword = self.newPasswordConfirmTextField.textField.text
+                else { return }
+                let imageId = UserDefaults.standard.integer(forKey: "valImageId")
+                
+                if oldPassword.isEmpty || newPassword.isEmpty || confirmPassword.isEmpty {
+                    self.showAlert(title: "Terjadi Kesalahan", message: "Harap untuk mengisi semua bidang!")
+                } else {
+                    presenter.changeUserPassword(
+                        oldPassword: oldPassword,
+                        confirmPassword: confirmPassword,
+                        password: newPassword,
+                        navigation: navigation)
+                }
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func showSpinner(_ isShow: Bool) {
+        DispatchQueue.main.async {
+            self.spinner.isHidden = !isShow
+            
+            isShow ? self.showOverlay() : self.removeOverlay()
+            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
+        }
+    }
+    
+    private func showFailMessage() {
+        guard let presenter else { return }
+        presenter.$isError
+            .sink { [weak self] error in
+                guard let self else { return}
+                if error {
+                    self.showAlert(title: "Terjadi Kesalahan", message: "Pastikan Anda memasukan konfirmasi password yang sesuai!")
+                }
             }
             .store(in: &anyCancellable)
     }

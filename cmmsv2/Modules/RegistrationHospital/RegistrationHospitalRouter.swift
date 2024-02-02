@@ -1,4 +1,4 @@
-// 
+//
 //  RegistrationHospitalRouter.swift
 //  cmmsv2
 //
@@ -22,11 +22,9 @@ class RegistrationHospitalRouter: BaseRouter {
 extension RegistrationHospitalRouter {
     
     func goToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
-        DispatchQueue.main.async {
-            let vc = LoginRouter().showView()
-            vc.data = data
-            navigation.pushViewController(vc, animated: true)
-        }
+        let vc = LoginRouter().showView()
+        vc.data = data
+        navigation.pushViewController(vc, animated: true)
     }
     
 }

@@ -9,26 +9,26 @@
 import UIKit
 
 extension UINavigationController {
-        /// SwifterSwift: Pop ViewController with completion handler.
-        ///
-        /// - Parameters:
-        ///   - animated: Set this value to true to animate the transition (default is true).
-        ///   - completion: optional completion handler (default is nil).
+    /// SwifterSwift: Pop ViewController with completion handler.
+    ///
+    /// - Parameters:
+    ///   - animated: Set this value to true to animate the transition (default is true).
+    ///   - completion: optional completion handler (default is nil).
     func popViewController(animated: Bool = true, _ completion: (() -> Void)? = nil) {
-            // https://github.com/cotkjaer/UserInterface/blob/master/UserInterface/UIViewController.swift
+        // https://github.com/cotkjaer/UserInterface/blob/master/UserInterface/UIViewController.swift
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)
         popViewController(animated: animated)
         CATransaction.commit()
     }
     
-        /// SwifterSwift: Push ViewController with completion handler.
-        ///
-        /// - Parameters:
-        ///   - viewController: viewController to push.
-        ///   - completion: optional completion handler (default is nil).
+    /// SwifterSwift: Push ViewController with completion handler.
+    ///
+    /// - Parameters:
+    ///   - viewController: viewController to push.
+    ///   - completion: optional completion handler (default is nil).
     func pushViewController(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
-            // https://github.com/cotkjaer/UserInterface/blob/master/UserInterface/UIViewController.swift
+        // https://github.com/cotkjaer/UserInterface/blob/master/UserInterface/UIViewController.swift
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)
         pushViewController(viewController, animated: true)
@@ -37,10 +37,10 @@ extension UINavigationController {
     
     func popViewControllers(viewsToPop: Int, animated: Bool = true) {
         if viewControllers.count > viewsToPop {
-          let vc = viewControllers[viewControllers.count - viewsToPop - 1]
-          popToViewController(vc, animated: animated)
+            let vc = viewControllers[viewControllers.count - viewsToPop - 1]
+            popToViewController(vc, animated: animated)
         }
-      }
+    }
     
     func pushViewControllerWithDebug(_ viewController: UIViewController, animated: Bool = true) {
         AppLogger.log("\(self.visibleViewController ?? UIViewController()) ➡️➡️ \(viewController)", logType: .kNavigation)
@@ -68,5 +68,5 @@ extension UINavigationController {
         }
         return nil
     }
+    
 }
-

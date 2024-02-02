@@ -5,12 +5,12 @@
 //  Created by PRO M1 2020 8/256 on 13/01/24.
 //
 
-import Foundation
+import Combine
 
 class ChangePasswordInteractor: BaseInteractor {
     
-    // func fetchData(completion: @escaping (Result<ModelResponse, Error>) -> Void) {
-    //    api.requestApi(.exampleEndpoint, completion: completion)
-    // }
+    func changeUserPassword(oldPassword: String, confirmPassword: String, password: String) -> AnyPublisher<UserProfileEntity, Error> {
+        return api.requestApiPublisher(.changePassword(oldPassword: oldPassword, passwordConfirm: confirmPassword, password: password))
+    }
     
 }
