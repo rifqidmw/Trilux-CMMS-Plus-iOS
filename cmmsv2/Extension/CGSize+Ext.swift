@@ -8,6 +8,7 @@
 import UIKit
 
 extension CGSize {
+    
     static let iPhone5s       = CGSize(width: 320, height: 568)
     static let iPhone6        = CGSize(width: 375, height: 667)
     static let iPhon6Plus     = CGSize(width: 414, height: 736)
@@ -40,4 +41,5 @@ extension CGSize {
     static let currentDevice  = UIScreen.main.bounds.size
     static let widthDevice    = UIScreen.main.bounds.width
     static let heightDevice    = UIScreen.main.bounds.height
+    
 }

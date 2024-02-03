@@ -5,8 +5,8 @@
 //  Created by PRO M1 2020 8/256 on 06/01/24.
 //
 
-import Combine
 import UIKit
+import CoreData
 
 class RegistrationHospitalPresenter: BasePresenter {
     
@@ -43,19 +43,22 @@ extension RegistrationHospitalPresenter {
                     }
                 },
                 receiveValue: { hospital in
-                    guard let hospitalData = hospital.data,
-                          let hospitalDetail = hospitalData.hospital
-                    else { return }
-                    
-                    switch hospital.message {
-                    case .success:
-                        UserDefaults.standard.setValue(true, forKey: "isRegistered")
-                        UserDefaults.standard.setValue(hospitalDetail.logo, forKey: "triluxLogo")
-                        UserDefaults.standard.setValue(hospitalDetail.tagline, forKey: "tagLine")
+                    DispatchQueue.main.async {
+                        guard let hospitalData = hospital.data,
+                              let hospitalDetail = hospitalData.hospital
+                        else { return }
                         
-                        let data = HospitalTheme(logo: hospitalDetail.logo, tagline: hospitalDetail.tagline)
-                        self.navigateToLoginPage(navigation: navigation, data: data)
-                    default: break
+                        switch hospital.message {
+                        case .success:
+                            UserDefaults.standard.setValue(true, forKey: "isRegistered")
+                            UserDefaults.standard.setValue(hospitalDetail.logo, forKey: "triluxLogo")
+                            UserDefaults.standard.setValue(hospitalDetail.tagline, forKey: "tagLine")
+                            UserDefaults.standard.setValue(hospitalDetail.name, forKey: "hospitalName")
+                            
+                            let data = HospitalTheme(logo: hospitalDetail.logo, tagline: hospitalDetail.tagline)
+                            self.navigateToLoginPage(navigation: navigation, data: data)
+                        default: break
+                        }
                     }
                 }
             )

@@ -5,8 +5,8 @@
 //  Created by PRO M1 2020 8/256 on 05/01/24.
 //
 
-import Foundation
 import UIKit
+import CoreData
 
 class LoginPresenter: BasePresenter {
     
@@ -44,20 +44,24 @@ extension LoginPresenter {
                     }
                 },
                 receiveValue: { user in
-                    guard let userData = user.data,
-                          let userProfile = userData.user
-                    else { return }
-                    
-                    switch user.message {
-                    case .success:
-                        UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                    DispatchQueue.main.async {
+                        guard let userData = user.data,
+                              let userProfile = userData.user
+                        else { return }
                         
-                        self.userProfile = userProfile
-                        self.userData = user
-                        self.navigateToHomeScreen(navigation: navigation)
-                    case .errors:
-                        self.isError = true
-                    default: break
+                        switch user.message {
+                        case .success:
+                            UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                            UserDefaults.standard.setValue(userProfile.txtName, forKey: "txtName")
+                            UserDefaults.standard.setValue(userProfile.valImage, forKey: "valImage")
+                            UserDefaults.standard.setValue(userProfile.valImageId, forKey: "valImageId")
+                            UserDefaults.standard.setValue(userProfile.valToken, forKey: "valToken")
+                            
+                            self.userProfile = userProfile
+                            self.userData = user
+                            self.navigateToHomeScreen(navigation: navigation)
+                        default: break
+                        }
                     }
                 }
             )

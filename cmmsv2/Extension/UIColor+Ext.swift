@@ -34,9 +34,11 @@ extension UIColor {
     static let customIndicatorColor11  = #colorLiteral(red: 0.7843137255, green: 0.5647058824, blue: 0.01568627451, alpha: 1)
     static let customIndicatorColor12  = #colorLiteral(red: 0, green: 0.4470588235, blue: 0.7333333333, alpha: 1)
     static let customIndicatorColor13  = #colorLiteral(red: 0.5215686275, green: 0.8156862745, blue: 1, alpha: 1)
+    
 }
 
 extension UIColor {
+    
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt64()
@@ -55,4 +57,5 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
+    
 }

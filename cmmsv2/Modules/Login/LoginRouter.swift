@@ -22,10 +22,8 @@ class LoginRouter: BaseRouter {
 extension LoginRouter {
     
     func goToHomeScreen(navigation: UINavigationController) {
-        DispatchQueue.main.async {
-            let vc = HomeScreenRouter().showView()
-            navigation.pushViewController(vc, animated: true)
-        }
+        let vc = HomeScreenRouter().showView()
+        navigation.pushViewController(vc, animated: true)
     }
     
 }

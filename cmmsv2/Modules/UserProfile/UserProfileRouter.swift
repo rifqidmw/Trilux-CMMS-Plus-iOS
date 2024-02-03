@@ -31,8 +31,16 @@ extension UserProfileRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func showPopUpLogout(navigation: UINavigationController) {
+    func navigateToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
+        let vc = LoginRouter().showView()
+        vc.data = data
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func showPopUpLogout(navigation: UINavigationController, delegate: LogoutPopUpBottomSheetDelegate) {
         let bottomSheet = LogoutPopUpBottomSheet(nibName: String(describing: LogoutPopUpBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
     }

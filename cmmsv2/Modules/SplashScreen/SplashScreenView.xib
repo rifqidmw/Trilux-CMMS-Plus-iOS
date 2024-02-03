@@ -27,16 +27,16 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K9A-kh-NbP">
-                    <rect key="frame" x="100" y="778" width="193" height="40"/>
+                    <rect key="frame" x="104.66666666666669" y="778" width="184" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtE-P2-ViJ">
-                            <rect key="frame" x="0.0" y="0.0" width="193" height="20"/>
+                            <rect key="frame" x="0.0" y="0.0" width="184" height="20"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT. Trilux Sukses Abadi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-ER-25I">
-                            <rect key="frame" x="0.0" y="20" width="193" height="20"/>
+                            <rect key="frame" x="0.0" y="20" width="184" height="20"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -51,11 +51,10 @@
             <viewLayoutGuide key="safeArea" id="6eW-7b-Jw0"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="6eW-7b-Jw0" firstAttribute="trailing" secondItem="K9A-kh-NbP" secondAttribute="trailing" constant="100" id="8XE-sO-Gj1"/>
                 <constraint firstItem="6eW-7b-Jw0" firstAttribute="bottom" secondItem="K9A-kh-NbP" secondAttribute="bottom" id="ECc-Hb-rY3"/>
-                <constraint firstItem="K9A-kh-NbP" firstAttribute="leading" secondItem="6eW-7b-Jw0" secondAttribute="leading" constant="100" id="fYs-Lz-bjQ"/>
+                <constraint firstItem="K9A-kh-NbP" firstAttribute="centerX" secondItem="9xh-8N-WpJ" secondAttribute="centerX" id="a9P-qC-te2"/>
             </constraints>
-            <point key="canvasLocation" x="657.25190839694653" y="-52.112676056338032"/>
+            <point key="canvasLocation" x="610" y="-63"/>
         </view>
     </objects>
     <resources>

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIFont {
+    
     static func latoBlack(_ size: CGFloat) -> UIFont {
         return UIFont(
             name: "Lato-Black",
@@ -142,4 +143,3 @@ extension UIFont {
     }
     
 }
-

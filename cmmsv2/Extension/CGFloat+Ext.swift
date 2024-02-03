@@ -8,7 +8,8 @@
 import UIKit
 
 extension CGFloat {
+    
     static let currentDeviceWidth  = UIScreen.main.bounds.width
     static let currentDeviceHeight = UIScreen.main.bounds.height
+    
 }
-

@@ -8,6 +8,7 @@
 import UIKit
 
 extension NSAttributedString {
+    
     static func stylizedText(_ text: String, font: UIFont, color: UIColor) -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
@@ -15,4 +16,5 @@ extension NSAttributedString {
         ]
         return NSAttributedString(string: text, attributes: attributes)
     }
+    
 }

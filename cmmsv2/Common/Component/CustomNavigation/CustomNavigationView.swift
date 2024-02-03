@@ -45,7 +45,7 @@ class CustomNavigationView: UIView {
 
 extension CustomNavigationView {
     
-    func configure(username: String? = nil, headline: String? = nil, plainTitle: String? = nil, type: CustomNavigationType) {
+    func configure(username: String? = nil, headline: String? = nil, image: String? = nil, plainTitle: String? = nil, type: CustomNavigationType) {
         let text = NSAttributedString.stylizedText("Hai, ", font: UIFont.latoRegular(14), color: UIColor.customDarkGrayColor)
         let usernameText = NSAttributedString.stylizedText(username ?? "", font: UIFont.latoBlack(14), color: UIColor.customPrimaryColor)
         
@@ -55,6 +55,7 @@ extension CustomNavigationView {
 
         usernameLabel.attributedText = fullAttributedText
         welcomeLabel.text = "Selamat Datang di \(headline ?? "")"
+        profileImageView.loadImageUrl(image ?? "")
         plainTitleLabel.text = plainTitle
         
         switch type {

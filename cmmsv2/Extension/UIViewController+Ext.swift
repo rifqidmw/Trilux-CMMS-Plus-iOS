@@ -32,27 +32,27 @@ extension UIViewController {
             return T.init(nibName: String(describing: T.self), bundle: nil)
         }
         return instantiateFromNib()
-        }
+    }
     
 }
 
 // MARK: - Citing from (https://github.com/SwifterSwift/SwifterSwift/blob/master/Sources/SwifterSwift/UIKit/UIViewControllerExtensions.swift)
 extension UIViewController {
-        /// SwifterSwift: Check if ViewController is onscreen and not hidden.
+    /// SwifterSwift: Check if ViewController is onscreen and not hidden.
     var isVisible: Bool {
-            // http://stackoverflow.com/questions/2777438/how-to-tell-if-uiviewcontrollers-view-is-visible
+        // http://stackoverflow.com/questions/2777438/how-to-tell-if-uiviewcontrollers-view-is-visible
         return isViewLoaded && view.window != nil
     }
     
-        /// SwifterSwift: Helper method to present a UIViewController as a popover.
-        ///
-        /// - Parameters:
-        ///   - popoverContent: the view controller to add as a popover.
-        ///   - sourcePoint: the point in which to anchor the popover.
-        ///   - size: the size of the popover. Default uses the popover preferredContentSize.
-        ///   - delegate: the popover's presentationController delegate. Default is nil.
-        ///   - animated: Pass true to animate the presentation; otherwise, pass false.
-        ///   - completion: The block to execute after the presentation finishes. Default is nil.
+    /// SwifterSwift: Helper method to present a UIViewController as a popover.
+    ///
+    /// - Parameters:
+    ///   - popoverContent: the view controller to add as a popover.
+    ///   - sourcePoint: the point in which to anchor the popover.
+    ///   - size: the size of the popover. Default uses the popover preferredContentSize.
+    ///   - delegate: the popover's presentationController delegate. Default is nil.
+    ///   - animated: Pass true to animate the presentation; otherwise, pass false.
+    ///   - completion: The block to execute after the presentation finishes. Default is nil.
     func presentPopover(
         _ popoverContent: UIViewController,
         sourcePoint: CGPoint,
@@ -74,5 +74,5 @@ extension UIViewController {
             
             present(popoverContent, animated: animated, completion: completion)
         }
+    
 }
-

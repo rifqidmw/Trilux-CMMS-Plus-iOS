@@ -1,4 +1,4 @@
-// 
+//
 //  HomeScreenEntity.swift
 //  cmmsv2
 //
@@ -24,6 +24,18 @@ protocol WorkSheetBottomSheetDelegate: AnyObject {
     func didTapWorkSheetList()
     func didTapWorkSheetOnsitePreventive()
     func didTapWorkSheetCorrective()
+}
+
+struct HomeTheme: Codable {
+    let image: String?
+    let name: String?
+    let hospitalName: String?
+    
+    enum CodingKeys: CodingKey {
+        case image
+        case name
+        case hospitalName
+    }
 }
 
 struct CategoryModel: Identifiable {

@@ -12,6 +12,8 @@ enum Endpoint {
     case registerHospital(code: String)
     case loginUser(username: String, password: String)
     case getProfile
+    case updateProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String)
+    case changePassword(oldPassword: String, passwordConfirm: String, password: String)
 }
 
 // MARK: - PATH URL
@@ -24,6 +26,10 @@ extension Endpoint {
             return "auth/user"
         case .getProfile:
             return "profile"
+        case .updateProfile:
+            return "profile/update"
+        case .changePassword:
+            return "profile/change_password"
         }
     }
 }
@@ -33,7 +39,9 @@ extension Endpoint {
     func method() -> HTTPMethod {
         switch self {
         case .registerHospital,
-                .loginUser:
+                .loginUser,
+                .updateProfile,
+                .changePassword:
             return .post
         default:
             return .get
@@ -56,6 +64,22 @@ extension Endpoint {
                 "password": password
             ]
             return params
+        case .updateProfile(let name, let position, let workUnit, let imageId, let phoneNumber):
+            let params: [String: Any] = [
+                "name": name,
+                "jabatan": position,
+                "unit_kerja": workUnit,
+                "image_id": imageId,
+                "telepon": phoneNumber
+            ]
+            return params
+        case .changePassword(let oldPassword, let passwordConfirm, let password):
+            let params: [String: Any] = [
+                "old_password": oldPassword,
+                "password_confirmation": passwordConfirm,
+                "password": password
+            ]
+            return params
         default:
             return nil
         }
@@ -69,6 +93,15 @@ extension Endpoint {
         case .registerHospital:
             let params: HTTPHeaders = [
                 "Authorizations": "TokenTriluxCMMS+",
+                "Content-Type": "application/json",
+                "Accept": "*/*"
+            ]
+            return params
+        case .getProfile,
+                .updateProfile,
+                .changePassword:
+            let params: HTTPHeaders = [
+                "Authorizations": Constants.token,
                 "Content-Type": "application/json",
                 "Accept": "*/*"
             ]
