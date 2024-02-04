@@ -23,26 +23,58 @@ class HomeScreenView: BaseViewController {
         setupBody()
     }
     
+    override func willAppear() {
+        super.willAppear()
+        setupNavigationView()
+    }
+    
 }
 
 extension HomeScreenView {
     
     private func setupBody() {
+        fetchInitData()
+        bindingData()
         setupView()
         setupAction()
     }
     
     private func setupView() {
-        guard let txtName = UserDefaults.standard.string(forKey: "txtName"),
-              let hospitalName = UserDefaults.standard.string(forKey: "hospitalName"),
-              let image = UserDefaults.standard.string(forKey: "valImage")
-        else { return }
-        
-        navigationView.configure(username: txtName, headline: hospitalName, image: image, type: .homeToolbar)
+        setupNavigationView()
         searchButton.configure(type: .searchbutton)
         informationCardView.makeCornerRadius(8)
         scanningButton.configure(title: "Scanning Alat", type: .withIcon, icon: "ic_scan")
         categoryView.delegate = self
+    }
+    
+    private func fetchInitData() {
+        guard let presenter else { return }
+        presenter.fetchInitData()
+    }
+    
+    private func bindingData() {
+        guard let presenter else { return }
+        presenter.$expiredData
+            .sink { [weak self] data in
+                guard let self,
+                      let data = data,
+                      let navigation = self.navigationController
+                else { return }
+                if data.isExpired == 1 {
+                    self.showOverlay()
+                    presenter.showExpiredBottomSheet(navigation: navigation, expiredDate: data.expiredDate)
+                }
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func setupNavigationView() {
+        guard let name = UserDefaults.standard.string(forKey: "txtName"),
+              let hospitalName = UserDefaults.standard.string(forKey: "hospitalName"),
+              let image = UserDefaults.standard.string(forKey: "valImage")
+        else { return }
+        
+        navigationView.configure(username: name, headline: hospitalName, image: image, type: .homeToolbar)
     }
     
     private func setupAction() {
@@ -70,62 +102,6 @@ extension HomeScreenView {
                 presenter.navigateToUserProfile(navigation: navigation)
             }
             .store(in: &anyCancellable)
-    }
-    
-}
-
-extension HomeScreenView: HomeScreenCategoryDelegate {
-    
-    func didTapAllCategory() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        self.showOverlay()
-        presenter.showBottomSheetAllCategories(navigation: navigation)
-    }
-    
-    func didTapAsset() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        self.showOverlay()
-        presenter.showBottomSheetAsset(navigation: navigation)
-    }
-    
-    func didTapComplaint() {
-        AppLogger.log("CLICKED")
-    }
-    
-    func didTapWorkSheet() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        self.showOverlay()
-        presenter.showBottomSheetWorkSheet(navigation: navigation)
-    }
-    
-    func didTapPreventiveMaintenance() {
-        AppLogger.log("CLICKED")
-    }
-    
-    func didTapCalibration() {
-        AppLogger.log("CLICKED")
-    }
-    
-    func didTapHistory() {
-        AppLogger.log("CLICKED")
-    }
-    
-    func didTapLogBook() {
-        AppLogger.log("CLICKED")
-    }
-    
-    func didTapToolSuggestions() {
-        AppLogger.log("CLICKED")
-    }
-    
-    func didTapPreventiveCalendar() {
-        AppLogger.log("CLICKED")
     }
     
 }

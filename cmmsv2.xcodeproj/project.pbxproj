@@ -169,6 +169,12 @@
 		CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */; };
 		CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
 		CE9F910B2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
+		CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
+		CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
+		CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */; };
+		CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */; };
+		CEAF06422B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */; };
+		CEAF06432B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */; };
 		CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
 		CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
 		CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */; };
@@ -203,6 +209,10 @@
 		CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC207B72B4B04550073FA1E /* CategorySectionView.xib */; };
 		CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */; };
 		CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */; };
+		CEC336F92B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */; };
+		CEC336FA2B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */; };
+		CEC337032B6EF6FF00B16026 /* lottie_expired.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC337022B6EF6FF00B16026 /* lottie_expired.json */; };
+		CEC337042B6EF6FF00B16026 /* lottie_expired.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC337022B6EF6FF00B16026 /* lottie_expired.json */; };
 		CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA42B45D962004A260D /* AppDelegate.swift */; };
 		CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA62B45D962004A260D /* SceneDelegate.swift */; };
 		CECB3DA92B45D962004A260D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA82B45D962004A260D /* ViewController.swift */; };
@@ -452,6 +462,9 @@
 		CE9F91022B4F9434004C027A /* InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCardView.swift; sourceTree = "<group>"; };
 		CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationDetailBottomSheet.xib; sourceTree = "<group>"; };
 		CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailBottomSheet.swift; sourceTree = "<group>"; };
+		CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredBottomSheet.swift; sourceTree = "<group>"; };
+		CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpiredBottomSheet.xib; sourceTree = "<group>"; };
+		CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+Delegate.swift"; sourceTree = "<group>"; };
 		CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HospitalModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
@@ -469,6 +482,8 @@
 		CEC207B12B4AFF830073FA1E /* CategoryCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCardCVC.xib; sourceTree = "<group>"; };
 		CEC207B72B4B04550073FA1E /* CategorySectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySectionView.xib; sourceTree = "<group>"; };
 		CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySectionView.swift; sourceTree = "<group>"; };
+		CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeScreenView+Delegate.swift"; sourceTree = "<group>"; };
+		CEC337022B6EF6FF00B16026 /* lottie_expired.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lottie_expired.json; sourceTree = "<group>"; };
 		CECB3DA12B45D962004A260D /* cmmsv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cmmsv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECB3DA42B45D962004A260D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECB3DA62B45D962004A260D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -802,6 +817,7 @@
 				CE9E7D8E2B529F4500240A7D /* UserProfileView.swift */,
 				CE9E7D8F2B529F4500240A7D /* UserProfileView.xib */,
 				CE9E7D902B529F4500240A7D /* UserProfileEntity.swift */,
+				CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -904,17 +920,28 @@
 			path = InformationDetailBottomSheet;
 			sourceTree = "<group>";
 		};
+		CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */,
+				CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */,
+			);
+			path = ExpiredBottomSheet;
+			sourceTree = "<group>";
+		};
 		CEC207922B4AD64E0073FA1E /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
 				CECB77792B4C791D0069AC05 /* BottomSheet */,
 				CEC207B62B4B04230073FA1E /* CategorySection */,
+				CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */,
 				CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */,
 				CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */,
 				CEC207952B4AD6870073FA1E /* HomeScreenInteractor.swift */,
 				CEC207962B4AD6870073FA1E /* HomeScreenView.swift */,
 				CEC207972B4AD6870073FA1E /* HomeScreenView.xib */,
 				CEC207982B4AD6870073FA1E /* HomeScreenEntity.swift */,
+				CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -944,6 +971,14 @@
 				CEC207B72B4B04550073FA1E /* CategorySectionView.xib */,
 			);
 			path = CategorySection;
+			sourceTree = "<group>";
+		};
+		CEC336FB2B6EF57E00B16026 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				CEC337022B6EF6FF00B16026 /* lottie_expired.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		CECB3D982B45D962004A260D = {
@@ -983,6 +1018,7 @@
 		CECB3DB82B45DA21004A260D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEC336FB2B6EF57E00B16026 /* Lottie */,
 				CECB3DBE2B45DA61004A260D /* Font */,
 				CECB3DAD2B45D963004A260D /* Assets.xcassets */,
 				CE5442892B471FF50022047D /* CHANGELOG.md */,
@@ -1323,6 +1359,7 @@
 				CECB3DFF2B45E137004A260D /* Lato-Light.ttf in Resources */,
 				CEC207B42B4AFF830073FA1E /* CategoryCardCVC.xib in Resources */,
 				CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
+				CEC337032B6EF6FF00B16026 /* lottie_expired.json in Resources */,
 				CECB3DDB2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
 				CECB3DFB2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
@@ -1359,6 +1396,7 @@
 				CECB777F2B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
 				CE724A012B571702008147D4 /* WorkSheetItemTVC.xib in Resources */,
 				CEE67D3A2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
+				CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
@@ -1392,6 +1430,7 @@
 				CECB3E002B45E137004A260D /* Lato-Light.ttf in Resources */,
 				CEC207B52B4AFF830073FA1E /* CategoryCardCVC.xib in Resources */,
 				CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
+				CEC337042B6EF6FF00B16026 /* lottie_expired.json in Resources */,
 				CECB3DDC2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
 				CECB3DFC2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
@@ -1428,6 +1467,7 @@
 				CECB77802B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
 				CE724A022B571702008147D4 /* WorkSheetItemTVC.xib in Resources */,
 				CEE67D3B2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
+				CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
@@ -1562,6 +1602,7 @@
 				CECB3E222B45E378004A260D /* UIViewController+Ext.swift in Sources */,
 				CE9E7D912B529F4500240A7D /* UserProfilePresenter.swift in Sources */,
 				CECB77852B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
+				CEAF06422B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */,
 				CE82D4522B47DDB200A54124 /* LoginRouter.swift in Sources */,
 				CE9E7D732B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91032B4F9434004C027A /* InformationCardView.swift in Sources */,
@@ -1569,6 +1610,7 @@
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE40122E2B5D7E7C00517F7C /* FullScreenPictureView.swift in Sources */,
+				CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E472B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEFB4F112B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEE67D3D2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
@@ -1617,6 +1659,7 @@
 				CE9F90F32B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CE4012172B5D58EB00517F7C /* EvidenceEquipmentCVC.swift in Sources */,
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
+				CEC336F92B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D252B54394900D0844B /* WorkSheetListPresenter.swift in Sources */,
 				CEF5D7C32B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */,
@@ -1684,6 +1727,7 @@
 				CECB3E232B45E378004A260D /* UIViewController+Ext.swift in Sources */,
 				CE9E7D922B529F4500240A7D /* UserProfilePresenter.swift in Sources */,
 				CECB77862B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
+				CEAF06432B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */,
 				CE82D4532B47DDB200A54124 /* LoginRouter.swift in Sources */,
 				CE9E7D742B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91042B4F9434004C027A /* InformationCardView.swift in Sources */,
@@ -1691,6 +1735,7 @@
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE40122F2B5D7E7C00517F7C /* FullScreenPictureView.swift in Sources */,
+				CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E482B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEFB4F122B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEE67D3E2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
@@ -1739,6 +1784,7 @@
 				CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CE4012182B5D58EB00517F7C /* EvidenceEquipmentCVC.swift in Sources */,
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
+				CEC336FA2B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D262B54394900D0844B /* WorkSheetListPresenter.swift in Sources */,
 				CEF5D7C42B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */,
@@ -1931,6 +1977,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1959,6 +2006,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1987,6 +2035,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2015,6 +2064,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

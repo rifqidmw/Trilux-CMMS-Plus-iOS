@@ -46,7 +46,10 @@ extension SplashScreenView {
         presenter.$userData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self = self, let data = data, let message = data.message else { return }
+                guard let self = self,
+                      let data = data,
+                      let message = data.message
+                else { return }
                 
                 if message == .success && self.isLoggedIn && self.isRegistered {
                     presenter.navigateToHomeScreen()
@@ -56,45 +59,25 @@ extension SplashScreenView {
         
         presenter.$isError
             .sink { [weak self] isError in
-                guard let self = self, isError else {
-                    self?.routingValidate()
-                    return
-                }
-                
+                guard let self = self else { return }
                 let logo = UserDefaults.standard.string(forKey: "triluxLogo") ?? ""
                 let tagline = UserDefaults.standard.string(forKey: "tagLine") ?? ""
                 let hospitalTheme = HospitalTheme(logo: logo, tagline: tagline)
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    if !self.isRegistered && !self.isLoggedIn {
-                        presenter.navigateToRegistrationHospital()
-                    } else if !self.isLoggedIn {
-                        presenter.navigateToLoginPage(data: hospitalTheme)
-                    } else {
-                        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
-                        presenter.navigateToLoginPage(data: hospitalTheme)
+                    if isError {
+                        if !self.isRegistered && !self.isLoggedIn {
+                            presenter.navigateToRegistrationHospital()
+                        } else if !self.isLoggedIn {
+                            presenter.navigateToLoginPage(data: hospitalTheme)
+                        } else {
+                            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+                            presenter.navigateToLoginPage(data: hospitalTheme)
+                        }
                     }
                 }
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func routingValidate() {
-        guard let presenter = self.presenter else { return }
-        
-        let logo = UserDefaults.standard.string(forKey: "triluxLogo") ?? ""
-        let tagline = UserDefaults.standard.string(forKey: "tagLine") ?? ""
-        let data = HospitalTheme(logo: logo, tagline: tagline)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if self.isLoggedIn && self.isRegistered {
-                presenter.navigateToHomeScreen()
-            } else if self.isRegistered {
-                presenter.navigateToLoginPage(data: data)
-            } else {
-                presenter.navigateToRegistrationHospital()
-            }
-        }
     }
     
 }

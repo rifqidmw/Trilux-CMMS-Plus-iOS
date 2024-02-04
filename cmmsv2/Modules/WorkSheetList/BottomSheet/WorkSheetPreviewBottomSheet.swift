@@ -23,6 +23,7 @@ class WorkSheetPreviewBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var seeWorkButton: GeneralButton!
     @IBOutlet weak var seeDetailButton: GeneralButton!
     
+    weak var delegate: WorkSheetListDelegate?
     var data: WorkSheetListEntity?
     
     override func didLoad() {
@@ -70,10 +71,10 @@ extension WorkSheetPreviewBottomSheet {
         
         seeDetailButton.gesture()
             .sink { [weak self] _ in
-                guard self != nil else { return }
-                let vc = WorkSheetDetailRouter().showView()
-                let rootViewController = UINavigationController(rootViewController: vc)
-                UIApplication.shared.windows.first?.rootViewController = rootViewController
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                delegate.didTapDetailWorkSheet()
             }
             .store(in: &anyCancellable)
     }

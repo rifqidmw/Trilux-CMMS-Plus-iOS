@@ -17,11 +17,3 @@ class FullScreenPicturePresenter: BasePresenter {
     }
     
 }
-
-extension FullScreenPicturePresenter {
-    
-    func backToPreviousPage(navigation: UINavigationController) {
-        router.backToPreviousPage(navigation: navigation)
-    }
-    
-}

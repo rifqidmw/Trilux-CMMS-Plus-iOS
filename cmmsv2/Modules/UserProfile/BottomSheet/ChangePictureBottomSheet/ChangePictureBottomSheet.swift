@@ -12,6 +12,8 @@ class ChangePictureBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var delegate: ChangePictureBottomSheetDelegate?
     var data: [MenuModel] = changePictureData
     
     override func didLoad() {
@@ -75,6 +77,17 @@ extension ChangePictureBottomSheet: UITableViewDataSource, UITableViewDelegate {
         cell.setupCell(data: data[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate else { return }
+        switch indexPath.row {
+        case 0:
+            delegate.didSelectPictureFromCamera()
+        case 1:
+            delegate.didSelectPictureFromGaleri()
+        default: break
+        }
     }
     
 }

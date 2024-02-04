@@ -45,10 +45,9 @@ extension WorkSheetOnsitePreventiveListView {
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter
+                      let navigation = self.navigationController
                 else { return}
-                
-                presenter.backToPreviousPage()
+                navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
     }
@@ -79,8 +78,19 @@ extension WorkSheetOnsitePreventiveListView: UITableViewDataSource, UITableViewD
         else { return }
         
         self.showOverlay()
-        presenter.showBottomSheetAction(navigation: navigation, type: status == .ongoing ? .work : .see)
+        presenter.showBottomSheetAction(navigation: navigation, type: status == .ongoing ? .work : .see, delegate: self)
     }
     
 }
 
+extension WorkSheetOnsitePreventiveListView: WorkSheetOnsitePreventiveDelegate {
+    
+    func didTapDetailPreventive() {
+        AppLogger.log("GO TO DETAIL PREVENTIVE")
+    }
+    
+    func didTapContinueWorking() {
+        AppLogger.log("GO TO INSERT PAGE")
+    }
+    
+}

@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol WorkSheetListDelegate: AnyObject {
+    func didTapDetailWorkSheet()
+}
+
 struct WorkSheetListEntity {
     let id = UUID()
     let uniqueNumber: String

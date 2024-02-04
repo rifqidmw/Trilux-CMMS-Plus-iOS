@@ -57,11 +57,9 @@ extension ChangePasswordView {
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
-                presenter.backToPreviousPage(navigation: navigation)
+                navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
         
@@ -74,7 +72,6 @@ extension ChangePasswordView {
                       let newPassword = self.newPasswordTextField.textField.text,
                       let confirmPassword = self.newPasswordConfirmTextField.textField.text
                 else { return }
-                let imageId = UserDefaults.standard.integer(forKey: "valImageId")
                 
                 if oldPassword.isEmpty || newPassword.isEmpty || confirmPassword.isEmpty {
                     self.showAlert(title: "Terjadi Kesalahan", message: "Harap untuk mengisi semua bidang!")
@@ -92,7 +89,6 @@ extension ChangePasswordView {
     private func showSpinner(_ isShow: Bool) {
         DispatchQueue.main.async {
             self.spinner.isHidden = !isShow
-            
             isShow ? self.showOverlay() : self.removeOverlay()
             isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
         }

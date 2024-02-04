@@ -62,7 +62,6 @@ extension LoginView {
     private func showSpinner(_ isShow: Bool) {
         DispatchQueue.main.async {
             self.spinner.isHidden = !isShow
-            
             isShow ? self.showOverlay() : self.removeOverlay()
             isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
         }

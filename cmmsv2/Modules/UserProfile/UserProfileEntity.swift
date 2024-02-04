@@ -1,4 +1,4 @@
-// 
+//
 //  UserProfileEntity.swift
 //  cmmsv2
 //
@@ -6,6 +6,47 @@
 //
 
 import Foundation
+
+protocol ChangePictureBottomSheetDelegate: AnyObject {
+    func didSelectPictureFromCamera()
+    func didSelectPictureFromGaleri()
+}
+
+struct MediaProfileEntity: Codable {
+    let data: ProfileData?
+    let message: String?
+    let status: Int?
+    
+    enum CodingKeys: CodingKey {
+        case data
+        case message
+        case status
+    }
+}
+
+struct ImageProfile: Encodable {
+    let file: Data
+}
+
+struct ProfileData: Codable {
+    let media: DetailProfile?
+    
+    enum CodingKeys: CodingKey {
+        case media
+    }
+}
+
+struct DetailProfile: Codable {
+    let id: String?
+    let valUrl: String?
+    let valThumburl: String?
+    
+    enum CodingKeys: CodingKey {
+        case id
+        case valUrl
+        case valThumburl
+    }
+}
 
 struct ProfileMenuModel: Identifiable {
     let id = UUID()

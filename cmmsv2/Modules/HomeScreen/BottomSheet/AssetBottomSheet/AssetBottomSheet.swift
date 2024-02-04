@@ -13,6 +13,7 @@ class AssetBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var tableView: UITableView!
     
+    weak var delegate: AssetBottomSheetDelegate?
     var data: [MenuModel] = assetData
     
     override func didLoad() {
@@ -79,11 +80,12 @@ extension AssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate else { return }
         switch indexPath.row {
         case 0:
-            AppLogger.log("GO TO ASSET MEDIC")
+            delegate.didTapAssetMedic()
         case 1:
-            AppLogger.log("GO TO ASSET NON MEDIC")
+            delegate.didTapAssetNonMedic()
         default: break
         }
     }

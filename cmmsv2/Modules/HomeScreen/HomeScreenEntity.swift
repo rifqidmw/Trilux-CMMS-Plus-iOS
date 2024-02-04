@@ -26,6 +26,11 @@ protocol WorkSheetBottomSheetDelegate: AnyObject {
     func didTapWorkSheetCorrective()
 }
 
+protocol AssetBottomSheetDelegate: AnyObject {
+    func didTapAssetMedic()
+    func didTapAssetNonMedic()
+}
+
 struct HomeTheme: Codable {
     let image: String?
     let name: String?
@@ -35,6 +40,28 @@ struct HomeTheme: Codable {
         case image
         case name
         case hospitalName
+    }
+}
+
+struct ExpiredEntity: Codable {
+    let data: ExpiredData
+    let message: String
+    let status: Int
+    
+    enum CodingKeys: CodingKey {
+        case data
+        case message
+        case status
+    }
+}
+
+struct ExpiredData: Codable {
+    let isExpired: Int
+    let expiredDate: String
+    
+    enum CodingKeys: String, CodingKey {
+        case isExpired = "is_expired"
+        case expiredDate = "expired_date"
     }
 }
 

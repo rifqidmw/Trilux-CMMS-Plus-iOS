@@ -26,11 +26,17 @@ class UserProfileView: BaseViewController {
     @IBOutlet weak var logoutButton: GeneralButton!
     
     var presenter: UserProfilePresenter?
+    var user: User?
     var data: [ProfileMenuModel] = profileMenuData
     
     override func didLoad() {
         super.didLoad()
         setupBody()
+    }
+    
+    override func willAppear() {
+        super.willAppear()
+        fetchInitData()
     }
     
 }
@@ -65,6 +71,7 @@ extension UserProfileView {
                       let phoneNumber = data.txtTelepon
                 else { return }
                 
+                self.user = data
                 self.userProfileImageView.loadImageUrl(profileImage)
                 self.userNameLabel.text = userName.capitalized
                 self.userPhoneNumberLabel.text = phoneNumber
@@ -108,11 +115,10 @@ extension UserProfileView {
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
                 
-                presenter.backToPreviousPage(navigation: navigation)
+                navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
         
@@ -136,7 +142,7 @@ extension UserProfileView {
                 else { return }
                 
                 self.showOverlay()
-                presenter.showBottomSheetChangePicture(navigation: navigation)
+                presenter.showBottomSheetChangePicture(navigation: navigation, delegate: self)
             }
             .store(in: &anyCancellable)
         
@@ -147,7 +153,7 @@ extension UserProfileView {
                 
                 if !phoneNumber.isEmpty {
                     UIPasteboard.general.string = phoneNumber
-                    self.showAlert(title: "Copy to clipboard", message: "Phone number copied to clipboard")
+                    self.showAlert(title: "Text disalin", message: "Nomor telepon disalin")
                 }
             }
             .store(in: &anyCancellable)
@@ -211,32 +217,17 @@ extension UserProfileView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let presenter,
-              let navigation = self.navigationController
+              let navigation = self.navigationController,
+              let data = self.user
         else { return }
         
         switch indexPath.row {
         case 0:
-            presenter.navigateToEditProfile(navigation: navigation)
+            presenter.navigateToEditProfile(navigation: navigation, data: data)
         case 1:
             presenter.navigateToChangePassword(navigation: navigation)
         default: break
         }
-    }
-    
-}
-
-extension UserProfileView: LogoutPopUpBottomSheetDelegate {
-    
-    func didTapLogout() {
-        guard let presenter,
-              let logo = UserDefaults.standard.string(forKey: "triluxLogo"),
-              let tagline = UserDefaults.standard.string(forKey: "tagLine"),
-              let navigation = self.navigationController
-        else { return }
-        let data = HospitalTheme(logo: logo, tagline: tagline)
-        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
-        UserDefaults.standard.removeObject(forKey: "valToken")
-        presenter.navigateToLoginPage(navigation: navigation, data: data)
     }
     
 }
