@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Photos
+import Alamofire
 
 extension UserProfileView: LogoutPopUpBottomSheetDelegate {
     
@@ -29,9 +31,7 @@ extension UserProfileView: ChangePictureBottomSheetDelegate {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .camera
-            imagePicker.cameraCaptureMode = .photo
-            imagePicker.mediaTypes = ["public.image"]
-            imagePicker.cameraDevice = .rear
+            imagePicker.allowsEditing = true
             imagePicker.delegate = self
             self.dismiss(animated: true) {
                 UIApplication.topViewController()?.present(imagePicker, animated: true, completion: nil)
@@ -45,7 +45,9 @@ extension UserProfileView: ChangePictureBottomSheetDelegate {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .photoLibrary
-            imagePicker.modalPresentationStyle = .fullScreen
+            imagePicker.allowsEditing = true
+            imagePicker.modalPresentationStyle = .overFullScreen
+            imagePicker.delegate = self
             self.dismiss(animated: true) {
                 UIApplication.topViewController()?.present(imagePicker, animated: true, completion: nil)
             }
@@ -58,17 +60,10 @@ extension UserProfileView: ChangePictureBottomSheetDelegate {
 
 extension UserProfileView: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let presenter else { return }
-        
-        if let selectedImage = info[.originalImage] as? UIImage {
-            if let imgData = selectedImage.jpegData(compressionQuality: 0.2) {
-                presenter.uploadUserProfile(file: ImageProfile(file: imgData))
-            }
-        } else {
-            self.showAlert(title: "Terjadi kesalahan", message: "Gagal mengunggah foto!")
-        }
-        picker.dismiss(animated: true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        picker.dismiss(animated: true)
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        print("SELECTED IMAGE: \(selectedImage)")
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

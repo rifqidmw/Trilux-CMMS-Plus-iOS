@@ -24,10 +24,6 @@ struct MediaProfileEntity: Codable {
     }
 }
 
-struct ImageProfile: Encodable {
-    let file: Data
-}
-
 struct ProfileData: Codable {
     let media: DetailProfile?
     

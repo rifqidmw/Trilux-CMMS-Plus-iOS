@@ -14,7 +14,7 @@ class UserProfileInteractor: BaseInteractor {
         return api.requestApiPublisher(.getProfile)
     }
     
-    func uploadProfile(file: ImageProfile) -> AnyPublisher<MediaProfileEntity, Error> {
+    func uploadProfile(file: URL) -> AnyPublisher<MediaProfileEntity, Error> {
         return api.requestApiPublisher(.uploadProfile(file: file))
     }
     

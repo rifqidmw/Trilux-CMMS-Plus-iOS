@@ -164,7 +164,7 @@ extension UserProfileView {
             userProfileImageView,
             userNameLabel,
             tagLineLabel,
-            userPhoneNumberLabel,
+            copyToClipboardButton,
             workUnitView,
             positionView,
             jobView
@@ -179,7 +179,7 @@ extension UserProfileView {
             userProfileImageView,
             userNameLabel,
             tagLineLabel,
-            userPhoneNumberLabel,
+            copyToClipboardButton,
             workUnitView,
             positionView,
             jobView

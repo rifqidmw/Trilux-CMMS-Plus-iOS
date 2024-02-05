@@ -25,6 +25,7 @@ class EditProfileView: BaseViewController {
     override func didLoad() {
         super.didLoad()
         setupBody()
+        configureKeyboard()
     }
     
     override func willAppear() {
@@ -71,7 +72,7 @@ extension EditProfileView {
         }
         let slicedPhoneNumber = phoneNumber
         nameTextField.textField.text = data.txtName
-        jobTextField.textField.text = data.txtJob
+        jobTextField.textField.text = data.txtJabatan
         workUnitTextField.textField.text = data.txtUnitKerja
         phoneNumberTextField.textField.text = slicedPhoneNumber
     }

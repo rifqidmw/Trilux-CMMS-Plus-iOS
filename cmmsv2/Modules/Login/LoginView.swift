@@ -28,6 +28,7 @@ class LoginView: BaseViewController {
     override func didLoad() {
         super.didLoad()
         setupBody()
+        configureKeyboard()
     }
     
 }

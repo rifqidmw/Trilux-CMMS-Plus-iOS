@@ -69,13 +69,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="213" height="76"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Semua Kemudahan dalam Satu Genggaman" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-sO-ruv">
-                                                    <rect key="frame" x="0.0" y="43" width="213" height="33"/>
+                                                    <rect key="frame" x="0.0" y="35" width="213" height="41"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                     <color key="textColor" name="placeholderColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budi Panjaitan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMe-5s-cB2">
-                                                    <rect key="frame" x="0.0" y="24" width="213" height="19"/>
+                                                    <rect key="frame" x="0.0" y="16" width="213" height="19"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                     <color key="textColor" name="customDarkGrayColor"/>
                                                     <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="TMe-5s-cB2" firstAttribute="top" secondItem="GPr-VP-52g" secondAttribute="top" constant="24" id="C6B-f1-YXu"/>
+                                                <constraint firstItem="TMe-5s-cB2" firstAttribute="top" secondItem="GPr-VP-52g" secondAttribute="top" constant="16" id="C6B-f1-YXu"/>
                                                 <constraint firstItem="8Xb-sO-ruv" firstAttribute="top" secondItem="TMe-5s-cB2" secondAttribute="bottom" id="Ojv-wF-Bzo"/>
                                                 <constraint firstAttribute="trailing" secondItem="TMe-5s-cB2" secondAttribute="trailing" id="Tko-Kt-aA9"/>
                                                 <constraint firstAttribute="trailing" secondItem="8Xb-sO-ruv" secondAttribute="trailing" id="d5H-q9-xbP"/>

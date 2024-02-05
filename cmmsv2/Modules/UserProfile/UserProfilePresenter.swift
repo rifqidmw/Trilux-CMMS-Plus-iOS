@@ -58,7 +58,7 @@ extension UserProfilePresenter {
             .store(in: &anyCancellable)
     }
     
-    func uploadUserProfile(file: ImageProfile) {
+    func uploadUserProfile(file: URL) {
         self.isLoading = true
         interactor.uploadProfile(file: file)
             .sink(

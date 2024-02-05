@@ -5,7 +5,9 @@
 	<key>NSCameraPortraitEffectEnabled</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera to take photos</string>
+	<string>Kami memerlukan akses ke kamera Anda untuk mengambil foto</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Untuk meningkatkan pengalaman pengguna, aplikasi ini membutuhkan akses ke perpustakaan foto Anda.</string>
 	<key>BASE_URL</key>
 	<string>${BASE_URL}</string>
 	<key>RS_URL</key>

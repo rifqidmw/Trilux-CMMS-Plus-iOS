@@ -15,7 +15,7 @@ enum Endpoint {
     case updateProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String)
     case changePassword(oldPassword: String, passwordConfirm: String, password: String)
     case infoExpired
-    case uploadProfile(file: ImageProfile)
+    case uploadProfile(file: URL)
 }
 
 // MARK: - PATH URL
@@ -87,9 +87,9 @@ extension Endpoint {
                 "password": password
             ]
             return params
-        case .uploadProfile(let ImageProfile):
+        case .uploadProfile(let file):
             let formData: MultipartFormData = MultipartFormData()
-            formData.append(ImageProfile.file, withName: "fileset", fileName: "file.jpg", mimeType: "image/jpg")
+            formData.append(file, withName: "file", fileName: "filename.jpg", mimeType: "image/jpeg")
             
             let params: [String: Any] = [
                 "file": formData
@@ -121,7 +121,7 @@ extension Endpoint {
             return params
         case .uploadProfile:
             let params: HTTPHeaders = [
-                "Content-Type": "multipart/form-data",
+                "Content-Type": "application/x-www-form-urlencoded",
                 "Authorizations": Constants.token,
                 "RequestType": "api",
                 "Accept": "*/*"
