@@ -43,7 +43,7 @@ class WorkSheetItemTVC: UITableViewCell {
         self.statusView.makeCornerRadius(4)
         self.markView.makeCornerRadius(4, .rightCurve)
         self.containerView.makeCornerRadius(8)
-        self.containerView.addShadow(11, opacity: 0.12)
+        self.containerView.addShadow(8, opacity: 0.12)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

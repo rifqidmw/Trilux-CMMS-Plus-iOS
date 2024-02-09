@@ -32,19 +32,6 @@ extension UIView {
         layer.borderColor = colorBorder
     }
     
-    func addDashedBorder(width: CGFloat = 1, colorBorder: CGColor = UIColor.white.cgColor) {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = colorBorder
-        shapeLayer.lineWidth = width
-        shapeLayer.lineDashPattern = [8, 4]
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        
-        let path = UIBezierPath(rect: bounds)
-        shapeLayer.path = path.cgPath
-        
-        layer.addSublayer(shapeLayer)
-    }
-    
     func animateShowView(_ duration: TimeInterval = 0.5, _ delay: TimeInterval = 0) {
         UIView.animate(withDuration: duration, delay: delay, options: [.curveEaseIn],
                        animations: {
@@ -61,6 +48,41 @@ extension UIView {
         layer.masksToBounds = false
         layer.shadowOffset = position.offset
     }
+    
+    func addDashedBorder(position: UIRectEdge, width: CGFloat = 1, colorBorder: CGColor = UIColor.white.cgColor, rounded: Bool = false) {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = colorBorder
+        shapeLayer.lineWidth = width
+        shapeLayer.lineDashPattern = [8, 4]
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        
+        var path: UIBezierPath
+        
+        switch position {
+        case .top:
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: self.bounds.width, y: 0))
+        case .bottom:
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: 0, y: self.bounds.height))
+            path.addLine(to: CGPoint(x: self.bounds.width, y: self.bounds.height))
+        case .left:
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: 0, y: self.bounds.height))
+        case .right:
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: self.bounds.width, y: 0))
+            path.addLine(to: CGPoint(x: self.bounds.width, y: self.bounds.height))
+        default:
+            path = rounded ? UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius) : UIBezierPath(rect: self.bounds)
+        }
+        
+        shapeLayer.path = path.cgPath
+        layer.addSublayer(shapeLayer)
+    }
+    
     
     func makeAnimation(duration: TimeInterval = 0.3, animations: @escaping () -> Void, completion: (() -> Void)? = nil) {
         UIView.transition(with: self,

@@ -86,11 +86,17 @@ extension WorkSheetOnsitePreventiveListView: UITableViewDataSource, UITableViewD
 extension WorkSheetOnsitePreventiveListView: WorkSheetOnsitePreventiveDelegate {
     
     func didTapDetailPreventive() {
-        AppLogger.log("GO TO DETAIL PREVENTIVE")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailPage(navigation: navigation, type: .seeOnly)
     }
     
     func didTapContinueWorking() {
-        AppLogger.log("GO TO INSERT PAGE")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailPage(navigation: navigation, type: .workContinue)
     }
     
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropdownView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="iconAccordionImageView" destination="LFv-hd-Cwv" id="ZW0-R4-0Eo"/>
+                <outlet property="titleLabel" destination="cip-K9-ldz" id="PfA-gB-UNF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9JS-Xd-A5B">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cip-K9-ldz">
+                    <rect key="frame" x="16" y="19.666666666666668" width="321" height="17.000000000000004"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" name="customDarkGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_collapse_accordion" translatesAutoresizingMaskIntoConstraints="NO" id="LFv-hd-Cwv">
+                    <rect key="frame" x="353" y="16" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="mFb-lO-lmi"/>
+                        <constraint firstAttribute="height" constant="24" id="vbn-ml-caX"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" name="customLightGrayColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LFv-hd-Cwv" secondAttribute="trailing" constant="16" id="JGX-EM-p9h"/>
+                <constraint firstItem="LFv-hd-Cwv" firstAttribute="leading" secondItem="cip-K9-ldz" secondAttribute="trailing" constant="16" id="Q3N-6J-IgH"/>
+                <constraint firstItem="LFv-hd-Cwv" firstAttribute="centerY" secondItem="9JS-Xd-A5B" secondAttribute="centerY" id="gUA-2S-ppH"/>
+                <constraint firstItem="cip-K9-ldz" firstAttribute="centerY" secondItem="9JS-Xd-A5B" secondAttribute="centerY" id="j0M-r7-siI"/>
+                <constraint firstItem="cip-K9-ldz" firstAttribute="leading" secondItem="9JS-Xd-A5B" secondAttribute="leading" constant="16" id="naA-Ve-rH0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-167.17557251908397" y="-66.197183098591552"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_collapse_accordion" width="24" height="24"/>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

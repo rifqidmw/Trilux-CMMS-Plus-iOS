@@ -28,6 +28,29 @@ enum WorkSheetCategory: String, Codable {
     }
 }
 
+enum PreparationStatus: String, Codable {
+    case no = "Tidak"
+    case yes = "Ya"
+    case damaged = "Rusak"
+    case good = "Baik"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Tidak": self = .no
+        case "Ya": self = .yes
+        case "Rusak": self = .damaged
+        case "Baik": self = .good
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
 enum WorkSheetStatus: String, Codable {
     case done = "Selesai, Bisa digunakan kembali"
     case open = "Open"
