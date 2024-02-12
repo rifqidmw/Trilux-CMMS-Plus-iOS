@@ -14,6 +14,14 @@ enum Endpoint {
     case getProfile
     case updateProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String)
     case changePassword(oldPassword: String, passwordConfirm: String, password: String)
+    case assetList(
+        serial: String? = nil,
+        locationId: String? = nil,
+        limit: Int? = nil,
+        page: Int? = nil,
+        search: String? = nil,
+        type: String? = nil,
+        sstMedic: String? = nil)
     case infoExpired
     case uploadProfile(file: URL)
 }
@@ -32,6 +40,22 @@ extension Endpoint {
             return "profile/update"
         case .changePassword:
             return "profile/change_password"
+        case .assetList(
+            let serial,
+            let locationId,
+            let limit,
+            let page,
+            let search,
+            let type,
+            let sstMedic):
+            return generateEquipmentListURL(
+                serial: serial,
+                locationID: locationId,
+                limit: limit,
+                page: page,
+                search: search,
+                type: type,
+                sttMedic: sstMedic)
         case .infoExpired:
             return "info/expired"
         case .uploadProfile:
@@ -148,4 +172,32 @@ extension Endpoint {
             return Constants.baseURL + path()
         }
     }
+}
+
+// MARK: - GENERATE ENDPOINT
+extension Endpoint {
+    
+    func generateEquipmentListURL(
+        serial: String? = nil,
+        locationID: String? = nil,
+        limit: Int? = nil,
+        page: Int? = nil,
+        search: String? = nil,
+        type: String? = nil,
+        sttMedic: String? = nil) -> String {
+            let queryString = [
+                serial.map { "serial=\($0)" },
+                locationID.map { "location_id=\($0)" },
+                search.map { "search=\($0)" },
+                type.map { "jenis=\($0)" },
+                sttMedic.map { "stt_medik=\($0)" },
+                limit.map { "limit=\($0)" },
+                page.map { "page=\($0)" }
+            ].compactMap { $0 }.joined(separator: "&")
+            
+            let url = "equipments" + (queryString.isEmpty ? "" : "?\(queryString)")
+            
+            return url.replacingOccurrences(of: " ", with: "%20")
+        }
+    
 }

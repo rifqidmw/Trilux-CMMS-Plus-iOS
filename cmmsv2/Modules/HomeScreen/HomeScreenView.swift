@@ -12,8 +12,6 @@ class HomeScreenView: BaseViewController {
     @IBOutlet weak var navigationView: CustomNavigationView!
     @IBOutlet weak var searchButton: GeneralButton!
     @IBOutlet weak var categoryView: CategorySectionView!
-    @IBOutlet weak var informationCardView: UIView!
-    @IBOutlet weak var closeButton: UIImageView!
     @IBOutlet weak var scanningButton: GeneralButton!
     
     var presenter: HomeScreenPresenter?
@@ -42,7 +40,6 @@ extension HomeScreenView {
     private func setupView() {
         setupNavigationView()
         searchButton.configure(type: .searchbutton)
-        informationCardView.makeCornerRadius(8)
         scanningButton.configure(title: "Scanning Alat", type: .withIcon, icon: "ic_scan")
         categoryView.delegate = self
     }

@@ -94,4 +94,8 @@ extension HomeScreenPresenter {
         router.goToUserProfile(navigation: navigation)
     }
     
+    func navigateToAssetList(navigation: UINavigationController) {
+        router.navigateToAssetList(navigation: navigation)
+    }
+    
 }

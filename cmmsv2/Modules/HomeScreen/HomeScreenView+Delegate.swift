@@ -86,7 +86,10 @@ extension HomeScreenView: WorkSheetBottomSheetDelegate {
 extension HomeScreenView: AssetBottomSheetDelegate {
     
     func didTapAssetMedic() {
-        AppLogger.log("GO TO WORK ASSET MEDIC")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToAssetList(navigation: navigation)
     }
     
     func didTapAssetNonMedic() {
