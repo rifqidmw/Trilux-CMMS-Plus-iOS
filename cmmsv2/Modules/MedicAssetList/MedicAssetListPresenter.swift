@@ -24,7 +24,7 @@ class MedicAssetListPresenter: BasePresenter {
     var search: String = ""
     var type: String = "medik"
     var sstMedic: String = "medik"
-    var page: Int = 0
+    var page: Int = 1
     var limit: Int = 10
     var isCanLoad = true
     var isFetchingMore = false
@@ -70,7 +70,8 @@ extension MedicAssetListPresenter {
                               let equipment = data.equipments
                         else { return }
                         self.equipmentData = asset
-                        self.equipment = equipment
+                        self.equipment.append(contentsOf: equipment)
+                        
                     }
                 }
             )
