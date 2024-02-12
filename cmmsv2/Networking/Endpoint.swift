@@ -22,6 +22,8 @@ enum Endpoint {
         search: String? = nil,
         type: String? = nil,
         sstMedic: String? = nil)
+    case infoExpired
+    case uploadProfile(file: URL)
 }
 
 // MARK: - PATH URL
@@ -54,6 +56,10 @@ extension Endpoint {
                 search: search,
                 type: type,
                 sttMedic: sstMedic)
+        case .infoExpired:
+            return "info/expired"
+        case .uploadProfile:
+            return "media/uploadprofile"
         }
     }
 }
@@ -65,7 +71,8 @@ extension Endpoint {
         case .registerHospital,
                 .loginUser,
                 .updateProfile,
-                .changePassword:
+                .changePassword,
+                .uploadProfile:
             return .post
         default:
             return .get
@@ -104,6 +111,21 @@ extension Endpoint {
                 "password": password
             ]
             return params
+        case .uploadProfile(let file):
+            let formData: MultipartFormData = MultipartFormData()
+            formData.append(file, withName: "file", fileName: "filename.jpg", mimeType: "image/jpeg")
+            
+            let params: [String: Any] = [
+                "file": formData
+            ]
+            
+            for (key, value) in params {
+                if let data = "\(value)".data(using: .utf8) {
+                    formData.append(data, withName: key)
+                }
+            }
+            
+            return params
         default:
             return nil
         }
@@ -118,6 +140,14 @@ extension Endpoint {
             let params: HTTPHeaders = [
                 "Authorizations": "TokenTriluxCMMS+",
                 "Content-Type": "application/json",
+                "Accept": "*/*"
+            ]
+            return params
+        case .uploadProfile:
+            let params: HTTPHeaders = [
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorizations": Constants.token,
+                "RequestType": "api",
                 "Accept": "*/*"
             ]
             return params

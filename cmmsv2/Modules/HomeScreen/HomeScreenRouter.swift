@@ -21,32 +21,31 @@ class HomeScreenRouter: BaseRouter {
 
 extension HomeScreenRouter {
     
-    func showAllCategoriesBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = AllCategoriesBottomSheet(nibName: String(describing: AllCategoriesBottomSheet.self), bundle: nil)
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
+    func navigateToWorkSheetList(navigation: UINavigationController) {
+        let vc = WorkSheetListRouter().showView()
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
     }
     
-    func showWorkSheetBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = WorkSheetBottomSheet(nibName: String(describing: WorkSheetBottomSheet.self), bundle: nil)
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
+    func navigateToWorkSheetOnsitePreventive(navigation: UINavigationController) {
+        let vc = WorkSheetOnsitePreventiveListRouter().showView()
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
     }
     
-    func showAssetBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = AssetBottomSheet(nibName: String(describing: AssetBottomSheet.self), bundle: nil)
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
-    }
-    
-    func showDetailInformationBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = InformationDetailBottomSheet(nibName: String(describing: InformationDetailBottomSheet.self), bundle: nil)
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
+    func showBottomSheet(view: UIViewController, navigation: UINavigationController) {
+        view.modalPresentationStyle = .overCurrentContext
+        navigation.present(view, animated: true)
     }
     
     func goToUserProfile(navigation: UINavigationController) {
         let vc = UserProfileRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToAssetList(navigation: UINavigationController) {
+        let vc = MedicAssetListRouter().showView()
+        navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }
     

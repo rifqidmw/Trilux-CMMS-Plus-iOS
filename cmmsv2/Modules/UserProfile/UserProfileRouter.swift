@@ -26,8 +26,9 @@ extension UserProfileRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func goToEditProfile(navigation: UINavigationController) {
+    func goToEditProfile(navigation: UINavigationController, data: User) {
         let vc = EditProfileRouter().showView()
+        vc.data = data
         navigation.pushViewController(vc, animated: true)
     }
     
@@ -35,20 +36,15 @@ extension UserProfileRouter {
         let vc = LoginRouter().showView()
         vc.data = data
         navigation.dismiss(animated: true)
-        navigation.pushViewController(vc, animated: true)
+        let rootViewController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.setRootViewController(rootViewController)
     }
     
-    func showPopUpLogout(navigation: UINavigationController, delegate: LogoutPopUpBottomSheetDelegate) {
-        let bottomSheet = LogoutPopUpBottomSheet(nibName: String(describing: LogoutPopUpBottomSheet.self), bundle: nil)
-        bottomSheet.delegate = delegate
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
-    }
-    
-    func showChangePictureBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = ChangePictureBottomSheet(nibName: String(describing: ChangePictureBottomSheet.self), bundle: nil)
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
+    func showBottomSheet(navigation: UINavigationController, view: UIViewController) {
+        view.loadViewIfNeeded()
+        view.modalTransitionStyle = .coverVertical
+        view.modalPresentationStyle = .overCurrentContext
+        UIApplication.topViewController()?.present(view, animated: true, completion: nil)
     }
     
 }

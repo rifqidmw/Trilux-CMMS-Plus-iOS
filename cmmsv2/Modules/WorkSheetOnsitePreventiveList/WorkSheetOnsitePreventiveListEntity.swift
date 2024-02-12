@@ -7,6 +7,11 @@
 
 import Foundation
 
+protocol WorkSheetOnsitePreventiveDelegate: AnyObject {
+    func didTapDetailPreventive()
+    func didTapContinueWorking()
+}
+
 enum WorkSheetActionType {
     case work
     case see

@@ -6,11 +6,16 @@
 //
 
 import Combine
+import Foundation
 
 class UserProfileInteractor: BaseInteractor {
     
     func getUserProfile() -> AnyPublisher<UserProfileEntity, Error> {
         return api.requestApiPublisher(.getProfile)
+    }
+    
+    func uploadProfile(file: URL) -> AnyPublisher<MediaProfileEntity, Error> {
+        return api.requestApiPublisher(.uploadProfile(file: file))
     }
     
 }

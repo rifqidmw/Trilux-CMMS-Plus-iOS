@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetListRouter.swift
 //  cmmsv2
 //
@@ -21,11 +21,18 @@ class WorkSheetListRouter: BaseRouter {
 
 extension WorkSheetListRouter {
     
-    func showPreviewWorkSheetBottomSheet(navigation: UINavigationController) {
+    func showPreviewWorkSheetBottomSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
         let bottomSheet = WorkSheetPreviewBottomSheet(nibName: String(describing: WorkSheetPreviewBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
         //  bottomSheet.data = // entered data here
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
+    }
+    
+    func navigateToDetailWorkSheet(navigation: UINavigationController) {
+        let vc = WorkSheetDetailRouter().showView()
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
     }
     
 }

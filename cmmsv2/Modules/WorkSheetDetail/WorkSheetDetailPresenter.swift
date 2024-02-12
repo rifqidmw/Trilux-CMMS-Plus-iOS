@@ -20,10 +20,6 @@ class WorkSheetDetailPresenter: BasePresenter {
 
 extension WorkSheetDetailPresenter {
     
-    func navigateToWorkSheetList() {
-        router.goBackToWorkSheetList()
-    }
-    
     func navigateToFullScreenPicture(navigation: UINavigationController, titlePage: String, image: String) {
         router.goToFullScreenPicture(navigation: navigation, titlePage: titlePage, image: image)
     }

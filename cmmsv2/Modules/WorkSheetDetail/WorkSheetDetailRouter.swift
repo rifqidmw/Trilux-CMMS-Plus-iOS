@@ -21,12 +21,6 @@ class WorkSheetDetailRouter: BaseRouter {
 
 extension WorkSheetDetailRouter {
     
-    func goBackToWorkSheetList() {
-        let vc = WorkSheetListRouter().showView()
-        let rootViewController = UINavigationController(rootViewController: vc)
-        UIApplication.shared.windows.first?.rootViewController = rootViewController
-    }
-    
     func goToFullScreenPicture(navigation: UINavigationController, titlePage: String, image: String) {
         let vc = FullScreenPictureRouter().showView()
         vc.titlePage = titlePage

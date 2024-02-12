@@ -39,11 +39,9 @@ extension FullScreenPictureView {
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
-                presenter.backToPreviousPage(navigation: navigation)
+                navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
     }

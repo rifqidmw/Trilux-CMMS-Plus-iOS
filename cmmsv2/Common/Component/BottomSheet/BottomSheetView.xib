@@ -47,6 +47,7 @@
                 <constraint firstItem="b6N-ZL-okF" firstAttribute="trailing" secondItem="NsF-Ar-R8o" secondAttribute="trailing" id="XTz-VK-0kr"/>
                 <constraint firstItem="NsF-Ar-R8o" firstAttribute="leading" secondItem="b6N-ZL-okF" secondAttribute="leading" id="rQ3-35-mEN"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="288" y="-255"/>
         </view>
     </objects>

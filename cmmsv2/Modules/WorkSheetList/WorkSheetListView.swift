@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetListView.swift
 //  cmmsv2
 //
@@ -14,12 +14,12 @@ class WorkSheetListView: BaseViewController {
     
     var presenter: WorkSheetListPresenter?
     var data: [WorkSheetListEntity] = workSheetData
-
+    
     override func didLoad() {
         super.didLoad()
         setupBody()
     }
-
+    
 }
 
 extension WorkSheetListView {
@@ -45,10 +45,9 @@ extension WorkSheetListView {
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter
+                      let navigation = self.navigationController
                 else { return}
-                
-                presenter.backToPreviousPage()
+                navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
     }
@@ -77,7 +76,18 @@ extension WorkSheetListView: UITableViewDataSource, UITableViewDelegate {
               let navigation = self.navigationController
         else { return }
         self.showOverlay()
-        presenter.showBottomSheetPreviewWorkSheet(navigation: navigation)
+        presenter.showBottomSheetPreviewWorkSheet(navigation: navigation, delegate: self)
+    }
+    
+}
+
+extension WorkSheetListView: WorkSheetListDelegate {
+    
+    func didTapDetailWorkSheet() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailWorkSheet(navigation: navigation)
     }
     
 }

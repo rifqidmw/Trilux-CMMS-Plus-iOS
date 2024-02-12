@@ -12,7 +12,7 @@ class EditProfilePresenter: BasePresenter {
     private let interactor: EditProfileInteractor
     private let router = EditProfileRouter()
     
-    @Published public var userData: EditProfileEntity?
+    @Published public var userProfile: User?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -43,13 +43,9 @@ extension EditProfilePresenter {
                 },
                 receiveValue: { user in
                     DispatchQueue.main.async {
-                        guard let userData = user.data
-                        else { return }
-                        
                         switch user.message {
                         case .success:
-                            self.userData = user
-                            self.backToPreviousPage(navigation: navigation)
+                            navigation.popViewController(animated: true)
                         default: break
                         }
                     }
@@ -58,12 +54,31 @@ extension EditProfilePresenter {
             .store(in: &anyCancellable)
     }
     
-}
-
-extension EditProfilePresenter {
-    
-    func backToPreviousPage(navigation: UINavigationController) {
-        router.backToPreviousPage(navigation: navigation)
+    func fetchInitData() {
+        self.isLoading = true
+        interactor.getUserProfile()
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { user in
+                    DispatchQueue.main.async {
+                        guard let userData = user.data,
+                              let userProfile = userData.user
+                        else { return }
+                        self.userProfile = userProfile
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
     }
     
 }

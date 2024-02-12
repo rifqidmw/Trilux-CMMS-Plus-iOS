@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalibrationMeasurementView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="containerButtonStackView" destination="76P-m5-dMS" id="ysG-yP-gM9"/>
+                <outlet property="containerView" destination="EBZ-Yg-Sv0" id="jH8-dp-y0L"/>
+                <outlet property="deleteButton" destination="SCu-r0-BMc" id="gUv-6y-CKb"/>
+                <outlet property="tableView" destination="DSq-4h-TBg" id="xA9-hW-SPx"/>
+                <outlet property="titleLabel" destination="NQg-4V-rg2" id="cRX-8V-2Lv"/>
+                <outlet property="updateButton" destination="tyR-hh-7vR" id="QdA-VJ-2Gk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="EBZ-Yg-Sv0">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQg-4V-rg2">
+                    <rect key="frame" x="16" y="16" width="361" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="NTq-Ix-V0W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                    <color key="textColor" name="customPrimaryColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="76P-m5-dMS">
+                    <rect key="frame" x="16" y="148" width="361" height="36"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCu-r0-BMc" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="36"/>
+                            <color key="backgroundColor" name="indicatorColor3"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyR-hh-7vR" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="36"/>
+                            <color key="backgroundColor" name="customPrimaryColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="eeG-py-S44"/>
+                    </constraints>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-4h-TBg">
+                    <rect key="frame" x="16" y="52" width="361" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" name="customLightGrayColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NQg-4V-rg2" secondAttribute="trailing" constant="16" id="9U4-1p-UIM"/>
+                <constraint firstItem="76P-m5-dMS" firstAttribute="top" secondItem="DSq-4h-TBg" secondAttribute="bottom" constant="16" id="B14-0h-gIi"/>
+                <constraint firstItem="DSq-4h-TBg" firstAttribute="top" secondItem="NQg-4V-rg2" secondAttribute="bottom" constant="16" id="Drg-VC-C0Y"/>
+                <constraint firstItem="DSq-4h-TBg" firstAttribute="leading" secondItem="EBZ-Yg-Sv0" secondAttribute="leading" constant="16" id="GtG-Ze-hXF"/>
+                <constraint firstItem="NQg-4V-rg2" firstAttribute="top" secondItem="EBZ-Yg-Sv0" secondAttribute="top" constant="16" id="Iyx-J8-eTe"/>
+                <constraint firstAttribute="trailing" secondItem="76P-m5-dMS" secondAttribute="trailing" constant="16" id="S8n-wL-CxS"/>
+                <constraint firstAttribute="bottom" secondItem="76P-m5-dMS" secondAttribute="bottom" constant="16" id="Ug8-4m-7eH"/>
+                <constraint firstAttribute="trailing" secondItem="DSq-4h-TBg" secondAttribute="trailing" constant="16" id="hZg-QW-VMZ"/>
+                <constraint firstItem="NQg-4V-rg2" firstAttribute="leading" secondItem="EBZ-Yg-Sv0" secondAttribute="leading" constant="16" id="yZv-PA-IVN"/>
+                <constraint firstItem="76P-m5-dMS" firstAttribute="leading" secondItem="EBZ-Yg-Sv0" secondAttribute="leading" constant="16" id="z9W-ei-6kI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="214.50381679389312" y="-92.253521126760575"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customPrimaryColor">
+            <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="indicatorColor3">
+            <color red="0.99607843137254903" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

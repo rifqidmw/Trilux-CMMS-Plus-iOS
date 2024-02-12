@@ -9,6 +9,26 @@
 /* Begin PBXBuildFile section */
 		04215FE81D148BCC2E527EBB /* Pods_cmmsv2_DEV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C2821C28073D76A44C366 /* Pods_cmmsv2_DEV.framework */; };
 		5AC2B1AACC0BCC0313E58D7C /* Pods_cmmsv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1D615025482C54FBE7942 /* Pods_cmmsv2.framework */; };
+		CE0044662B75FF6200C88345 /* SparePartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0044652B75FF6200C88345 /* SparePartSectionView.swift */; };
+		CE0044672B75FF6200C88345 /* SparePartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0044652B75FF6200C88345 /* SparePartSectionView.swift */; };
+		CE0044692B75FF7E00C88345 /* SparePartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0044682B75FF7E00C88345 /* SparePartSectionView.xib */; };
+		CE00446A2B75FF7E00C88345 /* SparePartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0044682B75FF7E00C88345 /* SparePartSectionView.xib */; };
+		CE00446E2B7601B200C88345 /* SparePartTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00446C2B7601B200C88345 /* SparePartTVC.swift */; };
+		CE00446F2B7601B200C88345 /* SparePartTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00446C2B7601B200C88345 /* SparePartTVC.swift */; };
+		CE0044702B7601B300C88345 /* SparePartTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE00446D2B7601B200C88345 /* SparePartTVC.xib */; };
+		CE0044712B7601B300C88345 /* SparePartTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE00446D2B7601B200C88345 /* SparePartTVC.xib */; };
+		CE0044742B76192A00C88345 /* RecommendationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0044732B76192A00C88345 /* RecommendationSectionView.swift */; };
+		CE0044752B76192A00C88345 /* RecommendationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0044732B76192A00C88345 /* RecommendationSectionView.swift */; };
+		CE0044772B7619B500C88345 /* RecommendationSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0044762B7619B500C88345 /* RecommendationSectionView.xib */; };
+		CE0044782B7619B500C88345 /* RecommendationSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0044762B7619B500C88345 /* RecommendationSectionView.xib */; };
+		CE00447B2B7628A300C88345 /* SupportingDocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00447A2B7628A200C88345 /* SupportingDocumentationView.swift */; };
+		CE00447C2B7628A300C88345 /* SupportingDocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00447A2B7628A200C88345 /* SupportingDocumentationView.swift */; };
+		CE00447E2B7628B900C88345 /* SupportingDocumentationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE00447D2B7628B900C88345 /* SupportingDocumentationView.xib */; };
+		CE00447F2B7628B900C88345 /* SupportingDocumentationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE00447D2B7628B900C88345 /* SupportingDocumentationView.xib */; };
+		CE0044822B76372700C88345 /* CalibrationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0044812B76372700C88345 /* CalibrationStatusView.swift */; };
+		CE0044832B76372700C88345 /* CalibrationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0044812B76372700C88345 /* CalibrationStatusView.swift */; };
+		CE0044852B76373700C88345 /* CalibrationStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0044842B76373700C88345 /* CalibrationStatusView.xib */; };
+		CE0044862B76373700C88345 /* CalibrationStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0044842B76373700C88345 /* CalibrationStatusView.xib */; };
 		CE0EC4A32B775F9A00888BE8 /* MedicAssetCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EC4A12B775F9A00888BE8 /* MedicAssetCVC.swift */; };
 		CE0EC4A42B775F9A00888BE8 /* MedicAssetCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EC4A12B775F9A00888BE8 /* MedicAssetCVC.swift */; };
 		CE0EC4A52B775F9A00888BE8 /* MedicAssetCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0EC4A22B775F9A00888BE8 /* MedicAssetCVC.xib */; };
@@ -21,6 +41,42 @@
 		CE0EC4B02B79092E00888BE8 /* ActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EC4AE2B79092E00888BE8 /* ActionBarView.swift */; };
 		CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0EC4B12B79094400888BE8 /* ActionBarView.xib */; };
 		CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0EC4B12B79094400888BE8 /* ActionBarView.xib */; };
+		CE0F20A82B74BD3C008702E0 /* LabelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20A62B74BD3C008702E0 /* LabelTVC.swift */; };
+		CE0F20A92B74BD3C008702E0 /* LabelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20A62B74BD3C008702E0 /* LabelTVC.swift */; };
+		CE0F20AA2B74BD3C008702E0 /* LabelTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20A72B74BD3C008702E0 /* LabelTVC.xib */; };
+		CE0F20AB2B74BD3C008702E0 /* LabelTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20A72B74BD3C008702E0 /* LabelTVC.xib */; };
+		CE0F20AE2B74BF6F008702E0 /* StatusTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20AC2B74BF6F008702E0 /* StatusTVC.swift */; };
+		CE0F20AF2B74BF6F008702E0 /* StatusTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20AC2B74BF6F008702E0 /* StatusTVC.swift */; };
+		CE0F20B02B74BF6F008702E0 /* StatusTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20AD2B74BF6F008702E0 /* StatusTVC.xib */; };
+		CE0F20B12B74BF6F008702E0 /* StatusTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20AD2B74BF6F008702E0 /* StatusTVC.xib */; };
+		CE0F20BB2B74F5DE008702E0 /* PreventiveMaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20BA2B74F5DE008702E0 /* PreventiveMaintenanceView.swift */; };
+		CE0F20BC2B74F5DE008702E0 /* PreventiveMaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20BA2B74F5DE008702E0 /* PreventiveMaintenanceView.swift */; };
+		CE0F20BE2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20BD2B74F5F5008702E0 /* PreventiveMaintenanceView.xib */; };
+		CE0F20BF2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20BD2B74F5F5008702E0 /* PreventiveMaintenanceView.xib */; };
+		CE0F20C22B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20C12B751D53008702E0 /* ElectricalMeasurementView.swift */; };
+		CE0F20C32B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20C12B751D53008702E0 /* ElectricalMeasurementView.swift */; };
+		CE0F20C52B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20C42B751D6A008702E0 /* ElectricalMeasurementView.xib */; };
+		CE0F20C62B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20C42B751D6A008702E0 /* ElectricalMeasurementView.xib */; };
+		CE0F20CA2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20C82B752626008702E0 /* ElectricalMeasurementTVC.swift */; };
+		CE0F20CB2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20C82B752626008702E0 /* ElectricalMeasurementTVC.swift */; };
+		CE0F20CC2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20C92B752626008702E0 /* ElectricalMeasurementTVC.xib */; };
+		CE0F20CD2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20C92B752626008702E0 /* ElectricalMeasurementTVC.xib */; };
+		CE0F20D02B754B73008702E0 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20CF2B754B73008702E0 /* DropdownView.swift */; };
+		CE0F20D12B754B73008702E0 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20CF2B754B73008702E0 /* DropdownView.swift */; };
+		CE0F20D32B754B8A008702E0 /* DropdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20D22B754B8A008702E0 /* DropdownView.xib */; };
+		CE0F20D42B754B8A008702E0 /* DropdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20D22B754B8A008702E0 /* DropdownView.xib */; };
+		CE0F20D72B7553E3008702E0 /* SelectCalibratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20D62B7553E3008702E0 /* SelectCalibratorView.swift */; };
+		CE0F20D82B7553E3008702E0 /* SelectCalibratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20D62B7553E3008702E0 /* SelectCalibratorView.swift */; };
+		CE0F20DA2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20D92B7556A8008702E0 /* SelectCalibratorView.xib */; };
+		CE0F20DB2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20D92B7556A8008702E0 /* SelectCalibratorView.xib */; };
+		CE0F20DE2B756063008702E0 /* ActionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20DD2B756063008702E0 /* ActionSectionView.swift */; };
+		CE0F20DF2B756063008702E0 /* ActionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20DD2B756063008702E0 /* ActionSectionView.swift */; };
+		CE0F20E12B756078008702E0 /* ActionSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20E02B756078008702E0 /* ActionSectionView.xib */; };
+		CE0F20E22B756078008702E0 /* ActionSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20E02B756078008702E0 /* ActionSectionView.xib */; };
+		CE0F20E62B756166008702E0 /* ActionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20E42B756166008702E0 /* ActionTVC.swift */; };
+		CE0F20E72B756166008702E0 /* ActionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F20E42B756166008702E0 /* ActionTVC.swift */; };
+		CE0F20E82B756166008702E0 /* ActionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20E52B756166008702E0 /* ActionTVC.xib */; };
+		CE0F20E92B756166008702E0 /* ActionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F20E52B756166008702E0 /* ActionTVC.xib */; };
 		CE14C2152B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14C2132B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.swift */; };
 		CE14C2162B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14C2132B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.swift */; };
 		CE14C2172B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE14C2142B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib */; };
@@ -181,6 +237,12 @@
 		CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */; };
 		CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
 		CE9F910B2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
+		CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
+		CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
+		CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */; };
+		CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */; };
+		CEAF06422B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */; };
+		CEAF06432B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */; };
 		CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
 		CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
 		CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */; };
@@ -215,6 +277,10 @@
 		CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC207B72B4B04550073FA1E /* CategorySectionView.xib */; };
 		CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */; };
 		CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */; };
+		CEC336F92B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */; };
+		CEC336FA2B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */; };
+		CEC337032B6EF6FF00B16026 /* lottie_expired.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC337022B6EF6FF00B16026 /* lottie_expired.json */; };
+		CEC337042B6EF6FF00B16026 /* lottie_expired.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC337022B6EF6FF00B16026 /* lottie_expired.json */; };
 		CEC897132B77394D006CB552 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC897122B77394D006CB552 /* ToastView.swift */; };
 		CEC897142B77394D006CB552 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC897122B77394D006CB552 /* ToastView.swift */; };
 		CEC897162B77395C006CB552 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC897152B77395C006CB552 /* ToastView.xib */; };
@@ -329,6 +395,10 @@
 		CECB77832B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB77812B4C79660069AC05 /* AllCategoriesBottomSheet.swift */; };
 		CECB77852B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */; };
 		CECB77862B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */; };
+		CECD121F2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD121E2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift */; };
+		CECD12202B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD121E2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift */; };
+		CECD12222B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECD12212B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib */; };
+		CECD12232B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECD12212B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib */; };
 		CEE67D252B54394900D0844B /* WorkSheetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D1F2B54394900D0844B /* WorkSheetListPresenter.swift */; };
 		CEE67D262B54394900D0844B /* WorkSheetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D1F2B54394900D0844B /* WorkSheetListPresenter.swift */; };
 		CEE67D272B54394900D0844B /* WorkSheetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D202B54394900D0844B /* WorkSheetListRouter.swift */; };
@@ -349,6 +419,38 @@
 		CEE67D3B2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE67D392B5442BF00D0844B /* AssetBottomSheet.xib */; };
 		CEE67D3D2B5442C300D0844B /* AssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D3C2B5442C300D0844B /* AssetBottomSheet.swift */; };
 		CEE67D3E2B5442C300D0844B /* AssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D3C2B5442C300D0844B /* AssetBottomSheet.swift */; };
+		CEE79EBD2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EB72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift */; };
+		CEE79EBE2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EB72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift */; };
+		CEE79EBF2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EB82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift */; };
+		CEE79EC02B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EB82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift */; };
+		CEE79EC12B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EB92B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift */; };
+		CEE79EC22B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EB92B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift */; };
+		CEE79EC32B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EBA2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift */; };
+		CEE79EC42B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EBA2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift */; };
+		CEE79EC52B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EBB2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib */; };
+		CEE79EC62B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EBB2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib */; };
+		CEE79EC72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EBC2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift */; };
+		CEE79EC82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EBC2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift */; };
+		CEE79ED22B71222B0063D844 /* TensimeterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79ED12B71222B0063D844 /* TensimeterSectionView.swift */; };
+		CEE79ED32B71222B0063D844 /* TensimeterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79ED12B71222B0063D844 /* TensimeterSectionView.swift */; };
+		CEE79ED52B7122580063D844 /* TensimeterSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79ED42B7122580063D844 /* TensimeterSectionView.xib */; };
+		CEE79ED62B7122580063D844 /* TensimeterSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79ED42B7122580063D844 /* TensimeterSectionView.xib */; };
+		CEE79ED92B713E810063D844 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79ED82B713E810063D844 /* CustomHeaderView.swift */; };
+		CEE79EDA2B713E810063D844 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79ED82B713E810063D844 /* CustomHeaderView.swift */; };
+		CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */; };
+		CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */; };
+		CEE79EE02B716C110063D844 /* CalibratorSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EDF2B716C110063D844 /* CalibratorSectionView.swift */; };
+		CEE79EE12B716C110063D844 /* CalibratorSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EDF2B716C110063D844 /* CalibratorSectionView.swift */; };
+		CEE79EE32B716C870063D844 /* CalibratorSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EE22B716C870063D844 /* CalibratorSectionView.xib */; };
+		CEE79EE42B716C870063D844 /* CalibratorSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EE22B716C870063D844 /* CalibratorSectionView.xib */; };
+		CEE79EE82B7172A00063D844 /* CalibrationMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EE72B7172A00063D844 /* CalibrationMeasurementView.swift */; };
+		CEE79EE92B7172A00063D844 /* CalibrationMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EE72B7172A00063D844 /* CalibrationMeasurementView.swift */; };
+		CEE79EEB2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EEA2B7172BC0063D844 /* CalibrationMeasurementView.xib */; };
+		CEE79EEC2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EEA2B7172BC0063D844 /* CalibrationMeasurementView.xib */; };
+		CEE79EF02B71745D0063D844 /* CalibrationMeasurementTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EEE2B71745D0063D844 /* CalibrationMeasurementTVC.swift */; };
+		CEE79EF12B71745D0063D844 /* CalibrationMeasurementTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EEE2B71745D0063D844 /* CalibrationMeasurementTVC.swift */; };
+		CEE79EF22B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */; };
+		CEE79EF32B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */; };
 		CEF5D7C32B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */; };
 		CEF5D7C42B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */; };
 		CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */; };
@@ -365,6 +467,14 @@
 		CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF5FD222B4A74CB003A72B7 /* BackgroundView.xib */; };
 		CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */; };
 		CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */; };
+		CEF762052B72828B00B5FD8E /* PreparationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF762042B72828B00B5FD8E /* PreparationSectionView.swift */; };
+		CEF762062B72828B00B5FD8E /* PreparationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF762042B72828B00B5FD8E /* PreparationSectionView.swift */; };
+		CEF762082B7282A700B5FD8E /* PreparationSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF762072B7282A700B5FD8E /* PreparationSectionView.xib */; };
+		CEF762092B7282A700B5FD8E /* PreparationSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF762072B7282A700B5FD8E /* PreparationSectionView.xib */; };
+		CEF7620D2B72A76800B5FD8E /* PreparationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7620B2B72A76800B5FD8E /* PreparationTVC.swift */; };
+		CEF7620E2B72A76800B5FD8E /* PreparationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7620B2B72A76800B5FD8E /* PreparationTVC.swift */; };
+		CEF7620F2B72A76800B5FD8E /* PreparationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF7620C2B72A76800B5FD8E /* PreparationTVC.xib */; };
+		CEF762102B72A76800B5FD8E /* PreparationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF7620C2B72A76800B5FD8E /* PreparationTVC.xib */; };
 		CEFA758C2B768E4500B74E1B /* MedicAssetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA75862B768E4500B74E1B /* MedicAssetListPresenter.swift */; };
 		CEFA758D2B768E4500B74E1B /* MedicAssetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA75862B768E4500B74E1B /* MedicAssetListPresenter.swift */; };
 		CEFA758E2B768E4500B74E1B /* MedicAssetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA75872B768E4500B74E1B /* MedicAssetListRouter.swift */; };
@@ -399,12 +509,40 @@
 		2032044EA43460AEFB56E80C /* Pods-cmmsv2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2/Pods-cmmsv2.debug.xcconfig"; sourceTree = "<group>"; };
 		287DD405FF6CE31488A083FF /* Pods-cmmsv2 DEV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.debug.xcconfig"; sourceTree = "<group>"; };
 		783C2821C28073D76A44C366 /* Pods_cmmsv2_DEV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmmsv2_DEV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0044652B75FF6200C88345 /* SparePartSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartSectionView.swift; sourceTree = "<group>"; };
+		CE0044682B75FF7E00C88345 /* SparePartSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SparePartSectionView.xib; sourceTree = "<group>"; };
+		CE00446C2B7601B200C88345 /* SparePartTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartTVC.swift; sourceTree = "<group>"; };
+		CE00446D2B7601B200C88345 /* SparePartTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SparePartTVC.xib; sourceTree = "<group>"; };
+		CE0044732B76192A00C88345 /* RecommendationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationSectionView.swift; sourceTree = "<group>"; };
+		CE0044762B7619B500C88345 /* RecommendationSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationSectionView.xib; sourceTree = "<group>"; };
+		CE00447A2B7628A200C88345 /* SupportingDocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingDocumentationView.swift; sourceTree = "<group>"; };
+		CE00447D2B7628B900C88345 /* SupportingDocumentationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupportingDocumentationView.xib; sourceTree = "<group>"; };
+		CE0044812B76372700C88345 /* CalibrationStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationStatusView.swift; sourceTree = "<group>"; };
+		CE0044842B76373700C88345 /* CalibrationStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationStatusView.xib; sourceTree = "<group>"; };
 		CE0EC4A12B775F9A00888BE8 /* MedicAssetCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetCVC.swift; sourceTree = "<group>"; };
 		CE0EC4A22B775F9A00888BE8 /* MedicAssetCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicAssetCVC.xib; sourceTree = "<group>"; };
 		CE0EC4A72B779EE900888BE8 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		CE0EC4AA2B77A5D700888BE8 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		CE0EC4AE2B79092E00888BE8 /* ActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBarView.swift; sourceTree = "<group>"; };
 		CE0EC4B12B79094400888BE8 /* ActionBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionBarView.xib; sourceTree = "<group>"; };
+		CE0F20A62B74BD3C008702E0 /* LabelTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTVC.swift; sourceTree = "<group>"; };
+		CE0F20A72B74BD3C008702E0 /* LabelTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTVC.xib; sourceTree = "<group>"; };
+		CE0F20AC2B74BF6F008702E0 /* StatusTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTVC.swift; sourceTree = "<group>"; };
+		CE0F20AD2B74BF6F008702E0 /* StatusTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTVC.xib; sourceTree = "<group>"; };
+		CE0F20BA2B74F5DE008702E0 /* PreventiveMaintenanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceView.swift; sourceTree = "<group>"; };
+		CE0F20BD2B74F5F5008702E0 /* PreventiveMaintenanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveMaintenanceView.xib; sourceTree = "<group>"; };
+		CE0F20C12B751D53008702E0 /* ElectricalMeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricalMeasurementView.swift; sourceTree = "<group>"; };
+		CE0F20C42B751D6A008702E0 /* ElectricalMeasurementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElectricalMeasurementView.xib; sourceTree = "<group>"; };
+		CE0F20C82B752626008702E0 /* ElectricalMeasurementTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricalMeasurementTVC.swift; sourceTree = "<group>"; };
+		CE0F20C92B752626008702E0 /* ElectricalMeasurementTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElectricalMeasurementTVC.xib; sourceTree = "<group>"; };
+		CE0F20CF2B754B73008702E0 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		CE0F20D22B754B8A008702E0 /* DropdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownView.xib; sourceTree = "<group>"; };
+		CE0F20D62B7553E3008702E0 /* SelectCalibratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCalibratorView.swift; sourceTree = "<group>"; };
+		CE0F20D92B7556A8008702E0 /* SelectCalibratorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCalibratorView.xib; sourceTree = "<group>"; };
+		CE0F20DD2B756063008702E0 /* ActionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSectionView.swift; sourceTree = "<group>"; };
+		CE0F20E02B756078008702E0 /* ActionSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionSectionView.xib; sourceTree = "<group>"; };
+		CE0F20E42B756166008702E0 /* ActionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTVC.swift; sourceTree = "<group>"; };
+		CE0F20E52B756166008702E0 /* ActionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionTVC.xib; sourceTree = "<group>"; };
 		CE14C2132B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetPreviewBottomSheet.swift; sourceTree = "<group>"; };
 		CE14C2142B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetPreviewBottomSheet.xib; sourceTree = "<group>"; };
 		CE14C21A2B5C38620034B9FE /* ImageCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCardView.xib; sourceTree = "<group>"; };
@@ -486,6 +624,9 @@
 		CE9F91022B4F9434004C027A /* InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCardView.swift; sourceTree = "<group>"; };
 		CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationDetailBottomSheet.xib; sourceTree = "<group>"; };
 		CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailBottomSheet.swift; sourceTree = "<group>"; };
+		CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredBottomSheet.swift; sourceTree = "<group>"; };
+		CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpiredBottomSheet.xib; sourceTree = "<group>"; };
+		CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+Delegate.swift"; sourceTree = "<group>"; };
 		CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HospitalModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
@@ -503,6 +644,8 @@
 		CEC207B12B4AFF830073FA1E /* CategoryCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCardCVC.xib; sourceTree = "<group>"; };
 		CEC207B72B4B04550073FA1E /* CategorySectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySectionView.xib; sourceTree = "<group>"; };
 		CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySectionView.swift; sourceTree = "<group>"; };
+		CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeScreenView+Delegate.swift"; sourceTree = "<group>"; };
+		CEC337022B6EF6FF00B16026 /* lottie_expired.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lottie_expired.json; sourceTree = "<group>"; };
 		CEC897122B77394D006CB552 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		CEC897152B77395C006CB552 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
 		CECB3DA12B45D962004A260D /* cmmsv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cmmsv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -563,6 +706,8 @@
 		CECB777E2B4C79610069AC05 /* AllCategoriesBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCategoriesBottomSheet.xib; sourceTree = "<group>"; };
 		CECB77812B4C79660069AC05 /* AllCategoriesBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesBottomSheet.swift; sourceTree = "<group>"; };
 		CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
+		CECD121E2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalFunctionalMonitoringView.swift; sourceTree = "<group>"; };
+		CECD12212B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhysicalFunctionalMonitoringView.xib; sourceTree = "<group>"; };
 		CEE67D1F2B54394900D0844B /* WorkSheetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetListPresenter.swift; sourceTree = "<group>"; };
 		CEE67D202B54394900D0844B /* WorkSheetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetListRouter.swift; sourceTree = "<group>"; };
 		CEE67D212B54394900D0844B /* WorkSheetListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetListInteractor.swift; sourceTree = "<group>"; };
@@ -573,6 +718,22 @@
 		CEE67D352B54426E00D0844B /* WorkSheetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetBottomSheet.swift; sourceTree = "<group>"; };
 		CEE67D392B5442BF00D0844B /* AssetBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetBottomSheet.xib; sourceTree = "<group>"; };
 		CEE67D3C2B5442C300D0844B /* AssetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetBottomSheet.swift; sourceTree = "<group>"; };
+		CEE79EB72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveDetailPresenter.swift; sourceTree = "<group>"; };
+		CEE79EB82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveDetailRouter.swift; sourceTree = "<group>"; };
+		CEE79EB92B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveDetailInteractor.swift; sourceTree = "<group>"; };
+		CEE79EBA2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveDetailView.swift; sourceTree = "<group>"; };
+		CEE79EBB2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetOnsitePreventiveDetailView.xib; sourceTree = "<group>"; };
+		CEE79EBC2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveDetailEntity.swift; sourceTree = "<group>"; };
+		CEE79ED12B71222B0063D844 /* TensimeterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensimeterSectionView.swift; sourceTree = "<group>"; };
+		CEE79ED42B7122580063D844 /* TensimeterSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TensimeterSectionView.xib; sourceTree = "<group>"; };
+		CEE79ED82B713E810063D844 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		CEE79EDF2B716C110063D844 /* CalibratorSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibratorSectionView.swift; sourceTree = "<group>"; };
+		CEE79EE22B716C870063D844 /* CalibratorSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibratorSectionView.xib; sourceTree = "<group>"; };
+		CEE79EE72B7172A00063D844 /* CalibrationMeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationMeasurementView.swift; sourceTree = "<group>"; };
+		CEE79EEA2B7172BC0063D844 /* CalibrationMeasurementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationMeasurementView.xib; sourceTree = "<group>"; };
+		CEE79EEE2B71745D0063D844 /* CalibrationMeasurementTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationMeasurementTVC.swift; sourceTree = "<group>"; };
+		CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationMeasurementTVC.xib; sourceTree = "<group>"; };
 		CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenRouter.swift; sourceTree = "<group>"; };
 		CEF5D7BF2B6D311700FDE752 /* SplashScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenInteractor.swift; sourceTree = "<group>"; };
@@ -583,6 +744,10 @@
 		CEF5FD252B4A74DA003A72B7 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		CEF72EF52B468C0500815E4C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CEF72EF62B468C1E00815E4C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		CEF762042B72828B00B5FD8E /* PreparationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationSectionView.swift; sourceTree = "<group>"; };
+		CEF762072B7282A700B5FD8E /* PreparationSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreparationSectionView.xib; sourceTree = "<group>"; };
+		CEF7620B2B72A76800B5FD8E /* PreparationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationTVC.swift; sourceTree = "<group>"; };
+		CEF7620C2B72A76800B5FD8E /* PreparationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreparationTVC.xib; sourceTree = "<group>"; };
 		CEFA75862B768E4500B74E1B /* MedicAssetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetListPresenter.swift; sourceTree = "<group>"; };
 		CEFA75872B768E4500B74E1B /* MedicAssetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetListRouter.swift; sourceTree = "<group>"; };
 		CEFA75882B768E4500B74E1B /* MedicAssetListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicAssetListInteractor.swift; sourceTree = "<group>"; };
@@ -639,6 +804,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE0044642B75FF1300C88345 /* SparePartSection */ = {
+			isa = PBXGroup;
+			children = (
+				CE00446B2B7601A000C88345 /* Cell */,
+				CE0044652B75FF6200C88345 /* SparePartSectionView.swift */,
+				CE0044682B75FF7E00C88345 /* SparePartSectionView.xib */,
+			);
+			path = SparePartSection;
+			sourceTree = "<group>";
+		};
+		CE00446B2B7601A000C88345 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE00446C2B7601B200C88345 /* SparePartTVC.swift */,
+				CE00446D2B7601B200C88345 /* SparePartTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE0044722B76190F00C88345 /* RecommendationSection */ = {
+			isa = PBXGroup;
+			children = (
+				CE0044732B76192A00C88345 /* RecommendationSectionView.swift */,
+				CE0044762B7619B500C88345 /* RecommendationSectionView.xib */,
+			);
+			path = RecommendationSection;
+			sourceTree = "<group>";
+		};
+		CE0044792B76282E00C88345 /* SupportingDocumentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE00447A2B7628A200C88345 /* SupportingDocumentationView.swift */,
+				CE00447D2B7628B900C88345 /* SupportingDocumentationView.xib */,
+			);
+			path = SupportingDocumentation;
+			sourceTree = "<group>";
+		};
+		CE0044802B76370500C88345 /* CalibrationStatus */ = {
+			isa = PBXGroup;
+			children = (
+				CE0044812B76372700C88345 /* CalibrationStatusView.swift */,
+				CE0044842B76373700C88345 /* CalibrationStatusView.xib */,
+			);
+			path = CalibrationStatus;
+			sourceTree = "<group>";
+		};
 		CE0EC4A02B775F6600888BE8 /* MedicAssetCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,6 +866,89 @@
 				CE0EC4B12B79094400888BE8 /* ActionBarView.xib */,
 			);
 			path = ActionBar;
+			sourceTree = "<group>";
+		};
+		CE0F20A42B74B6A3008702E0 /* LabelTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20A62B74BD3C008702E0 /* LabelTVC.swift */,
+				CE0F20A72B74BD3C008702E0 /* LabelTVC.xib */,
+			);
+			path = LabelTVC;
+			sourceTree = "<group>";
+		};
+		CE0F20A52B74B754008702E0 /* StatusTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20AC2B74BF6F008702E0 /* StatusTVC.swift */,
+				CE0F20AD2B74BF6F008702E0 /* StatusTVC.xib */,
+			);
+			path = StatusTVC;
+			sourceTree = "<group>";
+		};
+		CE0F20B92B74F5A2008702E0 /* PreventiveMaintenance */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20BA2B74F5DE008702E0 /* PreventiveMaintenanceView.swift */,
+				CE0F20BD2B74F5F5008702E0 /* PreventiveMaintenanceView.xib */,
+			);
+			path = PreventiveMaintenance;
+			sourceTree = "<group>";
+		};
+		CE0F20C02B751D3B008702E0 /* ElectricalMeasurement */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20C72B752607008702E0 /* Cell */,
+				CE0F20C12B751D53008702E0 /* ElectricalMeasurementView.swift */,
+				CE0F20C42B751D6A008702E0 /* ElectricalMeasurementView.xib */,
+			);
+			path = ElectricalMeasurement;
+			sourceTree = "<group>";
+		};
+		CE0F20C72B752607008702E0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20C82B752626008702E0 /* ElectricalMeasurementTVC.swift */,
+				CE0F20C92B752626008702E0 /* ElectricalMeasurementTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE0F20CE2B754B51008702E0 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20CF2B754B73008702E0 /* DropdownView.swift */,
+				CE0F20D22B754B8A008702E0 /* DropdownView.xib */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		CE0F20D52B7553A4008702E0 /* SelectCalibrator */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20D62B7553E3008702E0 /* SelectCalibratorView.swift */,
+				CE0F20D92B7556A8008702E0 /* SelectCalibratorView.xib */,
+			);
+			path = SelectCalibrator;
+			sourceTree = "<group>";
+		};
+		CE0F20DC2B756026008702E0 /* ActionSection */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20E32B756153008702E0 /* Cell */,
+				CE0F20DD2B756063008702E0 /* ActionSectionView.swift */,
+				CE0F20E02B756078008702E0 /* ActionSectionView.xib */,
+			);
+			path = ActionSection;
+			sourceTree = "<group>";
+		};
+		CE0F20E32B756153008702E0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20E42B756166008702E0 /* ActionTVC.swift */,
+				CE0F20E52B756166008702E0 /* ActionTVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CE14C2122B5C36170034B9FE /* BottomSheet */ = {
@@ -862,6 +1156,7 @@
 				CE9E7D8E2B529F4500240A7D /* UserProfileView.swift */,
 				CE9E7D8F2B529F4500240A7D /* UserProfileView.xib */,
 				CE9E7D902B529F4500240A7D /* UserProfileEntity.swift */,
+				CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -964,17 +1259,28 @@
 			path = InformationDetailBottomSheet;
 			sourceTree = "<group>";
 		};
+		CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */,
+				CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */,
+			);
+			path = ExpiredBottomSheet;
+			sourceTree = "<group>";
+		};
 		CEC207922B4AD64E0073FA1E /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
 				CECB77792B4C791D0069AC05 /* BottomSheet */,
 				CEC207B62B4B04230073FA1E /* CategorySection */,
+				CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */,
 				CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */,
 				CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */,
 				CEC207952B4AD6870073FA1E /* HomeScreenInteractor.swift */,
 				CEC207962B4AD6870073FA1E /* HomeScreenView.swift */,
 				CEC207972B4AD6870073FA1E /* HomeScreenView.xib */,
 				CEC207982B4AD6870073FA1E /* HomeScreenEntity.swift */,
+				CEC336F82B6E76BF00B16026 /* HomeScreenView+Delegate.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -1004,6 +1310,14 @@
 				CEC207B72B4B04550073FA1E /* CategorySectionView.xib */,
 			);
 			path = CategorySection;
+			sourceTree = "<group>";
+		};
+		CEC336FB2B6EF57E00B16026 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				CEC337022B6EF6FF00B16026 /* lottie_expired.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		CEC897112B773923006CB552 /* Toast */ = {
@@ -1052,6 +1366,7 @@
 		CECB3DB82B45DA21004A260D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEC336FB2B6EF57E00B16026 /* Lottie */,
 				CECB3DBE2B45DA61004A260D /* Font */,
 				CECB3DAD2B45D963004A260D /* Assets.xcassets */,
 				CE5442892B471FF50022047D /* CHANGELOG.md */,
@@ -1084,6 +1399,7 @@
 				CE9E7D642B529D9400240A7D /* UserProfile */,
 				CE2A98292B5CB7F70075E3C2 /* WorkSheetDetail */,
 				CEE67D1E2B5438FF00D0844B /* WorkSheetList */,
+				CEE79EB62B70ED7C0063D844 /* WorkSheetOnsitePreventiveDetail */,
 				CE40123C2B5D922C00517F7C /* WorkSheetOnsitePreventiveList */,
 			);
 			path = Modules;
@@ -1194,7 +1510,9 @@
 				CECB77722B4C75CD0069AC05 /* BottomSheet */,
 				CE54428A2B4724F90022047D /* Button */,
 				CEC207AF2B4AFF660073FA1E /* CategoryCard */,
+				CEE79ED72B713DDC0063D844 /* CustomHeader */,
 				CEC207A52B4ADDA40073FA1E /* CustomNavigation */,
+				CE0F20CE2B754B51008702E0 /* Dropdown */,
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
 				CE9F90FE2B4F919F004C027A /* InformationCard */,
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
@@ -1248,6 +1566,25 @@
 			path = AllCategoriesBottomSheet;
 			sourceTree = "<group>";
 		};
+		CECD121D2B74AB5400DEAFF4 /* PhysicalFunctionalMonitoring */ = {
+			isa = PBXGroup;
+			children = (
+				CECD12242B74AD3500DEAFF4 /* Cell */,
+				CECD121E2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift */,
+				CECD12212B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib */,
+			);
+			path = PhysicalFunctionalMonitoring;
+			sourceTree = "<group>";
+		};
+		CECD12242B74AD3500DEAFF4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F20A42B74B6A3008702E0 /* LabelTVC */,
+				CE0F20A52B74B754008702E0 /* StatusTVC */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CEE67D1E2B5438FF00D0844B /* WorkSheetList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,6 +1617,86 @@
 			path = AssetBottomSheet;
 			sourceTree = "<group>";
 		};
+		CEE79EB62B70ED7C0063D844 /* WorkSheetOnsitePreventiveDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CEE79EE52B7170FC0063D844 /* CalibrationMeasurement */,
+				CEE79EC92B71216D0063D844 /* Section */,
+				CEE79EB72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift */,
+				CEE79EB82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift */,
+				CEE79EB92B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift */,
+				CEE79EBA2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift */,
+				CEE79EBB2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib */,
+				CEE79EBC2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift */,
+			);
+			path = WorkSheetOnsitePreventiveDetail;
+			sourceTree = "<group>";
+		};
+		CEE79EC92B71216D0063D844 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				CE0044802B76370500C88345 /* CalibrationStatus */,
+				CE0F20DC2B756026008702E0 /* ActionSection */,
+				CEE79EDE2B716BE20063D844 /* CalibratorSection */,
+				CE0F20C02B751D3B008702E0 /* ElectricalMeasurement */,
+				CECD121D2B74AB5400DEAFF4 /* PhysicalFunctionalMonitoring */,
+				CEF762032B72827000B5FD8E /* PreparationSection */,
+				CE0F20B92B74F5A2008702E0 /* PreventiveMaintenance */,
+				CE0044722B76190F00C88345 /* RecommendationSection */,
+				CE0F20D52B7553A4008702E0 /* SelectCalibrator */,
+				CE0044642B75FF1300C88345 /* SparePartSection */,
+				CE0044792B76282E00C88345 /* SupportingDocumentation */,
+				CEE79ECA2B7121900063D844 /* TensimeterSection */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		CEE79ECA2B7121900063D844 /* TensimeterSection */ = {
+			isa = PBXGroup;
+			children = (
+				CEE79ED12B71222B0063D844 /* TensimeterSectionView.swift */,
+				CEE79ED42B7122580063D844 /* TensimeterSectionView.xib */,
+			);
+			path = TensimeterSection;
+			sourceTree = "<group>";
+		};
+		CEE79ED72B713DDC0063D844 /* CustomHeader */ = {
+			isa = PBXGroup;
+			children = (
+				CEE79ED82B713E810063D844 /* CustomHeaderView.swift */,
+				CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */,
+			);
+			path = CustomHeader;
+			sourceTree = "<group>";
+		};
+		CEE79EDE2B716BE20063D844 /* CalibratorSection */ = {
+			isa = PBXGroup;
+			children = (
+				CEE79EDF2B716C110063D844 /* CalibratorSectionView.swift */,
+				CEE79EE22B716C870063D844 /* CalibratorSectionView.xib */,
+			);
+			path = CalibratorSection;
+			sourceTree = "<group>";
+		};
+		CEE79EE52B7170FC0063D844 /* CalibrationMeasurement */ = {
+			isa = PBXGroup;
+			children = (
+				CEE79EED2B71741B0063D844 /* Cell */,
+				CEE79EE72B7172A00063D844 /* CalibrationMeasurementView.swift */,
+				CEE79EEA2B7172BC0063D844 /* CalibrationMeasurementView.xib */,
+			);
+			path = CalibrationMeasurement;
+			sourceTree = "<group>";
+		};
+		CEE79EED2B71741B0063D844 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEE79EEE2B71745D0063D844 /* CalibrationMeasurementTVC.swift */,
+				CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CEF5FD212B4A74AE003A72B7 /* Background */ = {
 			isa = PBXGroup;
 			children = (
@@ -1300,6 +1717,25 @@
 				CEF5D7C22B6D311700FDE752 /* SplashScreenEntity.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		CEF762032B72827000B5FD8E /* PreparationSection */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7620A2B72A71600B5FD8E /* Cell */,
+				CEF762042B72828B00B5FD8E /* PreparationSectionView.swift */,
+				CEF762072B7282A700B5FD8E /* PreparationSectionView.xib */,
+			);
+			path = PreparationSection;
+			sourceTree = "<group>";
+		};
+		CEF7620A2B72A71600B5FD8E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7620B2B72A76800B5FD8E /* PreparationTVC.swift */,
+				CEF7620C2B72A76800B5FD8E /* PreparationTVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEFA5BD92B5ADF54009266C9 /* WorkSheetCell */ = {
@@ -1412,12 +1848,19 @@
 				CEC207B42B4AFF830073FA1E /* CategoryCardCVC.xib in Resources */,
 				CE0EC4A52B775F9A00888BE8 /* MedicAssetCVC.xib in Resources */,
 				CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
+				CEC337032B6EF6FF00B16026 /* lottie_expired.json in Resources */,
 				CECB3DDB2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
+				CEE79EC52B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFB2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CE0F20BE2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
+				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
+				CEE79EEB2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */,
 				CE2F2CEB2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
 				CECB3DB12B45D963004A260D /* LaunchScreen.storyboard in Resources */,
+				CECD12222B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */,
+				CEF762082B7282A700B5FD8E /* PreparationSectionView.xib in Resources */,
 				CE4012192B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -1427,11 +1870,15 @@
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012302B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE40121F2B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CE0044692B75FF7E00C88345 /* SparePartSectionView.xib in Resources */,
+				CE0044852B76373700C88345 /* CalibrationStatusView.xib in Resources */,
+				CE0F20CC2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */,
 				CECB3DEB2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CECB3E0D2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21B2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
+				CE0F20C52B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */,
 				CE9E7D752B529EB300240A7D /* ChangePasswordView.xib in Resources */,
 				CECB3E032B45E137004A260D /* Lato-Italic.ttf in Resources */,
 				CECB3DEF2B45E119004A260D /* Roboto-Thin.ttf in Resources */,
@@ -1439,34 +1886,48 @@
 				CECB3DE12B45E119004A260D /* Roboto-Black.ttf in Resources */,
 				CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CE2FA5252B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
+				CEE79EF22B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */,
 				CECB3DDF2B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CE9F91002B4F942C004C027A /* InformationCardView.xib in Resources */,
 				CEC897162B77395C006CB552 /* ToastView.xib in Resources */,
 				CEFA75942B768E4500B74E1B /* MedicAssetListView.xib in Resources */,
+				CE0044772B7619B500C88345 /* RecommendationSectionView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE2FA51B2B5CBD5C00756586 /* WorkSheetDetailView.xib in Resources */,
 				CE5442932B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB777F2B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
+				CE0F20E82B756166008702E0 /* ActionTVC.xib in Resources */,
 				CE724A012B571702008147D4 /* WorkSheetItemTVC.xib in Resources */,
 				CEE67D3A2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
+				CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
+				CE0F20B02B74BF6F008702E0 /* StatusTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91072B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
 				CE9E7D992B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DD92B45E119004A260D /* Roboto-Regular.ttf in Resources */,
+				CEE79EE32B716C870063D844 /* CalibratorSectionView.xib in Resources */,
 				CECB77742B4C75DA0069AC05 /* BottomSheetView.xib in Resources */,
 				CE40123A2B5D875100517F7C /* AllEvidenceBottomSheet.xib in Resources */,
+				CE0F20AA2B74BD3C008702E0 /* LabelTVC.xib in Resources */,
 				CEC207A72B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
 				CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */,
+				CEF7620F2B72A76800B5FD8E /* PreparationTVC.xib in Resources */,
+				CE0F20E12B756078008702E0 /* ActionSectionView.xib in Resources */,
 				CE14C2172B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				CE0F20DA2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */,
+				CE0F20D32B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE72B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
+				CEE79ED52B7122580063D844 /* TensimeterSectionView.xib in Resources */,
 				CEE67D2D2B54394900D0844B /* WorkSheetListView.xib in Resources */,
 				CE82D4582B47DDB200A54124 /* LoginView.xib in Resources */,
+				CE0044702B7601B300C88345 /* SparePartTVC.xib in Resources */,
+				CE00447E2B7628B900C88345 /* SupportingDocumentationView.xib in Resources */,
 				CECB3DAC2B45D962004A260D /* Main.storyboard in Resources */,
 				CE9E7DBC2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */,
 				CECB3DFD2B45E137004A260D /* Lato-Regular.ttf in Resources */,
@@ -1485,12 +1946,19 @@
 				CEC207B52B4AFF830073FA1E /* CategoryCardCVC.xib in Resources */,
 				CE0EC4A62B775F9A00888BE8 /* MedicAssetCVC.xib in Resources */,
 				CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
+				CEC337042B6EF6FF00B16026 /* lottie_expired.json in Resources */,
 				CECB3DDC2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
+				CEE79EC62B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFC2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CE0F20BF2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
+				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
+				CEE79EEC2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */,
 				CE2F2CEC2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
 				CECB3DC62B45DAFF004A260D /* LaunchScreen.storyboard in Resources */,
+				CECD12232B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */,
+				CEF762092B7282A700B5FD8E /* PreparationSectionView.xib in Resources */,
 				CE40121A2B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -1500,11 +1968,15 @@
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012312B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE4012202B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CE00446A2B75FF7E00C88345 /* SparePartSectionView.xib in Resources */,
+				CE0044862B76373700C88345 /* CalibrationStatusView.xib in Resources */,
+				CE0F20CD2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */,
 				CECB3DEC2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CECB3E0E2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
+				CE0F20C62B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */,
 				CE9E7D762B529EB300240A7D /* ChangePasswordView.xib in Resources */,
 				CECB3E042B45E137004A260D /* Lato-Italic.ttf in Resources */,
 				CECB3DF02B45E119004A260D /* Roboto-Thin.ttf in Resources */,
@@ -1512,34 +1984,48 @@
 				CECB3DE22B45E119004A260D /* Roboto-Black.ttf in Resources */,
 				CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CE2FA5262B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
+				CEE79EF32B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */,
 				CECB3DE02B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CE9F91012B4F942C004C027A /* InformationCardView.xib in Resources */,
 				CEC897172B77395C006CB552 /* ToastView.xib in Resources */,
 				CEFA75952B768E4500B74E1B /* MedicAssetListView.xib in Resources */,
+				CE0044782B7619B500C88345 /* RecommendationSectionView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CE2FA51C2B5CBD5C00756586 /* WorkSheetDetailView.xib in Resources */,
 				CE5442942B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB77802B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
+				CE0F20E92B756166008702E0 /* ActionTVC.xib in Resources */,
 				CE724A022B571702008147D4 /* WorkSheetItemTVC.xib in Resources */,
 				CEE67D3B2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
+				CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
+				CE0F20B12B74BF6F008702E0 /* StatusTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
 				CE9E7D9A2B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DDA2B45E119004A260D /* Roboto-Regular.ttf in Resources */,
+				CEE79EE42B716C870063D844 /* CalibratorSectionView.xib in Resources */,
 				CECB77752B4C75DA0069AC05 /* BottomSheetView.xib in Resources */,
 				CE40123B2B5D875100517F7C /* AllEvidenceBottomSheet.xib in Resources */,
+				CE0F20AB2B74BD3C008702E0 /* LabelTVC.xib in Resources */,
 				CEC207A82B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
 				CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */,
+				CEF762102B72A76800B5FD8E /* PreparationTVC.xib in Resources */,
+				CE0F20E22B756078008702E0 /* ActionSectionView.xib in Resources */,
 				CE14C2182B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				CE0F20DB2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */,
+				CE0F20D42B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE82B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
+				CEE79ED62B7122580063D844 /* TensimeterSectionView.xib in Resources */,
 				CEE67D2E2B54394900D0844B /* WorkSheetListView.xib in Resources */,
 				CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */,
+				CE0044712B7601B300C88345 /* SparePartTVC.xib in Resources */,
+				CE00447F2B7628B900C88345 /* SupportingDocumentationView.xib in Resources */,
 				CECB3DC82B45DAFF004A260D /* Main.storyboard in Resources */,
 				CE9E7DBD2B531E4600240A7D /* ChangePictureBottomSheet.xib in Resources */,
 				CECB3DFE2B45E137004A260D /* Lato-Regular.ttf in Resources */,
@@ -1638,9 +2124,12 @@
 				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CE5442902B4726360022047D /* GeneralButton.swift in Sources */,
 				CEC207B22B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
+				CE0F20CA2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */,
 				CEE67D2B2B54394900D0844B /* WorkSheetListView.swift in Sources */,
 				CEC207AD2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897132B77394D006CB552 /* ToastView.swift in Sources */,
+				CEE79EC72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */,
+				CE0F20DE2B756063008702E0 /* ActionSectionView.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				CE4012452B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
@@ -1661,25 +2150,33 @@
 				CECB3E222B45E378004A260D /* UIViewController+Ext.swift in Sources */,
 				CE9E7D912B529F4500240A7D /* UserProfilePresenter.swift in Sources */,
 				CECB77852B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
+				CEAF06422B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */,
 				CE82D4522B47DDB200A54124 /* LoginRouter.swift in Sources */,
 				CE9E7D732B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91032B4F9434004C027A /* InformationCardView.swift in Sources */,
+				CEE79EC32B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift in Sources */,
 				CE4012532B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE40122E2B5D7E7C00517F7C /* FullScreenPictureView.swift in Sources */,
+				CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E472B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
+				CEF762052B72828B00B5FD8E /* PreparationSectionView.swift in Sources */,
+				CEF7620D2B72A76800B5FD8E /* PreparationTVC.swift in Sources */,
 				CEFB4F112B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEE67D3D2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
+				CE00446E2B7601B200C88345 /* SparePartTVC.swift in Sources */,
 				CEC2079F2B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CEFA75922B768E4500B74E1B /* MedicAssetListView.swift in Sources */,
 				CECB3E2E2B45E400004A260D /* Double+Ext.swift in Sources */,
+				CE0044742B76192A00C88345 /* RecommendationSectionView.swift in Sources */,
 				CE40121D2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
 				CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
 				CE9E7D972B529F4500240A7D /* UserProfileView.swift in Sources */,
 				CECB3E4A2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CECB3E3E2B45E5AB004A260D /* BaseViewController.swift in Sources */,
 				CE7372A62B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
+				CE00447B2B7628A300C88345 /* SupportingDocumentationView.swift in Sources */,
 				CECB3E162B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CE0EC4A32B775F9A00888BE8 /* MedicAssetCVC.swift in Sources */,
 				CEFE59B72B5EBF9200BE73CB /* UIImageView+Ext.swift in Sources */,
@@ -1692,13 +2189,16 @@
 				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE2FA51D2B5CBD5C00756586 /* WorkSheetDetailEntity.swift in Sources */,
 				CE9E7DC22B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
+				CE0044822B76372700C88345 /* CalibrationStatusView.swift in Sources */,
 				CECB3E382B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A32B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
+				CE0F20D02B754B73008702E0 /* DropdownView.swift in Sources */,
 				CECB3E412B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CE9E7D852B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CE0044662B75FF6200C88345 /* SparePartSectionView.swift in Sources */,
 				CEF5D7C72B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */,
 				CE9E7D6F2B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
 				CE0EC4A82B779EE900888BE8 /* String+Ext.swift in Sources */,
@@ -1706,13 +2206,18 @@
 				CE4012382B5D875100517F7C /* AllEvidenceBottomSheet.swift in Sources */,
 				CECB3E2B2B45E3E6004A260D /* UITapGestureRecognizer+Ext.swift in Sources */,
 				CEC207AA2B4AE98B0073FA1E /* CustomNavigationView.swift in Sources */,
+				CEE79ED92B713E810063D844 /* CustomHeaderView.swift in Sources */,
 				CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */,
 				CEFA75902B768E4500B74E1B /* MedicAssetListInteractor.swift in Sources */,
+				CEE79EC12B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */,
 				CE40124D2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE9E7D7F2B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
+				CE0F20C22B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
 				CEC2079D2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
+				CEE79EBF2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
+				CE0F20E62B756166008702E0 /* ActionTVC.swift in Sources */,
 				CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E502B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CE2FA5132B5CBD5C00756586 /* WorkSheetDetailPresenter.swift in Sources */,
@@ -1721,14 +2226,20 @@
 				CE9F90F32B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CEFA75962B768E4500B74E1B /* MedicAssetListEntity.swift in Sources */,
 				CE4012172B5D58EB00517F7C /* EvidenceEquipmentCVC.swift in Sources */,
+				CEE79EF02B71745D0063D844 /* CalibrationMeasurementTVC.swift in Sources */,
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
+				CEC336F92B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D252B54394900D0844B /* WorkSheetListPresenter.swift in Sources */,
+				CE0F20BB2B74F5DE008702E0 /* PreventiveMaintenanceView.swift in Sources */,
 				CEF5D7C32B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */,
 				CEFA758C2B768E4500B74E1B /* MedicAssetListPresenter.swift in Sources */,
 				CECB3E3B2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CE2FA5222B5CBFC600756586 /* ImageCardSectionView.swift in Sources */,
 				CEFB4F152B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
+				CEE79EE82B7172A00063D844 /* CalibrationMeasurementView.swift in Sources */,
+				CE0F20D72B7553E3008702E0 /* SelectCalibratorView.swift in Sources */,
+				CECD121F2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
 				CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE40122C2B5D7E7C00517F7C /* FullScreenPictureInteractor.swift in Sources */,
 				CE2FA5192B5CBD5C00756586 /* WorkSheetDetailView.swift in Sources */,
@@ -1747,9 +2258,12 @@
 				CE82D4542B47DDB200A54124 /* LoginInteractor.swift in Sources */,
 				CE4012472B5D924F00517F7C /* WorkSheetOnsitePreventiveListInteractor.swift in Sources */,
 				CE9E7D712B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
+				CEE79ED22B71222B0063D844 /* TensimeterSectionView.swift in Sources */,
 				CE4012282B5D7E7C00517F7C /* FullScreenPicturePresenter.swift in Sources */,
+				CEE79EE02B716C110063D844 /* CalibratorSectionView.swift in Sources */,
 				CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */,
 				CEE67D2F2B54394900D0844B /* WorkSheetListEntity.swift in Sources */,
+				CEE79EBD2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */,
 				CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
@@ -1758,7 +2272,9 @@
 				CE4012492B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,
 				CEE67D292B54394900D0844B /* WorkSheetListInteractor.swift in Sources */,
 				CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */,
+				CE0F20A82B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */,
+				CE0F20AE2B74BF6F008702E0 /* StatusTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1770,9 +2286,12 @@
 				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CE5442912B4726360022047D /* GeneralButton.swift in Sources */,
 				CEC207B32B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
+				CE0F20CB2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */,
 				CEE67D2C2B54394900D0844B /* WorkSheetListView.swift in Sources */,
 				CEC207AE2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897142B77394D006CB552 /* ToastView.swift in Sources */,
+				CEE79EC82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */,
+				CE0F20DF2B756063008702E0 /* ActionSectionView.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				CE4012462B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
@@ -1793,25 +2312,33 @@
 				CECB3E232B45E378004A260D /* UIViewController+Ext.swift in Sources */,
 				CE9E7D922B529F4500240A7D /* UserProfilePresenter.swift in Sources */,
 				CECB77862B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */,
+				CEAF06432B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */,
 				CE82D4532B47DDB200A54124 /* LoginRouter.swift in Sources */,
 				CE9E7D742B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91042B4F9434004C027A /* InformationCardView.swift in Sources */,
+				CEE79EC42B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.swift in Sources */,
 				CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE40122F2B5D7E7C00517F7C /* FullScreenPictureView.swift in Sources */,
+				CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E482B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
+				CEF762062B72828B00B5FD8E /* PreparationSectionView.swift in Sources */,
+				CEF7620E2B72A76800B5FD8E /* PreparationTVC.swift in Sources */,
 				CEFB4F122B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEE67D3E2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
+				CE00446F2B7601B200C88345 /* SparePartTVC.swift in Sources */,
 				CEC207A02B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CEFA75932B768E4500B74E1B /* MedicAssetListView.swift in Sources */,
 				CECB3E2F2B45E400004A260D /* Double+Ext.swift in Sources */,
+				CE0044752B76192A00C88345 /* RecommendationSectionView.swift in Sources */,
 				CE40121E2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
 				CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
 				CE9E7D982B529F4500240A7D /* UserProfileView.swift in Sources */,
 				CECB3E4B2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CECB3E3F2B45E5AB004A260D /* BaseViewController.swift in Sources */,
 				CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
+				CE00447C2B7628A300C88345 /* SupportingDocumentationView.swift in Sources */,
 				CECB3E172B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CE0EC4A42B775F9A00888BE8 /* MedicAssetCVC.swift in Sources */,
 				CEFE59B82B5EBF9300BE73CB /* UIImageView+Ext.swift in Sources */,
@@ -1824,13 +2351,16 @@
 				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE2FA51E2B5CBD5C00756586 /* WorkSheetDetailEntity.swift in Sources */,
 				CE9E7DC32B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
+				CE0044832B76372700C88345 /* CalibrationStatusView.swift in Sources */,
 				CECB3E392B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A42B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
+				CE0F20D12B754B73008702E0 /* DropdownView.swift in Sources */,
 				CECB3E422B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CE9E7D862B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CE0044672B75FF6200C88345 /* SparePartSectionView.swift in Sources */,
 				CEF5D7C82B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */,
 				CE9E7D702B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
 				CE0EC4A92B779EE900888BE8 /* String+Ext.swift in Sources */,
@@ -1838,13 +2368,18 @@
 				CE4012392B5D875100517F7C /* AllEvidenceBottomSheet.swift in Sources */,
 				CECB3E2C2B45E3E6004A260D /* UITapGestureRecognizer+Ext.swift in Sources */,
 				CEC207AB2B4AE98B0073FA1E /* CustomNavigationView.swift in Sources */,
+				CEE79EDA2B713E810063D844 /* CustomHeaderView.swift in Sources */,
 				CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */,
 				CEFA75912B768E4500B74E1B /* MedicAssetListInteractor.swift in Sources */,
+				CEE79EC22B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */,
 				CE40124E2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE9E7D802B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
+				CE0F20C32B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
 				CEC2079E2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
+				CEE79EC02B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
+				CE0F20E72B756166008702E0 /* ActionTVC.swift in Sources */,
 				CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E512B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CE2FA5142B5CBD5C00756586 /* WorkSheetDetailPresenter.swift in Sources */,
@@ -1853,14 +2388,20 @@
 				CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */,
 				CEFA75972B768E4500B74E1B /* MedicAssetListEntity.swift in Sources */,
 				CE4012182B5D58EB00517F7C /* EvidenceEquipmentCVC.swift in Sources */,
+				CEE79EF12B71745D0063D844 /* CalibrationMeasurementTVC.swift in Sources */,
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
+				CEC336FA2B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D262B54394900D0844B /* WorkSheetListPresenter.swift in Sources */,
+				CE0F20BC2B74F5DE008702E0 /* PreventiveMaintenanceView.swift in Sources */,
 				CEF5D7C42B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */,
 				CEFA758D2B768E4500B74E1B /* MedicAssetListPresenter.swift in Sources */,
 				CECB3E3C2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CE2FA5232B5CBFC600756586 /* ImageCardSectionView.swift in Sources */,
 				CEFB4F162B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
+				CEE79EE92B7172A00063D844 /* CalibrationMeasurementView.swift in Sources */,
+				CE0F20D82B7553E3008702E0 /* SelectCalibratorView.swift in Sources */,
+				CECD12202B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
 				CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE40122D2B5D7E7C00517F7C /* FullScreenPictureInteractor.swift in Sources */,
 				CE2FA51A2B5CBD5C00756586 /* WorkSheetDetailView.swift in Sources */,
@@ -1879,9 +2420,12 @@
 				CE82D4552B47DDB200A54124 /* LoginInteractor.swift in Sources */,
 				CE4012482B5D924F00517F7C /* WorkSheetOnsitePreventiveListInteractor.swift in Sources */,
 				CE9E7D722B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
+				CEE79ED32B71222B0063D844 /* TensimeterSectionView.swift in Sources */,
 				CE4012292B5D7E7C00517F7C /* FullScreenPicturePresenter.swift in Sources */,
+				CEE79EE12B716C110063D844 /* CalibratorSectionView.swift in Sources */,
 				CECB3DC32B45DAFF004A260D /* SceneDelegate.swift in Sources */,
 				CEE67D302B54394900D0844B /* WorkSheetListEntity.swift in Sources */,
+				CEE79EBE2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */,
 				CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
@@ -1890,7 +2434,9 @@
 				CE40124A2B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,
 				CEE67D2A2B54394900D0844B /* WorkSheetListInteractor.swift in Sources */,
 				CE9F910B2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */,
+				CE0F20A92B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */,
+				CE0F20AF2B74BF6F008702E0 /* StatusTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2047,6 +2593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2075,6 +2622,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2103,6 +2651,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2131,6 +2680,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

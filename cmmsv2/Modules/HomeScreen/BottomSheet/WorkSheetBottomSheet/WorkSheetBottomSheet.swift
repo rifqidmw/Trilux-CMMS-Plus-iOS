@@ -13,6 +13,7 @@ class WorkSheetBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var tableView: UITableView!
     
+    weak var delegate: WorkSheetBottomSheetDelegate?
     var data: [MenuModel] = worksheetData
     
     override func didLoad() {
@@ -79,17 +80,14 @@ extension WorkSheetBottomSheet: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate else { return }
         switch indexPath.row {
         case 0:
-            let vc = WorkSheetListRouter().showView()
-            let rootController = UINavigationController(rootViewController: vc)
-            UIApplication.shared.windows.first?.rootViewController = rootController
+            delegate.didTapWorkSheetList()
         case 1:
-            let vc = WorkSheetOnsitePreventiveListRouter().showView()
-            let rootController = UINavigationController(rootViewController: vc)
-            UIApplication.shared.windows.first?.rootViewController = rootController
+            delegate.didTapWorkSheetOnsitePreventive()
         case 2:
-            AppLogger.log("GO TO WORK SHEET CORRECTIVE")
+            delegate.didTapWorkSheetCorrective()
         default: break
         }
     }

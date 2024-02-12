@@ -15,6 +15,7 @@ class SelectActionBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var workButton: GeneralButton!
     @IBOutlet weak var seeDetailButton: GeneralButton!
     
+    weak var delegate: WorkSheetOnsitePreventiveDelegate?
     var type: WorkSheetActionType?
     
     override func didLoad() {
@@ -62,15 +63,19 @@ extension SelectActionBottomSheet {
         
         workButton.gesture()
             .sink { [weak self] _  in
-                guard self != nil else { return }
-                AppLogger.log("GO TO INSERT PAGE")
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                delegate.didTapContinueWorking()
             }
             .store(in: &anyCancellable)
         
         seeDetailButton.gesture()
             .sink { [weak self] _  in
-                guard self != nil else { return }
-                AppLogger.log("GO TO DETAIL")
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                delegate.didTapDetailPreventive()
             }
             .store(in: &anyCancellable)
     }

@@ -1,4 +1,4 @@
-// 
+//
 //  LoginRouter.swift
 //  cmmsv2
 //
@@ -23,7 +23,8 @@ extension LoginRouter {
     
     func goToHomeScreen(navigation: UINavigationController) {
         let vc = HomeScreenRouter().showView()
-        navigation.pushViewController(vc, animated: true)
+        let rootViewController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.setRootViewController(rootViewController)
     }
     
 }
