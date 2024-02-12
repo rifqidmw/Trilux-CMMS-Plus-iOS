@@ -13,4 +13,8 @@ class EditProfileInteractor: BaseInteractor {
         return api.requestApiPublisher(.updateProfile(name: name, position: position, workUnit: workUnit, imageId: imageId, phoneNumber: phoneNumber))
     }
     
+    func getUserProfile() -> AnyPublisher<UserProfileEntity, Error> {
+        return api.requestApiPublisher(.getProfile)
+    }
+    
 }

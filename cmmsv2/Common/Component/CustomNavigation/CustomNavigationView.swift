@@ -52,7 +52,7 @@ extension CustomNavigationView {
         let fullAttributedText = NSMutableAttributedString()
         fullAttributedText.append(text)
         fullAttributedText.append(usernameText)
-
+        
         usernameLabel.attributedText = fullAttributedText
         welcomeLabel.text = "Selamat Datang di \(headline ?? "")"
         profileImageView.loadImageUrl(image ?? "")
@@ -72,8 +72,9 @@ extension CustomNavigationView {
             containerPlainView.isHidden = true
             containerHomeToolbarView.isHidden = false
             
-            profileView.makeCornerRadius(25)
-            notificationView.makeCornerRadius(25)
+            profileView.makeCornerRadius(24)
+            profileImageView.makeCornerRadius(20)
+            notificationView.makeCornerRadius(24)
             notificationDotView.makeCornerRadius(4)
         case .searchToolbar:
             containerHomeToolbarView.isHidden = true

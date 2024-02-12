@@ -70,6 +70,10 @@ extension GeneralTextField {
             containerDefaultLabelView.isHidden = true
             textField.isSecureTextEntry = false
             showHideButton.isHidden = true
+        case .number:
+            containerDefaultLabelView.isHidden = true
+            textField.isSecureTextEntry = false
+            showHideButton.isHidden = true
         case .password:
             containerDefaultLabelView.isHidden = true
             textField.isSecureTextEntry = true
@@ -95,19 +99,21 @@ extension GeneralTextField: UITextFieldDelegate {
         
         let updatedText = text.replacingCharacters(in: textRange, with: string)
         
-        if case .phoneNumber = currentType {
+        switch currentType {
+        case .phoneNumber, .number:
             let allowedCharacterSet = CharacterSet(charactersIn: "0123456789")
             let isValidInput = updatedText.rangeOfCharacter(from: allowedCharacterSet.inverted) == nil
             return isValidInput
+        default:
+            return true
         }
-        
-        return true
     }
     
 }
 
 enum GeneralTextFieldType {
     case normal
+    case number
     case password
     case phoneNumber
 }

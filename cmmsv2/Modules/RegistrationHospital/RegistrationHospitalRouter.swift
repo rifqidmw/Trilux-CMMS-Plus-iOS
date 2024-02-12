@@ -24,7 +24,8 @@ extension RegistrationHospitalRouter {
     func goToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
         let vc = LoginRouter().showView()
         vc.data = data
-        navigation.pushViewController(vc, animated: true)
+        let rootViewController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.setRootViewController(rootViewController)
     }
     
 }

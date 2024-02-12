@@ -19,11 +19,18 @@ class EditProfileView: BaseViewController {
     @IBOutlet weak var saveButton: GeneralButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    var data: User?
     var presenter: EditProfilePresenter?
     
     override func didLoad() {
         super.didLoad()
         setupBody()
+        configureKeyboard()
+    }
+    
+    override func willAppear() {
+        super.willAppear()
+        
     }
     
 }
@@ -37,6 +44,7 @@ extension EditProfileView {
     }
     
     private func setupView() {
+        setupTextFieldValue()
         navigationView.configure(plainTitle: "Ubah Profil", type: .plain)
         containerView.makeCornerRadius(12)
         containerView.addShadow(6, opacity: 0.2)
@@ -55,15 +63,27 @@ extension EditProfileView {
             .store(in: &anyCancellable)
     }
     
+    private func setupTextFieldValue() {
+        guard let data,
+              var phoneNumber = data.txtTelepon
+        else { return }
+        if phoneNumber.hasPrefix("+62") {
+            phoneNumber = String(phoneNumber.dropFirst(3))
+        }
+        let slicedPhoneNumber = phoneNumber
+        nameTextField.textField.text = data.txtName
+        jobTextField.textField.text = data.txtJabatan
+        workUnitTextField.textField.text = data.txtUnitKerja
+        phoneNumberTextField.textField.text = slicedPhoneNumber
+    }
+    
     private func setupAction() {
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
-                presenter.backToPreviousPage(navigation: navigation)
+                navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
         
@@ -72,12 +92,17 @@ extension EditProfileView {
                 guard let self = self,
                       let presenter = self.presenter,
                       let navigation = self.navigationController,
-                      let name = self.nameTextField.textField.text,
-                      let job = self.jobTextField.textField.text,
-                      let workUnit = self.workUnitTextField.textField.text,
-                      let phoneNumber = self.phoneNumberTextField.textField.text
+                      let name = nameTextField.textField.text,
+                      let job = jobTextField.textField.text,
+                      let workUnit = workUnitTextField.textField.text,
+                      var phoneNumber = phoneNumberTextField.textField.text
                 else { return }
+                if phoneNumber.hasPrefix("+62") {
+                    phoneNumber = String(phoneNumber.dropFirst(3))
+                }
+                
                 let imageId = UserDefaults.standard.integer(forKey: "valImageId")
+                let fullPhoneNumber = "+62" + phoneNumber
                 
                 if name.isEmpty || job.isEmpty || workUnit.isEmpty || phoneNumber.isEmpty {
                     self.showAlert(title: "Terjadi Kesalahan", message: "Harap untuk mengisi semua bidang!")
@@ -87,7 +112,7 @@ extension EditProfileView {
                         position: job,
                         workUnit: workUnit,
                         imageId: imageId,
-                        phoneNumber: "+62" + phoneNumber,
+                        phoneNumber: fullPhoneNumber,
                         navigation: navigation)
                 }
             }
@@ -97,7 +122,6 @@ extension EditProfileView {
     private func showSpinner(_ isShow: Bool) {
         DispatchQueue.main.async {
             self.spinner.isHidden = !isShow
-            
             isShow ? self.showOverlay() : self.removeOverlay()
             isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
         }

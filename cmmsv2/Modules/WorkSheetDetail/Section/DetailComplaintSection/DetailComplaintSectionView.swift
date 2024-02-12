@@ -56,8 +56,10 @@ extension DetailComplaintSectionView {
     private func setupAction() {
         seeAllPicButton.gesture()
             .sink { [weak self] _ in
-                guard let self else { return }
-                self.delegate?.didTapSeeAllEvidence()
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                delegate.didTapSeeAllEvidence()
             }
             .store(in: &anyCancellable)
     }
@@ -116,7 +118,8 @@ extension DetailComplaintSectionView: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.didTapImage(titlePage: "Foto Kerusakan", image: collectionViewData[indexPath.row].image)
+        guard let delegate = self.delegate else { return }
+        delegate.didTapImage(titlePage: "Foto Kerusakan", image: collectionViewData[indexPath.row].image)
     }
     
 }

@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetListPresenter.swift
 //  cmmsv2
 //
@@ -20,12 +20,12 @@ class WorkSheetListPresenter: BasePresenter {
 
 extension WorkSheetListPresenter {
     
-    func backToPreviousPage() {
-        router.backToHomeScreen()
+    func showBottomSheetPreviewWorkSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
+        router.showPreviewWorkSheetBottomSheet(navigation: navigation, delegate: delegate)
     }
     
-    func showBottomSheetPreviewWorkSheet(navigation: UINavigationController) {
-        router.showPreviewWorkSheetBottomSheet(navigation: navigation)
+    func navigateToDetailWorkSheet(navigation: UINavigationController) {
+        router.navigateToDetailWorkSheet(navigation: navigation)
     }
     
 }

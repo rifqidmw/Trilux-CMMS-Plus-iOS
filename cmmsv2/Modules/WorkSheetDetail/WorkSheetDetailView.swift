@@ -56,10 +56,9 @@ extension WorkSheetDetailView {
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter
+                      let navigation = self.navigationController
                 else { return }
-                
-                presenter.navigateToWorkSheetList()
+                navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
     }
@@ -72,7 +71,6 @@ extension WorkSheetDetailView: WorkSheetDetailDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        
         self.showOverlay()
         presenter.showBottomSheetAllEvidence(navigation: navigation)
     }
@@ -81,7 +79,6 @@ extension WorkSheetDetailView: WorkSheetDetailDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        
         presenter.navigateToFullScreenPicture(navigation: navigation, titlePage: titlePage, image: image)
     }
     

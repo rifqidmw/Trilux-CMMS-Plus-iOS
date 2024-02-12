@@ -14,6 +14,8 @@ enum Endpoint {
     case getProfile
     case updateProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String)
     case changePassword(oldPassword: String, passwordConfirm: String, password: String)
+    case infoExpired
+    case uploadProfile(file: URL)
 }
 
 // MARK: - PATH URL
@@ -30,6 +32,10 @@ extension Endpoint {
             return "profile/update"
         case .changePassword:
             return "profile/change_password"
+        case .infoExpired:
+            return "info/expired"
+        case .uploadProfile:
+            return "media/uploadprofile"
         }
     }
 }
@@ -41,7 +47,8 @@ extension Endpoint {
         case .registerHospital,
                 .loginUser,
                 .updateProfile,
-                .changePassword:
+                .changePassword,
+                .uploadProfile:
             return .post
         default:
             return .get
@@ -80,6 +87,21 @@ extension Endpoint {
                 "password": password
             ]
             return params
+        case .uploadProfile(let file):
+            let formData: MultipartFormData = MultipartFormData()
+            formData.append(file, withName: "file", fileName: "filename.jpg", mimeType: "image/jpeg")
+            
+            let params: [String: Any] = [
+                "file": formData
+            ]
+            
+            for (key, value) in params {
+                if let data = "\(value)".data(using: .utf8) {
+                    formData.append(data, withName: key)
+                }
+            }
+            
+            return params
         default:
             return nil
         }
@@ -97,17 +119,17 @@ extension Endpoint {
                 "Accept": "*/*"
             ]
             return params
-        case .getProfile,
-                .updateProfile,
-                .changePassword:
+        case .uploadProfile:
             let params: HTTPHeaders = [
+                "Content-Type": "application/x-www-form-urlencoded",
                 "Authorizations": Constants.token,
-                "Content-Type": "application/json",
+                "RequestType": "api",
                 "Accept": "*/*"
             ]
             return params
         default:
             let params: HTTPHeaders = [
+                "Authorizations": Constants.token,
                 "Content-Type": "application/json",
                 "Accept": "*/*"
             ]

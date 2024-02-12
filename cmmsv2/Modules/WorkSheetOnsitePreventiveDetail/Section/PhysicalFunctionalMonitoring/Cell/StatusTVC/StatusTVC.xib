@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StatusTVC" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-tK-rwV">
+                        <rect key="frame" x="0.0" y="4" width="320" height="36"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHB-A6-1Lc">
+                                <rect key="frame" x="320" y="0.0" width="0.0" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLA-td-Y47">
+                                        <rect key="frame" x="-12" y="19" width="24.333333333333332" height="12"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ZLA-td-Y47" firstAttribute="centerY" secondItem="qHB-A6-1Lc" secondAttribute="centerY" id="Srg-Hv-P4O"/>
+                                    <constraint firstItem="ZLA-td-Y47" firstAttribute="centerX" secondItem="qHB-A6-1Lc" secondAttribute="centerX" id="eXM-3U-42M"/>
+                                </constraints>
+                            </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchecked_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="h9V-fr-QRN">
+                                <rect key="frame" x="320" y="0.0" width="0.0" height="50"/>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Xfc-tK-rwV" secondAttribute="trailing" id="9zS-lI-KtB"/>
+                    <constraint firstAttribute="bottom" secondItem="Xfc-tK-rwV" secondAttribute="bottom" constant="4" id="Nj0-Hn-e58"/>
+                    <constraint firstItem="Xfc-tK-rwV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="RQh-yL-dIa"/>
+                    <constraint firstItem="Xfc-tK-rwV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="yvd-uI-eBT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="containerStatusView" destination="qHB-A6-1Lc" id="Chn-do-wI7"/>
+                <outlet property="iconCheckBoxImageView" destination="h9V-fr-QRN" id="2Xe-eD-CF9"/>
+                <outlet property="statusLabel" destination="ZLA-td-Y47" id="NM9-zp-ezZ"/>
+            </connections>
+            <point key="canvasLocation" x="53" y="-1"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="unchecked_checkbox" width="16" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

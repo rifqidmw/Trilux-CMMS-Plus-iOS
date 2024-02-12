@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetOnsitePreventiveListPresenter.swift
 //  cmmsv2
 //
@@ -20,12 +20,12 @@ class WorkSheetOnsitePreventiveListPresenter: BasePresenter {
 
 extension WorkSheetOnsitePreventiveListPresenter {
     
-    func backToPreviousPage() {
-        router.backToHomeScreen()
+    func navigateToDetailPage(navigation: UINavigationController, type: WorkSheetOnsitePreventiveDetailType) {
+        router.navigateToDetailPage(navigation: navigation, type: type)
     }
     
-    func showBottomSheetAction(navigation: UINavigationController, type: WorkSheetActionType) {
-        router.showActionBottomSheet(navigation: navigation, type: type)
+    func showBottomSheetAction(navigation: UINavigationController, type: WorkSheetActionType, delegate: WorkSheetOnsitePreventiveDelegate) {
+        router.showActionBottomSheet(navigation: navigation, type: type, delegate: delegate)
     }
     
 }

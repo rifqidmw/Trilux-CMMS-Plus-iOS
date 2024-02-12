@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpiredBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="animationView" destination="M1x-PJ-f9S" id="d4k-yN-81y"/>
+                <outlet property="containerCardView" destination="S8M-uX-GkC" id="cTC-xZ-fvl"/>
+                <outlet property="expiredLabel" destination="UCy-BW-fJ0" id="ema-ft-ZUy"/>
+                <outlet property="messageLabel" destination="mzF-eg-cYw" id="lgW-L7-7Vm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="ruQ-iK-zNq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8M-uX-GkC">
+                    <rect key="frame" x="71.666666666666686" y="301" width="250" height="250"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Akses telah melebihi batas akhir" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzF-eg-cYw">
+                            <rect key="frame" x="16" y="16" width="218" height="43"/>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                            <color key="textColor" name="customDarkGrayColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-PJ-f9S" userLabel="Animation View">
+                            <rect key="frame" x="74.999999999999986" y="75" width="100.00000000000001" height="100"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="nfS-yu-cFR"/>
+                                <constraint firstAttribute="height" constant="100" id="tay-A4-2Kk"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCy-BW-fJ0" userLabel="Expired Label">
+                            <rect key="frame" x="16" y="191" width="218" height="43"/>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                            <color key="textColor" name="indicatorColor5"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="UCy-BW-fJ0" firstAttribute="top" secondItem="M1x-PJ-f9S" secondAttribute="bottom" constant="16" id="5WC-wT-YFw"/>
+                        <constraint firstItem="M1x-PJ-f9S" firstAttribute="centerX" secondItem="S8M-uX-GkC" secondAttribute="centerX" id="8Ue-3E-Pmh"/>
+                        <constraint firstItem="M1x-PJ-f9S" firstAttribute="centerY" secondItem="S8M-uX-GkC" secondAttribute="centerY" id="DyO-rV-owc"/>
+                        <constraint firstItem="mzF-eg-cYw" firstAttribute="leading" secondItem="S8M-uX-GkC" secondAttribute="leading" constant="16" id="JzK-D6-4iZ"/>
+                        <constraint firstItem="UCy-BW-fJ0" firstAttribute="leading" secondItem="S8M-uX-GkC" secondAttribute="leading" constant="16" id="NNA-5t-ecx"/>
+                        <constraint firstItem="mzF-eg-cYw" firstAttribute="top" secondItem="S8M-uX-GkC" secondAttribute="top" constant="16" id="Vnk-hg-jZQ"/>
+                        <constraint firstAttribute="height" constant="250" id="akB-T6-68U"/>
+                        <constraint firstAttribute="width" constant="250" id="cdG-tz-Yg8"/>
+                        <constraint firstItem="M1x-PJ-f9S" firstAttribute="top" secondItem="mzF-eg-cYw" secondAttribute="bottom" constant="16" id="gtS-1c-B8X"/>
+                        <constraint firstAttribute="bottom" secondItem="UCy-BW-fJ0" secondAttribute="bottom" constant="16" id="iH9-2k-36T"/>
+                        <constraint firstAttribute="trailing" secondItem="mzF-eg-cYw" secondAttribute="trailing" constant="16" id="qwp-qW-COK"/>
+                        <constraint firstAttribute="trailing" secondItem="UCy-BW-fJ0" secondAttribute="trailing" constant="16" id="r6p-SZ-5SA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="S8M-uX-GkC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2ph-Qk-ufC"/>
+                <constraint firstItem="S8M-uX-GkC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Kh9-GB-s0e"/>
+            </constraints>
+            <point key="canvasLocation" x="-19" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="indicatorColor5">
+            <color red="0.92156862745098034" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
