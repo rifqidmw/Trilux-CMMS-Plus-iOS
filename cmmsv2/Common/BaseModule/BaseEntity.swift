@@ -67,3 +67,22 @@ enum MessageType: String, Codable {
         return rawValue
     }
 }
+
+enum AssetCategory: String, Codable {
+    case medic = "Medic"
+    case nonMedic = "Non-Medic"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Medic": self = .medic
+        case "Non-Medic": self = .nonMedic
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}

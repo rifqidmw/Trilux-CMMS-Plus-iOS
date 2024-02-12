@@ -81,7 +81,9 @@ extension AssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            AppLogger.log("GO TO ASSET MEDIC")
+            let vc = MedicAssetListRouter().showView()
+            let rootView = UINavigationController(rootViewController: vc)
+            UIApplication.shared.windows.first?.rootViewController = rootView
         case 1:
             AppLogger.log("GO TO ASSET NON MEDIC")
         default: break

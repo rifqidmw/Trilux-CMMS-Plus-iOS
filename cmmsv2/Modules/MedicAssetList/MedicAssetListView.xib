@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicAssetListView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="PyF-Eu-ntS" id="DJY-3Q-vp4"/>
+                <outlet property="countLabel" destination="7Hh-9B-u3d" id="hRk-nn-VQh"/>
+                <outlet property="customActionBar" destination="rpC-v2-PsD" id="E9m-AV-Pdb"/>
+                <outlet property="customNavigationView" destination="aeS-qZ-aDf" id="X5z-Df-HST"/>
+                <outlet property="searchButton" destination="3je-XB-bgp" id="pYx-RN-2Zg"/>
+                <outlet property="spinner" destination="LLE-oD-YaT" id="0u8-pv-NnP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-qZ-aDf" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="AgY-QB-Ogm"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-kH-UMl" customClass="ToastView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="139" width="361" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="szE-Rr-KMw"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3je-XB-bgp" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="211" width="361" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="dgs-LA-5qD"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="63f-Wm-Pdq">
+                    <rect key="frame" x="16" y="291" width="361" height="471"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-KB-ytT">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar Aset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrB-3a-dp5">
+                                    <rect key="frame" x="0.0" y="0.0" width="73" height="20"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berhasil menemukan 3000 Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hh-9B-u3d">
+                                    <rect key="frame" x="166.33333333333337" y="0.0" width="194.66666666666663" height="20"/>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="U67-9q-O2M"/>
+                            </constraints>
+                        </stackView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PyF-Eu-ntS">
+                            <rect key="frame" x="0.0" y="28" width="361" height="443"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LUM-FG-OSN">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </collectionView>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpC-v2-PsD" customClass="ActionBarView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="762" width="393" height="56"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="hOr-eK-U76"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LLE-oD-YaT">
+                    <rect key="frame" x="176.66666666666666" y="722" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4Ux-F6-j29"/>
+                        <constraint firstAttribute="width" constant="40" id="Svd-3E-29g"/>
+                    </constraints>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rpC-v2-PsD" firstAttribute="top" secondItem="LLE-oD-YaT" secondAttribute="bottom" id="1eN-c6-Aap"/>
+                <constraint firstItem="aeS-qZ-aDf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="26n-Bt-D6y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aeS-qZ-aDf" secondAttribute="trailing" id="Ap3-6A-mbS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="63f-Wm-Pdq" secondAttribute="trailing" constant="16" id="D5Y-4E-yEH"/>
+                <constraint firstItem="3ix-kH-UMl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="HBU-Kn-rZy"/>
+                <constraint firstItem="63f-Wm-Pdq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="T60-ML-Zq1"/>
+                <constraint firstItem="63f-Wm-Pdq" firstAttribute="top" secondItem="3je-XB-bgp" secondAttribute="bottom" constant="32" id="Tng-ep-8lc"/>
+                <constraint firstItem="LLE-oD-YaT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UQi-1h-9hT"/>
+                <constraint firstItem="3je-XB-bgp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Wgr-fo-0BQ"/>
+                <constraint firstItem="aeS-qZ-aDf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Yc9-AU-mVu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3ix-kH-UMl" secondAttribute="trailing" constant="16" id="aZr-kQ-SXs"/>
+                <constraint firstItem="3je-XB-bgp" firstAttribute="top" secondItem="3ix-kH-UMl" secondAttribute="bottom" constant="24" id="dXS-0x-fwK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rpC-v2-PsD" secondAttribute="trailing" id="gbg-6W-e5P"/>
+                <constraint firstItem="3ix-kH-UMl" firstAttribute="top" secondItem="aeS-qZ-aDf" secondAttribute="bottom" constant="24" id="ilV-Rx-Lda"/>
+                <constraint firstItem="rpC-v2-PsD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nA9-r0-cNn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3je-XB-bgp" secondAttribute="trailing" constant="16" id="oIw-vd-8Ay"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rpC-v2-PsD" secondAttribute="bottom" id="ryV-sp-fFU"/>
+                <constraint firstItem="rpC-v2-PsD" firstAttribute="top" secondItem="63f-Wm-Pdq" secondAttribute="bottom" id="zWm-MT-dWl"/>
+            </constraints>
+            <point key="canvasLocation" x="49.618320610687022" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
