@@ -55,6 +55,9 @@ extension LoginPresenter {
                             UserDefaults.standard.setValue(userProfile.txtName, forKey: "txtName")
                             UserDefaults.standard.setValue(userProfile.valImage, forKey: "valImage")
                             UserDefaults.standard.setValue(userProfile.valImageId, forKey: "valImageId")
+                            UserDefaults.standard.setValue(userProfile.txtJabatan, forKey: "txtJabatan")
+                            UserDefaults.standard.setValue(userProfile.txtUnitKerja, forKey: "txtUnitKerja")
+                            UserDefaults.standard.setValue(userProfile.txtTelepon, forKey: "txtTelepon")
                             UserDefaults.standard.setValue(userProfile.valToken, forKey: "valToken")
                             
                             self.userProfile = userProfile

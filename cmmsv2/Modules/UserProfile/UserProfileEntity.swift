@@ -37,10 +37,10 @@ struct DetailProfile: Codable {
     let valUrl: String?
     let valThumburl: String?
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
-        case valUrl
-        case valThumburl
+        case valUrl = "valUrl"
+        case valThumburl = "valThumburl"
     }
 }
 
