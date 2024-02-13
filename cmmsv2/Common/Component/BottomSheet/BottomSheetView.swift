@@ -9,6 +9,7 @@ import UIKit
 
 class BottomSheetView: UIView {
     
+    @IBOutlet var containerView: UIView!
     @IBOutlet weak var handleBarView: UIView!
     @IBOutlet weak var handleBarArea: UIView!
     

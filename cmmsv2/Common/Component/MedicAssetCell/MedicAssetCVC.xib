@@ -38,10 +38,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcF-RL-oQd" userLabel="Asset Badge View">
-                                <rect key="frame" x="340" y="28" width="16" height="60"/>
+                                <rect key="frame" x="332" y="28" width="24" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37x-YK-Eze">
-                                        <rect key="frame" x="-6" y="4" width="28" height="52"/>
+                                        <rect key="frame" x="-2" y="4" width="28" height="52"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="bottom" secondItem="37x-YK-Eze" secondAttribute="bottom" constant="4" id="DCA-1M-iNV"/>
                                     <constraint firstAttribute="height" constant="60" id="J4k-zP-EhJ"/>
                                     <constraint firstItem="37x-YK-Eze" firstAttribute="top" secondItem="BcF-RL-oQd" secondAttribute="top" constant="4" id="SRl-Xf-4hm"/>
-                                    <constraint firstAttribute="width" constant="16" id="Tc3-gj-mhD"/>
+                                    <constraint firstAttribute="width" constant="24" id="Tc3-gj-mhD"/>
                                     <constraint firstItem="37x-YK-Eze" firstAttribute="centerX" secondItem="BcF-RL-oQd" secondAttribute="centerX" id="oeh-5Y-8cd"/>
                                     <constraint firstItem="37x-YK-Eze" firstAttribute="centerY" secondItem="BcF-RL-oQd" secondAttribute="centerY" id="xwZ-x3-vus"/>
                                 </constraints>
@@ -99,16 +99,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jgI-y4-pLE">
-                                <rect key="frame" x="120" y="16" width="204" height="21.666666666666671"/>
+                                <rect key="frame" x="120" y="16" width="196" height="21.666666666666671"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMj-Iw-0TF" userLabel="Inventaris Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="204" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="196" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
                                         <color key="textColor" name="placeholderColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCr-C3-CzC" userLabel="Asset Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="204" height="21.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="196" height="21.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                         <color key="textColor" name="customDarkGrayColor"/>
                                         <nil key="highlightedColor"/>

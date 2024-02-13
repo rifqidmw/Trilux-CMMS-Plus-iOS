@@ -233,10 +233,10 @@
 		CE9F91012B4F942C004C027A /* InformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F90FF2B4F942C004C027A /* InformationCardView.xib */; };
 		CE9F91032B4F9434004C027A /* InformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91022B4F9434004C027A /* InformationCardView.swift */; };
 		CE9F91042B4F9434004C027A /* InformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91022B4F9434004C027A /* InformationCardView.swift */; };
-		CE9F91072B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */; };
-		CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */; };
-		CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
-		CE9F910B2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */; };
+		CE9F91072B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* DetailAssetBottomSheet.xib */; };
+		CE9F91082B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* DetailAssetBottomSheet.xib */; };
+		CE9F910A2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* DetailAssetBottomSheet.swift */; };
+		CE9F910B2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* DetailAssetBottomSheet.swift */; };
 		CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
 		CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
 		CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */; };
@@ -451,6 +451,18 @@
 		CEE79EF12B71745D0063D844 /* CalibrationMeasurementTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79EEE2B71745D0063D844 /* CalibrationMeasurementTVC.swift */; };
 		CEE79EF22B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */; };
 		CEE79EF32B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */; };
+		CEEED86C2B7A86CB00672952 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8662B7A86CB00672952 /* ScanPresenter.swift */; };
+		CEEED86D2B7A86CB00672952 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8662B7A86CB00672952 /* ScanPresenter.swift */; };
+		CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8672B7A86CB00672952 /* ScanRouter.swift */; };
+		CEEED86F2B7A86CB00672952 /* ScanRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8672B7A86CB00672952 /* ScanRouter.swift */; };
+		CEEED8702B7A86CB00672952 /* ScanInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8682B7A86CB00672952 /* ScanInteractor.swift */; };
+		CEEED8712B7A86CB00672952 /* ScanInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8682B7A86CB00672952 /* ScanInteractor.swift */; };
+		CEEED8722B7A86CB00672952 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8692B7A86CB00672952 /* ScanView.swift */; };
+		CEEED8732B7A86CB00672952 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8692B7A86CB00672952 /* ScanView.swift */; };
+		CEEED8742B7A86CB00672952 /* ScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEED86A2B7A86CB00672952 /* ScanView.xib */; };
+		CEEED8752B7A86CB00672952 /* ScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEED86A2B7A86CB00672952 /* ScanView.xib */; };
+		CEEED8762B7A86CB00672952 /* ScanEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED86B2B7A86CB00672952 /* ScanEntity.swift */; };
+		CEEED8772B7A86CB00672952 /* ScanEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED86B2B7A86CB00672952 /* ScanEntity.swift */; };
 		CEF5D7C32B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */; };
 		CEF5D7C42B6D311700FDE752 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */; };
 		CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */; };
@@ -622,8 +634,8 @@
 		CE9F90F22B4F776B004C027A /* MenuItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTVC.xib; sourceTree = "<group>"; };
 		CE9F90FF2B4F942C004C027A /* InformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationCardView.xib; sourceTree = "<group>"; };
 		CE9F91022B4F9434004C027A /* InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCardView.swift; sourceTree = "<group>"; };
-		CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationDetailBottomSheet.xib; sourceTree = "<group>"; };
-		CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailBottomSheet.swift; sourceTree = "<group>"; };
+		CE9F91062B4F970D004C027A /* DetailAssetBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAssetBottomSheet.xib; sourceTree = "<group>"; };
+		CE9F91092B4F9717004C027A /* DetailAssetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssetBottomSheet.swift; sourceTree = "<group>"; };
 		CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredBottomSheet.swift; sourceTree = "<group>"; };
 		CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpiredBottomSheet.xib; sourceTree = "<group>"; };
 		CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+Delegate.swift"; sourceTree = "<group>"; };
@@ -734,6 +746,12 @@
 		CEE79EEA2B7172BC0063D844 /* CalibrationMeasurementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationMeasurementView.xib; sourceTree = "<group>"; };
 		CEE79EEE2B71745D0063D844 /* CalibrationMeasurementTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationMeasurementTVC.swift; sourceTree = "<group>"; };
 		CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationMeasurementTVC.xib; sourceTree = "<group>"; };
+		CEEED8662B7A86CB00672952 /* ScanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPresenter.swift; sourceTree = "<group>"; };
+		CEEED8672B7A86CB00672952 /* ScanRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRouter.swift; sourceTree = "<group>"; };
+		CEEED8682B7A86CB00672952 /* ScanInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInteractor.swift; sourceTree = "<group>"; };
+		CEEED8692B7A86CB00672952 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		CEEED86A2B7A86CB00672952 /* ScanView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanView.xib; sourceTree = "<group>"; };
+		CEEED86B2B7A86CB00672952 /* ScanEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEntity.swift; sourceTree = "<group>"; };
 		CEF5D7BD2B6D311700FDE752 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		CEF5D7BE2B6D311700FDE752 /* SplashScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenRouter.swift; sourceTree = "<group>"; };
 		CEF5D7BF2B6D311700FDE752 /* SplashScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenInteractor.swift; sourceTree = "<group>"; };
@@ -1145,6 +1163,14 @@
 			path = RegistrationHospital;
 			sourceTree = "<group>";
 		};
+		CE91C1A12B7B1146006F5EA9 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F91052B4F96AC004C027A /* DetailAssetBottomSheet */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		CE9E7D642B529D9400240A7D /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1250,13 +1276,13 @@
 			path = InformationCard;
 			sourceTree = "<group>";
 		};
-		CE9F91052B4F96AC004C027A /* InformationDetailBottomSheet */ = {
+		CE9F91052B4F96AC004C027A /* DetailAssetBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				CE9F91092B4F9717004C027A /* InformationDetailBottomSheet.swift */,
-				CE9F91062B4F970D004C027A /* InformationDetailBottomSheet.xib */,
+				CE9F91092B4F9717004C027A /* DetailAssetBottomSheet.swift */,
+				CE9F91062B4F970D004C027A /* DetailAssetBottomSheet.xib */,
 			);
-			path = InformationDetailBottomSheet;
+			path = DetailAssetBottomSheet;
 			sourceTree = "<group>";
 		};
 		CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */ = {
@@ -1395,6 +1421,7 @@
 				CE82D4482B47DD8600A54124 /* Login */,
 				CEFA75852B768DF300B74E1B /* MedicAssetList */,
 				CE82D4492B47DD8E00A54124 /* RegistrationHospital */,
+				CEEED8652B7A86A800672952 /* Scan */,
 				CEF72EEE2B4681D200815E4C /* SplashScreen */,
 				CE9E7D642B529D9400240A7D /* UserProfile */,
 				CE2A98292B5CB7F70075E3C2 /* WorkSheetDetail */,
@@ -1551,7 +1578,6 @@
 			children = (
 				CECB777A2B4C79270069AC05 /* AllCategoriesBottomSheet */,
 				CEE67D382B54428400D0844B /* AssetBottomSheet */,
-				CE9F91052B4F96AC004C027A /* InformationDetailBottomSheet */,
 				CEE67D312B54425300D0844B /* WorkSheetBottomSheet */,
 			);
 			path = BottomSheet;
@@ -1695,6 +1721,20 @@
 				CEE79EEF2B71745D0063D844 /* CalibrationMeasurementTVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CEEED8652B7A86A800672952 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				CE91C1A12B7B1146006F5EA9 /* BottomSheet */,
+				CEEED8662B7A86CB00672952 /* ScanPresenter.swift */,
+				CEEED8672B7A86CB00672952 /* ScanRouter.swift */,
+				CEEED8682B7A86CB00672952 /* ScanInteractor.swift */,
+				CEEED8692B7A86CB00672952 /* ScanView.swift */,
+				CEEED86A2B7A86CB00672952 /* ScanView.xib */,
+				CEEED86B2B7A86CB00672952 /* ScanEntity.swift */,
+			);
+			path = Scan;
 			sourceTree = "<group>";
 		};
 		CEF5FD212B4A74AE003A72B7 /* Background */ = {
@@ -1865,6 +1905,7 @@
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0B2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
+				CEEED8742B7A86CB00672952 /* ScanView.xib in Resources */,
 				CEE67D332B54426600D0844B /* WorkSheetBottomSheet.xib in Resources */,
 				CECB3DDD2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
@@ -1906,7 +1947,7 @@
 				CE0F20B02B74BF6F008702E0 /* StatusTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
-				CE9F91072B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
+				CE9F91072B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
 				CE9E7D992B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DD92B45E119004A260D /* Roboto-Regular.ttf in Resources */,
 				CEE79EE32B716C870063D844 /* CalibratorSectionView.xib in Resources */,
@@ -1963,6 +2004,7 @@
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0C2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
+				CEEED8752B7A86CB00672952 /* ScanView.xib in Resources */,
 				CEE67D342B54426600D0844B /* WorkSheetBottomSheet.xib in Resources */,
 				CECB3DDE2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
@@ -2004,7 +2046,7 @@
 				CE0F20B12B74BF6F008702E0 /* StatusTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
-				CE9F91082B4F970D004C027A /* InformationDetailBottomSheet.xib in Resources */,
+				CE9F91082B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
 				CE9E7D9A2B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DDA2B45E119004A260D /* Roboto-Regular.ttf in Resources */,
 				CEE79EE42B716C870063D844 /* CalibratorSectionView.xib in Resources */,
@@ -2123,6 +2165,7 @@
 				CECB3E252B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CE5442902B4726360022047D /* GeneralButton.swift in Sources */,
+				CEEED86C2B7A86CB00672952 /* ScanPresenter.swift in Sources */,
 				CEC207B22B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
 				CE0F20CA2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */,
 				CEE67D2B2B54394900D0844B /* WorkSheetListView.swift in Sources */,
@@ -2164,10 +2207,12 @@
 				CEF762052B72828B00B5FD8E /* PreparationSectionView.swift in Sources */,
 				CEF7620D2B72A76800B5FD8E /* PreparationTVC.swift in Sources */,
 				CEFB4F112B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
+				CEEED8762B7A86CB00672952 /* ScanEntity.swift in Sources */,
 				CEE67D3D2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
 				CE00446E2B7601B200C88345 /* SparePartTVC.swift in Sources */,
 				CEC2079F2B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CEFA75922B768E4500B74E1B /* MedicAssetListView.swift in Sources */,
+				CEEED8702B7A86CB00672952 /* ScanInteractor.swift in Sources */,
 				CECB3E2E2B45E400004A260D /* Double+Ext.swift in Sources */,
 				CE0044742B76192A00C88345 /* RecommendationSectionView.swift in Sources */,
 				CE40121D2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
@@ -2210,6 +2255,7 @@
 				CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */,
 				CEFA75902B768E4500B74E1B /* MedicAssetListInteractor.swift in Sources */,
 				CEE79EC12B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */,
+				CEEED8722B7A86CB00672952 /* ScanView.swift in Sources */,
 				CE40124D2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE9E7D7F2B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CE0F20C22B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
@@ -2217,6 +2263,7 @@
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
+				CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */,
 				CE0F20E62B756166008702E0 /* ActionTVC.swift in Sources */,
 				CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E502B45E6E6004A260D /* ApiManager.swift in Sources */,
@@ -2271,7 +2318,7 @@
 				CECB3E532B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE4012492B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,
 				CEE67D292B54394900D0844B /* WorkSheetListInteractor.swift in Sources */,
-				CE9F910A2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */,
+				CE9F910A2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE0F20A82B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */,
 				CE0F20AE2B74BF6F008702E0 /* StatusTVC.swift in Sources */,
@@ -2285,6 +2332,7 @@
 				CECB3E262B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CE5442912B4726360022047D /* GeneralButton.swift in Sources */,
+				CEEED86D2B7A86CB00672952 /* ScanPresenter.swift in Sources */,
 				CEC207B32B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
 				CE0F20CB2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */,
 				CEE67D2C2B54394900D0844B /* WorkSheetListView.swift in Sources */,
@@ -2326,10 +2374,12 @@
 				CEF762062B72828B00B5FD8E /* PreparationSectionView.swift in Sources */,
 				CEF7620E2B72A76800B5FD8E /* PreparationTVC.swift in Sources */,
 				CEFB4F122B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
+				CEEED8772B7A86CB00672952 /* ScanEntity.swift in Sources */,
 				CEE67D3E2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
 				CE00446F2B7601B200C88345 /* SparePartTVC.swift in Sources */,
 				CEC207A02B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CEFA75932B768E4500B74E1B /* MedicAssetListView.swift in Sources */,
+				CEEED8712B7A86CB00672952 /* ScanInteractor.swift in Sources */,
 				CECB3E2F2B45E400004A260D /* Double+Ext.swift in Sources */,
 				CE0044752B76192A00C88345 /* RecommendationSectionView.swift in Sources */,
 				CE40121E2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
@@ -2372,6 +2422,7 @@
 				CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */,
 				CEFA75912B768E4500B74E1B /* MedicAssetListInteractor.swift in Sources */,
 				CEE79EC22B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */,
+				CEEED8732B7A86CB00672952 /* ScanView.swift in Sources */,
 				CE40124E2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE9E7D802B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CE0F20C32B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
@@ -2379,6 +2430,7 @@
 				CEE79EC02B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
+				CEEED86F2B7A86CB00672952 /* ScanRouter.swift in Sources */,
 				CE0F20E72B756166008702E0 /* ActionTVC.swift in Sources */,
 				CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E512B45E6E6004A260D /* ApiManager.swift in Sources */,
@@ -2433,7 +2485,7 @@
 				CECB3E542B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE40124A2B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,
 				CEE67D2A2B54394900D0844B /* WorkSheetListInteractor.swift in Sources */,
-				CE9F910B2B4F9717004C027A /* InformationDetailBottomSheet.swift in Sources */,
+				CE9F910B2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE0F20A92B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */,
 				CE0F20AF2B74BF6F008702E0 /* StatusTVC.swift in Sources */,

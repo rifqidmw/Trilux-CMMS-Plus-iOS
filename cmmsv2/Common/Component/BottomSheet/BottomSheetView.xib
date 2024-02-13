@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="1oU-fW-4np" id="xgu-sy-ug0"/>
                 <outlet property="handleBarArea" destination="NsF-Ar-R8o" id="Z5d-qQ-wmo"/>
                 <outlet property="handleBarView" destination="BbI-wh-9pl" id="nAf-Uv-XpT"/>
             </connections>

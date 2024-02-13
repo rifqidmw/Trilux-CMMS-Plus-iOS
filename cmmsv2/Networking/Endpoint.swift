@@ -24,6 +24,7 @@ enum Endpoint {
         sstMedic: String? = nil)
     case infoExpired
     case uploadProfile(file: URL)
+    case detailAssetEquipment(id: String)
 }
 
 // MARK: - PATH URL
@@ -60,6 +61,8 @@ extension Endpoint {
             return "info/expired"
         case .uploadProfile:
             return "media/uploadprofile"
+        case .detailAssetEquipment(let id):
+            return "equipments/view/\(id)"
         }
     }
 }

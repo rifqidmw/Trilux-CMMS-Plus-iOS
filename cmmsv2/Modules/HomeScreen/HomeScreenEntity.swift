@@ -115,8 +115,11 @@ let worksheetData: [MenuModel] = [
 ]
 
 let detailInformationData: [CategoryModel] = [
-    CategoryModel(image: "ic_hospital", title: "Update Data Aset", isUpdated: true),
-    CategoryModel(image: "ic_hospital", title: "Detail Aset"),
-    CategoryModel(image: "ic_calendar", title: "Informasi Penerimaan"),
-    CategoryModel(image: "ic_printer", title: "Print Label Ruangan")
+    CategoryModel(image: "ic_bill", title: "Pemantauan Fungsi"),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Preventif"),
+    CategoryModel(image: "ic_hospital", title: "Info Aset"),
+    CategoryModel(image: "ic_printer", title: "Print Label Ruangan"),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Info Pemeliharaan"),
+    CategoryModel(image: "ic_mutation", title: "Info Mutasi"),
+    CategoryModel(image: "ic_speedometer", title: "Kalibrasi")
 ]
