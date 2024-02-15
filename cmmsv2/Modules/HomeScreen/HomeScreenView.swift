@@ -84,8 +84,7 @@ extension HomeScreenView {
                     return
                 }
                 
-                self.showOverlay()
-                presenter.showBottomSheetDetailInformation(navigation: navigation)
+                presenter.navigateToScan(navigation: navigation)
             }
             .store(in: &anyCancellable)
         

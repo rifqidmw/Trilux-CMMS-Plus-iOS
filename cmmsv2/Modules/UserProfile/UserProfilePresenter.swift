@@ -14,7 +14,7 @@ class UserProfilePresenter: BasePresenter {
     private let router = UserProfileRouter()
     
     @Published public var userProfile: User?
-    @Published public var userProfileImage: DetailProfile?
+    @Published public var userProfileImage: EditProfileUser?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -58,9 +58,9 @@ extension UserProfilePresenter {
             .store(in: &anyCancellable)
     }
     
-    func uploadUserProfile(file: URL) {
+    func uploadProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String) {
         self.isLoading = true
-        interactor.uploadProfile(file: file)
+        interactor.uploadProfile(name: name, position: position, workUnit: workUnit, imageId: imageId, phoneNumber: phoneNumber)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -73,12 +73,13 @@ extension UserProfilePresenter {
                         self.isError = true
                     }
                 },
-                receiveValue: { userImage in
+                receiveValue: { user in
                     DispatchQueue.main.async {
-                        guard let data = userImage.data,
-                              let profileImage = data.media
+                        guard let data = user.data,
+                              let profile = data.user
                         else { return }
-                        self.userProfileImage = profileImage
+                        self.userProfileImage = profile
+                        self.fetchInitData()
                     }
                 }
             )

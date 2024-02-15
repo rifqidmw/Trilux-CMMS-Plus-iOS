@@ -49,4 +49,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToScan(navigation: UINavigationController) {
+        let vc = ScanRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

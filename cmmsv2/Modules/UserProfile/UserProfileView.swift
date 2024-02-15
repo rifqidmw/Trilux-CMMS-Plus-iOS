@@ -27,6 +27,7 @@ class UserProfileView: BaseViewController {
     
     var presenter: UserProfilePresenter?
     var user: User?
+    var media: MediaProfileEntity?
     var data: [ProfileMenuModel] = profileMenuData
     
     override func didLoad() {

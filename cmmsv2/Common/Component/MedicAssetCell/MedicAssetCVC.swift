@@ -49,13 +49,14 @@ extension MedicAssetCVC {
         self.addShadow(6, opacity: 0.2)
         self.markView.makeCornerRadius(2)
         self.assetImageView.makeCornerRadius(8)
+        self.technicalBadgeView.makeCornerRadius(4)
         self.assetBadgeView.makeCornerRadius(4)
+        self.assetBadgeView.addShadow(8, color: UIColor.customPrimaryColor.cgColor, opacity: 0.4)
+        self.assetBadgeLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         self.calibrationCategoryView.makeCornerRadius(4)
         self.preventiveCategoryView.makeCornerRadius(4)
         self.correctiveCategoryView.makeCornerRadius(4)
         self.assetBadgeView.makeCornerRadius(4, .leftCurve)
-        self.assetBadgeView.addShadow(8, color: UIColor.customPrimaryColor.cgColor, opacity: 0.4)
-        self.assetBadgeLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         self.containerCategoryStackView.distribution = .fillProportionally
     }
     

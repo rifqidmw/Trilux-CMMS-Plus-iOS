@@ -71,11 +71,6 @@ extension HomeScreenPresenter {
         router.showBottomSheet(view: bottomSheet, navigation: navigation)
     }
     
-    func showBottomSheetDetailInformation(navigation: UINavigationController) {
-        let bottomSheet = InformationDetailBottomSheet(nibName: String(describing: InformationDetailBottomSheet.self), bundle: nil)
-        router.showBottomSheet(view: bottomSheet, navigation: navigation)
-    }
-    
     func showExpiredBottomSheet(navigation: UINavigationController, expiredDate: String) {
         let bottomSheet = ExpiredBottomSheet(nibName: String(describing: ExpiredBottomSheet.self), bundle: nil)
         bottomSheet.expiredDate = expiredDate
@@ -96,6 +91,10 @@ extension HomeScreenPresenter {
     
     func navigateToAssetList(navigation: UINavigationController) {
         router.navigateToAssetList(navigation: navigation)
+    }
+    
+    func navigateToScan(navigation: UINavigationController) {
+        router.navigateToScan(navigation: navigation)
     }
     
 }

@@ -11,6 +11,7 @@ def share_pod
   pod 'SkeletonView'
   pod 'SDWebImage'
   pod 'DropDown'
+  pod 'DGCharts'
 end
 
 target 'cmmsv2' do
