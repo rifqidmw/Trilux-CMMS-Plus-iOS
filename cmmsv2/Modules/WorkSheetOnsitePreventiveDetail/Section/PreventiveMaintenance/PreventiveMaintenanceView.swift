@@ -54,7 +54,7 @@ extension PreventiveMaintenanceView {
     func configure(data: [PreparationModel], type: WorkSheetOnsitePreventiveDetailType) {
         self.data = data
         self.type = type
-        customHeaderView.configure(icon: "ic_notes_with_gear", title: "Pemeliharaan Preventif", type: type == .seeOnly
+        customHeaderView.configure(icon: "ic_document_with_gear", title: "Pemeliharaan Preventif", type: type == .seeOnly
                                    ? .collapsibleAction : .dismissSwitch)
     }
     

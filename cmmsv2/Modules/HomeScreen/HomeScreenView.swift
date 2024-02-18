@@ -98,6 +98,17 @@ extension HomeScreenView {
                 presenter.navigateToUserProfile(navigation: navigation)
             }
             .store(in: &anyCancellable)
+        
+        navigationView.notificationView.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let presenter,
+                      let navigation = self.navigationController
+                else { return }
+                
+                presenter.navigateToNotificationList(navigation: navigation)
+            }
+            .store(in: &anyCancellable)
     }
     
 }
