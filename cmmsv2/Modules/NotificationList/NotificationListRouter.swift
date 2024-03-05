@@ -18,3 +18,13 @@ class NotificationListRouter: BaseRouter {
     }
     
 }
+
+extension NotificationListRouter {
+    
+    func showDetailNotificationBottomSheet(navigation: UINavigationController) {
+        let bottomSheet = NotificationDetailBottomSheet(nibName: String(describing: NotificationDetailBottomSheet.self), bundle: nil)
+        bottomSheet.modalPresentationStyle = .overCurrentContext
+        navigation.present(bottomSheet, animated: true)
+    }
+    
+}

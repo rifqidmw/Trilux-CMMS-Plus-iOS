@@ -5,7 +5,7 @@
 //  Created by PRO M1 2020 8/256 on 18/02/24.
 //
 
-import Foundation
+import UIKit
 
 class NotificationListPresenter: BasePresenter {
     
@@ -68,6 +68,14 @@ extension NotificationListPresenter {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
         fetchListNotificationData(page: page, limit: limit)
+    }
+    
+}
+
+extension NotificationListPresenter {
+    
+    func showDetailNotificationBottomSheet(navigation: UINavigationController) {
+        router.showDetailNotificationBottomSheet(navigation: navigation)
     }
     
 }

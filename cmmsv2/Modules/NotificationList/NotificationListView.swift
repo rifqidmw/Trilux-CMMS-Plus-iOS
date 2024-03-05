@@ -211,6 +211,16 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
         return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("-- THIS IS DATA CLICKED: \(data[indexPath.row])")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        
+        self.showOverlay()
+        presenter.showDetailNotificationBottomSheet(navigation: navigation)
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == scrollView,
               let presenter = self.presenter

@@ -533,6 +533,10 @@
 		CEFB4F162B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4F0A2B4930460033D37D /* RegistrationHospitalEntity.swift */; };
 		CEFE59B72B5EBF9200BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
 		CEFE59B82B5EBF9300BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
+		CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */; };
+		CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */; };
+		CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */; };
+		CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -809,6 +813,8 @@
 		CEFB4F092B4930460033D37D /* RegistrationHospitalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationHospitalView.xib; sourceTree = "<group>"; };
 		CEFB4F0A2B4930460033D37D /* RegistrationHospitalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationHospitalEntity.swift; sourceTree = "<group>"; };
 		CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailBottomSheet.swift; sourceTree = "<group>"; };
+		CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailBottomSheet.xib; sourceTree = "<group>"; };
 		FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1170,6 +1176,7 @@
 		CE8208782B82390100CD4242 /* NotificationList */ = {
 			isa = PBXGroup;
 			children = (
+				CEFF17B02B9631B90045F94E /* BottomSheet */,
 				CE82088B2B823B3000CD4242 /* Cell */,
 				CE8208922B823C3900CD4242 /* TimeGroupHeader */,
 				CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */,
@@ -1864,6 +1871,15 @@
 			path = MedicAssetList;
 			sourceTree = "<group>";
 		};
+		CEFF17B02B9631B90045F94E /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */,
+				CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1958,6 +1974,7 @@
 				CEE79EC52B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFB2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BE2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
@@ -2060,6 +2077,7 @@
 				CEE79EC62B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFC2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BF2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
@@ -2302,6 +2320,7 @@
 				CE2F2CE82B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D362B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
@@ -2476,6 +2495,7 @@
 				CE2F2CE92B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D372B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
