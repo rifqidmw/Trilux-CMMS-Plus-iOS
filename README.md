@@ -6,17 +6,14 @@ Trilux Asset Management System application to facilitate all forms of asset mana
 
 Using camelCase for variable name like this one
 
-selectedIndex
-tabCategory
+> `selectedIndex`
 
 On IBOutlet like this one
 
-@IBOulet weak var roundedButton: UIButton!
+> `@IBOulet weak var roundedButton: UIButton!`
 
 ## Naming Component
 
 using TitleCase for naming component like this one
 
-GeneralButton
-ProgressBar
-etc.
+> `GeneralButton`
