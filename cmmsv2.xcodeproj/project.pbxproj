@@ -161,6 +161,26 @@
 		CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
 		CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
 		CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
+		CE82087F2B82391F00CD4242 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */; };
+		CE8208802B82391F00CD4242 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */; };
+		CE8208812B82391F00CD4242 /* NotificationListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */; };
+		CE8208822B82391F00CD4242 /* NotificationListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */; };
+		CE8208832B82391F00CD4242 /* NotificationListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087B2B82391F00CD4242 /* NotificationListInteractor.swift */; };
+		CE8208842B82391F00CD4242 /* NotificationListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087B2B82391F00CD4242 /* NotificationListInteractor.swift */; };
+		CE8208852B82391F00CD4242 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087C2B82391F00CD4242 /* NotificationListView.swift */; };
+		CE8208862B82391F00CD4242 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087C2B82391F00CD4242 /* NotificationListView.swift */; };
+		CE8208872B82391F00CD4242 /* NotificationListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE82087D2B82391F00CD4242 /* NotificationListView.xib */; };
+		CE8208882B82391F00CD4242 /* NotificationListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE82087D2B82391F00CD4242 /* NotificationListView.xib */; };
+		CE8208892B82391F00CD4242 /* NotificationListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087E2B82391F00CD4242 /* NotificationListEntity.swift */; };
+		CE82088A2B82391F00CD4242 /* NotificationListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087E2B82391F00CD4242 /* NotificationListEntity.swift */; };
+		CE82088E2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82088C2B823BDE00CD4242 /* NotificationItemCVC.swift */; };
+		CE82088F2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82088C2B823BDE00CD4242 /* NotificationItemCVC.swift */; };
+		CE8208902B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE82088D2B823BDE00CD4242 /* NotificationItemCVC.xib */; };
+		CE8208912B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE82088D2B823BDE00CD4242 /* NotificationItemCVC.xib */; };
+		CE8208952B823C5300CD4242 /* TimeGroupHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208932B823C5300CD4242 /* TimeGroupHeaderCRV.swift */; };
+		CE8208962B823C5300CD4242 /* TimeGroupHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208932B823C5300CD4242 /* TimeGroupHeaderCRV.swift */; };
+		CE8208972B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8208942B823C5300CD4242 /* TimeGroupHeaderCRV.xib */; };
+		CE8208982B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8208942B823C5300CD4242 /* TimeGroupHeaderCRV.xib */; };
 		CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */; };
 		CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */; };
 		CE82D4522B47DDB200A54124 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44B2B47DDB200A54124 /* LoginRouter.swift */; };
@@ -513,6 +533,10 @@
 		CEFB4F162B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4F0A2B4930460033D37D /* RegistrationHospitalEntity.swift */; };
 		CEFE59B72B5EBF9200BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
 		CEFE59B82B5EBF9300BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
+		CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */; };
+		CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */; };
+		CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */; };
+		CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -598,6 +622,16 @@
 		CE7249FE2B571702008147D4 /* WorkSheetItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetItemTVC.xib; sourceTree = "<group>"; };
 		CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListPresenter.swift; sourceTree = "<group>"; };
+		CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListRouter.swift; sourceTree = "<group>"; };
+		CE82087B2B82391F00CD4242 /* NotificationListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListInteractor.swift; sourceTree = "<group>"; };
+		CE82087C2B82391F00CD4242 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
+		CE82087D2B82391F00CD4242 /* NotificationListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListView.xib; sourceTree = "<group>"; };
+		CE82087E2B82391F00CD4242 /* NotificationListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListEntity.swift; sourceTree = "<group>"; };
+		CE82088C2B823BDE00CD4242 /* NotificationItemCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemCVC.swift; sourceTree = "<group>"; };
+		CE82088D2B823BDE00CD4242 /* NotificationItemCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationItemCVC.xib; sourceTree = "<group>"; };
+		CE8208932B823C5300CD4242 /* TimeGroupHeaderCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGroupHeaderCRV.swift; sourceTree = "<group>"; };
+		CE8208942B823C5300CD4242 /* TimeGroupHeaderCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGroupHeaderCRV.xib; sourceTree = "<group>"; };
 		CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CE82D44B2B47DDB200A54124 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		CE82D44C2B47DDB200A54124 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -779,6 +813,8 @@
 		CEFB4F092B4930460033D37D /* RegistrationHospitalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationHospitalView.xib; sourceTree = "<group>"; };
 		CEFB4F0A2B4930460033D37D /* RegistrationHospitalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationHospitalEntity.swift; sourceTree = "<group>"; };
 		CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailBottomSheet.swift; sourceTree = "<group>"; };
+		CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailBottomSheet.xib; sourceTree = "<group>"; };
 		FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1137,6 +1173,40 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		CE8208782B82390100CD4242 /* NotificationList */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF17B02B9631B90045F94E /* BottomSheet */,
+				CE82088B2B823B3000CD4242 /* Cell */,
+				CE8208922B823C3900CD4242 /* TimeGroupHeader */,
+				CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */,
+				CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */,
+				CE82087B2B82391F00CD4242 /* NotificationListInteractor.swift */,
+				CE82087C2B82391F00CD4242 /* NotificationListView.swift */,
+				CE82087D2B82391F00CD4242 /* NotificationListView.xib */,
+				CE82087E2B82391F00CD4242 /* NotificationListEntity.swift */,
+			);
+			path = NotificationList;
+			sourceTree = "<group>";
+		};
+		CE82088B2B823B3000CD4242 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE82088C2B823BDE00CD4242 /* NotificationItemCVC.swift */,
+				CE82088D2B823BDE00CD4242 /* NotificationItemCVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE8208922B823C3900CD4242 /* TimeGroupHeader */ = {
+			isa = PBXGroup;
+			children = (
+				CE8208932B823C5300CD4242 /* TimeGroupHeaderCRV.swift */,
+				CE8208942B823C5300CD4242 /* TimeGroupHeaderCRV.xib */,
+			);
+			path = TimeGroupHeader;
+			sourceTree = "<group>";
+		};
 		CE82D4482B47DD8600A54124 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1420,6 +1490,7 @@
 				CEC207922B4AD64E0073FA1E /* HomeScreen */,
 				CE82D4482B47DD8600A54124 /* Login */,
 				CEFA75852B768DF300B74E1B /* MedicAssetList */,
+				CE8208782B82390100CD4242 /* NotificationList */,
 				CE82D4492B47DD8E00A54124 /* RegistrationHospital */,
 				CEEED8652B7A86A800672952 /* Scan */,
 				CEF72EEE2B4681D200815E4C /* SplashScreen */,
@@ -1800,6 +1871,15 @@
 			path = MedicAssetList;
 			sourceTree = "<group>";
 		};
+		CEFF17B02B9631B90045F94E /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */,
+				CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1881,6 +1961,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECB3DED2B45E119004A260D /* Roboto-Bold.ttf in Resources */,
+				CE8208872B82391F00CD4242 /* NotificationListView.xib in Resources */,
 				CECB3DE32B45E119004A260D /* Roboto-BoldItalic.ttf in Resources */,
 				CECB3DE92B45E119004A260D /* Roboto-Italic.ttf in Resources */,
 				CE40124B2B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.xib in Resources */,
@@ -1893,6 +1974,7 @@
 				CEE79EC52B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFB2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BE2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
@@ -1901,6 +1983,7 @@
 				CECB3DB12B45D963004A260D /* LaunchScreen.storyboard in Resources */,
 				CECD12222B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */,
 				CEF762082B7282A700B5FD8E /* PreparationSectionView.xib in Resources */,
+				CE8208972B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */,
 				CE4012192B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -1965,6 +2048,7 @@
 				CE0F20D32B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE72B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE79ED52B7122580063D844 /* TensimeterSectionView.xib in Resources */,
+				CE8208902B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */,
 				CEE67D2D2B54394900D0844B /* WorkSheetListView.xib in Resources */,
 				CE82D4582B47DDB200A54124 /* LoginView.xib in Resources */,
 				CE0044702B7601B300C88345 /* SparePartTVC.xib in Resources */,
@@ -1980,6 +2064,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECB3DEE2B45E119004A260D /* Roboto-Bold.ttf in Resources */,
+				CE8208882B82391F00CD4242 /* NotificationListView.xib in Resources */,
 				CECB3DE42B45E119004A260D /* Roboto-BoldItalic.ttf in Resources */,
 				CECB3DEA2B45E119004A260D /* Roboto-Italic.ttf in Resources */,
 				CE40124C2B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.xib in Resources */,
@@ -1992,6 +2077,7 @@
 				CEE79EC62B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFC2B45E137004A260D /* Lato-Black.ttf in Resources */,
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BF2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
@@ -2000,6 +2086,7 @@
 				CECB3DC62B45DAFF004A260D /* LaunchScreen.storyboard in Resources */,
 				CECD12232B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */,
 				CEF762092B7282A700B5FD8E /* PreparationSectionView.xib in Resources */,
+				CE8208982B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */,
 				CE40121A2B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -2064,6 +2151,7 @@
 				CE0F20D42B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE82B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE79ED62B7122580063D844 /* TensimeterSectionView.xib in Resources */,
+				CE8208912B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */,
 				CEE67D2E2B54394900D0844B /* WorkSheetListView.xib in Resources */,
 				CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */,
 				CE0044712B7601B300C88345 /* SparePartTVC.xib in Resources */,
@@ -2164,6 +2252,8 @@
 			files = (
 				CECB3E252B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
+				CE8208832B82391F00CD4242 /* NotificationListInteractor.swift in Sources */,
+				CE82087F2B82391F00CD4242 /* NotificationListPresenter.swift in Sources */,
 				CE5442902B4726360022047D /* GeneralButton.swift in Sources */,
 				CEEED86C2B7A86CB00672952 /* ScanPresenter.swift in Sources */,
 				CEC207B22B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
@@ -2178,6 +2268,7 @@
 				CE4012452B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE0EC4AF2B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012432B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
+				CE8208812B82391F00CD4242 /* NotificationListRouter.swift in Sources */,
 				CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CEF5D7C92B6D311700FDE752 /* SplashScreenView.swift in Sources */,
 				CEE67D272B54394900D0844B /* WorkSheetListRouter.swift in Sources */,
@@ -2229,6 +2320,7 @@
 				CE2F2CE82B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D362B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
@@ -2243,6 +2335,7 @@
 				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CE9E7D852B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CE8208892B82391F00CD4242 /* NotificationListEntity.swift in Sources */,
 				CE0044662B75FF6200C88345 /* SparePartSectionView.swift in Sources */,
 				CEF5D7C72B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */,
 				CE9E7D6F2B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
@@ -2292,6 +2385,8 @@
 				CE2FA5192B5CBD5C00756586 /* WorkSheetDetailView.swift in Sources */,
 				CE40122A2B5D7E7C00517F7C /* FullScreenPictureRouter.swift in Sources */,
 				CECB3E4D2B45E69A004A260D /* BaseEntity.swift in Sources */,
+				CE8208952B823C5300CD4242 /* TimeGroupHeaderCRV.swift in Sources */,
+				CE82088E2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
 				CE9E7DB22B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D892B529EE800240A7D /* EditProfileEntity.swift in Sources */,
 				CECB77822B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
@@ -2314,6 +2409,7 @@
 				CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
+				CE8208852B82391F00CD4242 /* NotificationListView.swift in Sources */,
 				CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E532B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE4012492B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,
@@ -2331,6 +2427,8 @@
 			files = (
 				CECB3E262B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
+				CE8208842B82391F00CD4242 /* NotificationListInteractor.swift in Sources */,
+				CE8208802B82391F00CD4242 /* NotificationListPresenter.swift in Sources */,
 				CE5442912B4726360022047D /* GeneralButton.swift in Sources */,
 				CEEED86D2B7A86CB00672952 /* ScanPresenter.swift in Sources */,
 				CEC207B32B4AFF830073FA1E /* CategoryCardCVC.swift in Sources */,
@@ -2345,6 +2443,7 @@
 				CE4012462B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE0EC4B02B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012442B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
+				CE8208822B82391F00CD4242 /* NotificationListRouter.swift in Sources */,
 				CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CEF5D7CA2B6D311700FDE752 /* SplashScreenView.swift in Sources */,
 				CEE67D282B54394900D0844B /* WorkSheetListRouter.swift in Sources */,
@@ -2396,6 +2495,7 @@
 				CE2F2CE92B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D372B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
+				CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
@@ -2410,6 +2510,7 @@
 				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				CE9E7D862B529EE800240A7D /* EditProfileView.swift in Sources */,
+				CE82088A2B82391F00CD4242 /* NotificationListEntity.swift in Sources */,
 				CE0044672B75FF6200C88345 /* SparePartSectionView.swift in Sources */,
 				CEF5D7C82B6D311700FDE752 /* SplashScreenInteractor.swift in Sources */,
 				CE9E7D702B529EB300240A7D /* ChangePasswordRouter.swift in Sources */,
@@ -2459,6 +2560,8 @@
 				CE2FA51A2B5CBD5C00756586 /* WorkSheetDetailView.swift in Sources */,
 				CE40122B2B5D7E7C00517F7C /* FullScreenPictureRouter.swift in Sources */,
 				CECB3E4E2B45E69A004A260D /* BaseEntity.swift in Sources */,
+				CE8208962B823C5300CD4242 /* TimeGroupHeaderCRV.swift in Sources */,
+				CE82088F2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
 				CE9E7DB32B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D8A2B529EE800240A7D /* EditProfileEntity.swift in Sources */,
 				CECB77832B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
@@ -2481,6 +2584,7 @@
 				CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
+				CE8208862B82391F00CD4242 /* NotificationListView.swift in Sources */,
 				CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E542B45E6EF004A260D /* Endpoint.swift in Sources */,
 				CE40124A2B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,

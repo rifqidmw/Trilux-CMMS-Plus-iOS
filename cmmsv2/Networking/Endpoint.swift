@@ -25,6 +25,7 @@ enum Endpoint {
     case infoExpired
     case uploadProfile(file: URL)
     case detailAssetEquipment(id: String)
+    case getNotification(page: Int? = nil, limit: Int? = nil)
 }
 
 // MARK: - PATH URL
@@ -63,6 +64,8 @@ extension Endpoint {
             return "media/uploadprofile"
         case .detailAssetEquipment(let id):
             return "equipments/view/\(id)"
+        case .getNotification(let page, let limit):
+            return generateNotificationListURL(page: page, limit: limit)
         }
     }
 }
@@ -180,7 +183,7 @@ extension Endpoint {
 // MARK: - GENERATE ENDPOINT
 extension Endpoint {
     
-    func generateEquipmentListURL(
+    private func generateEquipmentListURL(
         serial: String? = nil,
         locationID: String? = nil,
         limit: Int? = nil,
@@ -202,5 +205,16 @@ extension Endpoint {
             
             return url.replacingOccurrences(of: " ", with: "%20")
         }
+    
+    private func generateNotificationListURL(page: Int? = nil, limit: Int? = nil) -> String {
+        let queryString = [
+            page.map { "page=\($0)" },
+            limit.map { "limit=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "notifications" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: " ", with: "%20")
+    }
     
 }
