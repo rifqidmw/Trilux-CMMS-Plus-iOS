@@ -1,5 +1,5 @@
 //
-//  MedicAssetListEntity.swift
+//  AssetListEntity.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 09/02/24.
@@ -129,5 +129,24 @@ struct StatusKalibrasi: Codable {
         case next
         case exp
         case color
+    }
+}
+
+enum AssetType: String {
+    case medic = "medik"
+    case nonMedic = "nonmedik"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "medik": self = .medic
+        case "nonmedik": self = .nonMedic
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
     }
 }

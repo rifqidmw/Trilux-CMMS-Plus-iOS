@@ -89,8 +89,12 @@ extension HomeScreenPresenter {
         router.goToUserProfile(navigation: navigation)
     }
     
-    func navigateToAssetList(navigation: UINavigationController) {
-        router.navigateToAssetList(navigation: navigation)
+    func navigateToAssetMedicList(navigation: UINavigationController) {
+        router.navigateToAssetMedicList(navigation: navigation)
+    }
+    
+    func navigateToAssetNonMedicList(navigation: UINavigationController) {
+        router.navigateToAssetNonMedicList(navigation: navigation)
     }
     
     func navigateToScan(navigation: UINavigationController) {

@@ -1,5 +1,5 @@
 //
-//  MedicAssetListView.swift
+//  AssetListView.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 09/02/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SkeletonView
 
-class MedicAssetListView: BaseViewController {
+class AssetListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var searchButton: GeneralButton!
@@ -17,7 +17,7 @@ class MedicAssetListView: BaseViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var presenter: MedicAssetListPresenter?
+    var presenter: AssetListPresenter?
     var data: [Equipment] = []
     
     override func didLoad() {
@@ -25,9 +25,13 @@ class MedicAssetListView: BaseViewController {
         setupBody()
     }
     
+    override func willAppear() {
+        self.fetchInitData()
+    }
+    
 }
 
-extension MedicAssetListView {
+extension AssetListView {
     
     private func setupBody() {
         fetchInitData()
@@ -103,7 +107,7 @@ extension MedicAssetListView {
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(MedicAssetCVC.nib, forCellWithReuseIdentifier: MedicAssetCVC.identifier)
+        collectionView.register(AssetCVC.nib, forCellWithReuseIdentifier: AssetCVC.identifier)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 120)
@@ -134,10 +138,10 @@ extension MedicAssetListView {
     
 }
 
-extension MedicAssetListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+extension AssetListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: MedicAssetCVC.identifier, for: indexPath)
+        return collectionView.dequeueReusableCell(withReuseIdentifier: AssetCVC.identifier, for: indexPath)
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -145,7 +149,7 @@ extension MedicAssetListView: SkeletonCollectionViewDelegate, SkeletonCollection
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return MedicAssetCVC.identifier
+        return AssetCVC.identifier
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -153,7 +157,7 @@ extension MedicAssetListView: SkeletonCollectionViewDelegate, SkeletonCollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MedicAssetCVC.identifier, for: indexPath) as? MedicAssetCVC
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AssetCVC.identifier, for: indexPath) as? AssetCVC
         else {
             return UICollectionViewCell()
         }
@@ -182,7 +186,7 @@ extension MedicAssetListView: SkeletonCollectionViewDelegate, SkeletonCollection
     
 }
 
-extension MedicAssetListView: ActionBarViewDelegate {
+extension AssetListView: ActionBarViewDelegate {
     
     func didTapFirstAction() {
         AppLogger.log("FIRST ACTION TAPPED")
