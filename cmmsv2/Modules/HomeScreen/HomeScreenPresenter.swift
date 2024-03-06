@@ -101,4 +101,8 @@ extension HomeScreenPresenter {
         router.navigateToScan(navigation: navigation)
     }
     
+    func navigateToNotificationList(navigation: UINavigationController) {
+        router.navigateToNotificationList(navigation: navigation)
+    }
+    
 }

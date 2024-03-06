@@ -109,3 +109,32 @@ enum AssetCategory: String, Codable {
         return rawValue
     }
 }
+
+enum NotificationType: String, Codable {
+    case complaint = "Pengaduan"
+    case worksheet = "Lembar Kerja"
+    case rating = "Rating"
+    case approveWorkSheet = "Approve Lembar Kerja"
+    case inbox = "Inbox"
+    case reception = "Penerimaan"
+    case mutation = "Mutasi Alat"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Pengaduan": self = .complaint
+        case "Lembar Kerja": self = .worksheet
+        case "Rating": self = .rating
+        case "Approve Lembar Kerja": self = .approveWorkSheet
+        case "Inbox": self = .inbox
+        case "Penerimaan": self = .rating
+        case "Mutasi Alat": self = .mutation
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}

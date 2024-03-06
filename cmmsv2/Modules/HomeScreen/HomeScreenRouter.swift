@@ -60,4 +60,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToNotificationList(navigation: UINavigationController) {
+        let vc = NotificationListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }
