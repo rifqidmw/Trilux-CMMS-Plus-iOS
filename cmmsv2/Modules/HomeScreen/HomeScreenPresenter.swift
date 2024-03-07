@@ -105,4 +105,8 @@ extension HomeScreenPresenter {
         router.navigateToNotificationList(navigation: navigation)
     }
     
+    func navigateToComplaintList(navigation: UINavigationController) {
+        router.navigateToComplaintList(navigation: navigation)
+    }
+    
 }

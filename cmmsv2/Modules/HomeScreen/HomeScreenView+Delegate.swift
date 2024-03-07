@@ -24,7 +24,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapComplaint() {
-        AppLogger.log("CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToComplaintList(navigation: navigation)
     }
     
     func didTapWorkSheet() {
