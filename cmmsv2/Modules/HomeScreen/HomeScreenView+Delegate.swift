@@ -89,11 +89,14 @@ extension HomeScreenView: AssetBottomSheetDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToAssetList(navigation: navigation)
+        presenter.navigateToAssetMedicList(navigation: navigation)
     }
     
     func didTapAssetNonMedic() {
-        AppLogger.log("GO TO WORK ASSET NON MEDIC")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToAssetNonMedicList(navigation: navigation)
     }
     
 }

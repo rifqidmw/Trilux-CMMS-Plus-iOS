@@ -1,5 +1,5 @@
 //
-//  MedicAssetListPresenter.swift
+//  AssetListPresenter.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 09/02/24.
@@ -7,10 +7,11 @@
 
 import Foundation
 
-class MedicAssetListPresenter: BasePresenter {
+class AssetListPresenter: BasePresenter {
     
-    private let interactor: MedicAssetListInteractor
-    private let router = MedicAssetListRouter()
+    private let interactor: AssetListInteractor
+    private let router: AssetListRouter
+    let assetType: AssetType
     
     @Published public var equipmentData: EquipmentEntity?
     @Published public var equipment: [Equipment] = []
@@ -22,27 +23,27 @@ class MedicAssetListPresenter: BasePresenter {
     var serial: String = ""
     var locationId: String = ""
     var search: String = ""
-    var type: String = "medik"
-    var sstMedic: String = "medik"
     var page: Int = 1
     var limit: Int = 10
     var isCanLoad = true
     var isFetchingMore = false
     
-    init(interactor: MedicAssetListInteractor) {
+    init(interactor: AssetListInteractor, router: AssetListRouter, assetType: AssetType) {
         self.interactor = interactor
+        self.router = router
+        self.assetType = assetType
     }
     
 }
 
-extension MedicAssetListPresenter {
+extension AssetListPresenter {
     
     func fetchInitData() {
-        self.fetchAssetListData(serial: self.serial, locationId: self.locationId, limit: self.limit, page: self.page, search: self.search, type: self.type, sstMedic: self.sstMedic)
+        self.fetchAssetListData(serial: self.serial, locationId: self.locationId, limit: self.limit, page: self.page, search: self.search)
     }
     
     func fetchAssetListData(
-        serial: String, locationId: String, limit: Int, page: Int, search: String, type: String, sstMedic: String) {
+        serial: String, locationId: String, limit: Int, page: Int, search: String) {
             self.isLoading = true
             interactor.getListAsset(
                 serial: serial,
@@ -50,8 +51,8 @@ extension MedicAssetListPresenter {
                 limit: limit,
                 page: page,
                 search: search,
-                type: type,
-                sstMedic: sstMedic)
+                type: self.assetType.getStringValue(),
+                sstMedic: self.assetType.getStringValue())
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -81,7 +82,7 @@ extension MedicAssetListPresenter {
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        fetchAssetListData(serial: serial, locationId: locationId, limit: limit, page: page, search: search, type: type, sstMedic: sstMedic)
+        fetchAssetListData(serial: self.serial, locationId: self.locationId, limit: self.limit, page: self.page, search: self.search)
     }
     
 }

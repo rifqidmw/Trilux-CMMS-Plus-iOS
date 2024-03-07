@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicAssetListView" customModule="cmmsv2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssetListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="PyF-Eu-ntS" id="DJY-3Q-vp4"/>
                 <outlet property="countLabel" destination="7Hh-9B-u3d" id="hRk-nn-VQh"/>

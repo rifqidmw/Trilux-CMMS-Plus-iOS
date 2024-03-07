@@ -43,8 +43,14 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func navigateToAssetList(navigation: UINavigationController) {
-        let vc = MedicAssetListRouter().showView()
+    func navigateToAssetMedicList(navigation: UINavigationController) {
+        let vc = AssetListRouter().showView(assetType: .medic)
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToAssetNonMedicList(navigation: UINavigationController) {
+        let vc = AssetListRouter().showView(assetType: .nonMedic)
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }

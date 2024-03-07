@@ -1,5 +1,5 @@
 //
-//  MedicAssetCVC.swift
+//  AssetCVC.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 10/02/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SkeletonView
 
-class MedicAssetCVC: UICollectionViewCell {
+class AssetCVC: UICollectionViewCell {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var markView: UIView!
@@ -24,7 +24,7 @@ class MedicAssetCVC: UICollectionViewCell {
     @IBOutlet weak var correctiveCategoryView: UIView!
     @IBOutlet weak var preventiveCategoryView: UIView!
     
-    static let identifier = String(describing: MedicAssetCVC.self)
+    static let identifier = String(describing: AssetCVC.self)
     static let nib = {
         UINib(nibName: identifier, bundle: nil)
     }()
@@ -42,7 +42,7 @@ class MedicAssetCVC: UICollectionViewCell {
     
 }
 
-extension MedicAssetCVC {
+extension AssetCVC {
     
     private func configureSharedComponent() {
         self.containerView.makeCornerRadius(8)
