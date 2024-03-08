@@ -83,11 +83,13 @@ extension WorkSheetBottomSheet: UITableViewDataSource, UITableViewDelegate {
         guard let delegate else { return }
         switch indexPath.row {
         case 0:
-            delegate.didTapWorkSheetList()
+            delegate.didTapWorkSheetFunctionMonitoring()
         case 1:
-            delegate.didTapWorkSheetOnsitePreventive()
-        case 2:
             delegate.didTapWorkSheetCorrective()
+        case 2:
+            delegate.didTapMaintenancePreventive()
+        case 3:
+            delegate.didTapCalibration()
         default: break
         }
     }

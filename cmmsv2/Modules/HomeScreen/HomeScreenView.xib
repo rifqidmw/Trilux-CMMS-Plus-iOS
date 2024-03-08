@@ -44,14 +44,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZt-0T-HyK" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="16" y="419" width="361" height="56"/>
+                    <rect key="frame" x="16" y="419" width="361" height="48"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="56" id="HBD-0t-dXB"/>
+                        <constraint firstAttribute="height" constant="48" id="HBD-0t-dXB"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfS-HH-4c5" customClass="ToastView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="16" y="499" width="361" height="48"/>
+                    <rect key="frame" x="16" y="491" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="wqG-GD-U8b"/>

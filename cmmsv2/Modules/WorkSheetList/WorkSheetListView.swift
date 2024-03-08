@@ -17,7 +17,7 @@ class WorkSheetListView: BaseViewController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
     }
     
 }
