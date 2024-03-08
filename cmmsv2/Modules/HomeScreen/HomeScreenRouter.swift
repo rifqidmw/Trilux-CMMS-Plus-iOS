@@ -65,4 +65,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToComplaintList(navigation: UINavigationController) {
+        let vc = ComplaintListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

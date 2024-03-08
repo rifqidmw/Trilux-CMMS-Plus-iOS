@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Lato-Bold.ttf">
-            <string>Lato-Bold</string>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -55,8 +55,8 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKB-VP-QT9">
                                             <rect key="frame" x="8" y="36" width="70.333333333333329" height="12"/>
-                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -89,8 +89,8 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-7j-GHj">
                                             <rect key="frame" x="8" y="36" width="70.333333333333329" height="12"/>
-                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -123,8 +123,8 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGj-Em-hxq">
                                             <rect key="frame" x="8" y="36" width="70" height="12"/>
-                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -157,8 +157,8 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6a-QW-SAs">
                                             <rect key="frame" x="8" y="36" width="70.333333333333329" height="12"/>
-                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
