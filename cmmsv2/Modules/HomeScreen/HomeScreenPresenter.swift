@@ -85,6 +85,10 @@ extension HomeScreenPresenter {
         router.navigateToWorkSheetOnsitePreventive(navigation: navigation)
     }
     
+    func navigateToWorkSheetCorrective(navigation: UINavigationController) {
+        router.navigateToWorkSheetCorrective(navigation: navigation)
+    }
+    
     func navigateToUserProfile(navigation: UINavigationController) {
         router.goToUserProfile(navigation: navigation)
     }

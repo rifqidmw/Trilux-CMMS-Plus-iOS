@@ -12,18 +12,17 @@ protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapAsset()
     func didTapComplaint()
     func didTapWorkSheet()
-    func didTapPreventiveMaintenance()
-    func didTapCalibration()
     func didTapHistory()
+    func didTapDelayCorrective()
     func didTapLogBook()
-    func didTapToolSuggestions()
     func didTapPreventiveCalendar()
 }
 
 protocol WorkSheetBottomSheetDelegate: AnyObject {
-    func didTapWorkSheetList()
-    func didTapWorkSheetOnsitePreventive()
+    func didTapWorkSheetFunctionMonitoring()
     func didTapWorkSheetCorrective()
+    func didTapMaintenancePreventive()
+    func didTapCalibration()
 }
 
 protocol AssetBottomSheetDelegate: AnyObject {
@@ -84,21 +83,19 @@ let categoryData: [CategoryModel] = [
     CategoryModel(image: "ic_hospital", title: "Aset"),
     CategoryModel(image: "ic_notes_with_pencil", title: "Pengaduan"),
     CategoryModel(image: "ic_bill", title: "Lembar Kerja"),
-    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Pemeliharaan Preventif"),
-    CategoryModel(image: "ic_speedometer", title: "Kalibrasi"),
-    CategoryModel(image: "ic_calendar_with_stopwatch", title: "Riwayat")
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: "Riwayat"),
+    CategoryModel(image: "ic_gear_clock", title: "Korektif Tertunda"),
+    CategoryModel(image: "ic_log_book", title: "Log Book"),
+    CategoryModel(image: "ic_calendar_with_wrench", title: "Kalender Preventif")
 ]
 
 let allCategoryData: [CategoryModel] = [
     CategoryModel(image: "ic_hospital", title: "Aset"),
     CategoryModel(image: "ic_notes_with_pencil", title: "Pengaduan"),
     CategoryModel(image: "ic_bill", title: "Lembar Kerja"),
-    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Pemeliharaan Preventif"),
-    CategoryModel(image: "ic_speedometer", title: "Kalibrasi"),
     CategoryModel(image: "ic_calendar_with_stopwatch", title: "Riwayat"),
     CategoryModel(image: "ic_gear_clock", title: "Korektif Tertunda"),
     CategoryModel(image: "ic_log_book", title: "Log Book"),
-    CategoryModel(image: "ic_bubble_chat", title: "Usulan Alat"),
     CategoryModel(image: "ic_calendar_with_wrench", title: "Kalender Preventif")
     
 ]
@@ -109,9 +106,10 @@ let assetData: [MenuModel] = [
 ]
 
 let worksheetData: [MenuModel] = [
-    MenuModel(image: "ic_bill_fill", title: "Lembar Kerja", subTitle: "Lihat daftar lembar kerja"),
-    MenuModel(image: "ic_notes_with_pencil_fill", title: "Lembar Kerja Onsite Preventive", subTitle: "Lihat daftar lembar kerja onsite preventive"),
-    MenuModel(image: "ic_notes_with_gear", title: "Lembar Kerja Korektif", subTitle: "Lihat daftar lembar kerja korektif")
+    MenuModel(image: "ic_notes_with_pencil_fill", title: "Lembar Kerja Pemantauan Fungsi", subTitle: "Lihat data lembar kerja pemantauan fungsi"),
+    MenuModel(image: "ic_notes_with_gear", title: "Lembar Kerja Korektif", subTitle: "Lihat data lembar kerja korektif"),
+    MenuModel(image: "ic_notes_with_pencil_outline", title: "Pemeliharaan Preventif", subTitle: "Lihat data pemeliharaan preventif"),
+    MenuModel(image: "ic_work_sheet_arrow", title: "Kalibrasi", subTitle: "Lihat data kalibrasi")
 ]
 
 let detailInformationData: [CategoryModel] = [

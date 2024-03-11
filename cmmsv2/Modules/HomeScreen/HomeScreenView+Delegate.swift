@@ -38,23 +38,15 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         presenter.showBottomSheetWorkSheet(navigation: navigation, delegate: self)
     }
     
-    func didTapPreventiveMaintenance() {
-        AppLogger.log("CLICKED")
-    }
-    
-    func didTapCalibration() {
-        AppLogger.log("CLICKED")
-    }
-    
     func didTapHistory() {
         AppLogger.log("CLICKED")
     }
     
-    func didTapLogBook() {
+    func didTapDelayCorrective() {
         AppLogger.log("CLICKED")
     }
     
-    func didTapToolSuggestions() {
+    func didTapLogBook() {
         AppLogger.log("CLICKED")
     }
     
@@ -66,22 +58,29 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
 
 extension HomeScreenView: WorkSheetBottomSheetDelegate {
     
-    func didTapWorkSheetList() {
+    func didTapWorkSheetFunctionMonitoring() {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
         presenter.navigateToWorkSheetList(navigation: navigation)
     }
     
-    func didTapWorkSheetOnsitePreventive() {
+    func didTapWorkSheetCorrective() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToWorkSheetCorrective(navigation: navigation)
+    }
+    
+    func didTapMaintenancePreventive() {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
         presenter.navigateToWorkSheetOnsitePreventive(navigation: navigation)
     }
     
-    func didTapWorkSheetCorrective() {
-        AppLogger.log("GO TO WORK SHEET CORRECTIVE")
+    func didTapCalibration() {
+        print("-- CLICKED")
     }
     
 }

@@ -33,6 +33,12 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToWorkSheetCorrective(navigation: UINavigationController) {
+        let vc = WorkSheetCorrectiveRouter().showView()
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
     func showBottomSheet(view: UIViewController, navigation: UINavigationController) {
         view.modalPresentationStyle = .overCurrentContext
         navigation.present(view, animated: true)

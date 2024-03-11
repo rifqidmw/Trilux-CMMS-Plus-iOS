@@ -8,7 +8,7 @@
 import UIKit
 
 class CategorySectionView: UIView {
-        
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var data: [CategoryModel] = categoryData
     weak var delegate: HomeScreenCategoryDelegate?
@@ -78,7 +78,13 @@ extension CategorySectionView: UICollectionViewDataSource, UICollectionViewDeleg
         case 3:
             self.delegate?.didTapWorkSheet()
         case 4:
-            self.delegate?.didTapPreventiveMaintenance()
+            self.delegate?.didTapHistory()
+        case 5:
+            self.delegate?.didTapDelayCorrective()
+        case 6:
+            self.delegate?.didTapLogBook()
+        case 7:
+            self.delegate?.didTapPreventiveCalendar()
         default: break
         }
     }
