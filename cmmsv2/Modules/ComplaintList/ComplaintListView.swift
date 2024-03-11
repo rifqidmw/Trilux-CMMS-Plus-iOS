@@ -36,7 +36,7 @@ extension ComplaintListView {
     private func setupView() {
         customNavigationView.configure(plainTitle: "Pengaduan Korektif", type: .plain)
         searchButton.configure(type: .searchbutton)
-        actionTabBarView.configure(fourthIcon: "arrow.up.arrow.down", fourthTitle: "Status")
+        actionTabBarView.configure(fourthIcon: "ic_arrow_up_down", fourthTitle: "Status")
         spinner.isHidden = true
     }
     

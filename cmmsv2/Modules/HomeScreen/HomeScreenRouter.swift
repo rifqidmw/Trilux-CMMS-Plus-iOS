@@ -76,4 +76,10 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToPreventiveMaintenanceList(navigation: UINavigationController) {
+        let vc = PreventiveMaintenanceListRouter().showView()
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }
