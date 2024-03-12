@@ -113,4 +113,8 @@ extension HomeScreenPresenter {
         router.navigateToComplaintList(navigation: navigation)
     }
     
+    func navigateToCalibrationList(navigation: UINavigationController) {
+        router.navigateToCalibrationList(navigation: navigation)
+    }
+    
 }

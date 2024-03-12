@@ -76,4 +76,10 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToCalibrationList(navigation: UINavigationController) {
+        let vc = CalibrationListRouter().showView()
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }
