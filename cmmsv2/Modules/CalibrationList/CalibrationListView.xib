@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalibrationListView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="WS6-v8-5N8" id="1cd-kK-972"/>
+                <outlet property="customNavigationView" destination="xGL-ED-ear" id="iLW-KU-p5n"/>
+                <outlet property="searchButton" destination="Mfs-mE-EC0" id="J9n-ti-HuZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGL-ED-ear" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="fFH-Fl-xje"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfs-mE-EC0" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="131" width="361" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="F7f-mo-rMJ"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="WS6-v8-5N8">
+                    <rect key="frame" x="16" y="195" width="361" height="623"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sj2-1R-GmS">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xGL-ED-ear" secondAttribute="trailing" id="0Z9-Bj-GSU"/>
+                <constraint firstItem="xGL-ED-ear" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DTd-hC-d1S"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mfs-mE-EC0" secondAttribute="trailing" constant="16" id="GsO-I5-x8K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WS6-v8-5N8" secondAttribute="trailing" constant="16" id="NjN-YS-pO8"/>
+                <constraint firstItem="Mfs-mE-EC0" firstAttribute="top" secondItem="xGL-ED-ear" secondAttribute="bottom" constant="16" id="QQG-aU-13x"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WS6-v8-5N8" secondAttribute="bottom" id="ela-Mr-0mN"/>
+                <constraint firstItem="Mfs-mE-EC0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="o7R-3H-6I2"/>
+                <constraint firstItem="WS6-v8-5N8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qTd-ol-ERp"/>
+                <constraint firstItem="WS6-v8-5N8" firstAttribute="top" secondItem="Mfs-mE-EC0" secondAttribute="bottom" constant="16" id="y38-GZ-Ib5"/>
+                <constraint firstItem="xGL-ED-ear" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ynM-F3-Rrh"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

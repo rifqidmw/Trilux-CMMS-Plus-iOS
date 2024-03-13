@@ -80,7 +80,10 @@ extension HomeScreenView: WorkSheetBottomSheetDelegate {
     }
     
     func didTapCalibration() {
-        print("-- CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToCalibrationList(navigation: navigation)
     }
     
 }
