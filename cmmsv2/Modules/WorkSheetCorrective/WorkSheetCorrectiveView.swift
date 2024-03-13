@@ -35,7 +35,7 @@ extension WorkSheetCorrectiveView {
     private func setupView() {
         customNavigationView.configure(plainTitle: "Lembar Kerja Korektif", type: .plain)
         searchButton.configure(type: .searchbutton)
-        actionBarView.configure(thirdIcon: "slider.horizontal.3", thirdTitle: "Status", fourthIcon: "arrow.up.arrow.down", fourthTitle: "Urutkan")
+        actionBarView.configure(thirdIcon: "ic_setting", thirdTitle: "Status", fourthIcon: "ic_arrow_up_down", fourthTitle: "Urutkan")
     }
     
     private func setupAction() {
