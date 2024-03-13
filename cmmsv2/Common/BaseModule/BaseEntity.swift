@@ -138,3 +138,24 @@ enum NotificationType: String, Codable {
         return rawValue
     }
 }
+
+enum HistoryStatusType: String, Codable {
+    case done = "Selesai, Bisa digunakan kembali"
+    case removed = "Tidak Bisa diperbaiki, Usulkan Penghapusan"
+    case hold = "Tunda Perbaikan"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Selesai, Bisa digunakan kembali": self = .done
+        case "idak Bisa diperbaiki, Usulkan Penghapusan": self = .removed
+        case "Tunda Perbaikan": self = .hold
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
