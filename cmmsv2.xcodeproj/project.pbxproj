@@ -327,6 +327,10 @@
 		CEC1B07E2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */; };
 		CEC1B07F2BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
 		CEC1B0802BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
+		CEC1B0842BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
+		CEC1B0852BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
+		CEC1B0862BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
+		CEC1B0872BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
 		CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079B2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */; };
@@ -777,6 +781,8 @@
 		CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListView.swift; sourceTree = "<group>"; };
 		CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveListView.xib; sourceTree = "<group>"; };
 		CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListEntity.swift; sourceTree = "<group>"; };
+		CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveCVC.swift; sourceTree = "<group>"; };
+		CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveCVC.xib; sourceTree = "<group>"; };
 		CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
 		CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouter.swift; sourceTree = "<group>"; };
 		CEC207952B4AD6870073FA1E /* HomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractor.swift; sourceTree = "<group>"; };
@@ -1402,8 +1408,9 @@
 			isa = PBXGroup;
 			children = (
 				CE2E3AFC2BA0ABB600094AD0 /* CalibrationCell */,
-				CEE07C992B9F538000EFBFB8 /* PreventiveMaintenanceCell */,
+				CEC1B0812BA21F2200DF6A4F /* DelayCorrectiveCell */,
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
+				CEE07C992B9F538000EFBFB8 /* PreventiveMaintenanceCell */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -1560,6 +1567,15 @@
 				CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */,
 			);
 			path = DelayCorrectiveList;
+			sourceTree = "<group>";
+		};
+		CEC1B0812BA21F2200DF6A4F /* DelayCorrectiveCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */,
+				CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */,
+			);
+			path = DelayCorrectiveCell;
 			sourceTree = "<group>";
 		};
 		CEC207922B4AD64E0073FA1E /* HomeScreen */ = {
@@ -2220,6 +2236,7 @@
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012302B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE40121F2B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CEC1B0862BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */,
 				CE0044692B75FF7E00C88345 /* SparePartSectionView.xib in Resources */,
 				CE0044852B76373700C88345 /* CalibrationStatusView.xib in Resources */,
 				CE0F20CC2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */,
@@ -2331,6 +2348,7 @@
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012312B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE4012202B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CEC1B0872BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */,
 				CE00446A2B75FF7E00C88345 /* SparePartSectionView.xib in Resources */,
 				CE0044862B76373700C88345 /* CalibrationStatusView.xib in Resources */,
 				CE0F20CD2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */,
@@ -2675,6 +2693,7 @@
 				CEE79EBD2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */,
 				CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
+				CEC1B0842BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */,
 				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208852B82391F00CD4242 /* NotificationListView.swift in Sources */,
 				CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
@@ -2878,6 +2897,7 @@
 				CEE79EBE2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */,
 				CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
+				CEC1B0852BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */,
 				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208862B82391F00CD4242 /* NotificationListView.swift in Sources */,
 				CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */,

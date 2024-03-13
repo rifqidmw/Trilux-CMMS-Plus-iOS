@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DelayCorrectiveListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="jBS-IG-iSA" id="f16-CP-8n2"/>
+                <outlet property="customNavigationView" destination="JxN-CY-x0u" id="KsU-Kg-aai"/>
+                <outlet property="searchButton" destination="mav-bE-sh5" id="4Pi-r6-Y2E"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +29,7 @@
                         <constraint firstAttribute="height" constant="56" id="MRZ-dd-INH"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mav-bE-sh5">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mav-bE-sh5" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="16" y="131" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
