@@ -113,4 +113,8 @@ extension HomeScreenPresenter {
         router.navigateToComplaintList(navigation: navigation)
     }
     
+    func navigateToPreventiveMaintenanceList(navigation: UINavigationController) {
+        router.navigateToPreventiveMaintenanceList(navigation: navigation)
+    }
+    
 }

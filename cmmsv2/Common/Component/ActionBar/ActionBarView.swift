@@ -18,15 +18,19 @@ import Combine
 class ActionBarView: UIView {
     
     @IBOutlet weak var containerStackView: UIStackView!
+    @IBOutlet weak var firstContainerActionStackView: UIStackView!
     @IBOutlet weak var firstButtonAction: UIView!
     @IBOutlet weak var firstActionIconImageView: UIImageView!
     @IBOutlet weak var firstActionTitleLabel: UILabel!
+    @IBOutlet weak var secondContainerActionStackView: UIStackView!
     @IBOutlet weak var secondButtonAction: UIView!
     @IBOutlet weak var secondActionIconImageView: UIImageView!
     @IBOutlet weak var secondActionTitleLabel: UILabel!
+    @IBOutlet weak var thirdContainerActionStackView: UIStackView!
     @IBOutlet weak var thirdButtonAction: UIView!
     @IBOutlet weak var thirdActionIconImageView: UIImageView!
     @IBOutlet weak var thirdActionTitleLabel: UILabel!
+    @IBOutlet weak var fourthContainerActionStackView: UIStackView!
     @IBOutlet weak var fourthButtonAction: UIView!
     @IBOutlet weak var fourthActionIconImageView: UIImageView!
     @IBOutlet weak var fourthActionTitleLabel: UILabel!
@@ -66,16 +70,20 @@ extension ActionBarView {
         thirdTitle: String? = nil,
         fourthIcon: String? = nil,
         fourthTitle: String? = nil) {
-            self.firstActionIconImageView.image = UIImage(systemName: firstIcon ?? "")
+            self.firstContainerActionStackView.isHidden = firstTitle?.isEmpty ?? true
+            self.firstActionIconImageView.image = UIImage(named: firstIcon ?? "")
             self.firstActionTitleLabel.text = firstTitle ?? ""
             
-            self.secondActionIconImageView.image = UIImage(systemName: secondIcon ?? "")
+            self.secondContainerActionStackView.isHidden = secondTitle?.isEmpty ?? true
+            self.secondActionIconImageView.image = UIImage(named: secondIcon ?? "")
             self.secondActionTitleLabel.text = secondTitle ?? ""
             
-            self.thirdActionIconImageView.image = UIImage(systemName: thirdIcon ?? "")
+            self.thirdContainerActionStackView.isHidden = thirdTitle?.isEmpty ?? true
+            self.thirdActionIconImageView.image = UIImage(named: thirdIcon ?? "")
             self.thirdActionTitleLabel.text = thirdTitle ?? ""
             
-            self.fourthActionIconImageView.image = UIImage(systemName: fourthIcon ?? "")
+            self.fourthContainerActionStackView.isHidden = fourthTitle?.isEmpty ?? true
+            self.fourthActionIconImageView.image = UIImage(named: fourthIcon ?? "")
             self.fourthActionTitleLabel.text = fourthTitle ?? ""
         }
     
@@ -143,8 +151,8 @@ extension ActionBarView {
             return
         }
         
-        iconImageView.tintColor = .customDarkGrayColor
-        titleLabel.textColor = .customDarkGrayColor
+        iconImageView.tintColor = .customPlaceholderColor
+        titleLabel.textColor = .customPlaceholderColor
     }
     
 }

@@ -20,15 +20,19 @@
                 <outlet property="firstActionIconImageView" destination="N1y-jI-Xsr" id="v8Q-zD-6gE"/>
                 <outlet property="firstActionTitleLabel" destination="KKB-VP-QT9" id="2SG-IE-pAe"/>
                 <outlet property="firstButtonAction" destination="SSR-o8-Lfs" id="7N2-aD-jYc"/>
+                <outlet property="firstContainerActionStackView" destination="pj6-Aj-5ry" id="lYb-Te-jvY"/>
                 <outlet property="fourthActionIconImageView" destination="pLH-iH-HhA" id="rmg-zp-kwh"/>
                 <outlet property="fourthActionTitleLabel" destination="d6a-QW-SAs" id="AVi-CM-xdk"/>
                 <outlet property="fourthButtonAction" destination="69m-iD-k0X" id="Seu-TT-kAm"/>
+                <outlet property="fourthContainerActionStackView" destination="dAe-7G-N84" id="3QM-3q-f9c"/>
                 <outlet property="secondActionIconImageView" destination="cw1-7b-Zne" id="gEC-aT-6pJ"/>
                 <outlet property="secondActionTitleLabel" destination="mxh-7j-GHj" id="9dM-Ou-ogb"/>
                 <outlet property="secondButtonAction" destination="jcq-Rs-pfW" id="idz-JI-CBJ"/>
+                <outlet property="secondContainerActionStackView" destination="ge8-Ch-DtV" id="sO1-lC-Waa"/>
                 <outlet property="thirdActionIconImageView" destination="8eF-tm-PHg" id="uJh-f0-5DE"/>
                 <outlet property="thirdActionTitleLabel" destination="QGj-Em-hxq" id="YfJ-bc-mPo"/>
                 <outlet property="thirdButtonAction" destination="yVt-e4-obH" id="k8Q-kt-If3"/>
+                <outlet property="thirdContainerActionStackView" destination="N5P-4U-jBF" id="I4d-Rw-Adp"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -39,14 +43,14 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Uug-fd-m7a">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pj6-Aj-5ry">
-                            <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="56"/>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pj6-Aj-5ry">
+                            <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSR-o8-Lfs">
-                                    <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1y-jI-Xsr">
-                                            <rect key="frame" x="31" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="-4" y="8" width="24" height="24"/>
                                             <color key="tintColor" name="customDarkGrayColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="YzJ-Uu-Xwn"/>
@@ -54,9 +58,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKB-VP-QT9">
-                                            <rect key="frame" x="8" y="36" width="70.333333333333329" height="12"/>
+                                            <rect key="frame" x="8" y="36" width="0.0" height="12"/>
                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
-                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <color key="textColor" name="placeholderColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -73,14 +77,14 @@
                                 </view>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ge8-Ch-DtV">
-                            <rect key="frame" x="102.33333333333334" y="0.0" width="86.333333333333343" height="56"/>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ge8-Ch-DtV">
+                            <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcq-Rs-pfW">
-                                    <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cw1-7b-Zne">
-                                            <rect key="frame" x="31.000000000000014" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="-4" y="8" width="24" height="24"/>
                                             <color key="tintColor" name="customDarkGrayColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="4cp-lG-PmT"/>
@@ -88,9 +92,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-7j-GHj">
-                                            <rect key="frame" x="8" y="36" width="70.333333333333329" height="12"/>
+                                            <rect key="frame" x="8" y="36" width="0.0" height="12"/>
                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
-                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <color key="textColor" name="placeholderColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -107,14 +111,14 @@
                                 </view>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N5P-4U-jBF">
-                            <rect key="frame" x="204.66666666666666" y="0.0" width="85.999999999999972" height="56"/>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N5P-4U-jBF">
+                            <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVt-e4-obH">
-                                    <rect key="frame" x="0.0" y="0.0" width="86" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8eF-tm-PHg">
-                                            <rect key="frame" x="31" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="-4" y="8" width="24" height="24"/>
                                             <color key="tintColor" name="customDarkGrayColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="3pQ-fp-hrZ"/>
@@ -122,9 +126,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGj-Em-hxq">
-                                            <rect key="frame" x="8" y="36" width="70" height="12"/>
+                                            <rect key="frame" x="8" y="36" width="0.0" height="12"/>
                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
-                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <color key="textColor" name="placeholderColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -141,14 +145,14 @@
                                 </view>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-7G-N84">
-                            <rect key="frame" x="306.66666666666669" y="0.0" width="86.333333333333314" height="56"/>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-7G-N84">
+                            <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69m-iD-k0X">
-                                    <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="56"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLH-iH-HhA">
-                                            <rect key="frame" x="31.333333333333314" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="-4" y="8" width="24" height="24"/>
                                             <color key="tintColor" name="customDarkGrayColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="QJI-uM-agM"/>
@@ -156,9 +160,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6a-QW-SAs">
-                                            <rect key="frame" x="8" y="36" width="70.333333333333329" height="12"/>
+                                            <rect key="frame" x="8" y="36" width="0.0" height="12"/>
                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
-                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <color key="textColor" name="placeholderColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -192,6 +196,9 @@
     <resources>
         <namedColor name="customDarkGrayColor">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="placeholderColor">
+            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
