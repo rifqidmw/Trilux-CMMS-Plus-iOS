@@ -43,7 +43,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapDelayCorrective() {
-        AppLogger.log("CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDelayCorrectiveList(navigation: navigation)
     }
     
     func didTapLogBook() {
