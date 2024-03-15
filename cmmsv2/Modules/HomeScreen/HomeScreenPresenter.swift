@@ -125,4 +125,8 @@ extension HomeScreenPresenter {
         router.navigateToDelayCorrectiveList(navigation: navigation)
     }
     
+    func navigateToHistoryList(navigation: UINavigationController) {
+        router.navigateToHistoryList(navigation: navigation)
+    }
+    
 }

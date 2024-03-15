@@ -331,6 +331,22 @@
 		CEC1B0852BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
 		CEC1B0862BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
 		CEC1B0872BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
+		CEC1B05B2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
+		CEC1B05C2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
+		CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */; };
+		CEC1B05E2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */; };
+		CEC1B05F2BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */; };
+		CEC1B0602BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */; };
+		CEC1B0612BA1E39700DF6A4F /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0582BA1E39700DF6A4F /* HistoryListView.swift */; };
+		CEC1B0622BA1E39700DF6A4F /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0582BA1E39700DF6A4F /* HistoryListView.swift */; };
+		CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0592BA1E39700DF6A4F /* HistoryListView.xib */; };
+		CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0592BA1E39700DF6A4F /* HistoryListView.xib */; };
+		CEC1B0652BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B05A2BA1E39700DF6A4F /* HistoryListEntity.swift */; };
+		CEC1B0662BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B05A2BA1E39700DF6A4F /* HistoryListEntity.swift */; };
+		CEC1B06A2BA1ED2800DF6A4F /* HistoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0682BA1ED2800DF6A4F /* HistoryCVC.swift */; };
+		CEC1B06B2BA1ED2800DF6A4F /* HistoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0682BA1ED2800DF6A4F /* HistoryCVC.swift */; };
+		CEC1B06C2BA1ED2800DF6A4F /* HistoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */; };
+		CEC1B06D2BA1ED2800DF6A4F /* HistoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */; };
 		CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079B2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */; };
@@ -783,6 +799,14 @@
 		CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListEntity.swift; sourceTree = "<group>"; };
 		CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveCVC.swift; sourceTree = "<group>"; };
 		CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveCVC.xib; sourceTree = "<group>"; };
+		CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListPresenter.swift; sourceTree = "<group>"; };
+		CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListRouter.swift; sourceTree = "<group>"; };
+		CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListInteractor.swift; sourceTree = "<group>"; };
+		CEC1B0582BA1E39700DF6A4F /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
+		CEC1B0592BA1E39700DF6A4F /* HistoryListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryListView.xib; sourceTree = "<group>"; };
+		CEC1B05A2BA1E39700DF6A4F /* HistoryListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListEntity.swift; sourceTree = "<group>"; };
+		CEC1B0682BA1ED2800DF6A4F /* HistoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCVC.swift; sourceTree = "<group>"; };
+		CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCVC.xib; sourceTree = "<group>"; };
 		CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
 		CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouter.swift; sourceTree = "<group>"; };
 		CEC207952B4AD6870073FA1E /* HomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractor.swift; sourceTree = "<group>"; };
@@ -1407,6 +1431,7 @@
 		CE90B1862B9A1EB300515AD6 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				CEC1B0672BA1ECB400DF6A4F /* HistoryCell */,
 				CE2E3AFC2BA0ABB600094AD0 /* CalibrationCell */,
 				CEC1B0812BA21F2200DF6A4F /* DelayCorrectiveCell */,
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
@@ -1578,6 +1603,28 @@
 			path = DelayCorrectiveCell;
 			sourceTree = "<group>";
 		};
+		CEC1B0542BA1E37600DF6A4F /* HistoryList */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */,
+				CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */,
+				CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */,
+				CEC1B0582BA1E39700DF6A4F /* HistoryListView.swift */,
+				CEC1B0592BA1E39700DF6A4F /* HistoryListView.xib */,
+				CEC1B05A2BA1E39700DF6A4F /* HistoryListEntity.swift */,
+			);
+			path = HistoryList;
+			sourceTree = "<group>";
+		};
+		CEC1B0672BA1ECB400DF6A4F /* HistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1B0682BA1ED2800DF6A4F /* HistoryCVC.swift */,
+				CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */,
+			);
+			path = HistoryCell;
+			sourceTree = "<group>";
+		};
 		CEC207922B4AD64E0073FA1E /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1705,6 +1752,7 @@
 				CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CE4012212B5D7D6000517F7C /* FullScreenPicture */,
+				CEC1B0542BA1E37600DF6A4F /* HistoryList */,
 				CEC207922B4AD64E0073FA1E /* HomeScreen */,
 				CE82D4482B47DD8600A54124 /* Login */,
 				CE8208782B82390100CD4242 /* NotificationList */,
@@ -2246,6 +2294,7 @@
 				CE14C21B2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE0F20C52B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */,
+				CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CE9E7D752B529EB300240A7D /* ChangePasswordView.xib in Resources */,
 				CECB3E032B45E137004A260D /* Lato-Italic.ttf in Resources */,
 				CECB3DEF2B45E119004A260D /* Roboto-Thin.ttf in Resources */,
@@ -2292,6 +2341,7 @@
 				CE14C2172B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				CEC1B06C2BA1ED2800DF6A4F /* HistoryCVC.xib in Resources */,
 				CE0F20DA2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */,
 				CE0F20D32B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE72B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
@@ -2358,6 +2408,7 @@
 				CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE0F20C62B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */,
+				CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CE9E7D762B529EB300240A7D /* ChangePasswordView.xib in Resources */,
 				CECB3E042B45E137004A260D /* Lato-Italic.ttf in Resources */,
 				CECB3DF02B45E119004A260D /* Roboto-Thin.ttf in Resources */,
@@ -2404,6 +2455,7 @@
 				CE14C2182B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				CEC1B06D2BA1ED2800DF6A4F /* HistoryCVC.xib in Resources */,
 				CE0F20DB2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */,
 				CE0F20D42B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE82B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
@@ -2524,6 +2576,7 @@
 				CEC207AD2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897132B77394D006CB552 /* ToastView.swift in Sources */,
 				CEE79EC72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */,
+				CEC1B0612BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CE0F20DE2B756063008702E0 /* ActionSectionView.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
@@ -2568,6 +2621,7 @@
 				CEFB4F112B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEEED8762B7A86CB00672952 /* ScanEntity.swift in Sources */,
 				CEE67D3D2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
+				CEC1B05B2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */,
 				CE00446E2B7601B200C88345 /* SparePartTVC.swift in Sources */,
 				CEC2079F2B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CEFA75922B768E4500B74E1B /* AssetListView.swift in Sources */,
@@ -2576,6 +2630,7 @@
 				CE0044742B76192A00C88345 /* RecommendationSectionView.swift in Sources */,
 				CE40121D2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
 				CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
+				CEC1B0652BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */,
 				CE9E7D972B529F4500240A7D /* UserProfileView.swift in Sources */,
 				CECB3E4A2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE2E3AF22BA09E4C00094AD0 /* CalibrationListRouter.swift in Sources */,
@@ -2662,6 +2717,8 @@
 				CECD121F2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
 				CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE40122C2B5D7E7C00517F7C /* FullScreenPictureInteractor.swift in Sources */,
+				CEC1B05F2BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
+				CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
 				CE2FA5192B5CBD5C00756586 /* WorkSheetDetailView.swift in Sources */,
 				CE0B3AF32B9B869100A55B81 /* WorkSheetCorrectiveEntity.swift in Sources */,
 				CE40122A2B5D7E7C00517F7C /* FullScreenPictureRouter.swift in Sources */,
@@ -2673,6 +2730,7 @@
 				CE9E7DB22B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D892B529EE800240A7D /* EditProfileEntity.swift in Sources */,
 				CECB77822B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
+				CEC1B06A2BA1ED2800DF6A4F /* HistoryCVC.swift in Sources */,
 				CE2FA5152B5CBD5C00756586 /* WorkSheetDetailRouter.swift in Sources */,
 				CECB3E192B45E2EF004A260D /* GesturePublisher.swift in Sources */,
 				CE0B3AE92B9B869100A55B81 /* WorkSheetCorrectivePresenter.swift in Sources */,
@@ -2728,6 +2786,7 @@
 				CEC207AE2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897142B77394D006CB552 /* ToastView.swift in Sources */,
 				CEE79EC82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */,
+				CEC1B0622BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CE0F20DF2B756063008702E0 /* ActionSectionView.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
@@ -2772,6 +2831,7 @@
 				CEFB4F122B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEEED8772B7A86CB00672952 /* ScanEntity.swift in Sources */,
 				CEE67D3E2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
+				CEC1B05C2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */,
 				CE00446F2B7601B200C88345 /* SparePartTVC.swift in Sources */,
 				CEC207A02B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CEFA75932B768E4500B74E1B /* AssetListView.swift in Sources */,
@@ -2780,6 +2840,7 @@
 				CE0044752B76192A00C88345 /* RecommendationSectionView.swift in Sources */,
 				CE40121E2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
 				CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
+				CEC1B0662BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */,
 				CE9E7D982B529F4500240A7D /* UserProfileView.swift in Sources */,
 				CECB3E4B2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE2E3AF32BA09E4C00094AD0 /* CalibrationListRouter.swift in Sources */,
@@ -2866,6 +2927,8 @@
 				CECD12202B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
 				CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE40122D2B5D7E7C00517F7C /* FullScreenPictureInteractor.swift in Sources */,
+				CEC1B0602BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
+				CEC1B05E2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
 				CE2FA51A2B5CBD5C00756586 /* WorkSheetDetailView.swift in Sources */,
 				CE0B3AF42B9B869100A55B81 /* WorkSheetCorrectiveEntity.swift in Sources */,
 				CE40122B2B5D7E7C00517F7C /* FullScreenPictureRouter.swift in Sources */,
@@ -2877,6 +2940,7 @@
 				CE9E7DB32B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D8A2B529EE800240A7D /* EditProfileEntity.swift in Sources */,
 				CECB77832B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
+				CEC1B06B2BA1ED2800DF6A4F /* HistoryCVC.swift in Sources */,
 				CE2FA5162B5CBD5C00756586 /* WorkSheetDetailRouter.swift in Sources */,
 				CECB3E1A2B45E2EF004A260D /* GesturePublisher.swift in Sources */,
 				CE0B3AEA2B9B869100A55B81 /* WorkSheetCorrectivePresenter.swift in Sources */,
