@@ -88,4 +88,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToHistoryList(navigation: UINavigationController) {
+        let vc = HistoryListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }
