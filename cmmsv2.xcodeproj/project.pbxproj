@@ -315,6 +315,22 @@
 		CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */; };
 		CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
 		CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
+		CEC1B0752BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */; };
+		CEC1B0762BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */; };
+		CEC1B0772BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */; };
+		CEC1B0782BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */; };
+		CEC1B0792BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */; };
+		CEC1B07A2BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */; };
+		CEC1B07B2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */; };
+		CEC1B07C2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */; };
+		CEC1B07D2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */; };
+		CEC1B07E2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */; };
+		CEC1B07F2BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
+		CEC1B0802BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
+		CEC1B0842BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
+		CEC1B0852BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
+		CEC1B0862BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
+		CEC1B0872BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
 		CEC1B05B2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05C2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */; };
@@ -775,6 +791,14 @@
 		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 		CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Ext.swift"; sourceTree = "<group>"; };
+		CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListPresenter.swift; sourceTree = "<group>"; };
+		CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListRouter.swift; sourceTree = "<group>"; };
+		CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListInteractor.swift; sourceTree = "<group>"; };
+		CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListView.swift; sourceTree = "<group>"; };
+		CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveListView.xib; sourceTree = "<group>"; };
+		CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListEntity.swift; sourceTree = "<group>"; };
+		CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveCVC.swift; sourceTree = "<group>"; };
+		CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveCVC.xib; sourceTree = "<group>"; };
 		CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListPresenter.swift; sourceTree = "<group>"; };
 		CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListRouter.swift; sourceTree = "<group>"; };
 		CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListInteractor.swift; sourceTree = "<group>"; };
@@ -1409,8 +1433,9 @@
 			children = (
 				CEC1B0672BA1ECB400DF6A4F /* HistoryCell */,
 				CE2E3AFC2BA0ABB600094AD0 /* CalibrationCell */,
-				CEE07C992B9F538000EFBFB8 /* PreventiveMaintenanceCell */,
+				CEC1B0812BA21F2200DF6A4F /* DelayCorrectiveCell */,
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
+				CEE07C992B9F538000EFBFB8 /* PreventiveMaintenanceCell */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -1554,6 +1579,28 @@
 				CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */,
 			);
 			path = ExpiredBottomSheet;
+			sourceTree = "<group>";
+		};
+		CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */,
+				CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */,
+				CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */,
+				CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */,
+				CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */,
+				CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */,
+			);
+			path = DelayCorrectiveList;
+			sourceTree = "<group>";
+		};
+		CEC1B0812BA21F2200DF6A4F /* DelayCorrectiveCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */,
+				CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */,
+			);
+			path = DelayCorrectiveCell;
 			sourceTree = "<group>";
 		};
 		CEC1B0542BA1E37600DF6A4F /* HistoryList */ = {
@@ -1702,6 +1749,7 @@
 				CE2E3AE92BA09E2F00094AD0 /* CalibrationList */,
 				CE9E7D662B529DFB00240A7D /* ChangePassword */,
 				CE90B14C2B99602300515AD6 /* ComplaintList */,
+				CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CE4012212B5D7D6000517F7C /* FullScreenPicture */,
 				CEC1B0542BA1E37600DF6A4F /* HistoryList */,
@@ -2236,6 +2284,7 @@
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012302B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE40121F2B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CEC1B0862BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */,
 				CE0044692B75FF7E00C88345 /* SparePartSectionView.xib in Resources */,
 				CE0044852B76373700C88345 /* CalibrationStatusView.xib in Resources */,
 				CE0F20CC2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */,
@@ -2256,6 +2305,7 @@
 				CEE79EF22B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */,
 				CECB3DDF2B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
+				CEC1B07D2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */,
 				CE90B18C2B9A28BA00515AD6 /* CorrectiveTVC.xib in Resources */,
 				CE9F91002B4F942C004C027A /* InformationCardView.xib in Resources */,
 				CE2E3AF82BA09E4C00094AD0 /* CalibrationListView.xib in Resources */,
@@ -2348,6 +2398,7 @@
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012312B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE4012202B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CEC1B0872BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */,
 				CE00446A2B75FF7E00C88345 /* SparePartSectionView.xib in Resources */,
 				CE0044862B76373700C88345 /* CalibrationStatusView.xib in Resources */,
 				CE0F20CD2B752626008702E0 /* ElectricalMeasurementTVC.xib in Resources */,
@@ -2368,6 +2419,7 @@
 				CEE79EF32B71745D0063D844 /* CalibrationMeasurementTVC.xib in Resources */,
 				CECB3DE02B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
+				CEC1B07E2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */,
 				CE90B18D2B9A28BA00515AD6 /* CorrectiveTVC.xib in Resources */,
 				CE9F91012B4F942C004C027A /* InformationCardView.xib in Resources */,
 				CE2E3AF92BA09E4C00094AD0 /* CalibrationListView.xib in Resources */,
@@ -2519,6 +2571,7 @@
 				CE2E3AFA2BA09E4C00094AD0 /* CalibrationListEntity.swift in Sources */,
 				CE2E3AF42BA09E4C00094AD0 /* CalibrationListInteractor.swift in Sources */,
 				CE0F20CA2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */,
+				CEC1B0792BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */,
 				CEE67D2B2B54394900D0844B /* WorkSheetListView.swift in Sources */,
 				CEC207AD2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897132B77394D006CB552 /* ToastView.swift in Sources */,
@@ -2582,6 +2635,7 @@
 				CECB3E4A2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE2E3AF22BA09E4C00094AD0 /* CalibrationListRouter.swift in Sources */,
 				CECB3E3E2B45E5AB004A260D /* BaseViewController.swift in Sources */,
+				CEC1B0752BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */,
 				CE7372A62B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
 				CE00447B2B7628A300C88345 /* SupportingDocumentationView.swift in Sources */,
 				CEE07C8F2B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift in Sources */,
@@ -2592,6 +2646,7 @@
 				CE2E3AF02BA09E4C00094AD0 /* CalibrationListPresenter.swift in Sources */,
 				CE2F2CE82B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D362B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
+				CEC1B07F2BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
@@ -2656,6 +2711,7 @@
 				CECB3E3B2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CE2FA5222B5CBFC600756586 /* ImageCardSectionView.swift in Sources */,
 				CEFB4F152B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
+				CEC1B0772BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */,
 				CEE79EE82B7172A00063D844 /* CalibrationMeasurementView.swift in Sources */,
 				CE0F20D72B7553E3008702E0 /* SelectCalibratorView.swift in Sources */,
 				CECD121F2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
@@ -2667,6 +2723,7 @@
 				CE0B3AF32B9B869100A55B81 /* WorkSheetCorrectiveEntity.swift in Sources */,
 				CE40122A2B5D7E7C00517F7C /* FullScreenPictureRouter.swift in Sources */,
 				CECB3E4D2B45E69A004A260D /* BaseEntity.swift in Sources */,
+				CEC1B07B2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */,
 				CE0B3AEB2B9B869100A55B81 /* WorkSheetCorrectiveRouter.swift in Sources */,
 				CE8208952B823C5300CD4242 /* TimeGroupHeaderCRV.swift in Sources */,
 				CE82088E2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
@@ -2694,6 +2751,7 @@
 				CEE79EBD2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */,
 				CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
+				CEC1B0842BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */,
 				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208852B82391F00CD4242 /* NotificationListView.swift in Sources */,
 				CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
@@ -2723,6 +2781,7 @@
 				CE2E3AFB2BA09E4C00094AD0 /* CalibrationListEntity.swift in Sources */,
 				CE2E3AF52BA09E4C00094AD0 /* CalibrationListInteractor.swift in Sources */,
 				CE0F20CB2B752626008702E0 /* ElectricalMeasurementTVC.swift in Sources */,
+				CEC1B07A2BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */,
 				CEE67D2C2B54394900D0844B /* WorkSheetListView.swift in Sources */,
 				CEC207AE2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897142B77394D006CB552 /* ToastView.swift in Sources */,
@@ -2786,6 +2845,7 @@
 				CECB3E4B2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE2E3AF32BA09E4C00094AD0 /* CalibrationListRouter.swift in Sources */,
 				CECB3E3F2B45E5AB004A260D /* BaseViewController.swift in Sources */,
+				CEC1B0762BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */,
 				CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
 				CE00447C2B7628A300C88345 /* SupportingDocumentationView.swift in Sources */,
 				CEE07C902B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift in Sources */,
@@ -2796,6 +2856,7 @@
 				CE2E3AF12BA09E4C00094AD0 /* CalibrationListPresenter.swift in Sources */,
 				CE2F2CE92B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D372B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
+				CEC1B0802BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
@@ -2860,6 +2921,7 @@
 				CECB3E3C2B45E4DD004A260D /* AppLoger.swift in Sources */,
 				CE2FA5232B5CBFC600756586 /* ImageCardSectionView.swift in Sources */,
 				CEFB4F162B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
+				CEC1B0782BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */,
 				CEE79EE92B7172A00063D844 /* CalibrationMeasurementView.swift in Sources */,
 				CE0F20D82B7553E3008702E0 /* SelectCalibratorView.swift in Sources */,
 				CECD12202B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
@@ -2871,6 +2933,7 @@
 				CE0B3AF42B9B869100A55B81 /* WorkSheetCorrectiveEntity.swift in Sources */,
 				CE40122B2B5D7E7C00517F7C /* FullScreenPictureRouter.swift in Sources */,
 				CECB3E4E2B45E69A004A260D /* BaseEntity.swift in Sources */,
+				CEC1B07C2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */,
 				CE0B3AEC2B9B869100A55B81 /* WorkSheetCorrectiveRouter.swift in Sources */,
 				CE8208962B823C5300CD4242 /* TimeGroupHeaderCRV.swift in Sources */,
 				CE82088F2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
@@ -2898,6 +2961,7 @@
 				CEE79EBE2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailPresenter.swift in Sources */,
 				CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
+				CEC1B0852BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */,
 				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208862B82391F00CD4242 /* NotificationListView.swift in Sources */,
 				CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */,

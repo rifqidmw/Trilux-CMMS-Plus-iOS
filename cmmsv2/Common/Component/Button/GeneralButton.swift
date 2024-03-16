@@ -45,11 +45,11 @@ extension GeneralButton {
         iconImageView.isHidden = true
         searchLabel.isHidden = true
         iconMagnifyingGlass.isHidden = true
+        containerView.backgroundColor = backgroundColor
         
         switch type {
         case .normal:
             titleLabel.isHidden = false
-            containerView.backgroundColor = backgroundColor
         case .searchbutton:
             titleLabel.isHidden = true
             searchLabel.isHidden = false

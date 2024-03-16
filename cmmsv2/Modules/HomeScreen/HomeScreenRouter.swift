@@ -1,4 +1,4 @@
-// 
+//
 //  HomeScreenRouter.swift
 //  cmmsv2
 //
@@ -81,13 +81,18 @@ extension HomeScreenRouter {
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }
-
+    
     func navigateToPreventiveMaintenanceList(navigation: UINavigationController) {
         let vc = PreventiveMaintenanceListRouter().showView()
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToDelayCorrectiveList(navigation: UINavigationController) {
+        let vc = DelayCorrectiveListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+
     func navigateToHistoryList(navigation: UINavigationController) {
         let vc = HistoryListRouter().showView()
         navigation.pushViewController(vc, animated: true)
