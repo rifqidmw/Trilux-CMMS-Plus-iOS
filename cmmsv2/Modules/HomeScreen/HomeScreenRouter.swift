@@ -98,4 +98,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToLogBook(navigation: UINavigationController) {
+        let vc = LogBookRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

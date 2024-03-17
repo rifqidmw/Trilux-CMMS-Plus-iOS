@@ -53,7 +53,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapLogBook() {
-        AppLogger.log("CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToLogBook(navigation: navigation)
     }
     
     func didTapPreventiveCalendar() {
