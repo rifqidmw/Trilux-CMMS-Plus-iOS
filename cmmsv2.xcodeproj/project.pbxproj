@@ -173,6 +173,22 @@
 		CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4012512B5D9A0D00517F7C /* SelectActionBottomSheet.swift */; };
 		CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */; };
 		CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */; };
+		CE4255E52BA704E5002B558C /* LogBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255DF2BA704E5002B558C /* LogBookPresenter.swift */; };
+		CE4255E62BA704E5002B558C /* LogBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255DF2BA704E5002B558C /* LogBookPresenter.swift */; };
+		CE4255E72BA704E5002B558C /* LogBookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E02BA704E5002B558C /* LogBookRouter.swift */; };
+		CE4255E82BA704E5002B558C /* LogBookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E02BA704E5002B558C /* LogBookRouter.swift */; };
+		CE4255E92BA704E5002B558C /* LogBookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E12BA704E5002B558C /* LogBookInteractor.swift */; };
+		CE4255EA2BA704E5002B558C /* LogBookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E12BA704E5002B558C /* LogBookInteractor.swift */; };
+		CE4255EB2BA704E5002B558C /* LogBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E22BA704E5002B558C /* LogBookView.swift */; };
+		CE4255EC2BA704E5002B558C /* LogBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E22BA704E5002B558C /* LogBookView.swift */; };
+		CE4255ED2BA704E5002B558C /* LogBookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4255E32BA704E5002B558C /* LogBookView.xib */; };
+		CE4255EE2BA704E5002B558C /* LogBookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4255E32BA704E5002B558C /* LogBookView.xib */; };
+		CE4255EF2BA704E5002B558C /* LogBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E42BA704E5002B558C /* LogBookEntity.swift */; };
+		CE4255F02BA704E5002B558C /* LogBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E42BA704E5002B558C /* LogBookEntity.swift */; };
+		CE4255F42BA740AF002B558C /* LogBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255F22BA740AF002B558C /* LogBookCVC.swift */; };
+		CE4255F52BA740AF002B558C /* LogBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255F22BA740AF002B558C /* LogBookCVC.swift */; };
+		CE4255F62BA740AF002B558C /* LogBookCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4255F32BA740AF002B558C /* LogBookCVC.xib */; };
+		CE4255F72BA740AF002B558C /* LogBookCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4255F32BA740AF002B558C /* LogBookCVC.xib */; };
 		CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54428C2B47262D0022047D /* GeneralButton.xib */; };
 		CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54428C2B47262D0022047D /* GeneralButton.xib */; };
 		CE5442902B4726360022047D /* GeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54428F2B4726360022047D /* GeneralButton.swift */; };
@@ -315,22 +331,6 @@
 		CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */; };
 		CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
 		CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
-		CEC1B0752BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */; };
-		CEC1B0762BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */; };
-		CEC1B0772BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */; };
-		CEC1B0782BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */; };
-		CEC1B0792BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */; };
-		CEC1B07A2BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */; };
-		CEC1B07B2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */; };
-		CEC1B07C2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */; };
-		CEC1B07D2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */; };
-		CEC1B07E2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */; };
-		CEC1B07F2BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
-		CEC1B0802BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
-		CEC1B0842BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
-		CEC1B0852BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
-		CEC1B0862BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
-		CEC1B0872BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
 		CEC1B05B2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05C2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */; };
@@ -347,6 +347,22 @@
 		CEC1B06B2BA1ED2800DF6A4F /* HistoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0682BA1ED2800DF6A4F /* HistoryCVC.swift */; };
 		CEC1B06C2BA1ED2800DF6A4F /* HistoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */; };
 		CEC1B06D2BA1ED2800DF6A4F /* HistoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */; };
+		CEC1B0752BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */; };
+		CEC1B0762BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */; };
+		CEC1B0772BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */; };
+		CEC1B0782BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */; };
+		CEC1B0792BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */; };
+		CEC1B07A2BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */; };
+		CEC1B07B2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */; };
+		CEC1B07C2BA217E600DF6A4F /* DelayCorrectiveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */; };
+		CEC1B07D2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */; };
+		CEC1B07E2BA217E600DF6A4F /* DelayCorrectiveListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */; };
+		CEC1B07F2BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
+		CEC1B0802BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */; };
+		CEC1B0842BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
+		CEC1B0852BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */; };
+		CEC1B0862BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
+		CEC1B0872BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */; };
 		CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */; };
 		CEC2079B2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */; };
@@ -719,6 +735,14 @@
 		CE4012422B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveListEntity.swift; sourceTree = "<group>"; };
 		CE4012512B5D9A0D00517F7C /* SelectActionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionBottomSheet.swift; sourceTree = "<group>"; };
 		CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectActionBottomSheet.xib; sourceTree = "<group>"; };
+		CE4255DF2BA704E5002B558C /* LogBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookPresenter.swift; sourceTree = "<group>"; };
+		CE4255E02BA704E5002B558C /* LogBookRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookRouter.swift; sourceTree = "<group>"; };
+		CE4255E12BA704E5002B558C /* LogBookInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookInteractor.swift; sourceTree = "<group>"; };
+		CE4255E22BA704E5002B558C /* LogBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookView.swift; sourceTree = "<group>"; };
+		CE4255E32BA704E5002B558C /* LogBookView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogBookView.xib; sourceTree = "<group>"; };
+		CE4255E42BA704E5002B558C /* LogBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookEntity.swift; sourceTree = "<group>"; };
+		CE4255F22BA740AF002B558C /* LogBookCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookCVC.swift; sourceTree = "<group>"; };
+		CE4255F32BA740AF002B558C /* LogBookCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogBookCVC.xib; sourceTree = "<group>"; };
 		CE5442892B471FF50022047D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		CE54428C2B47262D0022047D /* GeneralButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralButton.xib; sourceTree = "<group>"; };
 		CE54428F2B4726360022047D /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
@@ -791,14 +815,6 @@
 		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 		CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Ext.swift"; sourceTree = "<group>"; };
-		CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListPresenter.swift; sourceTree = "<group>"; };
-		CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListRouter.swift; sourceTree = "<group>"; };
-		CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListInteractor.swift; sourceTree = "<group>"; };
-		CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListView.swift; sourceTree = "<group>"; };
-		CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveListView.xib; sourceTree = "<group>"; };
-		CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListEntity.swift; sourceTree = "<group>"; };
-		CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveCVC.swift; sourceTree = "<group>"; };
-		CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveCVC.xib; sourceTree = "<group>"; };
 		CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListPresenter.swift; sourceTree = "<group>"; };
 		CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListRouter.swift; sourceTree = "<group>"; };
 		CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListInteractor.swift; sourceTree = "<group>"; };
@@ -807,6 +823,14 @@
 		CEC1B05A2BA1E39700DF6A4F /* HistoryListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListEntity.swift; sourceTree = "<group>"; };
 		CEC1B0682BA1ED2800DF6A4F /* HistoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCVC.swift; sourceTree = "<group>"; };
 		CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCVC.xib; sourceTree = "<group>"; };
+		CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListPresenter.swift; sourceTree = "<group>"; };
+		CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListRouter.swift; sourceTree = "<group>"; };
+		CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListInteractor.swift; sourceTree = "<group>"; };
+		CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListView.swift; sourceTree = "<group>"; };
+		CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveListView.xib; sourceTree = "<group>"; };
+		CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveListEntity.swift; sourceTree = "<group>"; };
+		CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveCVC.swift; sourceTree = "<group>"; };
+		CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveCVC.xib; sourceTree = "<group>"; };
 		CEC207932B4AD6870073FA1E /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
 		CEC207942B4AD6870073FA1E /* HomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouter.swift; sourceTree = "<group>"; };
 		CEC207952B4AD6870073FA1E /* HomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractor.swift; sourceTree = "<group>"; };
@@ -1328,6 +1352,29 @@
 			path = SelectActionBottomSheet;
 			sourceTree = "<group>";
 		};
+		CE4255DE2BA704C8002B558C /* LogBook */ = {
+			isa = PBXGroup;
+			children = (
+				CE4255F12BA74089002B558C /* Cell */,
+				CE4255DF2BA704E5002B558C /* LogBookPresenter.swift */,
+				CE4255E02BA704E5002B558C /* LogBookRouter.swift */,
+				CE4255E12BA704E5002B558C /* LogBookInteractor.swift */,
+				CE4255E22BA704E5002B558C /* LogBookView.swift */,
+				CE4255E32BA704E5002B558C /* LogBookView.xib */,
+				CE4255E42BA704E5002B558C /* LogBookEntity.swift */,
+			);
+			path = LogBook;
+			sourceTree = "<group>";
+		};
+		CE4255F12BA74089002B558C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE4255F22BA740AF002B558C /* LogBookCVC.swift */,
+				CE4255F32BA740AF002B558C /* LogBookCVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CE54428A2B4724F90022047D /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -1581,28 +1628,6 @@
 			path = ExpiredBottomSheet;
 			sourceTree = "<group>";
 		};
-		CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */ = {
-			isa = PBXGroup;
-			children = (
-				CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */,
-				CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */,
-				CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */,
-				CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */,
-				CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */,
-				CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */,
-			);
-			path = DelayCorrectiveList;
-			sourceTree = "<group>";
-		};
-		CEC1B0812BA21F2200DF6A4F /* DelayCorrectiveCell */ = {
-			isa = PBXGroup;
-			children = (
-				CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */,
-				CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */,
-			);
-			path = DelayCorrectiveCell;
-			sourceTree = "<group>";
-		};
 		CEC1B0542BA1E37600DF6A4F /* HistoryList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1623,6 +1648,28 @@
 				CEC1B0692BA1ED2800DF6A4F /* HistoryCVC.xib */,
 			);
 			path = HistoryCell;
+			sourceTree = "<group>";
+		};
+		CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1B06F2BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift */,
+				CEC1B0702BA217E600DF6A4F /* DelayCorrectiveListRouter.swift */,
+				CEC1B0712BA217E600DF6A4F /* DelayCorrectiveListInteractor.swift */,
+				CEC1B0722BA217E600DF6A4F /* DelayCorrectiveListView.swift */,
+				CEC1B0732BA217E600DF6A4F /* DelayCorrectiveListView.xib */,
+				CEC1B0742BA217E600DF6A4F /* DelayCorrectiveListEntity.swift */,
+			);
+			path = DelayCorrectiveList;
+			sourceTree = "<group>";
+		};
+		CEC1B0812BA21F2200DF6A4F /* DelayCorrectiveCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1B0822BA21F4F00DF6A4F /* DelayCorrectiveCVC.swift */,
+				CEC1B0832BA21F4F00DF6A4F /* DelayCorrectiveCVC.xib */,
+			);
+			path = DelayCorrectiveCell;
 			sourceTree = "<group>";
 		};
 		CEC207922B4AD64E0073FA1E /* HomeScreen */ = {
@@ -1754,6 +1801,7 @@
 				CE4012212B5D7D6000517F7C /* FullScreenPicture */,
 				CEC1B0542BA1E37600DF6A4F /* HistoryList */,
 				CEC207922B4AD64E0073FA1E /* HomeScreen */,
+				CE4255DE2BA704C8002B558C /* LogBook */,
 				CE82D4482B47DD8600A54124 /* Login */,
 				CE8208782B82390100CD4242 /* NotificationList */,
 				CEE07C862B9F405F00EFBFB8 /* PreventiveMaintenanceList */,
@@ -2261,6 +2309,7 @@
 				CECB3DDB2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
 				CEE79EC52B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFB2B45E137004A260D /* Lato-Black.ttf in Resources */,
+				CE4255F62BA740AF002B558C /* LogBookCVC.xib in Resources */,
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
 				CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BE2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
@@ -2292,6 +2341,7 @@
 				CECB3E0D2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21B2B5C38620034B9FE /* ImageCardView.xib in Resources */,
+				CE4255ED2BA704E5002B558C /* LogBookView.xib in Resources */,
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE0F20C52B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */,
 				CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
@@ -2375,6 +2425,7 @@
 				CECB3DDC2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
 				CEE79EC62B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailView.xib in Resources */,
 				CECB3DFC2B45E137004A260D /* Lato-Black.ttf in Resources */,
+				CE4255F72BA740AF002B558C /* LogBookCVC.xib in Resources */,
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
 				CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BF2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
@@ -2406,6 +2457,7 @@
 				CECB3E0E2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */,
+				CE4255EE2BA704E5002B558C /* LogBookView.xib in Resources */,
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE0F20C62B751D6A008702E0 /* ElectricalMeasurementView.xib in Resources */,
 				CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
@@ -2654,6 +2706,7 @@
 				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE2E3AFF2BA0ABD700094AD0 /* CalibrationCVC.swift in Sources */,
 				CE90B1572B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
+				CE4255E52BA704E5002B558C /* LogBookPresenter.swift in Sources */,
 				CE90B1592B99605700515AD6 /* ComplaintListView.swift in Sources */,
 				CE2FA51D2B5CBD5C00756586 /* WorkSheetDetailEntity.swift in Sources */,
 				CE9E7DC22B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
@@ -2680,11 +2733,13 @@
 				CEFA75902B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC12B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */,
 				CEEED8722B7A86CB00672952 /* ScanView.swift in Sources */,
+				CE4255F42BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE40124D2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE90B18A2B9A28BA00515AD6 /* CorrectiveTVC.swift in Sources */,
 				CE9E7D7F2B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CE0F20C22B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
 				CEC2079D2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
+				CE4255E92BA704E5002B558C /* LogBookInteractor.swift in Sources */,
 				CE90B15D2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
@@ -2694,6 +2749,7 @@
 				CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E502B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CE2FA5132B5CBD5C00756586 /* WorkSheetDetailPresenter.swift in Sources */,
+				CE4255EF2BA704E5002B558C /* LogBookEntity.swift in Sources */,
 				CE0EC4AB2B77A5D700888BE8 /* Array+Ext.swift in Sources */,
 				CECB3E282B45E3C8004A260D /* UITextField+Ext.swift in Sources */,
 				CE9F90F32B4F776B004C027A /* MenuItemTVC.swift in Sources */,
@@ -2716,6 +2772,7 @@
 				CE0F20D72B7553E3008702E0 /* SelectCalibratorView.swift in Sources */,
 				CECD121F2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
 				CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
+				CE4255E72BA704E5002B558C /* LogBookRouter.swift in Sources */,
 				CE40122C2B5D7E7C00517F7C /* FullScreenPictureInteractor.swift in Sources */,
 				CEC1B05F2BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
@@ -2761,6 +2818,7 @@
 				CE9F910A2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE0F20A82B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */,
+				CE4255EB2BA704E5002B558C /* LogBookView.swift in Sources */,
 				CEE07C912B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift in Sources */,
 				CE0F20AE2B74BF6F008702E0 /* StatusTVC.swift in Sources */,
 			);
@@ -2864,6 +2922,7 @@
 				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE2E3B002BA0ABD700094AD0 /* CalibrationCVC.swift in Sources */,
 				CE90B1582B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
+				CE4255E62BA704E5002B558C /* LogBookPresenter.swift in Sources */,
 				CE90B15A2B99605700515AD6 /* ComplaintListView.swift in Sources */,
 				CE2FA51E2B5CBD5C00756586 /* WorkSheetDetailEntity.swift in Sources */,
 				CE9E7DC32B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
@@ -2890,11 +2949,13 @@
 				CEFA75912B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC22B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailInteractor.swift in Sources */,
 				CEEED8732B7A86CB00672952 /* ScanView.swift in Sources */,
+				CE4255F52BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE40124E2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE90B18B2B9A28BA00515AD6 /* CorrectiveTVC.swift in Sources */,
 				CE9E7D802B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CE0F20C32B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
 				CEC2079E2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
+				CE4255EA2BA704E5002B558C /* LogBookInteractor.swift in Sources */,
 				CE90B15E2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EC02B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
@@ -2904,6 +2965,7 @@
 				CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E512B45E6E6004A260D /* ApiManager.swift in Sources */,
 				CE2FA5142B5CBD5C00756586 /* WorkSheetDetailPresenter.swift in Sources */,
+				CE4255F02BA704E5002B558C /* LogBookEntity.swift in Sources */,
 				CE0EC4AC2B77A5D700888BE8 /* Array+Ext.swift in Sources */,
 				CECB3E292B45E3C8004A260D /* UITextField+Ext.swift in Sources */,
 				CE9F90F42B4F776B004C027A /* MenuItemTVC.swift in Sources */,
@@ -2926,6 +2988,7 @@
 				CE0F20D82B7553E3008702E0 /* SelectCalibratorView.swift in Sources */,
 				CECD12202B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */,
 				CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
+				CE4255E82BA704E5002B558C /* LogBookRouter.swift in Sources */,
 				CE40122D2B5D7E7C00517F7C /* FullScreenPictureInteractor.swift in Sources */,
 				CEC1B0602BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				CEC1B05E2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
@@ -2971,6 +3034,7 @@
 				CE9F910B2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE0F20A92B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */,
+				CE4255EC2BA704E5002B558C /* LogBookView.swift in Sources */,
 				CEE07C922B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift in Sources */,
 				CE0F20AF2B74BF6F008702E0 /* StatusTVC.swift in Sources */,
 			);

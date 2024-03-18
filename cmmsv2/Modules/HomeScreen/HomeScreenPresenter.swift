@@ -129,4 +129,8 @@ extension HomeScreenPresenter {
         router.navigateToHistoryList(navigation: navigation)
     }
     
+    func navigateToLogBook(navigation: UINavigationController) {
+        router.navigateToLogBook(navigation: navigation)
+    }
+    
 }

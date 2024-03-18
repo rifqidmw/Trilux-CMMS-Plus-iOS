@@ -12,6 +12,7 @@ def share_pod
   pod 'SDWebImage'
   pod 'DropDown'
   pod 'DGCharts'
+  pod 'FSCalendar'
 end
 
 target 'cmmsv2' do
