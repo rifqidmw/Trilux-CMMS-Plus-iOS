@@ -22,7 +22,6 @@
             <connections>
                 <outlet property="calendarView" destination="H4G-Jq-qtW" id="PCe-wE-dIv"/>
                 <outlet property="collectionView" destination="V7G-dw-kOw" id="tF8-WE-ceQ"/>
-                <outlet property="containerCalendarView" destination="H4G-Jq-qtW" id="XRy-qH-qzs"/>
                 <outlet property="containerView" destination="EfU-7H-N9D" id="SwG-gr-ecl"/>
                 <outlet property="countLabel" destination="m5m-NZ-xuB" id="aOh-H0-ces"/>
                 <outlet property="customNavigationView" destination="5QX-aU-Dqq" id="hxy-JW-fIy"/>
