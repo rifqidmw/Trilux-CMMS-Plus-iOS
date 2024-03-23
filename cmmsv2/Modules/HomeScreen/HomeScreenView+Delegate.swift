@@ -60,7 +60,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapPreventiveCalendar() {
-        AppLogger.log("CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToCalendarPreventive(navigation: navigation)
     }
     
 }

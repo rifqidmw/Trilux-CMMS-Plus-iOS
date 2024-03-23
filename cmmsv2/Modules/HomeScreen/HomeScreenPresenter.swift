@@ -133,4 +133,8 @@ extension HomeScreenPresenter {
         router.navigateToLogBook(navigation: navigation)
     }
     
+    func navigateToCalendarPreventive(navigation: UINavigationController) {
+        router.navigateToCalendarPreventive(navigation: navigation)
+    }
+    
 }

@@ -103,4 +103,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToCalendarPreventive(navigation: UINavigationController) {
+        let vc = PreventiveCalendarListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

@@ -1,25 +1,26 @@
 //
-//  LogBookView.swift
+//  PreventiveCalendarListView.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 17/03/24.
+//  Created by PRO M1 2020 8/256 on 18/03/24.
 //
 
 import UIKit
 import FSCalendar
 
-class LogBookView: BaseViewController {
+class PreventiveCalendarListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var filterButton: UILabel!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var presenter: LogBookPresenter?
-    var data: [LogBookEntity] = logBookDataList
+    var presenter: PreventiveCalendarListPresenter?
+    var data: [PreventiveCalendarListEntity] = preventiveCalendarList
     
     override func didLoad() {
         super.didLoad()
@@ -28,7 +29,7 @@ class LogBookView: BaseViewController {
     
 }
 
-extension LogBookView {
+extension PreventiveCalendarListView {
     
     private func setupBody() {
         setupView()
@@ -38,7 +39,7 @@ extension LogBookView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Log Book", type: .plain)
+        customNavigationView.configure(plainTitle: "Kalender Preventif", type: .plain)
         containerView.makeCornerRadius(24, .topCurve)
         containerView.addShadow(2.8, position: .top, opacity: 0.08)
         collectionView.isHidden = data.isEmpty
@@ -71,11 +72,11 @@ extension LogBookView {
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(LogBookCVC.nib, forCellWithReuseIdentifier: LogBookCVC.identifier)
+        collectionView.register(PreventiveCalendarCVC.nib, forCellWithReuseIdentifier: PreventiveCalendarCVC.identifier)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 190)
+        layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 100)
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
         collectionView.collectionViewLayout = layout
@@ -83,14 +84,14 @@ extension LogBookView {
     
 }
 
-extension LogBookView: UICollectionViewDataSource, UICollectionViewDelegate {
+extension PreventiveCalendarListView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogBookCVC.identifier, for: indexPath) as? LogBookCVC
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreventiveCalendarCVC.identifier, for: indexPath) as? PreventiveCalendarCVC
         else {
             return UICollectionViewCell()
         }
