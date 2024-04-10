@@ -7,19 +7,19 @@
 
 import UIKit
 
-class WorkSheetListRouter: BaseRouter {
+class WorkSheetMonitoringFunctionListRouter: BaseRouter {
     
-    func showView() -> WorkSheetListView {
-        let interactor = WorkSheetListInteractor()
-        let presenter = WorkSheetListPresenter(interactor: interactor)
-        let view = WorkSheetListView(nibName: String(describing: WorkSheetListView.self), bundle: nil)
+    func showView() -> WorkSheetMonitoringFunctionListView {
+        let interactor = WorkSheetMonitoringFunctionListInteractor()
+        let presenter = WorkSheetMonitoringFunctionListPresenter(interactor: interactor)
+        let view = WorkSheetMonitoringFunctionListView(nibName: String(describing: WorkSheetMonitoringFunctionListView.self), bundle: nil)
         view.presenter = presenter
         return view
     }
     
 }
 
-extension WorkSheetListRouter {
+extension WorkSheetMonitoringFunctionListRouter {
     
     func showPreviewWorkSheetBottomSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
         let bottomSheet = WorkSheetPreviewBottomSheet(nibName: String(describing: WorkSheetPreviewBottomSheet.self), bundle: nil)
@@ -30,7 +30,7 @@ extension WorkSheetListRouter {
     }
     
     func navigateToDetailWorkSheet(navigation: UINavigationController) {
-        let vc = WorkSheetDetailRouter().showView()
+        let vc = WorkSheetMonitoringFunctionDetailRouter().showView()
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }

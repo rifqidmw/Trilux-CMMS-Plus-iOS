@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSheetDetailView" customModule="cmmsv2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSheetMonitoringFunctionDetailView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="detailComplaintView" destination="Z64-cc-KpM" id="b8Q-8d-sa2"/>
                 <outlet property="imageCardView" destination="H5V-f9-KeJ" id="Rpj-DZ-BXC"/>

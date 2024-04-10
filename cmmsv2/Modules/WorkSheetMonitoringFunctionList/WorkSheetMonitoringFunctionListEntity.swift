@@ -11,7 +11,7 @@ protocol WorkSheetListDelegate: AnyObject {
     func didTapDetailWorkSheet()
 }
 
-struct WorkSheetListEntity {
+struct WorkSheetMonitoringFunctionListEntity {
     let id = UUID()
     let uniqueNumber: String
     let workName: String
@@ -22,50 +22,50 @@ struct WorkSheetListEntity {
 }
 
 // MARK: - DUMMY DATA
-let workSheetData: [WorkSheetListEntity] = [
-    WorkSheetListEntity(
+let workSheetData: [WorkSheetMonitoringFunctionListEntity] = [
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "Syringe Pump",
         workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
         isApproved: false,
         category: .calibration,
         status: .done),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "Bed-side Monitor / Bed-patient Monitor / Patient Monit...",
         workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
         isApproved: true,
         category: .preventive,
         status: .open),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "X-Ray Film Viewer",
         workDesc: "Pelayanan Rawat Inap - Ruangan Persia",
         isApproved: true,
         category: .corrective,
         status: .done),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "LK.2021.11.PI010",
         workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
         isApproved: false,
         category: .preventive,
         status: .open),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "Ventilitator",
         workDesc: "No#666787 - Pelayanan Bedah Sentral (OK) - Ruangan Persia",
         isApproved: false,
         category: .corrective,
         status: .ongoing),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "Bronchoscope and Accessories",
         workDesc: "Pelayanan Rawat Inap - Ruangan Persia",
         isApproved: false,
         category: .corrective,
         status: .open),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "Tensimeter",
         workDesc: "No#666787 - Pelayanan Bedah Sentral (OK) - Ruangan Persia",

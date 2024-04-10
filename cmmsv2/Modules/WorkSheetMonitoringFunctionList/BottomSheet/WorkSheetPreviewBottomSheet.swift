@@ -24,7 +24,7 @@ class WorkSheetPreviewBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var seeDetailButton: GeneralButton!
     
     weak var delegate: WorkSheetListDelegate?
-    var data: WorkSheetListEntity?
+    var data: WorkSheetMonitoringFunctionListEntity?
     
     override func didLoad() {
         super.didLoad()

@@ -7,19 +7,19 @@
 
 import UIKit
 
-class WorkSheetDetailRouter: BaseRouter {
+class WorkSheetMonitoringFunctionDetailRouter: BaseRouter {
     
-    func showView() -> WorkSheetDetailView {
-        let interactor = WorkSheetDetailInteractor()
-        let presenter = WorkSheetDetailPresenter(interactor: interactor)
-        let view = WorkSheetDetailView(nibName: String(describing: WorkSheetDetailView.self), bundle: nil)
+    func showView() -> WorkSheetMonitoringFunctionDetailView {
+        let interactor = WorkSheetMonitoringFunctionDetailInteractor()
+        let presenter = WorkSheetMonitoringFunctionDetailPresenter(interactor: interactor)
+        let view = WorkSheetMonitoringFunctionDetailView(nibName: String(describing: WorkSheetMonitoringFunctionDetailView.self), bundle: nil)
         view.presenter = presenter
         return view
     }
     
 }
 
-extension WorkSheetDetailRouter {
+extension WorkSheetMonitoringFunctionDetailRouter {
     
     func goToFullScreenPicture(navigation: UINavigationController, titlePage: String, image: String) {
         let vc = FullScreenPictureRouter().showView()

@@ -22,7 +22,7 @@ class HomeScreenRouter: BaseRouter {
 extension HomeScreenRouter {
     
     func navigateToWorkSheetList(navigation: UINavigationController) {
-        let vc = WorkSheetListRouter().showView()
+        let vc = WorkSheetMonitoringFunctionListRouter().showView()
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }
@@ -34,7 +34,7 @@ extension HomeScreenRouter {
     }
     
     func navigateToWorkSheetCorrective(navigation: UINavigationController) {
-        let vc = WorkSheetCorrectiveRouter().showView()
+        let vc = WorkSheetCorrectiveListRouter().showView()
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }

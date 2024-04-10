@@ -17,36 +17,36 @@ enum WorkSheetActionType {
     case see
 }
 
-let onsitePreventiveData: [WorkSheetListEntity] = [
-    WorkSheetListEntity(
+let onsitePreventiveData: [WorkSheetMonitoringFunctionListEntity] = [
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI010",
         workName: "Ventilitator",
         workDesc: "No#666787 - Pelayanan Bedah Sentral (OK) - Ruangan Persia",
         isApproved: false,
         category: .none,
         status: .ongoing),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI011",
         workName: "Tensimeter",
         workDesc: "No#666787 - Pelayanan Bedah Sentral (OK) - Ruangan Persia",
         isApproved: false,
         category: .none,
         status: .ongoing),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI012",
         workName: "Syringe Pump",
         workDesc: "No#666787 - Pelayanan Bedah Sentral (OK) - Ruangan Persia",
         isApproved: false,
         category: .none,
         status: .done),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI013",
         workName: "High Flow Nassal Cannula",
         workDesc: "No#666787 - Pelayanan Rawat Inap - Ruangan Persia",
         isApproved: false,
         category: .none,
         status: .ongoing),
-    WorkSheetListEntity(
+    WorkSheetMonitoringFunctionListEntity(
         uniqueNumber: "LK.2021.11.PI014",
         workName: "X-Ray Film Viewer",
         workDesc: "No#666787 - Pelayanan Rawat Inap - Ruangan Persia",

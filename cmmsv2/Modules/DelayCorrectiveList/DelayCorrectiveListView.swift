@@ -14,7 +14,7 @@ class DelayCorrectiveListView: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var presenter: DelayCorrectiveListPresenter?
-    var data: [DelayCorrectiveListEntity] = delayCorrectiveDataList
+    let data: [ComplaintListEntity] = dummyComplaintData
     
     override func didLoad() {
         super.didLoad()
@@ -48,28 +48,21 @@ extension DelayCorrectiveListView {
     }
     
     private func setupCollectionView() {
-        collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(DelayCorrectiveCVC.nib, forCellWithReuseIdentifier: DelayCorrectiveCVC.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 200)
-        collectionView.collectionViewLayout = layout
+        collectionView.delegate = self
+        collectionView.register(CorrectiveCVC.nib, forCellWithReuseIdentifier: CorrectiveCVC.identifier)
     }
     
 }
 
-extension DelayCorrectiveListView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DelayCorrectiveListView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DelayCorrectiveCVC.identifier, for: indexPath) as? DelayCorrectiveCVC
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CorrectiveCVC.identifier, for: indexPath) as? CorrectiveCVC
         else {
             return UICollectionViewCell()
         }
@@ -77,6 +70,14 @@ extension DelayCorrectiveListView: UICollectionViewDelegate, UICollectionViewDat
         cell.setupCell(data: data[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: CGSize.widthDevice, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
 }

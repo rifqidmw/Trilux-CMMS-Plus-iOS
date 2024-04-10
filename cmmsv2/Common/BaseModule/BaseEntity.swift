@@ -159,3 +159,15 @@ enum HistoryStatusType: String, Codable {
         return rawValue
     }
 }
+
+enum CellType {
+    case calibration
+    case preventiveMaintenance
+    case history
+    case functionMonitoringWorksheet
+    case correctiveWorksheet
+    case preventiveMaintenanceWorksheet
+    case calibrationWorksheet
+    case corrective
+    case delayCorrective
+}

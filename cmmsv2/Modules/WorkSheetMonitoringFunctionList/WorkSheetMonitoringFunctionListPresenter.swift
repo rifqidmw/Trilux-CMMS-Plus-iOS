@@ -7,18 +7,18 @@
 
 import UIKit
 
-class WorkSheetListPresenter: BasePresenter {
+class WorkSheetMonitoringFunctionListPresenter: BasePresenter {
     
-    private let interactor: WorkSheetListInteractor
-    private let router = WorkSheetListRouter()
+    private let interactor: WorkSheetMonitoringFunctionListInteractor
+    private let router = WorkSheetMonitoringFunctionListRouter()
     
-    init(interactor: WorkSheetListInteractor) {
+    init(interactor: WorkSheetMonitoringFunctionListInteractor) {
         self.interactor = interactor
     }
     
 }
 
-extension WorkSheetListPresenter {
+extension WorkSheetMonitoringFunctionListPresenter {
     
     func showBottomSheetPreviewWorkSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
         router.showPreviewWorkSheetBottomSheet(navigation: navigation, delegate: delegate)

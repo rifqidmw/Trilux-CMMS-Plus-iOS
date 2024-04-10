@@ -12,8 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="actionBarView" destination="KZ8-C8-7QI" id="K9t-b1-azd"/>
-                <outlet property="collectionView" destination="EAV-Qf-oIa" id="BPA-gc-7ND"/>
                 <outlet property="customNavigationView" destination="mB5-hm-xop" id="rej-Xl-QM3"/>
+                <outlet property="tableView" destination="wOR-qg-wrt" id="ryX-lC-aem"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,16 +29,10 @@
                         <constraint firstAttribute="height" constant="56" id="mH2-aT-Icx"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EAV-Qf-oIa">
-                    <rect key="frame" x="16" y="131" width="361" height="631"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="06D-7p-Kby">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wOR-qg-wrt">
+                    <rect key="frame" x="0.0" y="115" width="393" height="647"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-C8-7QI" customClass="ActionBarView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="762" width="393" height="56"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,14 +44,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="wOR-qg-wrt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KMw-QA-rzM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wOR-qg-wrt" secondAttribute="trailing" id="Sa9-yk-jYx"/>
+                <constraint firstItem="KZ8-C8-7QI" firstAttribute="top" secondItem="wOR-qg-wrt" secondAttribute="bottom" id="WKa-Gx-hUN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mB5-hm-xop" secondAttribute="trailing" id="XHr-ay-QG4"/>
-                <constraint firstItem="EAV-Qf-oIa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Zha-V5-CRG"/>
                 <constraint firstItem="KZ8-C8-7QI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bdr-pz-ejd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KZ8-C8-7QI" secondAttribute="bottom" id="iLW-Nj-XzJ"/>
-                <constraint firstItem="EAV-Qf-oIa" firstAttribute="top" secondItem="mB5-hm-xop" secondAttribute="bottom" constant="16" id="kN9-mU-Ahd"/>
-                <constraint firstItem="KZ8-C8-7QI" firstAttribute="top" secondItem="EAV-Qf-oIa" secondAttribute="bottom" id="sHq-EQ-70w"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KZ8-C8-7QI" secondAttribute="trailing" id="sXz-z4-JhW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EAV-Qf-oIa" secondAttribute="trailing" constant="16" id="tqA-2t-7ea"/>
+                <constraint firstItem="wOR-qg-wrt" firstAttribute="top" secondItem="mB5-hm-xop" secondAttribute="bottom" id="uR7-QK-JC3"/>
                 <constraint firstItem="mB5-hm-xop" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yVL-am-GNJ"/>
                 <constraint firstItem="mB5-hm-xop" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="z9x-FH-ulQ"/>
             </constraints>

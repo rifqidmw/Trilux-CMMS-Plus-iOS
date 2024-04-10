@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetDetailView.swift
 //  cmmsv2
 //
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WorkSheetDetailView: BaseViewController {
+class WorkSheetMonitoringFunctionDetailView: BaseViewController {
     
     @IBOutlet weak var navigationView: CustomNavigationView!
     @IBOutlet weak var imageCardView: ImageCardSectionView!
@@ -18,7 +18,7 @@ class WorkSheetDetailView: BaseViewController {
     @IBOutlet weak var resumeWorkButton: GeneralButton!
     @IBOutlet weak var seeWorkButton: GeneralButton!
     
-    var presenter: WorkSheetDetailPresenter?
+    var presenter: WorkSheetMonitoringFunctionDetailPresenter?
     var header: WorkSheetCardEntity = dummyImageCardData
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class WorkSheetDetailView: BaseViewController {
     
 }
 
-extension WorkSheetDetailView {
+extension WorkSheetMonitoringFunctionDetailView {
     
     private func setupBody() {
         setupView()
@@ -65,7 +65,7 @@ extension WorkSheetDetailView {
     
 }
 
-extension WorkSheetDetailView: WorkSheetDetailDelegate {
+extension WorkSheetMonitoringFunctionDetailView: WorkSheetDetailDelegate {
     
     func didTapSeeAllEvidence() {
         guard let presenter,

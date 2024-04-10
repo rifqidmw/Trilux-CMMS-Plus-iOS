@@ -26,6 +26,12 @@ enum Endpoint {
     case uploadProfile(file: URL)
     case detailAssetEquipment(id: String)
     case getNotification(page: Int? = nil, limit: Int? = nil)
+    case getComplaintList(
+        page: Int? = nil,
+        limit: Int? = nil,
+        equipmentId: String? = nil,
+        status: String? = nil,
+        dateFilter: String? = nil)
 }
 
 // MARK: - PATH URL
@@ -66,6 +72,18 @@ extension Endpoint {
             return "equipments/view/\(id)"
         case .getNotification(let page, let limit):
             return generateNotificationListURL(page: page, limit: limit)
+        case .getComplaintList(
+            let page,
+            let limit,
+            let equipmentId,
+            let status,
+            let dateFilter):
+            return generateComplaintListURL(
+                page: page,
+                limit: limit,
+                equipmentId: equipmentId,
+                status: status,
+                dateFilter: dateFilter)
         }
     }
 }
@@ -216,5 +234,24 @@ extension Endpoint {
         
         return url.replacingOccurrences(of: " ", with: "%20")
     }
+    
+    private func generateComplaintListURL(
+        page: Int? = nil,
+        limit: Int? = nil,
+        equipmentId: String? = nil,
+        status: String? = nil,
+        dateFilter: String? = nil) -> String {
+            let queryString = [
+                page.map { "page=\($0)" },
+                limit.map { "limit=\($0)" },
+                equipmentId.map { "equipment_id=\($0)" },
+                status.map { "status=\($0)" },
+                dateFilter.map { "date_filter=\($0)" }
+            ].compactMap { $0 }.joined(separator: "&")
+            
+            let url = "complains/list" + (queryString.isEmpty ? "" : "?\(queryString)")
+            
+            return url.replacingOccurrences(of: " ", with: "%20")
+        }
     
 }

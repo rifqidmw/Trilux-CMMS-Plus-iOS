@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetCorrectiveEntity.swift
 //  cmmsv2
 //
@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct WorkSheetCorrectiveEntity {
+struct WorkSheetCorrectiveListEntity {
     
 }
