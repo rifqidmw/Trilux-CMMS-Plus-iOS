@@ -7,18 +7,18 @@
 
 import UIKit
 
-class WorkSheetDetailPresenter: BasePresenter {
+class WorkSheetMonitoringFunctionDetailPresenter: BasePresenter {
     
-    private let interactor: WorkSheetDetailInteractor
-    private let router = WorkSheetDetailRouter()
+    private let interactor: WorkSheetMonitoringFunctionDetailInteractor
+    private let router = WorkSheetMonitoringFunctionDetailRouter()
     
-    init(interactor: WorkSheetDetailInteractor) {
+    init(interactor: WorkSheetMonitoringFunctionDetailInteractor) {
         self.interactor = interactor
     }
     
 }
 
-extension WorkSheetDetailPresenter {
+extension WorkSheetMonitoringFunctionDetailPresenter {
     
     func navigateToFullScreenPicture(navigation: UINavigationController, titlePage: String, image: String) {
         router.goToFullScreenPicture(navigation: navigation, titlePage: titlePage, image: image)

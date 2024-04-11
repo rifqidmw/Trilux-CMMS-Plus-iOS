@@ -54,7 +54,7 @@ class WorkSheetItemTVC: UITableViewCell {
 
 extension WorkSheetItemTVC {
     
-    func setupCell(data: WorkSheetListEntity, type: WorkSheetCellType) {
+    func setupCell(data: WorkSheetMonitoringFunctionListEntity, type: WorkSheetCellType) {
         uniqueNumberLabel.text = data.uniqueNumber
         workSheetLabel.text = data.workName
         descriptionLabel.text = data.workDesc

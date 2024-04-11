@@ -7,15 +7,15 @@
 
 import UIKit
 
-class WorkSheetCorrectiveView: BaseViewController {
+class WorkSheetCorrectiveListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var searchButton: GeneralButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var actionBarView: ActionBarView!
     
-    var presenter: WorkSheetCorrectivePresenter?
-    var data: [WorkSheetListEntity] = workSheetData
+    var presenter: WorkSheetCorrectiveListPresenter?
+    var data: [WorkSheetMonitoringFunctionListEntity] = workSheetData
     
     override func didLoad() {
         super.didLoad()
@@ -24,7 +24,7 @@ class WorkSheetCorrectiveView: BaseViewController {
     
 }
 
-extension WorkSheetCorrectiveView {
+extension WorkSheetCorrectiveListView {
     
     private func setupBody() {
         setupView()
@@ -58,7 +58,7 @@ extension WorkSheetCorrectiveView {
     
 }
 
-extension WorkSheetCorrectiveView: UITableViewDataSource, UITableViewDelegate {
+extension WorkSheetCorrectiveListView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data.count

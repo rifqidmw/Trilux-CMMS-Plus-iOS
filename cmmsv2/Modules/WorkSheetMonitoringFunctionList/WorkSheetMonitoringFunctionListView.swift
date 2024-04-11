@@ -7,13 +7,13 @@
 
 import UIKit
 
-class WorkSheetListView: BaseViewController {
+class WorkSheetMonitoringFunctionListView: BaseViewController {
     
     @IBOutlet weak var navigationView: CustomNavigationView!
     @IBOutlet weak var tableView: UITableView!
     
-    var presenter: WorkSheetListPresenter?
-    var data: [WorkSheetListEntity] = workSheetData
+    var presenter: WorkSheetMonitoringFunctionListPresenter?
+    var data: [WorkSheetMonitoringFunctionListEntity] = workSheetData
     
     override func didLoad() {
         super.didLoad()
@@ -22,7 +22,7 @@ class WorkSheetListView: BaseViewController {
     
 }
 
-extension WorkSheetListView {
+extension WorkSheetMonitoringFunctionListView {
     
     private func setupBody() {
         setupView()
@@ -38,7 +38,7 @@ extension WorkSheetListView {
     }
     
     private func setupView() {
-        navigationView.configure(plainTitle: "Lembar Kerja", type: .plain)
+        navigationView.configure(plainTitle: "Lembar Kerja Pemantauan Fungsi", type: .plain)
     }
     
     private func setupAction() {
@@ -54,7 +54,7 @@ extension WorkSheetListView {
     
 }
 
-extension WorkSheetListView: UITableViewDataSource, UITableViewDelegate {
+extension WorkSheetMonitoringFunctionListView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data.count
@@ -81,7 +81,7 @@ extension WorkSheetListView: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-extension WorkSheetListView: WorkSheetListDelegate {
+extension WorkSheetMonitoringFunctionListView: WorkSheetListDelegate {
     
     func didTapDetailWorkSheet() {
         guard let presenter,

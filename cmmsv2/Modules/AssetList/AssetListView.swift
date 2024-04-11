@@ -26,6 +26,7 @@ class AssetListView: BaseViewController {
     }
     
     override func willAppear() {
+        super.willAppear()
         self.fetchInitData()
     }
     

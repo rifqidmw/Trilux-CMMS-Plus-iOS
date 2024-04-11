@@ -12,7 +12,7 @@ class WorkSheetOnsitePreventiveListView: BaseViewController {
     @IBOutlet weak var navigationView: CustomNavigationView!
     @IBOutlet weak var tableView: UITableView!
     
-    var data: [WorkSheetListEntity] = onsitePreventiveData
+    var data: [WorkSheetMonitoringFunctionListEntity] = onsitePreventiveData
     var presenter: WorkSheetOnsitePreventiveListPresenter?
     
     override func didLoad() {

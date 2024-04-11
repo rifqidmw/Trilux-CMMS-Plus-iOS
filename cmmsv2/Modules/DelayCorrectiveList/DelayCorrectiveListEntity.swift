@@ -8,7 +8,7 @@
 import Foundation
 
 struct DelayCorrectiveListEntity {
-    let id = UUID()
+    let id: Int
     let image: String
     let date: String
     let type: String
@@ -20,6 +20,7 @@ struct DelayCorrectiveListEntity {
 
 let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
     DelayCorrectiveListEntity(
+        id: 1,
         image: "unsplash_cEzMOp5FtV4",
         date: "23-Juni-2022",
         type: "Cendana",
@@ -28,6 +29,7 @@ let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
         technician: "Alex Bill",
         damage: "Alat tidak hidup sama sekali"),
     DelayCorrectiveListEntity(
+        id: 2,
         image: "unsplash_cEzMOp5FtV4",
         date: "26-Juni-2022",
         type: "Cendana",
@@ -36,6 +38,7 @@ let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
         technician: "Alex Bill",
         damage: "Putus"),
     DelayCorrectiveListEntity(
+        id: 3,
         image: "unsplash_gKUC4TMhOiY",
         date: "24-Juni-2022",
         type: "Inap",
@@ -44,6 +47,7 @@ let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
         technician: "Alex Bill",
         damage: "Mati total"),
     DelayCorrectiveListEntity(
+        id: 4,
         image: "unsplash_m_HRfLhgABo",
         date: "25-Juni-2022",
         type: "Paridani",
@@ -52,6 +56,7 @@ let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
         technician: "Maruf",
         damage: "Alat rusak total"),
     DelayCorrectiveListEntity(
+        id: 5,
         image: "unsplash_cEzMOp5FtV4",
         date: "23-Juni-2022",
         type: "Cendana",
@@ -60,6 +65,7 @@ let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
         technician: "Alex Bill",
         damage: "Alat tidak hidup sama sekali"),
     DelayCorrectiveListEntity(
+        id: 6,
         image: "unsplash_cEzMOp5FtV4",
         date: "26-Juni-2022",
         type: "Cendana",
@@ -68,6 +74,7 @@ let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
         technician: "Alex Bill",
         damage: "Putus"),
     DelayCorrectiveListEntity(
+        id: 7,
         image: "unsplash_gKUC4TMhOiY",
         date: "24-Juni-2022",
         type: "Inap",
@@ -76,6 +83,7 @@ let delayCorrectiveDataList: [DelayCorrectiveListEntity] = [
         technician: "Alex Bill",
         damage: "Mati total"),
     DelayCorrectiveListEntity(
+        id: 8,
         image: "unsplash_m_HRfLhgABo",
         date: "25-Juni-2022",
         type: "Paridani",

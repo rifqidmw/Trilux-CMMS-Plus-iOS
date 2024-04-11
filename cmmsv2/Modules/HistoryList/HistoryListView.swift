@@ -10,7 +10,7 @@ import UIKit
 class HistoryListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var actionBarView: ActionBarView!
     
     var presenter: HistoryListPresenter?
@@ -28,7 +28,7 @@ extension HistoryListView {
     private func setupBody() {
         setupView()
         setupAction()
-        setupCollectionView()
+        setupTableView()
     }
     
     private func setupView() {
@@ -47,31 +47,27 @@ extension HistoryListView {
             .store(in: &anyCancellable)
     }
     
-    private func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(HistoryCVC.nib, forCellWithReuseIdentifier: HistoryCVC.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 130)
-        collectionView.collectionViewLayout = layout
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(HistoryTVC.nib, forCellReuseIdentifier: HistoryTVC.identifier)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
+        
     }
     
 }
 
-extension HistoryListView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HistoryListView: UITableViewDataSource, UITableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCVC.identifier, for: indexPath) as? HistoryCVC
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTVC.identifier, for: indexPath) as? HistoryTVC
         else {
-            return UICollectionViewCell()
+            return UITableViewCell()
         }
         
         cell.setupCell(data: data[indexPath.row])

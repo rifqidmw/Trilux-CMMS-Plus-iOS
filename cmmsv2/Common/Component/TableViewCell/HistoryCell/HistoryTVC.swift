@@ -7,21 +7,21 @@
 
 import UIKit
 
-class HistoryCVC: UICollectionViewCell {
+class HistoryTVC: UITableViewCell {
     
-    static let identifier = String(describing: HistoryCVC.self)
+    static let identifier = String(describing: HistoryTVC.self)
     static let nib = {
         UINib(nibName: identifier, bundle: nil)
     }()
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var approvedView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var approvedView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,9 +32,14 @@ class HistoryCVC: UICollectionViewCell {
         self.statusView.makeCornerRadius(4)
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.selectionStyle = .none
+    }
+    
 }
 
-extension HistoryCVC {
+extension HistoryTVC {
     
     func setupCell(data: HistoryListEntity) {
         dateLabel.text = data.date
