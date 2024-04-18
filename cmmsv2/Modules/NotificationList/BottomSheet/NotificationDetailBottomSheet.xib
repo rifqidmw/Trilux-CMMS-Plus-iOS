@@ -56,7 +56,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJv-Ra-ilx">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                            <rect key="frame" x="0.0" y="30" width="393" height="729"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="k9a-wD-Pra">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="1228"/>
@@ -318,7 +318,7 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="kJv-Ra-ilx" secondAttribute="bottom" id="6jz-Hv-NUY"/>
                         <constraint firstAttribute="trailing" secondItem="kJv-Ra-ilx" secondAttribute="trailing" id="BGm-aK-umu"/>
-                        <constraint firstItem="kJv-Ra-ilx" firstAttribute="top" secondItem="1Es-R9-jjk" secondAttribute="top" id="bIr-te-gLa"/>
+                        <constraint firstItem="kJv-Ra-ilx" firstAttribute="top" secondItem="1Es-R9-jjk" secondAttribute="top" constant="30" id="bIr-te-gLa"/>
                         <constraint firstItem="kJv-Ra-ilx" firstAttribute="leading" secondItem="1Es-R9-jjk" secondAttribute="leading" id="m4L-lo-hkB"/>
                     </constraints>
                 </view>
