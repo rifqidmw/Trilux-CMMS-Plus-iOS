@@ -43,7 +43,7 @@ extension NotificationItemCVC {
          shortTitleLabel,
          titleLabel].forEach {
             $0.isSkeletonable = true
-            $0.showGradientSkeleton()
+            $0.showAnimatedGradientSkeleton()
         }
     }
     

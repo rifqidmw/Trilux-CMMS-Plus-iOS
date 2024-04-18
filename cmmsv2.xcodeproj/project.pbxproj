@@ -201,10 +201,6 @@
 		CE724A002B571702008147D4 /* WorkSheetItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7249FD2B571702008147D4 /* WorkSheetItemTVC.swift */; };
 		CE724A012B571702008147D4 /* WorkSheetItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7249FE2B571702008147D4 /* WorkSheetItemTVC.xib */; };
 		CE724A022B571702008147D4 /* WorkSheetItemTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7249FE2B571702008147D4 /* WorkSheetItemTVC.xib */; };
-		CE725CAA2BC6915A00E9BA12 /* CorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE725CA82BC6915A00E9BA12 /* CorrectiveCVC.swift */; };
-		CE725CAB2BC6915A00E9BA12 /* CorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE725CA82BC6915A00E9BA12 /* CorrectiveCVC.swift */; };
-		CE725CAC2BC6915A00E9BA12 /* CorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE725CA92BC6915A00E9BA12 /* CorrectiveCVC.xib */; };
-		CE725CAD2BC6915A00E9BA12 /* CorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE725CA92BC6915A00E9BA12 /* CorrectiveCVC.xib */; };
 		CE7372A62B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
 		CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
 		CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
@@ -523,6 +519,10 @@
 		CECD12202B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD121E2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift */; };
 		CECD12222B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECD12212B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib */; };
 		CECD12232B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECD12212B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib */; };
+		CEDCCE182BC9AF5E006F5F4F /* CorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCCE162BC9AF5E006F5F4F /* CorrectiveCVC.swift */; };
+		CEDCCE192BC9AF5E006F5F4F /* CorrectiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCCE162BC9AF5E006F5F4F /* CorrectiveCVC.swift */; };
+		CEDCCE1A2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDCCE172BC9AF5E006F5F4F /* CorrectiveCVC.xib */; };
+		CEDCCE1B2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDCCE172BC9AF5E006F5F4F /* CorrectiveCVC.xib */; };
 		CEE07C8D2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C872B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift */; };
 		CEE07C8E2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C872B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift */; };
 		CEE07C8F2B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C882B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift */; };
@@ -762,8 +762,6 @@
 		CE5442952B4727F50022047D /* GeneralTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTextField.swift; sourceTree = "<group>"; };
 		CE7249FD2B571702008147D4 /* WorkSheetItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetItemTVC.swift; sourceTree = "<group>"; };
 		CE7249FE2B571702008147D4 /* WorkSheetItemTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetItemTVC.xib; sourceTree = "<group>"; };
-		CE725CA82BC6915A00E9BA12 /* CorrectiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CorrectiveCVC.swift; path = ../../../../../../DigiroomOdysseus/Digiroom/Modules/Homescreen/Section/ServiceScheduleSection/ServiceScheduleMultipleCell/CorrectiveCVC.swift; sourceTree = "<group>"; };
-		CE725CA92BC6915A00E9BA12 /* CorrectiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CorrectiveCVC.xib; path = ../../../../../../DigiroomOdysseus/Digiroom/Modules/Homescreen/Section/ServiceScheduleSection/ServiceScheduleMultipleCell/CorrectiveCVC.xib; sourceTree = "<group>"; };
 		CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListPresenter.swift; sourceTree = "<group>"; };
@@ -926,6 +924,8 @@
 		CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
 		CECD121E2B74ABB400DEAFF4 /* PhysicalFunctionalMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalFunctionalMonitoringView.swift; sourceTree = "<group>"; };
 		CECD12212B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhysicalFunctionalMonitoringView.xib; sourceTree = "<group>"; };
+		CEDCCE162BC9AF5E006F5F4F /* CorrectiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectiveCVC.swift; sourceTree = "<group>"; };
+		CEDCCE172BC9AF5E006F5F4F /* CorrectiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectiveCVC.xib; sourceTree = "<group>"; };
 		CEE07C872B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListPresenter.swift; sourceTree = "<group>"; };
 		CEE07C882B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListRouter.swift; sourceTree = "<group>"; };
 		CEE07C892B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListInteractor.swift; sourceTree = "<group>"; };
@@ -1484,19 +1484,10 @@
 			path = ComplaintList;
 			sourceTree = "<group>";
 		};
-		CE90B1852B9A1CBD00515AD6 /* CorrectiveCell */ = {
-			isa = PBXGroup;
-			children = (
-				CE725CA82BC6915A00E9BA12 /* CorrectiveCVC.swift */,
-				CE725CA92BC6915A00E9BA12 /* CorrectiveCVC.xib */,
-			);
-			path = CorrectiveCell;
-			sourceTree = "<group>";
-		};
 		CE90B1862B9A1EB300515AD6 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				CE90B1852B9A1CBD00515AD6 /* CorrectiveCell */,
+				CEDCCE152BC9AF4F006F5F4F /* CorrectiveCell */,
 				CE2E3AFC2BA0ABB600094AD0 /* CalibrationCell */,
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
 				CEE07C992B9F538000EFBFB8 /* PreventiveMaintenanceCell */,
@@ -2028,6 +2019,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		CEDCCE152BC9AF4F006F5F4F /* CorrectiveCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEDCCE162BC9AF5E006F5F4F /* CorrectiveCVC.swift */,
+				CEDCCE172BC9AF5E006F5F4F /* CorrectiveCVC.xib */,
+			);
+			path = CorrectiveCell;
+			sourceTree = "<group>";
+		};
 		CEE07C862B9F405F00EFBFB8 /* PreventiveMaintenanceList */ = {
 			isa = PBXGroup;
 			children = (
@@ -2346,7 +2346,7 @@
 				CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BE2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
-				CE725CAC2BC6915A00E9BA12 /* CorrectiveCVC.xib in Resources */,
+				CEDCCE1A2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */,
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CEE79EEB2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */,
 				CE2F2CEB2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
@@ -2463,7 +2463,7 @@
 				CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CE0F20BF2B74F5F5008702E0 /* PreventiveMaintenanceView.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
-				CE725CAD2BC6915A00E9BA12 /* CorrectiveCVC.xib in Resources */,
+				CEDCCE1B2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */,
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CEE79EEC2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */,
 				CE2F2CEC2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
@@ -2664,7 +2664,7 @@
 				CEE79EC72B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */,
 				CEC1B0612BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CE0F20DE2B756063008702E0 /* ActionSectionView.swift in Sources */,
-				CE725CAA2BC6915A00E9BA12 /* CorrectiveCVC.swift in Sources */,
+				CEDCCE182BC9AF5E006F5F4F /* CorrectiveCVC.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				CE4012452B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
@@ -2885,7 +2885,7 @@
 				CEE79EC82B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailEntity.swift in Sources */,
 				CEC1B0622BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CE0F20DF2B756063008702E0 /* ActionSectionView.swift in Sources */,
-				CE725CAB2BC6915A00E9BA12 /* CorrectiveCVC.swift in Sources */,
+				CEDCCE192BC9AF5E006F5F4F /* CorrectiveCVC.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				CE4012462B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,

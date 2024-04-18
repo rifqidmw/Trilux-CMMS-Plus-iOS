@@ -11,6 +11,7 @@ protocol NotificationDetailBottomSheetDelegate: AnyObject {
     func didTapCompanionButton()
     func didTapDetailButton()
     func didTapDownloadPDFButton()
+    func didTapHeaderView()
 }
 
 class NotificationDetailBottomSheet: BaseNonNavigationController {
@@ -114,11 +115,26 @@ extension NotificationDetailBottomSheet {
             }
             .store(in: &anyCancellable)
         
+        headerSectionView.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                delegate.didTapHeaderView()
+            }
+            .store(in: &anyCancellable)
+        
         handleBarView.gesture()
             .sink { [weak self] _ in
                 guard let self else { return }
                 self.dismiss(animated: true)
-                print("CLICKED")
+            }
+            .store(in: &anyCancellable)
+        
+        bottomSheetView.handleBarArea.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.dismiss(animated: true)
             }
             .store(in: &anyCancellable)
     }
