@@ -11,11 +11,11 @@ class WorkSheetCorrectiveListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var searchButton: GeneralButton!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var actionBarView: ActionBarView!
     
     var presenter: WorkSheetCorrectiveListPresenter?
-    var data: [WorkSheetMonitoringFunctionListEntity] = workSheetData
+    var data: [WorkSheetListEntity] = workSheetData
     
     override func didLoad() {
         super.didLoad()
@@ -29,7 +29,7 @@ extension WorkSheetCorrectiveListView {
     private func setupBody() {
         setupView()
         setupAction()
-        setupTableView()
+        setupCollectionVew()
     }
     
     private func setupView() {
@@ -49,30 +49,37 @@ extension WorkSheetCorrectiveListView {
             .store(in: &anyCancellable)
     }
     
-    private func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(WorkSheetItemTVC.nib, forCellReuseIdentifier: WorkSheetItemTVC.identifier)
-        tableView.separatorStyle = .none
+    private func setupCollectionVew() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(WorkSheetCVC.nib, forCellWithReuseIdentifier: WorkSheetCVC.identifier)
     }
     
 }
 
-extension WorkSheetCorrectiveListView: UITableViewDataSource, UITableViewDelegate {
+extension WorkSheetCorrectiveListView: UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WorkSheetItemTVC.identifier, for: indexPath) as? WorkSheetItemTVC
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSheetCVC.identifier, for: indexPath) as? WorkSheetCVC
         else {
-            return UITableViewCell()
+            return UICollectionViewCell()
         }
         
         cell.setupCell(data: data[indexPath.row], type: .normal)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: CGSize.widthDevice, height: self.data[indexPath.row].status == .done ? 110 : 90)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
 }

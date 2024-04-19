@@ -52,16 +52,16 @@ enum PreparationStatus: String, Codable {
 }
 
 enum WorkSheetStatus: String, Codable {
-    case done = "Selesai, Bisa digunakan kembali"
+    case done = "Selesai, Bisa digunakan Kembali"
     case open = "Open"
-    case ongoing = "Dalam proses pengerjaan"
+    case ongoing = "Dalam Proses Pengerjaan"
     case none = ""
     
     init?(rawValue: String) {
         switch rawValue {
-        case "Selesai, Bisa digunakan kembali": self = .done
+        case "Selesai, Bisa digunakan Kembali": self = .done
         case "Open": self = .open
-        case "Dalam proses pengerjaan": self = .ongoing
+        case "Dalam Proses Pengerjaan": self = .ongoing
         case "": self = .none
         default: self = .none
         }

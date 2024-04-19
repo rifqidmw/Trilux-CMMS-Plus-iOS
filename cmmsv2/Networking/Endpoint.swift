@@ -32,6 +32,13 @@ enum Endpoint {
         equipmentId: String? = nil,
         status: String? = nil,
         dateFilter: String? = nil)
+    case workSheetMonitoringFunction(
+        limit: Int? = nil,
+        page: Int? = nil,
+        tipe: Int? = nil,
+        keyboard: String? = nil,
+        status: String? = nil
+    )
 }
 
 // MARK: - PATH URL
@@ -84,6 +91,13 @@ extension Endpoint {
                 equipmentId: equipmentId,
                 status: status,
                 dateFilter: dateFilter)
+        case .workSheetMonitoringFunction(
+            limit: let limit,
+            page: let page,
+            tipe: let tipe,
+            keyboard: let keyboard,
+            status: let status):
+            return generateWorkSheetMonitoringFunctionURL(limit: limit, page: page, tipe: tipe, keyboard: keyboard, status: status)
         }
     }
 }
@@ -253,5 +267,25 @@ extension Endpoint {
             
             return url.replacingOccurrences(of: " ", with: "%20")
         }
+    
+    private func generateWorkSheetMonitoringFunctionURL(
+        limit: Int? = nil,
+        page: Int? = nil,
+        tipe: Int? = nil,
+        keyboard: String? = nil,
+        status: String? = nil
+    ) -> String {
+        let queryString = [
+            limit.map { "limit=\($0)" },
+            page.map { "page=\($0)" },
+            tipe.map { "tipe=\($0)" },
+            keyboard.map { "keyboard\($0)" },
+            status.map { "status=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "lk/index" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
     
 }

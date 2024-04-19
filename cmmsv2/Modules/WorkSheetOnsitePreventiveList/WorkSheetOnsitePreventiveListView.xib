@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSheetOnsitePreventiveListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="o3D-bg-YZs" id="9WK-9e-4yB"/>
                 <outlet property="navigationView" destination="2MW-O6-EZx" id="KhL-Uj-mtq"/>
-                <outlet property="tableView" destination="vvc-7J-i30" id="hM8-oJ-r9p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,21 +28,27 @@
                         <constraint firstAttribute="height" constant="56" id="C2q-S5-EGW"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-7J-i30">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="o3D-bg-YZs">
                     <rect key="frame" x="16" y="115" width="361" height="703"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yOH-gp-Ryz">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2MW-O6-EZx" secondAttribute="trailing" id="31C-qW-F04"/>
-                <constraint firstItem="vvc-7J-i30" firstAttribute="top" secondItem="2MW-O6-EZx" secondAttribute="bottom" id="6jA-hE-IhC"/>
                 <constraint firstItem="2MW-O6-EZx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8rp-li-K8L"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vvc-7J-i30" secondAttribute="bottom" id="MEq-nD-ruP"/>
-                <constraint firstItem="vvc-7J-i30" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="RI7-uy-PBK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vvc-7J-i30" secondAttribute="trailing" constant="16" id="dYe-zK-g7O"/>
+                <constraint firstItem="o3D-bg-YZs" firstAttribute="top" secondItem="2MW-O6-EZx" secondAttribute="bottom" id="Eqx-ER-uAw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="o3D-bg-YZs" secondAttribute="bottom" id="P8C-Ep-adC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o3D-bg-YZs" secondAttribute="trailing" constant="16" id="UCr-FK-dsT"/>
                 <constraint firstItem="2MW-O6-EZx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nwR-Qy-WLU"/>
+                <constraint firstItem="o3D-bg-YZs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="tzb-Ej-FQo"/>
             </constraints>
             <point key="canvasLocation" x="54" y="-1"/>
         </view>

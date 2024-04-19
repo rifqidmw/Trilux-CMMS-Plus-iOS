@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="2UA-Uq-gig" id="UMx-JT-Vbs"/>
+                <outlet property="searchTextField" destination="p2K-he-Zei" id="0pl-az-fK0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="C9F-hw-iSj">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UA-Uq-gig">
+                    <rect key="frame" x="2" y="2" width="389" height="44"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="r3v-fW-PbS">
+                            <rect key="frame" x="16" y="10.999999999999996" width="24" height="22.333333333333332"/>
+                            <color key="tintColor" name="customPrimaryColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="UbM-7a-rMP"/>
+                                <constraint firstAttribute="height" constant="24" id="sjr-RB-uDR"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cari..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p2K-he-Zei">
+                            <rect key="frame" x="48" y="2" width="325" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" name="customDarkGrayColor"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="p2K-he-Zei" secondAttribute="trailing" constant="16" id="0jN-tG-CHR"/>
+                        <constraint firstItem="p2K-he-Zei" firstAttribute="leading" secondItem="r3v-fW-PbS" secondAttribute="trailing" constant="8" id="ILm-h6-fNe"/>
+                        <constraint firstAttribute="bottom" secondItem="p2K-he-Zei" secondAttribute="bottom" constant="2" id="Z4V-qF-b4c"/>
+                        <constraint firstItem="r3v-fW-PbS" firstAttribute="centerY" secondItem="2UA-Uq-gig" secondAttribute="centerY" id="ehN-X0-scN"/>
+                        <constraint firstItem="p2K-he-Zei" firstAttribute="top" secondItem="2UA-Uq-gig" secondAttribute="top" constant="2" id="rdL-hr-7bS"/>
+                        <constraint firstItem="r3v-fW-PbS" firstAttribute="leading" secondItem="2UA-Uq-gig" secondAttribute="leading" constant="16" id="rqm-IS-yB5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="2UA-Uq-gig" firstAttribute="top" secondItem="C9F-hw-iSj" secondAttribute="top" constant="2" id="EG2-wF-Dsd"/>
+                <constraint firstItem="2UA-Uq-gig" firstAttribute="leading" secondItem="C9F-hw-iSj" secondAttribute="leading" constant="2" id="Tqm-SS-bka"/>
+                <constraint firstAttribute="trailing" secondItem="2UA-Uq-gig" secondAttribute="trailing" constant="2" id="fFi-Dq-hsH"/>
+                <constraint firstAttribute="bottom" secondItem="2UA-Uq-gig" secondAttribute="bottom" constant="2" id="lPW-m3-ZeB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="278.62595419847327" y="-341.54929577464793"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customPrimaryColor">
+            <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
