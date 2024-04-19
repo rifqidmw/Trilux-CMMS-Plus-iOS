@@ -26,7 +26,7 @@ class ComplaintListPresenter: BasePresenter {
     var status: String = ""
     var dateFilter: String = ""
     var page: Int = 1
-    var limit: Int = 10
+    var limit: Int = 20
     var isCanLoad = true
     var isFetchingMore = false
     

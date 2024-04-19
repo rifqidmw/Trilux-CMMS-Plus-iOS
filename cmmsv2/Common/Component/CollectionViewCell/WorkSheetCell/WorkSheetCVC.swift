@@ -1,11 +1,12 @@
 //
-//  WorkSheetItemTVC.swift
+//  WorkSheetItemCVC.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 17/01/24.
+//  Created by PRO M1 2020 8/256 on 19/04/24.
 //
 
 import UIKit
+import SkeletonView
 
 enum WorkSheetCellType {
     case normal
@@ -13,15 +14,16 @@ enum WorkSheetCellType {
     case corrective
 }
 
-class WorkSheetItemTVC: UITableViewCell {
+class WorkSheetCVC: UICollectionViewCell {
     
-    static let identifier = String(describing: WorkSheetItemTVC.self)
+    static let identifier = String(describing: WorkSheetCVC.self)
     static let nib = {
         UINib(nibName: identifier, bundle: nil)
     }()
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var uniqueNumberLabel: UILabel!
+    @IBOutlet weak var containerSerialApprovedStackView: UIStackView!
     @IBOutlet weak var approvedView: UIView!
     @IBOutlet weak var badgeView: UIStackView!
     @IBOutlet weak var categoryView: UIView!
@@ -37,34 +39,31 @@ class WorkSheetItemTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
         self.approvedView.makeCornerRadius(4)
         self.categoryView.makeCornerRadius(4)
         self.statusView.makeCornerRadius(4)
         self.markView.makeCornerRadius(4, .rightCurve)
         self.containerView.makeCornerRadius(8)
         self.containerView.addShadow(8, opacity: 0.12)
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        self.showSkeletonAnimation()
     }
     
 }
 
-extension WorkSheetItemTVC {
+extension WorkSheetCVC {
     
-    func setupCell(data: WorkSheetMonitoringFunctionListEntity, type: WorkSheetCellType) {
+    func setupCell(data: WorkSheetListEntity, type: WorkSheetCellType) {
+        hideSkeletonAnimation()
         uniqueNumberLabel.text = data.uniqueNumber
         workSheetLabel.text = data.workName
-        descriptionLabel.text = data.workDesc
-        configureStatus(status: data.status)
-        configureCategory(category: data.category)
-        approvedView.isHidden = !data.isApproved
-        markView.isHidden = !data.isApproved
+        descriptionLabel.text = "\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
+        configureStatus(status: data.status ?? .none)
+        configureCategory(category: data.category ?? .none)
+        markView .isHidden = !(data.isApproved ?? false)
         
         switch type {
-        case .normal: break
+        case .normal:
+            categoryView.isHidden = true
         case .preventive:
             badgeView.isHidden = true
             markView.isHidden = true
@@ -100,15 +99,18 @@ extension WorkSheetItemTVC {
         case .done:
             statusView.backgroundColor = UIColor.customLightGreenColor
             statusLabel.textColor = UIColor.customIndicatorColor8
-            statusViewWidthConstraint.constant = 120
+            statusViewWidthConstraint.constant = 130
+            approvedView.isHidden = false
         case .open:
             statusView.backgroundColor = UIColor.customSecondaryColor
             statusLabel.textColor = UIColor.customPrimaryColor
             statusViewWidthConstraint.constant = 34
+            approvedView.isHidden = true
         case .ongoing:
             statusView.backgroundColor = UIColor.customIndicatorColor2
             statusLabel.textColor = UIColor.customIndicatorColor11
             statusViewWidthConstraint.constant = 110
+            approvedView.isHidden = true
         default: break
         }
     }
@@ -120,4 +122,18 @@ extension WorkSheetItemTVC {
         ])
     }
     
+    private func showSkeletonAnimation() {
+        [workSheetLabel, descriptionLabel, containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func hideSkeletonAnimation() {
+        [workSheetLabel, descriptionLabel, containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
+            $0.hideSkeleton()
+        }
+    }
+    
 }
+

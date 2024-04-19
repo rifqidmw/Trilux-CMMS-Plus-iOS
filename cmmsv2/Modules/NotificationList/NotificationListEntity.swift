@@ -40,7 +40,7 @@ struct NotificationList: Codable {
     let link: String?
     let time: String?
     let item_id: String?
-    let equipment_id: Int?
+    let equipment_id: String? = nil
     let content: String?
     let is_read: String?
     let id_notif_recipient: String?

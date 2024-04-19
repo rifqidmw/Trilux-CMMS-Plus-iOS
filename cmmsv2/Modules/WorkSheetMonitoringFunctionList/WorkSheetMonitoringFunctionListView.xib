@@ -11,8 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSheetMonitoringFunctionListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="qmA-eO-bEW" id="T4Z-ZH-yYn"/>
                 <outlet property="navigationView" destination="0XT-ev-wWa" id="eOa-Mp-TAc"/>
-                <outlet property="tableView" destination="evG-ZL-ehI" id="cMH-2N-Nee"/>
+                <outlet property="searchTextField" destination="xNt-IN-1uB" id="MyB-Fz-T3d"/>
+                <outlet property="spinner" destination="dTg-4e-okT" id="aOG-sF-HOS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,24 +30,48 @@
                         <constraint firstAttribute="height" constant="56" id="Ihg-5b-SPv"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="evG-ZL-ehI">
-                    <rect key="frame" x="16" y="115" width="361" height="703"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-IN-1uB" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="131" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="cxI-MX-p0T"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qmA-eO-bEW">
+                    <rect key="frame" x="16" y="195" width="361" height="623"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PMK-ek-niA">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-4e-okT">
+                    <rect key="frame" x="176.66666666666666" y="778" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ieq-Og-TFH"/>
+                        <constraint firstAttribute="width" constant="40" id="xvs-Xa-iIh"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="0XT-ev-wWa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="12Y-TC-VFi"/>
-                <constraint firstItem="evG-ZL-ehI" firstAttribute="top" secondItem="0XT-ev-wWa" secondAttribute="bottom" id="1iJ-Bz-1iw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="evG-ZL-ehI" secondAttribute="trailing" constant="16" id="3Yo-BM-61b"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="evG-ZL-ehI" secondAttribute="bottom" id="fUc-ki-VLE"/>
+                <constraint firstItem="xNt-IN-1uB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3dW-I6-q7s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dTg-4e-okT" secondAttribute="bottom" id="5lG-S2-l7l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qmA-eO-bEW" secondAttribute="trailing" constant="16" id="EWz-tr-Yqa"/>
+                <constraint firstItem="qmA-eO-bEW" firstAttribute="top" secondItem="xNt-IN-1uB" secondAttribute="bottom" constant="16" id="MTu-QX-MmQ"/>
+                <constraint firstItem="dTg-4e-okT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="R7n-PG-cgS"/>
+                <constraint firstItem="qmA-eO-bEW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="RTq-1h-Drz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qmA-eO-bEW" secondAttribute="bottom" id="Z2Q-6B-HRn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0XT-ev-wWa" secondAttribute="trailing" id="h8r-0d-92O"/>
                 <constraint firstItem="0XT-ev-wWa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hJk-6r-Nz7"/>
-                <constraint firstItem="evG-ZL-ehI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yaj-rT-7Oe"/>
+                <constraint firstItem="xNt-IN-1uB" firstAttribute="top" secondItem="0XT-ev-wWa" secondAttribute="bottom" constant="16" id="iN0-57-5b2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xNt-IN-1uB" secondAttribute="trailing" constant="16" id="szD-Ec-PiU"/>
             </constraints>
-            <point key="canvasLocation" x="82" y="-1"/>
+            <point key="canvasLocation" x="81.679389312977094" y="-1.4084507042253522"/>
         </view>
     </objects>
     <resources>
