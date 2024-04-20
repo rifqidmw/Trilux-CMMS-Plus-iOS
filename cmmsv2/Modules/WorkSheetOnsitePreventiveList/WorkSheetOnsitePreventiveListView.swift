@@ -65,7 +65,7 @@ extension WorkSheetOnsitePreventiveListView: UICollectionViewDataSource, UIColle
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row], type: .normal)
+        cell.setupCell(data: data[indexPath.row], type: .monitoring)
         
         return cell
     }

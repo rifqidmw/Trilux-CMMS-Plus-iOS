@@ -76,10 +76,6 @@ extension WorkSheetMonitoringFunctionListView {
     
     private func setupView() {
         navigationView.configure(plainTitle: "Lembar Kerja Pemantauan Fungsi", type: .plain)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.collectionView.showAnimatedGradientSkeleton()
-        }
     }
     
     private func setupAction() {
@@ -120,7 +116,7 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row], type: .normal)
+        cell.setupCell(data: data[indexPath.row], type: .monitoring)
         
         return cell
     }
@@ -151,14 +147,7 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard indexPath.row < data.count else {
-            return CGSize(width: collectionView.frame.width, height: 90)
-        }
-        
-        let status = data[indexPath.row].status
-        let height: CGFloat = status == .done ? 120 : 110
-        
-        return CGSize(width: collectionView.frame.width, height: height)
+        return CGSize(width: collectionView.frame.width, height: 130)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

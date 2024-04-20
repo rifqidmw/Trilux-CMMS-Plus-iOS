@@ -12,13 +12,13 @@ class WorkSheetMonitoringFunctionListInteractor: BaseInteractor {
     func getWorkSheetMonitoringFunctionList(limit: Int? = nil,
                                             page: Int? = nil,
                                             tipe: Int? = nil,
-                                            keyboard: String? = nil,
+                                            keyword: String? = nil,
                                             status: String? = nil) -> AnyPublisher<MaintenanceDataLK, Error> {
         return api.requestApiPublisher(.workSheetMonitoringFunction(
             limit: limit,
             page: page,
             tipe: tipe,
-            keyboard: keyboard,
+            keyword: keyword,
             status: status))
     }
     

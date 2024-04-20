@@ -9,7 +9,7 @@ import UIKit
 import SkeletonView
 
 enum WorkSheetCellType {
-    case normal
+    case monitoring
     case preventive
     case corrective
 }
@@ -23,15 +23,17 @@ class WorkSheetCVC: UICollectionViewCell {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var uniqueNumberLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var containerSerialApprovedStackView: UIStackView!
-    @IBOutlet weak var approvedView: UIView!
+    @IBOutlet weak var firstBadgeView: UIView!
+    @IBOutlet weak var firstBadgeLabel: UILabel!
     @IBOutlet weak var badgeView: UIStackView!
-    @IBOutlet weak var categoryView: UIView!
-    @IBOutlet weak var categoryIconImageView: UIImageView!
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var statusView: UIView!
-    @IBOutlet weak var statusViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var secondBadgeView: UIView!
+    @IBOutlet weak var secondBadgeIconImageView: UIImageView!
+    @IBOutlet weak var secondBadgeTitleLabel: UILabel!
+    @IBOutlet weak var thirdBadgeView: UIView!
+    @IBOutlet weak var thirdBadgeTitleLabel: UILabel!
+    @IBOutlet weak var thirdBadgeViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerDescriptionStackView: UIStackView!
     @IBOutlet weak var workSheetLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -39,9 +41,9 @@ class WorkSheetCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.approvedView.makeCornerRadius(4)
-        self.categoryView.makeCornerRadius(4)
-        self.statusView.makeCornerRadius(4)
+        self.firstBadgeView.makeCornerRadius(4)
+        self.secondBadgeView.makeCornerRadius(4)
+        self.thirdBadgeView.makeCornerRadius(4)
         self.markView.makeCornerRadius(4, .rightCurve)
         self.containerView.makeCornerRadius(8)
         self.containerView.addShadow(8, opacity: 0.12)
@@ -56,61 +58,86 @@ extension WorkSheetCVC {
         hideSkeletonAnimation()
         uniqueNumberLabel.text = data.uniqueNumber
         workSheetLabel.text = data.workName
-        descriptionLabel.text = "\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
         configureStatus(status: data.status ?? .none)
         configureCategory(category: data.category ?? .none)
-        markView .isHidden = !(data.isApproved ?? false)
+        dateLabel.text = data.dateTime
         
         switch type {
-        case .normal:
-            categoryView.isHidden = true
+        case .monitoring:
+            secondBadgeView.isHidden = true
+            markView.isHidden = true
+            descriptionLabel.text = "\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
+            descriptionLabel.isHidden = false
+            firstBadgeView.isHidden = data.status == .done ? false : true
         case .preventive:
             badgeView.isHidden = true
             markView.isHidden = true
             setupPreventiveConstraint()
-        case .corrective: break
+        case .corrective:
+            dateLabel.isHidden = false
+            descriptionLabel.text = data.room
+            descriptionLabel.isHidden = false
+            secondBadgeView.isHidden = data.category == WorkSheetCategory.none ? true : false
+            firstBadgeLabel.text = "Lembar Kerja Disetujui"
         }
     }
     
     private func configureCategory(category: WorkSheetCategory) {
-        categoryLabel.text = category.getStringValue()
+        secondBadgeTitleLabel.text = category.getStringValue()
         
         switch category {
         case .calibration:
-            categoryView.backgroundColor = UIColor.customSecondaryColor
-            categoryIconImageView.image = UIImage(named: "ic_wifi")
-            categoryLabel.textColor = UIColor.customPrimaryColor
+            secondBadgeView.backgroundColor = UIColor.customSecondaryColor
+            secondBadgeIconImageView.image = UIImage(named: "ic_wifi")
+            secondBadgeTitleLabel.textColor = UIColor.customPrimaryColor
         case .corrective:
-            categoryView.backgroundColor = UIColor.customIndicatorColor3
-            categoryIconImageView.image = UIImage(named: "ic_screwdriver")
-            categoryLabel.textColor = UIColor.customIndicatorColor4
+            secondBadgeView.backgroundColor = UIColor.customIndicatorColor3
+            secondBadgeIconImageView.image = UIImage(named: "ic_screwdriver")
+            secondBadgeTitleLabel.textColor = UIColor.customIndicatorColor4
         case .preventive:
-            categoryView.backgroundColor = UIColor.customIndicatorColor2
-            categoryIconImageView.image = UIImage(named: "ic_clock")
-            categoryLabel.textColor = UIColor.customIndicatorColor11
+            secondBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            secondBadgeIconImageView.image = UIImage(named: "ic_clock")
+            secondBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
         default: break
         }
     }
     
     private func configureStatus(status: WorkSheetStatus) {
-        statusLabel.text = status.getStringValue()
+        thirdBadgeTitleLabel.text = status.getStringValue()
         
         switch status {
         case .done:
-            statusView.backgroundColor = UIColor.customLightGreenColor
-            statusLabel.textColor = UIColor.customIndicatorColor8
-            statusViewWidthConstraint.constant = 130
-            approvedView.isHidden = false
+            thirdBadgeView.backgroundColor = UIColor.customLightGreenColor
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor8
+            thirdBadgeViewWidthConstraint.constant = 160
         case .open:
-            statusView.backgroundColor = UIColor.customSecondaryColor
-            statusLabel.textColor = UIColor.customPrimaryColor
-            statusViewWidthConstraint.constant = 34
-            approvedView.isHidden = true
+            thirdBadgeView.backgroundColor = UIColor.customSecondaryColor
+            thirdBadgeTitleLabel.textColor = UIColor.customPrimaryColor
+            thirdBadgeViewWidthConstraint.constant = 46
         case .ongoing:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-            statusViewWidthConstraint.constant = 110
-            approvedView.isHidden = true
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
+            thirdBadgeViewWidthConstraint.constant = 130
+        case .hold:
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor3
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor4
+            thirdBadgeViewWidthConstraint.constant = 100
+        case .close:
+            thirdBadgeView.backgroundColor = UIColor.customLightGreenColor
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor8
+            thirdBadgeViewWidthConstraint.constant = 46
+        case .removed:
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor3
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor4
+            thirdBadgeViewWidthConstraint.constant = 220
+        case .progressDelay:
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
+            thirdBadgeViewWidthConstraint.constant = 100
+        case .progress:
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
+            thirdBadgeViewWidthConstraint.constant = 80
         default: break
         }
     }
@@ -123,14 +150,14 @@ extension WorkSheetCVC {
     }
     
     private func showSkeletonAnimation() {
-        [workSheetLabel, descriptionLabel, containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
+        [containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
         }
     }
     
     private func hideSkeletonAnimation() {
-        [workSheetLabel, descriptionLabel, containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
+        [containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
             $0.hideSkeleton()
         }
     }
