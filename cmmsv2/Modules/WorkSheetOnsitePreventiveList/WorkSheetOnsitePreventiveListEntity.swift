@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetOnsitePreventiveListEntity.swift
 //  cmmsv2
 //
@@ -26,7 +26,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-04-04 12:13:14",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -37,7 +37,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-04-04 12:13:14",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -48,7 +48,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-04-04 12:13:14",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -59,7 +59,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-04-04 12:13:14",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -70,7 +70,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-04-04 12:13:14",
         category: .calibration,
         status: .done)
 ]

@@ -55,6 +55,11 @@ enum WorkSheetStatus: String, Codable {
     case done = "Selesai, Bisa digunakan Kembali"
     case open = "Open"
     case ongoing = "Dalam Proses Pengerjaan"
+    case hold = "Tunda Perbaikan"
+    case close = "Closed"
+    case removed = "Tidak Bisa diperbaiki, Usulkan Penghapusan"
+    case progressDelay = "Progress(Delay)"
+    case progress = "Progress"
     case none = ""
     
     init?(rawValue: String) {
@@ -62,6 +67,11 @@ enum WorkSheetStatus: String, Codable {
         case "Selesai, Bisa digunakan Kembali": self = .done
         case "Open": self = .open
         case "Dalam Proses Pengerjaan": self = .ongoing
+        case "Tunda Perbaikan": self = .hold
+        case "Closed": self = .close
+        case "Tidak Bisa diperbaiki, Usulkan Penghapusan": self = .removed
+        case "Progress(Delay)": self = .progressDelay
+        case "Progress": self = .progress
         case "": self = .none
         default: self = .none
         }

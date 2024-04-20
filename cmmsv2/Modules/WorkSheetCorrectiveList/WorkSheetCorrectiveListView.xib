@@ -14,7 +14,8 @@
                 <outlet property="actionBarView" destination="UUn-2t-0S8" id="oId-gf-1aK"/>
                 <outlet property="collectionView" destination="sPR-T2-TOU" id="B7G-df-W4H"/>
                 <outlet property="customNavigationView" destination="jgX-ak-vsK" id="xCV-Lw-Quo"/>
-                <outlet property="searchButton" destination="JnE-Ta-aV5" id="db9-dF-jTF"/>
+                <outlet property="searchTextField" destination="BN9-UC-zg2" id="QpR-yB-yTv"/>
+                <outlet property="spinner" destination="Pm2-cG-pfC" id="Rwp-Uf-ycf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,11 +31,11 @@
                         <constraint firstAttribute="height" constant="56" id="9aq-WE-wHF"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-Ta-aV5" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BN9-UC-zg2" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="16" y="131" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="OCr-60-OEe"/>
+                        <constraint firstAttribute="height" constant="48" id="nwJ-zR-cXk"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sPR-T2-TOU">
@@ -47,6 +48,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Pm2-cG-pfC">
+                    <rect key="frame" x="176.66666666666666" y="722" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="HHv-dt-9pd"/>
+                        <constraint firstAttribute="height" constant="40" id="kgV-BZ-c9S"/>
+                    </constraints>
+                </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUn-2t-0S8" customClass="ActionBarView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="762" width="393" height="56"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,15 +72,17 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jgX-ak-vsK" secondAttribute="trailing" id="Dyt-WS-vRM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UUn-2t-0S8" secondAttribute="bottom" id="JGf-ZZ-FTO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UUn-2t-0S8" secondAttribute="trailing" id="LRL-sd-fL8"/>
-                <constraint firstItem="JnE-Ta-aV5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="PTd-WX-jBV"/>
+                <constraint firstItem="BN9-UC-zg2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="RSq-YT-naQ"/>
                 <constraint firstItem="sPR-T2-TOU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TxN-yd-gMl"/>
+                <constraint firstItem="sPR-T2-TOU" firstAttribute="top" secondItem="BN9-UC-zg2" secondAttribute="bottom" constant="16" id="YDK-qd-9fD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sPR-T2-TOU" secondAttribute="trailing" constant="16" id="ago-Nd-hBB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JnE-Ta-aV5" secondAttribute="trailing" constant="16" id="d3P-RT-cZ7"/>
                 <constraint firstItem="UUn-2t-0S8" firstAttribute="top" secondItem="sPR-T2-TOU" secondAttribute="bottom" id="doK-D5-6RO"/>
-                <constraint firstItem="JnE-Ta-aV5" firstAttribute="top" secondItem="jgX-ak-vsK" secondAttribute="bottom" constant="16" id="hdg-sK-3Wx"/>
-                <constraint firstItem="sPR-T2-TOU" firstAttribute="top" secondItem="JnE-Ta-aV5" secondAttribute="bottom" constant="16" id="sFT-Pz-4Yj"/>
+                <constraint firstItem="BN9-UC-zg2" firstAttribute="top" secondItem="jgX-ak-vsK" secondAttribute="bottom" constant="16" id="hBf-Vv-izR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BN9-UC-zg2" secondAttribute="trailing" constant="16" id="j5b-2r-4TJ"/>
+                <constraint firstItem="Pm2-cG-pfC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l7z-Wq-Br7"/>
+                <constraint firstItem="UUn-2t-0S8" firstAttribute="top" secondItem="Pm2-cG-pfC" secondAttribute="bottom" id="uyd-GO-02u"/>
             </constraints>
-            <point key="canvasLocation" x="10" y="0.0"/>
+            <point key="canvasLocation" x="9.9236641221374047" y="0.0"/>
         </view>
     </objects>
     <resources>

@@ -36,8 +36,17 @@ enum Endpoint {
         limit: Int? = nil,
         page: Int? = nil,
         tipe: Int? = nil,
-        keyboard: String? = nil,
+        keyword: String? = nil,
         status: String? = nil
+    )
+    case workSheetCorrective(
+        woType: Int? = nil,
+        woStatus: String? = nil,
+        limit: Int? = nil,
+        sort: String? = nil,
+        hasObstacle: Int? = nil,
+        keyword: String? = nil,
+        page: Int? = nil
     )
 }
 
@@ -95,9 +104,18 @@ extension Endpoint {
             limit: let limit,
             page: let page,
             tipe: let tipe,
-            keyboard: let keyboard,
+            keyword: let keyboard,
             status: let status):
             return generateWorkSheetMonitoringFunctionURL(limit: limit, page: page, tipe: tipe, keyboard: keyboard, status: status)
+        case .workSheetCorrective(
+            woType: let woType,
+            woStatus: let woStatus,
+            limit: let limit,
+            sort: let sort,
+            hasObstacle: let hasObstacle,
+            keyword: let keyword,
+            page: let page):
+            return generateWorkSheetCorrectiveURL(woType: woType, woStatus: woStatus, limit: limit, sort: sort, hasObstacle: hasObstacle, keyword: keyword, page: page)
         }
     }
 }
@@ -284,6 +302,30 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/index" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateWorkSheetCorrectiveURL(
+        woType: Int? = nil,
+        woStatus: String? = nil,
+        limit: Int? = nil,
+        sort: String? = nil,
+        hasObstacle: Int? = nil,
+        keyword: String? = nil,
+        page: Int? = nil
+    ) -> String {
+        let queryString = [
+            woType.map { "wo_type=\($0)" },
+            woStatus.map { "wo_status=\($0)" },
+            limit.map { "limit=\($0)" },
+            sort.map { "sort\($0)" },
+            hasObstacle.map { "has_obstacle=\($0)" },
+            keyword.map { "keyword=\($0)" },
+            page.map { "page=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "lk/list" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }

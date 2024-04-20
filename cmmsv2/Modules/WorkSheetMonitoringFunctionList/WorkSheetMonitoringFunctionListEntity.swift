@@ -149,22 +149,9 @@ struct WorkSheetListEntity: Codable {
     let serial: String?
     let installation: String?
     let room: String?
-    var isApproved: Bool?
+    let dateTime: String?
     let category: WorkSheetCategory?
     let status: WorkSheetStatus?
-    
-    enum CodingKeys: CodingKey {
-        case id
-        case uniqueNumber
-        case workName
-        case workDesc
-        case serial
-        case installation
-        case room
-        case isApproved
-        case category
-        case status
-    }
 }
 
 // MARK: - DUMMY DATA
@@ -177,7 +164,7 @@ let workSheetData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-02-06 12:13:06",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -188,7 +175,7 @@ let workSheetData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: true,
+        dateTime: "2024-02-06 12:13:06",
         category: .preventive,
         status: .open),
     WorkSheetListEntity(
@@ -199,7 +186,7 @@ let workSheetData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: true,
+        dateTime: "2024-02-06 12:13:06",
         category: .corrective,
         status: .done),
     WorkSheetListEntity(
@@ -210,7 +197,7 @@ let workSheetData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-02-06 12:13:06",
         category: .preventive,
         status: .open),
     WorkSheetListEntity(
@@ -221,7 +208,7 @@ let workSheetData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-02-06 12:13:06",
         category: .corrective,
         status: .ongoing),
     WorkSheetListEntity(
@@ -232,7 +219,7 @@ let workSheetData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: false,
+        dateTime: "2024-02-06 12:13:06",
         category: .corrective,
         status: .open),
     WorkSheetListEntity(
@@ -243,7 +230,7 @@ let workSheetData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        isApproved: true,
+        dateTime: "2024-02-06 12:13:06",
         category: .calibration,
         status: .ongoing)
 ]

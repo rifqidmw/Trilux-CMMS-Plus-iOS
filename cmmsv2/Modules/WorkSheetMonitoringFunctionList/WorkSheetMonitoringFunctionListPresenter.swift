@@ -26,7 +26,7 @@ class WorkSheetMonitoringFunctionListPresenter: BasePresenter {
     var limit: Int = 10
     var tipe: Int = 21
     var status: String = "-1"
-    var keyboard: String = ""
+    var keyword: String = ""
     var isCanLoad = true
     var isFetchingMore = false
     
@@ -35,12 +35,12 @@ class WorkSheetMonitoringFunctionListPresenter: BasePresenter {
 extension WorkSheetMonitoringFunctionListPresenter {
     
     func fetchInitData() {
-        self.fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyboard: self.keyboard)
+        self.fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
     }
     
-    func fetchWorkSheetMonitoringFunctionList(limit: Int, page: Int, tipe: Int, status: String, keyboard: String) {
+    func fetchWorkSheetMonitoringFunctionList(limit: Int, page: Int, tipe: Int, status: String, keyword: String) {
         self.isLoading = true
-        interactor.getWorkSheetMonitoringFunctionList(limit: limit, page: page, tipe: tipe, keyboard: keyboard, status: status)
+        interactor.getWorkSheetMonitoringFunctionList(limit: limit, page: page, tipe: tipe, keyword: keyword, status: status)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -66,6 +66,7 @@ extension WorkSheetMonitoringFunctionListPresenter {
                                 serial: item.serial ?? "",
                                 installation: item.instalasi ?? "",
                                 room: item.ruangan ?? "",
+                                dateTime: item.dateText ?? "",
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }
@@ -79,7 +80,7 @@ extension WorkSheetMonitoringFunctionListPresenter {
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyboard: self.keyboard)
+        fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
     }
     
 }
