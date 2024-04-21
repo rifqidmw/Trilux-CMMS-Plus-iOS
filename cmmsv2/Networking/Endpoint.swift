@@ -48,6 +48,10 @@ enum Endpoint {
         keyword: String? = nil,
         page: Int? = nil
     )
+    case workSheetPreventive(
+        limit: Int? = nil,
+        page: Int? = nil,
+        engineer: Int? = nil)
 }
 
 // MARK: - PATH URL
@@ -116,6 +120,13 @@ extension Endpoint {
             keyword: let keyword,
             page: let page):
             return generateWorkSheetCorrectiveURL(woType: woType, woStatus: woStatus, limit: limit, sort: sort, hasObstacle: hasObstacle, keyword: keyword, page: page)
+        case .workSheetPreventive(limit: let limit,
+                                  page: let page,
+                                  engineer: let engineer):
+            return generateWorkSheetPreventiveURL(
+                limit: limit,
+                page: page,
+                engineer: engineer)
         }
     }
 }
@@ -326,6 +337,22 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/list" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateWorkSheetPreventiveURL(
+        limit: Int? = nil,
+        page: Int? = nil,
+        engineer: Int? = nil
+    ) -> String {
+        let queryString = [
+            limit.map { "limit=\($0)" },
+            page.map { "page=\($0)" },
+            engineer.map { "engineer=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "lk/listpreventif" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }

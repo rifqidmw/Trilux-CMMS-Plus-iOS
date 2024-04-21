@@ -6,20 +6,27 @@
 //
 
 import UIKit
+import SkeletonView
 
 class PreventiveMaintenanceListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
-    @IBOutlet weak var searchButton: GeneralButton!
+    @IBOutlet weak var searchTextField: SearchTextField!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var actionBarView: ActionBarView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: PreventiveMaintenanceListPresenter?
-    var data: [PreventiveMaintenanceListEntity] = dataPreventiveMaintenance
+    var data: [WorkSheetListEntity] = []
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+    }
+    
+    override func willAppear() {
+        super.willAppear()
+        self.fetchInitialData()
     }
     
 }
@@ -27,6 +34,8 @@ class PreventiveMaintenanceListView: BaseViewController {
 extension PreventiveMaintenanceListView {
     
     private func setupBody() {
+        fetchInitialData()
+        bindingData()
         setupView()
         setupAction()
         setupCollectionView()
@@ -34,8 +43,34 @@ extension PreventiveMaintenanceListView {
     
     private func setupView() {
         customNavigationView.configure(plainTitle: "Pemeliharaan Preventif", type: .plain)
-        searchButton.configure(type: .searchbutton)
         actionBarView.configure(firstIcon: "ic_installation", firstTitle: "Installasi", secondIcon: "ic_setting", secondTitle: "Status", thirdIcon: "ic_arrow_up_down", thirdTitle: "Urutkan")
+    }
+    
+    private func fetchInitialData() {
+        guard let presenter else { return }
+        presenter.fetchInitData()
+    }
+    
+    private func bindingData() {
+        guard let presenter else { return }
+        presenter.$preventiveData
+            .sink { [weak self] data in
+                guard let self
+                else {
+                    self?.showSpinner(false)
+                    return
+                }
+                self.data = data
+                self.collectionView.reloadData()
+                self.collectionView.hideSkeleton()
+                self.showSpinner(false)
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func showSpinner(_ isShow: Bool) {
+        self.spinner.isHidden = !isShow
+        isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
     }
     
     private func setupAction() {
@@ -50,35 +85,68 @@ extension PreventiveMaintenanceListView {
     }
     
     private func setupCollectionView() {
-        collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(PreventiveMaintenanceCVC.nib, forCellWithReuseIdentifier: PreventiveMaintenanceCVC.identifier)
+        collectionView.delegate = self
+        collectionView.register(WorkSheetCVC.nib, forCellWithReuseIdentifier: WorkSheetCVC.identifier)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 100)
-        collectionView.collectionViewLayout = layout
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.collectionView.isSkeletonable = true
+            self.collectionView.showAnimatedGradientSkeleton()
+        }
     }
     
 }
 
-extension PreventiveMaintenanceListView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PreventiveMaintenanceListView: SkeletonCollectionViewDataSource, SkeletonCollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        return WorkSheetCVC.identifier
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreventiveMaintenanceCVC.identifier, for: indexPath) as? PreventiveMaintenanceCVC
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSheetCVC.identifier, for: indexPath) as? WorkSheetCVC
         else {
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        cell.setupCell(data: data[indexPath.row], type: .preventive)
         
         return cell
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard scrollView == scrollView,
+              let presenter = self.presenter
+        else { return }
+        
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= 0.0 && presenter.isCanLoad {
+            self.showSpinner(true)
+            
+            DispatchQueue.main.async {
+                presenter.fetchNextPage()
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 130)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
 }
+

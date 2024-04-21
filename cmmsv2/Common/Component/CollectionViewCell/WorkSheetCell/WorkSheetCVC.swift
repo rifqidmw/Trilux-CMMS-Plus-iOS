@@ -70,9 +70,11 @@ extension WorkSheetCVC {
             descriptionLabel.isHidden = false
             firstBadgeView.isHidden = data.status == .done ? false : true
         case .preventive:
-            badgeView.isHidden = true
             markView.isHidden = true
-            setupPreventiveConstraint()
+            secondBadgeView.isHidden = true
+            descriptionLabel.text = "\(data.installation ?? "") - \(data.room ?? "")"
+            descriptionLabel.isHidden = false
+            firstBadgeView.isHidden = data.status == .done ? false : true
         case .corrective:
             dateLabel.isHidden = false
             descriptionLabel.text = data.room
@@ -140,13 +142,6 @@ extension WorkSheetCVC {
             thirdBadgeViewWidthConstraint.constant = 80
         default: break
         }
-    }
-    
-    private func setupPreventiveConstraint() {
-        NSLayoutConstraint.activate([
-            containerDescriptionStackView.topAnchor.constraint(equalTo: uniqueNumberLabel.bottomAnchor, constant: 16),
-            containerDescriptionStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16)
-        ])
     }
     
     private func showSkeletonAnimation() {

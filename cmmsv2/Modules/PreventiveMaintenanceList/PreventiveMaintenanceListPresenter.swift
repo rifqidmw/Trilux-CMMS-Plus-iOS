@@ -1,4 +1,4 @@
-// 
+//
 //  PreventiveMaintenanceListPresenter.swift
 //  cmmsv2
 //
@@ -14,6 +14,74 @@ class PreventiveMaintenanceListPresenter: BasePresenter {
     
     init(interactor: PreventiveMaintenanceListInteractor) {
         self.interactor = interactor
+    }
+    
+    @Published public var preventiveData: [WorkSheetListEntity] = []
+    
+    @Published public var errorMessage: String = ""
+    @Published public var isLoading: Bool = false
+    @Published public var isError: Bool = false
+    
+    var engineer: Int = 0
+    var limit: Int = 10
+    var page: Int = 1
+    var isCanLoad = true
+    var isFetchingMore = false
+    
+}
+
+extension PreventiveMaintenanceListPresenter {
+    
+    func fetchInitData() {
+        self.fetchWorkSheetPreventiveList(limit: self.limit, page: self.page, engineer: self.engineer)
+    }
+    
+    func fetchWorkSheetPreventiveList(limit: Int,
+                                      page: Int,
+                                      engineer: Int) {
+        self.isLoading = true
+        interactor.getWorkSheetPreventive(limit: limit, page: page, engineer: engineer)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { preventive in
+                    DispatchQueue.main.async {
+                        guard let data = preventive.data
+                        else { return }
+                        
+                        let preventiveData = data.compactMap { item in
+                            return WorkSheetListEntity(
+                                id: item.idLk ?? "",
+                                uniqueNumber: item.serial ?? "",
+                                workName: item.assetname ?? "",
+                                workDesc: item.lkLabel ?? "",
+                                serial: item.idAsset ?? "",
+                                installation: item.instalasi ?? "",
+                                room: item.ruangan,
+                                dateTime: item.dateText ?? "",
+                                category: WorkSheetCategory.none,
+                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
+                        }
+                        self.preventiveData.append(contentsOf: preventiveData)
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchNextPage() {
+        guard !isFetchingMore && isCanLoad else { return }
+        page += 1
+        self.fetchWorkSheetPreventiveList(limit: self.limit, page: self.page, engineer: self.engineer)
     }
     
 }
