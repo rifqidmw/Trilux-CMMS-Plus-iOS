@@ -11,7 +11,7 @@ class PreventiveMaintenanceListInteractor: BaseInteractor {
     
     func getWorkSheetPreventive(limit: Int? = nil,
                                 page: Int? = nil,
-                                engineer: Int? = nil) -> AnyPublisher<PreventiveMaintenanceData, Error> {
+                                engineer: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
         return api.requestApiPublisher(.workSheetPreventive(limit: limit, page: page, engineer: engineer))
     }
     

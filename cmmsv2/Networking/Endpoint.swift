@@ -12,8 +12,16 @@ enum Endpoint {
     case registerHospital(code: String)
     case loginUser(username: String, password: String)
     case getProfile
-    case updateProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String)
-    case changePassword(oldPassword: String, passwordConfirm: String, password: String)
+    case updateProfile(
+        name: String,
+        position: String,
+        workUnit: String,
+        imageId: Int,
+        phoneNumber: String)
+    case changePassword(
+        oldPassword: String,
+        passwordConfirm: String,
+        password: String)
     case assetList(
         serial: String? = nil,
         locationId: String? = nil,
@@ -52,6 +60,7 @@ enum Endpoint {
         limit: Int? = nil,
         page: Int? = nil,
         engineer: Int? = nil)
+    case calibrationList(limit: Int? = nil, page: Int? = nil)
 }
 
 // MARK: - PATH URL
@@ -127,6 +136,8 @@ extension Endpoint {
                 limit: limit,
                 page: page,
                 engineer: engineer)
+        case .calibrationList(limit: let limit, page: let page):
+            return "lk/listkalibrasi?limit=\(limit ?? 0)&page=\(page ?? 0)"
         }
     }
 }

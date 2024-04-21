@@ -60,13 +60,13 @@ extension PreventiveMaintenanceListPresenter {
                         
                         let preventiveData = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLk ?? "",
+                                id: item.idLK ?? "",
                                 uniqueNumber: item.serial ?? "",
-                                workName: item.assetname ?? "",
+                                workName: item.assetName ?? "",
                                 workDesc: item.lkLabel ?? "",
                                 serial: item.idAsset ?? "",
                                 installation: item.instalasi ?? "",
-                                room: item.ruangan,
+                                room: item.ruangan ?? "",
                                 dateTime: item.dateText ?? "",
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)

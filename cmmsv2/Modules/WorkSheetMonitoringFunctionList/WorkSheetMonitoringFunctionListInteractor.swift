@@ -13,7 +13,7 @@ class WorkSheetMonitoringFunctionListInteractor: BaseInteractor {
                                             page: Int? = nil,
                                             tipe: Int? = nil,
                                             keyword: String? = nil,
-                                            status: String? = nil) -> AnyPublisher<MaintenanceDataLK, Error> {
+                                            status: String? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
         return api.requestApiPublisher(.workSheetMonitoringFunction(
             limit: limit,
             page: page,

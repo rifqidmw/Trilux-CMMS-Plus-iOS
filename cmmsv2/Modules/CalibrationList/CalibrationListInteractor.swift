@@ -1,16 +1,16 @@
-// 
+//
 //  CalibrationListInteractor.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 12/03/24.
 //
 
-import Foundation
+import Combine
 
 class CalibrationListInteractor: BaseInteractor {
     
-    // func fetchData(completion: @escaping (Result<ModelResponse, Error>) -> Void) {
-    //    api.requestApi(.exampleEndpoint, completion: completion)
-    // }
+    func getCalibrationList(limit: Int? = nil, page: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
+        return api.requestApiPublisher(.calibrationList(limit: limit, page: page))
+    }
     
 }

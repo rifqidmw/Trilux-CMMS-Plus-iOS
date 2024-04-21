@@ -12,6 +12,7 @@ enum WorkSheetCellType {
     case monitoring
     case preventive
     case corrective
+    case calibration
 }
 
 class WorkSheetCVC: UICollectionViewCell {
@@ -46,7 +47,8 @@ class WorkSheetCVC: UICollectionViewCell {
         self.thirdBadgeView.makeCornerRadius(4)
         self.markView.makeCornerRadius(4, .rightCurve)
         self.containerView.makeCornerRadius(8)
-        self.containerView.addShadow(8, opacity: 0.12)
+        self.makeCornerRadius(8)
+        self.addShadow(4.2, opacity: 0.2)
         self.showSkeletonAnimation()
     }
     
@@ -81,6 +83,16 @@ extension WorkSheetCVC {
             descriptionLabel.isHidden = false
             secondBadgeView.isHidden = data.category == WorkSheetCategory.none ? true : false
             firstBadgeLabel.text = "Lembar Kerja Disetujui"
+        case .calibration:
+            descriptionLabel.text = "No#\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
+            descriptionLabel.isHidden = false
+            firstBadgeLabel.text = "Koreksi"
+            firstBadgeView.isHidden = data.status == .done ? false : true
+            firstBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            firstBadgeLabel.textColor = UIColor.customIndicatorColor11
+            secondBadgeView.isHidden = true
+            uniqueNumberLabel.textColor = UIColor.customPlaceholderColor
+            break
         }
     }
     

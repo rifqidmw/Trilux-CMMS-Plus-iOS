@@ -13,7 +13,8 @@
             <connections>
                 <outlet property="collectionView" destination="WS6-v8-5N8" id="1cd-kK-972"/>
                 <outlet property="customNavigationView" destination="xGL-ED-ear" id="iLW-KU-p5n"/>
-                <outlet property="searchButton" destination="Mfs-mE-EC0" id="J9n-ti-HuZ"/>
+                <outlet property="searchTextField" destination="Mfs-mE-EC0" id="ULg-fT-igu"/>
+                <outlet property="spinner" destination="RvY-es-2q1" id="QT8-iZ-SHd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,7 +30,7 @@
                         <constraint firstAttribute="height" constant="56" id="fFH-Fl-xje"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfs-mE-EC0" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfs-mE-EC0" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="16" y="131" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -46,6 +47,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RvY-es-2q1">
+                    <rect key="frame" x="176.66666666666666" y="778" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="RjE-3U-frm"/>
+                        <constraint firstAttribute="width" constant="40" id="rOv-sP-xid"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,6 +63,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mfs-mE-EC0" secondAttribute="trailing" constant="16" id="GsO-I5-x8K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WS6-v8-5N8" secondAttribute="trailing" constant="16" id="NjN-YS-pO8"/>
                 <constraint firstItem="Mfs-mE-EC0" firstAttribute="top" secondItem="xGL-ED-ear" secondAttribute="bottom" constant="16" id="QQG-aU-13x"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RvY-es-2q1" secondAttribute="bottom" id="aQE-JT-1p5"/>
+                <constraint firstItem="RvY-es-2q1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aoF-Qe-ORF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WS6-v8-5N8" secondAttribute="bottom" id="ela-Mr-0mN"/>
                 <constraint firstItem="Mfs-mE-EC0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="o7R-3H-6I2"/>
                 <constraint firstItem="WS6-v8-5N8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qTd-ol-ERp"/>
