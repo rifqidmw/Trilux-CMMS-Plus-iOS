@@ -539,10 +539,6 @@
 		CEE07C962B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE07C8B2B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib */; };
 		CEE07C972B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C8C2B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift */; };
 		CEE07C982B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C8C2B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift */; };
-		CEE07C9C2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C9A2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift */; };
-		CEE07C9D2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C9A2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift */; };
-		CEE07C9E2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE07C9B2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib */; };
-		CEE07C9F2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE07C9B2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib */; };
 		CEE67D252B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D1F2B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift */; };
 		CEE67D262B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D1F2B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift */; };
 		CEE67D272B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE67D202B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift */; };
@@ -938,8 +934,6 @@
 		CEE07C8A2B9F408A00EFBFB8 /* PreventiveMaintenanceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListView.swift; sourceTree = "<group>"; };
 		CEE07C8B2B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveMaintenanceListView.xib; sourceTree = "<group>"; };
 		CEE07C8C2B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListEntity.swift; sourceTree = "<group>"; };
-		CEE07C9A2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceCVC.swift; sourceTree = "<group>"; };
-		CEE07C9B2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveMaintenanceCVC.xib; sourceTree = "<group>"; };
 		CEE67D1F2B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetMonitoringFunctionListPresenter.swift; sourceTree = "<group>"; };
 		CEE67D202B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetMonitoringFunctionListRouter.swift; sourceTree = "<group>"; };
 		CEE67D212B54394900D0844B /* WorkSheetMonitoringFunctionListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetMonitoringFunctionListInteractor.swift; sourceTree = "<group>"; };
@@ -1496,7 +1490,6 @@
 				CE2E3AFC2BA0ABB600094AD0 /* CalibrationCell */,
 				CEDCCE152BC9AF4F006F5F4F /* CorrectiveCell */,
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
-				CEE07C992B9F538000EFBFB8 /* PreventiveMaintenanceCell */,
 				CEC2C8432BD247E900A9D454 /* WorkSheetCell */,
 			);
 			path = CollectionViewCell;
@@ -2066,15 +2059,6 @@
 			path = PreventiveMaintenanceList;
 			sourceTree = "<group>";
 		};
-		CEE07C992B9F538000EFBFB8 /* PreventiveMaintenanceCell */ = {
-			isa = PBXGroup;
-			children = (
-				CEE07C9A2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift */,
-				CEE07C9B2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib */,
-			);
-			path = PreventiveMaintenanceCell;
-			sourceTree = "<group>";
-		};
 		CEE67D1E2B5438FF00D0844B /* WorkSheetMonitoringFunctionList */ = {
 			isa = PBXGroup;
 			children = (
@@ -2379,7 +2363,6 @@
 				CEEED8742B7A86CB00672952 /* ScanView.xib in Resources */,
 				CEE67D332B54426600D0844B /* WorkSheetBottomSheet.xib in Resources */,
 				CECB3DDD2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
-				CEE07C9E2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib in Resources */,
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012302B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE40121F2B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
@@ -2497,7 +2480,6 @@
 				CEEED8752B7A86CB00672952 /* ScanView.xib in Resources */,
 				CEE67D342B54426600D0844B /* WorkSheetBottomSheet.xib in Resources */,
 				CECB3DDE2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
-				CEE07C9F2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.xib in Resources */,
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CE4012312B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE4012202B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
@@ -2701,7 +2683,6 @@
 				CEB703A12BA87FBD004583C7 /* PreventiveCalendarListRouter.swift in Sources */,
 				CE2E3AF62BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1552B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
-				CEE07C9C2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift in Sources */,
 				CECB3DA92B45D962004A260D /* ViewController.swift in Sources */,
 				CE9E7D832B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
 				CE0B3AED2B9B869100A55B81 /* WorkSheetCorrectiveListInteractor.swift in Sources */,
@@ -2923,7 +2904,6 @@
 				CEB703A22BA87FBD004583C7 /* PreventiveCalendarListRouter.swift in Sources */,
 				CE2E3AF72BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1562B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
-				CEE07C9D2B9F53A200EFBFB8 /* PreventiveMaintenanceCVC.swift in Sources */,
 				CECB3DC12B45DAFF004A260D /* ViewController.swift in Sources */,
 				CE9E7D842B529EE800240A7D /* EditProfileInteractor.swift in Sources */,
 				CE0B3AEE2B9B869100A55B81 /* WorkSheetCorrectiveListInteractor.swift in Sources */,

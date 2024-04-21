@@ -14,7 +14,8 @@
                 <outlet property="actionBarView" destination="UUn-2t-0S8" id="ffY-YU-r5f"/>
                 <outlet property="collectionView" destination="x7X-j6-9Y1" id="HQj-gm-nIb"/>
                 <outlet property="customNavigationView" destination="jgX-ak-vsK" id="UuJ-J8-ix8"/>
-                <outlet property="searchButton" destination="JnE-Ta-aV5" id="KI3-8b-U9i"/>
+                <outlet property="searchTextField" destination="JnE-Ta-aV5" id="p7p-w3-q5Z"/>
+                <outlet property="spinner" destination="xnz-KT-OCG" id="VrL-97-6DJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +31,7 @@
                         <constraint firstAttribute="height" constant="56" id="9aq-WE-wHF"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-Ta-aV5" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-Ta-aV5" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="16" y="131" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -46,7 +47,17 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xnz-KT-OCG">
+                    <rect key="frame" x="176.66666666666666" y="722" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Rcz-vW-RgC"/>
+                        <constraint firstAttribute="height" constant="40" id="TZo-Ca-9Sq"/>
+                    </constraints>
+                </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUn-2t-0S8" customClass="ActionBarView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="762" width="393" height="56"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,6 +72,7 @@
                 <constraint firstItem="UUn-2t-0S8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4dt-da-1eo"/>
                 <constraint firstItem="jgX-ak-vsK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5y1-dM-gdd"/>
                 <constraint firstItem="jgX-ak-vsK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CTx-XZ-D6K"/>
+                <constraint firstItem="xnz-KT-OCG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cvj-2l-6zq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jgX-ak-vsK" secondAttribute="trailing" id="Dyt-WS-vRM"/>
                 <constraint firstItem="x7X-j6-9Y1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="14" id="Dzc-99-77B"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x7X-j6-9Y1" secondAttribute="trailing" constant="14" id="Hst-TS-Ou7"/>
@@ -69,6 +81,7 @@
                 <constraint firstItem="x7X-j6-9Y1" firstAttribute="top" secondItem="JnE-Ta-aV5" secondAttribute="bottom" constant="16" id="LVM-s3-2rv"/>
                 <constraint firstItem="JnE-Ta-aV5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="PTd-WX-jBV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JnE-Ta-aV5" secondAttribute="trailing" constant="16" id="d3P-RT-cZ7"/>
+                <constraint firstItem="UUn-2t-0S8" firstAttribute="top" secondItem="xnz-KT-OCG" secondAttribute="bottom" id="hUH-rh-pz2"/>
                 <constraint firstItem="JnE-Ta-aV5" firstAttribute="top" secondItem="jgX-ak-vsK" secondAttribute="bottom" constant="16" id="hdg-sK-3Wx"/>
                 <constraint firstItem="UUn-2t-0S8" firstAttribute="top" secondItem="x7X-j6-9Y1" secondAttribute="bottom" id="phU-qb-XhA"/>
             </constraints>
