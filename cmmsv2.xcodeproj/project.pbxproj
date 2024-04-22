@@ -109,10 +109,6 @@
 		CE2E3AF92BA09E4C00094AD0 /* CalibrationListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2E3AEE2BA09E4C00094AD0 /* CalibrationListView.xib */; };
 		CE2E3AFA2BA09E4C00094AD0 /* CalibrationListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E3AEF2BA09E4C00094AD0 /* CalibrationListEntity.swift */; };
 		CE2E3AFB2BA09E4C00094AD0 /* CalibrationListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E3AEF2BA09E4C00094AD0 /* CalibrationListEntity.swift */; };
-		CE2E3AFF2BA0ABD700094AD0 /* CalibrationCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E3AFD2BA0ABD700094AD0 /* CalibrationCVC.swift */; };
-		CE2E3B002BA0ABD700094AD0 /* CalibrationCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E3AFD2BA0ABD700094AD0 /* CalibrationCVC.swift */; };
-		CE2E3B012BA0ABD700094AD0 /* CalibrationCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2E3AFE2BA0ABD700094AD0 /* CalibrationCVC.xib */; };
-		CE2E3B022BA0ABD700094AD0 /* CalibrationCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2E3AFE2BA0ABD700094AD0 /* CalibrationCVC.xib */; };
 		CE2F2CE82B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F2CE72B5D42A4001D312F /* DetailComplaintSectionView.swift */; };
 		CE2F2CE92B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F2CE72B5D42A4001D312F /* DetailComplaintSectionView.swift */; };
 		CE2F2CEB2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2F2CEA2B5D42AB001D312F /* DetailComplaintSectionView.xib */; };
@@ -715,8 +711,6 @@
 		CE2E3AED2BA09E4C00094AD0 /* CalibrationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationListView.swift; sourceTree = "<group>"; };
 		CE2E3AEE2BA09E4C00094AD0 /* CalibrationListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationListView.xib; sourceTree = "<group>"; };
 		CE2E3AEF2BA09E4C00094AD0 /* CalibrationListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationListEntity.swift; sourceTree = "<group>"; };
-		CE2E3AFD2BA0ABD700094AD0 /* CalibrationCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationCVC.swift; sourceTree = "<group>"; };
-		CE2E3AFE2BA0ABD700094AD0 /* CalibrationCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationCVC.xib; sourceTree = "<group>"; };
 		CE2F2CE72B5D42A4001D312F /* DetailComplaintSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComplaintSectionView.swift; sourceTree = "<group>"; };
 		CE2F2CEA2B5D42AB001D312F /* DetailComplaintSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailComplaintSectionView.xib; sourceTree = "<group>"; };
 		CE2FA50D2B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetMonitoringFunctionDetailPresenter.swift; sourceTree = "<group>"; };
@@ -1253,15 +1247,6 @@
 			path = CalibrationList;
 			sourceTree = "<group>";
 		};
-		CE2E3AFC2BA0ABB600094AD0 /* CalibrationCell */ = {
-			isa = PBXGroup;
-			children = (
-				CE2E3AFD2BA0ABD700094AD0 /* CalibrationCVC.swift */,
-				CE2E3AFE2BA0ABD700094AD0 /* CalibrationCVC.xib */,
-			);
-			path = CalibrationCell;
-			sourceTree = "<group>";
-		};
 		CE2F2CE62B5D4294001D312F /* DetailComplaintSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1487,7 +1472,6 @@
 		CE90B1862B9A1EB300515AD6 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				CE2E3AFC2BA0ABB600094AD0 /* CalibrationCell */,
 				CEDCCE152BC9AF4F006F5F4F /* CorrectiveCell */,
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
 				CEC2C8432BD247E900A9D454 /* WorkSheetCell */,
@@ -2355,7 +2339,6 @@
 				CECD12222B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */,
 				CEF762082B7282A700B5FD8E /* PreparationSectionView.xib in Resources */,
 				CE8208972B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */,
-				CE2E3B012BA0ABD700094AD0 /* CalibrationCVC.xib in Resources */,
 				CE4012192B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -2472,7 +2455,6 @@
 				CECD12232B74ABEB00DEAFF4 /* PhysicalFunctionalMonitoringView.xib in Resources */,
 				CEF762092B7282A700B5FD8E /* PreparationSectionView.xib in Resources */,
 				CE8208982B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */,
-				CE2E3B022BA0ABD700094AD0 /* CalibrationCVC.xib in Resources */,
 				CE40121A2B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -2740,7 +2722,6 @@
 				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
-				CE2E3AFF2BA0ABD700094AD0 /* CalibrationCVC.swift in Sources */,
 				CE90B1572B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
 				CE4255E52BA704E5002B558C /* LogBookPresenter.swift in Sources */,
 				CE90B1592B99605700515AD6 /* ComplaintListView.swift in Sources */,
@@ -2961,7 +2942,6 @@
 				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
-				CE2E3B002BA0ABD700094AD0 /* CalibrationCVC.swift in Sources */,
 				CE90B1582B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
 				CE4255E62BA704E5002B558C /* LogBookPresenter.swift in Sources */,
 				CE90B15A2B99605700515AD6 /* ComplaintListView.swift in Sources */,
