@@ -26,7 +26,8 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        dateTime: "2024-04-04 12:13:14",
+        dateTime: "2024-04-04 12:13:14", 
+        brandName: "Acumalaka",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -38,6 +39,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
+        brandName: "Acumalaka",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -49,6 +51,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
+        brandName: "Acumalaka",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -60,6 +63,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
+        brandName: "Acumalaka",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -71,6 +75,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
+        brandName: "Acumalaka",
         category: .calibration,
         status: .done)
 ]

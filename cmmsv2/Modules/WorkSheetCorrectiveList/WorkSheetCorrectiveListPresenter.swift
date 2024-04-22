@@ -88,7 +88,7 @@ extension WorkSheetCorrectiveListPresenter {
                                                    serial: item.txtSubTitle ?? "",
                                                    installation: item.complain?.equipment?.txtLokasiInstalasi ?? "",
                                                    room: item.txtRuangan ?? "",
-                                                   dateTime: item.valDate ?? "",
+                                                   dateTime: item.valDate ?? "", brandName: item.approveBy ?? "",
                                                    category: WorkSheetCategory(rawValue: item.complain?.equipment?.txtKalibrasi ?? "") ?? WorkSheetCategory.none,
                                                    status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                     }

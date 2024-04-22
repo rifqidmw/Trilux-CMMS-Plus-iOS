@@ -32,10 +32,10 @@ class CalibrationListPresenter: BasePresenter {
 extension CalibrationListPresenter {
     
     func fetchInitData() {
-        self.fetchWorkSheetPreventiveList(limit: self.limit, page: self.page)
+        self.fetchCalibrationList(limit: self.limit, page: self.page)
     }
     
-    func fetchWorkSheetPreventiveList(limit: Int, page: Int) {
+    func fetchCalibrationList(limit: Int, page: Int) {
         self.isLoading = true
         interactor.getCalibrationList(limit: limit, page: page)
             .sink(
@@ -65,6 +65,7 @@ extension CalibrationListPresenter {
                                 installation: item.instalasi ?? "",
                                 room: item.ruangan ?? "",
                                 dateTime: item.dateText ?? "",
+                                brandName: item.brandName ?? "",
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }
@@ -78,7 +79,7 @@ extension CalibrationListPresenter {
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        self.fetchWorkSheetPreventiveList(limit: self.limit, page: self.page)
+        self.fetchCalibrationList(limit: self.limit, page: self.page)
     }
     
 }

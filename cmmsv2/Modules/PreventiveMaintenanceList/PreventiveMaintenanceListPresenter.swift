@@ -68,6 +68,7 @@ extension PreventiveMaintenanceListPresenter {
                                 installation: item.instalasi ?? "",
                                 room: item.ruangan ?? "",
                                 dateTime: item.dateText ?? "",
+                                brandName: item.brandName ?? "",
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }
