@@ -25,7 +25,7 @@ class WorkSheetMonitoringFunctionListPresenter: BasePresenter {
     var page: Int = 1
     var limit: Int = 10
     var tipe: Int = 21
-    var status: String = "-1"
+    var status: Int = -1
     var keyword: String = ""
     var isCanLoad = true
     var isFetchingMore = false
@@ -38,7 +38,7 @@ extension WorkSheetMonitoringFunctionListPresenter {
         self.fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
     }
     
-    func fetchWorkSheetMonitoringFunctionList(limit: Int, page: Int, tipe: Int, status: String, keyword: String) {
+    func fetchWorkSheetMonitoringFunctionList(limit: Int, page: Int, tipe: Int, status: Int, keyword: String) {
         self.isLoading = true
         interactor.getWorkSheetMonitoringFunctionList(limit: limit, page: page, tipe: tipe, keyword: keyword, status: status)
             .sink(
@@ -66,7 +66,8 @@ extension WorkSheetMonitoringFunctionListPresenter {
                                 serial: item.serial ?? "",
                                 installation: item.instalasi ?? "",
                                 room: item.ruangan ?? "",
-                                dateTime: item.dateText ?? "",
+                                dateTime: item.dateText ?? "", 
+                                brandName: item.brandName ?? "",
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }
@@ -84,7 +85,6 @@ extension WorkSheetMonitoringFunctionListPresenter {
     }
     
 }
-
 
 extension WorkSheetMonitoringFunctionListPresenter {
     

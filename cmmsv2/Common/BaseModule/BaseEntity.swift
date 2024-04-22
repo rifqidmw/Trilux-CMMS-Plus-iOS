@@ -191,6 +191,7 @@ struct WorkSheetListEntity: Codable {
     let installation: String?
     let room: String?
     let dateTime: String?
+    let brandName: String?
     let category: WorkSheetCategory?
     let status: WorkSheetStatus?
 }

@@ -45,7 +45,7 @@ enum Endpoint {
         page: Int? = nil,
         tipe: Int? = nil,
         keyword: String? = nil,
-        status: String? = nil
+        status: Int? = nil
     )
     case workSheetCorrective(
         woType: Int? = nil,
@@ -313,7 +313,7 @@ extension Endpoint {
         page: Int? = nil,
         tipe: Int? = nil,
         keyboard: String? = nil,
-        status: String? = nil
+        status: Int? = nil
     ) -> String {
         let queryString = [
             limit.map { "limit=\($0)" },

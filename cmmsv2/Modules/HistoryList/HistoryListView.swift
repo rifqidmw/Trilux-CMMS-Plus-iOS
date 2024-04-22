@@ -6,19 +6,26 @@
 //
 
 import UIKit
+import SkeletonView
 
 class HistoryListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var actionBarView: ActionBarView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: HistoryListPresenter?
-    var data: [HistoryListEntity] = historyDataList
+    var data: [WorkSheetListEntity] = []
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+    }
+    
+    override func willAppear() {
+        super.willAppear()
+        self.fetchInitialData()
     }
     
 }
@@ -26,9 +33,50 @@ class HistoryListView: BaseViewController {
 extension HistoryListView {
     
     private func setupBody() {
+        fetchInitialData()
+        bindingData()
         setupView()
         setupAction()
-        setupTableView()
+        setupCollectionView()
+    }
+    
+    private func fetchInitialData() {
+        guard let presenter else { return }
+        presenter.fetchInitData()
+    }
+    
+    private func bindingData() {
+        guard let presenter else { return }
+        presenter.$historyData
+            .sink { [weak self] data in
+                guard let self
+                else {
+                    self?.showSpinner(false)
+                    return
+                }
+                self.data = data
+                self.collectionView.reloadData()
+                self.collectionView.hideSkeleton()
+                self.showSpinner(false)
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(WorkSheetCVC.nib, forCellWithReuseIdentifier: WorkSheetCVC.identifier)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.collectionView.isSkeletonable = true
+            self.collectionView.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func showSpinner(_ isShow: Bool) {
+        self.spinner.isHidden = !isShow
+        isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
     }
     
     private func setupView() {
@@ -47,32 +95,56 @@ extension HistoryListView {
             .store(in: &anyCancellable)
     }
     
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(HistoryTVC.nib, forCellReuseIdentifier: HistoryTVC.identifier)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorStyle = .none
-        
-    }
-    
 }
 
-extension HistoryListView: UITableViewDataSource, UITableViewDelegate {
+extension HistoryListView: SkeletonCollectionViewDataSource, SkeletonCollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        return WorkSheetCVC.identifier
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTVC.identifier, for: indexPath) as? HistoryTVC
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSheetCVC.identifier, for: indexPath) as? WorkSheetCVC
         else {
-            return UITableViewCell()
+            return UICollectionViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        cell.setupCell(data: data[indexPath.row], type: .history)
         
         return cell
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard scrollView == scrollView,
+              let presenter = self.presenter
+        else { return }
+        
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= 0.0 && presenter.isCanLoad {
+            self.showSpinner(true)
+            
+            DispatchQueue.main.async {
+                presenter.fetchNextPage()
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 130)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
 }

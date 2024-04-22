@@ -13,6 +13,7 @@ enum WorkSheetCellType {
     case preventive
     case corrective
     case calibration
+    case history
 }
 
 class WorkSheetCVC: UICollectionViewCell {
@@ -92,7 +93,13 @@ extension WorkSheetCVC {
             firstBadgeLabel.textColor = UIColor.customIndicatorColor11
             secondBadgeView.isHidden = true
             uniqueNumberLabel.textColor = UIColor.customPlaceholderColor
-            break
+        case .history:
+            uniqueNumberLabel.textColor = UIColor.customPlaceholderColor
+            descriptionLabel.isHidden = false
+            descriptionLabel.text = "No#\(data.serial ?? "")/\(data.brandName ?? "") - \(data.room ?? "") - \(data.installation ?? "")"
+            firstBadgeLabel.text = "Lembar Kerja Disetujui"
+            firstBadgeView.isHidden = data.status == .done ? false : true
+            secondBadgeView.isHidden = true
         }
     }
     
@@ -133,8 +140,8 @@ extension WorkSheetCVC {
             thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
             thirdBadgeViewWidthConstraint.constant = 130
         case .hold:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor3
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor4
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
             thirdBadgeViewWidthConstraint.constant = 100
         case .close:
             thirdBadgeView.backgroundColor = UIColor.customLightGreenColor
