@@ -39,7 +39,8 @@ enum Endpoint {
         limit: Int? = nil,
         equipmentId: String? = nil,
         status: String? = nil,
-        dateFilter: String? = nil)
+        dateFilter: String? = nil,
+        keyword: String? = nil)
     case workSheetMonitoringFunction(
         limit: Int? = nil,
         page: Int? = nil,
@@ -106,13 +107,15 @@ extension Endpoint {
             let limit,
             let equipmentId,
             let status,
-            let dateFilter):
+            let dateFilter, 
+            let keyword):
             return generateComplaintListURL(
                 page: page,
                 limit: limit,
                 equipmentId: equipmentId,
                 status: status,
-                dateFilter: dateFilter)
+                dateFilter: dateFilter,
+                keyword: keyword)
         case .workSheetMonitoringFunction(
             limit: let limit,
             page: let page,
@@ -294,13 +297,15 @@ extension Endpoint {
         limit: Int? = nil,
         equipmentId: String? = nil,
         status: String? = nil,
-        dateFilter: String? = nil) -> String {
+        dateFilter: String? = nil,
+        keyword: String? = nil) -> String {
             let queryString = [
-                page.map { "page=\($0)" },
                 limit.map { "limit=\($0)" },
-                equipmentId.map { "equipment_id=\($0)" },
+                page.map { "page=\($0)" },
                 status.map { "status=\($0)" },
-                dateFilter.map { "date_filter=\($0)" }
+                keyword.map { "keyword=\($0)" },
+                dateFilter.map { "date_filter=\($0)" },
+                equipmentId.map { "equipment_id=\($0)" }
             ].compactMap { $0 }.joined(separator: "&")
             
             let url = "complains/list" + (queryString.isEmpty ? "" : "?\(queryString)")

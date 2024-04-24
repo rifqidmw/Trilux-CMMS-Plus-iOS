@@ -21,11 +21,6 @@ class HomeScreenView: BaseViewController {
         setupBody()
     }
     
-    override func willAppear() {
-        super.willAppear()
-        setupNavigationView()
-    }
-    
 }
 
 extension HomeScreenView {

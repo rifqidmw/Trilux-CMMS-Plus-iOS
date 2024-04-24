@@ -23,11 +23,6 @@ class WorkSheetMonitoringFunctionListView: BaseViewController {
         self.setupBody()
     }
     
-    override func willAppear() {
-        super.willAppear()
-        self.fetchInitialData()
-    }
-    
 }
 
 extension WorkSheetMonitoringFunctionListView {

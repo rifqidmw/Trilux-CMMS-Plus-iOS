@@ -11,7 +11,7 @@ import SkeletonView
 class ComplaintListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
-    @IBOutlet weak var searchButton: GeneralButton!
+    @IBOutlet weak var searchTextField: SearchTextField!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var actionTabBarView: ActionBarView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -22,11 +22,6 @@ class ComplaintListView: BaseViewController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
-    }
-    
-    override func willAppear() {
-        super.willAppear()
-        self.fetchInitialData()
     }
     
 }
@@ -65,7 +60,6 @@ extension ComplaintListView {
     
     private func setupView() {
         customNavigationView.configure(plainTitle: "Pengaduan Korektif", type: .plain)
-        searchButton.configure(type: .searchbutton)
         actionTabBarView.configure(fourthIcon: "ic_arrow_up_down", fourthTitle: "Status")
         spinner.isHidden = true
         
@@ -135,8 +129,8 @@ extension ComplaintListView: SkeletonCollectionViewDelegate, SkeletonCollectionV
             return CGSize(width: CGSize.widthDevice, height: 200)
         }
         
-        let isCanDeleteLK = self.data[indexPath.row].isActionActive
-        return CGSize(width: CGSize.widthDevice, height: isCanDeleteLK ? 144 : 200)
+        let isDelay = self.data[indexPath.row].status == .delay
+        return CGSize(width: CGSize.widthDevice, height: isDelay ? 224 : 164)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

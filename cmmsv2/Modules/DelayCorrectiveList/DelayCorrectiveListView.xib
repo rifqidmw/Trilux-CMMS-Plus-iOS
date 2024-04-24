@@ -13,7 +13,8 @@
             <connections>
                 <outlet property="collectionView" destination="Uih-vC-kzi" id="Tcw-8y-qE6"/>
                 <outlet property="customNavigationView" destination="JxN-CY-x0u" id="KsU-Kg-aai"/>
-                <outlet property="searchButton" destination="mav-bE-sh5" id="4Pi-r6-Y2E"/>
+                <outlet property="searchTextField" destination="mav-bE-sh5" id="uHa-TX-U6j"/>
+                <outlet property="spinner" destination="eKb-jI-L5G" id="T3a-5a-0rA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,7 +30,7 @@
                         <constraint firstAttribute="height" constant="56" id="MRZ-dd-INH"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mav-bE-sh5" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mav-bE-sh5" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="16" y="131" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -46,6 +47,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eKb-jI-L5G">
+                    <rect key="frame" x="176.66666666666666" y="778" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="40k-FW-PoB"/>
+                        <constraint firstAttribute="width" constant="40" id="IRK-pz-ISj"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -53,6 +61,7 @@
                 <constraint firstItem="Uih-vC-kzi" firstAttribute="top" secondItem="mav-bE-sh5" secondAttribute="bottom" constant="16" id="0CR-cE-Jv5"/>
                 <constraint firstItem="JxN-CY-x0u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IDK-bQ-yGw"/>
                 <constraint firstItem="mav-bE-sh5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Vzc-Ha-NtC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eKb-jI-L5G" secondAttribute="bottom" id="ZFt-X5-a0P"/>
                 <constraint firstItem="Uih-vC-kzi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ahg-OP-11B"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Uih-vC-kzi" secondAttribute="bottom" id="bgy-j6-Jzp"/>
                 <constraint firstItem="mav-bE-sh5" firstAttribute="top" secondItem="JxN-CY-x0u" secondAttribute="bottom" constant="16" id="cRY-17-eC9"/>
@@ -60,6 +69,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JxN-CY-x0u" secondAttribute="trailing" id="gk4-uc-8Gc"/>
                 <constraint firstItem="JxN-CY-x0u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oYo-kM-mMC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uih-vC-kzi" secondAttribute="trailing" constant="16" id="xpp-Uf-F8W"/>
+                <constraint firstItem="eKb-jI-L5G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ziV-nw-rL6"/>
             </constraints>
             <point key="canvasLocation" x="44" y="-1"/>
         </view>

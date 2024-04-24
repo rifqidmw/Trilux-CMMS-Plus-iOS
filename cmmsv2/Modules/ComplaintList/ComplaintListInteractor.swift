@@ -14,13 +14,15 @@ class ComplaintListInteractor: BaseInteractor {
         limit: Int? = nil,
         equipmentId: String? = nil,
         status: String? = nil,
-        dateFilter: String? = nil) -> AnyPublisher<ComplaintEntity, Error> {
+        dateFilter: String? = nil,
+        keyword: String? = nil) -> AnyPublisher<ComplaintEntity, Error> {
             return api.requestApiPublisher(.getComplaintList(
                 page: page,
                 limit: limit,
                 equipmentId: equipmentId,
                 status: status,
-                dateFilter: dateFilter))
+                dateFilter: dateFilter,
+                keyword: keyword))
             
         }
     

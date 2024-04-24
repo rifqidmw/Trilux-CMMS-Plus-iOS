@@ -23,11 +23,6 @@ class CalibrationListView: BaseViewController {
         self.setupBody()
     }
     
-    override func willAppear() {
-        super.willAppear()
-        self.fetchInitialData()
-    }
-    
 }
 
 extension CalibrationListView {

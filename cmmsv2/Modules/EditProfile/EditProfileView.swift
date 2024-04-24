@@ -28,11 +28,6 @@ class EditProfileView: BaseViewController {
         configureKeyboard()
     }
     
-    override func willAppear() {
-        super.willAppear()
-        
-    }
-    
 }
 
 extension EditProfileView {
