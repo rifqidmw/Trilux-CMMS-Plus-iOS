@@ -23,7 +23,7 @@ class WorkSheetMonitoringFunctionListPresenter: BasePresenter {
     @Published public var isError: Bool = false
     
     var page: Int = 1
-    var limit: Int = 10
+    var limit: Int = 20
     var tipe: Int = 21
     var status: Int = -1
     var keyword: String = ""

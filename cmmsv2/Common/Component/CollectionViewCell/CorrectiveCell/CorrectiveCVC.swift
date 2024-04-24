@@ -20,21 +20,24 @@ class CorrectiveCVC: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var containerDetailInformationView: UIView!
+    @IBOutlet weak var containerTechnicianView: UIView!
     @IBOutlet weak var technicianTitleLabel: UILabel!
     @IBOutlet weak var technicianLabel: UILabel!
+    @IBOutlet weak var containerDamageView: UIView!
     @IBOutlet weak var damageTitleLabel: UILabel!
     @IBOutlet weak var damageLabel: UILabel!
+    @IBOutlet weak var containerStatusView: UIView!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var actionButton: GeneralButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.correctiveImageView.makeCornerRadius(8)
-        self.correctiveImageView.addShadow(0.4, opacity: 0.4)
+        self.correctiveImageView.makeCornerRadius(18)
         self.containerView.makeCornerRadius(8)
         self.containerView.addShadow(6, opacity: 0.2)
-        self.actionButton.configure(title: "Korektif Lanjutan", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customLightYellowColor, titleColor: UIColor.customIndicatorColor11)
+        self.actionButton.configure(title: "Korektif Lanjutan", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customIndicatorColor2, titleColor: UIColor.customIndicatorColor11)
         self.actionButton.makeCornerRadius(8)
         self.statusView.makeCornerRadius(4)
         self.showSkeletonAnimation()
@@ -53,11 +56,11 @@ extension CorrectiveCVC {
         technicianLabel.text = data.technician
         damageLabel.text = data.damage
         configureStatus(status: data.status)
-        actionButton.isHidden = data.isActionActive
+        actionButton.isHidden = data.status == .delay ? false : true
     }
     
     private func configureStatus(status: CorrectiveStatusType) {
-        statusLabel.text = status.getStringValue()
+        statusLabel.text = status.getStringValue().capitalized
         
         switch status {
         case .open:
@@ -81,12 +84,11 @@ extension CorrectiveCVC {
          dateLabel,
          titleLabel,
          descriptionLabel,
-         technicianTitleLabel,
-         technicianLabel,
-         damageTitleLabel,
-         damageLabel,
-         statusView,
-         statusLabel].forEach {
+         containerTechnicianView,
+         containerDamageView,
+         containerStatusView,
+         statusLabel,
+         actionButton].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
         }
@@ -97,12 +99,11 @@ extension CorrectiveCVC {
          dateLabel,
          titleLabel,
          descriptionLabel,
-         technicianTitleLabel,
-         technicianLabel,
-         damageTitleLabel,
-         damageLabel,
-         statusView,
-         statusLabel].forEach {
+         containerTechnicianView,
+         containerDamageView,
+         containerStatusView,
+         statusLabel,
+         actionButton].forEach {
             $0.hideSkeleton()
         }
     }

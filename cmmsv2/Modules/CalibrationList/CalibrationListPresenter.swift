@@ -22,7 +22,7 @@ class CalibrationListPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    var limit: Int = 10
+    var limit: Int = 20
     var page: Int = 1
     var isCanLoad = true
     var isFetchingMore = false

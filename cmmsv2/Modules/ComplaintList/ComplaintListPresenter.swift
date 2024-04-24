@@ -23,8 +23,9 @@ class ComplaintListPresenter: BasePresenter {
     @Published public var isError: Bool = false
     
     var equipmentId: String = ""
-    var status: String = ""
+    var status: String = "open,closed,progress"
     var dateFilter: String = ""
+    var keyword: String = ""
     var page: Int = 1
     var limit: Int = 20
     var isCanLoad = true
@@ -35,18 +36,24 @@ class ComplaintListPresenter: BasePresenter {
 extension ComplaintListPresenter {
     
     func fetchInitData() {
-        self.fetchComplaintListData(equipmentId: self.equipmentId, status: self.status, limit: self.limit, page: self.page, dateFilter: self.dateFilter)
+        self.fetchComplaintListData(equipmentId: self.equipmentId,
+                                    status: self.status,
+                                    limit: self.limit,
+                                    page: self.page,
+                                    dateFilter: self.dateFilter,
+                                    keyword: self.keyword)
     }
     
     func fetchComplaintListData(
-        equipmentId: String, status: String, limit: Int, page: Int, dateFilter: String) {
+        equipmentId: String, status: String, limit: Int, page: Int, dateFilter: String, keyword: String) {
             self.isLoading = true
             interactor.getComplaintList(
                 page: page,
                 limit: limit,
                 equipmentId: equipmentId,
                 status: status,
-                dateFilter: dateFilter)
+                dateFilter: dateFilter,
+                keyword: keyword)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -87,7 +94,12 @@ extension ComplaintListPresenter {
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        fetchComplaintListData(equipmentId: self.equipmentId, status: self.status, limit: self.limit, page: self.page, dateFilter: self.dateFilter)
+        fetchComplaintListData(equipmentId: self.equipmentId,
+                               status: self.status,
+                               limit: self.limit,
+                               page: self.page,
+                               dateFilter: self.dateFilter,
+                               keyword: self.keyword)
     }
     
 }

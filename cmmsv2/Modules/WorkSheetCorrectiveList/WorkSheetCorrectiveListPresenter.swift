@@ -24,7 +24,7 @@ class WorkSheetCorrectiveListPresenter: BasePresenter {
     
     var woType: Int = 1
     var woStatus: String = ""
-    var limit: Int = 10
+    var limit: Int = 20
     var sort: String = ""
     var hasObstacle: Int = -1
     var keyword: String = ""

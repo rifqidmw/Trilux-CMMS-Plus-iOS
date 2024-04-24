@@ -24,11 +24,6 @@ class WorkSheetCorrectiveListView: BaseViewController {
         self.setupBody()
     }
     
-    override func willAppear() {
-        super.willAppear()
-        self.fetchInitialData()
-    }
-    
 }
 
 extension WorkSheetCorrectiveListView {

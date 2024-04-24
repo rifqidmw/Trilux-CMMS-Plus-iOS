@@ -20,7 +20,7 @@
                 <outlet property="actionTabBarView" destination="0Px-yF-if3" id="o1H-Qa-KjW"/>
                 <outlet property="collectionView" destination="Vxw-l3-al9" id="9IU-YY-3O1"/>
                 <outlet property="customNavigationView" destination="BWD-rp-SPd" id="vjI-Ec-cC0"/>
-                <outlet property="searchButton" destination="6gR-B5-Myb" id="jPv-yI-cBR"/>
+                <outlet property="searchTextField" destination="6gR-B5-Myb" id="OBd-Yf-q55"/>
                 <outlet property="spinner" destination="vXk-px-pyf" id="kEa-tj-0hG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,20 +37,13 @@
                         <constraint firstAttribute="height" constant="56" id="GHA-l3-hR7"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-B5-Myb" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-B5-Myb" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="16" y="139" width="361" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="Y5H-58-Q8i"/>
                     </constraints>
                 </view>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vXk-px-pyf">
-                    <rect key="frame" x="176.66666666666666" y="722" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="FAW-6x-u4I"/>
-                        <constraint firstAttribute="height" constant="40" id="usb-YE-gZV"/>
-                    </constraints>
-                </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar Pengaduan Korektif" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuq-NE-PXG">
                     <rect key="frame" x="16" y="203" width="361" height="17"/>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
@@ -70,6 +63,13 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vXk-px-pyf">
+                    <rect key="frame" x="176.66666666666666" y="722" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="FAW-6x-u4I"/>
+                        <constraint firstAttribute="height" constant="40" id="usb-YE-gZV"/>
+                    </constraints>
+                </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Px-yF-if3" customClass="ActionBarView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="762" width="393" height="56"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

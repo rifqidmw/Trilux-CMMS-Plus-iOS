@@ -25,11 +25,6 @@ class AssetListView: BaseViewController {
         setupBody()
     }
     
-    override func willAppear() {
-        super.willAppear()
-        self.fetchInitData()
-    }
-    
 }
 
 extension AssetListView {

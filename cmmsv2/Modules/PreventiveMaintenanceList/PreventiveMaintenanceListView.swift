@@ -24,11 +24,6 @@ class PreventiveMaintenanceListView: BaseViewController {
         self.setupBody()
     }
     
-    override func willAppear() {
-        super.willAppear()
-        self.fetchInitialData()
-    }
-    
 }
 
 extension PreventiveMaintenanceListView {

@@ -1,16 +1,29 @@
-// 
+//
 //  CorrectiveHoldListInteractor.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 14/03/24.
 //
 
-import Foundation
+import Combine
 
 class DelayCorrectiveListInteractor: BaseInteractor {
     
-    // func fetchData(completion: @escaping (Result<ModelResponse, Error>) -> Void) {
-    //    api.requestApi(.exampleEndpoint, completion: completion)
-    // }
+    func getComplaintList(
+        page: Int? = nil,
+        limit: Int? = nil,
+        equipmentId: String? = nil,
+        status: String? = nil,
+        dateFilter: String? = nil,
+        keyword: String? = nil) -> AnyPublisher<ComplaintEntity, Error> {
+            return api.requestApiPublisher(.getComplaintList(
+                page: page,
+                limit: limit,
+                equipmentId: equipmentId,
+                status: status,
+                dateFilter: dateFilter,
+                keyword: keyword))
+            
+        }
     
 }

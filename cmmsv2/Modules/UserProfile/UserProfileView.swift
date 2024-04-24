@@ -37,7 +37,7 @@ class UserProfileView: BaseViewController {
     
     override func willAppear() {
         super.willAppear()
-        fetchInitData()
+        self.fetchInitData()
     }
     
 }
