@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogBookView" customModule="cmmsv2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogBookListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="calendarView" destination="H4G-Jq-qtW" id="PCe-wE-dIv"/>
                 <outlet property="collectionView" destination="V7G-dw-kOw" id="tF8-WE-ceQ"/>
@@ -27,6 +27,7 @@
                 <outlet property="customNavigationView" destination="5QX-aU-Dqq" id="hxy-JW-fIy"/>
                 <outlet property="dateLabel" destination="jhm-cF-6NI" id="HmA-Dh-LDn"/>
                 <outlet property="emptyView" destination="3mk-Th-vJd" id="AEV-b3-ar3"/>
+                <outlet property="spinner" destination="JoL-HF-LEA" id="Q35-tJ-hMe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -56,13 +57,13 @@
                             <rect key="frame" x="16" y="16" width="361" height="42"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 Maret 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhm-cF-6NI">
-                                    <rect key="frame" x="0.0" y="0.0" width="361" height="14.666666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="14"/>
                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                     <color key="textColor" name="placeholderColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terdapat 3 item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5m-NZ-xuB">
-                                    <rect key="frame" x="0.0" y="22.666666666666686" width="361" height="19.333333333333329"/>
+                                    <rect key="frame" x="0.0" y="23.333333333333314" width="361" height="18.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                     <color key="textColor" name="customDarkGrayColor"/>
                                     <nil key="highlightedColor"/>
@@ -93,7 +94,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsV-eW-cuf">
-                                            <rect key="frame" x="109.33333333333333" y="218.66666666666663" width="142.33333333333337" height="29"/>
+                                            <rect key="frame" x="107.33333333333333" y="218.66666666666663" width="146.66666666666669" height="28"/>
                                             <string key="text">Maaf, tidak ditemukan data
 pada tanggal tersebut</string>
                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
@@ -118,6 +119,9 @@ pada tanggal tersebut</string>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
                                 </collectionView>
                             </subviews>
                         </stackView>
@@ -133,6 +137,13 @@ pada tanggal tersebut</string>
                         <constraint firstItem="oDv-Kb-IiA" firstAttribute="top" secondItem="EfU-7H-N9D" secondAttribute="top" constant="16" id="xSJ-6X-GkC"/>
                     </constraints>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-HF-LEA">
+                    <rect key="frame" x="176.66666666666666" y="778" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="bOU-29-Gbk"/>
+                        <constraint firstAttribute="width" constant="40" id="vkh-We-xWU"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,9 +153,11 @@ pada tanggal tersebut</string>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5QX-aU-Dqq" secondAttribute="trailing" id="DZ6-g0-DUL"/>
                 <constraint firstItem="H4G-Jq-qtW" firstAttribute="top" secondItem="5QX-aU-Dqq" secondAttribute="bottom" constant="8" id="NUn-NQ-7MT"/>
                 <constraint firstItem="5QX-aU-Dqq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OBs-vH-KQk"/>
+                <constraint firstItem="JoL-HF-LEA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OZn-cB-hZ6"/>
                 <constraint firstItem="5QX-aU-Dqq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YNz-ar-l5q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H4G-Jq-qtW" secondAttribute="trailing" id="ZcK-so-gi2"/>
                 <constraint firstItem="H4G-Jq-qtW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zn0-cF-oyo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JoL-HF-LEA" secondAttribute="bottom" id="dty-LC-dkM"/>
                 <constraint firstItem="EfU-7H-N9D" firstAttribute="top" secondItem="H4G-Jq-qtW" secondAttribute="bottom" constant="8" id="eCg-8p-Nqo"/>
                 <constraint firstItem="EfU-7H-N9D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n5v-DL-68l"/>
             </constraints>
