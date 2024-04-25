@@ -151,8 +151,13 @@
             </constraints>
             <connections>
                 <outlet property="actionLabel" destination="Gud-WZ-UHs" id="MvA-km-K9C"/>
-                <outlet property="containerContentStackView" destination="FAt-Qg-HO3" id="tEy-ob-Ncr"/>
-                <outlet property="containerStackView" destination="yCn-7X-gQD" id="1UJ-tF-wMv"/>
+                <outlet property="containerActionView" destination="qbB-07-1HX" id="jJS-Jj-3vg"/>
+                <outlet property="containerContentStackView" destination="FAt-Qg-HO3" id="ry8-Jl-HJ6"/>
+                <outlet property="containerContentView" destination="ti7-UD-brj" id="F7f-aZ-52d"/>
+                <outlet property="containerEvaluationView" destination="qRc-Vz-XXc" id="fuV-9y-7EZ"/>
+                <outlet property="containerHeaderStackView" destination="4T6-48-bzT" id="KBk-Ie-jeY"/>
+                <outlet property="containerHeaderView" destination="QZj-hm-Fy3" id="JOS-27-Haq"/>
+                <outlet property="containerStackView" destination="yCn-7X-gQD" id="f6c-oh-p0n"/>
                 <outlet property="evaluationLabel" destination="yf2-Bt-3Vq" id="YVr-9M-5ri"/>
                 <outlet property="timeLabel" destination="INT-gl-KZ5" id="PAy-Cb-7aA"/>
                 <outlet property="uniqueNumberLabel" destination="Jew-Dc-DNG" id="brJ-Kg-VTY"/>

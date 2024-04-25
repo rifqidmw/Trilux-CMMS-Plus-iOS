@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class LogBookCVC: UICollectionViewCell {
     
@@ -15,10 +16,15 @@ class LogBookCVC: UICollectionViewCell {
     }()
     
     @IBOutlet weak var containerContentStackView: UIStackView!
+    @IBOutlet weak var containerHeaderView: UIView!
+    @IBOutlet weak var containerHeaderStackView: UIStackView!
     @IBOutlet weak var uniqueNumberLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var containerStackView: UIStackView!
+    @IBOutlet weak var containerContentView: UIView!
+    @IBOutlet weak var containerActionView: UIView!
     @IBOutlet weak var actionLabel: UILabel!
+    @IBOutlet weak var containerEvaluationView: UIView!
     @IBOutlet weak var evaluationLabel: UILabel!
     
     override func awakeFromNib() {
@@ -28,17 +34,36 @@ class LogBookCVC: UICollectionViewCell {
         containerContentStackView.addBorder(width: 0.8, colorBorder: UIColor.customLightGrayColor.cgColor)
         containerStackView.addBorder(width: 1.0, colorBorder: UIColor.customLightGrayColor.cgColor)
         containerStackView.makeCornerRadius(8)
+        showSkeletonAnimation()
     }
     
 }
 
 extension LogBookCVC {
     
-    func setupCell(data: LogBookEntity) {
-        uniqueNumberLabel.text = data.uniqueNumber
+    func setupCell(data: LogBookData) {
+        hideSkeletonAnimation()
+        uniqueNumberLabel.text = data.lk_number
         timeLabel.text = data.time
-        actionLabel.text = data.action
-        evaluationLabel.text = data.evaluation
+        actionLabel.text = data.tindakan?.first
+        evaluationLabel.text = ((data.tindakan?.first?.isEmpty) != nil) ? "-" : "\(data.tanggal ?? "")"
+    }
+    
+    private func showSkeletonAnimation() {
+        [containerHeaderView,
+         containerActionView,
+         containerEvaluationView].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func hideSkeletonAnimation() {
+        [containerHeaderView,
+         containerActionView,
+         containerEvaluationView].forEach {
+            $0.hideSkeleton()
+        }
     }
     
 }

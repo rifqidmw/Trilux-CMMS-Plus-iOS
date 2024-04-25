@@ -62,6 +62,7 @@ enum Endpoint {
         page: Int? = nil,
         engineer: Int? = nil)
     case calibrationList(limit: Int? = nil, page: Int? = nil)
+    case logBookList(limit: Int? = nil, page: Int? = nil, date: String? = nil)
 }
 
 // MARK: - PATH URL
@@ -107,7 +108,7 @@ extension Endpoint {
             let limit,
             let equipmentId,
             let status,
-            let dateFilter, 
+            let dateFilter,
             let keyword):
             return generateComplaintListURL(
                 page: page,
@@ -141,6 +142,8 @@ extension Endpoint {
                 engineer: engineer)
         case .calibrationList(limit: let limit, page: let page):
             return "lk/listkalibrasi?limit=\(limit ?? 0)&page=\(page ?? 0)"
+        case .logBookList(limit: let limit, page: let page, date: let date):
+            return generateLogBookURL(limit: limit, page: page, date: date)
         }
     }
 }
@@ -369,6 +372,22 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/listpreventif" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateLogBookURL(
+        limit: Int? = nil,
+        page: Int? = nil,
+        date: String? = nil
+    ) -> String {
+        let queryString = [
+            limit.map { "limit=\($0)" },
+            page.map { "page=\($0)" },
+            date.map { "tanggal=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "profile/logbook" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }
