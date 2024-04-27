@@ -323,10 +323,6 @@
 		CEB703A82BA87FBD004583C7 /* PreventiveCalendarListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB7039D2BA87FBD004583C7 /* PreventiveCalendarListView.xib */; };
 		CEB703A92BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */; };
 		CEB703AA2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */; };
-		CEB703AE2BA885E5004583C7 /* PreventiveCalendarCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB703AC2BA885E5004583C7 /* PreventiveCalendarCVC.swift */; };
-		CEB703AF2BA885E5004583C7 /* PreventiveCalendarCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB703AC2BA885E5004583C7 /* PreventiveCalendarCVC.swift */; };
-		CEB703B02BA885E5004583C7 /* PreventiveCalendarCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB703AD2BA885E5004583C7 /* PreventiveCalendarCVC.xib */; };
-		CEB703B12BA885E5004583C7 /* PreventiveCalendarCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB703AD2BA885E5004583C7 /* PreventiveCalendarCVC.xib */; };
 		CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
 		CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
 		CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */; };
@@ -819,8 +815,6 @@
 		CEB7039C2BA87FBD004583C7 /* PreventiveCalendarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarListView.swift; sourceTree = "<group>"; };
 		CEB7039D2BA87FBD004583C7 /* PreventiveCalendarListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveCalendarListView.xib; sourceTree = "<group>"; };
 		CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarListEntity.swift; sourceTree = "<group>"; };
-		CEB703AC2BA885E5004583C7 /* PreventiveCalendarCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarCVC.swift; sourceTree = "<group>"; };
-		CEB703AD2BA885E5004583C7 /* PreventiveCalendarCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveCalendarCVC.xib; sourceTree = "<group>"; };
 		CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HospitalModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
@@ -1622,7 +1616,6 @@
 		CEB703862BA8788F004583C7 /* PreventiveCalendarList */ = {
 			isa = PBXGroup;
 			children = (
-				CEB703AB2BA885BF004583C7 /* Cell */,
 				CEB703992BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift */,
 				CEB7039A2BA87FBD004583C7 /* PreventiveCalendarListRouter.swift */,
 				CEB7039B2BA87FBD004583C7 /* PreventiveCalendarListInteractor.swift */,
@@ -1631,15 +1624,6 @@
 				CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */,
 			);
 			path = PreventiveCalendarList;
-			sourceTree = "<group>";
-		};
-		CEB703AB2BA885BF004583C7 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CEB703AC2BA885E5004583C7 /* PreventiveCalendarCVC.swift */,
-				CEB703AD2BA885E5004583C7 /* PreventiveCalendarCVC.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEC1B0542BA1E37600DF6A4F /* HistoryList */ = {
@@ -2393,7 +2377,6 @@
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91072B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
-				CEB703B02BA885E5004583C7 /* PreventiveCalendarCVC.xib in Resources */,
 				CE9E7D992B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DD92B45E119004A260D /* Roboto-Regular.ttf in Resources */,
 				CEE79EE32B716C870063D844 /* CalibratorSectionView.xib in Resources */,
@@ -2509,7 +2492,6 @@
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91082B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
-				CEB703B12BA885E5004583C7 /* PreventiveCalendarCVC.xib in Resources */,
 				CE9E7D9A2B529F4500240A7D /* UserProfileView.xib in Resources */,
 				CECB3DDA2B45E119004A260D /* Roboto-Regular.ttf in Resources */,
 				CEE79EE42B716C870063D844 /* CalibratorSectionView.xib in Resources */,
@@ -2758,7 +2740,6 @@
 				CEC2079D2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
 				CE4255E92BA704E5002B558C /* LogBookListInteractor.swift in Sources */,
 				CE90B15D2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
-				CEB703AE2BA885E5004583C7 /* PreventiveCalendarCVC.swift in Sources */,
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
@@ -2978,7 +2959,6 @@
 				CEC2079E2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
 				CE4255EA2BA704E5002B558C /* LogBookListInteractor.swift in Sources */,
 				CE90B15E2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
-				CEB703AF2BA885E5004583C7 /* PreventiveCalendarCVC.swift in Sources */,
 				CEE79EC02B70ED9B0063D844 /* WorkSheetOnsitePreventiveDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
@@ -3220,6 +3200,7 @@
 				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trilux CMMS +";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3249,6 +3230,7 @@
 				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trilux CMMS +";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3278,6 +3260,7 @@
 				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trilux CMMS + DEV";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3307,6 +3290,7 @@
 				DEVELOPMENT_TEAM = 5PNVY2PCLX;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = cmmsv2/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trilux CMMS + DEV";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
