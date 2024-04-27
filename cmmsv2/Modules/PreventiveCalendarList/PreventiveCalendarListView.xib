@@ -28,6 +28,7 @@
                 <outlet property="dateLabel" destination="s87-Lp-Am7" id="MPj-5d-3ih"/>
                 <outlet property="emptyView" destination="0VY-bR-msV" id="vLn-fA-PpU"/>
                 <outlet property="filterButton" destination="EdF-bU-cKB" id="WdA-Ym-T12"/>
+                <outlet property="spinner" destination="h8p-A6-wiL" id="ey5-7e-btO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -62,17 +63,17 @@
                                     <color key="textColor" name="placeholderColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xm4-Wz-iol">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xm4-Wz-iol">
                                     <rect key="frame" x="0.0" y="22.666666666666686" width="361" height="19.333333333333329"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terdapat 3 item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQA-8A-5sp">
-                                            <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="19.333333333333332"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="261" height="19.333333333333332"/>
                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                             <color key="textColor" name="customDarkGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdF-bU-cKB">
-                                            <rect key="frame" x="182.66666666666663" y="0.0" width="178.33333333333337" height="19.333333333333332"/>
+                                            <rect key="frame" x="265" y="0.0" width="96" height="19.333333333333332"/>
                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                             <color key="textColor" name="customPrimaryColor"/>
                                             <nil key="highlightedColor"/>
@@ -130,6 +131,9 @@ pada tanggal tersebut</string>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
                                 </collectionView>
                             </subviews>
                         </stackView>
@@ -145,6 +149,13 @@ pada tanggal tersebut</string>
                         <constraint firstItem="SPF-8Y-EsU" firstAttribute="top" secondItem="xhf-x6-NAh" secondAttribute="top" constant="16" id="uel-vg-GdO"/>
                     </constraints>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="h8p-A6-wiL">
+                    <rect key="frame" x="176.66666666666666" y="778" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="TAJ-Z6-yvl"/>
+                        <constraint firstAttribute="width" constant="40" id="yw6-mW-kwD"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -153,12 +164,14 @@ pada tanggal tersebut</string>
                 <constraint firstItem="xhf-x6-NAh" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5rX-3W-QfS"/>
                 <constraint firstItem="JVG-Xg-ZBu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9Fm-HG-MmE"/>
                 <constraint firstItem="xhf-x6-NAh" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="AHs-t2-VvK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h8p-A6-wiL" secondAttribute="bottom" id="JXy-29-jWR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JVG-Xg-ZBu" secondAttribute="trailing" id="N2J-iG-qVg"/>
                 <constraint firstItem="xhf-x6-NAh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NhN-ys-6Yk"/>
                 <constraint firstItem="JVG-Xg-ZBu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pd2-Sf-3te"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tqh-fS-Vvj" secondAttribute="trailing" id="Tis-NH-H9P"/>
                 <constraint firstItem="xhf-x6-NAh" firstAttribute="top" secondItem="tqh-fS-Vvj" secondAttribute="bottom" constant="8" id="V9c-PE-Ldt"/>
                 <constraint firstItem="tqh-fS-Vvj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VUz-63-QCv"/>
+                <constraint firstItem="h8p-A6-wiL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oQ0-ef-SMD"/>
             </constraints>
             <point key="canvasLocation" x="12.977099236641221" y="0.0"/>
         </view>

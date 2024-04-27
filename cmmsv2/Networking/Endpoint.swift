@@ -63,6 +63,8 @@ enum Endpoint {
         engineer: Int? = nil)
     case calibrationList(limit: Int? = nil, page: Int? = nil)
     case logBookList(limit: Int? = nil, page: Int? = nil, date: String? = nil)
+    case calendarPreventiveList(idEngineer: String? = nil, month: String? = nil)
+    case schedulePreventiveList(idEngineer: String? = nil, date: String? = nil, page: Int? = nil, limit: Int? = nil)
 }
 
 // MARK: - PATH URL
@@ -144,6 +146,10 @@ extension Endpoint {
             return "lk/listkalibrasi?limit=\(limit ?? 0)&page=\(page ?? 0)"
         case .logBookList(limit: let limit, page: let page, date: let date):
             return generateLogBookURL(limit: limit, page: page, date: date)
+        case .calendarPreventiveList(idEngineer: let idEngineer, month: let month):
+            return "lk/kalender_preventif?id_engineer=\(idEngineer ?? "")&bulan=\(month ?? "")"
+        case .schedulePreventiveList(let idEngineer, date: let date, let page, let limit):
+            return "lk/jadwal_preventif?id_engineer=\(idEngineer ?? "")&tanggal=\(date ?? "")&page=\(page ?? 0)&limit=\(limit ?? 0)"
         }
     }
 }

@@ -14,6 +14,7 @@ enum WorkSheetCellType {
     case corrective
     case calibration
     case history
+    case preventiveCalendar
 }
 
 class WorkSheetCVC: UICollectionViewCell {
@@ -100,6 +101,12 @@ extension WorkSheetCVC {
             firstBadgeLabel.text = "Lembar Kerja Disetujui"
             firstBadgeView.isHidden = data.status == .done ? false : true
             secondBadgeView.isHidden = true
+        case .preventiveCalendar:
+            firstBadgeView.isHidden = true
+            secondBadgeView.isHidden = true
+            markView.isHidden = true
+            descriptionLabel.isHidden = false
+            descriptionLabel.text = "\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
         }
     }
     
