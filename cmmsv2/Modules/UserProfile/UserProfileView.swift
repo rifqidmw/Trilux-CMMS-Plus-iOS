@@ -227,6 +227,9 @@ extension UserProfileView: UITableViewDataSource, UITableViewDelegate {
             presenter.navigateToEditProfile(navigation: navigation, data: data)
         case 1:
             presenter.navigateToChangePassword(navigation: navigation)
+        case 2:
+            self.showOverlay()
+            presenter.showBottomSheetSignature(navigation: navigation)
         default: break
         }
     }

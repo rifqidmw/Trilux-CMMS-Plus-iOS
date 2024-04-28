@@ -114,4 +114,9 @@ extension UserProfilePresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
+    func showBottomSheetSignature(navigation: UINavigationController) {
+        let bottomSheet = SignatureBottomSheet(nibName: String(describing: SignatureBottomSheet.self), bundle: nil)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
 }

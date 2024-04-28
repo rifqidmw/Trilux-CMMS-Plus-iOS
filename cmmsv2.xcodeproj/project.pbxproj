@@ -311,6 +311,10 @@
 		CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */; };
 		CEAF06422B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */; };
 		CEAF06432B6FE1F200239C97 /* UserProfileView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */; };
+		CEAF27E82BDE098B00CCC5EE /* SignatureBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF27E72BDE098B00CCC5EE /* SignatureBottomSheet.swift */; };
+		CEAF27E92BDE098B00CCC5EE /* SignatureBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF27E72BDE098B00CCC5EE /* SignatureBottomSheet.swift */; };
+		CEAF27EB2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF27EA2BDE099E00CCC5EE /* SignatureBottomSheet.xib */; };
+		CEAF27EC2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF27EA2BDE099E00CCC5EE /* SignatureBottomSheet.xib */; };
 		CEB7039F2BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB703992BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift */; };
 		CEB703A02BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB703992BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift */; };
 		CEB703A12BA87FBD004583C7 /* PreventiveCalendarListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7039A2BA87FBD004583C7 /* PreventiveCalendarListRouter.swift */; };
@@ -809,6 +813,8 @@
 		CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredBottomSheet.swift; sourceTree = "<group>"; };
 		CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpiredBottomSheet.xib; sourceTree = "<group>"; };
 		CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+Delegate.swift"; sourceTree = "<group>"; };
+		CEAF27E72BDE098B00CCC5EE /* SignatureBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureBottomSheet.swift; sourceTree = "<group>"; };
+		CEAF27EA2BDE099E00CCC5EE /* SignatureBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignatureBottomSheet.xib; sourceTree = "<group>"; };
 		CEB703992BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarListPresenter.swift; sourceTree = "<group>"; };
 		CEB7039A2BA87FBD004583C7 /* PreventiveCalendarListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarListRouter.swift; sourceTree = "<group>"; };
 		CEB7039B2BA87FBD004583C7 /* PreventiveCalendarListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarListInteractor.swift; sourceTree = "<group>"; };
@@ -1553,6 +1559,7 @@
 		CE9E7DAB2B53141E00240A7D /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				CEAF27E62BDE097000CCC5EE /* SignatureBottomSheet */,
 				CE9E7DAD2B53146200240A7D /* ChangePictureBottomSheet */,
 				CE9E7DAC2B53145200240A7D /* LogoutPopUpBottomSheet */,
 			);
@@ -1611,6 +1618,15 @@
 				CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */,
 			);
 			path = ExpiredBottomSheet;
+			sourceTree = "<group>";
+		};
+		CEAF27E62BDE097000CCC5EE /* SignatureBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF27E72BDE098B00CCC5EE /* SignatureBottomSheet.swift */,
+				CEAF27EA2BDE099E00CCC5EE /* SignatureBottomSheet.xib */,
+			);
+			path = SignatureBottomSheet;
 			sourceTree = "<group>";
 		};
 		CEB703862BA8788F004583C7 /* PreventiveCalendarList */ = {
@@ -2386,6 +2402,7 @@
 				CEC207A72B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
 				CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CEF7620F2B72A76800B5FD8E /* PreparationTVC.xib in Resources */,
+				CEAF27EB2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE0F20E12B756078008702E0 /* ActionSectionView.xib in Resources */,
 				CE14C2172B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
@@ -2501,6 +2518,7 @@
 				CEC207A82B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
 				CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CEF762102B72A76800B5FD8E /* PreparationTVC.xib in Resources */,
+				CEAF27EC2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE0F20E22B756078008702E0 /* ActionSectionView.xib in Resources */,
 				CE14C2182B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
@@ -2736,6 +2754,7 @@
 				CE4255F42BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE40124D2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE9E7D7F2B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
+				CEAF27E82BDE098B00CCC5EE /* SignatureBottomSheet.swift in Sources */,
 				CE0F20C22B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
 				CEC2079D2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
 				CE4255E92BA704E5002B558C /* LogBookListInteractor.swift in Sources */,
@@ -2955,6 +2974,7 @@
 				CE4255F52BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE40124E2B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift in Sources */,
 				CE9E7D802B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
+				CEAF27E92BDE098B00CCC5EE /* SignatureBottomSheet.swift in Sources */,
 				CE0F20C32B751D53008702E0 /* ElectricalMeasurementView.swift in Sources */,
 				CEC2079E2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
 				CE4255EA2BA704E5002B558C /* LogBookListInteractor.swift in Sources */,

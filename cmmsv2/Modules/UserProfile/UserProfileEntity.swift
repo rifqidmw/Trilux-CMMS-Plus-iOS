@@ -53,7 +53,8 @@ struct ProfileMenuModel: Identifiable {
 
 let profileMenuData: [ProfileMenuModel] = [
     ProfileMenuModel(image: "ic_user_with_gear", title: "Ubah Profile", desc: "Ubah profile sesuai keinginan Anda"),
-    ProfileMenuModel(image: "ic_padlock", title: "Ganti Password", desc: "Ganti password sesuai keinginan Anda")
+    ProfileMenuModel(image: "ic_padlock", title: "Ganti Password", desc: "Ganti password sesuai keinginan Anda"),
+    ProfileMenuModel(image: "ic_padlock", title: "Ganti Tanda Tangan", desc: "Ganti tanda tangan sesuai keinginan Anda")
 ]
 
 let changePictureData: [MenuModel] = [

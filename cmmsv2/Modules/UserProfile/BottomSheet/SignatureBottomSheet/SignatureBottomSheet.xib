@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignatureBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="q4b-m2-neG" id="bBW-jb-u4x"/>
+                <outlet property="dismissAreaView" destination="DyT-qZ-kgL" id="gXe-OH-e6Y"/>
+                <outlet property="view" destination="t5J-qT-q25" id="sKq-Rr-tdt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="t5J-qT-q25">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyT-qZ-kgL" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="443"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4b-m2-neG" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="502" width="393" height="350"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="350" id="YWX-A5-Vna"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="DyN-EV-EOV"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="q4b-m2-neG" firstAttribute="leading" secondItem="DyN-EV-EOV" secondAttribute="leading" id="3Ji-ET-SLR"/>
+                <constraint firstItem="DyN-EV-EOV" firstAttribute="trailing" secondItem="DyT-qZ-kgL" secondAttribute="trailing" id="Fte-dQ-X90"/>
+                <constraint firstItem="DyT-qZ-kgL" firstAttribute="top" secondItem="DyN-EV-EOV" secondAttribute="top" id="HWE-xs-227"/>
+                <constraint firstAttribute="bottom" secondItem="q4b-m2-neG" secondAttribute="bottom" id="Igl-dS-1S3"/>
+                <constraint firstItem="q4b-m2-neG" firstAttribute="top" secondItem="DyT-qZ-kgL" secondAttribute="bottom" id="OKU-g4-x6o"/>
+                <constraint firstItem="DyT-qZ-kgL" firstAttribute="leading" secondItem="DyN-EV-EOV" secondAttribute="leading" id="R7X-iN-OFy"/>
+                <constraint firstItem="DyN-EV-EOV" firstAttribute="trailing" secondItem="q4b-m2-neG" secondAttribute="trailing" id="kWH-43-mwS"/>
+            </constraints>
+            <point key="canvasLocation" x="230" y="-342"/>
+        </view>
+    </objects>
+</document>
