@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class SelectActionBottomSheet: BaseNonNavigationController {
     
@@ -47,19 +48,14 @@ extension SelectActionBottomSheet {
     }
     
     private func setupAction() {
-        bottomSheetView.handleBarArea.gesture()
-            .sink { [weak self] _  in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
-        
-        dismissAreaView.gesture()
-            .sink { [weak self] _  in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
+        Publishers.Merge(
+            bottomSheetView.handleBarArea.gesture(),
+            dismissAreaView.gesture())
+        .sink { [weak self] _  in
+            guard let self else { return }
+            self.dismiss(animated: true)
+        }
+        .store(in: &anyCancellable)
         
         workButton.gesture()
             .sink { [weak self] _  in

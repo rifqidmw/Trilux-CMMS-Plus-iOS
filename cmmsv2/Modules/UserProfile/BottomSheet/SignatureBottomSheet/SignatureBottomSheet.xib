@@ -4,14 +4,24 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignatureBottomSheet" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="bottomSheetView" destination="q4b-m2-neG" id="bBW-jb-u4x"/>
+                <outlet property="cameraButton" destination="b5l-33-rja" id="SgX-42-qAL"/>
+                <outlet property="clearButton" destination="CME-E2-qhT" id="89q-cd-FRz"/>
                 <outlet property="dismissAreaView" destination="DyT-qZ-kgL" id="gXe-OH-e6Y"/>
+                <outlet property="saveButton" destination="tX0-vh-IyM" id="4yY-Ws-iRq"/>
+                <outlet property="signaturePadView" destination="oke-cM-2u4" id="0Ok-Zl-z1c"/>
                 <outlet property="view" destination="t5J-qT-q25" id="sKq-Rr-tdt"/>
             </connections>
         </placeholder>
@@ -21,14 +31,70 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyT-qZ-kgL" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="443"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="393"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4b-m2-neG" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="502" width="393" height="350"/>
+                    <rect key="frame" x="0.0" y="452" width="393" height="400"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZM4-X2-sak">
+                            <rect key="frame" x="16" y="32" width="361" height="36"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buat Tanda Tangan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukH-Tw-Fpd">
+                                    <rect key="frame" x="0.0" y="0.0" width="317" height="36"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera_fill" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-33-rja">
+                                    <rect key="frame" x="325" y="0.0" width="36" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="mRF-b8-yDE"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="z7t-5C-taM"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oke-cM-2u4">
+                            <rect key="frame" x="0.0" y="84" width="393" height="224"/>
+                            <color key="backgroundColor" name="customLightGrayColor"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zxz-WC-blh">
+                            <rect key="frame" x="16" y="324" width="361" height="36"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CME-E2-qhT" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="36"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tX0-vh-IyM" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="36"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="EeF-fT-kV6"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="350" id="YWX-A5-Vna"/>
+                        <constraint firstItem="ZM4-X2-sak" firstAttribute="leading" secondItem="q4b-m2-neG" secondAttribute="leading" constant="16" id="33q-Vd-svU"/>
+                        <constraint firstItem="oke-cM-2u4" firstAttribute="leading" secondItem="q4b-m2-neG" secondAttribute="leading" id="Bz6-zb-W7I"/>
+                        <constraint firstItem="zxz-WC-blh" firstAttribute="leading" secondItem="q4b-m2-neG" secondAttribute="leading" constant="16" id="DJQ-r2-BRr"/>
+                        <constraint firstAttribute="trailing" secondItem="zxz-WC-blh" secondAttribute="trailing" constant="16" id="Dje-ed-imz"/>
+                        <constraint firstItem="zxz-WC-blh" firstAttribute="centerX" secondItem="q4b-m2-neG" secondAttribute="centerX" id="GXB-ag-EcW"/>
+                        <constraint firstItem="zxz-WC-blh" firstAttribute="top" secondItem="oke-cM-2u4" secondAttribute="bottom" constant="16" id="XxT-T4-KYL"/>
+                        <constraint firstAttribute="height" constant="400" id="YWX-A5-Vna"/>
+                        <constraint firstAttribute="trailing" secondItem="ZM4-X2-sak" secondAttribute="trailing" constant="16" id="Ypk-Lv-lnb"/>
+                        <constraint firstAttribute="bottom" secondItem="zxz-WC-blh" secondAttribute="bottom" constant="40" id="dLr-k0-ari"/>
+                        <constraint firstAttribute="trailing" secondItem="oke-cM-2u4" secondAttribute="trailing" id="h09-QD-cZw"/>
+                        <constraint firstItem="ZM4-X2-sak" firstAttribute="centerX" secondItem="q4b-m2-neG" secondAttribute="centerX" id="jBV-cY-9aE"/>
+                        <constraint firstItem="ZM4-X2-sak" firstAttribute="top" secondItem="q4b-m2-neG" secondAttribute="top" constant="32" id="nKE-Qs-TXU"/>
+                        <constraint firstItem="oke-cM-2u4" firstAttribute="top" secondItem="ZM4-X2-sak" secondAttribute="bottom" constant="16" id="vFF-Th-4hf"/>
                     </constraints>
                 </view>
             </subviews>
@@ -46,4 +112,13 @@
             <point key="canvasLocation" x="230" y="-342"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_camera_fill" width="44" height="44"/>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

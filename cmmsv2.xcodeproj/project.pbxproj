@@ -197,6 +197,8 @@
 		CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
 		CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
 		CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
+		CE7F35B82BDE51EC00EA5536 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F35B72BDE51EC00EA5536 /* AppManager.swift */; };
+		CE7F35B92BDE51EC00EA5536 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F35B72BDE51EC00EA5536 /* AppManager.swift */; };
 		CE82087F2B82391F00CD4242 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */; };
 		CE8208802B82391F00CD4242 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */; };
 		CE8208812B82391F00CD4242 /* NotificationListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */; };
@@ -756,6 +758,7 @@
 		CE5442952B4727F50022047D /* GeneralTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTextField.swift; sourceTree = "<group>"; };
 		CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		CE7F35B72BDE51EC00EA5536 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListPresenter.swift; sourceTree = "<group>"; };
 		CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListRouter.swift; sourceTree = "<group>"; };
 		CE82087B2B82391F00CD4242 /* NotificationListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListInteractor.swift; sourceTree = "<group>"; };
@@ -1559,9 +1562,9 @@
 		CE9E7DAB2B53141E00240A7D /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				CEAF27E62BDE097000CCC5EE /* SignatureBottomSheet */,
 				CE9E7DAD2B53146200240A7D /* ChangePictureBottomSheet */,
 				CE9E7DAC2B53145200240A7D /* LogoutPopUpBottomSheet */,
+				CEAF27E62BDE097000CCC5EE /* SignatureBottomSheet */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -1793,8 +1796,8 @@
 		CECB3DB82B45DA21004A260D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEC336FB2B6EF57E00B16026 /* Lottie */,
 				CECB3DBE2B45DA61004A260D /* Font */,
+				CEC336FB2B6EF57E00B16026 /* Lottie */,
 				CECB3DAD2B45D963004A260D /* Assets.xcassets */,
 				CE5442892B471FF50022047D /* CHANGELOG.md */,
 				CECB3DB22B45D963004A260D /* Info.plist */,
@@ -1924,6 +1927,7 @@
 			isa = PBXGroup;
 			children = (
 				CECB3E3A2B45E4DD004A260D /* AppLoger.swift */,
+				CE7F35B72BDE51EC00EA5536 /* AppManager.swift */,
 				CECB3E372B45E4B9004A260D /* Constants.swift */,
 			);
 			path = Other;
@@ -2093,8 +2097,8 @@
 		CEE79EC92B71216D0063D844 /* Section */ = {
 			isa = PBXGroup;
 			children = (
-				CE0044802B76370500C88345 /* CalibrationStatus */,
 				CE0F20DC2B756026008702E0 /* ActionSection */,
+				CE0044802B76370500C88345 /* CalibrationStatus */,
 				CEE79EDE2B716BE20063D844 /* CalibratorSection */,
 				CE0F20C02B751D3B008702E0 /* ElectricalMeasurement */,
 				CECD121D2B74AB5400DEAFF4 /* PhysicalFunctionalMonitoring */,
@@ -2649,6 +2653,7 @@
 				CEDCCE182BC9AF5E006F5F4F /* CorrectiveCVC.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
+				CE7F35B82BDE51EC00EA5536 /* AppManager.swift in Sources */,
 				CE4012452B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE0EC4AF2B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012432B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
@@ -2869,6 +2874,7 @@
 				CEDCCE192BC9AF5E006F5F4F /* CorrectiveCVC.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
+				CE7F35B92BDE51EC00EA5536 /* AppManager.swift in Sources */,
 				CE4012462B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE0EC4B02B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012442B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,

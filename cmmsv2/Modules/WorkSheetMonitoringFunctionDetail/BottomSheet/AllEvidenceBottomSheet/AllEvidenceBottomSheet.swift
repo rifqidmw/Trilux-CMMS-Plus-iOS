@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class AllEvidenceBottomSheet: BaseNonNavigationController {
     
@@ -53,19 +54,14 @@ extension AllEvidenceBottomSheet {
     }
     
     private func setupAction() {
-        dismissAreaView.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
-        
-        bottomSheetView.handleBarArea.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
+        Publishers.Merge(
+            bottomSheetView.handleBarArea.gesture(),
+            dismissAreaView.gesture())
+        .sink { [weak self] _ in
+            guard let self else { return }
+            self.dismiss(animated: true)
+        }
+        .store(in: &anyCancellable)
     }
     
 }
