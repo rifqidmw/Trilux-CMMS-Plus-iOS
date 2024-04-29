@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum CameraSelectionType {
+    case profile
+    case signature
+}
+
 protocol ChangePictureBottomSheetDelegate: AnyObject {
     func didSelectPictureFromCamera()
     func didSelectPictureFromGaleri()
@@ -41,6 +46,26 @@ struct DetailProfile: Codable {
         case id
         case valUrl = "valUrl"
         case valThumburl = "valThumburl"
+    }
+}
+
+struct SignatureEntity: Codable {
+    let data: SignatureData?
+    let message: String?
+    let status: Int?
+    
+    enum CodingKeys: CodingKey {
+        case data
+        case message
+        case status
+    }
+}
+
+struct SignatureData: Codable {
+    let base64: String?
+    
+    enum CodingKeys: CodingKey {
+        case base64
     }
 }
 

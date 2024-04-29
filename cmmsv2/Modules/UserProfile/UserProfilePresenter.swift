@@ -18,6 +18,7 @@ class UserProfilePresenter: BasePresenter {
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
+    @Published public var isLoadProfile: Bool = false
     @Published public var isError: Bool = false
     
     init(interactor: UserProfileInteractor) {
@@ -58,18 +59,18 @@ extension UserProfilePresenter {
             .store(in: &anyCancellable)
     }
     
-    func uploadProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String) {
-        self.isLoading = true
-        interactor.uploadProfile(name: name, position: position, workUnit: workUnit, imageId: imageId, phoneNumber: phoneNumber)
+    func updateProfile(name: String, position: String, workUnit: String, imageId: Int, phoneNumber: String) {
+        self.isLoadProfile = true
+        interactor.updateProfile(name: name, position: position, workUnit: workUnit, imageId: imageId, phoneNumber: phoneNumber)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
                     case .finished:
-                        self.isLoading = false
+                        self.isLoadProfile = false
                     case .failure(let error):
                         AppLogger.log(error, logType: .kNetworkResponseError)
                         self.errorMessage = error.localizedDescription
-                        self.isLoading = false
+                        self.isLoadProfile = false
                         self.isError = true
                     }
                 },
@@ -114,8 +115,10 @@ extension UserProfilePresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
-    func showBottomSheetSignature(navigation: UINavigationController) {
+    func showBottomSheetSignature(navigation: UINavigationController, data: User, delegate: SignatureBottomSheetDelegate) {
         let bottomSheet = SignatureBottomSheet(nibName: String(describing: SignatureBottomSheet.self), bundle: nil)
+        bottomSheet.data = data
+        bottomSheet.delegate = delegate
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

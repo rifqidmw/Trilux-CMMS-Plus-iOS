@@ -42,6 +42,7 @@ extension LoginView {
     }
     
     private func setupView() {
+        guard let presenter else { return }
         backgroundView.backgroundType = .splash
         backgroundView.triluxLogoImageView.isHidden = true
         containerView.makeCornerRadius(24, .topCurve)
@@ -52,7 +53,7 @@ extension LoginView {
         passwordTextField.configure(title: "Password", placeholder: "Masukan password Anda", type: .password)
         loginButton.configure(title: "Masuk")
         
-        presenter?.$isLoading
+        presenter.$isLoading
             .sink { [weak self] isLoading in
                 guard let self else { return }
                 self.showSpinner(isLoading)

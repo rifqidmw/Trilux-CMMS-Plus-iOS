@@ -7,6 +7,12 @@
 
 import UIKit
 import Combine
+import Photos
+
+protocol SignatureBottomSheetDelegate: AnyObject {
+    func didTapSaveSignature(signature: Data, view: SignatureBottomSheet)
+    func didTapCameraButton()
+}
 
 class SignatureBottomSheet: BaseNonNavigationController {
     
@@ -14,15 +20,22 @@ class SignatureBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var cameraButton: UIImageView!
     @IBOutlet weak var signaturePadView: UIView!
+    @IBOutlet weak var signatureImageView: UIImageView!
     @IBOutlet weak var clearButton: GeneralButton!
     @IBOutlet weak var saveButton: GeneralButton!
     
+    weak var delegate: SignatureBottomSheetDelegate?
+    var data: User?
     var signaturePath: UIBezierPath?
-    var signatureString: String?
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.loadUserSignature()
     }
     
 }
@@ -33,6 +46,7 @@ extension SignatureBottomSheet {
         setupView()
         setupAction()
         setupSignaturePad()
+        loadUserSignature()
     }
     
     private func setupView() {
@@ -53,35 +67,52 @@ extension SignatureBottomSheet {
         clearButton.gesture()
             .sink { [weak self] _ in
                 guard let self else { return }
+                self.signatureImageView.isHidden = true
+                self.signaturePadView.isHidden = false
                 self.clearSignatureCanvas()
             }
             .store(in: &anyCancellable)
         
         saveButton.gesture()
             .sink { [weak self] _ in
-                guard let self else { return }
-                guard let base64Signature = convertSignatureToBase64String() else {
-                    print("Failed to convert signature to base64 string")
+                guard let self = self else { return }
+                guard let signatureImage = self.captureSignatureImage() else {
+                    print("Failed to capture signature image")
                     return
                 }
-                self.signatureString = base64Signature
-                print("Signature converted to base64 string:", base64Signature)
-            }.store(in: &anyCancellable)
+                
+                guard let imageData = signatureImage.jpegData(compressionQuality: 1.0) else {
+                    print("Failed to convert signature image to data")
+                    return
+                }
+                
+                self.delegate?.didTapSaveSignature(signature: imageData, view: self)
+            }
+            .store(in: &anyCancellable)
+        
+        cameraButton.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.delegate?.didTapCameraButton()
+            }
+            .store(in: &anyCancellable)
     }
     
 }
 
 extension SignatureBottomSheet {
     
+    private func loadUserSignature() {
+        guard let data = self.data,
+              let userSignature = data.ttd,
+              let signatureImage = UIImage(base64String: userSignature)
+        else { return }
+        self.signatureImageView.image = signatureImage
+    }
+    
     private func clearSignatureCanvas() {
         signaturePath = nil
         signaturePadView.layer.sublayers?.removeAll()
-    }
-    
-    private func convertSignatureToBase64String() -> String? {
-        guard let signatureImage = captureSignatureImage() else { return nil }
-        guard let imageData = signatureImage.jpegData(compressionQuality: 1.0) else { return nil }
-        return imageData.base64EncodedString()
     }
     
     private func captureSignatureImage() -> UIImage? {
@@ -117,7 +148,6 @@ extension SignatureBottomSheet {
     
     private func startDrawing(at point: CGPoint) {
         let path = UIBezierPath()
-        path.lineWidth = 2.0
         path.lineCapStyle = .round
         path.move(to: point)
         
@@ -140,6 +170,7 @@ extension SignatureBottomSheet {
         shapeLayer.path = path.cgPath
         shapeLayer.strokeColor = UIColor.black.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = 4.0
         return shapeLayer
     }
     

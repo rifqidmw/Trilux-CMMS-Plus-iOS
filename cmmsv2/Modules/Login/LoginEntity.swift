@@ -48,7 +48,7 @@ struct User: Codable {
     let valPeringkat: [Int]?
     let valDeviceToken: String?
     let isPolisi: String?
-    let ttd: String?
+    var ttd: String?
     
     enum CodingKeys: CodingKey {
         case txtName

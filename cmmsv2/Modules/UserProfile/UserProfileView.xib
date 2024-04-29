@@ -27,6 +27,7 @@
                 <outlet property="logoutButton" destination="lK8-xM-xxk" id="puG-eR-6DX"/>
                 <outlet property="navigationView" destination="xln-Nk-VOH" id="zGq-Jc-Ykd"/>
                 <outlet property="positionView" destination="33c-pC-uZO" id="CgR-BC-KCd"/>
+                <outlet property="spinner" destination="NUD-YN-5UR" id="BjN-RO-UeZ"/>
                 <outlet property="tableView" destination="fMg-Pm-vMC" id="c6O-LO-49z"/>
                 <outlet property="tagLineLabel" destination="8Xb-sO-ruv" id="1b4-yT-IZZ"/>
                 <outlet property="userNameLabel" destination="TMe-5s-cB2" id="YYr-W9-G1X"/>
@@ -227,14 +228,19 @@
                         <constraint firstAttribute="bottom" secondItem="nUG-7e-BEC" secondAttribute="bottom" id="za1-GD-RNE"/>
                     </constraints>
                 </scrollView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NUD-YN-5UR">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Sz2-hB-b8B" firstAttribute="top" secondItem="xln-Nk-VOH" secondAttribute="bottom" id="3yY-QF-jZS"/>
+                <constraint firstItem="NUD-YN-5UR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5DG-xU-0K4"/>
                 <constraint firstItem="xln-Nk-VOH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="UiR-Sg-Amn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sz2-hB-b8B" secondAttribute="trailing" id="fq9-YZ-16W"/>
                 <constraint firstItem="xln-Nk-VOH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fzV-x2-y9D"/>
+                <constraint firstItem="NUD-YN-5UR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qdf-y0-dud"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xln-Nk-VOH" secondAttribute="trailing" id="rIy-QH-iUd"/>
                 <constraint firstItem="Sz2-hB-b8B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ttR-hS-8lA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Sz2-hB-b8B" secondAttribute="bottom" id="wZ0-ol-SB9"/>

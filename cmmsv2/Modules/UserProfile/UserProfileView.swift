@@ -24,10 +24,13 @@ class UserProfileView: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var logoutButton: GeneralButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: UserProfilePresenter?
     var user: User?
+    var cameraSelectedType: CameraSelectionType?
     var media: MediaProfileEntity?
+    var signature: SignatureEntity?
     var data: [ProfileMenuModel] = profileMenuData
     
     override func didLoad() {
@@ -91,6 +94,14 @@ extension UserProfileView {
                 } else {
                     hideSkeletonAnimation()
                 }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$isLoadProfile
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoadProfile in
+                guard let self else { return }
+                self.showSpinner(isLoadProfile)
             }
             .store(in: &anyCancellable)
     }
@@ -197,6 +208,14 @@ extension UserProfileView {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
+    private func showSpinner(_ isShow: Bool) {
+        DispatchQueue.main.async {
+            self.spinner.isHidden = !isShow
+            isShow ? self.showOverlay() : self.removeOverlay()
+            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
+        }
+    }
+    
 }
 
 extension UserProfileView: UITableViewDataSource, UITableViewDelegate {
@@ -229,7 +248,7 @@ extension UserProfileView: UITableViewDataSource, UITableViewDelegate {
             presenter.navigateToChangePassword(navigation: navigation)
         case 2:
             self.showOverlay()
-            presenter.showBottomSheetSignature(navigation: navigation)
+            presenter.showBottomSheetSignature(navigation: navigation, data: data, delegate: self)
         default: break
         }
     }
