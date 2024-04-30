@@ -25,9 +25,54 @@ extension UserProfileView: LogoutPopUpBottomSheetDelegate {
     
 }
 
+extension UserProfileView: SignatureBottomSheetDelegate {
+    
+    func didTapSaveSignature(signature: Data, view: SignatureBottomSheet) {
+        FileUploader.uploadFile(
+            fileData: signature,
+            withName: "image",
+            fileName: "signature.jpg",
+            mimeType: "image/jpeg",
+            uploadEndpoint: "media/uploadttd",
+            contentType: "application/x-www-form-urlencoded",
+            entityType: SignatureEntity.self,
+            success: { signatureEntity in
+                guard let signature = signatureEntity.data else { return }
+                self.signature = signatureEntity
+                self.user?.ttd = signature.base64
+                view.showAlert(title: "Data berhasil diubah", message: "Berhasil mengubah tanda tangan", completion: {
+                    self.dismiss(animated: true)
+                })
+            },
+            failure: { error in
+                view.showAlert(title: "Terjadi kesalahan!", message: "Error: \(error)", completion: {
+                    self.dismiss(animated: true)
+                })
+            }
+        )
+    }
+    
+    func didTapCameraButton() {
+        self.cameraSelectedType = .signature
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+            imagePicker.delegate = self
+            self.dismiss(animated: true) {
+                UIApplication.topViewController()?.present(imagePicker, animated: true, completion: nil)
+            }
+        } else {
+            self.showAlert(title: "Terjadi kesalahan", message: "Kamera tidak tersedia")
+        }
+    }
+    
+}
+
 extension UserProfileView: ChangePictureBottomSheetDelegate {
     
     func didSelectPictureFromCamera() {
+        self.cameraSelectedType = .profile
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .camera
@@ -66,44 +111,69 @@ extension UserProfileView: UIImagePickerControllerDelegate, UINavigationControll
         if let selectedImage = info[.editedImage] as? UIImage,
            let imageData = selectedImage.jpegData(compressionQuality: 0.2) {
             
-            let headers: HTTPHeaders = [
-                "Content-Type": "multipart/form-data",
-                "Authorizations": Constants.token,
-                "RequestType": "api",
-                "Accept": "*/*"
-            ]
+            let signatureCamera = self.cameraSelectedType == .signature
             
-            AF.upload(multipartFormData: { multipartFormData in
-                multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
-            }, to: "http://dev.triluxcmms.com/api/v1/media/uploadprofile", headers: headers)
-            .responseDecodable(of: MediaProfileEntity.self) { response in
-                switch response.result {
-                case .success(let mediaProfileEntity):
-                    self.media = mediaProfileEntity
-                    guard let presenter = self.presenter,
-                          let data = self.media,
-                          let user = data.data,
-                          let profile = user.media,
-                          let idString = profile.id,
-                          let imageId = Int(idString),
-                          let name = UserDefaults.standard.string(forKey: "txtName"),
-                          let position = UserDefaults.standard.string(forKey: "txtJabatan"),
-                          let workUnit = UserDefaults.standard.string(forKey: "txtUnitKerja"),
-                          let phoneNumber = UserDefaults.standard.string(forKey: "txtTelepon")
-                    else { return }
-                    
-                    presenter.uploadProfile(name: name, position: position, workUnit: workUnit, imageId: imageId, phoneNumber: phoneNumber)
-                case .failure(let error):
-                    self.showAlert(title: "Terjadi kesalahan!", message: "Error: \(error)")
-                }
+            if signatureCamera {
+                FileUploader.uploadFile(
+                    fileData: imageData,
+                    withName: "image",
+                    fileName: "signature.jpg",
+                    mimeType: "image/jpeg",
+                    uploadEndpoint: "media/uploadttd",
+                    contentType: "application/x-www-form-urlencoded",
+                    entityType: SignatureEntity.self,
+                    success: { signatureEntity in
+                        guard let signature = signatureEntity.data else { return }
+                        self.signature = signatureEntity
+                        self.user?.ttd = signature.base64
+                        self.showAlert(title: "Data berhasil diubah", message: "Berhasil mengubah tanda tangan", completion: {
+                            self.dismiss(animated: true)
+                        })
+                    },
+                    failure: { error in
+                        self.showAlert(title: "Terjadi kesalahan!", message: "Error: \(error)", completion: {
+                            self.dismiss(animated: true)
+                        })
+                    }
+                )
+            } else {
+                FileUploader.uploadFile(
+                    fileData: imageData,
+                    withName: "file",
+                    fileName: "file.jpg",
+                    mimeType: "image/jpeg",
+                    uploadEndpoint: "media/uploadprofile",
+                    contentType: "multipart/form-data",
+                    entityType: MediaProfileEntity.self,
+                    success: { mediaProfileEntity in
+                        self.media = mediaProfileEntity
+                        guard let presenter = self.presenter,
+                              let data = self.media,
+                              let user = data.data,
+                              let profile = user.media,
+                              let idString = profile.id,
+                              let imageId = Int(idString),
+                              let name = UserDefaults.standard.string(forKey: "txtName"),
+                              let position = UserDefaults.standard.string(forKey: "txtJabatan"),
+                              let workUnit = UserDefaults.standard.string(forKey: "txtUnitKerja"),
+                              let phoneNumber = UserDefaults.standard.string(forKey: "txtTelepon")
+                        else { return }
+                        
+                        presenter.updateProfile(name: name, position: position, workUnit: workUnit, imageId: imageId, phoneNumber: phoneNumber)
+                    },
+                    failure: { error in
+                        self.showAlert(title: "Terjadi kesalahan!", message: "Error: \(error)")
+                    }
+                )
             }
+            
         } else {
             self.showAlert(title: "Terjadi kesalahan!", message: "Gagal mengambil data gambar.")
         }
     }
     
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
 }

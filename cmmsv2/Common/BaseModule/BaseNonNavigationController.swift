@@ -24,5 +24,16 @@ class BaseNonNavigationController: UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: .removeOverlay, object: nil)
     }
-
+    
+    func showAlert(title: String, message: String? = "", completion: (() -> Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { _ in
+            completion?()
+        }
+        alertController.addAction(action)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
 }

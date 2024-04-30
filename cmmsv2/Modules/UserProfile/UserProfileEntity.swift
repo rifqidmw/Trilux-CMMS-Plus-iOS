@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum CameraSelectionType {
+    case profile
+    case signature
+}
+
 protocol ChangePictureBottomSheetDelegate: AnyObject {
     func didSelectPictureFromCamera()
     func didSelectPictureFromGaleri()
@@ -44,6 +49,26 @@ struct DetailProfile: Codable {
     }
 }
 
+struct SignatureEntity: Codable {
+    let data: SignatureData?
+    let message: String?
+    let status: Int?
+    
+    enum CodingKeys: CodingKey {
+        case data
+        case message
+        case status
+    }
+}
+
+struct SignatureData: Codable {
+    let base64: String?
+    
+    enum CodingKeys: CodingKey {
+        case base64
+    }
+}
+
 struct ProfileMenuModel: Identifiable {
     let id = UUID()
     let image: String
@@ -53,7 +78,8 @@ struct ProfileMenuModel: Identifiable {
 
 let profileMenuData: [ProfileMenuModel] = [
     ProfileMenuModel(image: "ic_user_with_gear", title: "Ubah Profile", desc: "Ubah profile sesuai keinginan Anda"),
-    ProfileMenuModel(image: "ic_padlock", title: "Ganti Password", desc: "Ganti password sesuai keinginan Anda")
+    ProfileMenuModel(image: "ic_padlock", title: "Ganti Password", desc: "Ganti password sesuai keinginan Anda"),
+    ProfileMenuModel(image: "ic_padlock", title: "Ganti Tanda Tangan", desc: "Ganti tanda tangan sesuai keinginan Anda")
 ]
 
 let changePictureData: [MenuModel] = [

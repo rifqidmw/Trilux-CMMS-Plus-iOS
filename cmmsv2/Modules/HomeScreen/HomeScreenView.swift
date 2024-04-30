@@ -18,7 +18,12 @@ class HomeScreenView: BaseViewController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
+    }
+    
+    override func willAppear() {
+        super.willAppear()
+        self.setupNavigationView()
     }
     
 }

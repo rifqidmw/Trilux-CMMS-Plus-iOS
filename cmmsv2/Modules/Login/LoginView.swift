@@ -42,17 +42,18 @@ extension LoginView {
     }
     
     private func setupView() {
+        guard let presenter else { return }
         backgroundView.backgroundType = .splash
         backgroundView.triluxLogoImageView.isHidden = true
         containerView.makeCornerRadius(24, .topCurve)
         containerView.addShadow(6, position: .top, color: UIColor.darkGray.cgColor)
-        taglineLabel.text = data?.tagline ?? ""
+        taglineLabel.text = data?.tagline?.replacingOccurrences(of: "'", with: "").replacingOccurrences(of: "\"", with: "") ?? ""
         
         usernameTextField.configure(title: "Username", placeholder: "Masukan username Anda")
         passwordTextField.configure(title: "Password", placeholder: "Masukan password Anda", type: .password)
         loginButton.configure(title: "Masuk")
         
-        presenter?.$isLoading
+        presenter.$isLoading
             .sink { [weak self] isLoading in
                 guard let self else { return }
                 self.showSpinner(isLoading)

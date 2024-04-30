@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 protocol NotificationDetailBottomSheetDelegate: AnyObject {
     func didTapCompanionButton()
@@ -124,19 +125,14 @@ extension NotificationDetailBottomSheet {
             }
             .store(in: &anyCancellable)
         
-        handleBarView.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
-        
-        bottomSheetView.handleBarArea.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.dismiss(animated: true)
-            }
-            .store(in: &anyCancellable)
+        Publishers.Merge(
+            bottomSheetView.handleBarArea.gesture(),
+            handleBarView.gesture())
+        .sink { [weak self] _ in
+            guard let self else { return }
+            self.dismiss(animated: true)
+        }
+        .store(in: &anyCancellable)
     }
     
 }
