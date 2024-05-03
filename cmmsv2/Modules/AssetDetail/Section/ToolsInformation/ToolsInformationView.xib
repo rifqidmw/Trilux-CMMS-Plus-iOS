@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToolsInformationView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="ageBenefitView" destination="iGJ-62-bWA" id="h3p-tI-zJf"/>
+                <outlet property="aspakView" destination="ses-gP-BNG" id="6CC-FW-6Lf"/>
+                <outlet property="distributorView" destination="ueT-OV-rwS" id="VSA-yW-AjM"/>
+                <outlet property="inventoryNumberView" destination="KWQ-kS-zgA" id="Rpf-WH-Oqa"/>
+                <outlet property="productYearView" destination="xIG-Ip-TY5" id="2jR-kk-gXf"/>
+                <outlet property="redualRatioView" destination="PNp-l8-f4C" id="tdc-Ow-KVF"/>
+                <outlet property="serialNumberView" destination="PnQ-xq-73B" id="aeA-QW-MIf"/>
+                <outlet property="simakView" destination="ryw-le-SGa" id="nWs-GE-beP"/>
+                <outlet property="simbadaView" destination="2kv-xW-5Gq" id="yQz-yY-aXW"/>
+                <outlet property="toolBrandView" destination="St5-KS-NKa" id="3L8-9e-uGx"/>
+                <outlet property="toolTypeView" destination="HhC-Ay-73m" id="kui-Wb-Hwx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yearPurchasingProductView" destination="KfY-KK-wSw" id="eel-af-M5l"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-oW-90i">
+                    <rect key="frame" x="16" y="16" width="361" height="780"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-4L-8tl">
+                            <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="780"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWQ-kS-zgA" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="St5-KS-NKa" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="132" width="174.66666666666666" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIG-Ip-TY5" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="264" width="174.66666666666666" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfY-KK-wSw" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="396" width="174.66666666666666" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNp-l8-f4C" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="528" width="174.66666666666666" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kv-xW-5Gq" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="660" width="174.66666666666666" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Vo7-WF-RZt">
+                            <rect key="frame" x="186.66666666666663" y="0.0" width="174.33333333333337" height="780"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnQ-xq-73B" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="174.33333333333334" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhC-Ay-73m" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="132" width="174.33333333333334" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueT-OV-rwS" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="264" width="174.33333333333334" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGJ-62-bWA" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="396" width="174.33333333333334" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryw-le-SGa" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="528" width="174.33333333333334" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ses-gP-BNG" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="660" width="174.33333333333334" height="120"/>
+                                    <color key="backgroundColor" name="placeholderColor"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xn4-oW-90i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="E7x-RY-YMz"/>
+                <constraint firstAttribute="trailing" secondItem="xn4-oW-90i" secondAttribute="trailing" constant="16" id="RFj-Kj-A6Y"/>
+                <constraint firstAttribute="bottom" secondItem="xn4-oW-90i" secondAttribute="bottom" constant="56" id="XOO-vW-5fF"/>
+                <constraint firstItem="xn4-oW-90i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="YMq-5U-1bm"/>
+            </constraints>
+            <point key="canvasLocation" x="26.717557251908396" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="placeholderColor">
+            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

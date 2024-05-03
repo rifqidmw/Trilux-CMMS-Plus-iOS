@@ -71,10 +71,11 @@ extension CustomNavigationView {
         case .homeToolbar:
             containerPlainView.isHidden = true
             containerHomeToolbarView.isHidden = false
-            
             profileView.makeCornerRadius(24)
-            profileImageView.makeCornerRadius(20)
-            notificationView.makeCornerRadius(24)
+            profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
+            profileImageView.clipsToBounds = true
+            notificationView.layer.cornerRadius = notificationView.bounds.width / 2
+            profileImageView.clipsToBounds = true
             notificationDotView.makeCornerRadius(4)
         case .searchToolbar:
             containerHomeToolbarView.isHidden = true

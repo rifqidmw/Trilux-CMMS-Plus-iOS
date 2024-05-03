@@ -5,13 +5,13 @@
 //  Created by PRO M1 2020 8/256 on 09/02/24.
 //
 
-import Foundation
+import UIKit
 
 class AssetListPresenter: BasePresenter {
     
     private let interactor: AssetListInteractor
     private let router: AssetListRouter
-    let assetType: AssetType
+    private let type: AssetType
     
     @Published public var equipmentData: EquipmentEntity?
     @Published public var equipment: [Equipment] = []
@@ -28,10 +28,10 @@ class AssetListPresenter: BasePresenter {
     var isCanLoad = true
     var isFetchingMore = false
     
-    init(interactor: AssetListInteractor, router: AssetListRouter, assetType: AssetType) {
+    init(interactor: AssetListInteractor, router: AssetListRouter, type: AssetType) {
         self.interactor = interactor
         self.router = router
-        self.assetType = assetType
+        self.type = type
     }
     
 }
@@ -51,8 +51,8 @@ extension AssetListPresenter {
                 limit: limit,
                 page: page,
                 search: search,
-                type: self.assetType.getStringValue(),
-                sstMedic: self.assetType.getStringValue())
+                type: self.type.getStringValue(),
+                sstMedic: self.type.getStringValue())
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -72,7 +72,6 @@ extension AssetListPresenter {
                         else { return }
                         self.equipmentData = asset
                         self.equipment.append(contentsOf: equipment)
-                        
                     }
                 }
             )
@@ -83,6 +82,14 @@ extension AssetListPresenter {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
         fetchAssetListData(serial: self.serial, locationId: self.locationId, limit: self.limit, page: self.page, search: self.search)
+    }
+    
+}
+
+extension AssetListPresenter {
+    
+    func navigateToDetailAsset(navigation: UINavigationController, data: Equipment) {
+        router.navigateToDetailAsset(navigation: navigation, type: self.type, data: data)
     }
     
 }

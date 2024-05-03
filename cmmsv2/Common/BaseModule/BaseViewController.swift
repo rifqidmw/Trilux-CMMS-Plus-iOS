@@ -8,11 +8,14 @@
 import UIKit
 import Combine
 import IQKeyboardManagerSwift
+import XLPagerTabStrip
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var isSwipeBackAble = true
     var anyCancellable = Set<AnyCancellable>()
+    var pagerTabStripViewController: ButtonBarPagerTabStripViewController?
+    var views: [UIViewController] = []
     
     let overlayView: UIView = {
         let view = UIView()
@@ -54,6 +57,29 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         anyCancellable.removeAll()
     }
     
+    func initializePagerTabStripViewController() -> ButtonBarPagerTabStripViewController {
+        let pagerTabStripViewController = ButtonBarPagerTabStripViewController()
+        pagerTabStripViewController.settings.style.buttonBarBackgroundColor = .clear
+        pagerTabStripViewController.settings.style.buttonBarItemBackgroundColor = .clear
+        pagerTabStripViewController.settings.style.selectedBarBackgroundColor = .customPrimaryColor
+        pagerTabStripViewController.settings.style.buttonBarItemFont = .robotoRegular(14)
+        pagerTabStripViewController.settings.style.selectedBarHeight = 4.0
+        pagerTabStripViewController.settings.style.buttonBarMinimumLineSpacing = 0
+        pagerTabStripViewController.settings.style.buttonBarItemTitleColor = .customDarkGrayColor
+        return pagerTabStripViewController
+    }
+    
+    func setupStripTabBar(in containerView: UIView) {
+        pagerTabStripViewController = initializePagerTabStripViewController()
+        pagerTabStripViewController?.datasource = self
+        pagerTabStripViewController?.delegate = self
+        
+        addChild(pagerTabStripViewController!)
+        pagerTabStripViewController?.view.frame = containerView.bounds
+        containerView.addSubview(pagerTabStripViewController!.view)
+        pagerTabStripViewController?.didMove(toParent: self)
+    }
+    
     func configureKeyboard() {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -83,7 +109,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         overlayView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         NotificationCenter.default.addObserver(self, selector: #selector(removeOverlay), name: .removeOverlay, object: nil)
-
+        
         UIView.animate(withDuration: 1.0) {
             self.overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         }
@@ -127,3 +153,14 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 }
 
+extension BaseViewController: PagerTabStripDataSource, PagerTabStripDelegate {
+    
+    func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        return views
+    }
+    
+    func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
+        viewController.moveToViewController(at: toIndex, animated: true)
+    }
+    
+}

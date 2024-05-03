@@ -13,6 +13,7 @@ def share_pod
   pod 'DropDown'
   pod 'DGCharts'
   pod 'FSCalendar'
+  pod 'XLPagerTabStrip', '~> 9.0'
 end
 
 target 'cmmsv2' do
