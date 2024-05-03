@@ -20,9 +20,9 @@ class GeneralInformationView: BaseViewController, IndicatorInfoProvider {
         self.setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setupLayout()
+    override func willAppear() {
+        super.willAppear()
+        self.setupLayout(height: 400)
     }
     
     func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
@@ -38,11 +38,6 @@ extension GeneralInformationView {
         locationInfoView.configure(type: .withoutDesc, infoTitle: "Lokasi", icon: "ic_pin_location_rounded_square", detailInfoTitle: "Gudang Logistik")
         budgetInfoView.configure(type: .withoutDesc, infoTitle: "Sumber Pendanaan", icon: "ic_stack_rounded_square", detailInfoTitle: "PT. Trilux Sukses Abadi")
         priceInfoView.configure(type: .withoutDesc, infoTitle: "Harga", icon: "ic_dollar_rounded_square", detailInfoTitle: "Rp. 3.200.000")
-    }
-    
-    private func setupLayout() {
-        let totalHeight = CGFloat(400)
-        NotificationCenter.default.post(name: Notification.Name("ContentHeightDidChange"), object: nil, userInfo: ["contentHeight": totalHeight])
     }
     
 }

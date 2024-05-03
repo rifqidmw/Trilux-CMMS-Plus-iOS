@@ -201,6 +201,10 @@
 		CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4012512B5D9A0D00517F7C /* SelectActionBottomSheet.swift */; };
 		CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */; };
 		CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */; };
+		CE422DD72BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE422DD52BE5779F004B405A /* AdditionDocumentCVC.swift */; };
+		CE422DD82BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE422DD52BE5779F004B405A /* AdditionDocumentCVC.swift */; };
+		CE422DD92BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE422DD62BE5779F004B405A /* AdditionDocumentCVC.xib */; };
+		CE422DDA2BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE422DD62BE5779F004B405A /* AdditionDocumentCVC.xib */; };
 		CE4255E52BA704E5002B558C /* LogBookListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255DF2BA704E5002B558C /* LogBookListPresenter.swift */; };
 		CE4255E62BA704E5002B558C /* LogBookListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255DF2BA704E5002B558C /* LogBookListPresenter.swift */; };
 		CE4255E72BA704E5002B558C /* LogBookListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255E02BA704E5002B558C /* LogBookListRouter.swift */; };
@@ -799,6 +803,8 @@
 		CE4012422B5D924F00517F7C /* WorkSheetOnsitePreventiveListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetOnsitePreventiveListEntity.swift; sourceTree = "<group>"; };
 		CE4012512B5D9A0D00517F7C /* SelectActionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActionBottomSheet.swift; sourceTree = "<group>"; };
 		CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectActionBottomSheet.xib; sourceTree = "<group>"; };
+		CE422DD52BE5779F004B405A /* AdditionDocumentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionDocumentCVC.swift; sourceTree = "<group>"; };
+		CE422DD62BE5779F004B405A /* AdditionDocumentCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionDocumentCVC.xib; sourceTree = "<group>"; };
 		CE4255DF2BA704E5002B558C /* LogBookListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookListPresenter.swift; sourceTree = "<group>"; };
 		CE4255E02BA704E5002B558C /* LogBookListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookListRouter.swift; sourceTree = "<group>"; };
 		CE4255E12BA704E5002B558C /* LogBookListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookListInteractor.swift; sourceTree = "<group>"; };
@@ -1422,6 +1428,7 @@
 		CE3108602BE261E200660275 /* AdditionalDocuments */ = {
 			isa = PBXGroup;
 			children = (
+				CE422DD42BE57784004B405A /* Cell */,
 				CE31086D2BE2659F00660275 /* AdditionalDocumentsView.swift */,
 				CE31086E2BE2659F00660275 /* AdditionalDocumentsView.xib */,
 			);
@@ -1487,6 +1494,15 @@
 				CE4012522B5D9A0D00517F7C /* SelectActionBottomSheet.xib */,
 			);
 			path = SelectActionBottomSheet;
+			sourceTree = "<group>";
+		};
+		CE422DD42BE57784004B405A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE422DD52BE5779F004B405A /* AdditionDocumentCVC.swift */,
+				CE422DD62BE5779F004B405A /* AdditionDocumentCVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CE4255DE2BA704C8002B558C /* LogBookList */ = {
@@ -2484,6 +2500,7 @@
 				CEDCCE1A2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */,
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CEE79EEB2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */,
+				CE422DD92BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
 				CEC2C8412BD1756500A9D454 /* SearchTextField.xib in Resources */,
 				CE2F2CEB2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
 				CECB3DB12B45D963004A260D /* LaunchScreen.storyboard in Resources */,
@@ -2607,6 +2624,7 @@
 				CEDCCE1B2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */,
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CEE79EEC2B7172BC0063D844 /* CalibrationMeasurementView.xib in Resources */,
+				CE422DDA2BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
 				CEC2C8422BD1756500A9D454 /* SearchTextField.xib in Resources */,
 				CE2F2CEC2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
 				CECB3DC62B45DAFF004A260D /* LaunchScreen.storyboard in Resources */,
@@ -2901,6 +2919,7 @@
 				CECB3E412B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CE74361F2BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
+				CE422DD72BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6B2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
 				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
@@ -3135,6 +3154,7 @@
 				CECB3E422B45E62B004A260D /* BasePresenter.swift in Sources */,
 				CE7436202BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
+				CE422DD82BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6C2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
 				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,

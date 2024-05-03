@@ -8,7 +8,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ToolsInformationView: BaseNonNavigationController, IndicatorInfoProvider {
+class ToolsInformationView: BaseViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var inventoryNumberView: InformationCardView!
     @IBOutlet weak var toolBrandView: InformationCardView!
@@ -29,9 +29,9 @@ class ToolsInformationView: BaseNonNavigationController, IndicatorInfoProvider {
         self.setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setupLayout()
+    override func willAppear() {
+        super.willAppear()
+        self.setupLayout(height: 500)
     }
     
     func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
@@ -56,11 +56,6 @@ extension ToolsInformationView {
         ageBenefitView.configureView(title: "Usia Manfaat", value: "8 Tahun")
         simakView.configureView(title: "Simak", value: "-")
         aspakView.configureView(title: "Aspak", value: "-")
-    }
-    
-    private func setupLayout() {
-        let totalHeight = CGFloat(500)
-        NotificationCenter.default.post(name: Notification.Name("ContentHeightDidChange"), object: nil, userInfo: ["contentHeight": totalHeight])
     }
     
 }

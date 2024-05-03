@@ -33,6 +33,7 @@ class AssetDetailView: BaseViewController {
         super.didLoad()
         self.setupBody()
         self.setupStripTabBar(in: stripTabBarView)
+        self.observeContentHeight(heightConstraint: stripTabBarViewHeightConstraint)
     }
     
 }
@@ -43,7 +44,6 @@ extension AssetDetailView {
         setupView()
         setupAction()
         setupStripView()
-        observeContentHeight()
     }
     
     private func setupView() {
@@ -51,8 +51,11 @@ extension AssetDetailView {
         customNavigationView.arrowLeftBackButton.tintColor = .white
         assetImageView.makeCornerRadius(12)
         headerView.makeCornerRadius(12)
+        headerView.addShadow(0.8)
         containerTabBarView.makeCornerRadius(12)
+        containerTabBarView.addShadow(0.8)
         seeDetailButton.makeCornerRadius(12)
+        seeDetailButton.addShadow(0.8)
         seeProgressButton.configure(title: "Lihat Progres", type: .bordered, backgroundColor: .white, titleColor: UIColor.customDarkGrayColor)
     }
     
@@ -88,21 +91,11 @@ extension AssetDetailView {
         
         let acceptanceInformation = AcceptanceInformationView(nibName: String(describing: AcceptanceInformationView.self), bundle: nil)
         
-        self.views = [generalInformation, toolsInformation, acceptanceInformation]
-    }
-    
-    private func observeContentHeight() {
-        NotificationCenter.default.addObserver(forName: Notification.Name("ContentHeightDidChange"), object: nil, queue: .main) { [weak self] notification in
-            DispatchQueue.main.async {
-                guard let self = self else { return }
-                if let height = notification.userInfo?["contentHeight"] as? CGFloat {
-                    UIView.animate(withDuration: 0.3) {
-                        self.stripTabBarViewHeightConstraint.constant = height
-                        self.view.layoutIfNeeded()
-                    }
-                }
-            }
-        }
+        let mutationInformation = MutationInformationView(nibName: String(describing: MutationInformationView.self), bundle: nil)
+        
+        let additionalDocument = AdditionalDocumentsView(nibName: String(describing: AdditionalDocumentsView.self), bundle: nil)
+        
+        self.views = [generalInformation, toolsInformation, acceptanceInformation, mutationInformation, additionalDocument]
     }
     
 }

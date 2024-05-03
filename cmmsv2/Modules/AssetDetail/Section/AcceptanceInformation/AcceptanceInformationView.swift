@@ -8,7 +8,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class AcceptanceInformationView: BaseNonNavigationController, IndicatorInfoProvider {
+class AcceptanceInformationView: BaseViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var contractNumberView: InformationCardView!
     @IBOutlet weak var dateContractView: InformationCardView!
@@ -20,9 +20,9 @@ class AcceptanceInformationView: BaseNonNavigationController, IndicatorInfoProvi
         self.setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setupLayout()
+    override func willAppear() {
+        super.willAppear()
+        self.setupLayout(height: 300)
     }
     
     func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
@@ -38,11 +38,6 @@ extension AcceptanceInformationView {
         dateContractView.configureView(title: "Tanggal Kontrak", value: "2024-04-26")
         partnerView.configureView(title: "Rekanan", value: "PT. Aku Datang")
         descriptionView.configureView(title: "Keterangan", value: "Belanja modal kedokteran rawat inap")
-    }
-    
-    private func setupLayout() {
-        let totalHeight = CGFloat(300)
-        NotificationCenter.default.post(name: Notification.Name("ContentHeightDidChange"), object: nil, userInfo: ["contentHeight": totalHeight])
     }
     
 }

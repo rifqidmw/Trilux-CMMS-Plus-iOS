@@ -151,6 +151,26 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             .store(in: &anyCancellable)
     }
+    
+    func setupLayout(height: CGFloat) {
+        let totalHeight = CGFloat(height)
+        NotificationCenter.default.post(name: .contentHeightDidChange, object: nil, userInfo: ["contentHeight": totalHeight])
+    }
+    
+    func observeContentHeight(heightConstraint: NSLayoutConstraint) {
+        NotificationCenter.default.addObserver(forName: .contentHeightDidChange, object: nil, queue: .main) { [weak self] notification in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                if let height = notification.userInfo?["contentHeight"] as? CGFloat {
+                    UIView.animate(withDuration: 0.3) {
+                        heightConstraint.constant = height
+                        self.view.layoutIfNeeded()
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 extension BaseViewController: PagerTabStripDataSource, PagerTabStripDelegate {

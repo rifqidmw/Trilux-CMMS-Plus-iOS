@@ -4,13 +4,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdditionalDocumentsView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="vL4-k7-WPk" id="jQs-e1-M8W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,25 +18,25 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOKUMEN TAMBAHAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aku-PB-dCi">
-                    <rect key="frame" x="106.66666666666669" y="415.66666666666669" width="180" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vL4-k7-WPk">
+                    <rect key="frame" x="16" y="16" width="361" height="780"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kfc-sC-J8F">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="aku-PB-dCi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hyk-Nu-oMm"/>
-                <constraint firstItem="aku-PB-dCi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jpi-rr-G9H"/>
+                <constraint firstItem="vL4-k7-WPk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="GSB-JC-cMP"/>
+                <constraint firstAttribute="bottom" secondItem="vL4-k7-WPk" secondAttribute="bottom" constant="56" id="kqi-Jr-s7s"/>
+                <constraint firstAttribute="trailing" secondItem="vL4-k7-WPk" secondAttribute="trailing" constant="16" id="uyf-iv-Im7"/>
+                <constraint firstItem="vL4-k7-WPk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="xPO-wn-pz4"/>
             </constraints>
             <point key="canvasLocation" x="28" y="-1"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
