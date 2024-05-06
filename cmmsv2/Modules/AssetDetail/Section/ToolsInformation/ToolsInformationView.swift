@@ -43,19 +43,19 @@ class ToolsInformationView: BaseViewController, IndicatorInfoProvider {
 extension ToolsInformationView {
     
     private func setupView() {
-        inventoryNumberView.configureView(title: "Nomor Inventaris", value: "-")
-        toolBrandView.configureView(title: "Merk Alat", value: "Suzuki")
-        productYearView.configureView(title: "Tahun Produk", value: "2024")
-        yearPurchasingProductView.configureView(title: "Tahun Pembelian", value: "2024")
-        redualRatioView.configureView(title: "Rasio Sisa", value: "1%")
-        simbadaView.configureView(title: "Simbada", value: "-")
+        inventoryNumberView.configureView(title: "Nomor Inventaris", value: "-N/A-")
+        toolBrandView.configureView(title: "Merk Alat", value: "-N/A-")
+        productYearView.configureView(title: "Tahun Produk", value: "-N/A-")
+        yearPurchasingProductView.configureView(title: "Tahun Pembelian", value: "-N/A-")
+        redualRatioView.configureView(title: "Rasio Sisa", value: "-N/A-")
+        simbadaView.configureView(title: "Simbada", value: "-N/A-")
         
-        serialNumberView.configureView(title: "Serial Number", value: "9-909")
-        toolTypeView.configureView(title: "Tipe Alat", value: "GSX")
-        distributorView.configureView(title: "Distributor", value: "ABN Indonesia")
-        ageBenefitView.configureView(title: "Usia Manfaat", value: "8 Tahun")
-        simakView.configureView(title: "Simak", value: "-")
-        aspakView.configureView(title: "Aspak", value: "-")
+        serialNumberView.configureView(title: "Serial Number", value: "-N/A-")
+        toolTypeView.configureView(title: "Tipe Alat", value: "-N/A-")
+        distributorView.configureView(title: "Distributor", value: "-N/A-")
+        ageBenefitView.configureView(title: "Usia Manfaat", value: "-N/A-")
+        simakView.configureView(title: "Simak", value: "-N/A-")
+        aspakView.configureView(title: "Aspak", value: "-N/A-")
     }
     
 }

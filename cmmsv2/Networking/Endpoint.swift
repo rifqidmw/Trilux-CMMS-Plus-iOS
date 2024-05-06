@@ -65,6 +65,11 @@ enum Endpoint {
     case logBookList(limit: Int? = nil, page: Int? = nil, date: String? = nil)
     case calendarPreventiveList(idEngineer: String? = nil, month: String? = nil)
     case schedulePreventiveList(idEngineer: String? = nil, date: String? = nil, page: Int? = nil, limit: Int? = nil)
+    case assetDetail(id: String?)
+    case assetMainCost(id: String?)
+    case assetTechnical(id: String?)
+    case assetAcceptance(id: String?)
+    case assetFiles(id: String?)
 }
 
 // MARK: - PATH URL
@@ -150,6 +155,16 @@ extension Endpoint {
             return "lk/kalender_preventif?id_engineer=\(idEngineer ?? "")&bulan=\(month ?? "")"
         case .schedulePreventiveList(let idEngineer, date: let date, let page, let limit):
             return "lk/jadwal_preventif?id_engineer=\(idEngineer ?? "")&tanggal=\(date ?? "")&page=\(page ?? 0)&limit=\(limit ?? 0)"
+        case .assetDetail(id: let id):
+            return "equipments/view?id=\(id ?? "")"
+        case .assetMainCost(id: let id):
+            return "equipments/maincost?id=\(id ?? "")"
+        case .assetTechnical(id: let id):
+            return "equipments/technical?id=\(id ?? "")"
+        case .assetAcceptance(id: let id):
+            return "equipments/penerimaan?id=\(id ?? "")"
+        case .assetFiles(id: let id):
+            return "equipments/files?id=\(id ?? "")"
         }
     }
 }

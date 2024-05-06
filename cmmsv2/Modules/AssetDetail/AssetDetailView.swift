@@ -27,7 +27,15 @@ class AssetDetailView: BaseViewController {
     @IBOutlet weak var stripTabBarViewHeightConstraint: NSLayoutConstraint!
     
     var presenter: AssetDetailPresenter?
+    var generalInfoData: EquipmentDetail?
+    var filesData: [File] = []
+    var costData: EquipmentMainCoast?
+    var technicalData: EquipmentTechnical?
+    var acceptanceData: DeliveryAcceptanceData?
     var maxContentHeight: CGFloat = 0
+    
+    var generalInfoView: GeneralInformationView?
+    var toolsInfoView: ToolsInformationView?
     
     override func didLoad() {
         super.didLoad()
@@ -41,9 +49,53 @@ class AssetDetailView: BaseViewController {
 extension AssetDetailView {
     
     private func setupBody() {
+        fetchInitialData()
+        bindingData()
         setupView()
         setupAction()
         setupStripView()
+    }
+    
+    private func fetchInitialData() {
+        guard let presenter else { return }
+        presenter.fetchInitialData()
+    }
+    
+    private func bindingData() {
+        guard let presenter else { return }
+        presenter.$assetInfoData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                guard let self = self else { return }
+                if let data = data {
+                    self.generalInfoData = data
+                    self.assetNameLabel.text = data.txtName
+                    self.assetImageView.loadImageUrl(data.valImage ?? "")
+                    self.serialNumberLabel.text = "SN: \(data.txtSerial ?? "")"
+                    self.assetTypeLabel.text = presenter.type == .medic ? "Medic" : "Non-Medic"
+                }
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func setupGeneralInfoView() {
+        if let assetGeneralView = self.generalInfoView,
+           let data = self.generalInfoData {
+            assetGeneralView.ownerInfoView.configure(infoTitle: "Pemilik", icon: "ic_user_rounded_square", detailInfoTitle: data.txtRuangan ?? "-N/A-", detailInfoDesc: data.txtSubRuangan ?? "-N/A-")
+            assetGeneralView.locationInfoView.configure(infoTitle: "Lokasi", icon: "ic_pin_location_rounded_square", detailInfoTitle: data.txtLokasiInstalasi ?? "-N/A-", detailInfoDesc: data.txtLokasiName ?? "-N/A-")
+        }
+    }
+    
+    private func setupToolsInfoView() {
+        if let assetToolsView = self.toolsInfoView,
+           let data = self.generalInfoData {
+            assetToolsView.serialNumberView.configureView(title: "Serial Number", value: data.txtSerial ?? "-N/A-")
+            assetToolsView.toolTypeView.configureView(title: "Tipe Alat", value: data.txtType ?? "-N/A-")
+            assetToolsView.distributorView.configureView(title: "Distributor", value: data.txtDistributor ?? "-N/A-")
+            assetToolsView.ageBenefitView.configureView(title: "Usia Manfaat", value: data.txtUsiaTeknis ?? "-N/A-")
+            assetToolsView.simakView.configureView(title: "Simak", value: data.nameSimak ?? "-N/A-")
+            assetToolsView.aspakView.configureView(title: "Aspak", value: data.syncAspak ?? "-N/A-")
+        }
     }
     
     private func setupView() {
@@ -86,8 +138,10 @@ extension AssetDetailView {
     
     private func setupStripView() {
         let generalInformation = GeneralInformationView(nibName: String(describing: GeneralInformationView.self), bundle: nil)
+        self.generalInfoView = generalInformation
         
         let toolsInformation = ToolsInformationView(nibName: String(describing: ToolsInformationView.self), bundle: nil)
+        self.toolsInfoView = toolsInformation
         
         let acceptanceInformation = AcceptanceInformationView(nibName: String(describing: AcceptanceInformationView.self), bundle: nil)
         

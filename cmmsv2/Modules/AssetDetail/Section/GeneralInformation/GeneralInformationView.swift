@@ -17,7 +17,7 @@ class GeneralInformationView: BaseViewController, IndicatorInfoProvider {
     
     override func didLoad() {
         super.didLoad()
-        self.setupView()
+        self.setupBody()
     }
     
     override func willAppear() {
@@ -33,11 +33,15 @@ class GeneralInformationView: BaseViewController, IndicatorInfoProvider {
 
 extension GeneralInformationView {
     
+    private func setupBody() {
+        self.setupView()
+    }
+    
     private func setupView() {
-        ownerInfoView.configure(infoTitle: "Pemilik", icon: "ic_user_rounded_square", detailInfoTitle: "Pelayanan Rawat Jalan", detailInfoDesc: "Ruangan Klinik Spesialis Penyakit Dalam")
-        locationInfoView.configure(type: .withoutDesc, infoTitle: "Lokasi", icon: "ic_pin_location_rounded_square", detailInfoTitle: "Gudang Logistik")
-        budgetInfoView.configure(type: .withoutDesc, infoTitle: "Sumber Pendanaan", icon: "ic_stack_rounded_square", detailInfoTitle: "PT. Trilux Sukses Abadi")
-        priceInfoView.configure(type: .withoutDesc, infoTitle: "Harga", icon: "ic_dollar_rounded_square", detailInfoTitle: "Rp. 3.200.000")
+        ownerInfoView.configure(infoTitle: "Pemilik", icon: "ic_user_rounded_square", detailInfoTitle: "-N/A-", detailInfoDesc: "-N/A-")
+        locationInfoView.configure(type: .withoutDesc, infoTitle: "Lokasi", icon: "ic_pin_location_rounded_square", detailInfoTitle: "-N/A-")
+        budgetInfoView.configure(type: .withoutDesc, infoTitle: "-N/A-", icon: "ic_stack_rounded_square", detailInfoTitle: "-N/A-")
+        priceInfoView.configure(type: .withoutDesc, infoTitle: "Harga", icon: "ic_dollar_rounded_square", detailInfoTitle: "-N/A-")
     }
     
 }
