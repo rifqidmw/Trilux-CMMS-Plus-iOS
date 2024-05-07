@@ -7,6 +7,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SkeletonView
 
 class AssetDetailView: BaseViewController {
     
@@ -27,15 +28,13 @@ class AssetDetailView: BaseViewController {
     @IBOutlet weak var stripTabBarViewHeightConstraint: NSLayoutConstraint!
     
     var presenter: AssetDetailPresenter?
-    var generalInfoData: EquipmentDetail?
-    var filesData: [File] = []
-    var costData: EquipmentMainCoast?
-    var technicalData: EquipmentTechnical?
-    var acceptanceData: DeliveryAcceptanceData?
+    @Published public var generalInfoData: EquipmentDetail?
+    @Published public var filesData: [File] = []
+    @Published public var costData: EquipmentMainCoast?
+    @Published public var technicalData: EquipmentTechnical?
+    @Published public var acceptanceData: DeliveryAcceptanceData?
+    @Published public var isLoading: Bool = false
     var maxContentHeight: CGFloat = 0
-    
-    var generalInfoView: GeneralInformationView?
-    var toolsInfoView: ToolsInformationView?
     
     override func didLoad() {
         super.didLoad()
@@ -76,26 +75,53 @@ extension AssetDetailView {
                 }
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func setupGeneralInfoView() {
-        if let assetGeneralView = self.generalInfoView,
-           let data = self.generalInfoData {
-            assetGeneralView.ownerInfoView.configure(infoTitle: "Pemilik", icon: "ic_user_rounded_square", detailInfoTitle: data.txtRuangan ?? "-N/A-", detailInfoDesc: data.txtSubRuangan ?? "-N/A-")
-            assetGeneralView.locationInfoView.configure(infoTitle: "Lokasi", icon: "ic_pin_location_rounded_square", detailInfoTitle: data.txtLokasiInstalasi ?? "-N/A-", detailInfoDesc: data.txtLokasiName ?? "-N/A-")
-        }
-    }
-    
-    private func setupToolsInfoView() {
-        if let assetToolsView = self.toolsInfoView,
-           let data = self.generalInfoData {
-            assetToolsView.serialNumberView.configureView(title: "Serial Number", value: data.txtSerial ?? "-N/A-")
-            assetToolsView.toolTypeView.configureView(title: "Tipe Alat", value: data.txtType ?? "-N/A-")
-            assetToolsView.distributorView.configureView(title: "Distributor", value: data.txtDistributor ?? "-N/A-")
-            assetToolsView.ageBenefitView.configureView(title: "Usia Manfaat", value: data.txtUsiaTeknis ?? "-N/A-")
-            assetToolsView.simakView.configureView(title: "Simak", value: data.nameSimak ?? "-N/A-")
-            assetToolsView.aspakView.configureView(title: "Aspak", value: data.syncAspak ?? "-N/A-")
-        }
+        
+        presenter.$assetTechnicalData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                guard let self = self else { return }
+                if let data = data {
+                    self.technicalData = data
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$assetAcceptanceData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                guard let self = self else { return }
+                if let data = data {
+                    self.acceptanceData = data
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$assetCostData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                guard let self = self else { return }
+                if let data = data {
+                    self.costData = data
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$assetFilesData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                guard let self = self else { return }
+                self.filesData = data
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoad in
+                guard let self else { return }
+                self.isLoading = isLoad
+                isLoad ? self.showAnimationSkeleton() : self.hideAnimationSkeleton()
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {
@@ -138,18 +164,42 @@ extension AssetDetailView {
     
     private func setupStripView() {
         let generalInformation = GeneralInformationView(nibName: String(describing: GeneralInformationView.self), bundle: nil)
-        self.generalInfoView = generalInformation
+        generalInformation.parentView = self
         
         let toolsInformation = ToolsInformationView(nibName: String(describing: ToolsInformationView.self), bundle: nil)
-        self.toolsInfoView = toolsInformation
+        toolsInformation.parentView = self
         
         let acceptanceInformation = AcceptanceInformationView(nibName: String(describing: AcceptanceInformationView.self), bundle: nil)
+        acceptanceInformation.parentView = self
         
         let mutationInformation = MutationInformationView(nibName: String(describing: MutationInformationView.self), bundle: nil)
+        mutationInformation.parentView = self
         
         let additionalDocument = AdditionalDocumentsView(nibName: String(describing: AdditionalDocumentsView.self), bundle: nil)
+        additionalDocument.parentView = self
         
         self.views = [generalInformation, toolsInformation, acceptanceInformation, mutationInformation, additionalDocument]
+    }
+    
+    private func showAnimationSkeleton() {
+        [self.assetImageView,
+         self.assetNameLabel,
+         self.serialNumberLabel,
+         self.assetTypeLabel,
+         self.seeProgressButton].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func hideAnimationSkeleton() {
+        [self.assetImageView,
+         self.assetNameLabel,
+         self.serialNumberLabel,
+         self.assetTypeLabel,
+         self.seeProgressButton].forEach {
+            $0.hideSkeleton()
+        }
     }
     
 }

@@ -15,9 +15,11 @@ class MutationInformationView: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var mutationToolsInfoView: InformationCardView!
     @IBOutlet weak var deletionInfoView: InformationCardView!
     
+    weak var parentView: AssetDetailView?
+    
     override func didLoad() {
         super.didLoad()
-        self.setupView()
+        self.setupBody()
     }
     
     override func willAppear() {
@@ -33,11 +35,29 @@ class MutationInformationView: BaseViewController, IndicatorInfoProvider {
 
 extension MutationInformationView {
     
-    private func setupView() {
-        roomInfoView.configure(type: .withDesc, infoTitle: "Ruangan", icon: "ic_user_rounded_square", detailInfoTitle: "Ruangan Bedah", detailInfoDesc: "Jenis Pelayanan")
-        acceptanceInfoView.configureView(title: "Data Penerimaan", value: "-N/A-")
-        mutationToolsInfoView.configureView(title: "Mutasi Alat", value: "-N/A-")
-        deletionInfoView.configureView(title: "Penghapusan", value: "-N/A-")
+    private func setupBody() {
+        bindingData()
+    }
+    
+    private func bindingData() {
+        guard let view = self.parentView else { return }
+        view.$generalInfoData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.roomInfoView.configure(type: .withDesc, infoTitle: "Ruangan", icon: "ic_user_rounded_square", detailInfoTitle: data.txtLokasiInstalasi ?? "-N/A-", detailInfoDesc: data.txtLokasiName ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
+        
+        view.$costData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.acceptanceInfoView.configureView(title: "Data Penerimaan", value: data.txtNilaiMMEL ?? "-N/A-")
+                
+                self.mutationToolsInfoView.configureView(title: "Mutasi Alat", value: data.txtFaktorMEL ?? "-N/A-")
+                
+                self.deletionInfoView.configureView(title: "Penghapusan", value: data.txtPengganti ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
     }
     
 }

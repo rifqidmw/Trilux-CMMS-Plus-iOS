@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 enum InformationDetailType {
     case withDesc
@@ -33,6 +34,7 @@ class InformationDetailView: UIView {
         let view = loadNib()
         view.frame = self.bounds
         self.addSubview(view)
+        self.showAnimationSkeleton()
     }
     
 }
@@ -44,12 +46,32 @@ extension InformationDetailView {
                    icon: String,
                    detailInfoTitle: String,
                    detailInfoDesc: String? = nil) {
+        self.hideAnimationSkeleton()
         self.infoTitleLabel.text = infoTitle
         self.detailInfoIconImageView.image = UIImage(named: icon)
         self.detailInfoTitleLabel.text  = detailInfoTitle
         if let detailDesc = detailInfoDesc {
             self.detailInfoDescLabel.isHidden = false
             self.detailInfoDescLabel.text = detailDesc
+        }
+    }
+    
+    private func showAnimationSkeleton() {
+        [self.infoTitleLabel,
+         self.detailInfoIconImageView,
+         self.detailInfoTitleLabel,
+         self.detailInfoDescLabel].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func hideAnimationSkeleton() {
+        [self.infoTitleLabel,
+         self.detailInfoIconImageView,
+         self.detailInfoTitleLabel,
+         self.detailInfoDescLabel].forEach {
+            $0.hideSkeleton()
         }
     }
     

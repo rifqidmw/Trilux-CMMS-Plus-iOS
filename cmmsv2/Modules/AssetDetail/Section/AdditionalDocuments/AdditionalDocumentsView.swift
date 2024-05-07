@@ -12,11 +12,12 @@ class AdditionalDocumentsView: BaseViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var data: [AdditionalDocument] = documentData
+    var data: [File] = []
+    weak var parentView: AssetDetailView?
     
     override func didLoad() {
         super.didLoad()
-        self.setupCollectionView()
+        self.setupBody()
     }
     
     override func willAppear() {
@@ -26,6 +27,23 @@ class AdditionalDocumentsView: BaseViewController, IndicatorInfoProvider {
     
     func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
         return IndicatorInfo(title: "Dokumen Tambahan")
+    }
+    
+    private func setupBody() {
+        bindingData()
+        setupCollectionView()
+    }
+    
+    private func bindingData() {
+        guard let view = self.parentView else { return }
+        view.$filesData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                guard let self else { return }
+                self.data = data
+                self.collectionView.reloadData()
+            }
+            .store(in: &anyCancellable)
     }
     
 }
@@ -56,4 +74,12 @@ extension AdditionalDocumentsView: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 158, height: 174)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedFile = self.data[indexPath.row]
+        if selectedFile.url == "" {
+            self.showAlert(title: "Dokumen tidak ditemukan!")
+        }
+    }
+    
 }

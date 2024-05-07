@@ -24,9 +24,11 @@ class ToolsInformationView: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var simakView: InformationCardView!
     @IBOutlet weak var aspakView: InformationCardView!
     
+    weak var parentView: AssetDetailView?
+    
     override func didLoad() {
         super.didLoad()
-        self.setupView()
+        self.setupBody()
     }
     
     override func willAppear() {
@@ -42,20 +44,45 @@ class ToolsInformationView: BaseViewController, IndicatorInfoProvider {
 
 extension ToolsInformationView {
     
-    private func setupView() {
-        inventoryNumberView.configureView(title: "Nomor Inventaris", value: "-N/A-")
-        toolBrandView.configureView(title: "Merk Alat", value: "-N/A-")
-        productYearView.configureView(title: "Tahun Produk", value: "-N/A-")
-        yearPurchasingProductView.configureView(title: "Tahun Pembelian", value: "-N/A-")
-        redualRatioView.configureView(title: "Rasio Sisa", value: "-N/A-")
-        simbadaView.configureView(title: "Simbada", value: "-N/A-")
+    private func setupBody() {
+        bindingData()
+    }
+    
+    private func bindingData() {
+        guard let view = self.parentView else { return }
+        view.$generalInfoData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.inventoryNumberView.configureView(title: "Nomor Inventaris", value: data.txtInventaris ?? "-N/A-")
+                
+                self.toolBrandView.configureView(title: "Merk Alat", value: data.txtBrand ?? "-N/A-")
+                
+                self.simbadaView.configureView(title: "Simbada", value: data.syncSimbada ?? "-N/A-")
+                
+                self.serialNumberView.configureView(title: "Serial Number", value: data.txtSerial ?? "-N/A-")
+                
+                self.toolTypeView.configureView(title: "Tipe Alat", value: data.txtType ?? "-N/A-")
+                
+                self.distributorView.configureView(title: "Distributor", value: data.txtDistributor ?? "-N/A-")
+                
+                self.simakView.configureView(title: "Simak", value: data.syncSimak ?? "-N/A-")
+                
+                self.aspakView.configureView(title: "Aspak", value: data.syncAspak ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
         
-        serialNumberView.configureView(title: "Serial Number", value: "-N/A-")
-        toolTypeView.configureView(title: "Tipe Alat", value: "-N/A-")
-        distributorView.configureView(title: "Distributor", value: "-N/A-")
-        ageBenefitView.configureView(title: "Usia Manfaat", value: "-N/A-")
-        simakView.configureView(title: "Simak", value: "-N/A-")
-        aspakView.configureView(title: "Aspak", value: "-N/A-")
+        view.$technicalData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.productYearView.configureView(title: "Tahun Produk", value: data.txtThnProduct ?? "-N/A-")
+                
+                self.yearPurchasingProductView.configureView(title: "Tahun Pembelian", value: data.txtThnPembelian ?? "-N/A-")
+                
+                self.redualRatioView.configureView(title: "Rasio Sisa", value: data.txtRasioSisaUsia ?? "-N/A-")
+                
+                self.ageBenefitView.configureView(title: "Usia Manfaat", value: data.txtLife ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
     }
     
 }

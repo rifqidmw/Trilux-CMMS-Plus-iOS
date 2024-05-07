@@ -15,6 +15,8 @@ class GeneralInformationView: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var budgetInfoView: InformationDetailView!
     @IBOutlet weak var priceInfoView: InformationDetailView!
     
+    weak var parentView: AssetDetailView?
+    
     override func didLoad() {
         super.didLoad()
         self.setupBody()
@@ -34,14 +36,33 @@ class GeneralInformationView: BaseViewController, IndicatorInfoProvider {
 extension GeneralInformationView {
     
     private func setupBody() {
-        self.setupView()
+        bindingData()
     }
     
-    private func setupView() {
-        ownerInfoView.configure(infoTitle: "Pemilik", icon: "ic_user_rounded_square", detailInfoTitle: "-N/A-", detailInfoDesc: "-N/A-")
-        locationInfoView.configure(type: .withoutDesc, infoTitle: "Lokasi", icon: "ic_pin_location_rounded_square", detailInfoTitle: "-N/A-")
-        budgetInfoView.configure(type: .withoutDesc, infoTitle: "-N/A-", icon: "ic_stack_rounded_square", detailInfoTitle: "-N/A-")
-        priceInfoView.configure(type: .withoutDesc, infoTitle: "Harga", icon: "ic_dollar_rounded_square", detailInfoTitle: "-N/A-")
+    private func bindingData() {
+        guard let view = self.parentView else { return }
+        view.$generalInfoData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.ownerInfoView.configure(infoTitle: "Pemilik", icon: "ic_user_rounded_square", detailInfoTitle: data.txtRuangan ?? "-N/A-", detailInfoDesc: data.txtSubRuangan ?? "-N/A-")
+                
+                self.locationInfoView.configure(infoTitle: "Lokasi", icon: "ic_pin_location_rounded_square", detailInfoTitle: data.txtLokasiInstalasi ?? "-N/A-", detailInfoDesc: data.txtLokasiName ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
+        
+        view.$technicalData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.budgetInfoView.configure(type: .withoutDesc, infoTitle: "Sumber Pendanaan", icon: "ic_stack_rounded_square", detailInfoTitle: data.txtSumber ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
+        
+        view.$costData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.priceInfoView.configure(type: .withoutDesc, infoTitle: "Biaya", icon: "ic_dollar_rounded_square", detailInfoTitle: data.txtIIC ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
     }
     
 }

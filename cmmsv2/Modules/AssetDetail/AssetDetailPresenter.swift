@@ -92,13 +92,20 @@ extension AssetDetailPresenter {
                     DispatchQueue.main.async {
                         guard let data = files.data,
                               let equipment = data.equipmentFiles,
-                              let fileAcceptance = equipment.filePenerimaan
+                              let fileAcceptance = equipment.filePenerimaan,
+                              let supportingFile = equipment.filePendukung
                         else { return }
-                        self.assetFilesData = fileAcceptance
+                        if let mergedFiles = self.mergeFiles(filePenerimaan: fileAcceptance, filePendukung: supportingFile) {
+                            self.assetFilesData = mergedFiles
+                        }
                     }
                 }
             )
             .store(in: &anyCancellable)
+    }
+    
+    private func mergeFiles(filePenerimaan: [File], filePendukung: [File]) -> [File]? {
+        return filePenerimaan + filePendukung
     }
     
     func fetchAssetCost(id: String) {

@@ -28,7 +28,7 @@ class AdditionDocumentCVC: UICollectionViewCell {
 
 extension AdditionDocumentCVC {
     
-    func setupCell(data: AdditionalDocument) {
+    func setupCell(data: File) {
         self.titleLabel.text = data.title
     }
     

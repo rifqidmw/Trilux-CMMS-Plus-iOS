@@ -15,9 +15,11 @@ class AcceptanceInformationView: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var partnerView: InformationCardView!
     @IBOutlet weak var descriptionView: InformationCardView!
     
+    weak var parentView: AssetDetailView?
+    
     override func didLoad() {
         super.didLoad()
-        self.setupView()
+        self.setupBody()
     }
     
     override func willAppear() {
@@ -33,11 +35,24 @@ class AcceptanceInformationView: BaseViewController, IndicatorInfoProvider {
 
 extension AcceptanceInformationView {
     
-    private func setupView() {
-        contractNumberView.configureView(title: "Nomor Kontrak", value: "5690")
-        dateContractView.configureView(title: "Tanggal Kontrak", value: "2024-04-26")
-        partnerView.configureView(title: "Rekanan", value: "PT. Aku Datang")
-        descriptionView.configureView(title: "Keterangan", value: "Belanja modal kedokteran rawat inap")
+    private func setupBody() {
+        bindingData()
+    }
+    
+    private func bindingData() {
+        guard let view = self.parentView else { return }
+        view.$acceptanceData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.contractNumberView.configureView(title: "Nomor Kontrak", value: data.noKontrak ?? "-N/A-")
+                
+                self.dateContractView.configureView(title: "Tanggal Kontrak", value: data.tanggal ?? "-N/A-")
+                
+                self.partnerView.configureView(title: "Rekanan", value: data.rekananText ?? "-N/A-")
+                
+                self.descriptionView.configureView(title: "Keterangan", value: data.desc ?? "-N/A-")
+            }
+            .store(in: &anyCancellable)
     }
     
 }
