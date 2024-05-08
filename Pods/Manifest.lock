@@ -14,6 +14,7 @@ PODS:
   - SDWebImage/Core (5.18.8)
   - SkeletonView (1.30.4)
   - SwiftLint (0.43.1)
+  - XLPagerTabStrip (9.1.0)
 
 DEPENDENCIES:
   - Alamofire (= 5.7.1)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - SDWebImage
   - SkeletonView
   - SwiftLint (= 0.43.1)
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
@@ -41,6 +43,7 @@ SPEC REPOS:
     - SDWebImage
     - SkeletonView
     - SwiftLint
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
@@ -54,7 +57,8 @@ SPEC CHECKSUMS:
   SDWebImage: a81bbb3ba4ea5f810f4069c68727cb118467a04a
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+  XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
 
-PODFILE CHECKSUM: d0b4f7d26492fe3431945510eb48e61ed10ca9cf
+PODFILE CHECKSUM: ba7a2240ec75f8d395bd15fe6ac86749dc34efc2
 
 COCOAPODS: 1.14.3

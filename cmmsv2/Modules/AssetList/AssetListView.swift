@@ -22,7 +22,7 @@ class AssetListView: BaseViewController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
     }
     
 }
@@ -53,7 +53,15 @@ extension AssetListView {
                       let reff = equipment.reff,
                       let count = reff.totalItem
                 else { return }
-                self.countLabel.text = "Berhasil menemukan \(count) Item"
+                
+                self.collectionView.reloadData()
+                self.hideSkeletonAnimation()
+                
+                if count.isEmpty {
+                    self.countLabel.text = "Tidak dapat menemukan item"
+                } else {
+                    self.countLabel.text = "Berhasil menemukan \(count) item"
+                }
             }
             .store(in: &anyCancellable)
         
@@ -161,6 +169,13 @@ extension AssetListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewD
         cell.setupCell(data: data[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailAsset(navigation: navigation, data: self.data[indexPath.row])
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

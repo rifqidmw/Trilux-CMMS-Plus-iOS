@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralInformationView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="budgetInfoView" destination="JLE-U6-6kG" id="sRP-c3-LSn"/>
+                <outlet property="locationInfoView" destination="BwM-UJ-IUA" id="lLd-BN-XlK"/>
+                <outlet property="ownerInfoView" destination="Qn9-SR-Dp1" id="70a-8S-MvE"/>
+                <outlet property="priceInfoView" destination="KI5-sa-NNw" id="gCz-wR-RxP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4xH-PI-KuK">
+                    <rect key="frame" x="16" y="16" width="361" height="780"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qn9-SR-Dp1" customClass="InformationDetailView" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="186"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwM-UJ-IUA" customClass="InformationDetailView" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="198" width="361" height="186"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLE-U6-6kG" customClass="InformationDetailView" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="396" width="361" height="186"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KI5-sa-NNw" customClass="InformationDetailView" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="594" width="361" height="186"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4xH-PI-KuK" secondAttribute="bottom" constant="56" id="Fw6-dk-dFm"/>
+                <constraint firstAttribute="trailing" secondItem="4xH-PI-KuK" secondAttribute="trailing" constant="16" id="Hcm-lO-rWs"/>
+                <constraint firstItem="4xH-PI-KuK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Kmc-0A-Bs5"/>
+                <constraint firstItem="4xH-PI-KuK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="Sq3-8n-v29"/>
+            </constraints>
+            <point key="canvasLocation" x="26.717557251908396" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+</document>

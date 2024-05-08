@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MutationInformationView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="acceptanceInfoView" destination="3yf-CM-YQX" id="ekN-0W-0Mm"/>
+                <outlet property="deletionInfoView" destination="86R-CM-ZNj" id="eaT-66-LIb"/>
+                <outlet property="mutationToolsInfoView" destination="zuo-OH-8B0" id="pdj-qa-lMb"/>
+                <outlet property="roomInfoView" destination="2N1-Pl-VYp" id="E4H-ly-V7n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CJT-ns-Ldw">
+                    <rect key="frame" x="16" y="16" width="361" height="780"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2N1-Pl-VYp" customClass="InformationDetailView" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="252"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gzv-Ru-39Y">
+                            <rect key="frame" x="0.0" y="264" width="361" height="252"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-CM-YQX" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="252"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuo-OH-8B0" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="186.66666666666663" y="0.0" width="174.33333333333337" height="252"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86R-CM-ZNj" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="528" width="361" height="252"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CJT-ns-Ldw" secondAttribute="trailing" constant="16" id="DQt-qK-xgG"/>
+                <constraint firstAttribute="bottom" secondItem="CJT-ns-Ldw" secondAttribute="bottom" constant="56" id="RWv-wI-LfS"/>
+                <constraint firstItem="CJT-ns-Ldw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="h1c-75-fsz"/>
+                <constraint firstItem="CJT-ns-Ldw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="qqi-Gg-Ohb"/>
+            </constraints>
+            <point key="canvasLocation" x="28" y="-1"/>
+        </view>
+    </objects>
+</document>
