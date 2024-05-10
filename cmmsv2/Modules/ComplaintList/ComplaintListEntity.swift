@@ -119,21 +119,20 @@ struct ComplaintReffData: Codable {
     }
 }
 
-
-struct ComplaintListEntity: Identifiable {
-    let id: Int
-    let image: String
-    let date: String
-    let type: String
-    let title: String
-    let description: String
-    let technician: String
-    let damage: String
-    let status: CorrectiveStatusType
+struct ComplaintListEntity: Codable {
+    let id: Int?
+    let image: String?
+    let date: String?
+    let type: String?
+    let title: String?
+    let description: String?
+    let technician: String?
+    let damage: String?
+    let status: CorrectiveStatusType?
     var isActionActive = false
 }
 
-enum CorrectiveStatusType: String {
+enum CorrectiveStatusType: String, Codable {
     case open
     case closed
     case progress
@@ -155,94 +154,3 @@ enum CorrectiveStatusType: String {
         return rawValue
     }
 }
-
-let dummyComplaintData: [ComplaintListEntity] = [
-    ComplaintListEntity(
-        id: 1,
-        image: "unsplash_cEzMOp5FtV4",
-        date: "23-Juni-2022",
-        type: "Cendana",
-        title: "Pulse Oxymeter / Oximeter",
-        description: "Pulse Oxymeter / Oximeter",
-        technician: "Alex Bill",
-        damage: "Alat tidak hidup sama sekali",
-        status: .progress,
-        isActionActive: false),
-    ComplaintListEntity(
-        id: 2,
-        image: "unsplash_cEzMOp5FtV4",
-        date: "26-Juni-2022",
-        type: "Cendana",
-        title: "Electrode Cable / Kabel Elektrik",
-        description: "Poliklinik Executive Cendana",
-        technician: "Alex Bill",
-        damage: "Putus",
-        status: .delay,
-        isActionActive: true),
-    ComplaintListEntity(
-        id: 3,
-        image: "unsplash_gKUC4TMhOiY",
-        date: "24-Juni-2022",
-        type: "Inap",
-        title: "Bed-side Monitor/Bed-patien",
-        description: "Pelayanan Rawat Inap",
-        technician: "Alex Bill",
-        damage: "Mati total",
-        status: .closed,
-        isActionActive: false),
-    ComplaintListEntity(
-        id: 4,
-        image: "unsplash_m_HRfLhgABo",
-        date: "25-Juni-2022",
-        type: "Paridani",
-        title: "Ventilator",
-        description: "Pelayanan Perawatan Intensif Bayi",
-        technician: "Maruf",
-        damage: "Alat rusak total",
-        status: .open,
-        isActionActive: true),
-    ComplaintListEntity(
-        id: 5,
-        image: "unsplash_cEzMOp5FtV4",
-        date: "23-Juni-2022",
-        type: "Cendana",
-        title: "Pulse Oxymeter / Oximeter",
-        description: "Pulse Oxymeter / Oximeter",
-        technician: "Alex Bill",
-        damage: "Alat tidak hidup sama sekali",
-        status: .progress,
-        isActionActive: false),
-    ComplaintListEntity(
-        id: 6,
-        image: "unsplash_cEzMOp5FtV4",
-        date: "26-Juni-2022",
-        type: "Cendana",
-        title: "Electrode Cable / Kabel Elektrik",
-        description: "Poliklinik Executive Cendana",
-        technician: "Alex Bill",
-        damage: "Putus",
-        status: .delay,
-        isActionActive: true),
-    ComplaintListEntity(
-        id: 7,
-        image: "unsplash_gKUC4TMhOiY",
-        date: "24-Juni-2022",
-        type: "Inap",
-        title: "Bed-side Monitor/Bed-patien",
-        description: "Pelayanan Rawat Inap",
-        technician: "Alex Bill",
-        damage: "Mati total",
-        status: .closed,
-        isActionActive: false),
-    ComplaintListEntity(
-        id: 8,
-        image: "unsplash_m_HRfLhgABo",
-        date: "25-Juni-2022",
-        type: "Paridani",
-        title: "Ventilator",
-        description: "Pelayanan Perawatan Intensif Bayi",
-        technician: "Maruf",
-        damage: "Alat rusak total",
-        status: .open,
-        isActionActive: true)
-]

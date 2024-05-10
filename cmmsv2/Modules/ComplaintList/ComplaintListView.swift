@@ -124,6 +124,13 @@ extension ComplaintListView: SkeletonCollectionViewDelegate, SkeletonCollectionV
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToComplaintDetail(navigation: navigation, data: self.data[indexPath.row])
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard indexPath.row < self.data.count else {
             return CGSize(width: CGSize.widthDevice, height: 200)

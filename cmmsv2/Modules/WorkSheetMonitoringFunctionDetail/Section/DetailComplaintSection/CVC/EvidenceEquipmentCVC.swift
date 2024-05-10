@@ -18,14 +18,15 @@ class EvidenceEquipmentCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.evidenceImageView.makeCornerRadius(8)
     }
-
+    
 }
 
 extension EvidenceEquipmentCVC {
     
-    func setupCell(data: EvidenceEquipmentEntity) {
-        evidenceImageView.image = UIImage(named: data.image)
+    func setupCell(data: Media) {
+        evidenceImageView.loadImageUrl(data.valUrl ?? "")
     }
     
 }

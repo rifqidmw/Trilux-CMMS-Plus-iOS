@@ -1,4 +1,4 @@
-// 
+//
 //  FullScreenPicturePresenter.swift
 //  cmmsv2
 //
@@ -11,9 +11,11 @@ class FullScreenPicturePresenter: BasePresenter {
     
     private let interactor: FullScreenPictureInteractor
     private let router = FullScreenPictureRouter()
+    let image: String?
     
-    init(interactor: FullScreenPictureInteractor) {
+    init(interactor: FullScreenPictureInteractor, image: String) {
         self.interactor = interactor
+        self.image = image
     }
     
 }

@@ -1,4 +1,4 @@
-// 
+//
 //  FullScreenPictureView.swift
 //  cmmsv2
 //
@@ -15,7 +15,7 @@ class FullScreenPictureView: BaseViewController {
     var presenter: FullScreenPicturePresenter?
     var titlePage: String?
     var image: String?
-
+    
     override func didLoad() {
         super.didLoad()
         setupBody()
@@ -31,8 +31,9 @@ extension FullScreenPictureView {
     }
     
     private func setupView() {
+        guard let image else { return }
         navigationView.configure(plainTitle: titlePage, type: .plain)
-        imageView.image = UIImage(named: image ?? "")
+        imageView.loadImageUrl(image)
     }
     
     private func setupAction() {

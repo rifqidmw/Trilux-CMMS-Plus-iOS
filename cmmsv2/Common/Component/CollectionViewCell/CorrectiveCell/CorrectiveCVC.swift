@@ -49,13 +49,13 @@ extension CorrectiveCVC {
     
     func setupCell(data: ComplaintListEntity) {
         hideSkeletonAnimation()
-        correctiveImageView.loadImageUrl(data.image)
-        dateLabel.text = "\(data.date) • \(data.type)"
+        correctiveImageView.loadImageUrl(data.image ?? "")
+        dateLabel.text = "\(data.date ?? "") • \(data.type ?? "")"
         titleLabel.text = data.type
         descriptionLabel.text = data.description
         technicianLabel.text = data.technician
         damageLabel.text = data.damage
-        configureStatus(status: data.status)
+        configureStatus(status: data.status ?? .none)
         actionButton.isHidden = data.status == .delay ? false : true
     }
     

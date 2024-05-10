@@ -14,7 +14,7 @@ class SupportingDocumentationView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var type: WorkSheetOnsitePreventiveDetailType?
-    var data: [EvidenceEquipmentEntity] = []
+    var data: [Media] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,7 +54,7 @@ extension SupportingDocumentationView {
         collectionView.collectionViewLayout = layout
     }
     
-    func configure(data: [EvidenceEquipmentEntity], type: WorkSheetOnsitePreventiveDetailType) {
+    func configure(data: [Media], type: WorkSheetOnsitePreventiveDetailType) {
         self.type = type
         self.data = data
         customHeaderView.configure(icon: "ic_image", title: "Foto Pendukung", count: 9, type: type == .seeOnly ? .collapsibleWithCount : .plain)

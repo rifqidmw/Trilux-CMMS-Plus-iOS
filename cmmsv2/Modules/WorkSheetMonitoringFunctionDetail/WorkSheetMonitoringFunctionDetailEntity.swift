@@ -1,4 +1,4 @@
-// 
+//
 //  WorkSheetDetailEntity.swift
 //  cmmsv2
 //
@@ -36,11 +36,11 @@ struct WorkSheetDetailEntity {
 
 let dummyImageCardData: WorkSheetCardEntity = WorkSheetCardEntity(image: "unsplash_yo01Z-9HQAw", title: "Steril Pouch (Sterilization)", description: "Poliklinik Executive Cendana", code: "07499 - Braun")
 
-let dummyEvidenceEquipment: [EvidenceEquipmentEntity] = [
-    EvidenceEquipmentEntity(image: "unsplash_cEzMOp5FtV4"),
-    EvidenceEquipmentEntity(image: "unsplash_gKUC4TMhOiY"),
-    EvidenceEquipmentEntity(image: "unsplash_m_HRfLhgABo"),
-    EvidenceEquipmentEntity(image: "unsplash_cEzMOp5FtV4")
+let dummyEvidenceEquipment: [Media] = [
+    Media(id: "1", valUrl: "unsplash_cEzMOp5FtV4", valThumburl: "unsplash_cEzMOp5FtV4"),
+    Media(id: "2", valUrl: "unsplash_cEzMOp5FtV4", valThumburl: "unsplash_cEzMOp5FtV4"),
+    Media(id: "3", valUrl: "unsplash_m_HRfLhgABo", valThumburl: "unsplash_m_HRfLhgABo"),
+    Media(id: "4", valUrl: "unsplash_cEzMOp5FtV4", valThumburl: "unsplash_cEzMOp5FtV4")
 ]
 
 let dummyDetailWorkSheet: [WorkSheetDetailEntity] = [

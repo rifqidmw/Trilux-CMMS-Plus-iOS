@@ -229,6 +229,18 @@
 		CE5442942B4727EC0022047D /* GeneralTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5442922B4727EC0022047D /* GeneralTextField.xib */; };
 		CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5442952B4727F50022047D /* GeneralTextField.swift */; };
 		CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5442952B4727F50022047D /* GeneralTextField.swift */; };
+		CE7327462BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327402BECA849000AD875 /* ComplaintDetailPresenter.swift */; };
+		CE7327472BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327402BECA849000AD875 /* ComplaintDetailPresenter.swift */; };
+		CE7327482BECA849000AD875 /* ComplaintDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327412BECA849000AD875 /* ComplaintDetailRouter.swift */; };
+		CE7327492BECA849000AD875 /* ComplaintDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327412BECA849000AD875 /* ComplaintDetailRouter.swift */; };
+		CE73274A2BECA849000AD875 /* ComplaintDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327422BECA849000AD875 /* ComplaintDetailInteractor.swift */; };
+		CE73274B2BECA849000AD875 /* ComplaintDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327422BECA849000AD875 /* ComplaintDetailInteractor.swift */; };
+		CE73274C2BECA849000AD875 /* ComplaintDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327432BECA849000AD875 /* ComplaintDetailView.swift */; };
+		CE73274D2BECA849000AD875 /* ComplaintDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327432BECA849000AD875 /* ComplaintDetailView.swift */; };
+		CE73274E2BECA849000AD875 /* ComplaintDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7327442BECA849000AD875 /* ComplaintDetailView.xib */; };
+		CE73274F2BECA849000AD875 /* ComplaintDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7327442BECA849000AD875 /* ComplaintDetailView.xib */; };
+		CE7327502BECA849000AD875 /* ComplaintDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327452BECA849000AD875 /* ComplaintDetailEntity.swift */; };
+		CE7327512BECA849000AD875 /* ComplaintDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7327452BECA849000AD875 /* ComplaintDetailEntity.swift */; };
 		CE7372A62B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
 		CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */; };
 		CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
@@ -818,6 +830,12 @@
 		CE54428F2B4726360022047D /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
 		CE5442922B4727EC0022047D /* GeneralTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralTextField.xib; sourceTree = "<group>"; };
 		CE5442952B4727F50022047D /* GeneralTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTextField.swift; sourceTree = "<group>"; };
+		CE7327402BECA849000AD875 /* ComplaintDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintDetailPresenter.swift; sourceTree = "<group>"; };
+		CE7327412BECA849000AD875 /* ComplaintDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintDetailRouter.swift; sourceTree = "<group>"; };
+		CE7327422BECA849000AD875 /* ComplaintDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintDetailInteractor.swift; sourceTree = "<group>"; };
+		CE7327432BECA849000AD875 /* ComplaintDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintDetailView.swift; sourceTree = "<group>"; };
+		CE7327442BECA849000AD875 /* ComplaintDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintDetailView.xib; sourceTree = "<group>"; };
+		CE7327452BECA849000AD875 /* ComplaintDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintDetailEntity.swift; sourceTree = "<group>"; };
 		CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		CE74361E2BDEAFD700283CA1 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
@@ -1546,6 +1564,19 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		CE73273F2BECA834000AD875 /* ComplaintDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE7327402BECA849000AD875 /* ComplaintDetailPresenter.swift */,
+				CE7327412BECA849000AD875 /* ComplaintDetailRouter.swift */,
+				CE7327422BECA849000AD875 /* ComplaintDetailInteractor.swift */,
+				CE7327432BECA849000AD875 /* ComplaintDetailView.swift */,
+				CE7327442BECA849000AD875 /* ComplaintDetailView.xib */,
+				CE7327452BECA849000AD875 /* ComplaintDetailEntity.swift */,
+			);
+			path = ComplaintDetail;
+			sourceTree = "<group>";
+		};
 		CE8208782B82390100CD4242 /* NotificationList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1978,6 +2009,7 @@
 				CEFA75852B768DF300B74E1B /* AssetList */,
 				CE2E3AE92BA09E2F00094AD0 /* CalibrationList */,
 				CE9E7D662B529DFB00240A7D /* ChangePassword */,
+				CE73273F2BECA834000AD875 /* ComplaintDetail */,
 				CE90B14C2B99602300515AD6 /* ComplaintList */,
 				CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
@@ -2579,6 +2611,7 @@
 				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CEC1B06C2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
 				CE0F20DA2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */,
+				CE73274E2BECA849000AD875 /* ComplaintDetailView.xib in Resources */,
 				CE0F20D32B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE72B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE79ED52B7122580063D844 /* TensimeterSectionView.xib in Resources */,
@@ -2703,6 +2736,7 @@
 				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CEC1B06D2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
 				CE0F20DB2B7556A8008702E0 /* SelectCalibratorView.xib in Resources */,
+				CE73274F2BECA849000AD875 /* ComplaintDetailView.xib in Resources */,
 				CE0F20D42B754B8A008702E0 /* DropdownView.xib in Resources */,
 				CECB3DE82B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE79ED62B7122580063D844 /* TensimeterSectionView.xib in Resources */,
@@ -2885,6 +2919,7 @@
 				CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
 				CEC1B0652BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */,
 				CE9E7D972B529F4500240A7D /* UserProfileView.swift in Sources */,
+				CE7327502BECA849000AD875 /* ComplaintDetailEntity.swift in Sources */,
 				CECB3E4A2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE2E3AF22BA09E4C00094AD0 /* CalibrationListRouter.swift in Sources */,
 				CECB3E3E2B45E5AB004A260D /* BaseViewController.swift in Sources */,
@@ -2905,6 +2940,7 @@
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
+				CE73274C2BECA849000AD875 /* ComplaintDetailView.swift in Sources */,
 				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE90B1572B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
@@ -3004,6 +3040,7 @@
 				CE2FA5152B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailRouter.swift in Sources */,
 				CECB3E192B45E2EF004A260D /* GesturePublisher.swift in Sources */,
 				CE0B3AE92B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift in Sources */,
+				CE73274A2BECA849000AD875 /* ComplaintDetailInteractor.swift in Sources */,
 				CE0B3AEF2B9B869100A55B81 /* WorkSheetCorrectiveListView.swift in Sources */,
 				CE14C2152B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.swift in Sources */,
 				CE9E7D772B529EB300240A7D /* ChangePasswordEntity.swift in Sources */,
@@ -3027,12 +3064,14 @@
 				CE3108512BE20D2000660275 /* AssetDetailRouter.swift in Sources */,
 				CE7372A92B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E532B45E6EF004A260D /* Endpoint.swift in Sources */,
+				CE7327482BECA849000AD875 /* ComplaintDetailRouter.swift in Sources */,
 				CE4012492B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,
 				CEE67D292B54394900D0844B /* WorkSheetMonitoringFunctionListInteractor.swift in Sources */,
 				CE9F910A2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE0F20A82B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */,
 				CE4255EB2BA704E5002B558C /* LogBookListView.swift in Sources */,
+				CE7327462BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */,
 				CEE07C912B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift in Sources */,
 				CE31084F2BE20D2000660275 /* AssetDetailPresenter.swift in Sources */,
 				CE0F20AE2B74BF6F008702E0 /* StatusTVC.swift in Sources */,
@@ -3120,6 +3159,7 @@
 				CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
 				CEC1B0662BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */,
 				CE9E7D982B529F4500240A7D /* UserProfileView.swift in Sources */,
+				CE7327512BECA849000AD875 /* ComplaintDetailEntity.swift in Sources */,
 				CECB3E4B2B45E681004A260D /* BaseRouter.swift in Sources */,
 				CE2E3AF32BA09E4C00094AD0 /* CalibrationListRouter.swift in Sources */,
 				CECB3E3F2B45E5AB004A260D /* BaseViewController.swift in Sources */,
@@ -3140,6 +3180,7 @@
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
+				CE73274D2BECA849000AD875 /* ComplaintDetailView.swift in Sources */,
 				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE90B1582B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
@@ -3239,6 +3280,7 @@
 				CE2FA5162B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailRouter.swift in Sources */,
 				CECB3E1A2B45E2EF004A260D /* GesturePublisher.swift in Sources */,
 				CE0B3AEA2B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift in Sources */,
+				CE73274B2BECA849000AD875 /* ComplaintDetailInteractor.swift in Sources */,
 				CE0B3AF02B9B869100A55B81 /* WorkSheetCorrectiveListView.swift in Sources */,
 				CE14C2162B5C36E10034B9FE /* WorkSheetPreviewBottomSheet.swift in Sources */,
 				CE9E7D782B529EB300240A7D /* ChangePasswordEntity.swift in Sources */,
@@ -3262,12 +3304,14 @@
 				CE3108522BE20D2000660275 /* AssetDetailRouter.swift in Sources */,
 				CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */,
 				CECB3E542B45E6EF004A260D /* Endpoint.swift in Sources */,
+				CE7327492BECA849000AD875 /* ComplaintDetailRouter.swift in Sources */,
 				CE40124A2B5D924F00517F7C /* WorkSheetOnsitePreventiveListView.swift in Sources */,
 				CEE67D2A2B54394900D0844B /* WorkSheetMonitoringFunctionListInteractor.swift in Sources */,
 				CE9F910B2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE0F20A92B74BD3C008702E0 /* LabelTVC.swift in Sources */,
 				CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */,
 				CE4255EC2BA704E5002B558C /* LogBookListView.swift in Sources */,
+				CE7327472BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */,
 				CEE07C922B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift in Sources */,
 				CE3108502BE20D2000660275 /* AssetDetailPresenter.swift in Sources */,
 				CE0F20AF2B74BF6F008702E0 /* StatusTVC.swift in Sources */,

@@ -14,7 +14,7 @@ class AllEvidenceBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var data: [EvidenceEquipmentEntity] = dummyEvidenceEquipment
+    var data: [Media] = dummyEvidenceEquipment
     
     override func didLoad() {
         super.didLoad()
