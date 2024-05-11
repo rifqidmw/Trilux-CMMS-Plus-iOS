@@ -53,7 +53,7 @@ class WorkSheetOnsitePreventiveDetailView: BaseViewController {
     var dataElectricalMeasurement: [ElectricalMeasurementModel] = electricalMeasurementData
     var dataAction: [ActionModel] = actionData
     var dataSparePart: [SparePartModel] = sparePartData
-    var dataDocumentation: [EvidenceEquipmentEntity] = dummyEvidenceEquipment
+    var dataDocumentation: [Media] = dummyEvidenceEquipment
     
     override func didLoad() {
         super.didLoad()

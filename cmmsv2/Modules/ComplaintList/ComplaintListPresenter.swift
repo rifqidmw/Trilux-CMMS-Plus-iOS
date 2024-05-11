@@ -5,7 +5,7 @@
 //  Created by PRO M1 2020 8/256 on 07/03/24.
 //
 
-import Foundation
+import UIKit
 
 class ComplaintListPresenter: BasePresenter {
     
@@ -100,6 +100,14 @@ extension ComplaintListPresenter {
                                page: self.page,
                                dateFilter: self.dateFilter,
                                keyword: self.keyword)
+    }
+    
+}
+
+extension ComplaintListPresenter {
+    
+    func navigateToComplaintDetail(navigation: UINavigationController, data: ComplaintListEntity) {
+        router.navigateToComplaintDetail(navigation: navigation, data: data)
     }
     
 }

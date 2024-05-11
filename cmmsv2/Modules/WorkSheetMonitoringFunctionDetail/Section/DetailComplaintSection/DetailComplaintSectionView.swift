@@ -22,7 +22,7 @@ class DetailComplaintSectionView: UIView {
     
     var anyCancellable = Set<AnyCancellable>()
     weak var delegate: WorkSheetDetailDelegate?
-    var collectionViewData: [EvidenceEquipmentEntity] = dummyEvidenceEquipment
+    var collectionViewData: [Media] = dummyEvidenceEquipment
     var tableViewData: [WorkSheetDetailEntity] = dummyDetailWorkSheet
     
     override init(frame: CGRect) {
@@ -119,7 +119,7 @@ extension DetailComplaintSectionView: UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let delegate = self.delegate else { return }
-        delegate.didTapImage(titlePage: "Foto Kerusakan", image: collectionViewData[indexPath.row].image)
+        delegate.didTapImage(titlePage: "Foto Kerusakan", image: collectionViewData[indexPath.row].valUrl ?? "")
     }
     
 }
