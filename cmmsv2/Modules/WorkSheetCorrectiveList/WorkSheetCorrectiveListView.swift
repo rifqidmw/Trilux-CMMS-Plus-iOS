@@ -18,6 +18,7 @@ class WorkSheetCorrectiveListView: BaseViewController {
     
     var presenter: WorkSheetCorrectiveListPresenter?
     var data: [WorkSheetListEntity] = []
+    var workOrder: WorkOrderData?
     
     override func didLoad() {
         super.didLoad()
@@ -53,6 +54,18 @@ extension WorkSheetCorrectiveListView {
                 self.data = data
                 self.collectionView.reloadData()
                 self.collectionView.hideSkeleton()
+                self.showSpinner(false)
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$workOrderData
+            .sink { [weak self] data in
+                guard let self
+                else {
+                    self?.showSpinner(false)
+                    return
+                }
+                self.workOrder = data
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -118,6 +131,17 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController,
+              let workOrder = self.workOrder,
+              let data = workOrder.wo
+        else { return }
+        let selectedItem = data[indexPath.row]
+        self.showOverlay()
+        presenter.showBottomSheetCorrective(navigation: navigation, data: selectedItem, delegate: self)
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == scrollView,
               let presenter = self.presenter
@@ -141,6 +165,18 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
+    }
+    
+}
+
+extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
+    
+    func didTapDetailCorrective(data: WorkOrder) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        self.dismiss(animated: true)
+        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
     }
     
 }

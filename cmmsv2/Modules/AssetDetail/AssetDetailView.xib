@@ -46,7 +46,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unsplash_gKUC4TMhOiY" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-H6-InB">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-H6-InB">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WG8-xj-SNh">
@@ -79,13 +79,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7Y-vb-Afj">
                                                     <rect key="frame" x="16" y="142.66666666666669" width="329" height="121.33333333333331"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steril Pouch (Sterilization Pack)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="529-Cn-eoM">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="529-Cn-eoM">
                                                             <rect key="frame" x="0.0" y="0.0" width="329" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                             <color key="textColor" name="customDarkGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SN: 9-909" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k93-mK-EkT">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k93-mK-EkT">
                                                             <rect key="frame" x="0.0" y="23" width="329" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="fDb-me-2R9"/>
@@ -135,7 +135,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="g7Y-vb-Afj" secondAttribute="trailing" constant="16" id="ztS-ru-45W"/>
                                             </constraints>
                                         </view>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unsplash_cEzMOp5FtV4" translatesAutoresizingMaskIntoConstraints="NO" id="b9d-qd-XI0">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b9d-qd-XI0">
                                             <rect key="frame" x="16" y="0.0" width="329" height="246.66666666666666"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="b9d-qd-XI0" secondAttribute="height" multiplier="4:3" id="4eB-e4-yF2"/>
@@ -239,8 +239,6 @@
     </objects>
     <resources>
         <image name="ic_arrow_right_accordion" width="24" height="24"/>
-        <image name="unsplash_cEzMOp5FtV4" width="72" height="72"/>
-        <image name="unsplash_gKUC4TMhOiY" width="72" height="72"/>
         <namedColor name="customDarkGrayColor">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -37,7 +37,7 @@ class ImageCardView: UIView {
 extension ImageCardView {
     
     func configureView(image: String, label: String) {
-        imageView.image = UIImage(named: image)
+        imageView.loadImageUrl(image)
         imageCardLabel.text = label
     }
     
