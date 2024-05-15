@@ -1,22 +1,18 @@
 //
-//  WorkSheetCorrectiveEntity.swift
+//  WorkSheetCorrectiveDetailEntity.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 09/03/24.
+//  Created by PRO M1 2020 8/256 on 13/05/24.
 //
 
 import Foundation
 
-protocol WorkSheetCorrectiveBottomSheetDelegate: AnyObject {
-    func didTapDetailCorrective(data: WorkOrder)
-}
-
-struct WorkSheetCorrectiveListEntity: Codable {
+struct WorkSheetCorrectiveDetailEntity: Codable {
     let count: Int?
-    let data: WorkOrderData?
+    let data: WorkSheetCorrectiveDetailData?
     let message: String?
     let status: Int?
-    let reff: WorkOrderReff?
+    let reff: ReffData?
     
     enum CodingKeys: CodingKey {
         case count
@@ -27,89 +23,15 @@ struct WorkSheetCorrectiveListEntity: Codable {
     }
 }
 
-struct WorkOrderData: Codable {
-    let wo: [WorkOrder]?
+struct WorkSheetCorrectiveDetailData: Codable {
+    let complain: WorkSheetCorrectiveComplaint?
     
     enum CodingKeys: CodingKey {
-        case wo
-    }
-}
-
-struct WorkOrder: Codable {
-    let id: Int?
-    let valWoNumber: String?
-    let valDate: String?
-    let txtEngineerName: String?
-    let valEngineerId: Int?
-    let valEngineerAvatar: String?
-    let txtType: String?
-    let valType: String?
-    let complain: WorkOrderComplaint?
-    let txtHeader: String?
-    let txtTitle: String?
-    let txtSubTitle: String?
-    let valIcon: Icon?
-    let valEquipmentId: String?
-    let valStartTime: String?
-    let valEndTime: String?
-    let valDuration: String?
-    let valStatus: Int?
-    let txtStatus: String?
-    let valIsManagable: Bool?
-    let valIsDoable: Int?
-    let valRating: Int?
-    let medias: [Media]?
-    let valCanRating: Int?
-    let valDelegatedTime: String?
-    let txtFinishStatus: String?
-    let isPendamping: String?
-    let approveBy: String?
-    let canPendamping: String?
-    let infoLk: InfoLK?
-    let stt_qr: String?
-    let txtRuangan: String?
-    let txtLokasiName: String?
-    let nama_perating: String?
-    
-    enum CodingKeys: CodingKey {
-        case id
-        case valWoNumber
-        case valDate
-        case txtEngineerName
-        case valEngineerId
-        case valEngineerAvatar
-        case txtType
-        case valType
         case complain
-        case txtHeader
-        case txtTitle
-        case txtSubTitle
-        case valIcon
-        case valEquipmentId
-        case valStartTime
-        case valEndTime
-        case valDuration
-        case valStatus
-        case txtStatus
-        case valIsManagable
-        case valIsDoable
-        case valRating
-        case medias
-        case valCanRating
-        case valDelegatedTime
-        case txtFinishStatus
-        case isPendamping
-        case approveBy
-        case canPendamping
-        case infoLk
-        case stt_qr
-        case txtRuangan
-        case txtLokasiName
-        case nama_perating
     }
 }
 
-struct WorkOrderComplaint: Codable {
+struct WorkSheetCorrectiveComplaint: Codable {
     let id: Int?
     let txtTitle: String?
     let txtDescriptions: String?
@@ -117,7 +39,7 @@ struct WorkOrderComplaint: Codable {
     let valStatus: String?
     let txtSenderName: String?
     let valSenderImg: String?
-    let equipment: WorkOrderEquipment?
+    let equipment: CorrectiveEquipment?
     let txtFinishedDate: String?
     let txtComplainTime: String?
     let txtDownTime: String?
@@ -133,12 +55,12 @@ struct WorkOrderComplaint: Codable {
     let userIDfinish: String?
     let isDelay: String?
     let canPendamping: String?
-    let infoLk: InfoLK?
+    let infoLk: InfoLk?
     let canDeleteLk: Bool?
     let idLkActive: String?
-    let nama_pelapor: String?
+    let namaPelapor: String?
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case txtTitle
         case txtDescriptions
@@ -165,11 +87,11 @@ struct WorkOrderComplaint: Codable {
         case infoLk
         case canDeleteLk
         case idLkActive
-        case nama_pelapor
+        case namaPelapor
     }
 }
 
-struct WorkOrderEquipment: Codable {
+struct CorrectiveEquipment: Codable {
     let id: Int?
     let txtName: String?
     let valImage: String?
@@ -198,14 +120,14 @@ struct WorkOrderEquipment: Codable {
     let codeSimbada: String?
     let nameSimbada: String?
     let syncAspak: String?
-    let statusKalibrasi: KalibrasiStatus?
-    let stt_qr: String?
+    let statusKalibrasi: StatusKalibrasi?
+    let sttQR: String?
     let txtLokasiInstalasi: String?
-    let id_alat: String?
-    let is_nonmedik: String?
-    let lk_static: String?
-    let klp_nonmedik: String?
-    let klp_nonmedik_name: String?
+    let idAlat: String?
+    let isNonmedik: String?
+    let lkStatic: String?
+    let klpNonmedik: String?
+    let klpNonmedikName: String?
     let valRusak: Int?
     let txtRusak: String?
     let valKalibrasi: Int?
@@ -218,7 +140,7 @@ struct WorkOrderEquipment: Codable {
     let txtCantComplainReason: String?
     let txtInfoUpdate: String?
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case txtName
         case valImage
@@ -248,13 +170,13 @@ struct WorkOrderEquipment: Codable {
         case nameSimbada
         case syncAspak
         case statusKalibrasi
-        case stt_qr
+        case sttQR = "stt_qr"
         case txtLokasiInstalasi
-        case id_alat
-        case is_nonmedik
-        case lk_static
-        case klp_nonmedik
-        case klp_nonmedik_name
+        case idAlat = "id_alat"
+        case isNonmedik
+        case lkStatic = "lk_static"
+        case klpNonmedik = "klp_nonmedik"
+        case klpNonmedikName = "klp_nonmedik_name"
         case valRusak
         case txtRusak
         case valKalibrasi
@@ -267,53 +189,4 @@ struct WorkOrderEquipment: Codable {
         case txtCantComplainReason
         case txtInfoUpdate
     }
-}
-
-struct WoList: Codable {
-    let id: String?
-    let lkNumber: String?
-    let lkDate: String?
-    let engineerName: String?
-    let valStatus: String?
-    let statusText: String?
-    
-    enum CodingKeys: CodingKey {
-        case id
-        case lkNumber
-        case lkDate
-        case engineerName
-        case valStatus
-        case statusText
-    }
-}
-
-struct Media: Codable {
-    let id: String?
-    let valUrl: String?
-    let valThumburl: String?
-    
-    enum CodingKeys: CodingKey {
-        case id
-        case valUrl
-        case valThumburl
-    }
-}
-
-struct Icon: Codable {
-    let bg: String?
-    let fo: String?
-    let lbl: String?
-    
-    enum CodingKeys: CodingKey {
-        case bg
-        case fo
-        case lbl
-    }
-}
-
-struct WorkOrderReff: Codable {
-    let page: String?
-    let pageSize: String?
-    let totalPage: String?
-    let totalItem: String?
 }

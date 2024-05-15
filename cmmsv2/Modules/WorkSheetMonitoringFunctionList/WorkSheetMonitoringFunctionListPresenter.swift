@@ -85,15 +85,3 @@ extension WorkSheetMonitoringFunctionListPresenter {
     }
     
 }
-
-extension WorkSheetMonitoringFunctionListPresenter {
-    
-    func showBottomSheetPreviewWorkSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
-        router.showPreviewWorkSheetBottomSheet(navigation: navigation, delegate: delegate)
-    }
-    
-    func navigateToDetailWorkSheet(navigation: UINavigationController) {
-        router.navigateToDetailWorkSheet(navigation: navigation)
-    }
-    
-}

@@ -5,7 +5,7 @@
 //  Created by PRO M1 2020 8/256 on 09/03/24.
 //
 
-import Foundation
+import UIKit
 
 class WorkSheetCorrectiveListPresenter: BasePresenter {
     
@@ -17,6 +17,7 @@ class WorkSheetCorrectiveListPresenter: BasePresenter {
     }
     
     @Published public var workSheetData: [WorkSheetListEntity] = []
+    @Published public var workOrderData: WorkOrderData?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -80,6 +81,7 @@ extension WorkSheetCorrectiveListPresenter {
                           let worksheetData = data.wo
                     else { return }
                     
+                    self.workOrderData = data
                     let workorderData = worksheetData.compactMap { item in
                         return WorkSheetListEntity(id: item.valEquipmentId ?? "",
                                                    uniqueNumber: item.txtSubTitle ?? "",
@@ -110,6 +112,18 @@ extension WorkSheetCorrectiveListPresenter {
             hasObstacle: self.hasObstacle,
             keyword: self.keyword,
             page: self.page)
+    }
+    
+}
+
+extension WorkSheetCorrectiveListPresenter {
+    
+    func showBottomSheetCorrective(navigation: UINavigationController, data: WorkOrder, delegate: WorkSheetCorrectiveBottomSheetDelegate) {
+        router.showBottomSheetCorrective(navigation: navigation, data: data, delegate: delegate)
+    }
+    
+    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, data: WorkOrder) {
+        router.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
     }
     
 }

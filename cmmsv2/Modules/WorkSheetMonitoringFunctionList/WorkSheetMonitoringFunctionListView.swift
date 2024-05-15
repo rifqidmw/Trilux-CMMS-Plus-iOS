@@ -116,14 +116,6 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        self.showOverlay()
-        presenter.showBottomSheetPreviewWorkSheet(navigation: navigation, delegate: self)
-    }
-    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == scrollView,
               let presenter = self.presenter
@@ -147,17 +139,6 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
-    }
-    
-}
-
-extension WorkSheetMonitoringFunctionListView: WorkSheetListDelegate {
-    
-    func didTapDetailWorkSheet() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        presenter.navigateToDetailWorkSheet(navigation: navigation)
     }
     
 }

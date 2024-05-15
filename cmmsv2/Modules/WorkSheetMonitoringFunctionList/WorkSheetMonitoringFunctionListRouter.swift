@@ -18,21 +18,3 @@ class WorkSheetMonitoringFunctionListRouter: BaseRouter {
     }
     
 }
-
-extension WorkSheetMonitoringFunctionListRouter {
-    
-    func showPreviewWorkSheetBottomSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
-        let bottomSheet = WorkSheetPreviewBottomSheet(nibName: String(describing: WorkSheetPreviewBottomSheet.self), bundle: nil)
-        bottomSheet.delegate = delegate
-        //  bottomSheet.data = // entered data here
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
-    }
-    
-    func navigateToDetailWorkSheet(navigation: UINavigationController) {
-        let vc = WorkSheetMonitoringFunctionDetailRouter().showView()
-        navigation.dismiss(animated: true)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}
