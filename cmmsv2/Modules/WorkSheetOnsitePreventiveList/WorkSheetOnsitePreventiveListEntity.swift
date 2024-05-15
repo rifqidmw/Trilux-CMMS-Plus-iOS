@@ -7,14 +7,10 @@
 
 import Foundation
 
-protocol WorkSheetOnsitePreventiveDelegate: AnyObject {
-    func didTapDetailPreventive()
-    func didTapContinueWorking()
-}
-
-enum WorkSheetActionType {
-    case work
-    case see
+@objc protocol WorkSheetOnsitePreventiveDelegate: AnyObject {
+    @objc optional func didTapDetail()
+    @objc optional func didTapContinueWorking()
+    @objc optional func didTapDownloadPDF()
 }
 
 let onsitePreventiveData: [WorkSheetListEntity] = [
@@ -26,7 +22,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         serial: "72385234",
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
-        dateTime: "2024-04-04 12:13:14", 
+        dateTime: "2024-04-04 12:13:14",
         brandName: "Acumalaka",
         category: .calibration,
         status: .done),

@@ -18,21 +18,3 @@ class WorkSheetOnsitePreventiveListRouter: BaseRouter {
     }
     
 }
-
-extension WorkSheetOnsitePreventiveListRouter {
-    
-    func navigateToDetailPage(navigation: UINavigationController, type: WorkSheetOnsitePreventiveDetailType) {
-        let vc = WorkSheetOnsitePreventiveDetailRouter().showView(type: type)
-        navigation.dismiss(animated: true)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-    func showActionBottomSheet(navigation: UINavigationController, type: WorkSheetActionType, delegate: WorkSheetOnsitePreventiveDelegate) {
-        let bottomSheet = SelectActionBottomSheet(nibName: String(describing: SelectActionBottomSheet.self), bundle: nil)
-        bottomSheet.delegate = delegate
-        bottomSheet.type = type
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
-    }
-    
-}

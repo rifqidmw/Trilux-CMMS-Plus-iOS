@@ -78,32 +78,4 @@ extension WorkSheetOnsitePreventiveListView: UICollectionViewDataSource, UIColle
         return 8
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let status = data[indexPath.row].status
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        
-        self.showOverlay()
-        presenter.showBottomSheetAction(navigation: navigation, type: status == .ongoing ? .work : .see, delegate: self)
-    }
-    
-}
-
-extension WorkSheetOnsitePreventiveListView: WorkSheetOnsitePreventiveDelegate {
-    
-    func didTapDetailPreventive() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        presenter.navigateToDetailPage(navigation: navigation, type: .seeOnly)
-    }
-    
-    func didTapContinueWorking() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        presenter.navigateToDetailPage(navigation: navigation, type: .workContinue)
-    }
-    
 }

@@ -17,9 +17,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectActionBottomSheet" customModule="cmmsv2" customModuleProvider="target">
             <connections>
-                <outlet property="bottomSheetHeightConstraint" destination="6oZ-nX-2Ou" id="BsP-k1-e0i"/>
                 <outlet property="bottomSheetView" destination="rfJ-Sf-izq" id="PNO-VY-EgZ"/>
                 <outlet property="dismissAreaView" destination="L2n-SP-6th" id="4wE-wT-sqg"/>
+                <outlet property="downloadPDFButton" destination="OBs-7k-iLh" id="MK6-cI-Osf"/>
                 <outlet property="seeDetailButton" destination="P7l-FV-pAQ" id="Pft-4N-Nim"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="workButton" destination="WbY-nw-dCt" id="SOy-L6-v1k"/>
@@ -31,11 +31,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2n-SP-6th" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="563"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="499"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfJ-Sf-izq" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="622" width="393" height="230"/>
+                    <rect key="frame" x="0.0" y="558" width="393" height="294"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Aksi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-CK-iSt">
                             <rect key="frame" x="24" y="24" width="345" height="16"/>
@@ -47,22 +47,34 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lPq-7i-c3Z">
-                            <rect key="frame" x="24" y="76" width="345" height="118"/>
+                            <rect key="frame" x="24" y="76" width="345" height="182"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-nw-dCt" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="345" height="51"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBs-7k-iLh" userLabel="Download PDF Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="gWs-hu-Nfe"/>
+                                    </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7l-FV-pAQ" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="67" width="345" height="51"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-nw-dCt" userLabel="Task Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="66" width="345" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="eCg-jF-aC8"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7l-FV-pAQ" userLabel="Detail Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="132" width="345" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="7r4-Vi-y7v"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="230" id="6oZ-nX-2Ou"/>
                         <constraint firstItem="w0L-CK-iSt" firstAttribute="leading" secondItem="rfJ-Sf-izq" secondAttribute="leading" constant="24" id="8pm-aO-KpM"/>
                         <constraint firstAttribute="bottom" secondItem="lPq-7i-c3Z" secondAttribute="bottom" constant="36" id="I7b-W7-Isk"/>
                         <constraint firstAttribute="trailing" secondItem="w0L-CK-iSt" secondAttribute="trailing" constant="24" id="Ilo-6D-wgV"/>

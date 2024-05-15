@@ -8,16 +8,21 @@
 import UIKit
 import Combine
 
+enum SelectActionBottomSheetType {
+    case download
+    case detail
+}
+
 class SelectActionBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
-    @IBOutlet weak var bottomSheetHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var workButton: GeneralButton!
     @IBOutlet weak var seeDetailButton: GeneralButton!
+    @IBOutlet weak var downloadPDFButton: GeneralButton!
     
     weak var delegate: WorkSheetOnsitePreventiveDelegate?
-    var type: WorkSheetActionType?
+    var type: SelectActionBottomSheetType?
     
     override func didLoad() {
         super.didLoad()
@@ -37,12 +42,12 @@ extension SelectActionBottomSheet {
         bottomSheetView.configure(type: .withoutHandleBar)
         workButton.configure(title: "Kerjakan", type: .bordered)
         seeDetailButton.configure(title: "Lihat")
+        downloadPDFButton.configure(title: "Download PDF", backgroundColor: UIColor.customLightGreenColor, titleColor: UIColor.customIndicatorColor10)
         
         switch self.type {
-        case .work: break
-        case .see:
-            workButton.isHidden = true
-            bottomSheetHeightConstraint.constant = 160
+        case .download: break
+        case .detail:
+            self.downloadPDFButton.isHidden = true
         default: break
         }
     }
@@ -62,7 +67,7 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate = self.delegate
                 else { return }
-                delegate.didTapContinueWorking()
+                delegate.didTapContinueWorking?()
             }
             .store(in: &anyCancellable)
         
@@ -71,7 +76,16 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate = self.delegate
                 else { return }
-                delegate.didTapDetailPreventive()
+                delegate.didTapDetail?()
+            }
+            .store(in: &anyCancellable)
+        
+        downloadPDFButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate
+                else { return }
+                delegate.didTapDownloadPDF?()
             }
             .store(in: &anyCancellable)
     }

@@ -66,7 +66,7 @@ extension WorkSheetMonitoringFunctionListPresenter {
                                 serial: item.serial ?? "",
                                 installation: item.instalasi ?? "",
                                 room: item.ruangan ?? "",
-                                dateTime: item.dateText ?? "", 
+                                dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
@@ -88,8 +88,8 @@ extension WorkSheetMonitoringFunctionListPresenter {
 
 extension WorkSheetMonitoringFunctionListPresenter {
     
-    func showBottomSheetPreviewWorkSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
-        router.showPreviewWorkSheetBottomSheet(navigation: navigation, delegate: delegate)
+    func showSelectActionBottomSheet(navigation: UINavigationController, type: SelectActionBottomSheetType, delegate: WorkSheetOnsitePreventiveDelegate) {
+        router.showSelectActionBottomSheet(navigation: navigation, type: type, delegate: delegate)
     }
     
     func navigateToDetailWorkSheet(navigation: UINavigationController) {

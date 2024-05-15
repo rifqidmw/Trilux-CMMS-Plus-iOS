@@ -118,10 +118,11 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
-              let navigation = self.navigationController
+              let navigation = self.navigationController,
+              let status = self.data[indexPath.row].status
         else { return }
         self.showOverlay()
-        presenter.showBottomSheetPreviewWorkSheet(navigation: navigation, delegate: self)
+        presenter.showSelectActionBottomSheet(navigation: navigation, type: status == .done ? .detail : .download, delegate: self)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -151,13 +152,21 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
     
 }
 
-extension WorkSheetMonitoringFunctionListView: WorkSheetListDelegate {
+extension WorkSheetMonitoringFunctionListView: WorkSheetOnsitePreventiveDelegate {
     
-    func didTapDetailWorkSheet() {
+    func didTapDetail() {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
         presenter.navigateToDetailWorkSheet(navigation: navigation)
+    }
+    
+    func didTapDownloadPDF() {
+        self.dismiss(animated: true)
+    }
+    
+    func didTapContinueWorking() {
+        self.dismiss(animated: true)
     }
     
 }

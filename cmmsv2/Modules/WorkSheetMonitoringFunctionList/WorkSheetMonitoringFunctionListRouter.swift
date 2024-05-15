@@ -21,10 +21,10 @@ class WorkSheetMonitoringFunctionListRouter: BaseRouter {
 
 extension WorkSheetMonitoringFunctionListRouter {
     
-    func showPreviewWorkSheetBottomSheet(navigation: UINavigationController, delegate: WorkSheetListDelegate) {
-        let bottomSheet = WorkSheetPreviewBottomSheet(nibName: String(describing: WorkSheetPreviewBottomSheet.self), bundle: nil)
+    func showSelectActionBottomSheet(navigation: UINavigationController, type: SelectActionBottomSheetType, delegate: WorkSheetOnsitePreventiveDelegate) {
+        let bottomSheet = SelectActionBottomSheet(nibName: String(describing: SelectActionBottomSheet.self), bundle: nil)
+        bottomSheet.type = type
         bottomSheet.delegate = delegate
-        //  bottomSheet.data = // entered data here
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
     }
