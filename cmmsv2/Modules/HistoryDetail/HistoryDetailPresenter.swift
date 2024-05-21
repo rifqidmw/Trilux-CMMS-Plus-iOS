@@ -13,7 +13,7 @@ class HistoryDetailPresenter: BasePresenter {
     private let router: HistoryDetailRouter
     let data: WorkSheetListEntity?
     
-    @Published public var historyDetail: WorkOrderHistory?
+    @Published public var historyDetail: HistoryDetailEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -51,8 +51,7 @@ extension HistoryDetailPresenter {
                 },
                 receiveValue: { history in
                     DispatchQueue.main.async {
-                        guard let data = history.data, let historyData = data.woDetail else { return }
-                        self.historyDetail = historyData
+                        self.historyDetail = history
                     }
                 }
             )

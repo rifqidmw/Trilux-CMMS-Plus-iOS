@@ -60,6 +60,9 @@ class HistoryDetailView: BaseViewController {
     @IBOutlet weak var constraintViewHeightConstraint: NSLayoutConstraint!
     
     var presenter: HistoryDetailPresenter?
+    var taskList: [HistoryDetailEntity.HistoryDetailData.HistoryDetailWorkOrder.HistoryTask] = []
+    var damagedMediaList: [HistoryDetailEntity.HistoryDetailData.HistoryDetailWorkOrder.Complain.Media] = []
+    var repairedMediaList: [HistoryDetailEntity.HistoryDetailData.HistoryDetailWorkOrder.Media] = []
     
     override func didLoad() {
         super.didLoad()
@@ -71,13 +74,8 @@ class HistoryDetailView: BaseViewController {
 extension HistoryDetailView {
     
     private func setupBody() {
-        fetchInitialData()
-        bindingData()
         setupView()
         setupAction()
-        setupCollectionView(taskCollectionView)
-        setupCollectionView(repairPictureCollectionView)
-        setupCollectionView(damagedPictureCollectionView)
     }
     
     private func fetchInitialData() {
@@ -86,21 +84,73 @@ extension HistoryDetailView {
     }
     
     private func bindingData() {
-        guard let presenter else { return }
+        guard let presenter = presenter else { return }
         presenter.$historyDetail
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self,
-                      let data,
-                      let equipment = data.equipment
+                guard let self = self,
+                      let history = data,
+                      let historyData = history.data,
+                      let workOrder = historyData.woDetail,
+                      let equipment = workOrder.equipment,
+                      let complain = workOrder.complain
                 else { return }
+                
+                let taskList = workOrder.taskList ?? []
+                let damagedMediaList = complain.medias ?? []
+                let repairedMediaList = workOrder.medias ?? []
+                let finishStatus = workOrder.txtFinishStatus ?? ""
+                let description = workOrder.txtDescriptions ?? ""
+                let status = workOrder.txtType ?? ""
+                
+                self.hideAnimationSkeleton()
                 self.headerImageView.loadImageUrl(equipment.valImage ?? "")
+                self.assetNameLabel.text = equipment.txtName ?? "-"
+                self.roomLabel.text = equipment.txtRuangan ?? "-"
+                self.brandLabel.text = "\(equipment.txtSerial ?? "-") - \(equipment.txtBrand ?? "-")"
+                self.serialNumberLabel.text = workOrder.valWoNumber ?? "-"
+                self.dateLabel.text = "\(workOrder.txtEngineerName ?? "") - \(workOrder.valDelegatedTime ?? "-")"
+                self.statusLabel.text = status
+                self.statusView.isHidden = status != "Korektif"
+                self.responseTimeView.configureView(title: "Response Time", value: complain.txtResponseTime ?? "-")
+                self.workStartView.configureView(title: "Mulai Bekerja", value: workOrder.valStartTime ?? "-")
+                self.workEndView.configureView(title: "Selesai Bekerja", value: workOrder.valEndTime ?? "-")
+                self.workDurationView.configureView(title: "Durasi Bekerja", value: workOrder.valDuration ?? "-")
+                self.finishLabel.text = finishStatus
+                self.descriptionLabel.text = description
+                self.taskList = taskList
+                self.taskCollectionView.reloadData()
+                self.damagedMediaList = damagedMediaList
+                self.damagedPictureCollectionView.reloadData()
+                self.repairedMediaList = repairedMediaList
+                self.repairPictureCollectionView.reloadData()
+                
+                self.emptyDescriptionView.isHidden = !description.isEmpty
+                self.descriptionLabel.isHidden = description.isEmpty
+                
+                self.emptyTaskView.isHidden = !taskList.isEmpty
+                self.taskCollectionView.isHidden = taskList.isEmpty
+                
+                self.emptyDamagedPictureView.isHidden = !damagedMediaList.isEmpty
+                self.damagedPictureCollectionView.isHidden = damagedMediaList.isEmpty
+                
+                self.emptyRepairPictureView.isHidden = !repairedMediaList.isEmpty
+                self.repairPictureCollectionView.isHidden = repairedMediaList.isEmpty
+                
+                self.emptyConstraintView.isHidden = !finishStatus.isEmpty
+                self.finishStatusView.isHidden = finishStatus.isEmpty
+                
+                // self.taskViewHeightConstraint.constant = calculateTaskHeight(data: taskList) + 60
+                // self.descriptionViewHeightConstraint.constant = self.descriptionLabel.frame.height + 110
+                // self.constraintViewHeightConstraint.constant = finishStatusView.frame.height + 80
             }
             .store(in: &anyCancellable)
     }
     
-    private func setupView() {
+    private func configureSharedComponent() {
         customNavigationView.configure(plainTitle: "Riwayat", type: .plain)
         statusView.makeCornerRadius(8)
+        headerImageView.makeCornerRadius(12)
         containerHeaderView.makeCornerRadius(12)
         containerHeaderView.addShadow(0.8)
         workSheetView.makeCornerRadius(12)
@@ -122,6 +172,16 @@ extension HistoryDetailView {
         headerConstraintView.configure(icon: "ic_board_with_clock", title: "Kendala", type: .plain)
     }
     
+    private func setupView() {
+        fetchInitialData()
+        bindingData()
+        setupCollectionView(taskCollectionView)
+        setupCollectionView(repairPictureCollectionView)
+        setupCollectionView(damagedPictureCollectionView)
+        configureSharedComponent()
+        showAnimationSkeleton()
+    }
+    
     private func setupAction() {
         customNavigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
@@ -138,6 +198,39 @@ extension HistoryDetailView {
         collectionView.delegate = self
         collectionView.register(EvidenceEquipmentCVC.nib, forCellWithReuseIdentifier: EvidenceEquipmentCVC.identifier)
         collectionView.register(TaskItemCVC.nib, forCellWithReuseIdentifier: TaskItemCVC.identifier)
+    }
+    
+    private func calculateTaskHeight(data: [HistoryDetailEntity.HistoryDetailData.HistoryDetailWorkOrder.HistoryTask]) -> CGFloat {
+        let initialHeight: CGFloat = 50
+        let totalHeight = CGFloat(initialHeight) * CGFloat(data.count)
+        return totalHeight
+    }
+    
+    private func showAnimationSkeleton() {
+        [self.headerImageView,
+         self.assetNameLabel,
+         self.statusView,
+         self.roomLabel,
+         self.serialNumberLabel,
+         self.dateLabel,
+         self.brandLabel
+        ].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func hideAnimationSkeleton() {
+        [self.headerImageView,
+         self.assetNameLabel,
+         self.statusView,
+         self.roomLabel,
+         self.serialNumberLabel,
+         self.dateLabel,
+         self.brandLabel
+        ].forEach {
+            $0.hideSkeleton()
+        }
     }
     
 }
