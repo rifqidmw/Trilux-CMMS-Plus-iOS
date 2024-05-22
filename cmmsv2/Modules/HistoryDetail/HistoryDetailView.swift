@@ -139,9 +139,9 @@ extension HistoryDetailView {
                 self.emptyConstraintView.isHidden = !finishStatus.isEmpty
                 self.finishLabel.isHidden = finishStatus.isEmpty
                 
-                 self.taskViewHeightConstraint.constant = calculateTaskHeight(data: taskList) + 80
-                self.descriptionViewHeightConstraint.constant = self.descriptionLabel.requiredHeight() + 80
-                self.constraintViewHeightConstraint.constant = finishLabel.requiredHeight() + 80
+                self.taskViewHeightConstraint.constant = taskList.isEmpty ? 200 : calculateTaskHeight(data: taskList) + 80
+                self.descriptionViewHeightConstraint.constant = description.isEmpty ? 200 : self.descriptionLabel.requiredHeight() + 80
+                self.constraintViewHeightConstraint.constant = finishStatus.isEmpty ? 200 : finishLabel.requiredHeight() + 80
                 self.view.layoutIfNeeded()
             }
             .store(in: &anyCancellable)
@@ -201,7 +201,7 @@ extension HistoryDetailView {
     }
     
     private func calculateTaskHeight(data: [HistoryDetailEntity.HistoryDetailData.HistoryDetailWorkOrder.HistoryTask]) -> CGFloat {
-        let initialHeight: CGFloat = 20
+        let initialHeight: CGFloat = 30
         let totalHeight = CGFloat(initialHeight) * CGFloat(data.count)
         return totalHeight
     }

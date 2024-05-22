@@ -48,10 +48,6 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedDamagedPicture = self.damagedMediaList[indexPath.row].valUrl ?? ""
-        
-        let selectedRepairPicture = self.repairedMediaList[indexPath.row].valUrl ?? ""
-        
         guard let presenter,
               let navigation = self.navigationController
         else { return }
@@ -59,8 +55,10 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
         case self.taskCollectionView:
             break
         case self.damagedPictureCollectionView:
+            let selectedDamagedPicture = self.damagedMediaList[indexPath.row].valUrl ?? ""
             presenter.navigateToDetailPicture(navigation: navigation, image: selectedDamagedPicture)
         case self.repairPictureCollectionView:
+            let selectedRepairPicture = self.repairedMediaList[indexPath.row].valUrl ?? ""
             presenter.navigateToDetailPicture(navigation: navigation, image: selectedRepairPicture)
         default: break
         }
