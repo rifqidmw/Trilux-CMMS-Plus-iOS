@@ -126,7 +126,6 @@ extension WorkSheetCorrectiveDetailView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(EvidenceEquipmentCVC.nib, forCellWithReuseIdentifier: EvidenceEquipmentCVC.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     private func showAnimationSkeleton() {
@@ -184,7 +183,7 @@ extension WorkSheetCorrectiveDetailView: UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: collectionView.frame.height)
+        return CGSize(width: CGSize.widthDevice / 2, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

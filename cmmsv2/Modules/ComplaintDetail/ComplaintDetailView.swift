@@ -79,7 +79,7 @@ extension ComplaintDetailView {
                 
                 self.serialNumberLabel.text = data.valWoList?.first?.lkNumber ?? "-"
                 self.dateLabel.text = "\(data.valWoList?.first?.engineerName ?? "-") • \(data.valWoList?.first?.lkDate ?? "-")"
-                self.configureStatus(status: CorrectiveStatusType(rawValue: (data.valWoList?.first?.statusText ?? .none)!) ?? .none)
+                self.configureStatus(status: CorrectiveStatusType(rawValue: ((data.valWoList?.first?.statusText ?? .none) ?? "")) ?? .none)
                 
                 self.medias = media
                 self.collectionView.reloadData()
@@ -131,7 +131,8 @@ extension ComplaintDetailView {
         case .delay:
             statusView.backgroundColor = UIColor.customIndicatorColor2
             statusLabel.textColor = UIColor.customIndicatorColor11
-        default: break
+        case .none:
+            statusView.isHidden = true
         }
     }
     
