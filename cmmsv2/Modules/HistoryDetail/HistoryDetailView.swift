@@ -55,7 +55,6 @@ class HistoryDetailView: BaseViewController {
     @IBOutlet weak var constraintView: UIView!
     @IBOutlet weak var headerConstraintView: CustomHeaderView!
     @IBOutlet weak var emptyConstraintView: UIView!
-    @IBOutlet weak var finishStatusView: UIView!
     @IBOutlet weak var finishLabel: UILabel!
     @IBOutlet weak var constraintViewHeightConstraint: NSLayoutConstraint!
     
@@ -138,11 +137,12 @@ extension HistoryDetailView {
                 self.repairPictureCollectionView.isHidden = repairedMediaList.isEmpty
                 
                 self.emptyConstraintView.isHidden = !finishStatus.isEmpty
-                self.finishStatusView.isHidden = finishStatus.isEmpty
+                self.finishLabel.isHidden = finishStatus.isEmpty
                 
-                // self.taskViewHeightConstraint.constant = calculateTaskHeight(data: taskList) + 60
-                // self.descriptionViewHeightConstraint.constant = self.descriptionLabel.frame.height + 110
-                // self.constraintViewHeightConstraint.constant = finishStatusView.frame.height + 80
+                 self.taskViewHeightConstraint.constant = calculateTaskHeight(data: taskList) + 80
+                self.descriptionViewHeightConstraint.constant = self.descriptionLabel.requiredHeight() + 80
+                self.constraintViewHeightConstraint.constant = finishLabel.requiredHeight() + 80
+                self.view.layoutIfNeeded()
             }
             .store(in: &anyCancellable)
     }
@@ -201,7 +201,7 @@ extension HistoryDetailView {
     }
     
     private func calculateTaskHeight(data: [HistoryDetailEntity.HistoryDetailData.HistoryDetailWorkOrder.HistoryTask]) -> CGFloat {
-        let initialHeight: CGFloat = 50
+        let initialHeight: CGFloat = 20
         let totalHeight = CGFloat(initialHeight) * CGFloat(data.count)
         return totalHeight
     }

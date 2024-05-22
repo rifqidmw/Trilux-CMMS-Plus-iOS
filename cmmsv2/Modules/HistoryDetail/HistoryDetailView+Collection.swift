@@ -66,4 +66,12 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch collectionView {
+        case self.taskCollectionView:
+            return CGSize(width: collectionView.frame.width, height: 20)
+        default: return CGSize(width: CGSize.widthDevice / 3, height: collectionView.frame.height)
+        }
+    }
+    
 }
