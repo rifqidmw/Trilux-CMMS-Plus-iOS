@@ -61,12 +61,12 @@ extension GeneralButton {
             titleLabel.isHidden = false
             iconImageView.isHidden = false
         case .bordered:
-            containerView.addBorder(width: 1, colorBorder: UIColor.customPlaceholderColor.cgColor)
+            containerView.addBorder(width: 1, colorBorder: UIColor.customPlaceholderColor)
             containerView.backgroundColor = .clear
             titleLabel.isHidden = false
             titleLabel.textColor = UIColor.customPlaceholderColor
         case .borderedWithIcon:
-            containerView.addBorder(width: 1, colorBorder: UIColor.customPlaceholderColor.cgColor)
+            containerView.addBorder(width: 1, colorBorder: UIColor.customPlaceholderColor)
             containerView.backgroundColor = .clear
             titleLabel.isHidden = false
             iconImageView.isHidden = false

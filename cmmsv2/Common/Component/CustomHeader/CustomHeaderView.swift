@@ -70,7 +70,7 @@ class CustomHeaderView: UIView {
 
 extension CustomHeaderView {
     
-    func configure(icon: String? = nil, title: String, labelAction: String? = nil, count: Int? = nil, type: CustomHeaderType) {
+    func configure(icon: String? = nil, title: String, labelAction: String? = nil, count: Int? = nil, type: CustomHeaderType, collapseIcon: String? = "ic_collapse_accordion") {
         titleLabel.text = title
         iconImageView.image = UIImage(named: icon ?? "ic_trilux_logo_splash")
         actionLabel.text = labelAction
@@ -88,6 +88,7 @@ extension CustomHeaderView {
             dismissSwitchView.isHidden = false
         case .collapsibleAction:
             collapsibleActionView.isHidden = false
+            collapseAccordionIconImageView.image = UIImage(named: collapseIcon ?? "ic_collapse_accordion")
         case .collapsibleWithCount:
             collapsibleActionCountView.isHidden = false
         case .formHeader:

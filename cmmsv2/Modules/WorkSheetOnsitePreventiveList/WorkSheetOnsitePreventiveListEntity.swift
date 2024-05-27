@@ -8,9 +8,9 @@
 import Foundation
 
 @objc protocol WorkSheetOnsitePreventiveDelegate: AnyObject {
-    @objc optional func didTapDetail()
-    @objc optional func didTapContinueWorking()
-    @objc optional func didTapDownloadPDF()
+    @objc optional func didTapDetail(title: String)
+    @objc optional func didTapContinueWorking(title: String)
+    @objc optional func didTapDownloadPDF(title: String)
 }
 
 let onsitePreventiveData: [WorkSheetListEntity] = [

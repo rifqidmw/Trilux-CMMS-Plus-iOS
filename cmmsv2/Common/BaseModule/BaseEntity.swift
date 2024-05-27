@@ -7,6 +7,46 @@
 
 import Foundation
 
+enum PreparationStatusType: String, Codable {
+    case yes = "Ya"
+    case no = "Tidak"
+    case pass = "Pass"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Ya": self = .yes
+        case "Tidak": self = .no
+        case "Pass": self = .pass
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+enum WorkSheetFinishStatus: String, Codable {
+    case done = "Selesai"
+    case needSparePart = "Membutuhkan Suku Cadang"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Selesai": self = .done
+        case "Membutuhkan Suku Cadang": self = .needSparePart
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
 enum WorkSheetCategory: String, Codable {
     case calibration = "Kalibrasi"
     case preventive = "Preventif"
@@ -60,6 +100,7 @@ enum WorkSheetStatus: String, Codable {
     case removed = "Tidak Bisa diperbaiki, Usulkan Penghapusan"
     case progressDelay = "Progress(Delay)"
     case progress = "Progress"
+    case draft = "Draft"
     case none = ""
     
     init?(rawValue: String) {
@@ -72,6 +113,7 @@ enum WorkSheetStatus: String, Codable {
         case "Tidak Bisa diperbaiki, Usulkan Penghapusan": self = .removed
         case "Progress(Delay)": self = .progressDelay
         case "Progress": self = .progress
+        case "Draft": self = .draft
         case "": self = .none
         default: self = .none
         }

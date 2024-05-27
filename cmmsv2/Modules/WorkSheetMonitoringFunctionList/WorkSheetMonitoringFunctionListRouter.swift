@@ -21,16 +21,18 @@ class WorkSheetMonitoringFunctionListRouter: BaseRouter {
 
 extension WorkSheetMonitoringFunctionListRouter {
     
-    func showSelectActionBottomSheet(navigation: UINavigationController, type: SelectActionBottomSheetType, delegate: WorkSheetOnsitePreventiveDelegate) {
+    func showSelectActionBottomSheet(navigation: UINavigationController,
+                                     type: WorkSheetStatus,
+                                     delegate: WorkSheetOnsitePreventiveDelegate) {
         let bottomSheet = SelectActionBottomSheet(nibName: String(describing: SelectActionBottomSheet.self), bundle: nil)
-        bottomSheet.type = type
         bottomSheet.delegate = delegate
+        bottomSheet.type = type
         bottomSheet.modalPresentationStyle = .overCurrentContext
         navigation.present(bottomSheet, animated: true)
     }
     
-    func navigateToDetailWorkSheet(navigation: UINavigationController) {
-        let vc = WorkSheetMonitoringFunctionDetailRouter().showView()
+    func navigateToDetailWorkSheet(navigation: UINavigationController, data: WorkSheetRequestEntity) {
+        let vc = WorkSheetDetailRouter().showView(type: .monitoring, data: data)
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }

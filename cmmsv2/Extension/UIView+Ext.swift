@@ -8,6 +8,14 @@
 import Foundation
 import UIKit
 
+enum LinePosition {
+    case top
+    case bottom
+    case left
+    case right
+    case all
+}
+
 extension UIView {
     
     public func loadNib() -> UIView {
@@ -27,9 +35,34 @@ extension UIView {
         .init(view: self, gestureType: gestureType)
     }
     
-    func addBorder(width: CGFloat = 1, colorBorder: CGColor = UIColor.white.cgColor) {
-        layer.borderWidth = width
-        layer.borderColor = colorBorder
+    func addBorder(width: CGFloat = 1, colorBorder: UIColor = .white, position: LinePosition? = nil) {
+        let borderColor = colorBorder.cgColor
+        
+        if let position = position {
+            let border = CALayer()
+            border.backgroundColor = borderColor
+            
+            switch position {
+            case .top:
+                border.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: width)
+            case .bottom:
+                border.frame = CGRect(x: 0, y: self.frame.height - width, width: self.frame.width, height: width)
+            case .left:
+                border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.height)
+            case .right:
+                border.frame = CGRect(x: self.frame.width - width, y: 0, width: width, height: self.frame.height)
+            case .all:
+                self.addBorder(width: width, colorBorder: colorBorder, position: .top)
+                self.addBorder(width: width, colorBorder: colorBorder, position: .bottom)
+                self.addBorder(width: width, colorBorder: colorBorder, position: .left)
+                self.addBorder(width: width, colorBorder: colorBorder, position: .right)
+            }
+            
+            self.layer.addSublayer(border)
+        } else {
+            self.layer.borderWidth = width
+            self.layer.borderColor = borderColor
+        }
     }
     
     func animateShowView(_ duration: TimeInterval = 0.5, _ delay: TimeInterval = 0) {

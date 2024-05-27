@@ -166,6 +166,10 @@ extension WorkSheetCVC {
             thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
             thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
             thirdBadgeViewWidthConstraint.constant = 80
+        case .draft:
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
+            thirdBadgeViewWidthConstraint.constant = 50
         default: break
         }
     }

@@ -88,12 +88,15 @@ extension WorkSheetMonitoringFunctionListPresenter {
 
 extension WorkSheetMonitoringFunctionListPresenter {
     
-    func showSelectActionBottomSheet(navigation: UINavigationController, type: SelectActionBottomSheetType, delegate: WorkSheetOnsitePreventiveDelegate) {
+    func showSelectActionBottomSheet(navigation: UINavigationController,
+                                     type: WorkSheetStatus,
+                                     delegate: WorkSheetOnsitePreventiveDelegate,
+                                     id: String?) {
         router.showSelectActionBottomSheet(navigation: navigation, type: type, delegate: delegate)
     }
     
-    func navigateToDetailWorkSheet(navigation: UINavigationController) {
-        router.navigateToDetailWorkSheet(navigation: navigation)
+    func navigateToDetailWorkSheet(navigation: UINavigationController, data: WorkSheetRequestEntity) {
+        router.navigateToDetailWorkSheet(navigation: navigation, data: data)
     }
     
 }

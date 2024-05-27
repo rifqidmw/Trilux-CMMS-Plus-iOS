@@ -8,11 +8,6 @@
 import UIKit
 import Combine
 
-enum SelectActionBottomSheetType {
-    case download
-    case detail
-}
-
 class SelectActionBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
@@ -22,11 +17,11 @@ class SelectActionBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var downloadPDFButton: GeneralButton!
     
     weak var delegate: WorkSheetOnsitePreventiveDelegate?
-    var type: SelectActionBottomSheetType?
+    var type: WorkSheetStatus?
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
     }
     
 }
@@ -39,17 +34,11 @@ extension SelectActionBottomSheet {
     }
     
     private func setupView() {
-        bottomSheetView.configure(type: .withoutHandleBar)
         workButton.configure(title: "Kerjakan", type: .bordered)
         seeDetailButton.configure(title: "Lihat")
         downloadPDFButton.configure(title: "Download PDF", backgroundColor: UIColor.customLightGreenColor, titleColor: UIColor.customIndicatorColor10)
-        
-        switch self.type {
-        case .download: break
-        case .detail:
-            self.downloadPDFButton.isHidden = true
-        default: break
-        }
+        guard let type else { return }
+        workButton.isHidden = type == .done
     }
     
     private func setupAction() {
@@ -67,7 +56,7 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate = self.delegate
                 else { return }
-                delegate.didTapContinueWorking?()
+                delegate.didTapContinueWorking?(title: "kerjakan")
             }
             .store(in: &anyCancellable)
         
@@ -76,7 +65,7 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate = self.delegate
                 else { return }
-                delegate.didTapDetail?()
+                delegate.didTapDetail?(title: "lihat")
             }
             .store(in: &anyCancellable)
         
@@ -85,7 +74,7 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate
                 else { return }
-                delegate.didTapDownloadPDF?()
+                delegate.didTapDownloadPDF?(title: "download")
             }
             .store(in: &anyCancellable)
     }
