@@ -1,41 +1,42 @@
 //
-//  ComplaintDetailPresenter.swift
+//  HistoryDetailPresenter.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 09/05/24.
+//  Created by PRO M1 2020 8/256 on 18/05/24.
 //
 
-import UIKit
+import Foundation
 
-class ComplaintDetailPresenter: BasePresenter {
+class HistoryDetailPresenter: BasePresenter {
     
-    private let interactor: ComplaintDetailInteractor
-    private let router = ComplaintDetailRouter()
-    let data: ComplaintListEntity?
+    private let interactor: HistoryDetailInteractor
+    private let router: HistoryDetailRouter
+    let data: WorkSheetListEntity?
     
-    @Published public var complaintData: ComplaintDetail?
+    @Published public var historyDetail: HistoryDetailEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: ComplaintDetailInteractor, data: ComplaintListEntity) {
+    init(interactor: HistoryDetailInteractor, router: HistoryDetailRouter, data: WorkSheetListEntity) {
         self.interactor = interactor
+        self.router = router
         self.data = data
     }
     
 }
 
-extension ComplaintDetailPresenter {
+extension HistoryDetailPresenter {
     
-    func fetchInitialData() {
+    func fetchInitData() {
         guard let data, let id = data.id else { return }
-        self.fetchDetailComplaintData(id: id)
+        self.fetchHistoryDetail(id: id)
     }
     
-    func fetchDetailComplaintData(id: Int) {
+    func fetchHistoryDetail(id: String) {
         self.isLoading = true
-        interactor.getComplaintDetail(id: id)
+        interactor.getHistoryDetail(id: id)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -48,10 +49,9 @@ extension ComplaintDetailPresenter {
                         self.isError = true
                     }
                 },
-                receiveValue: { detailComplaint in
+                receiveValue: { history in
                     DispatchQueue.main.async {
-                        guard let data = detailComplaint.data, let complaintDetail = data.complain else { return }
-                        self.complaintData = complaintDetail
+                        self.historyDetail = history
                     }
                 }
             )

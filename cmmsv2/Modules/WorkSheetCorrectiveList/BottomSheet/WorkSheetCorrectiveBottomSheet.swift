@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class WorkSheetPreviewBottomSheet: BaseNonNavigationController {
+class WorkSheetCorrectiveBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
@@ -23,9 +23,10 @@ class WorkSheetPreviewBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var resumeWorkButton: GeneralButton!
     @IBOutlet weak var seeWorkButton: GeneralButton!
     @IBOutlet weak var seeDetailButton: GeneralButton!
+    @IBOutlet weak var dismissButton: UIView!
     
-    weak var delegate: WorkSheetListDelegate?
-    var data: WorkSheetListEntity?
+    weak var delegate: WorkSheetCorrectiveBottomSheetDelegate?
+    var data: WorkOrder?
     
     override func didLoad() {
         super.didLoad()
@@ -34,7 +35,7 @@ class WorkSheetPreviewBottomSheet: BaseNonNavigationController {
     
 }
 
-extension WorkSheetPreviewBottomSheet {
+extension WorkSheetCorrectiveBottomSheet {
     
     private func setupBody() {
         setupView()
@@ -42,13 +43,19 @@ extension WorkSheetPreviewBottomSheet {
     }
     
     private func setupView() {
-        imageCardView.configureView(image: "unsplash_yo01Z-9HQAw", label: "Steril Pouch (Sterilization Pack)")
-        serialNumberView.configureView(title: "Serial Number", value: "112234452537")
-        roomView.configureView(title: "Ruangan", value: "Poliklinik Executive Cendana")
-        brandView.configureView(title: "Merk", value: "B Braun")
-        typeView.configureView(title: "Tipe", value: "NE-C28")
-        reporterView.configureView(title: "Pengaduan dilakukan oleh", value: "Andini")
-        chronologyView.configureView(title: "Kronologi", value: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever")
+        guard let data,
+              let complain = data.complain,
+              let equipment = complain.equipment
+        else { return }
+        
+        imageCardView.configureView(image: equipment.valImage ?? "", label: equipment.txtName ?? "")
+        serialNumberView.configureView(title: "Serial Number", value: equipment.txtSerial ?? "")
+        roomView.configureView(title: "Ruangan", value: equipment.txtRuangan ?? "")
+        brandView.configureView(title: "Merk", value: equipment.txtBrand ?? "")
+        typeView.configureView(title: "Tipe", value: equipment.txtBrand ?? "")
+        reporterView.configureView(title: "Pengaduan dilakukan oleh", value: complain.txtTitle ?? "")
+        chronologyView.configureView(title: "Kronologi", value: complain.txtDescriptions ?? "")
+        
         workButton.configure(title: "Kerjakan", type: .borderedWithIcon, icon: "ic_scan_gray", titleColor: UIColor.customPlaceholderColor)
         resumeWorkButton.configure(title: "Lanjutkan Pekerjaan", type: .normal, backgroundColor: UIColor.customLightYellowColor, titleColor: UIColor.customDarkYellowColor)
         seeWorkButton.configure(title: "Lihat Pekerjaan", type: .normal, backgroundColor: UIColor.customLightGreenColor, titleColor: UIColor.customGreenColor)
@@ -56,9 +63,10 @@ extension WorkSheetPreviewBottomSheet {
     }
     
     private func setupAction() {
-        Publishers.Merge(
+        Publishers.Merge3(
             bottomSheetView.handleBarArea.gesture(),
-            dismissAreaView.gesture())
+            dismissAreaView.gesture(),
+            dismissButton.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
             self.dismiss(animated: true)
@@ -68,9 +76,10 @@ extension WorkSheetPreviewBottomSheet {
         seeDetailButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let delegate = self.delegate
+                      let delegate,
+                      let data
                 else { return }
-                delegate.didTapDetailWorkSheet()
+                delegate.didTapDetailCorrective(data: data)
             }
             .store(in: &anyCancellable)
     }

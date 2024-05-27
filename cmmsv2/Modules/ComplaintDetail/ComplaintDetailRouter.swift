@@ -18,12 +18,3 @@ class ComplaintDetailRouter: BaseRouter {
     }
     
 }
-
-extension ComplaintDetailRouter {
-    
-    func navigateToDetailPicture(navigation: UINavigationController, image: String) {
-        let vc = FullScreenPictureRouter().showView(image: image)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}

@@ -131,7 +131,8 @@ extension ComplaintDetailView {
         case .delay:
             statusView.backgroundColor = UIColor.customIndicatorColor2
             statusLabel.textColor = UIColor.customIndicatorColor11
-        default: break
+        case .none:
+            statusView.isHidden = true
         }
     }
     
@@ -167,7 +168,7 @@ extension ComplaintDetailView: UICollectionViewDataSource, UICollectionViewDeleg
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: self.medias[indexPath.row])
+        cell.setupCell(url: self.medias[indexPath.row].valUrl ?? "")
         
         return cell
     }

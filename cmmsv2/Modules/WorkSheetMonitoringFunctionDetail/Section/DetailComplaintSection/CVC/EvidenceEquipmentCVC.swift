@@ -25,8 +25,8 @@ class EvidenceEquipmentCVC: UICollectionViewCell {
 
 extension EvidenceEquipmentCVC {
     
-    func setupCell(data: Media) {
-        evidenceImageView.loadImageUrl(data.valUrl ?? "")
+    func setupCell(url: String?) {
+        evidenceImageView.loadImageUrl(url ?? "")
     }
     
 }

@@ -66,6 +66,8 @@ extension WorkSheetDetailView {
                       let preparation = detail.persiapan
                 else { return }
                 self.assetSectionView.configure(data: detail, reff: reff)
+                self.assetSectionHeightConstraint.constant = 500 + assetSectionView.roomView.valueLabel.requiredHeight()
+                self.assetSectionView.layoutIfNeeded()
                 
                 self.preparationView.configure(data: preparation)
                 self.preparationSectionView.configure(title: "Persiapan", icon: "ic_sheet_check", view: preparationView)

@@ -79,6 +79,7 @@ enum Endpoint {
     case assetFiles(id: String?)
     case complaintDetail(id: Int?)
     case workSheetDetail(id: String, action: String)
+    case detailHistory(id: String?)
 }
 
 // MARK: - PATH URL
@@ -178,6 +179,8 @@ extension Endpoint {
             return "complains/detail?id=\(id ?? 0)"
         case .workSheetDetail:
             return "lk/start"
+        case .detailHistory(id: let id):
+            return "lk/detail?id=\(id ?? "")"
         }
     }
 }

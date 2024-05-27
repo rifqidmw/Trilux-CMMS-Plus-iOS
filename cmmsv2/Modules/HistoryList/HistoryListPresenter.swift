@@ -5,7 +5,7 @@
 //  Created by PRO M1 2020 8/256 on 13/03/24.
 //
 
-import Foundation
+import UIKit
 
 class HistoryListPresenter: BasePresenter {
     
@@ -82,6 +82,14 @@ extension HistoryListPresenter {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
         fetchHistoryList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
+    }
+    
+}
+
+extension HistoryListPresenter {
+    
+    func navigateToHistoryDetail(navigation: UINavigationController, data: WorkSheetListEntity) {
+        router.navigateToHistoryDetail(navigation: navigation, data: data)
     }
     
 }

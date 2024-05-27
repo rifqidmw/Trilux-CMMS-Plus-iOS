@@ -69,6 +69,7 @@ extension AssetDetailView {
                 if let data = data {
                     self.generalInfoData = data
                     self.assetNameLabel.text = data.txtName
+                    self.backgroundImageView.loadImageUrl(data.valImage ?? "")
                     self.assetImageView.loadImageUrl(data.valImage ?? "")
                     self.serialNumberLabel.text = "SN: \(data.txtSerial ?? "")"
                     self.assetTypeLabel.text = presenter.type == .medic ? "Medic" : "Non-Medic"
