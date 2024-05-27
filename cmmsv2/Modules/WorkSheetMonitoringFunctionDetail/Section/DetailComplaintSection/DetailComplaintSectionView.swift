@@ -112,7 +112,7 @@ extension DetailComplaintSectionView: UICollectionViewDataSource, UICollectionVi
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: collectionViewData[indexPath.row])
+        cell.setupCell(url: collectionViewData[indexPath.row].valUrl ?? "")
         
         return cell
     }

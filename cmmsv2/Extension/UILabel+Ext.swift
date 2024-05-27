@@ -31,4 +31,16 @@ extension UILabel {
         self.attributedText = attributedString
     }
     
+    func requiredHeight() -> CGFloat {
+        guard let text = self.text else { return 0 }
+        let maxSize = CGSize(width: self.frame.width, height: CGFloat.greatestFiniteMagnitude)
+        let textRect = (text as NSString).boundingRect(
+            with: maxSize,
+            options: .usesLineFragmentOrigin,
+            attributes: [NSAttributedString.Key.font: self.font!],
+            context: nil
+        )
+        return ceil(textRect.height)
+    }
+    
 }

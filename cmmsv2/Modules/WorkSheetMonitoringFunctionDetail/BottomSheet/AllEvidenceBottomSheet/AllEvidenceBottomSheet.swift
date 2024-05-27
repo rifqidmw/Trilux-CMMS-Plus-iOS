@@ -78,7 +78,7 @@ extension AllEvidenceBottomSheet: UICollectionViewDataSource, UICollectionViewDe
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        cell.setupCell(url: data[indexPath.row].valUrl ?? "")
         
         return cell
     }
