@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class WorkSheetDetailView: BaseViewController {
     
@@ -14,6 +15,8 @@ class WorkSheetDetailView: BaseViewController {
     @IBOutlet weak var assetSectionHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var preparationSectionView: AccordionView!
     @IBOutlet weak var preparationSectionHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var calibrationMeasurementSectionView: AccordionView!
+    @IBOutlet weak var calibrationSectionHeightConstraint: NSLayoutConstraint!
     
     var preparationView = PreparationSectionView()
     var presenter: WorkSheetDetailPresenter?
@@ -28,6 +31,7 @@ class WorkSheetDetailView: BaseViewController {
 extension WorkSheetDetailView {
     
     private func setupBody() {
+        showAnimationSkeleton()
         fetchInitialData()
         bindingHeight()
         bindingData()
@@ -65,12 +69,16 @@ extension WorkSheetDetailView {
                       let reff = data.reff,
                       let preparation = detail.persiapan
                 else { return }
+                self.hideAnimationSkeleton()
+                
                 self.assetSectionView.configure(data: detail, reff: reff)
-                self.assetSectionHeightConstraint.constant = 500 + assetSectionView.roomView.valueLabel.requiredHeight()
+                self.assetSectionHeightConstraint.constant = self.assetSectionView.initialContentHeightConstraint.constant
                 self.assetSectionView.layoutIfNeeded()
                 
                 self.preparationView.configure(data: preparation)
                 self.preparationSectionView.configure(title: "Persiapan", icon: "ic_sheet_check", view: preparationView)
+                
+                self.preparationSectionView.isHidden = preparation.isEmpty
             }
             .store(in: &anyCancellable)
     }
@@ -84,6 +92,23 @@ extension WorkSheetDetailView {
                 self.preparationSectionView.layoutIfNeeded()
             }
             .store(in: &anyCancellable)
+    }
+    
+}
+
+extension WorkSheetDetailView {
+    
+    private func showAnimationSkeleton() {
+        [self.preparationSectionView].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func hideAnimationSkeleton() {
+        [self.preparationSectionView].forEach {
+            $0.hideSkeleton()
+        }
     }
     
 }

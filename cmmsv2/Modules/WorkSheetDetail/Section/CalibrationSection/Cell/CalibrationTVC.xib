@@ -15,26 +15,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PreparationTVC" customModule="cmmsv2" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CalibrationTVC" customModule="cmmsv2" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WW9-e8-Tp7">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-oP-LYn">
                         <rect key="frame" x="16" y="8" width="288" height="28"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvW-f4-MBD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ke-6n-s5c">
                                 <rect key="frame" x="0.0" y="0.0" width="233" height="28"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <color key="textColor" name="customDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKs-7Z-FaW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzw-tO-UBf">
                                 <rect key="frame" x="241" y="0.0" width="47" height="28"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-Lk-zyb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSd-VL-hYk">
                                         <rect key="frame" x="12" y="4" width="23" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                         <color key="textColor" name="indicatorColor11"/>
@@ -43,31 +43,23 @@
                                 </subviews>
                                 <color key="backgroundColor" name="indicatorColor2"/>
                                 <constraints>
-                                    <constraint firstItem="L5f-Lk-zyb" firstAttribute="top" secondItem="iKs-7Z-FaW" secondAttribute="top" constant="4" id="0Aa-xL-EXh"/>
-                                    <constraint firstItem="L5f-Lk-zyb" firstAttribute="leading" secondItem="iKs-7Z-FaW" secondAttribute="leading" constant="12" id="RMt-AS-s6z"/>
-                                    <constraint firstAttribute="trailing" secondItem="L5f-Lk-zyb" secondAttribute="trailing" constant="12" id="odY-q5-DZP"/>
-                                    <constraint firstAttribute="bottom" secondItem="L5f-Lk-zyb" secondAttribute="bottom" constant="4" id="uKD-Yc-ar7"/>
+                                    <constraint firstItem="FSd-VL-hYk" firstAttribute="top" secondItem="Bzw-tO-UBf" secondAttribute="top" constant="4" id="C72-nP-ona"/>
+                                    <constraint firstAttribute="bottom" secondItem="FSd-VL-hYk" secondAttribute="bottom" constant="4" id="dMV-7U-awn"/>
+                                    <constraint firstItem="FSd-VL-hYk" firstAttribute="leading" secondItem="Bzw-tO-UBf" secondAttribute="leading" constant="12" id="f4G-Ar-JWl"/>
+                                    <constraint firstAttribute="trailing" secondItem="FSd-VL-hYk" secondAttribute="trailing" constant="12" id="gh0-Ec-GZB"/>
                                 </constraints>
                             </view>
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="WW9-e8-Tp7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7b8-3W-FUd"/>
-                    <constraint firstAttribute="trailing" secondItem="WW9-e8-Tp7" secondAttribute="trailing" constant="16" id="Dx9-Pe-Mgy"/>
-                    <constraint firstItem="WW9-e8-Tp7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="KNf-hK-zbL"/>
-                    <constraint firstItem="WW9-e8-Tp7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Pnv-YT-Xqa"/>
-                    <constraint firstAttribute="bottom" secondItem="WW9-e8-Tp7" secondAttribute="bottom" constant="8" id="xsA-T1-Ebo"/>
+                    <constraint firstItem="wsa-oP-LYn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0Q2-Yt-0mS"/>
+                    <constraint firstItem="wsa-oP-LYn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4DI-HZ-4jv"/>
+                    <constraint firstAttribute="bottom" secondItem="wsa-oP-LYn" secondAttribute="bottom" constant="8" id="tiM-to-QZ8"/>
+                    <constraint firstAttribute="trailing" secondItem="wsa-oP-LYn" secondAttribute="trailing" constant="16" id="wMm-vW-c1q"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <connections>
-                <outlet property="statusLabel" destination="L5f-Lk-zyb" id="CZx-7w-Vta"/>
-                <outlet property="statusView" destination="iKs-7Z-FaW" id="s97-mt-LDE"/>
-                <outlet property="titleLabel" destination="FvW-f4-MBD" id="D92-Zf-jUM"/>
-            </connections>
-            <point key="canvasLocation" x="123.66412213740458" y="-1.4084507042253522"/>
+            <point key="canvasLocation" x="37" y="-1"/>
         </tableViewCell>
     </objects>
     <resources>

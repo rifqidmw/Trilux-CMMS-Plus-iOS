@@ -21,11 +21,19 @@ class AssetSectionView: UIView {
     @IBOutlet weak var workSheetStatusLabel: UILabel!
     @IBOutlet weak var workSheetStatusWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var serialNumberView: InformationCardView!
+    @IBOutlet weak var serialNumberViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerBrandTypeStackView: UIStackView!
     @IBOutlet weak var brandView: InformationCardView!
     @IBOutlet weak var typeView: InformationCardView!
+    @IBOutlet weak var brandTypeHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var installationView: InformationCardView!
+    @IBOutlet weak var installationViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var roomView: InformationCardView!
+    @IBOutlet weak var roomViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var customHeader: CustomHeaderView!
+    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var initialContentHeightConstraint: NSLayoutConstraint!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,6 +70,7 @@ extension AssetSectionView {
     
     func configure(data: LKData, reff: References) {
         hideAnimationSkeleton()
+        
         let workingStatus = reff.status?.first { $0.key == data.lkStatus }?.value ?? "-"
         let finishStatus = reff.finishStatus?.first { $0.key == data.lkFinishstt }?.value ?? "-"
         
@@ -76,6 +85,31 @@ extension AssetSectionView {
         
         configureWorkingStatus(status: WorkSheetStatus(rawValue: workingStatus) ?? WorkSheetStatus.none)
         configureFinishStatus(status: WorkSheetFinishStatus(rawValue: finishStatus) ?? WorkSheetFinishStatus.none)
+        
+        let roomHeight = 58 + roomView.valueLabel.requiredHeight()
+        let serialHeight = 58 + serialNumberView.valueLabel.requiredHeight()
+        let brandHeight = 58 + typeView.valueLabel.requiredHeight()
+        let installationHeight = 58 + installationView.valueLabel.requiredHeight()
+        let headerHeight = headerHeightConstraint.constant
+        
+        roomViewHeightConstraint.constant = roomHeight
+        serialNumberViewHeightConstraint.constant = serialHeight
+        brandTypeHeightConstraint.constant = brandHeight
+        installationViewHeightConstraint.constant = installationHeight
+        
+        roomView.layoutIfNeeded()
+        serialNumberView.layoutIfNeeded()
+        brandView.layoutIfNeeded()
+        typeView.layoutIfNeeded()
+        containerBrandTypeStackView.layoutIfNeeded()
+        installationView.layoutIfNeeded()
+        detailInformationCardView.layoutIfNeeded()
+        
+        let increaseHeight = roomHeight + serialHeight + brandHeight + installationHeight + headerHeight
+        
+        initialContentHeightConstraint.constant = 210 + increaseHeight
+        
+        self.layoutIfNeeded()
     }
     
 }

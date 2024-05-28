@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="assetSectionHeightConstraint" destination="mBh-21-iTy" id="vdF-ua-GKF"/>
                 <outlet property="assetSectionView" destination="T7Q-kA-x6p" id="drj-ws-kvS"/>
+                <outlet property="calibrationMeasurementSectionView" destination="oMH-WD-PPy" id="PbL-5E-XCl"/>
+                <outlet property="calibrationSectionHeightConstraint" destination="vXR-e3-mMu" id="CWh-eC-8TB"/>
                 <outlet property="navigationView" destination="BSK-vS-FFs" id="UAE-el-oSw"/>
                 <outlet property="preparationSectionHeightConstraint" destination="0Je-hi-Wwr" id="i6h-ol-fhW"/>
                 <outlet property="preparationSectionView" destination="jX4-tB-h76" id="DWP-zR-aS0"/>
@@ -28,7 +30,7 @@
                     <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vy6-ui-ORe">
-                            <rect key="frame" x="16" y="24" width="361" height="564"/>
+                            <rect key="frame" x="16" y="24" width="361" height="628"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7Q-kA-x6p" userLabel="Asset Section View" customClass="AssetSectionView" customModule="cmmsv2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
@@ -42,6 +44,13 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="0Je-hi-Wwr"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMH-WD-PPy" customClass="AccordionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="580" width="361" height="48"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="vXR-e3-mMu"/>
                                     </constraints>
                                 </view>
                             </subviews>
