@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class LoadPreventiveView: BaseViewController {
     
@@ -58,6 +59,7 @@ extension LoadPreventiveView {
                 
                 self.data = preventiveList
                 self.collectionView.reloadData()
+                self.collectionView.hideSkeleton()
             }
             .store(in: &anyCancellable)
     }
@@ -67,6 +69,10 @@ extension LoadPreventiveView {
         workButton.configure(title: "Kerjakan")
         workButton.makeCornerRadius(8)
         workButton.addShadow(0.4)
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.collectionView.isSkeletonable = true
+            self.collectionView.showAnimatedGradientSkeleton()
+        }
     }
     
     private func setupAction() {
@@ -94,7 +100,19 @@ extension LoadPreventiveView {
     
 }
 
-extension LoadPreventiveView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension LoadPreventiveView: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: LoadPreventiveCVC.identifier, for: indexPath)
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return LoadPreventiveCVC.identifier
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.data.count

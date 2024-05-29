@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class LoadPreventiveCVC: UICollectionViewCell {
     
@@ -26,6 +27,8 @@ class LoadPreventiveCVC: UICollectionViewCell {
         self.addShadow(0.4)
         self.containerView.makeCornerRadius(8)
         self.statusView.makeCornerRadius(4)
+        self.isSkeletonable = true
+        self.showAnimatedGradientSkeleton()
     }
     
 }
@@ -34,6 +37,7 @@ extension LoadPreventiveCVC {
     
     func setupCell(data: LoadPreventiveList?) {
         guard let data else { return }
+        self.hideSkeleton()
         serialNumberLabel.text = data.lkNumber ?? "-"
         dateLabel.text = data.dateText ?? "-"
         if data.lkFinishstt != "0" {
