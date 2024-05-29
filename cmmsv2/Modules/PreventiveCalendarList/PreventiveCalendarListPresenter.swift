@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class PreventiveCalendarListPresenter: BasePresenter {
     
@@ -83,7 +84,7 @@ extension PreventiveCalendarListPresenter {
                         
                         let preventiveDataList = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLK ?? "",
+                                id: item.idAsset ?? "",
                                 uniqueNumber: item.lkNumber ?? "",
                                 workName: item.assetName ?? "",
                                 workDesc: item.lkLabel ?? "",
@@ -106,6 +107,18 @@ extension PreventiveCalendarListPresenter {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
         fetchPreventiveSchedule(idEngineer: idEngineer, date: date, page: self.page, limit: self.limit)
+    }
+    
+}
+
+extension PreventiveCalendarListPresenter {
+    
+    func navigateToLoadPreventive(from navigation: UINavigationController, data: WorkSheetListEntity) {
+        router.navigateToLoadPreventive(navigation, data: data)
+    }
+    
+    func showPreventiveBottomSheet(from navigation: UINavigationController, delegate: PreventiveSchedulerBottomSheetDelegate) {
+        router.showPreventiveBottomSheet(navigation, delegate: delegate)
     }
     
 }

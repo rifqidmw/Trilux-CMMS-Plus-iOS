@@ -23,6 +23,7 @@ class CustomNavigationView: UIView {
     @IBOutlet weak var containerPlainView: UIView!
     @IBOutlet weak var arrowLeftBackButton: UIImageView!
     @IBOutlet weak var plainTitleLabel: UILabel!
+    @IBOutlet weak var actionLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +46,12 @@ class CustomNavigationView: UIView {
 
 extension CustomNavigationView {
     
-    func configure(username: String? = nil, headline: String? = nil, image: String? = nil, plainTitle: String? = nil, type: CustomNavigationType) {
+    func configure(username: String? = nil,
+                   headline: String? = nil,
+                   image: String? = nil,
+                   plainTitle: String? = nil,
+                   type: CustomNavigationType,
+                   actionTitle: String? = nil) {
         let text = NSAttributedString.stylizedText("Hai, ", font: UIFont.latoRegular(14), color: UIColor.customDarkGrayColor)
         let usernameText = NSAttributedString.stylizedText(username ?? "", font: UIFont.latoBlack(14), color: UIColor.customPrimaryColor)
         
@@ -57,6 +63,7 @@ extension CustomNavigationView {
         welcomeLabel.text = "Selamat Datang di \(headline ?? "")"
         profileImageView.loadImageUrl(image ?? "")
         plainTitleLabel.text = plainTitle
+        actionLabel.text = actionTitle
         
         switch type {
         case .plain:
@@ -67,7 +74,8 @@ extension CustomNavigationView {
             containerPlainView.isHidden = true
         case .toolbar:
             containerHomeToolbarView.isHidden = true
-            containerPlainView.isHidden = true
+            containerPlainView.isHidden = false
+            actionLabel.isHidden = false
         case .homeToolbar:
             containerPlainView.isHidden = true
             containerHomeToolbarView.isHidden = false

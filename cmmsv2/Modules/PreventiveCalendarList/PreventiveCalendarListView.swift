@@ -237,6 +237,19 @@ extension PreventiveCalendarListView: SkeletonCollectionViewDataSource, Skeleton
         return 8
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController,
+              let status = self.data[indexPath.row].status
+        else { return }
+        if status == .done {
+            self.showOverlay()
+            presenter.showPreventiveBottomSheet(from: navigation, delegate: self)
+        } else {
+            presenter.navigateToLoadPreventive(from: navigation, data: self.data[indexPath.row])
+        }
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == scrollView,
               let presenter = self.presenter
@@ -252,6 +265,14 @@ extension PreventiveCalendarListView: SkeletonCollectionViewDataSource, Skeleton
                 presenter.fetchNextPage(date: self.date ?? String.getCurrentDateString("dd MMMM yyyy"))
             }
         }
+    }
+    
+}
+
+extension PreventiveCalendarListView: PreventiveSchedulerBottomSheetDelegate {
+    
+    func didTapCreatePreventive() {
+        AppLogger.log("-- CLICKED")
     }
     
 }

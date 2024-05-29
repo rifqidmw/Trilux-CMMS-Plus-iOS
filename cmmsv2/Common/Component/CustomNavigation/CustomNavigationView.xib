@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,13 +23,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="actionLabel" destination="TM0-eE-DVe" id="43r-oC-GVV"/>
                 <outlet property="arrowLeftBackButton" destination="B0D-hI-NKQ" id="z6W-Rc-Xtl"/>
                 <outlet property="containerHomeToolbarView" destination="6DK-LA-9lY" id="Ggu-cx-Y9i"/>
                 <outlet property="containerPlainView" destination="WIj-9o-CCO" id="6tO-9J-9Yz"/>
                 <outlet property="notificationDotView" destination="119-gY-1oK" id="nrg-e7-umG"/>
                 <outlet property="notificationLabel" destination="81n-Ly-4iP" id="TUG-ta-Xqu"/>
                 <outlet property="notificationView" destination="y93-og-aot" id="SJC-sI-d2S"/>
-                <outlet property="plainTitleLabel" destination="6pp-tG-leg" id="txy-wt-V4w"/>
+                <outlet property="plainTitleLabel" destination="Efv-bb-r3B" id="Do5-OM-DTh"/>
                 <outlet property="profileImageView" destination="gJe-Yr-LAh" id="qwf-hX-ktd"/>
                 <outlet property="profileView" destination="BNV-j9-jvL" id="N5E-um-uRz"/>
                 <outlet property="usernameLabel" destination="GSj-Es-hFk" id="KS9-Ka-GQC"/>
@@ -159,19 +160,27 @@
                                         <constraint firstAttribute="width" constant="24" id="Koh-xY-zFL"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pp-tG-leg">
-                                    <rect key="frame" x="-19" y="14.333333333333334" width="38" height="19.333333333333329"/>
-                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-bb-r3B">
+                                    <rect key="frame" x="-19.333333333333343" y="14.333333333333334" width="38.666666666666686" height="19.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                     <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM0-eE-DVe">
+                                    <rect key="frame" x="-50" y="15.666666666666664" width="34" height="17"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                    <color key="textColor" name="customPrimaryColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="6pp-tG-leg" firstAttribute="centerX" secondItem="WIj-9o-CCO" secondAttribute="centerX" id="2qF-N5-8KY"/>
+                                <constraint firstAttribute="trailing" secondItem="TM0-eE-DVe" secondAttribute="trailing" constant="16" id="4aL-p7-XBF"/>
                                 <constraint firstItem="B0D-hI-NKQ" firstAttribute="centerY" secondItem="WIj-9o-CCO" secondAttribute="centerY" id="8us-Vi-D3z"/>
-                                <constraint firstItem="6pp-tG-leg" firstAttribute="centerY" secondItem="WIj-9o-CCO" secondAttribute="centerY" id="9ja-Bx-9PU"/>
+                                <constraint firstItem="Efv-bb-r3B" firstAttribute="centerX" secondItem="WIj-9o-CCO" secondAttribute="centerX" id="hZL-k6-msd"/>
+                                <constraint firstItem="Efv-bb-r3B" firstAttribute="centerY" secondItem="WIj-9o-CCO" secondAttribute="centerY" id="kgV-Bi-G7m"/>
                                 <constraint firstItem="B0D-hI-NKQ" firstAttribute="leading" secondItem="WIj-9o-CCO" secondAttribute="leading" constant="16" id="mrP-JJ-4yl"/>
+                                <constraint firstItem="TM0-eE-DVe" firstAttribute="centerY" secondItem="WIj-9o-CCO" secondAttribute="centerY" id="v1s-FI-AHc"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -195,6 +204,9 @@
         <image name="dummy_profile" width="44" height="44"/>
         <namedColor name="customDarkGrayColor">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customPrimaryColor">
+            <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="darkGray">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
