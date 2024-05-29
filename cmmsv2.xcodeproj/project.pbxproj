@@ -267,10 +267,6 @@
 		CE916A892C0640C100C8B153 /* CalibrationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE916A862C0640C100C8B153 /* CalibrationTVC.swift */; };
 		CE916A8A2C0640C100C8B153 /* CalibrationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE916A872C0640C100C8B153 /* CalibrationTVC.xib */; };
 		CE916A8B2C0640C100C8B153 /* CalibrationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE916A862C0640C100C8B153 /* CalibrationTVC.swift */; };
-		CE916A8E2C06411000C8B153 /* CalibrationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE916A8D2C06411000C8B153 /* CalibrationHeaderView.xib */; };
-		CE916A8F2C06411000C8B153 /* CalibrationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE916A8C2C06411000C8B153 /* CalibrationHeaderView.swift */; };
-		CE916A902C06411000C8B153 /* CalibrationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE916A8D2C06411000C8B153 /* CalibrationHeaderView.xib */; };
-		CE916A912C06411000C8B153 /* CalibrationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE916A8C2C06411000C8B153 /* CalibrationHeaderView.swift */; };
 		CE916A932C0643B500C8B153 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECB3DCD2B45E119004A260D /* Roboto-Regular.ttf */; };
 		CE916A942C0643B500C8B153 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CECB3DCD2B45E119004A260D /* Roboto-Regular.ttf */; };
 		CE9BC1C82BE3D19400D20086 /* InformationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BC1C62BE3D19400D20086 /* InformationDetailView.swift */; };
@@ -831,8 +827,6 @@
 		CE916A7F2C06372000C8B153 /* CalibrationSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationSectionView.xib; sourceTree = "<group>"; };
 		CE916A862C0640C100C8B153 /* CalibrationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationTVC.swift; sourceTree = "<group>"; };
 		CE916A872C0640C100C8B153 /* CalibrationTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationTVC.xib; sourceTree = "<group>"; };
-		CE916A8C2C06411000C8B153 /* CalibrationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationHeaderView.swift; sourceTree = "<group>"; };
-		CE916A8D2C06411000C8B153 /* CalibrationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationHeaderView.xib; sourceTree = "<group>"; };
 		CE9BC1C62BE3D19400D20086 /* InformationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailView.swift; sourceTree = "<group>"; };
 		CE9BC1C72BE3D19400D20086 /* InformationDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationDetailView.xib; sourceTree = "<group>"; };
 		CE9E7D672B529EB300240A7D /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
@@ -1565,7 +1559,6 @@
 			isa = PBXGroup;
 			children = (
 				CE916A842C06407A00C8B153 /* Cell */,
-				CE916A852C06408600C8B153 /* Header */,
 				CE916A7E2C06372000C8B153 /* CalibrationSectionView.swift */,
 				CE916A7F2C06372000C8B153 /* CalibrationSectionView.xib */,
 			);
@@ -1579,15 +1572,6 @@
 				CE916A872C0640C100C8B153 /* CalibrationTVC.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		CE916A852C06408600C8B153 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				CE916A8C2C06411000C8B153 /* CalibrationHeaderView.swift */,
-				CE916A8D2C06411000C8B153 /* CalibrationHeaderView.xib */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		CE91C1A12B7B1146006F5EA9 /* BottomSheet */ = {
@@ -2464,7 +2448,6 @@
 				CEE07C952B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib in Resources */,
 				CE2FA51B2B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailView.xib in Resources */,
 				CE5442932B4727EC0022047D /* GeneralTextField.xib in Resources */,
-				CE916A8E2C06411000C8B153 /* CalibrationHeaderView.xib in Resources */,
 				CECB777F2B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
 				CE90B15B2B99605700515AD6 /* ComplaintListView.xib in Resources */,
 				CEE67D3A2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
@@ -2580,7 +2563,6 @@
 				CEE07C962B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib in Resources */,
 				CE2FA51C2B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailView.xib in Resources */,
 				CE5442942B4727EC0022047D /* GeneralTextField.xib in Resources */,
-				CE916A902C06411000C8B153 /* CalibrationHeaderView.xib in Resources */,
 				CECB77802B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
 				CE90B15C2B99605700515AD6 /* ComplaintListView.xib in Resources */,
 				CEE67D3B2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
@@ -2804,7 +2786,6 @@
 				CE2E3AF02BA09E4C00094AD0 /* CalibrationListPresenter.swift in Sources */,
 				CE2F2CE82B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D362B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
-				CE916A8F2C06411000C8B153 /* CalibrationHeaderView.swift in Sources */,
 				CEC1B07F2BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
@@ -3045,7 +3026,6 @@
 				CE2E3AF12BA09E4C00094AD0 /* CalibrationListPresenter.swift in Sources */,
 				CE2F2CE92B5D42A4001D312F /* DetailComplaintSectionView.swift in Sources */,
 				CEE67D372B54426E00D0844B /* WorkSheetBottomSheet.swift in Sources */,
-				CE916A912C06411000C8B153 /* CalibrationHeaderView.swift in Sources */,
 				CEC1B0802BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
 				CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,

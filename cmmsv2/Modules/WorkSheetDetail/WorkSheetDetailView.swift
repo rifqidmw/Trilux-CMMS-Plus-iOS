@@ -19,6 +19,7 @@ class WorkSheetDetailView: BaseViewController {
     @IBOutlet weak var calibrationSectionHeightConstraint: NSLayoutConstraint!
     
     var preparationView = PreparationSectionView()
+    var calibrationView = CalibrationSectionView()
     var presenter: WorkSheetDetailPresenter?
     
     override func didLoad() {
@@ -40,7 +41,7 @@ extension WorkSheetDetailView {
     }
     
     private func setupView() {
-        navigationView.configure(plainTitle: "Lembar Kerja Onsite Preventif", type: .plain)
+        navigationView.configure(plainTitle: "Detail Lembar Kerja", type: .plain)
     }
     
     private func setupAction() {
@@ -67,7 +68,8 @@ extension WorkSheetDetailView {
                       let data,
                       let detail = data.data,
                       let reff = data.reff,
-                      let preparation = detail.persiapan
+                      let preparation = detail.persiapan,
+                      let calibration = detail.alatKalibrasi
                 else { return }
                 self.hideAnimationSkeleton()
                 
@@ -78,7 +80,11 @@ extension WorkSheetDetailView {
                 self.preparationView.configure(data: preparation)
                 self.preparationSectionView.configure(title: "Persiapan", icon: "ic_sheet_check", view: preparationView)
                 
+                self.calibrationView.configure(data: calibration)
+                self.calibrationMeasurementSectionView.configure(title: "Pengukuran Kalibrasi", icon: "ic_infinity", view: calibrationView)
+                
                 self.preparationSectionView.isHidden = preparation.isEmpty
+                self.calibrationMeasurementSectionView.isHidden = calibration.isEmpty
             }
             .store(in: &anyCancellable)
     }
@@ -92,6 +98,15 @@ extension WorkSheetDetailView {
                 self.preparationSectionView.layoutIfNeeded()
             }
             .store(in: &anyCancellable)
+        
+        calibrationMeasurementSectionView.$totalHeightTable
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] height in
+                guard let self else { return }
+                self.calibrationSectionHeightConstraint.constant = height
+                self.calibrationMeasurementSectionView.layoutIfNeeded()
+            }
+            .store(in: &anyCancellable)
     }
     
 }
@@ -99,14 +114,16 @@ extension WorkSheetDetailView {
 extension WorkSheetDetailView {
     
     private func showAnimationSkeleton() {
-        [self.preparationSectionView].forEach {
+        [self.preparationSectionView,
+         self.calibrationMeasurementSectionView].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
         }
     }
     
     private func hideAnimationSkeleton() {
-        [self.preparationSectionView].forEach {
+        [self.preparationSectionView,
+         self.calibrationMeasurementSectionView].forEach {
             $0.hideSkeleton()
         }
     }

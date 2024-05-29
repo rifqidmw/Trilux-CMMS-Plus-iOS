@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -22,36 +25,44 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-oP-LYn">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-oP-LYn">
                         <rect key="frame" x="16" y="8" width="288" height="28"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet, Lorem Ipsum Dolor Sit Amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ke-6n-s5c">
-                                <rect key="frame" x="0.0" y="0.0" width="233" height="28"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JWK-El-Zlk">
+                                <rect key="frame" x="0.0" y="0.0" width="69" height="28"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ellipse_blue_outline" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-Zz-djZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="6" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="6" id="Sl3-eM-CTz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9E-JU-fvL">
+                                        <rect key="frame" x="14" y="0.0" width="29" height="28"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                        <color key="textColor" name="customDarkGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_info_blue_outline" translatesAutoresizingMaskIntoConstraints="NO" id="nTh-Ve-2mw">
+                                        <rect key="frame" x="51" y="0.0" width="18" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="Mzh-z3-wli"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lay-wI-RWs">
+                                <rect key="frame" x="282" y="0.0" width="6" height="28"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
                                 <color key="textColor" name="customDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzw-tO-UBf">
-                                <rect key="frame" x="241" y="0.0" width="47" height="28"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSd-VL-hYk">
-                                        <rect key="frame" x="12" y="4" width="23" height="20"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
-                                        <color key="textColor" name="indicatorColor11"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="indicatorColor2"/>
-                                <constraints>
-                                    <constraint firstItem="FSd-VL-hYk" firstAttribute="top" secondItem="Bzw-tO-UBf" secondAttribute="top" constant="4" id="C72-nP-ona"/>
-                                    <constraint firstAttribute="bottom" secondItem="FSd-VL-hYk" secondAttribute="bottom" constant="4" id="dMV-7U-awn"/>
-                                    <constraint firstItem="FSd-VL-hYk" firstAttribute="leading" secondItem="Bzw-tO-UBf" secondAttribute="leading" constant="12" id="f4G-Ar-JWl"/>
-                                    <constraint firstAttribute="trailing" secondItem="FSd-VL-hYk" secondAttribute="trailing" constant="12" id="gh0-Ec-GZB"/>
-                                </constraints>
-                            </view>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="wsa-oP-LYn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0Q2-Yt-0mS"/>
                     <constraint firstItem="wsa-oP-LYn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4DI-HZ-4jv"/>
@@ -59,18 +70,19 @@
                     <constraint firstAttribute="trailing" secondItem="wsa-oP-LYn" secondAttribute="trailing" constant="16" id="wMm-vW-c1q"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="37" y="-1"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="countLabel" destination="lay-wI-RWs" id="BcP-c1-Se4"/>
+                <outlet property="titleLabel" destination="e9E-JU-fvL" id="pW8-Tf-Mfc"/>
+            </connections>
+            <point key="canvasLocation" x="36.641221374045799" y="-1.4084507042253522"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_ellipse_blue_outline" width="6" height="6"/>
+        <image name="ic_info_blue_outline" width="16" height="16"/>
         <namedColor name="customDarkGrayColor">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="indicatorColor11">
-            <color red="0.78431372549019607" green="0.56470588235294117" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="indicatorColor2">
-            <color red="0.99215686274509807" green="0.8784313725490196" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

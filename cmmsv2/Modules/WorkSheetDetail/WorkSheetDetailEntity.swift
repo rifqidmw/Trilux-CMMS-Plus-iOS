@@ -120,7 +120,7 @@ struct LKData: Codable {
         case jenisRelokasi
         case lkKegiatan
         case asset
-        case alatKalibrasi
+        case alatKalibrasi = "alat_kalibrasi"
         case engineername
         case namaPelapor
     }
