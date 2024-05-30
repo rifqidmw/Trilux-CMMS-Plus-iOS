@@ -62,16 +62,25 @@ enum Endpoint {
         page: Int? = nil,
         engineer: Int? = nil)
     case calibrationList(limit: Int? = nil, page: Int? = nil)
-    case logBookList(limit: Int? = nil, page: Int? = nil, date: String? = nil)
+    case logBookList(
+        limit: Int? = nil,
+        page: Int? = nil,
+        date: String? = nil)
     case calendarPreventiveList(idEngineer: String? = nil, month: String? = nil)
-    case schedulePreventiveList(idEngineer: String? = nil, date: String? = nil, page: Int? = nil, limit: Int? = nil)
+    case schedulePreventiveList(
+        idEngineer: String? = nil,
+        date: String? = nil,
+        page: Int? = nil,
+        limit: Int? = nil)
     case assetDetail(id: String?)
     case assetMainCost(id: String?)
     case assetTechnical(id: String?)
     case assetAcceptance(id: String?)
     case assetFiles(id: String?)
     case complaintDetail(id: Int?)
+    case workSheetDetail(id: String, action: String)
     case detailHistory(id: String?)
+    case loadPreventive(id: String?)
 }
 
 // MARK: - PATH URL
@@ -156,7 +165,7 @@ extension Endpoint {
         case .calendarPreventiveList(idEngineer: let idEngineer, month: let month):
             return "lk/kalender_preventif?id_engineer=\(idEngineer ?? "")&bulan=\(month ?? "")"
         case .schedulePreventiveList(let idEngineer, date: let date, let page, let limit):
-            return "lk/jadwal_preventif?id_engineer=\(idEngineer ?? "")&tanggal=\(date ?? "")&page=\(page ?? 0)&limit=\(limit ?? 0)"
+            return generateSchedulePreventiveURL(idEngineer: idEngineer ?? "", date: date ?? "", page: page ?? 0, limit: limit ?? 0)
         case .assetDetail(id: let id):
             return "equipments/view?id=\(id ?? "")"
         case .assetMainCost(id: let id):
@@ -169,8 +178,12 @@ extension Endpoint {
             return "equipments/files?id=\(id ?? "")"
         case .complaintDetail(id: let id):
             return "complains/detail?id=\(id ?? 0)"
+        case .workSheetDetail:
+            return "lk/start"
         case .detailHistory(id: let id):
             return "lk/detail?id=\(id ?? "")"
+        case .loadPreventive(id: let id):
+            return "lk/load_preventif?id=\(id ?? "")"
         }
     }
 }
@@ -183,7 +196,8 @@ extension Endpoint {
                 .loginUser,
                 .updateProfile,
                 .changePassword,
-                .uploadProfile:
+                .uploadProfile,
+                .workSheetDetail:
             return .post
         default:
             return .get
@@ -236,6 +250,12 @@ extension Endpoint {
                 }
             }
             
+            return params
+        case .workSheetDetail(let id, let action):
+            let params: [String: Any] = [
+                "id_lk": id,
+                "aksi": action
+            ]
             return params
         default:
             return nil
@@ -415,6 +435,24 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "profile/logbook" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateSchedulePreventiveURL(
+        idEngineer: String? = nil,
+        date: String? = nil,
+        page: Int? = nil,
+        limit: Int? = nil
+    ) -> String {
+        let queryString = [
+            idEngineer.map { "id_engineer=\($0)" },
+            date.map { "tanggal=\($0)" },
+            page.map { "page=\($0)" },
+            limit.map { "limit=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "lk/jadwal_preventif" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }

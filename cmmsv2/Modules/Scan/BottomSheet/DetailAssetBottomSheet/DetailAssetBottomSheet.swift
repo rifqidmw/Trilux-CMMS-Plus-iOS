@@ -64,7 +64,7 @@ extension DetailAssetBottomSheet {
               let type = data.txtType
         else { return }
         
-        headerView.addBorder(width: 2, colorBorder: UIColor.customLightGrayColor.cgColor)
+        headerView.addBorder(width: 2, colorBorder: UIColor.customLightGrayColor)
         headerView.makeCornerRadius(12)
         headerImageView.makeCornerRadius(12)
         

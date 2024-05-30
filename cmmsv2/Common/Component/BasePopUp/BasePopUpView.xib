@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -57,7 +57,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhP-1n-aL9">
-                            <rect key="frame" x="100" y="156" width="193" height="40"/>
+                            <rect key="frame" x="50" y="156" width="293" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="0YQ-zD-mLG"/>
                             </constraints>
@@ -93,8 +93,8 @@
                         <constraint firstItem="prc-zk-IWl" firstAttribute="top" secondItem="E1q-Bs-gYF" secondAttribute="top" constant="36" id="oEN-Ie-ZRR"/>
                         <constraint firstItem="rhP-1n-aL9" firstAttribute="top" secondItem="rUA-l6-J1O" secondAttribute="bottom" constant="16" id="pCo-Rg-SFA"/>
                         <constraint firstItem="rUA-l6-J1O" firstAttribute="leading" secondItem="E1q-Bs-gYF" secondAttribute="leading" constant="16" id="pIc-db-zsM"/>
-                        <constraint firstAttribute="trailing" secondItem="rhP-1n-aL9" secondAttribute="trailing" constant="100" id="sao-dI-VPw"/>
-                        <constraint firstItem="rhP-1n-aL9" firstAttribute="leading" secondItem="E1q-Bs-gYF" secondAttribute="leading" constant="100" id="ukg-XB-vWn"/>
+                        <constraint firstAttribute="trailing" secondItem="rhP-1n-aL9" secondAttribute="trailing" constant="50" id="sao-dI-VPw"/>
+                        <constraint firstItem="rhP-1n-aL9" firstAttribute="leading" secondItem="E1q-Bs-gYF" secondAttribute="leading" constant="50" id="ukg-XB-vWn"/>
                         <constraint firstAttribute="trailing" secondItem="rUA-l6-J1O" secondAttribute="trailing" constant="16" id="wWC-JX-9rB"/>
                     </constraints>
                 </view>

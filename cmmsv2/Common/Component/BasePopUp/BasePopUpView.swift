@@ -31,7 +31,6 @@ class BasePopUpView: UIView {
         let view = loadNib()
         view.frame = self.bounds
         self.addSubview(view)
-        self.bottomSheetView.configure(type: .withoutHandleBar)
     }
     
 }

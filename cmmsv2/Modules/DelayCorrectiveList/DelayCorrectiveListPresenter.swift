@@ -81,7 +81,7 @@ extension DelayCorrectiveListPresenter {
                                 description: item.txtSenderName ?? "",
                                 technician: item.txtEngineerName ?? "",
                                 damage: item.txtTitle ?? "",
-                                status: CorrectiveStatusType(rawValue: item.txtStatus ?? "") ?? .none,
+                                status: CorrectiveStatusType(rawValue: item.txtStatus ?? "") ?? CorrectiveStatusType.none,
                                 isActionActive: item.canDeleteLk ?? false)
                         }
                         self.complaintData.append(contentsOf: complaintList)

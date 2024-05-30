@@ -17,6 +17,7 @@ class WorkSheetMonitoringFunctionListView: BaseViewController {
     
     var presenter: WorkSheetMonitoringFunctionListPresenter?
     var data: [WorkSheetListEntity] = []
+    var id: String?
     
     override func didLoad() {
         super.didLoad()
@@ -116,6 +117,17 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController,
+              let id = self.data[indexPath.row].id,
+              let status = self.data[indexPath.row].status
+        else { return }
+        self.id = id
+        self.showOverlay()
+        presenter.showSelectActionBottomSheet(navigation: navigation, type: status == .done ? .done : .ongoing, delegate: self, id: id)
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == scrollView,
               let presenter = self.presenter
@@ -139,6 +151,18 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
+    }
+    
+}
+
+extension WorkSheetMonitoringFunctionListView: WorkSheetOnsitePreventiveDelegate {
+    
+    func didTapDetail(title: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let data = WorkSheetRequestEntity(id: self.id, action: title)
+        presenter.navigateToDetailWorkSheet(navigation: navigation, data: data)
     }
     
 }

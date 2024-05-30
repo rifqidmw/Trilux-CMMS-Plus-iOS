@@ -70,14 +70,19 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func setupStripTabBar(in containerView: UIView) {
-        pagerTabStripViewController = initializePagerTabStripViewController()
-        pagerTabStripViewController?.datasource = self
-        pagerTabStripViewController?.delegate = self
+        if pagerTabStripViewController == nil {
+            pagerTabStripViewController = initializePagerTabStripViewController()
+        }
         
-        addChild(pagerTabStripViewController!)
-        pagerTabStripViewController?.view.frame = containerView.bounds
-        containerView.addSubview(pagerTabStripViewController!.view)
-        pagerTabStripViewController?.didMove(toParent: self)
+        guard let pagerTabStripViewController = self.pagerTabStripViewController else { return }
+        
+        pagerTabStripViewController.datasource = self
+        pagerTabStripViewController.delegate = self
+        
+        addChild(pagerTabStripViewController)
+        pagerTabStripViewController.view.frame = containerView.bounds
+        containerView.addSubview(pagerTabStripViewController.view)
+        pagerTabStripViewController.didMove(toParent: self)
     }
     
     func configureKeyboard() {
