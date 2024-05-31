@@ -5,7 +5,7 @@
 //  Created by PRO M1 2020 8/256 on 14/03/24.
 //
 
-import Foundation
+import UIKit
 
 class DelayCorrectiveListPresenter: BasePresenter {
     
@@ -100,6 +100,14 @@ extension DelayCorrectiveListPresenter {
                                page: self.page,
                                dateFilter: self.dateFilter,
                                keyword: self.keyword)
+    }
+    
+}
+
+extension DelayCorrectiveListPresenter {
+    
+    func navigateToDetailComplaint(from navigation: UINavigationController, data: ComplaintListEntity) {
+        router.navigateToDetailComplaint(from: navigation, data: data)
     }
     
 }

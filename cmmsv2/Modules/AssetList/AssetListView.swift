@@ -82,7 +82,7 @@ extension AssetListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Aset", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Aset", type: .plain)
         searchButton.configure(type: .searchbutton)
         customActionBar.configure(firstIcon: "ic_installation", firstTitle: "Instalasi", secondIcon: "ic_setting", secondTitle: "Kondisi", thirdIcon: "ic_structural", thirdTitle: "Kategori", fourthIcon: "ic_arrow_up_down", fourthTitle: "Urutkan")
         self.countLabel.isSkeletonable = true

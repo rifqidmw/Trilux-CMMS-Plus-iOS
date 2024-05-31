@@ -32,7 +32,7 @@ extension FullScreenPictureView {
     
     private func setupView() {
         guard let image else { return }
-        navigationView.configure(plainTitle: titlePage, type: .plain)
+        navigationView.configure(toolbarTitle: titlePage, type: .plain)
         imageView.loadImageUrl(image)
     }
     

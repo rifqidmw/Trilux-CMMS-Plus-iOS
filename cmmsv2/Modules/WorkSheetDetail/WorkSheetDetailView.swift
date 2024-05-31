@@ -41,7 +41,7 @@ extension WorkSheetDetailView {
     }
     
     private func setupView() {
-        navigationView.configure(plainTitle: "Detail Lembar Kerja", type: .plain)
+        navigationView.configure(toolbarTitle: "Detail Lembar Kerja", type: .plain)
     }
     
     private func setupAction() {

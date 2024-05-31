@@ -71,7 +71,7 @@ extension WorkSheetMonitoringFunctionListView {
     }
     
     private func setupView() {
-        navigationView.configure(plainTitle: "Lembar Kerja Pemantauan Fungsi", type: .plain)
+        navigationView.configure(toolbarTitle: "Lembar Kerja Pemantauan Fungsi", type: .plain)
     }
     
     private func setupAction() {

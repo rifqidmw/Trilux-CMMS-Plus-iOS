@@ -36,7 +36,7 @@ extension CalibrationListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Kalibrasi", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Kalibrasi", type: .plain)
     }
     
     private func fetchInitialData() {

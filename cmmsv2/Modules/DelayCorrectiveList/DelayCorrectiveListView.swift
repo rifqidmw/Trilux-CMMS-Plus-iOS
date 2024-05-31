@@ -58,7 +58,7 @@ extension DelayCorrectiveListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Korektif Tertunda", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Korektif Tertunda", type: .plain)
     }
     
     private func setupAction() {
@@ -115,6 +115,14 @@ extension DelayCorrectiveListView: SkeletonCollectionViewDelegate, SkeletonColle
         cell.setupCell(data: data[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let complaintSelected = self.data[indexPath.row]
+        presenter.navigateToDetailComplaint(from: navigation, data: complaintSelected)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

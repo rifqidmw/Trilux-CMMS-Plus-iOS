@@ -36,7 +36,7 @@ extension WorkSheetMonitoringFunctionDetailView {
     }
     
     private func setupView() {
-        navigationView.configure(plainTitle: "Lembar Kerja", type: .plain)
+        navigationView.configure(toolbarTitle: "Lembar Kerja", type: .plain)
         imageCardView.configure(data: header)
         detailComplaintView.configure(
             topics: "Lampunya Mati",

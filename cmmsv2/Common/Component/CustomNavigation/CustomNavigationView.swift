@@ -22,7 +22,7 @@ class CustomNavigationView: UIView {
     // MARK: - PLAIN
     @IBOutlet weak var containerPlainView: UIView!
     @IBOutlet weak var arrowLeftBackButton: UIImageView!
-    @IBOutlet weak var plainTitleLabel: UILabel!
+    @IBOutlet weak var toolbarTitleLabel: UILabel!
     @IBOutlet weak var actionLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -49,7 +49,7 @@ extension CustomNavigationView {
     func configure(username: String? = nil,
                    headline: String? = nil,
                    image: String? = nil,
-                   plainTitle: String? = nil,
+                   toolbarTitle: String? = nil,
                    type: CustomNavigationType,
                    actionTitle: String? = nil) {
         let text = NSAttributedString.stylizedText("Hai, ", font: UIFont.latoRegular(14), color: UIColor.customDarkGrayColor)
@@ -62,7 +62,7 @@ extension CustomNavigationView {
         usernameLabel.attributedText = fullAttributedText
         welcomeLabel.text = "Selamat Datang di \(headline ?? "")"
         profileImageView.loadImageUrl(image ?? "")
-        plainTitleLabel.text = plainTitle
+        toolbarTitleLabel.text = toolbarTitle
         actionLabel.text = actionTitle
         
         switch type {

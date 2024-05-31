@@ -64,7 +64,10 @@ extension LoadPreventivePresenter {
 extension LoadPreventivePresenter {
     
     func showBottomSheetAddPreventive(from navigation: UINavigationController) {
-        router.showBottomSheetAddPreventive(from: navigation)
+        guard let data = self.loadPreventiveData,
+              let asset = data.asset
+        else { return }
+        router.showBottomSheetAddPreventive(from: navigation, data: asset)
     }
     
     

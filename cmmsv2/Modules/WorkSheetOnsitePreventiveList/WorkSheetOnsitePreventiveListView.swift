@@ -37,7 +37,7 @@ extension WorkSheetOnsitePreventiveListView {
     }
     
     private func setupView() {
-        navigationView.configure(plainTitle: "Lembar Kerja", type: .plain)
+        navigationView.configure(toolbarTitle: "Lembar Kerja", type: .plain)
     }
     
     private func setupAction() {

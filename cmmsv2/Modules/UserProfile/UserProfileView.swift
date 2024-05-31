@@ -109,7 +109,7 @@ extension UserProfileView {
     private func setupView() {
         guard let tagLine = UserDefaults.standard.string(forKey: "tagLine") else { return }
         tagLineLabel.text = tagLine
-        navigationView.configure(plainTitle: "Profil Pengguna", type: .plain)
+        navigationView.configure(toolbarTitle: "Profil Pengguna", type: .plain)
         containerProfileView.makeCornerRadius(12)
         containerProfileView.addShadow(6, opacity: 0.2)
         userProfileImageView.makeCornerRadius(12)

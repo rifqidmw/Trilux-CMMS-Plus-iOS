@@ -37,7 +37,7 @@ extension PreventiveMaintenanceListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Pemeliharaan Preventif", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Pemeliharaan Preventif", type: .plain)
         actionBarView.configure(firstIcon: "ic_installation", firstTitle: "Installasi", secondIcon: "ic_setting", secondTitle: "Status", thirdIcon: "ic_arrow_up_down", thirdTitle: "Urutkan")
     }
     

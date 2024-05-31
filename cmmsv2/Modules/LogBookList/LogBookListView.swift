@@ -43,7 +43,7 @@ extension LogBookListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Log Book", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Log Book", type: .plain)
         containerView.makeCornerRadius(24, .topCurve)
         containerView.addShadow(2.8, position: .top, opacity: 0.08)
     }
