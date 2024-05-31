@@ -65,7 +65,7 @@ extension LoadPreventiveView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Kalender Preventif", type: .toolbar, actionTitle: "Tambah")
+        customNavigationView.configure(toolbarTitle: "Kalender Preventif", type: .toolbar, actionTitle: "Tambah")
         workButton.configure(title: "Kerjakan")
         workButton.makeCornerRadius(8)
         workButton.addShadow(0.4)
@@ -87,6 +87,7 @@ extension LoadPreventiveView {
         customNavigationView.actionLabel.gesture()
             .sink { [weak self] _ in
                 guard let self, let navigation = self.navigationController else { return }
+                self.showOverlay()
                 presenter.showBottomSheetAddPreventive(from: navigation)
             }
             .store(in: &anyCancellable)

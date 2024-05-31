@@ -46,7 +46,7 @@ extension PreventiveCalendarListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Kalender Preventif", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Kalender Preventif", type: .plain)
         containerView.makeCornerRadius(24, .topCurve)
         containerView.addShadow(2.8, position: .top, opacity: 0.08)
     }

@@ -77,7 +77,7 @@ extension WorkSheetCorrectiveListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Lembar Kerja Korektif", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Lembar Kerja Korektif", type: .plain)
         actionBarView.configure(thirdIcon: "ic_setting", thirdTitle: "Status", fourthIcon: "ic_arrow_up_down", fourthTitle: "Urutkan")
     }
     

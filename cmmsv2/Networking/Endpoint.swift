@@ -81,6 +81,7 @@ enum Endpoint {
     case workSheetDetail(id: String, action: String)
     case detailHistory(id: String?)
     case loadPreventive(id: String?)
+    case delayCorrectiveDetail(id: String?)
 }
 
 // MARK: - PATH URL
@@ -184,6 +185,8 @@ extension Endpoint {
             return "lk/detail?id=\(id ?? "")"
         case .loadPreventive(id: let id):
             return "lk/load_preventif?id=\(id ?? "")"
+        case .delayCorrectiveDetail(id: let id):
+            return "complains/detail?id=\(id ?? "")"
         }
     }
 }

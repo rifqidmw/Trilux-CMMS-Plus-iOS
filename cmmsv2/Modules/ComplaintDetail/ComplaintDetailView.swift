@@ -96,7 +96,7 @@ extension ComplaintDetailView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Detail Pengaduan", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Detail Pengaduan", type: .plain)
         containerView.makeCornerRadius(8)
         containerView.addShadow(0.4)
         

@@ -37,7 +37,7 @@ extension ChangePasswordView {
     }
     
     private func setupView() {
-        navigationView.configure(plainTitle: "Ganti Password", type: .plain)
+        navigationView.configure(toolbarTitle: "Ganti Password", type: .plain)
         containerView.makeCornerRadius(12)
         containerView.addShadow(6, opacity: 0.2)
         oldPasswordTextField.configure(title: "Password Lama", placeholder: "Masukan password lama", type: .password)

@@ -148,7 +148,7 @@ extension HistoryDetailView {
     }
     
     private func configureSharedComponent() {
-        customNavigationView.configure(plainTitle: "Riwayat", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Riwayat", type: .plain)
         statusView.makeCornerRadius(8)
         headerImageView.makeCornerRadius(12)
         containerHeaderView.makeCornerRadius(12)

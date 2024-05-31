@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		04215FE81D148BCC2E527EBB /* Pods_cmmsv2_DEV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C2821C28073D76A44C366 /* Pods_cmmsv2_DEV.framework */; };
 		5AC2B1AACC0BCC0313E58D7C /* Pods_cmmsv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1D615025482C54FBE7942 /* Pods_cmmsv2.framework */; };
+		CE0A8CD52C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A8CD32C089F7A0050F576 /* PreventiveCategoryTVC.swift */; };
+		CE0A8CD62C089F7A0050F576 /* PreventiveCategoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8CD42C089F7A0050F576 /* PreventiveCategoryTVC.xib */; };
+		CE0A8CD72C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A8CD32C089F7A0050F576 /* PreventiveCategoryTVC.swift */; };
+		CE0A8CD82C089F7A0050F576 /* PreventiveCategoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8CD42C089F7A0050F576 /* PreventiveCategoryTVC.xib */; };
 		CE0B3AE92B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B3AE32B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift */; };
 		CE0B3AEA2B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B3AE32B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift */; };
 		CE0B3AEB2B9B869100A55B81 /* WorkSheetCorrectiveListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B3AE42B9B869100A55B81 /* WorkSheetCorrectiveListRouter.swift */; };
@@ -171,6 +175,18 @@
 		CE4255F52BA740AF002B558C /* LogBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4255F22BA740AF002B558C /* LogBookCVC.swift */; };
 		CE4255F62BA740AF002B558C /* LogBookCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4255F32BA740AF002B558C /* LogBookCVC.xib */; };
 		CE4255F72BA740AF002B558C /* LogBookCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4255F32BA740AF002B558C /* LogBookCVC.xib */; };
+		CE4D121D2C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4D121B2C09604B007184B2 /* DelayCorrectiveDetailView.xib */; };
+		CE4D121E2C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D12172C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift */; };
+		CE4D121F2C09604B007184B2 /* DelayCorrectiveDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D12182C09604B007184B2 /* DelayCorrectiveDetailRouter.swift */; };
+		CE4D12202C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D12192C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift */; };
+		CE4D12212C09604B007184B2 /* DelayCorrectiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D121A2C09604B007184B2 /* DelayCorrectiveDetailView.swift */; };
+		CE4D12222C09604B007184B2 /* DelayCorrectiveDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D121C2C09604B007184B2 /* DelayCorrectiveDetailEntity.swift */; };
+		CE4D12232C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4D121B2C09604B007184B2 /* DelayCorrectiveDetailView.xib */; };
+		CE4D12242C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D12172C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift */; };
+		CE4D12252C09604B007184B2 /* DelayCorrectiveDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D12182C09604B007184B2 /* DelayCorrectiveDetailRouter.swift */; };
+		CE4D12262C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D12192C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift */; };
+		CE4D12272C09604B007184B2 /* DelayCorrectiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D121A2C09604B007184B2 /* DelayCorrectiveDetailView.swift */; };
+		CE4D12282C09604B007184B2 /* DelayCorrectiveDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D121C2C09604B007184B2 /* DelayCorrectiveDetailEntity.swift */; };
 		CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54428C2B47262D0022047D /* GeneralButton.xib */; };
 		CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54428C2B47262D0022047D /* GeneralButton.xib */; };
 		CE5442902B4726360022047D /* GeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54428F2B4726360022047D /* GeneralButton.swift */; };
@@ -721,6 +737,8 @@
 		2032044EA43460AEFB56E80C /* Pods-cmmsv2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2/Pods-cmmsv2.debug.xcconfig"; sourceTree = "<group>"; };
 		287DD405FF6CE31488A083FF /* Pods-cmmsv2 DEV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.debug.xcconfig"; sourceTree = "<group>"; };
 		783C2821C28073D76A44C366 /* Pods_cmmsv2_DEV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmmsv2_DEV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0A8CD32C089F7A0050F576 /* PreventiveCategoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCategoryTVC.swift; sourceTree = "<group>"; };
+		CE0A8CD42C089F7A0050F576 /* PreventiveCategoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveCategoryTVC.xib; sourceTree = "<group>"; };
 		CE0B3AE32B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetCorrectiveListPresenter.swift; sourceTree = "<group>"; };
 		CE0B3AE42B9B869100A55B81 /* WorkSheetCorrectiveListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetCorrectiveListRouter.swift; sourceTree = "<group>"; };
 		CE0B3AE52B9B869100A55B81 /* WorkSheetCorrectiveListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetCorrectiveListInteractor.swift; sourceTree = "<group>"; };
@@ -802,6 +820,12 @@
 		CE4255E42BA704E5002B558C /* LogBookListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookListEntity.swift; sourceTree = "<group>"; };
 		CE4255F22BA740AF002B558C /* LogBookCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookCVC.swift; sourceTree = "<group>"; };
 		CE4255F32BA740AF002B558C /* LogBookCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogBookCVC.xib; sourceTree = "<group>"; };
+		CE4D12172C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveDetailPresenter.swift; sourceTree = "<group>"; };
+		CE4D12182C09604B007184B2 /* DelayCorrectiveDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveDetailRouter.swift; sourceTree = "<group>"; };
+		CE4D12192C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveDetailInteractor.swift; sourceTree = "<group>"; };
+		CE4D121A2C09604B007184B2 /* DelayCorrectiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveDetailView.swift; sourceTree = "<group>"; };
+		CE4D121B2C09604B007184B2 /* DelayCorrectiveDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelayCorrectiveDetailView.xib; sourceTree = "<group>"; };
+		CE4D121C2C09604B007184B2 /* DelayCorrectiveDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayCorrectiveDetailEntity.swift; sourceTree = "<group>"; };
 		CE5442892B471FF50022047D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		CE54428C2B47262D0022047D /* GeneralButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralButton.xib; sourceTree = "<group>"; };
 		CE54428F2B4726360022047D /* GeneralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
@@ -1122,6 +1146,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE0A8CD22C089EFC0050F576 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE0A8CD32C089F7A0050F576 /* PreventiveCategoryTVC.swift */,
+				CE0A8CD42C089F7A0050F576 /* PreventiveCategoryTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CE0B3AE22B9B865A00A55B81 /* WorkSheetCorrectiveList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1428,6 +1461,19 @@
 				CE4255F32BA740AF002B558C /* LogBookCVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE4D12162C096029007184B2 /* DelayCorrectiveDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE4D12172C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift */,
+				CE4D12182C09604B007184B2 /* DelayCorrectiveDetailRouter.swift */,
+				CE4D12192C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift */,
+				CE4D121A2C09604B007184B2 /* DelayCorrectiveDetailView.swift */,
+				CE4D121B2C09604B007184B2 /* DelayCorrectiveDetailView.xib */,
+				CE4D121C2C09604B007184B2 /* DelayCorrectiveDetailEntity.swift */,
+			);
+			path = DelayCorrectiveDetail;
 			sourceTree = "<group>";
 		};
 		CE54428A2B4724F90022047D /* Button */ = {
@@ -1947,6 +1993,7 @@
 		CECB3DBA2B45DA39004A260D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D12162C096029007184B2 /* DelayCorrectiveDetail */,
 				CE3108482BE20D0D00660275 /* AssetDetail */,
 				CEFA75852B768DF300B74E1B /* AssetList */,
 				CE2E3AE92BA09E2F00094AD0 /* CalibrationList */,
@@ -2313,6 +2360,7 @@
 		CEF4E0D12C07B2F500444EA9 /* AddPreventiveBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				CE0A8CD22C089EFC0050F576 /* Cell */,
 				CEF4E0D22C07B30D00444EA9 /* AddPreventiveBottomSheet.swift */,
 				CEF4E0D32C07B30D00444EA9 /* AddPreventiveBottomSheet.xib */,
 			);
@@ -2525,6 +2573,7 @@
 				CE2E3AF82BA09E4C00094AD0 /* CalibrationListView.xib in Resources */,
 				CEC897162B77395C006CB552 /* ToastView.xib in Resources */,
 				CEFA75942B768E4500B74E1B /* AssetListView.xib in Resources */,
+				CE4D121D2C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D262BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
@@ -2559,6 +2608,7 @@
 				CEE79ED52B7122580063D844 /* AssetSectionView.xib in Resources */,
 				CE8208902B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */,
 				CEE67D2D2B54394900D0844B /* WorkSheetMonitoringFunctionListView.xib in Resources */,
+				CE0A8CD62C089F7A0050F576 /* PreventiveCategoryTVC.xib in Resources */,
 				CE0B3AF12B9B869100A55B81 /* WorkSheetCorrectiveListView.xib in Resources */,
 				CE82D4582B47DDB200A54124 /* LoginView.xib in Resources */,
 				CE9BC1CA2BE3D19400D20086 /* InformationDetailView.xib in Resources */,
@@ -2644,6 +2694,7 @@
 				CE2E3AF92BA09E4C00094AD0 /* CalibrationListView.xib in Resources */,
 				CEC897172B77395C006CB552 /* ToastView.xib in Resources */,
 				CEFA75952B768E4500B74E1B /* AssetListView.xib in Resources */,
+				CE4D12232C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
 				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D272BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
@@ -2678,6 +2729,7 @@
 				CEE79ED62B7122580063D844 /* AssetSectionView.xib in Resources */,
 				CE8208912B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */,
 				CEE67D2E2B54394900D0844B /* WorkSheetMonitoringFunctionListView.xib in Resources */,
+				CE0A8CD82C089F7A0050F576 /* PreventiveCategoryTVC.xib in Resources */,
 				CE0B3AF22B9B869100A55B81 /* WorkSheetCorrectiveListView.xib in Resources */,
 				CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */,
 				CE9BC1CB2BE3D19400D20086 /* InformationDetailView.xib in Resources */,
@@ -2840,6 +2892,11 @@
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE40122E2B5D7E7C00517F7C /* FullScreenPictureView.swift in Sources */,
+				CE4D121E2C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift in Sources */,
+				CE4D121F2C09604B007184B2 /* DelayCorrectiveDetailRouter.swift in Sources */,
+				CE4D12202C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift in Sources */,
+				CE4D12212C09604B007184B2 /* DelayCorrectiveDetailView.swift in Sources */,
+				CE4D12222C09604B007184B2 /* DelayCorrectiveDetailEntity.swift in Sources */,
 				CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E472B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEE07C932B9F408A00EFBFB8 /* PreventiveMaintenanceListView.swift in Sources */,
@@ -2997,6 +3054,7 @@
 				CE4012472B5D924F00517F7C /* WorkSheetOnsitePreventiveListInteractor.swift in Sources */,
 				CE9E7D712B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CEE79ED22B71222B0063D844 /* AssetSectionView.swift in Sources */,
+				CE0A8CD52C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */,
 				CE4012282B5D7E7C00517F7C /* FullScreenPicturePresenter.swift in Sources */,
 				CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */,
 				CE3108752BE265E500660275 /* MutationInformationView.swift in Sources */,
@@ -3088,6 +3146,11 @@
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE40122F2B5D7E7C00517F7C /* FullScreenPictureView.swift in Sources */,
+				CE4D12242C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift in Sources */,
+				CE4D12252C09604B007184B2 /* DelayCorrectiveDetailRouter.swift in Sources */,
+				CE4D12262C09604B007184B2 /* DelayCorrectiveDetailInteractor.swift in Sources */,
+				CE4D12272C09604B007184B2 /* DelayCorrectiveDetailView.swift in Sources */,
+				CE4D12282C09604B007184B2 /* DelayCorrectiveDetailEntity.swift in Sources */,
 				CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E482B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEE07C942B9F408A00EFBFB8 /* PreventiveMaintenanceListView.swift in Sources */,
@@ -3245,6 +3308,7 @@
 				CE4012482B5D924F00517F7C /* WorkSheetOnsitePreventiveListInteractor.swift in Sources */,
 				CE9E7D722B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CEE79ED32B71222B0063D844 /* AssetSectionView.swift in Sources */,
+				CE0A8CD72C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */,
 				CE4012292B5D7E7C00517F7C /* FullScreenPicturePresenter.swift in Sources */,
 				CECB3DC32B45DAFF004A260D /* SceneDelegate.swift in Sources */,
 				CE3108762BE265E500660275 /* MutationInformationView.swift in Sources */,

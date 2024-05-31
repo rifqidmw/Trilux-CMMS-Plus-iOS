@@ -57,7 +57,7 @@ extension NotificationListView {
     }
     
     private func setupView() {
-        customNavigationView.configure(plainTitle: "Notifikasi", type: .plain)
+        customNavigationView.configure(toolbarTitle: "Notifikasi", type: .plain)
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.collectionView.isSkeletonable = true

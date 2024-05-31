@@ -40,7 +40,7 @@ extension EditProfileView {
     
     private func setupView() {
         setupTextFieldValue()
-        navigationView.configure(plainTitle: "Ubah Profil", type: .plain)
+        navigationView.configure(toolbarTitle: "Ubah Profil", type: .plain)
         containerView.makeCornerRadius(12)
         containerView.addShadow(6, opacity: 0.2)
         nameTextField.configure(title: "Nama", placeholder: "Masukan nama Anda")
