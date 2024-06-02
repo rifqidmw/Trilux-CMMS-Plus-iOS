@@ -31,7 +31,7 @@ class HistoryDetailView: BaseViewController {
     @IBOutlet weak var taskView: UIView!
     @IBOutlet weak var headerTaskView: CustomHeaderView!
     @IBOutlet weak var emptyTaskView: UIView!
-    @IBOutlet weak var taskCollectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var taskViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var descriptionView: UIView!
@@ -118,7 +118,7 @@ extension HistoryDetailView {
                 self.finishLabel.text = finishStatus
                 self.descriptionLabel.text = description
                 self.taskList = taskList
-                self.taskCollectionView.reloadData()
+                self.tableView.reloadData()
                 self.damagedMediaList = damagedMediaList
                 self.damagedPictureCollectionView.reloadData()
                 self.repairedMediaList = repairedMediaList
@@ -128,7 +128,7 @@ extension HistoryDetailView {
                 self.descriptionLabel.isHidden = description.isEmpty
                 
                 self.emptyTaskView.isHidden = !taskList.isEmpty
-                self.taskCollectionView.isHidden = taskList.isEmpty
+                self.tableView.isHidden = taskList.isEmpty
                 
                 self.emptyDamagedPictureView.isHidden = !damagedMediaList.isEmpty
                 self.damagedPictureCollectionView.isHidden = damagedMediaList.isEmpty
@@ -139,7 +139,7 @@ extension HistoryDetailView {
                 self.emptyConstraintView.isHidden = !finishStatus.isEmpty
                 self.finishLabel.isHidden = finishStatus.isEmpty
                 
-                self.taskViewHeightConstraint.constant = taskList.isEmpty ? 200 : calculateTaskHeight(data: taskList) + 80
+                self.taskViewHeightConstraint.constant = taskList.isEmpty ? 200 : calculateTotalHeight(for: self.tableView) + 80
                 self.descriptionViewHeightConstraint.constant = description.isEmpty ? 200 : self.descriptionLabel.requiredHeight() + 80
                 self.constraintViewHeightConstraint.constant = finishStatus.isEmpty ? 200 : finishLabel.requiredHeight() + 80
                 self.view.layoutIfNeeded()
@@ -175,9 +175,9 @@ extension HistoryDetailView {
     private func setupView() {
         fetchInitialData()
         bindingData()
-        setupCollectionView(taskCollectionView)
         setupCollectionView(repairPictureCollectionView)
         setupCollectionView(damagedPictureCollectionView)
+        setupTableView()
         configureSharedComponent()
         showAnimationSkeleton()
     }
@@ -197,13 +197,13 @@ extension HistoryDetailView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(EvidenceEquipmentCVC.nib, forCellWithReuseIdentifier: EvidenceEquipmentCVC.identifier)
-        collectionView.register(TaskItemCVC.nib, forCellWithReuseIdentifier: TaskItemCVC.identifier)
     }
     
-    private func calculateTaskHeight(data: [HistoryDetailEntity.HistoryDetailData.HistoryDetailWorkOrder.HistoryTask]) -> CGFloat {
-        let initialHeight: CGFloat = 30
-        let totalHeight = CGFloat(initialHeight) * CGFloat(data.count)
-        return totalHeight
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(TaskItemTVC.nib, forCellReuseIdentifier: TaskItemTVC.identifier)
+        tableView.separatorStyle = .none
     }
     
     private func showAnimationSkeleton() {

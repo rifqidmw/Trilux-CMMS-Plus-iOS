@@ -1,18 +1,18 @@
 //
-//  PreparationSectionView.swift
+//  PhysicalMonitoringSectionView.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 06/02/24.
+//  Created by PRO M1 2020 8/256 on 01/06/24.
 //
 
 import UIKit
 
-class PreparationSectionView: UIView {
+class PhysicalMonitoringSectionView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var initialHeightConstraint: NSLayoutConstraint!
     
-    var data: [LKData.Persiapan] = []
+    var data: [LKData.Pemantauan] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,21 +28,22 @@ class PreparationSectionView: UIView {
         let view = loadNib()
         view.frame = self.bounds
         self.addSubview(view)
-        setupTableView()
+        self.setupTableView()
     }
     
 }
 
-extension PreparationSectionView {
+extension PhysicalMonitoringSectionView {
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(PreparationTVC.nib, forCellReuseIdentifier: PreparationTVC.identifier)
+        tableView.register(PhysicalMonitoringTVC.nib, forCellReuseIdentifier: PhysicalMonitoringTVC.identifier)
         tableView.separatorStyle = .none
+        tableView.makeCornerRadius(8)
     }
     
-    func configure(data: [LKData.Persiapan]) {
+    func configure(data: [LKData.Pemantauan]) {
         self.data = data
         self.tableView.reloadData()
         self.calculateTotalHeight(for: self.tableView)
@@ -50,19 +51,30 @@ extension PreparationSectionView {
     
 }
 
-extension PreparationSectionView: UITableViewDataSource, UITableViewDelegate {
+extension PhysicalMonitoringSectionView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return self.data.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PreparationTVC.identifier, for: indexPath) as? PreparationTVC
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PhysicalMonitoringTVC.identifier, for: indexPath) as? PhysicalMonitoringTVC
         else {
             return UITableViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        if indexPath.row == 0 {
+            cell.setupCell(data: LKData.Pemantauan(key: "", fisik: "", fungsi: "", label: "", fisikText: "", fungsiText: ""), type: .header)
+        } else {
+            let dataIndex = indexPath.row - 1
+            guard dataIndex >= 0, dataIndex < self.data.count else {
+                cell.setupCell(data: LKData.Pemantauan(key: "", fisik: "", fungsi: "", label: "", fisikText: "", fungsiText: ""), type: .content)
+                return cell
+            }
+            
+            let itemData = self.data[dataIndex]
+            cell.setupCell(data: itemData, type: .content)
+        }
         
         return cell
     }

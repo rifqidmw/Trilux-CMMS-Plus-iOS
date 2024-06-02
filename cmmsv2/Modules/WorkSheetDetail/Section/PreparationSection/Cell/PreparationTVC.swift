@@ -44,10 +44,7 @@ extension PreparationTVC {
         case .yes:
             statusView.backgroundColor = UIColor.customLightGreenColor
             statusLabel.textColor = UIColor.customIndicatorColor8
-            
-            let attributedString = NSMutableAttributedString(string: titleLabel.text ?? "")
-            attributedString.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length))
-            titleLabel.attributedText = attributedString
+            titleLabel.applyStrikethrough()
         case .no:
             statusView.backgroundColor = UIColor.customIndicatorColor3
             statusLabel.textColor = UIColor.customIndicatorColor4

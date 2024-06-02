@@ -1,18 +1,18 @@
 //
-//  PreparationSectionView.swift
+//  ElectricSectionView.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 06/02/24.
+//  Created by PRO M1 2020 8/256 on 02/06/24.
 //
 
 import UIKit
 
-class PreparationSectionView: UIView {
+class ElectricSectionView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var initialHeightConstraint: NSLayoutConstraint!
     
-    var data: [LKData.Persiapan] = []
+    var data: [LKData.Listrik] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,37 +28,49 @@ class PreparationSectionView: UIView {
         let view = loadNib()
         view.frame = self.bounds
         self.addSubview(view)
-        setupTableView()
+        self.setupTableView()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        adjustHeight()
+    }
+    
+    private func adjustHeight() {
+        var totalHeight: CGFloat = 0
+        for row in 0..<tableView.numberOfRows(inSection: 0) {
+            let indexPath = IndexPath(row: row, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                totalHeight += cell.frame.height
+            }
+        }
+        initialHeightConstraint.constant = totalHeight
+    }
 }
 
-extension PreparationSectionView {
+extension ElectricSectionView {
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(PreparationTVC.nib, forCellReuseIdentifier: PreparationTVC.identifier)
+        tableView.register(ElectricTVC.nib, forCellReuseIdentifier: ElectricTVC.identifier)
         tableView.separatorStyle = .none
     }
     
-    func configure(data: [LKData.Persiapan]) {
+    func configure(data: [LKData.Listrik]) {
         self.data = data
         self.tableView.reloadData()
-        self.calculateTotalHeight(for: self.tableView)
     }
-    
 }
 
-extension PreparationSectionView: UITableViewDataSource, UITableViewDelegate {
+extension ElectricSectionView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PreparationTVC.identifier, for: indexPath) as? PreparationTVC
-        else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ElectricTVC.identifier, for: indexPath) as? ElectricTVC else {
             return UITableViewCell()
         }
         
@@ -70,14 +82,4 @@ extension PreparationSectionView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
-    func calculateTotalHeight(for tableView: UITableView) {
-        var totalHeight: CGFloat = 0
-        for row in 0..<tableView.numberOfRows(inSection: 0) {
-            let indexPath = IndexPath(row: row, section: 0)
-            totalHeight += tableView.rectForRow(at: indexPath).height
-        }
-        initialHeightConstraint.constant = totalHeight
-    }
-    
 }

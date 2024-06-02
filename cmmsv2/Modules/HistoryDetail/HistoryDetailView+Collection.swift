@@ -11,8 +11,6 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case self.taskCollectionView:
-            return self.taskList.count
         case self.damagedPictureCollectionView:
             return self.damagedMediaList.count
         case self.repairPictureCollectionView:
@@ -24,12 +22,6 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
-        case self.taskCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TaskItemCVC.identifier, for: indexPath) as? TaskItemCVC else {
-                return UICollectionViewCell()
-            }
-            cell.setupCell(self.taskList[indexPath.row].txtName ?? "")
-            return cell
         case self.damagedPictureCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EvidenceEquipmentCVC.identifier, for: indexPath) as? EvidenceEquipmentCVC else {
                 return UICollectionViewCell()
@@ -52,8 +44,6 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
               let navigation = self.navigationController
         else { return }
         switch collectionView {
-        case self.taskCollectionView:
-            break
         case self.damagedPictureCollectionView:
             let selectedDamagedPicture = self.damagedMediaList[indexPath.row].valUrl ?? ""
             presenter.navigateToDetailPicture(navigation: navigation, image: selectedDamagedPicture)
@@ -65,11 +55,39 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch collectionView {
-        case self.taskCollectionView:
-            return CGSize(width: collectionView.frame.width, height: 20)
-        default: return CGSize(width: CGSize.widthDevice / 3, height: collectionView.frame.height)
+        return CGSize(width: CGSize.widthDevice / 3, height: collectionView.frame.height)
+    }
+    
+}
+
+extension HistoryDetailView: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.taskList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskItemTVC.identifier, for: indexPath) as? TaskItemTVC
+        else {
+            return UITableViewCell()
         }
+        
+        cell.setupCell(title: self.taskList[indexPath.row].txtName)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func calculateTotalHeight(for tableView: UITableView) -> CGFloat {
+        var totalHeight: CGFloat = 0
+        for row in 0..<tableView.numberOfRows(inSection: 0) {
+            let indexPath = IndexPath(row: row, section: 0)
+            totalHeight += tableView.rectForRow(at: indexPath).height
+        }
+        return totalHeight
     }
     
 }

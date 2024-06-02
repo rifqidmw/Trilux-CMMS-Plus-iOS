@@ -80,7 +80,7 @@ struct LKData: Codable {
         case lkAssign
         case idAsset
         case lkLabel
-        case lkInfo
+        case lkInfo = "lk_info"
         case lkStatus = "lk_status"
         case lkFinishstt = "lk_finishstt"
         case lkWebenable
@@ -125,7 +125,6 @@ struct LKData: Codable {
         case namaPelapor
     }
     
-    // Nested entities specific to LKData
     struct Asset: Codable {
         let idAsset: String?
         let assetname: String?
@@ -144,6 +143,14 @@ struct LKData: Codable {
         let note: String?
         let photoID: String?
         let photoUrl: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case idLkphoto = "id_lkphoto"
+            case filename
+            case note
+            case photoID = "photo_id"
+            case photoUrl
+        }
     }
     
     struct Persiapan: Codable {
@@ -165,6 +172,13 @@ struct LKData: Codable {
         let value: String?
         let label: String?
         let valueText: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case key
+            case value
+            case label
+            case valueText = "value_text"
+        }
     }
     
     struct Pemantauan: Codable {
@@ -174,6 +188,15 @@ struct LKData: Codable {
         let label: String?
         let fisikText: String?
         let fungsiText: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case key
+            case fisik
+            case fungsi
+            case label
+            case fisikText = "fisik_text"
+            case fungsiText = "fungsi_text"
+        }
     }
     
     struct Listrik: Codable {
@@ -182,11 +205,24 @@ struct LKData: Codable {
         let ambangBatas: String?
         let valUkur: String?
         let desc: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case key
+            case label
+            case ambangBatas = "ambang_batas"
+            case valUkur = "val_ukur"
+            case desc
+        }
     }
     
     struct Task: Codable {
         let idLktask: String?
         let lkTask: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case idLktask = "id_lktask"
+            case lkTask = "lk_task"
+        }
     }
     
     struct Sparepart: Codable {
@@ -196,6 +232,15 @@ struct LKData: Codable {
         let harga: String?
         let partname: String?
         let jumlahTotal: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case idLksparepart = "id_lksparepart"
+            case idPart = "id_part"
+            case jumlah
+            case harga
+            case partname
+            case jumlahTotal = "jumlah_total"
+        }
     }
     
     struct AlatKalibrasi: Codable {
