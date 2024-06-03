@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSheetOnsitePreventiveDetailView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="addSparePartView" destination="KNS-TC-bCk" id="87t-Ms-Zie"/>
                 <outlet property="assetSectionHeightConstraint" destination="mBh-21-iTy" id="vdF-ua-GKF"/>
                 <outlet property="assetSectionView" destination="T7Q-kA-x6p" id="drj-ws-kvS"/>
                 <outlet property="calibrationMeasurementSectionView" destination="oMH-WD-PPy" id="PbL-5E-XCl"/>
@@ -114,6 +115,13 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="B9T-5A-PyF"/>
+                                    </constraints>
+                                </view>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNS-TC-bCk" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="956" width="361" height="48"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="4BI-vu-JRC"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="To1-MI-xYj">

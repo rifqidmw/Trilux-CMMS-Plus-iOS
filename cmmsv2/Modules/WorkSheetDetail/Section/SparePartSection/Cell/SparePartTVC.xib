@@ -26,24 +26,24 @@
                         <rect key="frame" x="16" y="8" width="288" height="44"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="e56-tQ-cm6">
-                                <rect key="frame" x="0.0" y="0.0" width="234" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1B-0i-w4J">
-                                        <rect key="frame" x="0.0" y="0.0" width="234" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                         <color key="textColor" name="customDarkGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ox-CS-wPL">
-                                        <rect key="frame" x="0.0" y="24" width="234" height="20"/>
+                                        <rect key="frame" x="0.0" y="24" width="288" height="20"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
                                         <color key="textColor" name="customDarkGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hapus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtA-xF-F56">
-                                <rect key="frame" x="238" y="0.0" width="50" height="44"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hapus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtA-xF-F56">
+                                <rect key="frame" x="288" y="0.0" width="50" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="a1e-lV-8Ev"/>
                                 </constraints>
