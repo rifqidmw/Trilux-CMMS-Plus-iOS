@@ -27,7 +27,6 @@ class WorkSheetDetailView: BaseViewController {
     @IBOutlet weak var taskSectionHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var sparePartSectionView: AccordionView!
     @IBOutlet weak var sparePartHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var requirementsSparePartView: CustomHeaderView!
     @IBOutlet weak var recommendationStackView: UIStackView!
     @IBOutlet weak var recommendationHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var recommendationHeaderView: CustomHeaderView!
@@ -71,8 +70,6 @@ extension WorkSheetDetailView {
     
     private func setupView() {
         navigationView.configure(toolbarTitle: "Detail Lembar Kerja", type: .plain)
-        requirementsSparePartView.configure(icon: "ic_frame_with_gear", title: "Kebutuhan Suku Cadang", labelAction: "Tambah Suku Cadang", type: .actionLabel)
-        requirementsSparePartView.addShadow(2, opacity: 0.2)
         recommendationStackView.makeCornerRadius(8)
         recommendationStackView.addShadow(2, opacity: 0.2)
         recommendationHeaderView.configure(icon: "ic_statistic_down", title: "Evaluasi & Rekomendasi", type: .plain)

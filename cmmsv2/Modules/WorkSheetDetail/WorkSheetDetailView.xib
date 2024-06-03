@@ -40,7 +40,6 @@
                 <outlet property="recommendationLabel" destination="UPe-wc-tmH" id="g1i-cf-vsv"/>
                 <outlet property="recommendationStackView" destination="To1-MI-xYj" id="EzS-ga-egW"/>
                 <outlet property="recommendationView" destination="vSw-7y-aO5" id="qcN-dv-Oyl"/>
-                <outlet property="requirementsSparePartView" destination="45b-K7-hgu" id="q02-C2-wuh"/>
                 <outlet property="sparePartHeightConstraint" destination="B9T-5A-PyF" id="PNO-YG-pQb"/>
                 <outlet property="sparePartSectionView" destination="cPs-S5-Ut5" id="7R4-Yw-4U2"/>
                 <outlet property="supportingEvidenceHeaderView" destination="gEm-MU-h5l" id="QqN-gX-Nbd"/>
@@ -59,7 +58,7 @@
                     <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vy6-ui-ORe">
-                            <rect key="frame" x="16" y="24" width="361" height="1444"/>
+                            <rect key="frame" x="16" y="24" width="361" height="1380"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7Q-kA-x6p" userLabel="Asset Section View" customClass="AssetSectionView" customModule="cmmsv2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
@@ -117,15 +116,8 @@
                                         <constraint firstAttribute="height" constant="48" id="B9T-5A-PyF"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45b-K7-hgu" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="964" width="361" height="48"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="48" id="IyO-Yu-dq1"/>
-                                    </constraints>
-                                </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="To1-MI-xYj">
-                                    <rect key="frame" x="0.0" y="1028" width="361" height="200"/>
+                                    <rect key="frame" x="0.0" y="964" width="361" height="200"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6L-PA-NSv" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
@@ -171,7 +163,7 @@
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xmf-dj-zYK" userLabel="Supporting Evidence View">
-                                    <rect key="frame" x="0.0" y="1244" width="361" height="200"/>
+                                    <rect key="frame" x="0.0" y="1180" width="361" height="200"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEm-MU-h5l" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
