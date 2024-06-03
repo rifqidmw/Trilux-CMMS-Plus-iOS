@@ -9,7 +9,6 @@ import UIKit
 
 class CalibrationSectionView: UIView {
     
-    @IBOutlet var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var initialHeightConstraint: NSLayoutConstraint!
     

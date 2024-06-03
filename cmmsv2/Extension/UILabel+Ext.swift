@@ -43,4 +43,11 @@ extension UILabel {
         return ceil(textRect.height)
     }
     
+    func applyStrikethrough() {
+        guard let text = self.text else { return }
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length))
+        self.attributedText = attributedString
+    }
+    
 }

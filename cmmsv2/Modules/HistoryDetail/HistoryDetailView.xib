@@ -54,9 +54,9 @@
                 <outlet property="serialNumberLabel" destination="DDJ-3G-iIC" id="E1Z-vD-hOP"/>
                 <outlet property="statusLabel" destination="VnQ-wz-wqn" id="kC9-2S-MHp"/>
                 <outlet property="statusView" destination="zXl-gQ-YbH" id="gCZ-FH-PHi"/>
-                <outlet property="taskCollectionView" destination="Oea-EP-wHd" id="0Rn-9y-kn5"/>
+                <outlet property="tableView" destination="Dre-uY-fgF" id="ggN-yG-bFF"/>
                 <outlet property="taskView" destination="V2b-pq-lW6" id="5RR-2p-tSI"/>
-                <outlet property="taskViewHeightConstraint" destination="tOA-KA-isz" id="qBw-Dr-b1g"/>
+                <outlet property="taskViewHeightConstraint" destination="tOA-KA-isz" id="VKZ-sM-fLH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="workDurationView" destination="0Ua-HE-a5X" id="3jZ-ia-1Bc"/>
                 <outlet property="workEndView" destination="ahf-tA-5l4" id="Pld-v1-hSS"/>
@@ -277,16 +277,10 @@
                                                         <constraint firstItem="YBh-u1-EYr" firstAttribute="centerY" secondItem="aUk-Wq-WfL" secondAttribute="centerY" id="fqz-ST-mjG"/>
                                                     </constraints>
                                                 </view>
-                                                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-EP-wHd">
+                                                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-uY-fgF">
                                                     <rect key="frame" x="0.0" y="0.0" width="329" height="0.0"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RCd-by-ulM">
-                                                        <size key="itemSize" width="128" height="128"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                </collectionView>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </tableView>
                                             </subviews>
                                         </stackView>
                                     </subviews>

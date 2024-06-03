@@ -212,6 +212,27 @@ enum HistoryStatusType: String, Codable {
     }
 }
 
+enum MonitoringStatusType: String, Codable {
+    case good = "Baik"
+    case cross = "X"
+    case strips = "-"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Baik": self = .good
+        case "X": self = .cross
+        case "-": self = .strips
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
 enum CellType {
     case calibration
     case preventiveMaintenance

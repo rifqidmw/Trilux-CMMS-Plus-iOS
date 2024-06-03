@@ -8,34 +8,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreparationSectionView" customModule="cmmsv2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskSectionView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
-                <outlet property="initialHeightConstraint" destination="gxF-g3-nLX" id="gLT-C8-ut3"/>
-                <outlet property="tableView" destination="2PH-6d-eNf" id="bT8-hB-jMM"/>
+                <outlet property="initialHeightConstraint" destination="FjP-2B-FzK" id="3Qf-ZM-vjM"/>
+                <outlet property="tableView" destination="Ot8-hv-Nt7" id="nSc-bB-P0m"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="bxl-oC-hiW">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2PH-6d-eNf">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ot8-hv-Nt7">
+                    <rect key="frame" x="16" y="0.0" width="361" height="100"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="gxF-g3-nLX"/>
+                        <constraint firstAttribute="height" constant="100" id="FjP-2B-FzK"/>
                     </constraints>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="2PH-6d-eNf" secondAttribute="bottom" id="0Gl-gY-RiG"/>
-                <constraint firstAttribute="trailing" secondItem="2PH-6d-eNf" secondAttribute="trailing" id="A6J-4g-rmB"/>
-                <constraint firstItem="2PH-6d-eNf" firstAttribute="top" secondItem="bxl-oC-hiW" secondAttribute="top" id="JLw-dW-hG3"/>
-                <constraint firstItem="2PH-6d-eNf" firstAttribute="leading" secondItem="bxl-oC-hiW" secondAttribute="leading" id="JMq-5N-C0D"/>
+                <constraint firstAttribute="bottom" secondItem="Ot8-hv-Nt7" secondAttribute="bottom" id="Xuo-fh-T3d"/>
+                <constraint firstItem="Ot8-hv-Nt7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ZaZ-qq-sG7"/>
+                <constraint firstAttribute="trailing" secondItem="Ot8-hv-Nt7" secondAttribute="trailing" constant="16" id="rfc-3R-pv7"/>
+                <constraint firstItem="Ot8-hv-Nt7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vWv-Rc-D1W"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="345.80152671755724" y="-28.52112676056338"/>
+            <point key="canvasLocation" x="35.877862595419849" y="-1.4084507042253522"/>
         </view>
     </objects>
     <resources>
