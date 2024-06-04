@@ -20,4 +20,5 @@ class BaseRouter {
         let vc = FullScreenPictureRouter().showView(image: image)
         navigation.pushViewController(vc, animated: true)
     }
+    
 }
