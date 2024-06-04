@@ -16,7 +16,6 @@ class ChangePasswordView: BaseViewController {
     @IBOutlet weak var newPasswordConfirmTextField: GeneralTextField!
     @IBOutlet weak var bottomContainerView: UIView!
     @IBOutlet weak var saveButton: GeneralButton!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: ChangePasswordPresenter?
     
@@ -49,7 +48,7 @@ extension ChangePasswordView {
         presenter?.$isLoading
             .sink { [weak self] isLoading in
                 guard let self else { return }
-                self.showSpinner(isLoading)
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
     }
@@ -85,14 +84,6 @@ extension ChangePasswordView {
                 }
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func showSpinner(_ isShow: Bool) {
-        DispatchQueue.main.async {
-            self.spinner.isHidden = !isShow
-            isShow ? self.showOverlay() : self.removeOverlay()
-            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
-        }
     }
     
     private func showFailMessage() {

@@ -11,7 +11,6 @@ import CoreData
 class LoginView: BaseViewController {
     
     @IBOutlet weak var triluxLogoImageView: UIImageView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var usernameTextField: GeneralTextField!
     @IBOutlet weak var passwordTextField: GeneralTextField!
     @IBOutlet weak var loginButton: GeneralButton!
@@ -56,17 +55,9 @@ extension LoginView {
         presenter.$isLoading
             .sink { [weak self] isLoading in
                 guard let self else { return }
-                self.showSpinner(isLoading)
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func showSpinner(_ isShow: Bool) {
-        DispatchQueue.main.async {
-            self.spinner.isHidden = !isShow
-            isShow ? self.showOverlay() : self.removeOverlay()
-            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
-        }
     }
     
     private func setupAction() {

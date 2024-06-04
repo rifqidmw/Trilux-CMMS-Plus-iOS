@@ -24,6 +24,62 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         return view
     }()
     
+    let loadingView: UIView = {
+        let loadView = UIView()
+        loadView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        loadView.translatesAutoresizingMaskIntoConstraints = false
+        return loadView
+    }()
+    
+    lazy var customLoadingView = CustomLoadingView(frame: .zero)
+    
+    func showLoadingPopup() {
+        DispatchQueue.main.async {
+            self.view.addSubview(self.loadingView)
+            
+            // Set constraints for loadingView to cover the entire view
+            NSLayoutConstraint.activate([
+                self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+                self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),
+                self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            ])
+            
+            self.loadingView.addSubview(self.customLoadingView)
+            
+            self.customLoadingView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                self.customLoadingView.centerXAnchor.constraint(equalTo: self.loadingView.centerXAnchor),
+                self.customLoadingView.centerYAnchor.constraint(equalTo: self.loadingView.centerYAnchor),
+                self.customLoadingView.leadingAnchor.constraint(greaterThanOrEqualTo: self.loadingView.leadingAnchor, constant: 16),
+                self.customLoadingView.trailingAnchor.constraint(lessThanOrEqualTo: self.loadingView.trailingAnchor, constant: -16),
+                self.customLoadingView.heightAnchor.constraint(equalToConstant: 400)
+            ])
+            
+
+            self.customLoadingView.alpha = 0
+            self.customLoadingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            
+            // Animate pop-up effect
+            UIView.animate(withDuration: 0.3, animations: {
+                self.customLoadingView.alpha = 1
+                self.customLoadingView.transform = CGAffineTransform.identity
+            })
+        }
+    }
+    
+    func hideLoadingPopup() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.customLoadingView.alpha = 0
+                self.customLoadingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            }) { _ in
+                self.customLoadingView.removeFromSuperview()
+                self.loadingView.removeFromSuperview()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         didLoad()

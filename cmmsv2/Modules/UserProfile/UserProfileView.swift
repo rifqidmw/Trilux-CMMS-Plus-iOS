@@ -24,7 +24,6 @@ class UserProfileView: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var logoutButton: GeneralButton!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: UserProfilePresenter?
     var user: User?
@@ -99,9 +98,9 @@ extension UserProfileView {
         
         presenter.$isLoadProfile
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] isLoadProfile in
+            .sink { [weak self] isLoading in
                 guard let self else { return }
-                self.showSpinner(isLoadProfile)
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
     }
@@ -206,14 +205,6 @@ extension UserProfileView {
         tableView.register(ProfileMenuTVC.nib, forCellReuseIdentifier: ProfileMenuTVC.identifier)
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
-    }
-    
-    private func showSpinner(_ isShow: Bool) {
-        DispatchQueue.main.async {
-            self.spinner.isHidden = !isShow
-            isShow ? self.showOverlay() : self.removeOverlay()
-            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
-        }
     }
     
 }

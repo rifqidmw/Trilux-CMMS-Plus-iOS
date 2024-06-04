@@ -17,7 +17,6 @@ class EditProfileView: BaseViewController {
     @IBOutlet weak var phoneNumberTextField: GeneralTextField!
     @IBOutlet weak var bottomContainerView: UIView!
     @IBOutlet weak var saveButton: GeneralButton!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var data: User?
     var presenter: EditProfilePresenter?
@@ -53,7 +52,7 @@ extension EditProfileView {
         presenter?.$isLoading
             .sink { [weak self] isLoading in
                 guard let self else { return }
-                self.showSpinner(isLoading)
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
     }
@@ -112,14 +111,6 @@ extension EditProfileView {
                 }
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func showSpinner(_ isShow: Bool) {
-        DispatchQueue.main.async {
-            self.spinner.isHidden = !isShow
-            isShow ? self.showOverlay() : self.removeOverlay()
-            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
-        }
     }
     
     private func showFailMessage() {
