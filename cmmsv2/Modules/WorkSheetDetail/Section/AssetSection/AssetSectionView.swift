@@ -14,9 +14,11 @@ class AssetSectionView: UIView {
     @IBOutlet weak var detailInformationCardView: UIView!
     @IBOutlet weak var uniqueNumberLabel: UILabel!
     @IBOutlet weak var dateUserLabel: UILabel!
+    @IBOutlet weak var containerWorkingStatusView: UIView!
     @IBOutlet weak var workingStatusView: UIView!
     @IBOutlet weak var workingStatusLabel: UILabel!
     @IBOutlet weak var workingStatusWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerWorkSheetStatusStackView: UIStackView!
     @IBOutlet weak var workSheetStatusView: UIView!
     @IBOutlet weak var workSheetStatusLabel: UILabel!
     @IBOutlet weak var workSheetStatusWidthConstraint: NSLayoutConstraint!

@@ -5,7 +5,7 @@
 //  Created by PRO M1 2020 8/256 on 12/03/24.
 //
 
-import Foundation
+import UIKit
 
 class CalibrationListPresenter: BasePresenter {
     
@@ -22,6 +22,7 @@ class CalibrationListPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
+    var keyword: String = ""
     var limit: Int = 20
     var page: Int = 1
     var isCanLoad = true
@@ -32,12 +33,12 @@ class CalibrationListPresenter: BasePresenter {
 extension CalibrationListPresenter {
     
     func fetchInitData() {
-        self.fetchCalibrationList(limit: self.limit, page: self.page)
+        self.fetchCalibrationList(keyword: self.keyword, limit: self.limit, page: self.page)
     }
     
-    func fetchCalibrationList(limit: Int, page: Int) {
+    func fetchCalibrationList(keyword: String, limit: Int, page: Int) {
         self.isLoading = true
-        interactor.getCalibrationList(limit: limit, page: page)
+        interactor.getCalibrationList(keyword: keyword, limit: limit, page: page)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -66,6 +67,7 @@ extension CalibrationListPresenter {
                                 room: item.ruangan ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
+                                lkStatus: item.lkStatus,
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }
@@ -79,7 +81,7 @@ extension CalibrationListPresenter {
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        self.fetchCalibrationList(limit: self.limit, page: self.page)
+        self.fetchCalibrationList(keyword: self.keyword, limit: self.limit, page: self.page)
     }
     
 }

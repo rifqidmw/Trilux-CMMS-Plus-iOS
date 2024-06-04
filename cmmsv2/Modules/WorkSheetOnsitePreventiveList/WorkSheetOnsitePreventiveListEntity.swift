@@ -11,6 +11,7 @@ import Foundation
     @objc optional func didTapDetail(title: String)
     @objc optional func didTapContinueWorking(title: String)
     @objc optional func didTapDownloadPDF(title: String)
+    @objc optional func didTapCorrection(title: String)
 }
 
 let onsitePreventiveData: [WorkSheetListEntity] = [
@@ -23,7 +24,21 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
-        brandName: "Acumalaka",
+        brandName: "Acumalaka", 
+        lkStatus: "2",
+        category: .calibration,
+        status: .done),
+    WorkSheetListEntity(
+        id: "1",
+        uniqueNumber: "LK.2021.11.PI010",
+        workName: "Syringe Pump",
+        workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
+        serial: "72385234",
+        installation: "Pelayanan Gawat Darurat",
+        room: "Ruangan Triase(auto-room)",
+        dateTime: "2024-04-04 12:13:14",
+        brandName: "Acumalaka", 
+        lkStatus: "2",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -36,6 +51,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
         brandName: "Acumalaka",
+        lkStatus: "2",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -48,6 +64,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
         brandName: "Acumalaka",
+        lkStatus: "2",
         category: .calibration,
         status: .done),
     WorkSheetListEntity(
@@ -60,18 +77,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
         brandName: "Acumalaka",
-        category: .calibration,
-        status: .done),
-    WorkSheetListEntity(
-        id: "1",
-        uniqueNumber: "LK.2021.11.PI010",
-        workName: "Syringe Pump",
-        workDesc: "Pelayanan Bedah Sentral (OK) - Ruangan Persia",
-        serial: "72385234",
-        installation: "Pelayanan Gawat Darurat",
-        room: "Ruangan Triase(auto-room)",
-        dateTime: "2024-04-04 12:13:14",
-        brandName: "Acumalaka",
+        lkStatus: "2",
         category: .calibration,
         status: .done)
 ]

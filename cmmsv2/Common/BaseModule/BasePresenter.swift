@@ -20,4 +20,17 @@ extension BasePresenter {
         router.navigateToDetailPicture(navigation: navigation, image: image)
     }
     
+    func showSelectActionBottomSheet(_ navigation: UINavigationController,
+                                     type: WorkSheetStatus,
+                                     delegate: WorkSheetOnsitePreventiveDelegate,
+                                     id: String?) {
+        router.showSelectActionBottomSheet(navigation, type: type, delegate: delegate)
+    }
+    
+    func navigateToDetailWorkSheet(_ navigation: UINavigationController,
+                                   data: WorkSheetRequestEntity,
+                                   type: WorkSheetDetailType) {
+        router.navigateToDetailWorkSheet(navigation, data: data, type: type)
+    }
+    
 }

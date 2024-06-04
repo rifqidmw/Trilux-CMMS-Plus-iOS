@@ -89,7 +89,7 @@ extension WorkSheetCVC {
             descriptionLabel.text = "No#\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
             descriptionLabel.isHidden = false
             firstBadgeLabel.text = "Koreksi"
-            firstBadgeView.isHidden = data.status == .done ? false : true
+            firstBadgeView.isHidden = data.lkStatus == "2" ? false : true
             firstBadgeView.backgroundColor = UIColor.customIndicatorColor2
             firstBadgeLabel.textColor = UIColor.customIndicatorColor11
             secondBadgeView.isHidden = true

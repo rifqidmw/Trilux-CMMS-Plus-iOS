@@ -61,7 +61,7 @@ enum Endpoint {
         limit: Int? = nil,
         page: Int? = nil,
         engineer: Int? = nil)
-    case calibrationList(limit: Int? = nil, page: Int? = nil)
+    case calibrationList(keyword: String? = nil, limit: Int? = nil, page: Int? = nil)
     case logBookList(
         limit: Int? = nil,
         page: Int? = nil,
@@ -82,6 +82,7 @@ enum Endpoint {
     case detailHistory(id: String?)
     case loadPreventive(id: String?)
     case delayCorrectiveDetail(id: String?)
+    case calibrator
 }
 
 // MARK: - PATH URL
@@ -159,8 +160,8 @@ extension Endpoint {
                 limit: limit,
                 page: page,
                 engineer: engineer)
-        case .calibrationList(limit: let limit, page: let page):
-            return "lk/listkalibrasi?limit=\(limit ?? 0)&page=\(page ?? 0)"
+        case .calibrationList(keyword: let keyword, limit: let limit, page: let page):
+            return generateCalibrationURL(keyword: keyword, limit: limit, page: page)
         case .logBookList(limit: let limit, page: let page, date: let date):
             return generateLogBookURL(limit: limit, page: page, date: date)
         case .calendarPreventiveList(idEngineer: let idEngineer, month: let month):
@@ -187,6 +188,8 @@ extension Endpoint {
             return "lk/load_preventif?id=\(id ?? "")"
         case .delayCorrectiveDetail(id: let id):
             return "complains/detail?id=\(id ?? "")"
+        case .calibrator:
+            return "lk/kalibrator"
         }
     }
 }
@@ -456,6 +459,22 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/jadwal_preventif" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateCalibrationURL(
+        keyword: String? = nil,
+        limit: Int? = nil,
+        page: Int? = nil
+    ) -> String {
+        let queryString = [
+            keyword.map { "keyword=\($0)" },
+            limit.map { "limit=\($0)" },
+            page.map { "page=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "lk/listkalibrasi" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }

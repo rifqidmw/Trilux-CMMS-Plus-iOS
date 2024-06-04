@@ -5,7 +5,7 @@
 //  Created by PRO M1 2020 8/256 on 11/03/24.
 //
 
-import Foundation
+import UIKit
 
 class PreventiveMaintenanceListPresenter: BasePresenter {
     
@@ -69,6 +69,7 @@ extension PreventiveMaintenanceListPresenter {
                                 room: item.ruangan ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
+                                lkStatus: item.lkStatus,
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }
