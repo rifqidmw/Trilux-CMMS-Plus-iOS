@@ -18,7 +18,7 @@ class AssetSectionView: UIView {
     @IBOutlet weak var workingStatusView: UIView!
     @IBOutlet weak var workingStatusLabel: UILabel!
     @IBOutlet weak var workingStatusWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var containerWorkSheetStatusStackView: UIStackView!
+    @IBOutlet weak var containerWorkSheetView: UIView!
     @IBOutlet weak var workSheetStatusView: UIView!
     @IBOutlet weak var workSheetStatusLabel: UILabel!
     @IBOutlet weak var workSheetStatusWidthConstraint: NSLayoutConstraint!
@@ -158,7 +158,8 @@ extension AssetSectionView {
             workingStatusView.backgroundColor = UIColor.customIndicatorColor2
             workingStatusLabel.textColor = UIColor.customIndicatorColor11
             workingStatusWidthConstraint.constant = 50
-        default: break
+        case .none:
+            containerWorkingStatusView.isHidden = true
         }
     }
     
@@ -174,7 +175,8 @@ extension AssetSectionView {
             workSheetStatusView.backgroundColor = UIColor.customIndicatorColor2
             workSheetStatusLabel.textColor = UIColor.customIndicatorColor11
             workSheetStatusWidthConstraint.constant = 130
-        default: break
+        case .none:
+            containerWorkSheetView.isHidden = true
         }
     }
     

@@ -26,7 +26,7 @@
                 <outlet property="brandView" destination="ps0-yg-mY6" id="vsS-tG-Z1g"/>
                 <outlet property="containerBrandTypeStackView" destination="85h-Kz-LGy" id="4Lb-fu-7cy"/>
                 <outlet property="containerView" destination="YHZ-g6-f8n" id="F80-mj-ZUG"/>
-                <outlet property="containerWorkSheetStatusStackView" destination="E60-29-Z1h" id="Yd1-HR-S8O"/>
+                <outlet property="containerWorkSheetView" destination="o9k-ag-pvM" id="pvB-SX-taD"/>
                 <outlet property="containerWorkingStatusView" destination="SZX-gh-7X0" id="aav-1O-Ez5"/>
                 <outlet property="customHeader" destination="9li-j9-GMm" id="sVF-he-VTC"/>
                 <outlet property="dateUserLabel" destination="Zem-Ks-qgM" id="Lb8-7G-Jg8"/>
