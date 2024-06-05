@@ -7,6 +7,16 @@
 
 import Foundation
 
+enum ListingType: Int {
+    case asset = 0
+    case complaint
+    case workSheet
+    case history
+    case delayCorrective
+    case logBook
+    case preventiveCalendar
+}
+
 protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapAllCategory()
     func didTapAsset()
@@ -16,6 +26,16 @@ protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapDelayCorrective()
     func didTapLogBook()
     func didTapPreventiveCalendar()
+}
+
+protocol AllCategoriesBottomSheetDelegate: AnyObject {
+    func didTapAssetCategory()
+    func didTapComplaintCategory()
+    func didTapWorkSheetCategory()
+    func didTapHistoryCategory()
+    func didTapDelayCorrectiveCategory()
+    func didTapLogBookCategory()
+    func didTapPreventiveCalendarCategory()
 }
 
 protocol WorkSheetBottomSheetDelegate: AnyObject {

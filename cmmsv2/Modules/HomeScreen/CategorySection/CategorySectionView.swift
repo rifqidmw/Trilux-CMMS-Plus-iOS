@@ -68,23 +68,24 @@ extension CategorySectionView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let delegate = self.delegate else { return }
         switch indexPath.row {
         case 0:
-            self.delegate?.didTapAllCategory()
+            delegate.didTapAllCategory()
         case 1:
-            self.delegate?.didTapAsset()
+            delegate.didTapAsset()
         case 2:
-            self.delegate?.didTapComplaint()
+            delegate.didTapComplaint()
         case 3:
-            self.delegate?.didTapWorkSheet()
+            delegate.didTapWorkSheet()
         case 4:
-            self.delegate?.didTapHistory()
+            delegate.didTapHistory()
         case 5:
-            self.delegate?.didTapDelayCorrective()
+            delegate.didTapDelayCorrective()
         case 6:
-            self.delegate?.didTapLogBook()
+            delegate.didTapLogBook()
         case 7:
-            self.delegate?.didTapPreventiveCalendar()
+            delegate.didTapPreventiveCalendar()
         default: break
         }
     }

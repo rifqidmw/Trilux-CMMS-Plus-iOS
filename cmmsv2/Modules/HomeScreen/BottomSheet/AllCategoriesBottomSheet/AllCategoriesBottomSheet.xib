@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,6 +14,8 @@
                 <outlet property="bottomSheetView" destination="4pA-ly-OW3" id="jKi-53-5so"/>
                 <outlet property="collectionView" destination="C2p-vL-01j" id="viD-Wh-81q"/>
                 <outlet property="dismissAreaView" destination="s0v-jU-HeB" id="Eh0-Si-POL"/>
+                <outlet property="initialHeightBottomSheet" destination="1D0-4D-Qtn" id="Qbl-Bz-SRq"/>
+                <outlet property="initialHeightCollectionView" destination="X6n-GB-YM6" id="jmF-sc-bDp"/>
                 <outlet property="view" destination="Uc2-S6-wtr" id="PRW-Vc-EhL"/>
             </connections>
         </placeholder>
@@ -29,9 +31,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pA-ly-OW3" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="506" width="393" height="346"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C2p-vL-01j">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C2p-vL-01j">
                             <rect key="frame" x="32" y="52" width="329" height="252"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="252" id="X6n-GB-YM6"/>
+                            </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fQG-5E-lJ2">
                                 <size key="itemSize" width="128" height="128"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>

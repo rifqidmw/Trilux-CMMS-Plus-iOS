@@ -5,6 +5,8 @@
 //  Created by PRO M1 2020 8/256 on 03/02/24.
 //
 
+import UIKit
+
 extension HomeScreenView: HomeScreenCategoryDelegate {
     
     func didTapAllCategory() {
@@ -12,7 +14,7 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
               let navigation = self.navigationController
         else { return }
         self.showOverlay()
-        presenter.showBottomSheetAllCategories(navigation: navigation)
+        presenter.showBottomSheetAllCategories(navigation: navigation, delegate: self)
     }
     
     func didTapAsset() {
@@ -114,6 +116,75 @@ extension HomeScreenView: AssetBottomSheetDelegate {
               let navigation = self.navigationController
         else { return }
         presenter.navigateToAssetNonMedicList(navigation: navigation)
+    }
+    
+}
+
+extension HomeScreenView: AllCategoriesBottomSheetDelegate {
+    
+    func didTapAssetCategory() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            self.showOverlay()
+            presenter.showBottomSheetAsset(navigation: navigation, delegate: self)
+        }
+    }
+    
+    func didTapComplaintCategory() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            presenter.navigateToComplaintList(navigation: navigation)
+        }
+    }
+    
+    func didTapWorkSheetCategory() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            self.showOverlay()
+            presenter.showBottomSheetWorkSheet(navigation: navigation, delegate: self)
+        }
+    }
+    
+    func didTapHistoryCategory() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            presenter.navigateToHistoryList(navigation: navigation)
+        }
+    }
+    
+    func didTapDelayCorrectiveCategory() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            presenter.navigateToDelayCorrectiveList(navigation: navigation)
+        }
+    }
+    
+    func didTapLogBookCategory() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            presenter.navigateToLogBook(navigation: navigation)
+        }
+    }
+    
+    func didTapPreventiveCalendarCategory() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            presenter.navigateToCalendarPreventive(navigation: navigation)
+        }
     }
     
 }

@@ -54,8 +54,9 @@ extension HomeScreenPresenter {
 
 extension HomeScreenPresenter {
     
-    func showBottomSheetAllCategories(navigation: UINavigationController) {
+    func showBottomSheetAllCategories(navigation: UINavigationController, delegate: AllCategoriesBottomSheetDelegate) {
         let bottomSheet = AllCategoriesBottomSheet(nibName: String(describing: AllCategoriesBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
         router.showBottomSheet(view: bottomSheet, navigation: navigation)
     }
     

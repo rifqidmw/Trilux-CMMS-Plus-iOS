@@ -10,7 +10,6 @@ import UIKit
 class RegistrationHospitalView: BaseViewController {
     
     @IBOutlet weak var backgroundView: BackgroundView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var buttonRegister: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var containerView: UIView!
@@ -44,17 +43,9 @@ extension RegistrationHospitalView {
         presenter?.$isLoading
             .sink { [weak self] isLoading in
                 guard let self else { return }
-                self.showSpinner(isLoading)
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func showSpinner(_ isShow: Bool) {
-        DispatchQueue.main.async {
-            self.spinner.isHidden = !isShow
-            isShow ? self.showOverlay() : self.removeOverlay()
-            isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
-        }
     }
     
     private func setupAction() {

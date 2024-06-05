@@ -23,7 +23,6 @@
                 <outlet property="backgroundView" destination="aE5-ky-bBs" id="NLk-Pb-gLy"/>
                 <outlet property="buttonRegister" destination="7CA-xf-jjg" id="PdJ-PA-GbK"/>
                 <outlet property="containerView" destination="Fhh-N1-Jy2" id="Vt5-0r-DvQ"/>
-                <outlet property="spinner" destination="pXx-QP-IDJ" id="FuM-EW-aXB"/>
                 <outlet property="textField" destination="tIx-47-Css" id="8Pm-AJ-7oW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -79,9 +78,6 @@
                         <constraint firstAttribute="bottom" secondItem="tIx-47-Css" secondAttribute="bottom" constant="6" id="vw0-rT-aoz"/>
                     </constraints>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pXx-QP-IDJ">
-                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
-                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -91,8 +87,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fhh-N1-Jy2" secondAttribute="trailing" constant="16" id="IOz-US-pBQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fhh-N1-Jy2" secondAttribute="bottom" constant="16" id="OyM-5m-SaJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aE5-ky-bBs" secondAttribute="trailing" id="XEW-9Q-ynK"/>
-                <constraint firstItem="pXx-QP-IDJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="acv-yq-yLF"/>
-                <constraint firstItem="pXx-QP-IDJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="asU-bE-ofZ"/>
                 <constraint firstItem="aE5-ky-bBs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hmj-9L-nri"/>
                 <constraint firstItem="Fhh-N1-Jy2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mPv-Xm-BYg"/>
             </constraints>

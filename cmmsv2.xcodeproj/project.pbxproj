@@ -237,6 +237,12 @@
 		CE7372AA2B4990E7009BC450 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */; };
 		CE74361F2BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74361E2BDEAFD700283CA1 /* UIImage+Ext.swift */; };
 		CE7436202BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74361E2BDEAFD700283CA1 /* UIImage+Ext.swift */; };
+		CE7C3BD42C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C3BD22C0F6DEA00B78740 /* CustomLoadingView.swift */; };
+		CE7C3BD52C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7C3BD32C0F6DEA00B78740 /* CustomLoadingView.xib */; };
+		CE7C3BD62C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7C3BD32C0F6DEA00B78740 /* CustomLoadingView.xib */; };
+		CE7C3BD72C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C3BD22C0F6DEA00B78740 /* CustomLoadingView.swift */; };
+		CE7C3BD92C0F712E00B78740 /* lottie_spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7C3BD82C0F712E00B78740 /* lottie_spinner.json */; };
+		CE7C3BDA2C0F712E00B78740 /* lottie_spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7C3BD82C0F712E00B78740 /* lottie_spinner.json */; };
 		CE7F35B82BDE51EC00EA5536 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F35B72BDE51EC00EA5536 /* AppManager.swift */; };
 		CE7F35B92BDE51EC00EA5536 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F35B72BDE51EC00EA5536 /* AppManager.swift */; };
 		CE82087F2B82391F00CD4242 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */; };
@@ -892,6 +898,9 @@
 		CE7372A52B4990DB009BC450 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		CE7372A82B4990E7009BC450 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		CE74361E2BDEAFD700283CA1 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		CE7C3BD22C0F6DEA00B78740 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
+		CE7C3BD32C0F6DEA00B78740 /* CustomLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingView.xib; sourceTree = "<group>"; };
+		CE7C3BD82C0F712E00B78740 /* lottie_spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie_spinner.json; sourceTree = "<group>"; };
 		CE7F35B72BDE51EC00EA5536 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListPresenter.swift; sourceTree = "<group>"; };
 		CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListRouter.swift; sourceTree = "<group>"; };
@@ -1624,6 +1633,15 @@
 			path = ComplaintDetail;
 			sourceTree = "<group>";
 		};
+		CE7C3BD12C0F6DC800B78740 /* CustomLoading */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C3BD22C0F6DEA00B78740 /* CustomLoadingView.swift */,
+				CE7C3BD32C0F6DEA00B78740 /* CustomLoadingView.xib */,
+			);
+			path = CustomLoading;
+			sourceTree = "<group>";
+		};
 		CE8208782B82390100CD4242 /* NotificationList */ = {
 			isa = PBXGroup;
 			children = (
@@ -2019,6 +2037,7 @@
 		CEC336FB2B6EF57E00B16026 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				CE7C3BD82C0F712E00B78740 /* lottie_spinner.json */,
 				CEC337022B6EF6FF00B16026 /* lottie_expired.json */,
 			);
 			path = Lottie;
@@ -2236,6 +2255,7 @@
 				CEC207AF2B4AFF660073FA1E /* CategoryCard */,
 				CE90B1862B9A1EB300515AD6 /* CollectionViewCell */,
 				CEE79ED72B713DDC0063D844 /* CustomHeader */,
+				CE7C3BD12C0F6DC800B78740 /* CustomLoading */,
 				CEC207A52B4ADDA40073FA1E /* CustomNavigation */,
 				CE0F20CE2B754B51008702E0 /* Dropdown */,
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
@@ -2697,6 +2717,7 @@
 				CEE67D332B54426600D0844B /* WorkSheetBottomSheet.xib in Resources */,
 				CECB3DDD2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CE31087D2BE2662C00660275 /* ToolsInformationView.xib in Resources */,
+				CE7C3BD92C0F712E00B78740 /* lottie_spinner.json in Resources */,
 				CE916A882C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CEE780BA2C0C558B001BA9C2 /* ElectricSectionView.xib in Resources */,
@@ -2746,6 +2767,7 @@
 				CEE67D3A2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
 				CEC2C84B2BD2491500A9D454 /* WorkSheetCVC.xib in Resources */,
 				CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
+				CE7C3BD52C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CEF4E0C72C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
@@ -2827,6 +2849,7 @@
 				CEE67D342B54426600D0844B /* WorkSheetBottomSheet.xib in Resources */,
 				CECB3DDE2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CE31087E2BE2662C00660275 /* ToolsInformationView.xib in Resources */,
+				CE7C3BDA2C0F712E00B78740 /* lottie_spinner.json in Resources */,
 				CE916A8A2C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CEE780BC2C0C558B001BA9C2 /* ElectricSectionView.xib in Resources */,
@@ -2876,6 +2899,7 @@
 				CEE67D3B2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
 				CEC2C84C2BD2491500A9D454 /* WorkSheetCVC.xib in Resources */,
 				CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
+				CE7C3BD62C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CEF4E0C92C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
@@ -3126,6 +3150,7 @@
 				CEE8CB912BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
 				CE74361F2BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
+				CE7C3BD42C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */,
 				CE422DD72BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6B2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
 				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
@@ -3391,6 +3416,7 @@
 				CEE8CB922BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
 				CE7436202BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
+				CE7C3BD72C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */,
 				CE422DD82BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6C2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
 				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,

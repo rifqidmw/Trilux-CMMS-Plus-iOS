@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +23,6 @@
                 <outlet property="containerView" destination="xmp-EL-Szl" id="WO5-i3-Zwk"/>
                 <outlet property="loginButton" destination="ZKs-ma-c4S" id="PcO-op-zcX"/>
                 <outlet property="passwordTextField" destination="s8k-AC-HNK" id="VXp-qn-rHN"/>
-                <outlet property="spinner" destination="V9g-yz-wIl" id="3sj-ma-FVx"/>
                 <outlet property="taglineLabel" destination="ZfA-vb-td1" id="tlD-mw-l3c"/>
                 <outlet property="triluxLogoImageView" destination="7Dg-ou-h3f" id="I4y-r5-dX3"/>
                 <outlet property="usernameTextField" destination="tvM-c0-uvl" id="qGL-zj-gmq"/>
@@ -80,9 +79,6 @@ Satu Genggaman</string>
                         <constraint firstItem="tHM-q2-4vl" firstAttribute="leading" secondItem="ZZt-2R-Lct" secondAttribute="leading" id="lOW-3A-dv5"/>
                     </constraints>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="V9g-yz-wIl">
-                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
-                </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmp-EL-Szl">
                     <rect key="frame" x="0.0" y="487" width="393" height="365"/>
                     <subviews>
@@ -137,11 +133,9 @@ Satu Genggaman</string>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="V9g-yz-wIl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0XS-o2-H6U"/>
                 <constraint firstItem="7Dg-ou-h3f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="115" id="1Kx-58-rKl"/>
                 <constraint firstItem="xmp-EL-Szl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5c8-Wi-PQC"/>
                 <constraint firstItem="xmp-EL-Szl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="NHl-e3-0XO"/>
-                <constraint firstItem="V9g-yz-wIl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Tfh-o1-L5S"/>
                 <constraint firstItem="ZZt-2R-Lct" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Yq3-hq-wbH"/>
                 <constraint firstItem="7Dg-ou-h3f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="eB5-cw-JvG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Dg-ou-h3f" secondAttribute="trailing" constant="115" id="eS1-0H-167"/>
