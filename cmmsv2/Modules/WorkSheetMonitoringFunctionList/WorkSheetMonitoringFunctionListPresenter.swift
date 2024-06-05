@@ -68,6 +68,7 @@ extension WorkSheetMonitoringFunctionListPresenter {
                                 room: item.ruangan ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
+                                lkStatus: item.lkStatus,
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }
@@ -82,21 +83,6 @@ extension WorkSheetMonitoringFunctionListPresenter {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
         fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
-    }
-    
-}
-
-extension WorkSheetMonitoringFunctionListPresenter {
-    
-    func showSelectActionBottomSheet(navigation: UINavigationController,
-                                     type: WorkSheetStatus,
-                                     delegate: WorkSheetOnsitePreventiveDelegate,
-                                     id: String?) {
-        router.showSelectActionBottomSheet(navigation: navigation, type: type, delegate: delegate)
-    }
-    
-    func navigateToDetailWorkSheet(navigation: UINavigationController, data: WorkSheetRequestEntity) {
-        router.navigateToDetailWorkSheet(navigation: navigation, data: data)
     }
     
 }

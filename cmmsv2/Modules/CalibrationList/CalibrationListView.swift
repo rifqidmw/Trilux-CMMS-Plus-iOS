@@ -17,6 +17,7 @@ class CalibrationListView: BaseViewController {
     
     var presenter: CalibrationListPresenter?
     var data: [WorkSheetListEntity] = []
+    var id: String?
     
     override func didLoad() {
         super.didLoad()
@@ -116,6 +117,34 @@ extension CalibrationListView: SkeletonCollectionViewDataSource, SkeletonCollect
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController,
+              let id = self.data[indexPath.row].id,
+              let status = self.data[indexPath.row].status
+        else { return }
+        
+        self.id = id
+        self.showOverlay()
+        
+        let type: WorkSheetStatus = {
+            switch status {
+            case .open:
+                return .open
+            case .done:
+                return .done
+            case .ongoing:
+                return .ongoing
+            case .hold:
+                return .hold
+            default:
+                return .none
+            }
+        }()
+        
+        presenter.showSelectActionBottomSheet(navigation, type: type, delegate: self, id: id)
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == scrollView,
               let presenter = self.presenter
@@ -139,6 +168,18 @@ extension CalibrationListView: SkeletonCollectionViewDataSource, SkeletonCollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
+    }
+    
+}
+
+extension CalibrationListView: WorkSheetOnsitePreventiveDelegate {
+    
+    func didTapDetail(title: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let data = WorkSheetRequestEntity(id: self.id, action: title)
+        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .calibration)
     }
     
 }

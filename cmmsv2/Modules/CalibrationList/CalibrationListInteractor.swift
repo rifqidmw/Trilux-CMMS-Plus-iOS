@@ -9,8 +9,8 @@ import Combine
 
 class CalibrationListInteractor: BaseInteractor {
     
-    func getCalibrationList(limit: Int? = nil, page: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
-        return api.requestApiPublisher(.calibrationList(limit: limit, page: page))
+    func getCalibrationList(keyword: String? = nil, limit: Int? = nil, page: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
+        return api.requestApiPublisher(.calibrationList(keyword: keyword, limit: limit, page: page))
     }
     
 }

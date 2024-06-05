@@ -90,7 +90,7 @@ extension WorkSheetCorrectiveListPresenter {
                                                    serial: item.txtSubTitle ?? "",
                                                    installation: item.complain?.equipment?.txtLokasiInstalasi ?? "",
                                                    room: item.txtRuangan ?? "",
-                                                   dateTime: item.valDate ?? "", brandName: item.approveBy ?? "",
+                                                   dateTime: item.valDate ?? "", brandName: item.approveBy ?? "", lkStatus: "",
                                                    category: WorkSheetCategory(rawValue: item.complain?.equipment?.txtKalibrasi ?? "") ?? WorkSheetCategory.none,
                                                    status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                     }

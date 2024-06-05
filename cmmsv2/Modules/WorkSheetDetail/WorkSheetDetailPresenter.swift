@@ -15,6 +15,7 @@ class WorkSheetDetailPresenter: BasePresenter {
     let data: WorkSheetRequestEntity?
     
     @Published public var monitoringFunctionData: MonitoringFunctionEntity?
+    @Published public var calibratorList: [Kalibrator] = []
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -33,7 +34,14 @@ extension WorkSheetDetailPresenter {
     
     func fetchInitialData() {
         guard let data else { return }
-        self.fetchMonitoringFunctionDetail(id: data.id, action: data.action)
+        switch self.type {
+        case .monitoring, .preventive, .calibration:
+            self.fetchMonitoringFunctionDetail(id: data.id, action: data.action)
+            if case .calibration = self.type {
+                self.fetchCalibratorList()
+            }
+        default: break
+        }
     }
     
     func fetchMonitoringFunctionDetail(id: String?, action: String?) {
@@ -54,6 +62,31 @@ extension WorkSheetDetailPresenter {
                 receiveValue: { worksheet in
                     DispatchQueue.main.async {
                         self.monitoringFunctionData = worksheet
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchCalibratorList() {
+        self.isLoading = true
+        interactor.getCalibratorList()
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { calibrator in
+                    DispatchQueue.main.async {
+                        guard let data = calibrator.data else { return }
+                        self.calibratorList = data
                     }
                 }
             )

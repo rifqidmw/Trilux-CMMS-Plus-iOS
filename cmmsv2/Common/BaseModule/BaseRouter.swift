@@ -21,4 +21,22 @@ class BaseRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func showSelectActionBottomSheet(_ navigation: UINavigationController,
+                                     type: WorkSheetStatus,
+                                     delegate: WorkSheetOnsitePreventiveDelegate) {
+        let bottomSheet = SelectActionBottomSheet(nibName: String(describing: SelectActionBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.type = type
+        bottomSheet.modalPresentationStyle = .overCurrentContext
+        navigation.present(bottomSheet, animated: true)
+    }
+    
+    func navigateToDetailWorkSheet(_ navigation: UINavigationController,
+                                   data: WorkSheetRequestEntity,
+                                   type: WorkSheetDetailType) {
+        let vc = WorkSheetDetailRouter().showView(type: type, data: data)
+        navigation.dismiss(animated: true)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

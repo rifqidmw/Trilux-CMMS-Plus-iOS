@@ -155,14 +155,26 @@ extension LogBookListView: SkeletonCollectionViewDataSource, SkeletonCollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LogBookCVC.identifier, for: indexPath) as? LogBookCVC,
-              let data = self.data?.data
+              let data = self.data,
+              let logList = data.data
         else {
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        cell.setupCell(data: logList[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter,
+              let data = self.data,
+              let logList = data.data,
+              let navigation = self.navigationController
+        else { return }
+        let selectedLkID = logList[indexPath.row].id_lk
+        let selectedData = WorkSheetRequestEntity(id: selectedLkID, action: "lihat")
+        presenter.navigateToDetailWorkSheet(navigation, data: selectedData, type: .monitoring)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
