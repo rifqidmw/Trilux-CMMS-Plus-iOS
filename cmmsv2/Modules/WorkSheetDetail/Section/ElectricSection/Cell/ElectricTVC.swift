@@ -40,9 +40,16 @@ class ElectricTVC: UITableViewCell {
 extension ElectricTVC {
     
     func setupCell(data: LKData.Listrik) {
-        countLabel.text = data.valUkur ?? "-"
-        titleLabel.text = "\(data.label ?? "-") (\(data.ambangBatas ?? "-")) : \(data.valUkur ?? "-")"
-        descriptionLabel.text = data.desc ?? "-"
+        countLabel.text = data.valUkur == "" ? "0" : data.valUkur
+        titleLabel.text = "\(data.label ?? "-") (\(data.ambangBatas ?? "-")) : \(data.valUkur == "" ? "Tidak ada" : data.valUkur ?? "")"
+        descriptionLabel.text = data.desc == "" ? "Tidak ada keterangan" : data.desc
+        
+        if data.valUkur == "" && data.desc == "" {
+            countLabel.textColor = UIColor.customIndicatorColor4
+            countView.backgroundColor = UIColor.customIndicatorColor3
+            containerStackView.addBorder(width: 1.0, colorBorder: UIColor.customIndicatorColor4)
+            countView.addBorder(width: 1.0, colorBorder: UIColor.customIndicatorColor4)
+        }
     }
     
 }

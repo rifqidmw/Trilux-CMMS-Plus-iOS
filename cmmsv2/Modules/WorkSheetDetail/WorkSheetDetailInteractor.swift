@@ -13,4 +13,8 @@ class WorkSheetDetailInteractor: BaseInteractor {
         return api.requestApiPublisher(.workSheetDetail(id: id ?? "", action: action ?? ""))
     }
     
+    func getCalibratorList() -> AnyPublisher<KalibratorEntity, Error> {
+        return api.requestApiPublisher(.calibrator)
+    }
+    
 }

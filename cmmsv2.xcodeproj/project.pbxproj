@@ -2092,13 +2092,13 @@
 		CECB3DBA2B45DA39004A260D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CE4D12162C096029007184B2 /* DelayCorrectiveDetail */,
 				CE3108482BE20D0D00660275 /* AssetDetail */,
 				CEFA75852B768DF300B74E1B /* AssetList */,
 				CE2E3AE92BA09E2F00094AD0 /* CalibrationList */,
 				CE9E7D662B529DFB00240A7D /* ChangePassword */,
 				CE73273F2BECA834000AD875 /* ComplaintDetail */,
 				CE90B14C2B99602300515AD6 /* ComplaintList */,
+				CE4D12162C096029007184B2 /* DelayCorrectiveDetail */,
 				CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CE4012212B5D7D6000517F7C /* FullScreenPicture */,

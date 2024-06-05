@@ -93,6 +93,7 @@ extension PreventiveCalendarListPresenter {
                                 room: item.ruangan ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
+                                lkStatus: item.lkStatus,
                                 category: WorkSheetCategory.none,
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
                         }

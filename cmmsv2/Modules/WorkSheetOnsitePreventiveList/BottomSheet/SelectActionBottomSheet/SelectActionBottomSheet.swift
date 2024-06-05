@@ -13,6 +13,7 @@ class SelectActionBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var workButton: GeneralButton!
+    @IBOutlet weak var correctionButton: GeneralButton!
     @IBOutlet weak var seeDetailButton: GeneralButton!
     @IBOutlet weak var downloadPDFButton: GeneralButton!
     
@@ -37,8 +38,19 @@ extension SelectActionBottomSheet {
         workButton.configure(title: "Kerjakan", type: .bordered)
         seeDetailButton.configure(title: "Lihat")
         downloadPDFButton.configure(title: "Download PDF", backgroundColor: UIColor.customLightGreenColor, titleColor: UIColor.customIndicatorColor10)
-        guard let type else { return }
-        workButton.isHidden = type == .done
+        correctionButton.configure(title: "Koreksi", backgroundColor: UIColor.customIndicatorColor2, titleColor: UIColor.customIndicatorColor11)
+        
+        guard let type = type else { return }
+        
+        switch type {
+        case .done:
+            workButton.isHidden = true
+            correctionButton.isHidden = true
+        case .ongoing, .open:
+            correctionButton.isHidden = true
+        default:
+            break
+        }
     }
     
     private func setupAction() {
@@ -75,6 +87,15 @@ extension SelectActionBottomSheet {
                       let delegate
                 else { return }
                 delegate.didTapDownloadPDF?(title: "download")
+            }
+            .store(in: &anyCancellable)
+        
+        correctionButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate
+                else { return }
+                delegate.didTapCorrection?(title: "koreksi")
             }
             .store(in: &anyCancellable)
     }

@@ -123,9 +123,24 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
               let id = self.data[indexPath.row].id,
               let status = self.data[indexPath.row].status
         else { return }
+        
         self.id = id
         self.showOverlay()
-        presenter.showSelectActionBottomSheet(navigation: navigation, type: status == .done ? .done : .ongoing, delegate: self, id: id)
+        
+        let type: WorkSheetStatus = {
+            switch status {
+            case .done:
+                return .done
+            case .ongoing:
+                return .ongoing
+            case .hold:
+                return .hold
+            default:
+                return .none
+            }
+        }()
+        
+        presenter.showSelectActionBottomSheet(navigation, type: type, delegate: self, id: id)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -162,7 +177,7 @@ extension WorkSheetMonitoringFunctionListView: WorkSheetOnsitePreventiveDelegate
               let navigation = self.navigationController
         else { return }
         let data = WorkSheetRequestEntity(id: self.id, action: title)
-        presenter.navigateToDetailWorkSheet(navigation: navigation, data: data)
+        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .monitoring)
     }
     
 }
