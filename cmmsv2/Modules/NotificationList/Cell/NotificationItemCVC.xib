@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,18 +30,18 @@
                         <rect key="frame" x="16" y="4" width="361" height="102"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-k9-AVv" userLabel="Mark View">
-                                <rect key="frame" x="0.0" y="16" width="8" height="16"/>
+                                <rect key="frame" x="0.0" y="16" width="8" height="20"/>
                                 <color key="backgroundColor" name="customPrimaryColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="8" id="2rx-YM-wiH"/>
-                                    <constraint firstAttribute="height" constant="16" id="yhh-JT-3bj"/>
+                                    <constraint firstAttribute="height" constant="20" id="WLl-z5-QJH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md0-pS-SNq" userLabel="Badge View">
-                                <rect key="frame" x="16" y="16" width="68" height="16"/>
+                                <rect key="frame" x="16" y="16" width="68" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lembar Kerja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl4-of-n8j" userLabel="Badge Label">
-                                        <rect key="frame" x="4" y="4" width="60" height="8"/>
+                                        <rect key="frame" x="4" y="4" width="60" height="12"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                         <color key="textColor" name="customPrimaryColor"/>
                                         <nil key="highlightedColor"/>
@@ -49,7 +49,6 @@
                                 </subviews>
                                 <color key="backgroundColor" name="customSecondaryColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="Kir-Ht-NUh"/>
                                     <constraint firstAttribute="trailing" secondItem="dl4-of-n8j" secondAttribute="trailing" constant="4" id="QTe-1h-HiW"/>
                                     <constraint firstItem="dl4-of-n8j" firstAttribute="leading" secondItem="Md0-pS-SNq" secondAttribute="leading" constant="4" id="cxG-JT-YVX"/>
                                     <constraint firstAttribute="bottom" secondItem="dl4-of-n8j" secondAttribute="bottom" constant="4" id="eeh-Am-uhc"/>
@@ -66,13 +65,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUU-7H-OZ0" userLabel="Short Title Label">
-                                <rect key="frame" x="16" y="48" width="329" height="15"/>
+                                <rect key="frame" x="16" y="48" width="329" height="14"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="customDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YJ-8Y-CtT" userLabel="Title Label">
-                                <rect key="frame" x="16" y="67" width="329" height="19"/>
+                                <rect key="frame" x="16" y="66" width="329" height="20"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
                                 <color key="textColor" name="placeholderColor"/>
                                 <nil key="highlightedColor"/>

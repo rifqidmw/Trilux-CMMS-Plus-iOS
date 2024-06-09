@@ -40,6 +40,7 @@ extension WorkSheetCorrectiveBottomSheet {
     private func setupBody() {
         setupView()
         setupAction()
+        configureSharedComponent()
     }
     
     private func setupView() {
@@ -55,7 +56,9 @@ extension WorkSheetCorrectiveBottomSheet {
         typeView.configureView(title: "Tipe", value: equipment.txtBrand ?? "")
         reporterView.configureView(title: "Pengaduan dilakukan oleh", value: complain.txtTitle ?? "")
         chronologyView.configureView(title: "Kronologi", value: complain.txtDescriptions ?? "")
-        
+    }
+    
+    private func configureSharedComponent() {
         workButton.configure(title: "Kerjakan", type: .borderedWithIcon, icon: "ic_scan_gray", titleColor: UIColor.customPlaceholderColor)
         resumeWorkButton.configure(title: "Lanjutkan Pekerjaan", type: .normal, backgroundColor: UIColor.customLightYellowColor, titleColor: UIColor.customDarkYellowColor)
         seeWorkButton.configure(title: "Lihat Pekerjaan", type: .normal, backgroundColor: UIColor.customLightGreenColor, titleColor: UIColor.customGreenColor)

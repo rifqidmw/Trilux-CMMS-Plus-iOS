@@ -1,4 +1,4 @@
-// 
+//
 //  NotificationListRouter.swift
 //  cmmsv2
 //
@@ -21,10 +21,22 @@ class NotificationListRouter: BaseRouter {
 
 extension NotificationListRouter {
     
-    func showDetailNotificationBottomSheet(navigation: UINavigationController) {
-        let bottomSheet = NotificationDetailBottomSheet(nibName: String(describing: NotificationDetailBottomSheet.self), bundle: nil)
+    func showBottomSheetCorrective(navigation: UINavigationController, data: WorkOrder, delegate: WorkSheetCorrectiveBottomSheetDelegate) {
+        let bottomSheet = WorkSheetCorrectiveBottomSheet(nibName: String(describing: WorkSheetCorrectiveBottomSheet.self), bundle: nil)
         bottomSheet.modalPresentationStyle = .overCurrentContext
+        bottomSheet.delegate = delegate
+        bottomSheet.data = data
         navigation.present(bottomSheet, animated: true)
+    }
+    
+    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, data: WorkOrder) {
+        let vc = WorkSheetCorrectiveDetailRouter().showView(data: data)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToComplaintDetail(navigation: UINavigationController, data: ComplaintListEntity) {
+        let vc = ComplaintDetailRouter().showView(data: data)
+        navigation.pushViewController(vc, animated: true)
     }
     
 }

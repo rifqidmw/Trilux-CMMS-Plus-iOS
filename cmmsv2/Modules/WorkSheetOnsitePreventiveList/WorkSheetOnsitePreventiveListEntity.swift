@@ -10,7 +10,7 @@ import Foundation
 @objc protocol WorkSheetOnsitePreventiveDelegate: AnyObject {
     @objc optional func didTapDetail(title: String)
     @objc optional func didTapContinueWorking(title: String)
-    @objc optional func didTapDownloadPDF(title: String)
+    @objc optional func didTapDownloadPDF()
     @objc optional func didTapCorrection(title: String)
 }
 
@@ -24,7 +24,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
-        brandName: "Acumalaka", 
+        brandName: "Acumalaka",
         lkStatus: "2",
         category: .calibration,
         status: .done),
@@ -37,7 +37,7 @@ let onsitePreventiveData: [WorkSheetListEntity] = [
         installation: "Pelayanan Gawat Darurat",
         room: "Ruangan Triase(auto-room)",
         dateTime: "2024-04-04 12:13:14",
-        brandName: "Acumalaka", 
+        brandName: "Acumalaka",
         lkStatus: "2",
         category: .calibration,
         status: .done),

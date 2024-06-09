@@ -59,50 +59,45 @@ extension NotificationItemCVC {
     
     func setupCell(data: NotificationList) {
         hideSkeletonAnimation()
-        configureBadgeView(type: data.type ?? "")
+        configureBadgeView(type: NotificationType(rawValue: data.type_string?.rawValue ?? "") ?? NotificationType.none)
         dateTimeLabel.text = data.time ?? ""
         shortTitleLabel.text = data.short_title
         titleLabel.text = data.title
     }
     
     
-    private func configureBadgeView(type: String) {
+    private func configureBadgeView(type: NotificationType) {
+        badgeLabel.text = type.getStringValue()
+        
         switch type {
-        case "1":
+        case .complaint:
             badgeView.backgroundColor = UIColor.customIndicatorColor2
             markView.backgroundColor = UIColor.customIndicatorColor2
             badgeLabel.textColor = UIColor.customIndicatorColor11
-            badgeLabel.text = NotificationType.complaint.getStringValue()
-        case "2":
+        case .worksheet:
             badgeView.backgroundColor = UIColor.customSecondaryColor
             markView.backgroundColor = UIColor.customSecondaryColor
             badgeLabel.textColor = UIColor.customPrimaryColor
-            badgeLabel.text = NotificationType.worksheet.getStringValue()
-        case "3":
+        case .rating:
             badgeView.backgroundColor = UIColor.customIndicatorColor2
             markView.backgroundColor = UIColor.customIndicatorColor2
             badgeLabel.textColor = UIColor.customIndicatorColor11
-            badgeLabel.text = NotificationType.rating.getStringValue()
-        case "4":
+        case .approveWorkSheet:
             badgeView.backgroundColor = UIColor.customLightGreenColor
             markView.backgroundColor = UIColor.customLightGreenColor
             badgeLabel.textColor = UIColor.customIndicatorColor10
-            badgeLabel.text = NotificationType.approveWorkSheet.getStringValue()
-        case "5":
+        case .inbox:
             badgeView.backgroundColor = UIColor.customIndicatorColor2
             markView.backgroundColor = UIColor.customIndicatorColor2
             badgeLabel.textColor = UIColor.customIndicatorColor11
-            badgeLabel.text = NotificationType.inbox.getStringValue()
-        case "6":
+        case .reception:
             badgeView.backgroundColor = UIColor.customSecondaryColor
             markView.backgroundColor = UIColor.customSecondaryColor
             badgeLabel.textColor = UIColor.customPrimaryColor
-            badgeLabel.text = NotificationType.inbox.getStringValue()
-        case "7":
+        case .mutation:
             badgeView.backgroundColor = UIColor.customLightGreenColor
             markView.backgroundColor = UIColor.customLightGreenColor
             badgeLabel.textColor = UIColor.customIndicatorColor10
-            badgeLabel.text = NotificationType.mutation.getStringValue()
         default: break
         }
     }

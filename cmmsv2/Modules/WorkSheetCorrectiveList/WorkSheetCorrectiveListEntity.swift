@@ -107,6 +107,43 @@ struct WorkOrder: Codable {
         case txtLokasiName
         case nama_perating
     }
+    
+    init(id: Int? = nil, valWoNumber: String? = nil, valDate: String? = nil, txtEngineerName: String? = nil, valEngineerId: Int? = nil, valEngineerAvatar: String? = nil, txtType: String? = nil, valType: String? = nil, complain: WorkOrderComplaint? = .none, txtHeader: String? = nil, txtTitle: String? = nil, txtSubTitle: String? = nil, valIcon: Icon? = nil, valEquipmentId: String? = nil, valStartTime: String? = nil, valEndTime: String? = nil, valDuration: String? = nil, valStatus: Int? = nil, txtStatus: String? = nil, valIsManagable: Bool? = nil, valIsDoable: Int? = nil, valRating: Int? = nil, medias: [Media]? = nil, valCanRating: Int? = nil, valDelegatedTime: String? = nil, txtFinishStatus: String? = nil, isPendamping: String? = nil, approveBy: String? = nil, canPendamping: String? = nil, infoLk: InfoLK? = .none, stt_qr: String? = nil, txtRuangan: String? = nil, txtLokasiName: String? = nil, nama_perating: String? = nil) {
+        self.id = id
+        self.valWoNumber = valWoNumber
+        self.valDate = valDate
+        self.txtEngineerName = txtEngineerName
+        self.valEngineerId = valEngineerId
+        self.valEngineerAvatar = valEngineerAvatar
+        self.txtType = txtType
+        self.valType = valType
+        self.complain = complain
+        self.txtHeader = txtHeader
+        self.txtTitle = txtTitle
+        self.txtSubTitle = txtSubTitle
+        self.valIcon = valIcon
+        self.valEquipmentId = valEquipmentId
+        self.valStartTime = valStartTime
+        self.valEndTime = valEndTime
+        self.valDuration = valDuration
+        self.valStatus = valStatus
+        self.txtStatus = txtStatus
+        self.valIsManagable = valIsManagable
+        self.valIsDoable = valIsDoable
+        self.valRating = valRating
+        self.medias = medias
+        self.valCanRating = valCanRating
+        self.valDelegatedTime = valDelegatedTime
+        self.txtFinishStatus = txtFinishStatus
+        self.isPendamping = isPendamping
+        self.approveBy = approveBy
+        self.canPendamping = canPendamping
+        self.infoLk = infoLk
+        self.stt_qr = stt_qr
+        self.txtRuangan = txtRuangan
+        self.txtLokasiName = txtLokasiName
+        self.nama_perating = nama_perating
+    }
 }
 
 struct WorkOrderComplaint: Codable {
