@@ -59,7 +59,7 @@ extension WorkSheetMonitoringFunctionListPresenter {
                         else { return }
                         let worksheetList = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLK ?? "",
+                                id: item.idLK ?? "", 
                                 uniqueNumber: item.lkNumber ?? "",
                                 workName: item.assetName ?? "",
                                 workDesc: item.brandName ?? "",

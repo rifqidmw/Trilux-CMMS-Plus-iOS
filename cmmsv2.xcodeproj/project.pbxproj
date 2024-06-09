@@ -681,6 +681,8 @@
 		CEE8CB962BF7C8FD006E59B7 /* HistoryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE8CB8B2BF7C8FD006E59B7 /* HistoryDetailView.xib */; };
 		CEE8CB972BF7C8FD006E59B7 /* HistoryDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8CB8C2BF7C8FD006E59B7 /* HistoryDetailEntity.swift */; };
 		CEE8CB982BF7C8FD006E59B7 /* HistoryDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8CB8C2BF7C8FD006E59B7 /* HistoryDetailEntity.swift */; };
+		CEE976362C15D4E300848E46 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE976352C15D4E300848E46 /* FileDownloader.swift */; };
+		CEE976372C15D4E300848E46 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE976352C15D4E300848E46 /* FileDownloader.swift */; };
 		CEEED86C2B7A86CB00672952 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8662B7A86CB00672952 /* ScanPresenter.swift */; };
 		CEEED86D2B7A86CB00672952 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8662B7A86CB00672952 /* ScanPresenter.swift */; };
 		CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8672B7A86CB00672952 /* ScanRouter.swift */; };
@@ -1121,6 +1123,7 @@
 		CEE8CB8A2BF7C8FD006E59B7 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		CEE8CB8B2BF7C8FD006E59B7 /* HistoryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailView.xib; sourceTree = "<group>"; };
 		CEE8CB8C2BF7C8FD006E59B7 /* HistoryDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailEntity.swift; sourceTree = "<group>"; };
+		CEE976352C15D4E300848E46 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		CEEED8662B7A86CB00672952 /* ScanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPresenter.swift; sourceTree = "<group>"; };
 		CEEED8672B7A86CB00672952 /* ScanRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRouter.swift; sourceTree = "<group>"; };
 		CEEED8682B7A86CB00672952 /* ScanInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInteractor.swift; sourceTree = "<group>"; };
@@ -2226,6 +2229,7 @@
 				CECB3E3A2B45E4DD004A260D /* AppLoger.swift */,
 				CE7F35B72BDE51EC00EA5536 /* AppManager.swift */,
 				CECB3E372B45E4B9004A260D /* Constants.swift */,
+				CEE976352C15D4E300848E46 /* FileDownloader.swift */,
 				CEEFDA6A2BDFEAD600DFF70B /* FileUploader.swift */,
 			);
 			path = Other;
@@ -3224,6 +3228,7 @@
 				CE82088E2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
 				CE9E7DB22B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D892B529EE800240A7D /* EditProfileEntity.swift in Sources */,
+				CEE976362C15D4E300848E46 /* FileDownloader.swift in Sources */,
 				CECB77822B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
 				CEC1B06A2BA1ED2800DF6A4F /* HistoryTVC.swift in Sources */,
 				CE2FA5152B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailRouter.swift in Sources */,
@@ -3490,6 +3495,7 @@
 				CE82088F2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
 				CE9E7DB32B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D8A2B529EE800240A7D /* EditProfileEntity.swift in Sources */,
+				CEE976372C15D4E300848E46 /* FileDownloader.swift in Sources */,
 				CECB77832B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
 				CEC1B06B2BA1ED2800DF6A4F /* HistoryTVC.swift in Sources */,
 				CE2FA5162B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailRouter.swift in Sources */,

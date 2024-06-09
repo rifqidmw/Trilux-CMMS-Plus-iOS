@@ -59,7 +59,7 @@ extension HistoryListPresenter {
                         else { return }
                         let historyList = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLK ?? "",
+                                id: item.idAsset ?? "",
                                 uniqueNumber: item.createAt ?? "",
                                 workName: item.assetName ?? "",
                                 workDesc: item.lkEngineer ?? "",

@@ -58,7 +58,7 @@ extension CalibrationListPresenter {
                         
                         let calibrationData = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLK ?? "",
+                                id: item.idAsset ?? "",
                                 uniqueNumber: item.lkNumber ?? "",
                                 workName: item.assetName ?? "",
                                 workDesc: item.lkLabel ?? "",
