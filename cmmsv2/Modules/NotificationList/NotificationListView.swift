@@ -16,9 +16,11 @@ class NotificationListView: BaseViewController {
     
     var presenter: NotificationListPresenter?
     var data: [NotificationList] = []
+    var workSheetData: [WorkOrder] = []
+    var complaintData: [ComplaintListEntity] = []
     
-    override func didLoad() {
-        super.didLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setupBody()
     }
     
@@ -43,8 +45,7 @@ extension NotificationListView {
         guard let presenter else { return }
         presenter.$notification
             .sink { [weak self] data in
-                guard let self
-                else {
+                guard let self else {
                     self?.showSpinner(false)
                     return
                 }
@@ -54,6 +55,27 @@ extension NotificationListView {
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
+        
+        presenter.$workSheetData
+            .sink { [weak self] data in
+                guard let self else { return }
+                self.workSheetData = data
+                self.collectionView.reloadData()
+                self.collectionView.hideSkeleton()
+                self.showSpinner(false)
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$complaintData
+            .sink { [weak self] data in
+                guard let self else { return }
+                self.complaintData = data
+                self.collectionView.reloadData()
+                self.collectionView.hideSkeleton()
+                self.showSpinner(false)
+            }
+            .store(in: &anyCancellable)
+        
     }
     
     private func setupView() {
@@ -81,7 +103,6 @@ extension NotificationListView {
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 16, right: 0)
         collectionView.register(NotificationItemCVC.nib, forCellWithReuseIdentifier: NotificationItemCVC.identifier)
         self.collectionView.register(
             TimeGroupHeaderCRV.nib,
@@ -212,13 +233,32 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("-- THIS IS DATA CLICKED: \(data[indexPath.row])")
         guard let presenter,
-              let navigation = self.navigationController
-        else { return }
+              let navigation = self.navigationController else { return }
         
-        self.showOverlay()
-        presenter.showDetailNotificationBottomSheet(navigation: navigation)
+        let groupedNotifications = notificationsGroupedByTime()
+        let selectedData = groupedNotifications[indexPath.section].notifications[indexPath.row]
+        guard let selectedType = selectedData.type_string,
+              let itemIdString = selectedData.item_id,
+              let itemId = Int(itemIdString) else { return }
+        
+        switch selectedType {
+        case .worksheet:
+            if let workOrderData = self.workSheetData.first(where: { $0.id == itemId }) {
+                self.showOverlay()
+                presenter.showBottomSheetCorrective(navigation: navigation, data: workOrderData, delegate: self)
+            } else {
+                self.showAlert(title: "Terjadi Kesalahan", message: "Tidak ada data yang cocok")
+            }
+        case .complaint:
+            if let complaintData = self.complaintData.first(where: { $0.id == itemId }) {
+                presenter.navigateToComplaintDetail(navigation: navigation, data: complaintData)
+            } else {
+                self.showAlert(title: "Terjadi Kesalahan", message: "Tidak ada data yang cocok")
+            }
+        default:
+            break
+        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

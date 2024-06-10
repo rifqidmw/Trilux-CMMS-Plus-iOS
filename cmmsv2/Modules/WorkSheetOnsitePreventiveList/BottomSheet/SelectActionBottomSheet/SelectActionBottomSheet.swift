@@ -86,7 +86,7 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate
                 else { return }
-                delegate.didTapDownloadPDF?(title: "download")
+                delegate.didTapDownloadPDF?()
             }
             .store(in: &anyCancellable)
         

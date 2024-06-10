@@ -405,6 +405,8 @@
 		CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */; };
 		CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
 		CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
+		CEBEF7512C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */; };
+		CEBEF7522C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */; };
 		CEC1B05B2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05C2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */; };
@@ -679,6 +681,8 @@
 		CEE8CB962BF7C8FD006E59B7 /* HistoryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE8CB8B2BF7C8FD006E59B7 /* HistoryDetailView.xib */; };
 		CEE8CB972BF7C8FD006E59B7 /* HistoryDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8CB8C2BF7C8FD006E59B7 /* HistoryDetailEntity.swift */; };
 		CEE8CB982BF7C8FD006E59B7 /* HistoryDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8CB8C2BF7C8FD006E59B7 /* HistoryDetailEntity.swift */; };
+		CEE976362C15D4E300848E46 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE976352C15D4E300848E46 /* FileDownloader.swift */; };
+		CEE976372C15D4E300848E46 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE976352C15D4E300848E46 /* FileDownloader.swift */; };
 		CEEED86C2B7A86CB00672952 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8662B7A86CB00672952 /* ScanPresenter.swift */; };
 		CEEED86D2B7A86CB00672952 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8662B7A86CB00672952 /* ScanPresenter.swift */; };
 		CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED8672B7A86CB00672952 /* ScanRouter.swift */; };
@@ -771,10 +775,6 @@
 		CEFD6D292BF2713C00A8BA04 /* WorkSheetCorrectiveDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD6D1D2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailEntity.swift */; };
 		CEFE59B72B5EBF9200BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
 		CEFE59B82B5EBF9300BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
-		CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */; };
-		CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */; };
-		CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */; };
-		CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -981,6 +981,7 @@
 		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 		CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Ext.swift"; sourceTree = "<group>"; };
+		CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationListView+Delegate.swift"; sourceTree = "<group>"; };
 		CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListPresenter.swift; sourceTree = "<group>"; };
 		CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListRouter.swift; sourceTree = "<group>"; };
 		CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListInteractor.swift; sourceTree = "<group>"; };
@@ -1122,6 +1123,7 @@
 		CEE8CB8A2BF7C8FD006E59B7 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		CEE8CB8B2BF7C8FD006E59B7 /* HistoryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailView.xib; sourceTree = "<group>"; };
 		CEE8CB8C2BF7C8FD006E59B7 /* HistoryDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailEntity.swift; sourceTree = "<group>"; };
+		CEE976352C15D4E300848E46 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		CEEED8662B7A86CB00672952 /* ScanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPresenter.swift; sourceTree = "<group>"; };
 		CEEED8672B7A86CB00672952 /* ScanRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRouter.swift; sourceTree = "<group>"; };
 		CEEED8682B7A86CB00672952 /* ScanInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInteractor.swift; sourceTree = "<group>"; };
@@ -1170,8 +1172,6 @@
 		CEFD6D1C2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetCorrectiveDetailView.xib; sourceTree = "<group>"; };
 		CEFD6D1D2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetCorrectiveDetailEntity.swift; sourceTree = "<group>"; };
 		CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
-		CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailBottomSheet.swift; sourceTree = "<group>"; };
-		CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailBottomSheet.xib; sourceTree = "<group>"; };
 		FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1645,7 +1645,6 @@
 		CE8208782B82390100CD4242 /* NotificationList */ = {
 			isa = PBXGroup;
 			children = (
-				CEFF17B02B9631B90045F94E /* BottomSheet */,
 				CE82088B2B823B3000CD4242 /* Cell */,
 				CE8208922B823C3900CD4242 /* TimeGroupHeader */,
 				CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */,
@@ -1654,6 +1653,7 @@
 				CE82087C2B82391F00CD4242 /* NotificationListView.swift */,
 				CE82087D2B82391F00CD4242 /* NotificationListView.xib */,
 				CE82087E2B82391F00CD4242 /* NotificationListEntity.swift */,
+				CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */,
 			);
 			path = NotificationList;
 			sourceTree = "<group>";
@@ -2229,6 +2229,7 @@
 				CECB3E3A2B45E4DD004A260D /* AppLoger.swift */,
 				CE7F35B72BDE51EC00EA5536 /* AppManager.swift */,
 				CECB3E372B45E4B9004A260D /* Constants.swift */,
+				CEE976352C15D4E300848E46 /* FileDownloader.swift */,
 				CEEFDA6A2BDFEAD600DFF70B /* FileUploader.swift */,
 			);
 			path = Other;
@@ -2587,15 +2588,6 @@
 			path = WorkSheetCorrectiveDetail;
 			sourceTree = "<group>";
 		};
-		CEFF17B02B9631B90045F94E /* BottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				CEFF17B12B9631E80045F94E /* NotificationDetailBottomSheet.swift */,
-				CEFF17B22B9631E80045F94E /* NotificationDetailBottomSheet.xib */,
-			);
-			path = BottomSheet;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2698,7 +2690,6 @@
 				CE58FA672C0C32410067D8C4 /* PreventiveTVC.xib in Resources */,
 				CE4255F62BA740AF002B558C /* LogBookCVC.xib in Resources */,
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
-				CEFF17B52B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEDCCE1A2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */,
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
@@ -2830,7 +2821,6 @@
 				CE58FA692C0C32410067D8C4 /* PreventiveTVC.xib in Resources */,
 				CE4255F72BA740AF002B558C /* LogBookCVC.xib in Resources */,
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
-				CEFF17B62B9631E80045F94E /* NotificationDetailBottomSheet.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEDCCE1B2BC9AF5E006F5F4F /* CorrectiveCVC.xib in Resources */,
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
@@ -3052,6 +3042,7 @@
 				CE4012452B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE0EC4AF2B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012432B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
+				CEBEF7512C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */,
 				CE8208812B82391F00CD4242 /* NotificationListRouter.swift in Sources */,
 				CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CEF5D7C92B6D311700FDE752 /* SplashScreenView.swift in Sources */,
@@ -3131,7 +3122,6 @@
 				CEC1B07F2BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */,
 				CEF4E0D42C07B30D00444EA9 /* AddPreventiveBottomSheet.swift in Sources */,
 				CECB3E1F2B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
-				CEFF17B32B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CE73274C2BECA849000AD875 /* ComplaintDetailView.swift in Sources */,
 				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
@@ -3238,6 +3228,7 @@
 				CE82088E2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
 				CE9E7DB22B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D892B529EE800240A7D /* EditProfileEntity.swift in Sources */,
+				CEE976362C15D4E300848E46 /* FileDownloader.swift in Sources */,
 				CECB77822B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
 				CEC1B06A2BA1ED2800DF6A4F /* HistoryTVC.swift in Sources */,
 				CE2FA5152B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailRouter.swift in Sources */,
@@ -3318,6 +3309,7 @@
 				CE4012462B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
 				CE0EC4B02B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012442B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
+				CEBEF7522C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */,
 				CE8208822B82391F00CD4242 /* NotificationListRouter.swift in Sources */,
 				CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CEF5D7CA2B6D311700FDE752 /* SplashScreenView.swift in Sources */,
@@ -3397,7 +3389,6 @@
 				CEC1B0802BA217E600DF6A4F /* DelayCorrectiveListEntity.swift in Sources */,
 				CEF4E0D62C07B30D00444EA9 /* AddPreventiveBottomSheet.swift in Sources */,
 				CECB3E202B45E35E004A260D /* CACornerMask+Ext.swift in Sources */,
-				CEFF17B42B9631E80045F94E /* NotificationDetailBottomSheet.swift in Sources */,
 				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CE73274D2BECA849000AD875 /* ComplaintDetailView.swift in Sources */,
 				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
@@ -3504,6 +3495,7 @@
 				CE82088F2B823BDE00CD4242 /* NotificationItemCVC.swift in Sources */,
 				CE9E7DB32B53149100240A7D /* LogoutPopUpBottomSheet.swift in Sources */,
 				CE9E7D8A2B529EE800240A7D /* EditProfileEntity.swift in Sources */,
+				CEE976372C15D4E300848E46 /* FileDownloader.swift in Sources */,
 				CECB77832B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */,
 				CEC1B06B2BA1ED2800DF6A4F /* HistoryTVC.swift in Sources */,
 				CE2FA5162B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailRouter.swift in Sources */,

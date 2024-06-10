@@ -180,4 +180,23 @@ extension WorkSheetMonitoringFunctionListView: WorkSheetOnsitePreventiveDelegate
         presenter.navigateToDetailWorkSheet(navigation, data: data, type: .monitoring)
     }
     
+    func didTapDownloadPDF() {
+        guard let id = self.id else {
+            self.showAlert(title: "Invalid ID or base URL.")
+            return
+        }
+        
+        let urlString = "http://dev.triluxcmms.com/site/lk_pdf/\(id)"
+        
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url, options: [:]) { success in
+                if !success {
+                    self.showAlert(title: "Failed to open the URL.")
+                }
+            }
+        } else {
+            self.showAlert(title: "Invalid URL.")
+        }
+    }
+    
 }
