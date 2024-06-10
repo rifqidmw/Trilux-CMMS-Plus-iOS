@@ -186,7 +186,6 @@ extension WorkSheetMonitoringFunctionListView: WorkSheetOnsitePreventiveDelegate
             return
         }
         
-        let baseUrl = Constants.baseURL
         let urlString = "http://dev.triluxcmms.com/site/lk_pdf/\(id)"
         
         if let url = URL(string: urlString) {
