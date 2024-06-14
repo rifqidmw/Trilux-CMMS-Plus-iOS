@@ -1,22 +1,17 @@
 //
-//  CorrectiveCVC.swift
+//  CorrectiveTVC.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 13/04/24.
+//  Created by PRO M1 2020 8/256 on 12/06/24.
 //
 
 import UIKit
 import SkeletonView
 
-class CorrectiveCVC: UICollectionViewCell {
+class CorrectiveTVC: UITableViewCell {
     
-    static let identifier = String(describing: CorrectiveCVC.self)
-    static let nib = {
-        UINib(nibName: identifier, bundle: nil)
-    }()
-    
-    @IBOutlet weak var correctiveImageView: UIImageView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var correctiveImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -32,20 +27,30 @@ class CorrectiveCVC: UICollectionViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var actionButton: GeneralButton!
     
+    static let identifier = String(describing: CorrectiveTVC.self)
+    static let nib = {
+        UINib(nibName: identifier, bundle: nil)
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         self.correctiveImageView.makeCornerRadius(18)
         self.containerView.makeCornerRadius(8)
         self.containerView.addShadow(6, opacity: 0.2)
-        self.actionButton.configure(title: "Korektif Lanjutan", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customIndicatorColor2, titleColor: UIColor.customIndicatorColor11)
         self.actionButton.makeCornerRadius(8)
         self.statusView.makeCornerRadius(4)
         self.showSkeletonAnimation()
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.selectionStyle = .none
+    }
+    
 }
 
-extension CorrectiveCVC {
+extension CorrectiveTVC {
     
     func setupCell(data: ComplaintListEntity) {
         hideSkeletonAnimation()
@@ -56,11 +61,27 @@ extension CorrectiveCVC {
         technicianLabel.text = data.technician
         damageLabel.text = data.damage
         configureStatus(status: data.status ?? .none)
-        actionButton.isHidden = data.status == .delay ? false : true
+        configureActionButton(status: data.status ?? .none)
+    }
+    
+    private func configureActionButton(status: CorrectiveStatusType) {
+        self.actionButton.isHidden = false
+        
+        switch status {
+        case .open:
+            self.actionButton.configure(title: "Terima", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customPrimaryColor, titleColor: UIColor.white)
+        case .closed:
+            self.actionButton.isHidden = true
+        case .progress:
+            self.actionButton.isHidden = true
+        case .delay:
+            self.actionButton.configure(title: "Korektif Lanjutan", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customIndicatorColor2, titleColor: UIColor.customIndicatorColor11)
+        default: break
+        }
     }
     
     private func configureStatus(status: CorrectiveStatusType) {
-        statusLabel.text = status.getStringValue().capitalized
+        self.statusLabel.text = status.getStringValue()
         
         switch status {
         case .open:

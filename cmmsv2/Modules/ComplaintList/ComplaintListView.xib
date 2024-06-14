@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,10 +18,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComplaintListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="actionTabBarView" destination="0Px-yF-if3" id="o1H-Qa-KjW"/>
-                <outlet property="collectionView" destination="Vxw-l3-al9" id="9IU-YY-3O1"/>
                 <outlet property="customNavigationView" destination="BWD-rp-SPd" id="vjI-Ec-cC0"/>
                 <outlet property="searchTextField" destination="6gR-B5-Myb" id="OBd-Yf-q55"/>
                 <outlet property="spinner" destination="vXk-px-pyf" id="kEa-tj-0hG"/>
+                <outlet property="tableView" destination="Pna-sc-pQF" id="o3F-RN-1Em"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,19 +50,13 @@
                     <color key="textColor" name="customDarkGrayColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Vxw-l3-al9">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pna-sc-pQF">
                     <rect key="frame" x="0.0" y="228" width="393" height="534"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NOa-o0-LAM">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                     </userDefinedRuntimeAttributes>
-                </collectionView>
+                </tableView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vXk-px-pyf">
                     <rect key="frame" x="176.66666666666666" y="722" width="40" height="40"/>
                     <constraints>
@@ -82,22 +76,22 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0Px-yF-if3" secondAttribute="bottom" id="00I-H6-25n"/>
-                <constraint firstItem="Vxw-l3-al9" firstAttribute="top" secondItem="xuq-NE-PXG" secondAttribute="bottom" constant="8" id="6tc-zj-mH9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vxw-l3-al9" secondAttribute="trailing" id="ACf-hf-biJ"/>
-                <constraint firstItem="Vxw-l3-al9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AUI-7L-R1b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6gR-B5-Myb" secondAttribute="trailing" constant="16" id="Aza-TB-Ql2"/>
                 <constraint firstItem="BWD-rp-SPd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EEc-D4-4rx"/>
                 <constraint firstItem="0Px-yF-if3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FeG-VQ-7q2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pna-sc-pQF" secondAttribute="trailing" id="Gbw-jj-zGT"/>
                 <constraint firstItem="xuq-NE-PXG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Nch-NR-Lua"/>
                 <constraint firstItem="BWD-rp-SPd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OcT-qK-xCl"/>
                 <constraint firstItem="6gR-B5-Myb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VQX-mG-y1i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xuq-NE-PXG" secondAttribute="trailing" constant="16" id="VzO-V8-Ayr"/>
+                <constraint firstItem="Pna-sc-pQF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XK4-Zw-mGx"/>
+                <constraint firstItem="0Px-yF-if3" firstAttribute="top" secondItem="Pna-sc-pQF" secondAttribute="bottom" id="c4t-ry-lUG"/>
                 <constraint firstItem="0Px-yF-if3" firstAttribute="top" secondItem="vXk-px-pyf" secondAttribute="bottom" id="dE3-cC-7FZ"/>
                 <constraint firstItem="0Px-yF-if3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iLe-ah-d9C"/>
                 <constraint firstItem="BWD-rp-SPd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lqE-EK-nak"/>
                 <constraint firstItem="vXk-px-pyf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n3M-Iz-KPu"/>
                 <constraint firstItem="xuq-NE-PXG" firstAttribute="top" secondItem="6gR-B5-Myb" secondAttribute="bottom" constant="16" id="pnD-OP-a7Q"/>
-                <constraint firstItem="0Px-yF-if3" firstAttribute="top" secondItem="Vxw-l3-al9" secondAttribute="bottom" id="say-P9-OXd"/>
+                <constraint firstItem="Pna-sc-pQF" firstAttribute="top" secondItem="xuq-NE-PXG" secondAttribute="bottom" constant="8" id="qpt-EA-ydF"/>
                 <constraint firstItem="6gR-B5-Myb" firstAttribute="top" secondItem="BWD-rp-SPd" secondAttribute="bottom" constant="24" id="xLo-Ul-sqY"/>
             </constraints>
             <point key="canvasLocation" x="5.343511450381679" y="20.422535211267608"/>

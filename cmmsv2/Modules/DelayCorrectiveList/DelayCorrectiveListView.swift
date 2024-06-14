@@ -12,7 +12,7 @@ class DelayCorrectiveListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var searchTextField: SearchTextField!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: DelayCorrectiveListPresenter?
@@ -32,7 +32,7 @@ extension DelayCorrectiveListView {
         bindingData()
         setupView()
         setupAction()
-        setupCollectionView()
+        setupTableView()
     }
     
     private func fetchInitialData() {
@@ -50,8 +50,8 @@ extension DelayCorrectiveListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
-                self.collectionView.hideSkeleton()
+                self.tableView.reloadData()
+                self.tableView.hideSkeleton()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -77,47 +77,38 @@ extension DelayCorrectiveListView {
         isShow ? self.spinner.startAnimating() : self.spinner.stopAnimating()
     }
     
-    private func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(CorrectiveCVC.nib, forCellWithReuseIdentifier: CorrectiveCVC.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-        collectionView.isSkeletonable = true
-        collectionView.showAnimatedGradientSkeleton()
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(CorrectiveTVC.nib, forCellReuseIdentifier: CorrectiveTVC.identifier)
+        tableView.separatorStyle = .none
+        tableView.isSkeletonable = true
+        tableView.showAnimatedGradientSkeleton()
     }
     
 }
 
-extension DelayCorrectiveListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+extension DelayCorrectiveListView: SkeletonTableViewDataSource, SkeletonTableViewDelegate, UIScrollViewDelegate {
     
-    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: CorrectiveCVC.identifier, for: indexPath)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.data.count
     }
     
-    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return CorrectiveCVC.identifier
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CorrectiveCVC.identifier, for: indexPath) as? CorrectiveCVC
-        else {
-            return UICollectionViewCell()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CorrectiveTVC.identifier, for: indexPath) as? CorrectiveTVC else {
+            return UITableViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        cell.setupCell(data: self.data[indexPath.row])
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
@@ -125,18 +116,8 @@ extension DelayCorrectiveListView: SkeletonCollectionViewDelegate, SkeletonColle
         presenter.navigateToDetailComplaint(from: navigation, data: complaintSelected)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGSize.widthDevice, height: 224)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
-    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        guard scrollView == scrollView,
-              let presenter = self.presenter
-        else { return }
+        guard scrollView == scrollView, let presenter = self.presenter else { return }
         
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
@@ -148,6 +129,14 @@ extension DelayCorrectiveListView: SkeletonCollectionViewDelegate, SkeletonColle
                 presenter.fetchNextPage()
             }
         }
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return CorrectiveTVC.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
 }
