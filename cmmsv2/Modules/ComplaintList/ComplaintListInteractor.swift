@@ -26,4 +26,8 @@ class ComplaintListInteractor: BaseInteractor {
             
         }
     
+    func getTechnicianList(job: String) -> AnyPublisher<SelectTechnicianEntity, Error> {
+        return api.requestApiPublisher(.userFilter(job: job))
+    }
+    
 }

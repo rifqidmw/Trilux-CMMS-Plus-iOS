@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,13 +26,13 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="80K-JK-mrk">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <rect key="frame" x="-28.666666666666657" y="0.0" width="450.33333333333326" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej0-p7-wlz">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <rect key="frame" x="0.0" y="0.0" width="450.33333333333331" height="852"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipse_background" translatesAutoresizingMaskIntoConstraints="NO" id="R5V-6V-O4M">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="327.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="450.33333333333331" height="375"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="R5V-6V-O4M" secondAttribute="height" multiplier="1.2" id="awH-gW-jjH"/>
                                     </constraints>
@@ -46,25 +46,25 @@
                             </constraints>
                         </view>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyj-05-ZbI">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                            <rect key="frame" x="0.0" y="0.0" width="450.33333333333331" height="0.0"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_background" translatesAutoresizingMaskIntoConstraints="NO" id="gJK-Gu-4Td">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="450.33333333333331" height="0.0"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Dvv-jx-U0r">
-                                    <rect key="frame" x="123" y="60" width="147" height="50"/>
+                                    <rect key="frame" x="123.33333333333334" y="60" width="204.00000000000003" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="dPg-ZK-V0r"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trilux_logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-4g-biJ">
-                                    <rect key="frame" x="70" y="126" width="253" height="281"/>
+                                    <rect key="frame" x="70.333333333333314" y="125.99999999999997" width="310" height="344.33333333333326"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="xfx-4g-biJ" secondAttribute="height" multiplier="0.9" id="NhA-xb-vgi"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upward_wave_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Txw-sO-8tI">
-                                    <rect key="frame" x="123" y="423" width="147" height="255"/>
+                                    <rect key="frame" x="123.33333333333334" y="486.33333333333326" width="204.00000000000003" height="255"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="255" id="ICn-eh-meU"/>
                                     </constraints>
@@ -88,15 +88,17 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="450" id="bf7-vS-G60"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Z4o-kI-0Ie"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="80K-JK-mrk" firstAttribute="centerX" secondItem="uxP-u9-633" secondAttribute="centerX" id="D9B-oJ-Lrh"/>
                 <constraint firstAttribute="bottom" secondItem="80K-JK-mrk" secondAttribute="bottom" id="Rxg-oW-wt1"/>
-                <constraint firstItem="80K-JK-mrk" firstAttribute="leading" secondItem="uxP-u9-633" secondAttribute="leading" id="Wij-rr-LF5"/>
                 <constraint firstItem="80K-JK-mrk" firstAttribute="top" secondItem="uxP-u9-633" secondAttribute="top" id="hwy-yb-EAc"/>
-                <constraint firstAttribute="trailing" secondItem="80K-JK-mrk" secondAttribute="trailing" id="uuw-0s-tdx"/>
             </constraints>
             <point key="canvasLocation" x="38" y="12"/>
         </view>

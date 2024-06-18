@@ -7,6 +7,11 @@
 
 import UIKit
 import SkeletonView
+import Combine
+
+protocol CorrectiveCellDelegate: AnyObject {
+    func didTapContinueCorrective(data: Complaint)
+}
 
 class CorrectiveTVC: UITableViewCell {
     
@@ -27,6 +32,7 @@ class CorrectiveTVC: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var actionButton: GeneralButton!
     
+    var anyCancellable = Set<AnyCancellable>()
     static let identifier = String(describing: CorrectiveTVC.self)
     static let nib = {
         UINib(nibName: identifier, bundle: nil)
@@ -52,7 +58,7 @@ class CorrectiveTVC: UITableViewCell {
 
 extension CorrectiveTVC {
     
-    func setupCell(data: ComplaintListEntity) {
+    func setupCell(data: ComplaintListEntity, delegate: CorrectiveCellDelegate, complaint: Complaint) {
         hideSkeletonAnimation()
         correctiveImageView.loadImageUrl(data.image ?? "")
         dateLabel.text = "\(data.date ?? "") • \(data.type ?? "")"
@@ -62,6 +68,12 @@ extension CorrectiveTVC {
         damageLabel.text = data.damage
         configureStatus(status: data.status ?? .none)
         configureActionButton(status: data.status ?? .none)
+        
+        actionButton.gesture()
+            .sink { _ in
+                delegate.didTapContinueCorrective(data: complaint)
+            }
+            .store(in: &anyCancellable)
     }
     
     private func configureActionButton(status: CorrectiveStatusType) {
