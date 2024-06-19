@@ -138,9 +138,14 @@ extension ComplaintListPresenter {
         router.navigateToComplaintDetail(navigation: navigation, data: data)
     }
     
-    func showAddComplaintBottomSheet(from navigation: UINavigationController, data: Complaint, _ delegate: AddComplaintBottomSheetDelegate) {
+    func showAddComplaintBottomSheet(from navigation: UINavigationController, _ delegate: AddComplaintBottomSheetDelegate, index: Int) {
+        guard index >= 0 && index < self.complaint.count else {
+            print("Error: Index out of range")
+            return
+        }
+        
         let bottomSheet = AddComplaintBottomSheet(nibName: String(describing: AddComplaintBottomSheet.self), bundle: nil)
-        bottomSheet.data = data
+        bottomSheet.data = self.complaint[index]
         bottomSheet.delegate = delegate
         router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
     }

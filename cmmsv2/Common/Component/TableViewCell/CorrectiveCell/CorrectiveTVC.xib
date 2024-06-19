@@ -253,6 +253,7 @@
                 <outlet property="descriptionLabel" destination="li4-uH-mfT" id="pvM-Ui-bOh"/>
                 <outlet property="statusLabel" destination="VXu-c2-yDL" id="Tds-Zf-mSt"/>
                 <outlet property="statusView" destination="faI-F0-QH8" id="ikC-ep-EGv"/>
+                <outlet property="statusViewWidthConstraint" destination="9tM-rp-xQD" id="VJ5-a6-3km"/>
                 <outlet property="technicianLabel" destination="lSu-GS-EnP" id="f7t-SR-nNc"/>
                 <outlet property="technicianTitleLabel" destination="8a3-vY-NcW" id="5Zo-12-J0a"/>
                 <outlet property="titleLabel" destination="kBg-Lv-9GF" id="Q5K-xT-iEE"/>

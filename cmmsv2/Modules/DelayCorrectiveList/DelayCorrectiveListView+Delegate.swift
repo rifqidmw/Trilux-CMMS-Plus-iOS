@@ -9,8 +9,8 @@ import UIKit
 
 extension DelayCorrectiveListView: CorrectiveCellDelegate {
     
-    func didTapContinueCorrective(data: Complaint) {
-        AppLogger.log("-- THIS IS COMPLAINT DATA: \(data)")
+    func didTapContinueCorrective(index: Int) {
+        AppLogger.log("-- THIS IS COMPLAINT DATA: \(index)")
     }
     
 }

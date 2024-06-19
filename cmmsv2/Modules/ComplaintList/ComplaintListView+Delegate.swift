@@ -9,9 +9,11 @@ import UIKit
 
 extension ComplaintListView: CorrectiveCellDelegate {
     
-    func didTapContinueCorrective(data: Complaint) {
-        guard let presenter, let navigation = self.navigationController else { return }
-        presenter.showAddComplaintBottomSheet(from: navigation, data: data, self)
+    func didTapContinueCorrective(index: Int) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showAddComplaintBottomSheet(from: navigation, self, index: index)
     }
     
 }

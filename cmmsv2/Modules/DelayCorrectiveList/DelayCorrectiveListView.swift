@@ -95,13 +95,12 @@ extension DelayCorrectiveListView: SkeletonTableViewDataSource, SkeletonTableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CorrectiveTVC.identifier, for: indexPath) as? CorrectiveTVC,
-              let complaint = presenter?.complaint[indexPath.row]
+        guard indexPath.row < data.count, let cell = tableView.dequeueReusableCell(withIdentifier: CorrectiveTVC.identifier, for: indexPath) as? CorrectiveTVC
         else {
             return UITableViewCell()
         }
         
-        cell.setupCell(data: self.data[indexPath.row], delegate: self, complaint: complaint)
+        cell.setupCell(data: self.data[indexPath.row], delegate: self, indexPath: indexPath.row)
         
         return cell
     }
