@@ -589,6 +589,10 @@
 		CECB77832B4C79660069AC05 /* AllCategoriesBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB77812B4C79660069AC05 /* AllCategoriesBottomSheet.swift */; };
 		CECB77852B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */; };
 		CECB77862B4C7C1D0069AC05 /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */; };
+		CECC8F6A2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8F682C2338BE0071DF75 /* DatePickerBottomSheet.swift */; };
+		CECC8F6B2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECC8F692C2338BE0071DF75 /* DatePickerBottomSheet.xib */; };
+		CECC8F6C2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8F682C2338BE0071DF75 /* DatePickerBottomSheet.swift */; };
+		CECC8F6D2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECC8F692C2338BE0071DF75 /* DatePickerBottomSheet.xib */; };
 		CEE07C8D2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C872B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift */; };
 		CEE07C8E2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C872B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift */; };
 		CEE07C8F2B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE07C882B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift */; };
@@ -1097,6 +1101,8 @@
 		CECB777E2B4C79610069AC05 /* AllCategoriesBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCategoriesBottomSheet.xib; sourceTree = "<group>"; };
 		CECB77812B4C79660069AC05 /* AllCategoriesBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesBottomSheet.swift; sourceTree = "<group>"; };
 		CECB77842B4C7C1D0069AC05 /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
+		CECC8F682C2338BE0071DF75 /* DatePickerBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBottomSheet.swift; sourceTree = "<group>"; };
+		CECC8F692C2338BE0071DF75 /* DatePickerBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerBottomSheet.xib; sourceTree = "<group>"; };
 		CEE07C872B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListPresenter.swift; sourceTree = "<group>"; };
 		CEE07C882B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListRouter.swift; sourceTree = "<group>"; };
 		CEE07C892B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveMaintenanceListInteractor.swift; sourceTree = "<group>"; };
@@ -2113,6 +2119,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF049982C1C1FE0006B6FFD /* AddComplaintBottomSheet */,
+				CECC8F672C23387B0071DF75 /* DatePickerBottomSheet */,
 				CEF049AD2C1C624C006B6FFD /* SelectTechnicianBottomSheet */,
 			);
 			path = BottomSheet;
@@ -2395,6 +2402,15 @@
 				CECB777E2B4C79610069AC05 /* AllCategoriesBottomSheet.xib */,
 			);
 			path = AllCategoriesBottomSheet;
+			sourceTree = "<group>";
+		};
+		CECC8F672C23387B0071DF75 /* DatePickerBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CECC8F682C2338BE0071DF75 /* DatePickerBottomSheet.swift */,
+				CECC8F692C2338BE0071DF75 /* DatePickerBottomSheet.xib */,
+			);
+			path = DatePickerBottomSheet;
 			sourceTree = "<group>";
 		};
 		CEE07C862B9F405F00EFBFB8 /* PreventiveMaintenanceList */ = {
@@ -2840,6 +2856,7 @@
 				CECB3DEF2B45E119004A260D /* Roboto-Thin.ttf in Resources */,
 				CECB3E052B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
 				CECB3DE12B45E119004A260D /* Roboto-Black.ttf in Resources */,
+				CECC8F6B2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */,
 				CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CEF4E0D52C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
 				CE2FA5252B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
@@ -2975,6 +2992,7 @@
 				CECB3DF02B45E119004A260D /* Roboto-Thin.ttf in Resources */,
 				CECB3E062B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
 				CECB3DE22B45E119004A260D /* Roboto-Black.ttf in Resources */,
+				CECC8F6D2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */,
 				CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CEF4E0D72C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
 				CE2FA5262B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
@@ -3289,6 +3307,7 @@
 				CE90B15D2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
+				CECC8F6A2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
 				CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */,
 				CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
@@ -3562,6 +3581,7 @@
 				CE90B15E2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EC02B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
+				CECC8F6C2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
 				CEEED86F2B7A86CB00672952 /* ScanRouter.swift in Sources */,
 				CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */,

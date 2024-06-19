@@ -56,10 +56,10 @@ extension SelectTechnicianBottomSheet {
         default: break
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.dismissAreaView.makeAnimation {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            }
+            })
         }
     }
     
@@ -76,9 +76,17 @@ extension SelectTechnicianBottomSheet {
         Publishers.Merge(bottomSheetView.handleBarArea.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.dismiss(animated: true)
+                self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
+    }
+    
+    private func dismissBottomSheet() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+        }) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

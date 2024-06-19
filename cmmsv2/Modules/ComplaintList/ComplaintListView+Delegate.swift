@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ComplaintListView: CorrectiveCellDelegate {
+extension ComplaintListView: CorrectiveCellDelegate, DatePickerBottomSheetDelegate {
     
     func didTapContinueCorrective(data: Complaint) {
         guard let presenter, let navigation = self.navigationController else { return }
@@ -33,7 +33,14 @@ extension ComplaintListView: AddComplaintBottomSheetDelegate {
     }
     
     func didTapSelectDate() {
-        AppLogger.log("-- TAPPED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showDatePickerBottomSheet(from: navigation, delegate: self)
+    }
+    
+    func didSelectDate(_ date: Date) {
+        AppLogger.log("Tanggal yang dipilih: \(date)")
     }
     
 }

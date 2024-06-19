@@ -30,6 +30,7 @@ class CorrectiveTVC: UITableViewCell {
     @IBOutlet weak var containerStatusView: UIView!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var actionButton: GeneralButton!
     
     var anyCancellable = Set<AnyCancellable>()
@@ -62,7 +63,7 @@ extension CorrectiveTVC {
         hideSkeletonAnimation()
         correctiveImageView.loadImageUrl(data.image ?? "")
         dateLabel.text = "\(data.date ?? "") • \(data.type ?? "")"
-        titleLabel.text = data.type
+        titleLabel.text = data.title
         descriptionLabel.text = data.description
         technicianLabel.text = data.technician
         damageLabel.text = data.damage
@@ -93,50 +94,58 @@ extension CorrectiveTVC {
     }
     
     private func configureStatus(status: CorrectiveStatusType) {
-        self.statusLabel.text = status.getStringValue()
+        self.statusLabel.text = status.getStringValue().capitalized
         
         switch status {
         case .open:
             statusView.backgroundColor = UIColor.customLightGreenColor
             statusLabel.textColor = UIColor.customIndicatorColor8
+            statusViewWidthConstraint.constant = 50
         case .closed:
             statusView.backgroundColor = UIColor.customSecondaryColor
             statusLabel.textColor = UIColor.customPrimaryColor
+            statusViewWidthConstraint.constant = 52
         case .progress:
             statusView.backgroundColor = UIColor.customIndicatorColor2
             statusLabel.textColor = UIColor.customIndicatorColor11
+            statusViewWidthConstraint.constant = 56
         case .delay:
             statusView.backgroundColor = UIColor.customIndicatorColor2
             statusLabel.textColor = UIColor.customIndicatorColor11
+            statusViewWidthConstraint.constant = 54
         default: break
         }
     }
     
     private func showSkeletonAnimation() {
-        [correctiveImageView,
-         dateLabel,
-         titleLabel,
-         descriptionLabel,
-         containerTechnicianView,
-         containerDamageView,
-         containerStatusView,
-         statusLabel,
-         actionButton].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
+        self.layoutIfNeeded()
+        DispatchQueue.main.async {
+            [self.correctiveImageView,
+             self.dateLabel,
+             self.titleLabel,
+             self.descriptionLabel,
+             self.containerTechnicianView,
+             self.containerDamageView,
+             self.containerStatusView,
+             self.statusLabel,
+             self.actionButton].forEach {
+                $0.isSkeletonable = true
+                $0.showAnimatedGradientSkeleton()
+            }
         }
     }
     
     private func hideSkeletonAnimation() {
-        [correctiveImageView,
-         dateLabel,
-         titleLabel,
-         descriptionLabel,
-         containerTechnicianView,
-         containerDamageView,
-         containerStatusView,
-         statusLabel,
-         actionButton].forEach {
+        self.layoutIfNeeded()
+        [self.correctiveImageView,
+         self.dateLabel,
+         self.titleLabel,
+         self.descriptionLabel,
+         self.containerTechnicianView,
+         self.containerDamageView,
+         self.containerStatusView,
+         self.statusLabel,
+         self.actionButton].forEach {
             $0.hideSkeleton()
         }
     }

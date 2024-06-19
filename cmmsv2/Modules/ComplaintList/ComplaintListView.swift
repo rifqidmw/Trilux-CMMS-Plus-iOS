@@ -135,6 +135,7 @@ extension ComplaintListView: SkeletonTableViewDataSource, SkeletonTableViewDeleg
             
             DispatchQueue.main.async {
                 presenter.fetchNextPage()
+                self.tableView.reloadData()
             }
         }
     }

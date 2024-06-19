@@ -88,7 +88,7 @@ extension ComplaintListPresenter {
                                 isActionActive: item.canDeleteLk ?? false)
                         }
                         self.complaintData.append(contentsOf: complaintList)
-                        self.complaint = complainsData
+                        self.complaint.append(contentsOf: complainsData)
                     }
                 }
             )
@@ -149,6 +149,12 @@ extension ComplaintListPresenter {
         let bottomSheet = SelectTechnicianBottomSheet(nibName: String(describing: SelectTechnicianBottomSheet.self), bundle: nil)
         bottomSheet.data = self.technicianList?.data?.users ?? []
         bottomSheet.type = type
+        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+    }
+    
+    func showDatePickerBottomSheet(from navigation: UINavigationController, delegate: DatePickerBottomSheetDelegate) {
+        let bottomSheet = DatePickerBottomSheet(nibName: String(describing: DatePickerBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
         router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
     }
     
