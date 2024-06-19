@@ -2757,7 +2757,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					CECB3DA02B45D962004A260D = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -3206,7 +3206,6 @@
 				CE9F91032B4F9434004C027A /* InformationCardView.swift in Sources */,
 				CEE79EC32B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CEFD6D202BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
-				CEE79EC32B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CE4012532B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
@@ -3480,7 +3479,6 @@
 				CE9F91042B4F9434004C027A /* InformationCardView.swift in Sources */,
 				CEE79EC42B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CEFD6D212BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
-				CEE79EC42B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
