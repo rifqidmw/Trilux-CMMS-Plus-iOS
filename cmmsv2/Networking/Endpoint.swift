@@ -83,6 +83,7 @@ enum Endpoint {
     case loadPreventive(id: String?)
     case delayCorrectiveDetail(id: String?)
     case calibrator
+    case userFilter(job: String?)
 }
 
 // MARK: - PATH URL
@@ -190,6 +191,8 @@ extension Endpoint {
             return "complains/detail?id=\(id ?? "")"
         case .calibrator:
             return "lk/kalibrator"
+        case .userFilter(job: let job):
+            return "user/search?job=\(job ?? "")"
         }
     }
 }

@@ -17,6 +17,8 @@ class ComplaintListPresenter: BasePresenter {
     }
     
     @Published public var complaintData: [ComplaintListEntity] = []
+    var technicianList: SelectTechnicianEntity?
+    var complaint: [Complaint] = []
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -42,6 +44,7 @@ extension ComplaintListPresenter {
                                     page: self.page,
                                     dateFilter: self.dateFilter,
                                     keyword: self.keyword)
+        self.fetchTechnicianList(job: "2")
     }
     
     func fetchComplaintListData(
@@ -85,6 +88,7 @@ extension ComplaintListPresenter {
                                 isActionActive: item.canDeleteLk ?? false)
                         }
                         self.complaintData.append(contentsOf: complaintList)
+                        self.complaint = complainsData
                     }
                 }
             )
@@ -102,12 +106,50 @@ extension ComplaintListPresenter {
                                keyword: self.keyword)
     }
     
+    func fetchTechnicianList(job: String) {
+        self.isLoading = true
+        interactor.getTechnicianList(job: job)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { technicians in
+                    DispatchQueue.main.async {
+                        self.technicianList = technicians
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
 }
 
 extension ComplaintListPresenter {
     
     func navigateToComplaintDetail(navigation: UINavigationController, data: ComplaintListEntity) {
         router.navigateToComplaintDetail(navigation: navigation, data: data)
+    }
+    
+    func showAddComplaintBottomSheet(from navigation: UINavigationController, data: Complaint, _ delegate: AddComplaintBottomSheetDelegate) {
+        let bottomSheet = AddComplaintBottomSheet(nibName: String(describing: AddComplaintBottomSheet.self), bundle: nil)
+        bottomSheet.data = data
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+    }
+    
+    func showSelectTechnicianBottomSheet(from navigation: UINavigationController, type: SelectTechnicianBottomSheetType) {
+        let bottomSheet = SelectTechnicianBottomSheet(nibName: String(describing: SelectTechnicianBottomSheet.self), bundle: nil)
+        bottomSheet.data = self.technicianList?.data?.users ?? []
+        bottomSheet.type = type
+        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
     }
     
 }

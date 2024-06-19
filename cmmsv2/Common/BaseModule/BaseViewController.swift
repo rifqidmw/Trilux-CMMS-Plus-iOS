@@ -36,8 +36,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     func showLoadingPopup() {
         DispatchQueue.main.async {
             self.view.addSubview(self.loadingView)
-            
-            // Set constraints for loadingView to cover the entire view
             NSLayoutConstraint.activate([
                 self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                 self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
@@ -56,11 +54,10 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
                 self.customLoadingView.heightAnchor.constraint(equalToConstant: 400)
             ])
             
-
+            
             self.customLoadingView.alpha = 0
             self.customLoadingView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             
-            // Animate pop-up effect
             UIView.animate(withDuration: 0.3, animations: {
                 self.customLoadingView.alpha = 1
                 self.customLoadingView.transform = CGAffineTransform.identity

@@ -9,6 +9,7 @@ import UIKit
 
 class BackgroundView: UIView {
     
+    @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var homeBackgroundView: UIView!
     @IBOutlet weak var ellipseBackgroundImageView: UIImageView!
     
@@ -37,6 +38,7 @@ class BackgroundView: UIView {
     private func setupView() {
         let contentView = loadNib()
         contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(contentView)
         self.sendSubviewToBack(contentView)
     }

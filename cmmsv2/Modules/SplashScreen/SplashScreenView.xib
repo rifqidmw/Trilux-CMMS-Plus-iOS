@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K9A-kh-NbP">
-                    <rect key="frame" x="104.66666666666669" y="778" width="184" height="40"/>
+                    <rect key="frame" x="104.66666666666669" y="746" width="184" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtE-P2-ViJ">
                             <rect key="frame" x="0.0" y="0.0" width="184" height="20"/>
@@ -42,7 +42,6 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <viewLayoutGuide key="safeArea" id="rPK-PF-z47"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="tBQ-Sz-tkJ"/>
                     </constraints>
@@ -51,7 +50,7 @@
             <viewLayoutGuide key="safeArea" id="6eW-7b-Jw0"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="6eW-7b-Jw0" firstAttribute="bottom" secondItem="K9A-kh-NbP" secondAttribute="bottom" id="ECc-Hb-rY3"/>
+                <constraint firstItem="6eW-7b-Jw0" firstAttribute="bottom" secondItem="K9A-kh-NbP" secondAttribute="bottom" constant="32" id="ECc-Hb-rY3"/>
                 <constraint firstItem="K9A-kh-NbP" firstAttribute="centerX" secondItem="9xh-8N-WpJ" secondAttribute="centerX" id="a9P-qC-te2"/>
             </constraints>
             <point key="canvasLocation" x="610" y="-63"/>

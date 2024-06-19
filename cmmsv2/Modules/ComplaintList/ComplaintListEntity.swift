@@ -154,3 +154,40 @@ enum CorrectiveStatusType: String, Codable {
         return rawValue
     }
 }
+
+// MARK: - SELECT TECHNICIAN ENTITY
+struct SelectTechnicianEntity: Codable {
+    let count: Int?
+    let data: Technician?
+    let message: String?
+    let status: Int?
+    let reff: ReffData?
+}
+
+struct Technician: Codable {
+    let users: [TechnicianData]?
+}
+
+struct TechnicianData: Codable {
+    let valId: String?
+    let txtName: String?
+    let txtUsername: String?
+    let valImage: String? = nil
+    let valImageId: String? = nil
+    let txtPosition: String?
+    let txtUnitKerja: String?
+    let valDeviceToken: String?
+    let isPolisi: String?
+    
+    enum CodingKeys: CodingKey {
+        case valId
+        case txtName
+        case txtUsername
+        case valImage
+        case valImageId
+        case txtPosition
+        case txtUnitKerja
+        case valDeviceToken
+        case isPolisi
+    }
+}

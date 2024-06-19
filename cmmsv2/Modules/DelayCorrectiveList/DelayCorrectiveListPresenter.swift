@@ -17,6 +17,7 @@ class DelayCorrectiveListPresenter: BasePresenter {
     }
     
     @Published public var complaintData: [ComplaintListEntity] = []
+    var complaint: [Complaint] = []
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -85,6 +86,7 @@ extension DelayCorrectiveListPresenter {
                                 isActionActive: item.canDeleteLk ?? false)
                         }
                         self.complaintData.append(contentsOf: complaintList)
+                        self.complaint = complainsData
                     }
                 }
             )

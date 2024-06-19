@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="containerStackView" destination="80K-JK-mrk" id="Ka4-BI-vBV"/>
                 <outlet property="ellipseBackgroundImageView" destination="R5V-6V-O4M" id="uTO-vN-xeL"/>
                 <outlet property="homeBackgroundView" destination="ej0-p7-wlz" id="ulw-LX-BZc"/>
                 <outlet property="splashBackgroundImageView" destination="gJK-Gu-4Td" id="jjl-D4-ZFV"/>
@@ -32,10 +33,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipse_background" translatesAutoresizingMaskIntoConstraints="NO" id="R5V-6V-O4M">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="327.66666666666669"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="R5V-6V-O4M" secondAttribute="height" multiplier="1.2" id="awH-gW-jjH"/>
-                                    </constraints>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="299"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -94,9 +92,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="80K-JK-mrk" secondAttribute="bottom" id="Rxg-oW-wt1"/>
-                <constraint firstItem="80K-JK-mrk" firstAttribute="leading" secondItem="uxP-u9-633" secondAttribute="leading" id="Wij-rr-LF5"/>
+                <constraint firstAttribute="trailing" secondItem="80K-JK-mrk" secondAttribute="trailing" id="evt-g1-jfp"/>
                 <constraint firstItem="80K-JK-mrk" firstAttribute="top" secondItem="uxP-u9-633" secondAttribute="top" id="hwy-yb-EAc"/>
-                <constraint firstAttribute="trailing" secondItem="80K-JK-mrk" secondAttribute="trailing" id="uuw-0s-tdx"/>
+                <constraint firstItem="80K-JK-mrk" firstAttribute="leading" secondItem="uxP-u9-633" secondAttribute="leading" id="pPt-JF-Ano"/>
             </constraints>
             <point key="canvasLocation" x="38" y="12"/>
         </view>
