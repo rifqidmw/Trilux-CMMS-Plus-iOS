@@ -30,4 +30,12 @@ class ComplaintListInteractor: BaseInteractor {
         return api.requestApiPublisher(.userFilter(job: job))
     }
     
+    func createLanjutan(engineerId: String?, complainId: String?, dueDate: String?, engineerPendamping: [String]?) -> AnyPublisher<CreateLanjutanEntity, Error> {
+        return api.requestApiPublisher(.createLanjutan(engineerId: engineerId ?? "", complainId: complainId ?? "", dueDate: dueDate ?? "", engineerPendamping: engineerPendamping ?? []))
+    }
+    
+    func createCorrective(engineerId: String?, complainId: String?, dueDate: String?, engineerPendamping: [String]?) -> AnyPublisher<AcceptCorrectiveEntity, Error> {
+        return api.requestApiPublisher(.createCorrective(engineerId: engineerId ?? "", complainId: complainId ?? "", dueDate: dueDate ?? "", engineerPendamping: engineerPendamping ?? []))
+    }
+    
 }

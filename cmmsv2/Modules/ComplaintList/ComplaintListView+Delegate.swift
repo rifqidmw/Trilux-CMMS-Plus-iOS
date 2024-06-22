@@ -7,40 +7,82 @@
 
 import UIKit
 
-extension ComplaintListView: CorrectiveCellDelegate, DatePickerBottomSheetDelegate {
+extension ComplaintListView: CorrectiveCellDelegate {
     
-    func didTapContinueCorrective(data: Complaint) {
+    func didTapContinueCorrective(data: Complaint, title: CorrectiveTitleType) {
         guard let presenter, let navigation = self.navigationController else { return }
-        presenter.showAddComplaintBottomSheet(from: navigation, data: data, self)
+        presenter.showAddComplaintBottomSheet(from: navigation, data: data, self, type: title)
     }
     
 }
 
 extension ComplaintListView: AddComplaintBottomSheetDelegate {
     
-    func didTapSelectTechnician() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        presenter.showSelectTechnicianBottomSheet(from: navigation, type: .selectOne)
+    func didTapCreateAdvanceWorkSheet(_ view: AddComplaintBottomSheet, engineerId: String, complainId: String, dueDate: String, engineerPendamping: [String], title: CorrectiveTitleType) {
+        guard let presenter else { return }
+        self.bottomSheet = view
+        switch title {
+        case .advanced:
+            presenter.createAdvanceWorkSheet(engineerId: engineerId, complainId: complainId, dueDate: dueDate, engineerPendamping: engineerPendamping)
+        case .accept:
+            presenter.createAcceptCorrective(engineerId: engineerId, complainId: complainId, dueDate: dueDate, engineerPendamping: engineerPendamping)
+        default: break
+        }
     }
     
-    func didTapSelectPartner() {
+    func didTapSelectTechnician(_ view: AddComplaintBottomSheet) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.showSelectTechnicianBottomSheet(from: navigation, type: .selectMultiple)
+        self.bottomSheet = view
+        presenter.showSelectTechnicianBottomSheet(from: navigation, type: .selectOne, self)
     }
     
-    func didTapSelectDate() {
+    func didTapSelectPartner(_ view: AddComplaintBottomSheet) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
+        self.bottomSheet = view
+        if let selectedTechnician = view.selectedTechnician?.name {
+            if !selectedTechnician.isEmpty {
+                presenter.showSelectTechnicianBottomSheet(from: navigation, type: .selectMultiple, self)
+            }
+        } else {
+            view.showAlert(title: "Peringatan", message: "Anda harus memilih teknisi terlebih dahulu")
+        }
+    }
+    
+    func didTapSelectDate(_ view: AddComplaintBottomSheet) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        self.bottomSheet = view
         presenter.showDatePickerBottomSheet(from: navigation, delegate: self)
     }
     
+}
+
+extension ComplaintListView: SelectTechnicianBottomSheetDelegate, DatePickerBottomSheetDelegate {
+    
+    func selectMultipleTechnician(_ names: [TechnicianEntity]) {
+        if let bottomSheet = self.bottomSheet {
+            bottomSheet.selectedPartner = names
+            bottomSheet.updateSelectedValues()
+        }
+    }
+    
+    func didSelectTechnician(_ name: TechnicianEntity) {
+        if let bottomSheet = self.bottomSheet {
+            bottomSheet.selectedTechnician = name
+            bottomSheet.updateSelectedValues()
+        }
+    }
+    
     func didSelectDate(_ date: Date) {
-        AppLogger.log("Tanggal yang dipilih: \(date)")
+        if let bottomSheet = self.bottomSheet {
+            bottomSheet.selectedDate = date
+            bottomSheet.updateSelectedValues()
+        }
     }
     
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class ComplaintDetailRouter: BaseRouter {
     
-    func showView(data: ComplaintListEntity) -> ComplaintDetailView {
+    func showView(data: Complaint) -> ComplaintDetailView {
         let interactor = ComplaintDetailInteractor()
         let presenter = ComplaintDetailPresenter(interactor: interactor, data: data)
         let view = ComplaintDetailView(nibName: String(describing: ComplaintDetailView.self), bundle: nil)

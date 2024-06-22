@@ -16,9 +16,10 @@ class ComplaintListPresenter: BasePresenter {
         self.interactor = interactor
     }
     
-    @Published public var complaintData: [ComplaintListEntity] = []
     var technicianList: SelectTechnicianEntity?
-    var complaint: [Complaint] = []
+    @Published public var complaint: [Complaint] = []
+    @Published public var advanceWorkSheet: CreateLanjutanEntity?
+    @Published public var acceptCorrective: AcceptCorrectiveEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -74,20 +75,6 @@ extension ComplaintListPresenter {
                         guard let data = complains.data,
                               let complainsData = data.complains
                         else { return }
-                        let complaintList = complainsData.compactMap { item in
-                            return ComplaintListEntity(
-                                id: item.id ?? 0,
-                                image: item.valSenderImg ?? "",
-                                date: item.txtComplainTime ?? "",
-                                type: item.txtRuangan ?? "",
-                                title: item.valEquipmentName ?? "",
-                                description: item.txtSenderName ?? "",
-                                technician: item.txtEngineerName ?? "",
-                                damage: item.txtTitle ?? "",
-                                status: CorrectiveStatusType(rawValue: item.txtStatus ?? "") ?? CorrectiveStatusType.none,
-                                isActionActive: item.canDeleteLk ?? false)
-                        }
-                        self.complaintData.append(contentsOf: complaintList)
                         self.complaint.append(contentsOf: complainsData)
                     }
                 }
@@ -130,25 +117,78 @@ extension ComplaintListPresenter {
             .store(in: &anyCancellable)
     }
     
+    func createAdvanceWorkSheet(engineerId: String?, complainId: String?, dueDate: String?, engineerPendamping: [String]?) {
+        self.isLoading = true
+        interactor.createLanjutan(engineerId: engineerId ?? "", complainId: complainId ?? "", dueDate: dueDate ?? "", engineerPendamping: engineerPendamping ?? [])
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { advanceWorkSheet in
+                    DispatchQueue.main.async {
+                        self.advanceWorkSheet = advanceWorkSheet
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func createAcceptCorrective(engineerId: String?, complainId: String?, dueDate: String?, engineerPendamping: [String]?) {
+        self.isLoading = true
+        interactor.createCorrective(engineerId: engineerId ?? "", complainId: complainId ?? "", dueDate: dueDate ?? "", engineerPendamping: engineerPendamping ?? [])
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { acceptCorrective in
+                    DispatchQueue.main.async {
+                        self.acceptCorrective = acceptCorrective
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
 }
 
 extension ComplaintListPresenter {
     
-    func navigateToComplaintDetail(navigation: UINavigationController, data: ComplaintListEntity) {
+    func navigateToComplaintDetail(navigation: UINavigationController, data: Complaint) {
         router.navigateToComplaintDetail(navigation: navigation, data: data)
     }
     
-    func showAddComplaintBottomSheet(from navigation: UINavigationController, data: Complaint, _ delegate: AddComplaintBottomSheetDelegate) {
+    func showAddComplaintBottomSheet(from navigation: UINavigationController, data: Complaint, _ delegate: AddComplaintBottomSheetDelegate, type: CorrectiveTitleType) {
         let bottomSheet = AddComplaintBottomSheet(nibName: String(describing: AddComplaintBottomSheet.self), bundle: nil)
+        bottomSheet.type = type
         bottomSheet.data = data
         bottomSheet.delegate = delegate
         router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
     }
     
-    func showSelectTechnicianBottomSheet(from navigation: UINavigationController, type: SelectTechnicianBottomSheetType) {
+    func showSelectTechnicianBottomSheet(from navigation: UINavigationController, type: SelectTechnicianBottomSheetType, _ delegate: SelectTechnicianBottomSheetDelegate) {
         let bottomSheet = SelectTechnicianBottomSheet(nibName: String(describing: SelectTechnicianBottomSheet.self), bundle: nil)
-        bottomSheet.data = self.technicianList?.data?.users ?? []
+        let userList = self.technicianList?.data?.users?.compactMap { item in
+            return TechnicianEntity(id: item.valId, name: item.txtName, isSelected: false)
+        }
+        bottomSheet.data = userList ?? []
         bottomSheet.type = type
+        bottomSheet.delegate = delegate
         router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
     }
     

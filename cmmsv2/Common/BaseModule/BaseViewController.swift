@@ -16,6 +16,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     var anyCancellable = Set<AnyCancellable>()
     var pagerTabStripViewController: ButtonBarPagerTabStripViewController?
     var views: [UIViewController] = []
+    var api = ApiManager()
     
     let overlayView: UIView = {
         let view = UIView()
@@ -239,6 +240,51 @@ extension BaseViewController: PagerTabStripDataSource, PagerTabStripDelegate {
     
     func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
         viewController.moveToViewController(at: toIndex, animated: true)
+    }
+    
+}
+
+extension BaseViewController {
+    
+    func validateUser() {
+        api.requestApiPublisher(.getProfile)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.logout()
+                    }
+                },
+                receiveValue: { (userProfile: UserProfileEntity) in
+                    if let message = userProfile.message {
+                        switch message {
+                        case .success: break
+                        case .errors:
+                            self.logout()
+                        default: break
+                        }
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func logout() {
+        guard let logo = UserDefaults.standard.string(forKey: "triluxLogo"),
+              let tagline = UserDefaults.standard.string(forKey: "tagLine") else { return }
+        let data = HospitalTheme(logo: logo, tagline: tagline)
+        
+        DispatchQueue.main.async {
+            let vc = LoginRouter().showView()
+            vc.data = data
+            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+            UserDefaults.standard.removeObject(forKey: "valToken")
+            
+            let rootViewController = UINavigationController(rootViewController: vc)
+            UIApplication.shared.setRootViewController(rootViewController)
+        }
     }
     
 }

@@ -12,7 +12,7 @@ protocol DatePickerBottomSheetDelegate: AnyObject {
     func didSelectDate(_ date: Date)
 }
 
-class DatePickerBottomSheet: BaseViewController {
+class DatePickerBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var containerDatePickerView: UIView!
@@ -68,7 +68,7 @@ extension DatePickerBottomSheet {
             .store(in: &anyCancellable)
     }
     
-    private func dismissBottomSheet() {
+    func dismissBottomSheet() {
         UIView.animate(withDuration: 0.2, animations: {
             self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         }) { _ in

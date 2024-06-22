@@ -52,7 +52,6 @@ extension SparePartTVC {
         
         countLabel.attributedText = fullAttributedText
         
-        
         deleteLabel.gesture()
             .sink { [weak self] _ in
                 guard let self, let delegate = self.delegate else { return }

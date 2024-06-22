@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectTechnicianBottomSheet" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="rwD-q1-MIw" id="MsD-H1-3Ni"/>
                 <outlet property="bottomSheetView" destination="G51-0S-WaD" id="dUb-7M-mtU"/>
                 <outlet property="containerTextFieldView" destination="4vR-MB-N6g" id="sHT-Ca-yBN"/>
                 <outlet property="dismissAreaView" destination="0Dv-RE-83z" id="vSo-mO-4ND"/>
@@ -37,10 +38,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G51-0S-WaD" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="252" width="393" height="600"/>
+                    <rect key="frame" x="0.0" y="204" width="393" height="648"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HEU-7d-RQ5">
-                            <rect key="frame" x="16" y="32" width="361" height="552"/>
+                            <rect key="frame" x="16" y="32" width="361" height="584"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUT-Gy-SAv">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="28"/>
@@ -90,9 +91,16 @@
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jlb-Ec-LsA">
-                                    <rect key="frame" x="0.0" y="100" width="361" height="452"/>
+                                    <rect key="frame" x="0.0" y="100" width="361" height="484"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwD-q1-MIw" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="584" width="361" height="48"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="Bli-cN-lYn"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
@@ -101,8 +109,8 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="HEU-7d-RQ5" secondAttribute="trailing" constant="16" id="7pn-82-mnV"/>
                         <constraint firstItem="HEU-7d-RQ5" firstAttribute="leading" secondItem="G51-0S-WaD" secondAttribute="leading" constant="16" id="a2V-bT-h2T"/>
-                        <constraint firstAttribute="bottom" secondItem="HEU-7d-RQ5" secondAttribute="bottom" constant="16" id="te2-LL-Ah1"/>
-                        <constraint firstAttribute="height" constant="600" id="tyP-37-Pz5"/>
+                        <constraint firstAttribute="bottom" secondItem="HEU-7d-RQ5" secondAttribute="bottom" constant="32" id="te2-LL-Ah1"/>
+                        <constraint firstAttribute="height" constant="648" id="tyP-37-Pz5"/>
                         <constraint firstItem="HEU-7d-RQ5" firstAttribute="top" secondItem="G51-0S-WaD" secondAttribute="top" constant="32" id="vxQ-9u-Z1E"/>
                     </constraints>
                 </view>

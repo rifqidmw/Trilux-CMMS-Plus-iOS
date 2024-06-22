@@ -19,13 +19,13 @@ class HomeScreenView: BaseViewController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.validateUser()
     }
     
     override func willAppear() {
         super.willAppear()
         self.setupNavigationView()
     }
-    
 }
 
 extension HomeScreenView {

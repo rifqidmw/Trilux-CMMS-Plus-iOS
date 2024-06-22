@@ -17,11 +17,13 @@ class ComplaintListView: BaseViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: ComplaintListPresenter?
-    var data: [ComplaintListEntity] = []
+    var data: [Complaint] = []
+    var bottomSheet: AddComplaintBottomSheet?
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.validateUser()
     }
     
 }
@@ -43,7 +45,7 @@ extension ComplaintListView {
     
     private func bindingData() {
         guard let presenter else { return }
-        presenter.$complaintData
+        presenter.$complaint
             .sink { [weak self] data in
                 guard let self
                 else {
@@ -54,6 +56,28 @@ extension ComplaintListView {
                 self.tableView.reloadData()
                 self.tableView.hideSkeleton()
                 self.showSpinner(false)
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$advanceWorkSheet
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                if data.message == "Success" {
+                    self.dismiss(animated: true)
+                    self.fetchInitialData()
+                    self.tableView.reloadData()
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$acceptCorrective
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                if data.message == "Success" {
+                    self.dismiss(animated: true)
+                    self.fetchInitialData()
+                    self.tableView.reloadData()
+                }
             }
             .store(in: &anyCancellable)
     }

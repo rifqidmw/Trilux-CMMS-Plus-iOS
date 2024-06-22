@@ -8,11 +8,6 @@
 import UIKit
 import Combine
 
-enum SelectTechnicianBottomSheetType {
-    case selectOne
-    case selectMultiple
-}
-
 class SelectTechnicianBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,9 +17,12 @@ class SelectTechnicianBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var containerTextFieldView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addButton: GeneralButton!
     
+    weak var delegate: SelectTechnicianBottomSheetDelegate?
     var type: SelectTechnicianBottomSheetType?
-    var data: [TechnicianData] = []
+    var data: [TechnicianEntity] = []
+    var selectedTechnicians: Set<TechnicianEntity> = []
     
     override func didLoad() {
         super.didLoad()
@@ -44,6 +42,7 @@ extension SelectTechnicianBottomSheet {
     private func setupView() {
         bottomSheetView.configure(type: .withoutHandleBar)
         containerTextFieldView.makeCornerRadius(8)
+        addButton.makeCornerRadius(8)
         
         switch self.type {
         case .selectOne:
@@ -52,7 +51,9 @@ extension SelectTechnicianBottomSheet {
         case .selectMultiple:
             textField.placeholder = "Cari Pendamping yang diinginkan"
             titleLabel.text = "Pilih Pendamping"
+            addButton.configure(title: "Tambah")
             selectAllButton.isHidden = true
+            addButton.isHidden = false
         default: break
         }
         
@@ -79,6 +80,16 @@ extension SelectTechnicianBottomSheet {
                 self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
+        
+        addButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                delegate.selectMultipleTechnician(Array(self.selectedTechnicians))
+                self.dismissBottomSheet()
+            }
+            .store(in: &anyCancellable)
     }
     
     private func dismissBottomSheet() {
@@ -99,15 +110,34 @@ extension SelectTechnicianBottomSheet: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectTechnicialCell.identifier, for: indexPath) as? SelectTechnicialCell,
-              let technicianName = self.data[indexPath.row].txtName,
               let type
         else {
             return UITableViewCell()
         }
         
-        cell.setupCell(name: technicianName, type: type)
+        let technician = self.data[indexPath.row]
+        let isSelected = self.selectedTechnicians.contains(technician)
+        cell.setupCell(data: technician, type: type, isSelected: isSelected)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate = self.delegate else { return }
+        switch self.type {
+        case .selectOne:
+            delegate.didSelectTechnician(self.data[indexPath.row])
+            self.dismissBottomSheet()
+        case .selectMultiple:
+            let technician = self.data[indexPath.row]
+            if self.selectedTechnicians.contains(technician) {
+                self.selectedTechnicians.remove(technician)
+            } else {
+                self.selectedTechnicians.insert(technician)
+            }
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        default: break
+        }
     }
     
 }

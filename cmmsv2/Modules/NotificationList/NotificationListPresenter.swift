@@ -16,7 +16,7 @@ class NotificationListPresenter: BasePresenter {
     @Published public var notification: [NotificationList] = []
     @Published public var workSheetDetail: HistoryDetailEntity?
     @Published public var workSheetData: [WorkOrder] = []
-    @Published public var complaintData: [ComplaintListEntity] = []
+    @Published public var complaintData: [Complaint] = []
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -146,20 +146,7 @@ extension NotificationListPresenter {
                         guard let data = complains.data,
                               let complainsData = data.complains
                         else { return }
-                        let complaintList = complainsData.compactMap { item in
-                            return ComplaintListEntity(
-                                id: item.id ?? 0,
-                                image: item.valSenderImg ?? "",
-                                date: item.txtComplainTime ?? "",
-                                type: item.txtRuangan ?? "",
-                                title: item.valEquipmentName ?? "",
-                                description: item.txtSenderName ?? "",
-                                technician: item.txtEngineerName ?? "",
-                                damage: item.txtTitle ?? "",
-                                status: CorrectiveStatusType(rawValue: item.txtStatus ?? "") ?? CorrectiveStatusType.none,
-                                isActionActive: item.canDeleteLk ?? false)
-                        }
-                        self.complaintData.append(contentsOf: complaintList)
+                        self.complaintData = complainsData
                     }
                 }
             )
@@ -178,7 +165,7 @@ extension NotificationListPresenter {
         router.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
     }
     
-    func navigateToComplaintDetail(navigation: UINavigationController, data: ComplaintListEntity) {
+    func navigateToComplaintDetail(navigation: UINavigationController, data: Complaint) {
         router.navigateToComplaintDetail(navigation: navigation, data: data)
     }
     

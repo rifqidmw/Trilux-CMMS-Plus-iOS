@@ -155,6 +155,25 @@ enum CorrectiveStatusType: String, Codable {
     }
 }
 
+enum CorrectiveTitleType: String {
+    case advanced
+    case accept
+    case none
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Korektif Lanjutan": self = .advanced
+        case "Terima": self = .accept
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
 // MARK: - SELECT TECHNICIAN ENTITY
 struct SelectTechnicianEntity: Codable {
     let count: Int?
@@ -190,4 +209,200 @@ struct TechnicianData: Codable {
         case valDeviceToken
         case isPolisi
     }
+}
+
+enum SelectTechnicianBottomSheetType {
+    case selectOne
+    case selectMultiple
+}
+
+struct TechnicianEntity: Codable, Hashable {
+    let id: String?
+    let name: String?
+    var isSelected = false
+    
+    static func == (lhs: TechnicianEntity, rhs: TechnicianEntity) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+protocol SelectTechnicianBottomSheetDelegate: AnyObject {
+    func didSelectTechnician(_ name: TechnicianEntity)
+    func selectMultipleTechnician(_ names: [TechnicianEntity])
+}
+
+// MARK: - ADVANCED CORRECTIVE RESPONSE
+struct CreateLanjutanEntity: Codable {
+    let data: LanjutanID?
+    let message: String?
+    let status: Int?
+}
+
+struct LanjutanID: Codable {
+    let id: String?
+}
+
+// MARK: - ACCEPT CORRECTIVE RESPONSE
+struct AcceptCorrectiveEntity: Codable {
+    let count: Int?
+    let data: AcceptCorrectiveData?
+    let message: String?
+    let status: Int?
+    let reff: ReffData?
+}
+
+struct AcceptCorrectiveData: Codable {
+    let woDetail: AcceptCorrectiveDetail?
+}
+
+struct AcceptCorrectiveDetail: Codable {
+    let id: String?
+    let valWoNumber: String?
+    let valDate: String?
+    let txtEngineerName: String?
+    let valEngineerId: String?
+    let valEngineerAvatar: String?
+    let txtType: String?
+    let valType: String?
+    let complain: AcceptComplain?
+    let txtHeader: String?
+    let txtTitle: String?
+    let txtSubTitle: String?
+    let valIcon: AcceptValIcon?
+    let valEquipmentId: String?
+    let valStartTime: String?
+    let valEndTime: String?
+    let valDuration: String?
+    let valStatus: String?
+    let txtStatus: String?
+    let valIsManagable: Bool?
+    let valIsDoable: String?
+    let valRating: String?
+    let medias: [String]?
+    let valCanRating: String?
+    let valDelegatedTime: String?
+    let txtFinishStatus: String?
+    let isPendamping: String?
+    let equipment: AcceptEquipment?
+    let valDescriptions: String?
+    let txtDescriptions: String?
+    let taskList: [String]?
+    let valLaik: String?
+    let txtLaik: String?
+    let approveBy: String?
+    let canPendamping: String?
+    let infoLk: InfoLk?
+    let sttQr: String?
+    let namaPerating: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, valWoNumber, valDate, txtEngineerName, valEngineerId, valEngineerAvatar, txtType, valType, complain, txtHeader, txtTitle, txtSubTitle, valIcon, valEquipmentId, valStartTime, valEndTime, valDuration, valStatus, txtStatus, valIsManagable, valIsDoable, valRating, medias, valCanRating, valDelegatedTime, txtFinishStatus, isPendamping, equipment, valDescriptions, txtDescriptions, taskList, valLaik, txtLaik, approveBy, canPendamping, infoLk = "infoLk", sttQr = "stt_qr", namaPerating
+    }
+}
+
+struct AcceptComplain: Codable {
+    let id: Int?
+    let txtTitle: String?
+    let txtDescriptions: String?
+    let txtStatus: String?
+    let valStatus: String?
+    let txtSenderName: String?
+    let valSenderImg: String?
+    let equipment: AcceptEquipment?
+    let txtFinishedDate: String?
+    let txtComplainTime: String?
+    let txtDownTime: String?
+    let txtResponseTime: String?
+    let valIsManagable: Int?
+    let valObservation: Int?
+    let valCorrective: Int?
+    let valWoList: [AcceptValWoList]?
+    let valDelegatedTime: String?
+    let valDelegatable: Bool?
+    let medias: [String]?
+    let txtEngineerName: String?
+    let userIDfinish: String?
+    let isDelay: String?
+    let canPendamping: String?
+    let infoLk: InfoLk?
+    let canDeleteLk: Bool
+    let idLkActive: String?
+    let namaPelapor: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, txtTitle, txtDescriptions, txtStatus, valStatus, txtSenderName, valSenderImg, equipment, txtFinishedDate, txtComplainTime, txtDownTime, txtResponseTime, valIsManagable, valObservation, valCorrective, valWoList, valDelegatedTime, valDelegatable, medias, txtEngineerName, userIDfinish, isDelay, canPendamping, infoLk, canDeleteLk, idLkActive, namaPelapor
+    }
+}
+
+struct AcceptEquipment: Codable {
+    let id: Int?
+    let txtName: String?
+    let valImage: String?
+    let valQR: String?
+    let valQRProperties: QRProperties?
+    let txtRuangan: String?
+    let valRoomId: Int?
+    let txtRoomId: String?
+    let txtSubRuangan: String?
+    let txtLokasiName: String?
+    let txtSerial: String?
+    let txtBrand: String?
+    let txtType: String?
+    let txtInventaris: String?
+    let txtTahun: String?
+    let txtDescriptions: String?
+    let txtLastWoStatus: String?
+    let badgeAsset: String?
+    let badgeTeknis: String?
+    let txtUsiaTeknis: String?
+    let txtDistributor: String?
+    let syncSimak: String?
+    let codeSimak: String?
+    let nameSimak: String?
+    let syncSimbada: String?
+    let codeSimbada: String?
+    let nameSimbada: String?
+    let syncAspak: String?
+    let statusKalibrasi: StatusKalibrasi?
+    let sttQr: String?
+    let txtLokasiInstalasi: String?
+    let idAlat: String?
+    let isNonmedik: String?
+    let lkStatic: String?
+    let klpNonmedik: String?
+    let klpNonmedikName: String?
+    let valRusak: Int?
+    let txtRusak: String?
+    let valKalibrasi: Int?
+    let txtKalibrasi: String?
+    let valKorektif: Int?
+    let txtKorektif: String?
+    let valPreventif: Int?
+    let txtPreventif: String?
+    let valIsComplainable: Int?
+    let txtCantComplainReason: String?
+    let txtInfoUpdate: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, txtName, valImage, valQR, valQRProperties, txtRuangan, valRoomId, txtRoomId, txtSubRuangan, txtLokasiName, txtSerial, txtBrand, txtType, txtInventaris, txtTahun, txtDescriptions, txtLastWoStatus, badgeAsset, badgeTeknis, txtUsiaTeknis, txtDistributor, syncSimak, codeSimak, nameSimak, syncSimbada, codeSimbada, nameSimbada, syncAspak, statusKalibrasi, sttQr = "stt_qr", txtLokasiInstalasi, idAlat, isNonmedik, lkStatic, klpNonmedik, klpNonmedikName, valRusak, txtRusak, valKalibrasi, txtKalibrasi, valKorektif, txtKorektif, valPreventif, txtPreventif, valIsComplainable, txtCantComplainReason, txtInfoUpdate
+    }
+}
+
+struct AcceptValWoList: Codable {
+    let id: String?
+    let lkNumber: String?
+    let lkDate: String?
+    let engineerName: String?
+    let valStatus: String?
+    let statusText: String?
+}
+
+struct AcceptValIcon: Codable {
+    let bg: String?
+    let fo: String?
+    let lbl: String?
 }

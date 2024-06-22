@@ -9,7 +9,7 @@ import UIKit
 
 class DelayCorrectiveDetailRouter: BaseRouter {
     
-    func showView(data: ComplaintListEntity) -> DelayCorrectiveDetailView {
+    func showView(data: Complaint) -> DelayCorrectiveDetailView {
         let interactor = DelayCorrectiveDetailInteractor()
         let presenter = DelayCorrectiveDetailPresenter(interactor: interactor, router: self, data: data)
         let view = DelayCorrectiveDetailView(nibName: String(describing: DelayCorrectiveDetailView.self), bundle: nil)
