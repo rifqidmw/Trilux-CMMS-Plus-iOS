@@ -21,12 +21,14 @@ class SelectTechnicianBottomSheet: BaseNonNavigationController {
     
     weak var delegate: SelectTechnicianBottomSheetDelegate?
     var type: SelectTechnicianBottomSheetType?
+    var filteredData: [TechnicianEntity] = []
     var data: [TechnicianEntity] = []
     var selectedTechnicians: Set<TechnicianEntity> = []
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.filteredData = data
     }
     
 }
@@ -37,6 +39,7 @@ extension SelectTechnicianBottomSheet {
         setupView()
         setupAction()
         setupTableView()
+        setupTextField()
     }
     
     private func setupView() {
@@ -100,12 +103,29 @@ extension SelectTechnicianBottomSheet {
         }
     }
     
+    private func filterData(with query: String) {
+        if query.isEmpty {
+            filteredData = data
+        } else {
+            filteredData = data.filter { $0.name?.lowercased().contains(query.lowercased()) ?? false }
+        }
+        tableView.reloadData()
+    }
+    
+    private func setupTextField() {
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        filterData(with: textField.text ?? "")
+    }
+    
 }
 
 extension SelectTechnicianBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return self.filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,7 +135,7 @@ extension SelectTechnicianBottomSheet: UITableViewDataSource, UITableViewDelegat
             return UITableViewCell()
         }
         
-        let technician = self.data[indexPath.row]
+        let technician = self.filteredData[indexPath.row]
         let isSelected = self.selectedTechnicians.contains(technician)
         cell.setupCell(data: technician, type: type, isSelected: isSelected)
         
@@ -126,10 +146,10 @@ extension SelectTechnicianBottomSheet: UITableViewDataSource, UITableViewDelegat
         guard let delegate = self.delegate else { return }
         switch self.type {
         case .selectOne:
-            delegate.didSelectTechnician(self.data[indexPath.row])
+            delegate.didSelectTechnician(self.filteredData[indexPath.row])
             self.dismissBottomSheet()
         case .selectMultiple:
-            let technician = self.data[indexPath.row]
+            let technician = self.filteredData[indexPath.row]
             if self.selectedTechnicians.contains(technician) {
                 self.selectedTechnicians.remove(technician)
             } else {

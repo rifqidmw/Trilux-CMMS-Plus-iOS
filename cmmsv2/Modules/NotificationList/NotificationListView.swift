@@ -21,7 +21,8 @@ class NotificationListView: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBody()
+        self.setupBody()
+        self.validateUser()
     }
     
 }

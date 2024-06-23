@@ -19,8 +19,8 @@ class RegistrationHospitalView: BaseViewController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
-        configureKeyboard()
+        self.setupBody()
+        self.configureKeyboard()
     }
     
 }

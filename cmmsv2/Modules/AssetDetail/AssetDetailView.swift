@@ -41,6 +41,7 @@ class AssetDetailView: BaseViewController {
         self.setupBody()
         self.setupStripTabBar(in: stripTabBarView)
         self.observeContentHeight(heightConstraint: stripTabBarViewHeightConstraint)
+        self.validateUser()
     }
     
 }
