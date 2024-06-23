@@ -38,7 +38,10 @@ class ComplaintListPresenter: BasePresenter {
 
 extension ComplaintListPresenter {
     
-    func fetchInitData() {
+    func fetchInitData(keyword: String? = nil) {
+        self.keyword = keyword ?? ""
+        self.page = 1
+        self.complaint.removeAll()
         self.fetchComplaintListData(equipmentId: self.equipmentId,
                                     status: self.status,
                                     limit: self.limit,

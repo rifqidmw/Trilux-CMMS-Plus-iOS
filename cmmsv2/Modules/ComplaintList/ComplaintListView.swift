@@ -13,6 +13,7 @@ class ComplaintListView: BaseViewController {
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var searchTextField: SearchTextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var actionTabBarView: ActionBarView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -24,6 +25,7 @@ class ComplaintListView: BaseViewController {
         super.didLoad()
         self.setupBody()
         self.validateUser()
+        self.configureKeyboard()
     }
     
 }
@@ -52,6 +54,7 @@ extension ComplaintListView {
                     self?.showSpinner(false)
                     return
                 }
+                
                 self.data = data
                 self.tableView.reloadData()
                 self.tableView.hideSkeleton()
@@ -84,7 +87,9 @@ extension ComplaintListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Pengaduan Korektif", type: .plain)
-        actionTabBarView.configure(fourthIcon: "ic_arrow_up_down", fourthTitle: "Status")
+        actionTabBarView.configure(fourthIcon: "rectangle.and.pencil.and.ellipsis", fourthTitle: "Status")
+        actionTabBarView.delegate = self
+        searchTextField.delegate = self
         spinner.isHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -115,6 +120,12 @@ extension ComplaintListView {
         tableView.separatorStyle = .none
         tableView.isSkeletonable = true
         tableView.showAnimatedGradientSkeleton()
+    }
+    
+    func reloadTableViewWithAnimation() {
+        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.tableView.reloadData()
+        }, completion: nil)
     }
     
 }

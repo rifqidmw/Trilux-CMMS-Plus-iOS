@@ -86,3 +86,23 @@ extension ComplaintListView: SelectTechnicianBottomSheetDelegate, DatePickerBott
     }
     
 }
+
+extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate {
+    
+    func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String) {
+        guard let presenter = presenter else { return }
+        
+        if text.isEmpty {
+            presenter.fetchInitData(keyword: "")
+            self.reloadTableViewWithAnimation()
+        } else {
+            presenter.fetchInitData(keyword: text)
+            self.reloadTableViewWithAnimation()
+        }
+    }
+    
+    func didTapFourthAction() {
+        AppLogger.log("-- CLICKED")
+    }
+    
+}
