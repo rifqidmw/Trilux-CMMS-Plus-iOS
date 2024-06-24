@@ -406,3 +406,8 @@ struct AcceptValIcon: Codable {
     let fo: String?
     let lbl: String?
 }
+
+struct StatusFilterEntity: Codable {
+    let id: String?
+    let status: CorrectiveStatusType?
+}

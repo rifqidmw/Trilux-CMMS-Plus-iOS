@@ -87,7 +87,7 @@ extension ComplaintListView: SelectTechnicianBottomSheetDelegate, DatePickerBott
     
 }
 
-extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate {
+extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate, FilterStatusBottomSheetDelegate {
     
     func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String) {
         guard let presenter = presenter else { return }
@@ -102,7 +102,17 @@ extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate {
     }
     
     func didTapFourthAction() {
-        AppLogger.log("-- CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showFilterStatusBottomSheet(from: navigation, delegate: self)
+    }
+    
+    func didSelectStatusFilter(_ status: [StatusFilterEntity]) {
+        guard let presenter else { return }
+        let statusString = status.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
+        presenter.fetchInitData(status: statusString)
+        self.reloadTableViewWithAnimation()
     }
     
 }

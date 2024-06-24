@@ -36,4 +36,20 @@ class BaseNonNavigationController: UIViewController {
         }
     }
     
+    func loadBottomSheeet(view: UIView) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            UIView.animate(withDuration: 0.2, animations: {
+                view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+            })
+        }
+    }
+    
+    func dismissBottomSheet(view: UIView) {
+        UIView.animate(withDuration: 0.2, animations: {
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+        }) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
 }

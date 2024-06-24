@@ -50,6 +50,7 @@ class AddComplaintBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.loadBottomSheeet(view: dismissAreaView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,13 +90,6 @@ extension AddComplaintBottomSheet {
         selectEngineerView.configure(title: "Teknisi", placeHolder: "Pilih Teknisi")
         selectPartnerView.configure(title: "Pendamping", placeHolder: "Pilih Pendamping")
         selectDateView.configure(title: "Terjadwal Tanggal", placeHolder: String.getCurrentDateString("dd-MM-yyyy"), type: .date)
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            })
-        }
     }
     
     private func setupAction() {
@@ -155,17 +149,9 @@ extension AddComplaintBottomSheet {
         Publishers.Merge3(bottomSheetView.handleBarArea.gesture(), titleView.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.dismissBottomSheet()
+                self.dismissBottomSheet(view: dismissAreaView)
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func dismissBottomSheet() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
-        }) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
     func updateSelectedValues() {

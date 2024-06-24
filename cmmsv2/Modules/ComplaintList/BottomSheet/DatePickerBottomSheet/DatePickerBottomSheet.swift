@@ -25,6 +25,7 @@ class DatePickerBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.loadBottomSheeet(view: dismissAreaView)
     }
     
 }
@@ -45,17 +46,13 @@ extension DatePickerBottomSheet {
         selectBtn.makeCornerRadius(8)
         cancelBtn.configure(title: "Batal", type: .bordered)
         cancelBtn.makeCornerRadius(8)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            })
-        }
     }
     
     private func setupAction() {
         Publishers.Merge(dismissAreaView.gesture(), cancelBtn.gesture())
             .sink { [weak self] _ in
-                self?.dismissBottomSheet()
+                guard let self else { return }
+                self.dismissBottomSheet(view: dismissAreaView)
             }
             .store(in: &anyCancellable)
         
@@ -63,17 +60,9 @@ extension DatePickerBottomSheet {
             .sink { [weak self] _ in
                 guard let self, let delegate = self.delegate else { return }
                 delegate.didSelectDate(self.datePicker.date)
-                dismissBottomSheet()
+                self.dismissBottomSheet(view: dismissAreaView)
             }
             .store(in: &anyCancellable)
-    }
-    
-    func dismissBottomSheet() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
-        }) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
 }

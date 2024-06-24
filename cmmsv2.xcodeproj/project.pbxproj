@@ -281,6 +281,14 @@
 		CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE82D44E2B47DDB200A54124 /* LoginView.xib */; };
 		CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44F2B47DDB200A54124 /* LoginEntity.swift */; };
 		CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44F2B47DDB200A54124 /* LoginEntity.swift */; };
+		CE8B88CE2C29890F00AF8F63 /* FilterStatusBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8B88CD2C29890F00AF8F63 /* FilterStatusBottomSheet.xib */; };
+		CE8B88CF2C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B88CC2C29890F00AF8F63 /* FilterStatusBottomSheet.swift */; };
+		CE8B88D02C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B88CC2C29890F00AF8F63 /* FilterStatusBottomSheet.swift */; };
+		CE8B88D12C29890F00AF8F63 /* FilterStatusBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8B88CD2C29890F00AF8F63 /* FilterStatusBottomSheet.xib */; };
+		CE8B88D52C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8B88D42C29BCD300AF8F63 /* StatusFilterCell.xib */; };
+		CE8B88D62C29BCD300AF8F63 /* StatusFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B88D32C29BCD300AF8F63 /* StatusFilterCell.swift */; };
+		CE8B88D72C29BCD300AF8F63 /* StatusFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B88D32C29BCD300AF8F63 /* StatusFilterCell.swift */; };
+		CE8B88D82C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8B88D42C29BCD300AF8F63 /* StatusFilterCell.xib */; };
 		CE90B1532B99605700515AD6 /* ComplaintListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B14D2B99605700515AD6 /* ComplaintListPresenter.swift */; };
 		CE90B1542B99605700515AD6 /* ComplaintListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B14D2B99605700515AD6 /* ComplaintListPresenter.swift */; };
 		CE90B1552B99605700515AD6 /* ComplaintListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B14E2B99605700515AD6 /* ComplaintListRouter.swift */; };
@@ -948,6 +956,10 @@
 		CE82D44D2B47DDB200A54124 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE82D44E2B47DDB200A54124 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		CE82D44F2B47DDB200A54124 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		CE8B88CC2C29890F00AF8F63 /* FilterStatusBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStatusBottomSheet.swift; sourceTree = "<group>"; };
+		CE8B88CD2C29890F00AF8F63 /* FilterStatusBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterStatusBottomSheet.xib; sourceTree = "<group>"; };
+		CE8B88D32C29BCD300AF8F63 /* StatusFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusFilterCell.swift; sourceTree = "<group>"; };
+		CE8B88D42C29BCD300AF8F63 /* StatusFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusFilterCell.xib; sourceTree = "<group>"; };
 		CE90B14D2B99605700515AD6 /* ComplaintListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintListPresenter.swift; sourceTree = "<group>"; };
 		CE90B14E2B99605700515AD6 /* ComplaintListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintListRouter.swift; sourceTree = "<group>"; };
 		CE90B14F2B99605700515AD6 /* ComplaintListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintListInteractor.swift; sourceTree = "<group>"; };
@@ -1752,6 +1764,25 @@
 			path = RegistrationHospital;
 			sourceTree = "<group>";
 		};
+		CE8B88CB2C29887200AF8F63 /* FilterStatusBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B88D22C29BCC000AF8F63 /* StatusFilterCell */,
+				CE8B88CC2C29890F00AF8F63 /* FilterStatusBottomSheet.swift */,
+				CE8B88CD2C29890F00AF8F63 /* FilterStatusBottomSheet.xib */,
+			);
+			path = FilterStatusBottomSheet;
+			sourceTree = "<group>";
+		};
+		CE8B88D22C29BCC000AF8F63 /* StatusFilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B88D32C29BCD300AF8F63 /* StatusFilterCell.swift */,
+				CE8B88D42C29BCD300AF8F63 /* StatusFilterCell.xib */,
+			);
+			path = StatusFilterCell;
+			sourceTree = "<group>";
+		};
 		CE90B14C2B99602300515AD6 /* ComplaintList */ = {
 			isa = PBXGroup;
 			children = (
@@ -2126,6 +2157,7 @@
 			children = (
 				CEF049982C1C1FE0006B6FFD /* AddComplaintBottomSheet */,
 				CECC8F672C23387B0071DF75 /* DatePickerBottomSheet */,
+				CE8B88CB2C29887200AF8F63 /* FilterStatusBottomSheet */,
 				CEF049AD2C1C624C006B6FFD /* SelectTechnicianBottomSheet */,
 			);
 			path = BottomSheet;
@@ -2827,6 +2859,7 @@
 				CE58FA672C0C32410067D8C4 /* PreventiveTVC.xib in Resources */,
 				CE4255F62BA740AF002B558C /* LogBookCVC.xib in Resources */,
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CE8B88D52C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEF049AA2C1C4AA6006B6FFD /* SelectView.xib in Resources */,
 				CE6286952C19D0BE00CB552F /* CorrectiveTVC.xib in Resources */,
@@ -2891,6 +2924,7 @@
 				CEFD6D262BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
 				CEE07C952B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib in Resources */,
 				CEE780D62C0C788C001BA9C2 /* SparePartSectionView.xib in Resources */,
+				CE8B88CE2C29890F00AF8F63 /* FilterStatusBottomSheet.xib in Resources */,
 				CE2FA51B2B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailView.xib in Resources */,
 				CE5442932B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB777F2B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
@@ -2964,6 +2998,7 @@
 				CE58FA692C0C32410067D8C4 /* PreventiveTVC.xib in Resources */,
 				CE4255F72BA740AF002B558C /* LogBookCVC.xib in Resources */,
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
+				CE8B88D82C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEF049AC2C1C4AA6006B6FFD /* SelectView.xib in Resources */,
 				CE6286972C19D0BE00CB552F /* CorrectiveTVC.xib in Resources */,
@@ -3028,6 +3063,7 @@
 				CEFD6D272BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
 				CEE07C962B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib in Resources */,
 				CEE780D82C0C788C001BA9C2 /* SparePartSectionView.xib in Resources */,
+				CE8B88D12C29890F00AF8F63 /* FilterStatusBottomSheet.xib in Resources */,
 				CE2FA51C2B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailView.xib in Resources */,
 				CE5442942B4727EC0022047D /* GeneralTextField.xib in Resources */,
 				CECB77802B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
@@ -3284,6 +3320,7 @@
 				CE2FA51D2B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailEntity.swift in Sources */,
 				CE9E7DC22B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
 				CEFD6D222BF2713C00A8BA04 /* WorkSheetCorrectiveDetailInteractor.swift in Sources */,
+				CE8B88D62C29BCD300AF8F63 /* StatusFilterCell.swift in Sources */,
 				CECB3E382B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A32B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CE0F20D02B754B73008702E0 /* DropdownView.swift in Sources */,
@@ -3414,6 +3451,7 @@
 				CEE79EBD2B70ED9B0063D844 /* WorkSheetDetailPresenter.swift in Sources */,
 				CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CEE8CB932BF7C8FD006E59B7 /* HistoryDetailView.swift in Sources */,
+				CE8B88CF2C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208852B82391F00CD4242 /* NotificationListView.swift in Sources */,
@@ -3558,6 +3596,7 @@
 				CE2FA51E2B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailEntity.swift in Sources */,
 				CE9E7DC32B531E5800240A7D /* ChangePictureBottomSheet.swift in Sources */,
 				CEFD6D232BF2713C00A8BA04 /* WorkSheetCorrectiveDetailInteractor.swift in Sources */,
+				CE8B88D72C29BCD300AF8F63 /* StatusFilterCell.swift in Sources */,
 				CECB3E392B45E4B9004A260D /* Constants.swift in Sources */,
 				CEC207A42B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CE0F20D12B754B73008702E0 /* DropdownView.swift in Sources */,
@@ -3688,6 +3727,7 @@
 				CEE79EBE2B70ED9B0063D844 /* WorkSheetDetailPresenter.swift in Sources */,
 				CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CEE8CB942BF7C8FD006E59B7 /* HistoryDetailView.swift in Sources */,
+				CE8B88D02C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208862B82391F00CD4242 /* NotificationListView.swift in Sources */,

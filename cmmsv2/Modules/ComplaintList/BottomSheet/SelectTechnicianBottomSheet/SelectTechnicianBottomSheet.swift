@@ -28,6 +28,7 @@ class SelectTechnicianBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.loadBottomSheeet(view: dismissAreaView)
         self.filteredData = data
     }
     
@@ -59,12 +60,6 @@ extension SelectTechnicianBottomSheet {
             addButton.isHidden = false
         default: break
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            })
-        }
     }
     
     private func setupTableView() {
@@ -80,7 +75,7 @@ extension SelectTechnicianBottomSheet {
         Publishers.Merge(bottomSheetView.handleBarArea.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.dismissBottomSheet()
+                self.dismissBottomSheet(view: dismissAreaView)
             }
             .store(in: &anyCancellable)
         
@@ -90,17 +85,9 @@ extension SelectTechnicianBottomSheet {
                       let delegate = self.delegate
                 else { return }
                 delegate.selectMultipleTechnician(Array(self.selectedTechnicians))
-                self.dismissBottomSheet()
+                self.dismissBottomSheet(view: dismissAreaView)
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func dismissBottomSheet() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
-        }) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
     private func filterData(with query: String) {
@@ -147,7 +134,7 @@ extension SelectTechnicianBottomSheet: UITableViewDataSource, UITableViewDelegat
         switch self.type {
         case .selectOne:
             delegate.didSelectTechnician(self.filteredData[indexPath.row])
-            self.dismissBottomSheet()
+            self.dismissBottomSheet(view: dismissAreaView)
         case .selectMultiple:
             let technician = self.filteredData[indexPath.row]
             if self.selectedTechnicians.contains(technician) {

@@ -38,8 +38,13 @@ class ComplaintListPresenter: BasePresenter {
 
 extension ComplaintListPresenter {
     
-    func fetchInitData(keyword: String? = nil) {
-        self.keyword = keyword ?? ""
+    func fetchInitData(keyword: String? = nil, status: String? = nil) {
+        if let status = status {
+            self.status = status
+        }
+        if let keyword = keyword {
+            self.keyword = keyword
+        }
         self.page = 1
         self.complaint.removeAll()
         self.fetchComplaintListData(equipmentId: self.equipmentId,
@@ -197,6 +202,12 @@ extension ComplaintListPresenter {
     
     func showDatePickerBottomSheet(from navigation: UINavigationController, delegate: DatePickerBottomSheetDelegate) {
         let bottomSheet = DatePickerBottomSheet(nibName: String(describing: DatePickerBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+    }
+    
+    func showFilterStatusBottomSheet(from navigation: UINavigationController, delegate: FilterStatusBottomSheetDelegate) {
+        let bottomSheet = FilterStatusBottomSheet(nibName: String(describing: FilterStatusBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
     }

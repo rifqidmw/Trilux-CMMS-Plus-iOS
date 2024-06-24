@@ -88,7 +88,7 @@ extension ActionBarView {
         }
     
     private func configureSharedComponent() {
-        self.addShadow(1, position: .top, opacity: 0.2)
+        self.addShadow(1, position: .top, opacity: 0.1)
     }
     
     private func setupAction() {
@@ -134,12 +134,9 @@ extension ActionBarView {
     }
     
     private func handleButtonTap(button: UIView, iconImageView: UIImageView, titleLabel: UILabel, delegate: ActionBarViewDelegate) {
-        if activeButton == button {
-            deselectActiveButton()
-            activeButton = nil
-        } else {
-            deselectActiveButton()
-            activateButton(button: button, iconImageView: iconImageView, titleLabel: titleLabel)
+        self.activateButton(button: button, iconImageView: iconImageView, titleLabel: titleLabel)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.deselectActiveButton()
         }
     }
     
