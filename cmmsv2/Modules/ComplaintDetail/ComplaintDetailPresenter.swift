@@ -11,7 +11,7 @@ class ComplaintDetailPresenter: BasePresenter {
     
     private let interactor: ComplaintDetailInteractor
     private let router = ComplaintDetailRouter()
-    let data: ComplaintListEntity?
+    let data: Complaint?
     
     @Published public var complaintData: ComplaintDetail?
     
@@ -19,7 +19,7 @@ class ComplaintDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: ComplaintDetailInteractor, data: ComplaintListEntity) {
+    init(interactor: ComplaintDetailInteractor, data: Complaint) {
         self.interactor = interactor
         self.data = data
     }

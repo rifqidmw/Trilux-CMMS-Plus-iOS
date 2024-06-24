@@ -69,7 +69,8 @@ class WorkSheetDetailView: BaseViewController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
+        self.validateUser()
     }
     
 }

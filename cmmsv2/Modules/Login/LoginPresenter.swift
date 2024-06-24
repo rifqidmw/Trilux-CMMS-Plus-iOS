@@ -59,6 +59,7 @@ extension LoginPresenter {
                             UserDefaults.standard.setValue(userProfile.txtUnitKerja, forKey: "txtUnitKerja")
                             UserDefaults.standard.setValue(userProfile.txtTelepon, forKey: "txtTelepon")
                             UserDefaults.standard.setValue(userProfile.valToken, forKey: "valToken")
+                            UserDefaults.standard.setValue(userProfile.valPosition, forKey: "valPosition")
                             
                             self.userProfile = userProfile
                             self.userData = user

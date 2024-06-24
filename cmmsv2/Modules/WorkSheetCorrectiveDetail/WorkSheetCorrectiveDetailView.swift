@@ -38,6 +38,7 @@ class WorkSheetCorrectiveDetailView: BaseViewController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.validateUser()
     }
     
 }

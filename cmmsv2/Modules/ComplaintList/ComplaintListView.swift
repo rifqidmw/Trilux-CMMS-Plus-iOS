@@ -13,15 +13,19 @@ class ComplaintListView: BaseViewController {
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var searchTextField: SearchTextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var actionTabBarView: ActionBarView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: ComplaintListPresenter?
-    var data: [ComplaintListEntity] = []
+    var data: [Complaint] = []
+    var bottomSheet: AddComplaintBottomSheet?
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.validateUser()
+        self.configureKeyboard()
     }
     
 }
@@ -43,24 +47,49 @@ extension ComplaintListView {
     
     private func bindingData() {
         guard let presenter else { return }
-        presenter.$complaintData
+        presenter.$complaint
             .sink { [weak self] data in
                 guard let self
                 else {
                     self?.showSpinner(false)
                     return
                 }
+                
                 self.data = data
                 self.tableView.reloadData()
                 self.tableView.hideSkeleton()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
+        
+        presenter.$advanceWorkSheet
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                if data.message == "Success" {
+                    self.dismiss(animated: true)
+                    self.fetchInitialData()
+                    self.tableView.reloadData()
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$acceptCorrective
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                if data.message == "Success" {
+                    self.dismiss(animated: true)
+                    self.fetchInitialData()
+                    self.tableView.reloadData()
+                }
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Pengaduan Korektif", type: .plain)
-        actionTabBarView.configure(fourthIcon: "ic_arrow_up_down", fourthTitle: "Status")
+        actionTabBarView.configure(fourthIcon: "rectangle.and.pencil.and.ellipsis", fourthTitle: "Status")
+        actionTabBarView.delegate = self
+        searchTextField.delegate = self
         spinner.isHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -91,6 +120,12 @@ extension ComplaintListView {
         tableView.separatorStyle = .none
         tableView.isSkeletonable = true
         tableView.showAnimatedGradientSkeleton()
+    }
+    
+    func reloadTableViewWithAnimation() {
+        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.tableView.reloadData()
+        }, completion: nil)
     }
     
 }
@@ -135,6 +170,7 @@ extension ComplaintListView: SkeletonTableViewDataSource, SkeletonTableViewDeleg
             
             DispatchQueue.main.async {
                 presenter.fetchNextPage()
+                self.tableView.reloadData()
             }
         }
     }

@@ -23,13 +23,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ows-T0-09W">
-                        <rect key="frame" x="0.0" y="10" width="29" height="14.333333333333336"/>
+                        <rect key="frame" x="4" y="10" width="29" height="14.333333333333336"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                         <color key="textColor" name="customDarkGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ybP-cv-qTe">
-                        <rect key="frame" x="304" y="9" width="16" height="16"/>
+                        <rect key="frame" x="300" y="9" width="16" height="16"/>
                         <subviews>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_up_right_corner" translatesAutoresizingMaskIntoConstraints="NO" id="anC-Z0-GCI">
                                 <rect key="frame" x="0.0" y="16" width="24" height="0.0"/>
@@ -45,8 +45,8 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ybP-cv-qTe" secondAttribute="trailing" id="0cG-pF-aFB"/>
-                    <constraint firstItem="ows-T0-09W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CnA-0x-lxu"/>
+                    <constraint firstAttribute="trailing" secondItem="ybP-cv-qTe" secondAttribute="trailing" constant="4" id="0cG-pF-aFB"/>
+                    <constraint firstItem="ows-T0-09W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="CnA-0x-lxu"/>
                     <constraint firstItem="ybP-cv-qTe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NDI-3u-lZV"/>
                     <constraint firstItem="ows-T0-09W" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iaI-hA-uNj"/>
                 </constraints>

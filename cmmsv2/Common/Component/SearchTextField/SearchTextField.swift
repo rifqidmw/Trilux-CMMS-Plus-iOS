@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import Combine
+
+protocol SearchTextFieldDelegate: AnyObject {
+    func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String)
+}
 
 class SearchTextField: UIView {
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var textField: UITextField!
+    
+    weak var delegate: SearchTextFieldDelegate?
+    private var anyCancellable = Set<AnyCancellable>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +36,24 @@ class SearchTextField: UIView {
         self.addSubview(view)
         self.containerView.makeCornerRadius(8)
         self.containerView.addShadow(0.4)
+        self.setupTextField()
     }
     
+    private func setupTextField() {
+        self.textField.delegate = self
+        self.textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingDidEnd)
+    }
+    
+    @objc private func textFieldDidChange() {
+        guard let text = textField.text else { return }
+        delegate?.searchTextField(self, didChangeText: text)
+    }
+    
+}
+
+extension SearchTextField: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

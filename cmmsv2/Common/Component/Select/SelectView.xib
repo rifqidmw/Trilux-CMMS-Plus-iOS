@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="iconImageView" destination="kue-rX-Zxe" id="rqa-Gi-TAi"/>
                 <outlet property="placeholderTitleLabel" destination="CBt-Ec-cD2" id="76D-CW-ZSI"/>
                 <outlet property="selectContainerView" destination="q3i-os-M2l" id="njQ-oI-b6P"/>
                 <outlet property="titleLabel" destination="hUb-6f-Jvw" id="ef7-A6-BfM"/>

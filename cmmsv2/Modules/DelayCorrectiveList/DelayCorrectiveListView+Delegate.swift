@@ -9,7 +9,7 @@ import UIKit
 
 extension DelayCorrectiveListView: CorrectiveCellDelegate {
     
-    func didTapContinueCorrective(data: Complaint) {
+    func didTapContinueCorrective(data: Complaint, title: CorrectiveTitleType) {
         AppLogger.log("-- THIS IS COMPLAINT DATA: \(data)")
     }
     

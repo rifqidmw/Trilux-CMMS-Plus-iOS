@@ -11,7 +11,7 @@ class DelayCorrectiveDetailPresenter: BasePresenter {
     
     private let interactor: DelayCorrectiveDetailInteractor
     private let router: DelayCorrectiveDetailRouter
-    let data: ComplaintListEntity?
+    let data: Complaint?
     
     @Published public var complaintData: DelayCorrectiveData?
     
@@ -19,7 +19,7 @@ class DelayCorrectiveDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: DelayCorrectiveDetailInteractor, router: DelayCorrectiveDetailRouter, data: ComplaintListEntity) {
+    init(interactor: DelayCorrectiveDetailInteractor, router: DelayCorrectiveDetailRouter, data: Complaint) {
         self.interactor = interactor
         self.router = router
         self.data = data

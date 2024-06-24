@@ -71,19 +71,19 @@ extension ActionBarView {
         fourthIcon: String? = nil,
         fourthTitle: String? = nil) {
             self.firstContainerActionStackView.isHidden = firstTitle?.isEmpty ?? true
-            self.firstActionIconImageView.image = UIImage(named: firstIcon ?? "")
+            self.firstActionIconImageView.image = UIImage(systemName: firstIcon ?? "")
             self.firstActionTitleLabel.text = firstTitle ?? ""
             
             self.secondContainerActionStackView.isHidden = secondTitle?.isEmpty ?? true
-            self.secondActionIconImageView.image = UIImage(named: secondIcon ?? "")
+            self.secondActionIconImageView.image = UIImage(systemName: secondIcon ?? "")
             self.secondActionTitleLabel.text = secondTitle ?? ""
             
             self.thirdContainerActionStackView.isHidden = thirdTitle?.isEmpty ?? true
-            self.thirdActionIconImageView.image = UIImage(named: thirdIcon ?? "")
+            self.thirdActionIconImageView.image = UIImage(systemName: thirdIcon ?? "")
             self.thirdActionTitleLabel.text = thirdTitle ?? ""
             
             self.fourthContainerActionStackView.isHidden = fourthTitle?.isEmpty ?? true
-            self.fourthActionIconImageView.image = UIImage(named: fourthIcon ?? "")
+            self.fourthActionIconImageView.image = UIImage(systemName: fourthIcon ?? "")
             self.fourthActionTitleLabel.text = fourthTitle ?? ""
         }
     
@@ -134,8 +134,13 @@ extension ActionBarView {
     }
     
     private func handleButtonTap(button: UIView, iconImageView: UIImageView, titleLabel: UILabel, delegate: ActionBarViewDelegate) {
-        deselectActiveButton()
-        activateButton(button: button, iconImageView: iconImageView, titleLabel: titleLabel)
+        if activeButton == button {
+            deselectActiveButton()
+            activeButton = nil
+        } else {
+            deselectActiveButton()
+            activateButton(button: button, iconImageView: iconImageView, titleLabel: titleLabel)
+        }
     }
     
     private func activateButton(button: UIView, iconImageView: UIImageView, titleLabel: UILabel) {
@@ -145,14 +150,13 @@ extension ActionBarView {
     }
     
     private func deselectActiveButton() {
-        guard let activeButton = activeButton,
-              let iconImageView = (activeButton.subviews.compactMap { $0 as? UIImageView }.first),
-              let titleLabel = (activeButton.subviews.compactMap { $0 as? UILabel }.first) else {
-            return
-        }
+        guard let activeButton = activeButton else { return }
         
-        iconImageView.tintColor = .customPlaceholderColor
-        titleLabel.textColor = .customPlaceholderColor
+        let iconImageView = activeButton.subviews.compactMap { $0 as? UIImageView }.first
+        let titleLabel = activeButton.subviews.compactMap { $0 as? UILabel }.first
+        
+        iconImageView?.tintColor = .customPlaceholderColor
+        titleLabel?.textColor = .customPlaceholderColor
     }
     
 }

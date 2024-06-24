@@ -84,6 +84,14 @@ enum Endpoint {
     case delayCorrectiveDetail(id: String?)
     case calibrator
     case userFilter(job: String?)
+    case createLanjutan(engineerId: String,
+                        complainId: String,
+                        dueDate: String,
+                        engineerPendamping: [String])
+    case createCorrective(engineerId: String,
+                          complainId: String,
+                          dueDate: String,
+                          engineerPendamping: [String])
 }
 
 // MARK: - PATH URL
@@ -193,6 +201,10 @@ extension Endpoint {
             return "lk/kalibrator"
         case .userFilter(job: let job):
             return "user/search?job=\(job ?? "")"
+        case .createLanjutan:
+            return "lk/create_lanjutan"
+        case .createCorrective:
+            return "lk/create_korektif"
         }
     }
 }
@@ -206,7 +218,9 @@ extension Endpoint {
                 .updateProfile,
                 .changePassword,
                 .uploadProfile,
-                .workSheetDetail:
+                .workSheetDetail,
+                .createLanjutan,
+                .createCorrective:
             return .post
         default:
             return .get
@@ -264,6 +278,22 @@ extension Endpoint {
             let params: [String: Any] = [
                 "id_lk": id,
                 "aksi": action
+            ]
+            return params
+        case .createLanjutan(engineerId: let engineerId, complainId: let complainId, dueDate: let dueDate, engineerPendamping: let engineerPendamping):
+            let params: [String: Any] = [
+                "engineer_id": engineerId,
+                "complain_id": complainId,
+                "due_date": dueDate,
+                "engineer_pendamping": engineerPendamping
+            ]
+            return params
+        case .createCorrective(engineerId: let engineerId, complainId: let complainId, dueDate: let dueDate, engineerPendamping: let engineerPendamping):
+            let params: [String: Any] = [
+                "engineer_id": engineerId,
+                "complain_id": complainId,
+                "due_date": dueDate,
+                "engineer_pendamping": engineerPendamping
             ]
             return params
         default:

@@ -32,13 +32,16 @@ class SelectTechnicialCell: UITableViewCell {
 
 extension SelectTechnicialCell {
     
-    func setupCell(name: String, type: SelectTechnicianBottomSheetType) {
-        self.titleLabel.text = name
+    func setupCell(data: TechnicianEntity, type: SelectTechnicianBottomSheetType, isSelected: Bool = false) {
+        self.titleLabel.text = data.name
         switch type {
         case .selectOne:
             arrowIconImageView.isHidden = false
+            checkBoxImageView.isHidden = true
         case .selectMultiple:
+            arrowIconImageView.isHidden = true
             checkBoxImageView.isHidden = false
+            checkBoxImageView.image = UIImage(named: isSelected ? "checked_checkbox" : "unchecked_checkbox")
         }
     }
     

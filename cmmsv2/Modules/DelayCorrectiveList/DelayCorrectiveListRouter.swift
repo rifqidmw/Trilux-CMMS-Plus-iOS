@@ -21,7 +21,7 @@ class DelayCorrectiveListRouter: BaseRouter {
 
 extension DelayCorrectiveListRouter {
     
-    func navigateToDetailComplaint(from navigation: UINavigationController, data: ComplaintListEntity) {
+    func navigateToDetailComplaint(from navigation: UINavigationController, data: Complaint) {
         let vc = DelayCorrectiveDetailRouter().showView(data: data)
         navigation.pushViewController(vc, animated: true)
     }

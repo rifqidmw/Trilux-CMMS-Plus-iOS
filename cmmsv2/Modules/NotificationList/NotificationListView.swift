@@ -17,11 +17,12 @@ class NotificationListView: BaseViewController {
     var presenter: NotificationListPresenter?
     var data: [NotificationList] = []
     var workSheetData: [WorkOrder] = []
-    var complaintData: [ComplaintListEntity] = []
+    var complaintData: [Complaint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBody()
+        self.setupBody()
+        self.validateUser()
     }
     
 }

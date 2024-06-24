@@ -16,11 +16,12 @@ class DelayCorrectiveListView: BaseViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var presenter: DelayCorrectiveListPresenter?
-    var data: [ComplaintListEntity] = []
+    var data: [Complaint] = []
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.validateUser()
     }
     
 }
@@ -42,7 +43,7 @@ extension DelayCorrectiveListView {
     
     private func bindingData() {
         guard let presenter else { return }
-        presenter.$complaintData
+        presenter.$complaint
             .sink { [weak self] data in
                 guard let self
                 else {

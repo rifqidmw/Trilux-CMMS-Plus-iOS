@@ -21,9 +21,10 @@ class WorkSheetMonitoringFunctionDetailView: BaseViewController {
     var presenter: WorkSheetMonitoringFunctionDetailPresenter?
     var header: WorkSheetCardEntity = dummyImageCardData
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupBody()
+    override func didLoad() {
+        super.didLoad()
+        self.setupBody()
+        self.validateUser()
     }
     
 }

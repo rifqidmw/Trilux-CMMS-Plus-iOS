@@ -8,11 +8,6 @@
 import UIKit
 import Combine
 
-enum SelectTechnicianBottomSheetType {
-    case selectOne
-    case selectMultiple
-}
-
 class SelectTechnicianBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,13 +17,18 @@ class SelectTechnicianBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var containerTextFieldView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addButton: GeneralButton!
     
+    weak var delegate: SelectTechnicianBottomSheetDelegate?
     var type: SelectTechnicianBottomSheetType?
-    var data: [TechnicianData] = []
+    var filteredData: [TechnicianEntity] = []
+    var data: [TechnicianEntity] = []
+    var selectedTechnicians: Set<TechnicianEntity> = []
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.filteredData = data
     }
     
 }
@@ -39,11 +39,13 @@ extension SelectTechnicianBottomSheet {
         setupView()
         setupAction()
         setupTableView()
+        setupTextField()
     }
     
     private func setupView() {
         bottomSheetView.configure(type: .withoutHandleBar)
         containerTextFieldView.makeCornerRadius(8)
+        addButton.makeCornerRadius(8)
         
         switch self.type {
         case .selectOne:
@@ -52,14 +54,16 @@ extension SelectTechnicianBottomSheet {
         case .selectMultiple:
             textField.placeholder = "Cari Pendamping yang diinginkan"
             titleLabel.text = "Pilih Pendamping"
+            addButton.configure(title: "Tambah")
             selectAllButton.isHidden = true
+            addButton.isHidden = false
         default: break
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.dismissAreaView.makeAnimation {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            }
+            })
         }
     }
     
@@ -76,9 +80,44 @@ extension SelectTechnicianBottomSheet {
         Publishers.Merge(bottomSheetView.handleBarArea.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.dismiss(animated: true)
+                self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
+        
+        addButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate = self.delegate
+                else { return }
+                delegate.selectMultipleTechnician(Array(self.selectedTechnicians))
+                self.dismissBottomSheet()
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func dismissBottomSheet() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+        }) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func filterData(with query: String) {
+        if query.isEmpty {
+            filteredData = data
+        } else {
+            filteredData = data.filter { $0.name?.lowercased().contains(query.lowercased()) ?? false }
+        }
+        tableView.reloadData()
+    }
+    
+    private func setupTextField() {
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        filterData(with: textField.text ?? "")
     }
     
 }
@@ -86,20 +125,39 @@ extension SelectTechnicianBottomSheet {
 extension SelectTechnicianBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return self.filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectTechnicialCell.identifier, for: indexPath) as? SelectTechnicialCell,
-              let technicianName = self.data[indexPath.row].txtName,
               let type
         else {
             return UITableViewCell()
         }
         
-        cell.setupCell(name: technicianName, type: type)
+        let technician = self.filteredData[indexPath.row]
+        let isSelected = self.selectedTechnicians.contains(technician)
+        cell.setupCell(data: technician, type: type, isSelected: isSelected)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate = self.delegate else { return }
+        switch self.type {
+        case .selectOne:
+            delegate.didSelectTechnician(self.filteredData[indexPath.row])
+            self.dismissBottomSheet()
+        case .selectMultiple:
+            let technician = self.filteredData[indexPath.row]
+            if self.selectedTechnicians.contains(technician) {
+                self.selectedTechnicians.remove(technician)
+            } else {
+                self.selectedTechnicians.insert(technician)
+            }
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        default: break
+        }
     }
     
 }
