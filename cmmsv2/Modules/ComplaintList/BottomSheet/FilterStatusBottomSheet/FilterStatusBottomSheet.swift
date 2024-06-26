@@ -31,7 +31,7 @@ class FilterStatusBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
-        self.loadBottomSheeet(view: dismissAreaView)
+        self.showBottomSheet()
         self.selectedStatuses = Set(data.map { $0.id ?? "0"})
         self.collectionView.reloadData()
     }
@@ -58,14 +58,14 @@ extension FilterStatusBottomSheet {
                 guard let self, let delegate = self.delegate else { return }
                 let selectedFilters = data.filter { self.selectedStatuses.contains($0.id ?? "0") }
                 delegate.didSelectStatusFilter(selectedFilters)
-                self.dismissBottomSheet(view: dismissAreaView)
+                self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
         
         Publishers.Merge(bottomSheetView.handleBarArea.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.dismissBottomSheet(view: dismissAreaView)
+                self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
     }

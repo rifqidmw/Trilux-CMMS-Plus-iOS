@@ -50,7 +50,7 @@ class WorkSheetCVC: UICollectionViewCell {
         self.markView.makeCornerRadius(4, .rightCurve)
         self.containerView.makeCornerRadius(8)
         self.makeCornerRadius(8)
-        self.addShadow(4.2, opacity: 0.2)
+        self.containerView.addShadow(2, position: .bottom, opacity: 0.2)
         self.showSkeletonAnimation()
     }
     
@@ -60,8 +60,8 @@ extension WorkSheetCVC {
     
     func setupCell(data: WorkSheetListEntity, type: WorkSheetCellType) {
         hideSkeletonAnimation()
-        uniqueNumberLabel.text = data.uniqueNumber
-        workSheetLabel.text = data.workName
+        uniqueNumberLabel.text = data.serialNumber
+        workSheetLabel.text = data.title
         configureStatus(status: data.status ?? .none)
         configureCategory(category: data.category ?? .none)
         dateLabel.text = data.dateTime
@@ -70,7 +70,7 @@ extension WorkSheetCVC {
         case .monitoring:
             secondBadgeView.isHidden = true
             markView.isHidden = true
-            descriptionLabel.text = "\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
+            descriptionLabel.text = "\(data.lkNumber ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
             descriptionLabel.isHidden = false
             firstBadgeView.isHidden = data.status == .done ? false : true
         case .preventive:
@@ -86,7 +86,7 @@ extension WorkSheetCVC {
             secondBadgeView.isHidden = data.category == WorkSheetCategory.none ? true : false
             firstBadgeLabel.text = "Lembar Kerja Disetujui"
         case .calibration:
-            descriptionLabel.text = "No#\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
+            descriptionLabel.text = "No#\(data.lkNumber ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
             descriptionLabel.isHidden = false
             firstBadgeLabel.text = "Koreksi"
             firstBadgeView.isHidden = data.lkStatus == "2" ? false : true
@@ -97,7 +97,7 @@ extension WorkSheetCVC {
         case .history:
             uniqueNumberLabel.textColor = UIColor.customPlaceholderColor
             descriptionLabel.isHidden = false
-            descriptionLabel.text = "No#\(data.serial ?? "")/\(data.brandName ?? "") - \(data.room ?? "") - \(data.installation ?? "")"
+            descriptionLabel.text = "No#\(data.lkNumber ?? "")/\(data.brandName ?? "") - \(data.room ?? "") - \(data.installation ?? "")"
             firstBadgeLabel.text = "Lembar Kerja Disetujui"
             firstBadgeView.isHidden = data.status == .done ? false : true
             secondBadgeView.isHidden = true
@@ -106,7 +106,7 @@ extension WorkSheetCVC {
             secondBadgeView.isHidden = true
             markView.isHidden = true
             descriptionLabel.isHidden = false
-            descriptionLabel.text = "\(data.serial ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
+            descriptionLabel.text = "\(data.lkNumber ?? "") - \(data.installation ?? "") - \(data.room ?? "")"
         }
     }
     
@@ -175,17 +175,20 @@ extension WorkSheetCVC {
     }
     
     private func showSkeletonAnimation() {
-        [containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
+        [self.containerDescriptionStackView,
+         self.containerSerialApprovedStackView,
+         self.badgeView].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
         }
     }
     
     private func hideSkeletonAnimation() {
-        [containerDescriptionStackView, containerSerialApprovedStackView, badgeView].forEach {
+        [self.containerDescriptionStackView,
+         self.containerSerialApprovedStackView,
+         self.badgeView].forEach {
             $0.hideSkeleton()
         }
     }
     
 }
-

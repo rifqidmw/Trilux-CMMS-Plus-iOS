@@ -235,6 +235,10 @@ protocol SelectTechnicianBottomSheetDelegate: AnyObject {
     func selectMultipleTechnician(_ names: [TechnicianEntity])
 }
 
+protocol CorrectiveCellDelegate: AnyObject {
+    func didTapContinueCorrective(data: Complaint, title: CorrectiveTitleType)
+}
+
 // MARK: - ADVANCED CORRECTIVE RESPONSE
 struct CreateLanjutanEntity: Codable {
     let data: LanjutanID?
@@ -282,7 +286,7 @@ struct AcceptCorrectiveDetail: Codable {
     let valIsManagable: Bool?
     let valIsDoable: String?
     let valRating: String?
-    let medias: [String]?
+    let medias: [Media]?
     let valCanRating: String?
     let valDelegatedTime: String?
     let txtFinishStatus: String?
@@ -323,7 +327,7 @@ struct AcceptComplain: Codable {
     let valWoList: [AcceptValWoList]?
     let valDelegatedTime: String?
     let valDelegatable: Bool?
-    let medias: [String]?
+    let medias: [Media]?
     let txtEngineerName: String?
     let userIDfinish: String?
     let isDelay: String?

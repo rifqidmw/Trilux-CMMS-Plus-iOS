@@ -55,23 +55,23 @@ extension PreventiveMaintenanceListPresenter {
                 },
                 receiveValue: { preventive in
                     DispatchQueue.main.async {
-                        guard let data = preventive.data
-                        else { return }
-                        
+                        guard let data = preventive.data else { return }
                         let preventiveData = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idAsset ?? "", 
-                                uniqueNumber: item.serial ?? "",
-                                workName: item.assetName ?? "",
-                                workDesc: item.lkLabel ?? "",
-                                serial: item.idAsset ?? "",
-                                installation: item.instalasi ?? "",
+                                idLK: item.idLK ?? "",
+                                idAsset: item.idAsset ?? "",
+                                serialNumber: item.serial ?? "",
+                                title: item.assetName ?? "",
+                                description: item.lkInfo ?? "",
                                 room: item.ruangan ?? "",
+                                installation: item.instalasi ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
-                                lkStatus: item.lkStatus,
+                                lkNumber: item.lkNumber ?? "",
+                                lkStatus: item.lkStatus ?? "",
                                 category: WorkSheetCategory.none,
-                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
+                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
+                            )
                         }
                         self.preventiveData.append(contentsOf: preventiveData)
                     }
@@ -84,6 +84,14 @@ extension PreventiveMaintenanceListPresenter {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
         self.fetchWorkSheetPreventiveList(limit: self.limit, page: self.page, engineer: self.engineer)
+    }
+    
+}
+
+extension PreventiveMaintenanceListPresenter {
+    
+    func navigateToScan(from navigation: UINavigationController, data: WorkSheetListEntity) {
+        router.navigateToScan(from: navigation, data: data)
     }
     
 }

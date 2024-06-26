@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum ScanType {
+    case asset
+    case preventive
+}
+
 struct QRProperties: Codable {
     let id: String?
     let coders: String?

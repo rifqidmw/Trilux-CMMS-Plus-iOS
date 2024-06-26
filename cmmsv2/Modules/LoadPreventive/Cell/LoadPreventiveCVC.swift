@@ -24,7 +24,8 @@ class LoadPreventiveCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addShadow(0.4)
+        self.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerView.addShadow(2, position: .bottom, opacity: 0.2)
         self.containerView.makeCornerRadius(8)
         self.statusView.makeCornerRadius(4)
         self.isSkeletonable = true

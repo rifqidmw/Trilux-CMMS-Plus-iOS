@@ -17,6 +17,7 @@ class LoadPreventiveView: BaseViewController {
     
     var data: [LoadPreventiveList] = []
     var presenter: LoadPreventivePresenter?
+    var bottomSheet: AddPreventiveBottomSheet?
     
     override func didLoad() {
         super.didLoad()
@@ -88,8 +89,7 @@ extension LoadPreventiveView {
         customNavigationView.actionLabel.gesture()
             .sink { [weak self] _ in
                 guard let self, let navigation = self.navigationController else { return }
-                self.showOverlay()
-                presenter.showBottomSheetAddPreventive(from: navigation)
+                presenter.showBottomSheetAddPreventive(from: navigation, self)
             }
             .store(in: &anyCancellable)
     }

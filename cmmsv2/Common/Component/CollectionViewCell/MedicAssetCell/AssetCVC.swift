@@ -45,8 +45,9 @@ class AssetCVC: UICollectionViewCell {
 extension AssetCVC {
     
     private func configureSharedComponent() {
+        self.makeCornerRadius(8)
         self.containerView.makeCornerRadius(8)
-        self.addShadow(6, opacity: 0.2)
+        self.containerView.addShadow(2, position: .bottom, opacity: 0.2)
         self.markView.makeCornerRadius(2)
         self.assetImageView.makeCornerRadius(8)
         self.technicalBadgeView.makeCornerRadius(4)
@@ -58,6 +59,7 @@ extension AssetCVC {
         self.correctiveCategoryView.makeCornerRadius(4)
         self.assetBadgeView.makeCornerRadius(4, .leftCurve)
         self.containerCategoryStackView.distribution = .fillProportionally
+        self.assetLabel.textAlignment = .center
     }
     
     private func setupSkeleton() {

@@ -121,7 +121,7 @@ extension CalibrationListView: SkeletonCollectionViewDataSource, SkeletonCollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
               let navigation = self.navigationController,
-              let id = self.data[indexPath.row].id,
+              let id = self.data[indexPath.row].idLK,
               let status = self.data[indexPath.row].status
         else { return }
         

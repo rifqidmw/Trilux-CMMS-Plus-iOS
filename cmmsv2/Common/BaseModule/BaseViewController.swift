@@ -203,6 +203,16 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    func dismissBottomSheet(completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+        }) { _ in
+            self.dismiss(animated: true) {
+                completion?()
+            }
+        }
+    }
+    
     private func configureAction() {
         overlayView.gesture()
             .sink { _ in

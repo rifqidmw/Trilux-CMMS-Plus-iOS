@@ -246,18 +246,35 @@ enum CellType {
 }
 
 struct WorkSheetListEntity: Codable {
-    let id: String?
-    let uniqueNumber: String?
-    let workName: String?
-    let workDesc: String?
-    let serial: String?
-    let installation: String?
+    var idLK: String? = nil
+    var idAsset: String? = nil
+    let serialNumber: String?
+    let title: String?
+    let description: String?
     let room: String?
+    let installation: String?
     let dateTime: String?
     let brandName: String?
+    let lkNumber: String?
     let lkStatus: String?
     let category: WorkSheetCategory?
     let status: WorkSheetStatus?
+    
+    init(idLK: String? = nil, idAsset: String? = nil, serialNumber: String? = nil, title: String? = nil, description: String? = nil, room: String? = nil, installation: String? = nil, dateTime: String? = nil, brandName: String? = nil, lkNumber: String? = nil, lkStatus: String? = nil, category: WorkSheetCategory? = WorkSheetCategory.none, status: WorkSheetStatus? = WorkSheetStatus.none) {
+        self.idLK = idLK
+        self.idAsset = idAsset
+        self.serialNumber = serialNumber
+        self.title = title
+        self.description = description
+        self.room = room
+        self.installation = installation
+        self.dateTime = dateTime
+        self.brandName = brandName
+        self.lkNumber = lkNumber
+        self.lkStatus = lkStatus
+        self.category = category
+        self.status = status
+    }
 }
 
 struct WorkSheetEntity: Codable {
@@ -389,4 +406,3 @@ struct ReffLK: Codable {
         case totalItem
     }
 }
-

@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+struct PreventiveCategoryEntity {
+    var isSelected = false
+    let title: String
+    let description: String
+    let selectDateTitle: String
+    let selectDateTitlePlaceHolder: String
+    var selectedDate: String? = nil
+    var selectedMonth: String? = nil
+}
+
+protocol AddPreventiveBottomSheetDelegate: AnyObject {
+    func didTapScheduling(from view: AddPreventiveBottomSheet)
+    func didTapPlanning(from view: AddPreventiveBottomSheet)
+}
+
+protocol PreventiveCategoryCellDelegate: AnyObject {
+    func didTapSelectDate(index: Int)
+}

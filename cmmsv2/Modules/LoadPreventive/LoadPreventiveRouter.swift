@@ -21,13 +21,10 @@ class LoadPreventiveRouter: BaseRouter {
 
 extension LoadPreventiveRouter {
     
-    func showBottomSheetAddPreventive(from navigation: UINavigationController, data: LoadPreventiveAsset) {
-        let bottomSheet = AddPreventiveBottomSheet(nibName: String(describing: AddPreventiveBottomSheet.self), bundle: nil)
-        //        bottomSheet.delegate = delegate
-        bottomSheet.data = data
-        bottomSheet.modalTransitionStyle = .coverVertical
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
+    func showBottomSheet(nav: UINavigationController, bottomSheetView: UIViewController) {
+        bottomSheetView.loadViewIfNeeded()
+        bottomSheetView.modalPresentationStyle = .overCurrentContext
+        UIApplication.topViewController()?.present(bottomSheetView, animated: true, completion: nil)
     }
     
 }

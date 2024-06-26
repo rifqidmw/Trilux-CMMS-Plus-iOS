@@ -59,18 +59,20 @@ extension HistoryListPresenter {
                         else { return }
                         let historyList = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLK ?? "",
-                                uniqueNumber: item.createAt ?? "",
-                                workName: item.assetName ?? "",
-                                workDesc: item.lkEngineer ?? "",
-                                serial: item.serial ?? "",
-                                installation: item.instalasi ?? "",
+                                idLK: item.idLK ?? "",
+                                idAsset: item.idAsset ?? "",
+                                serialNumber: item.createAt ?? "",
+                                title: item.assetName ?? "",
+                                description: item.lkEngineer ?? "",
                                 room: item.ruangan ?? "",
+                                installation: item.instalasi ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
-                                lkStatus: item.lkStatus,
+                                lkNumber: item.serial ?? "",
+                                lkStatus: item.lkStatus ?? "",
                                 category: WorkSheetCategory.none,
-                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
+                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
+                            )
                         }
                         self.historyData.append(contentsOf: historyList)
                     }

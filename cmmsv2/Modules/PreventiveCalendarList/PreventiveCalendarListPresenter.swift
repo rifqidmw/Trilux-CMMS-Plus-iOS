@@ -84,18 +84,20 @@ extension PreventiveCalendarListPresenter {
                         
                         let preventiveDataList = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idAsset ?? "",
-                                uniqueNumber: item.lkNumber ?? "",
-                                workName: item.assetName ?? "",
-                                workDesc: item.lkLabel ?? "",
-                                serial: item.serial ?? "",
-                                installation: item.instalasi ?? "",
+                                idLK: item.idLK ?? "",
+                                idAsset: item.idAsset ?? "",
+                                serialNumber: item.serial ?? "",
+                                title: item.assetName ?? "",
+                                description: item.lkInfo ?? "",
                                 room: item.ruangan ?? "",
+                                installation: item.instalasi ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
-                                lkStatus: item.lkStatus,
+                                lkNumber: item.lkNumber ?? "",
+                                lkStatus: item.lkStatus ?? "",
                                 category: WorkSheetCategory.none,
-                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
+                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
+                            )
                         }
                         self.preventiveScheduleList = preventiveDataList
                     }

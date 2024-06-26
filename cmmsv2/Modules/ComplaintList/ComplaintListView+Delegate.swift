@@ -21,6 +21,7 @@ extension ComplaintListView: AddComplaintBottomSheetDelegate {
     func didTapCreateAdvanceWorkSheet(_ view: AddComplaintBottomSheet, engineerId: String, complainId: String, dueDate: String, engineerPendamping: [String], title: CorrectiveTitleType) {
         guard let presenter else { return }
         self.bottomSheet = view
+        self.showLoadingPopup()
         switch title {
         case .advanced:
             presenter.createAdvanceWorkSheet(engineerId: engineerId, complainId: complainId, dueDate: dueDate, engineerPendamping: engineerPendamping)
@@ -78,7 +79,7 @@ extension ComplaintListView: SelectTechnicianBottomSheetDelegate, DatePickerBott
         }
     }
     
-    func didSelectDate(_ date: Date) {
+    func didSelectDate(_ date: Date, type: DatePickerBottomSheetType) {
         if let bottomSheet = self.bottomSheet {
             bottomSheet.selectedDate = date
             bottomSheet.updateSelectedValues()

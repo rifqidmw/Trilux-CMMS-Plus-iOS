@@ -87,7 +87,7 @@ extension LogBookListView {
     
     private func fetchInitialData() {
         guard let presenter = presenter else { return }
-        presenter.fetchInitData(date: date ?? String.getCurrentDateString("dd MMMM yyyy"))
+        presenter.fetchInitData(date: date ?? String.getCurrentDateString("yyyy-MM-dd"))
         showSpinner(true)
     }
     
@@ -115,7 +115,7 @@ extension LogBookListView {
                 self.data = data
                 self.collectionView.reloadData()
                 self.collectionView.hideSkeleton()
-                self.dateLabel.text = date ?? String.getCurrentDateString("dd MMMM yyyy")
+                self.dateLabel.text = date ?? String.getCurrentDateString("yyyy-MM-dd")
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -132,7 +132,7 @@ extension LogBookListView: FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: date)
         self.date = dateString
         fetchInitialData()
@@ -198,7 +198,7 @@ extension LogBookListView: SkeletonCollectionViewDataSource, SkeletonCollectionV
             self.showSpinner(true)
             
             DispatchQueue.main.async {
-                presenter.fetchNextPage(date: self.date ?? String.getCurrentDateString("dd MMMM yyyy"))
+                presenter.fetchNextPage(date: self.date ?? String.getCurrentDateString("yyyy-MM-dd"))
             }
         }
     }

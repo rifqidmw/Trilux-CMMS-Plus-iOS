@@ -28,7 +28,7 @@ class SelectTechnicianBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
-        self.loadBottomSheeet(view: dismissAreaView)
+        self.showBottomSheet()
         self.filteredData = data
     }
     
@@ -75,7 +75,7 @@ extension SelectTechnicianBottomSheet {
         Publishers.Merge(bottomSheetView.handleBarArea.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.dismissBottomSheet(view: dismissAreaView)
+                self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
         
@@ -85,7 +85,7 @@ extension SelectTechnicianBottomSheet {
                       let delegate = self.delegate
                 else { return }
                 delegate.selectMultipleTechnician(Array(self.selectedTechnicians))
-                self.dismissBottomSheet(view: dismissAreaView)
+                self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
     }
@@ -134,7 +134,7 @@ extension SelectTechnicianBottomSheet: UITableViewDataSource, UITableViewDelegat
         switch self.type {
         case .selectOne:
             delegate.didSelectTechnician(self.filteredData[indexPath.row])
-            self.dismissBottomSheet(view: dismissAreaView)
+            self.dismissBottomSheet()
         case .selectMultiple:
             let technician = self.filteredData[indexPath.row]
             if self.selectedTechnicians.contains(technician) {

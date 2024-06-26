@@ -83,16 +83,18 @@ extension WorkSheetCorrectiveListPresenter {
                     
                     self.workOrderData = data
                     let workorderData = worksheetData.compactMap { item in
-                        return WorkSheetListEntity(id: item.valEquipmentId ?? "",
-                                                   uniqueNumber: item.txtSubTitle ?? "",
-                                                   workName: item.txtTitle ?? "",
-                                                   workDesc: item.txtRuangan ?? "",
-                                                   serial: item.txtSubTitle ?? "",
-                                                   installation: item.complain?.equipment?.txtLokasiInstalasi ?? "",
-                                                   room: item.txtRuangan ?? "",
-                                                   dateTime: item.valDate ?? "", brandName: item.approveBy ?? "", lkStatus: "",
-                                                   category: WorkSheetCategory(rawValue: item.complain?.equipment?.txtKalibrasi ?? "") ?? WorkSheetCategory.none,
-                                                   status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
+                        return WorkSheetListEntity(
+                            idLK: item.valEquipmentId ?? "",
+                            serialNumber: item.txtSubTitle ?? "",
+                            title: item.txtTitle ?? "",
+                            room: item.txtRuangan ?? "",
+                            installation: item.complain?.equipment?.txtLokasiInstalasi ?? "",
+                            dateTime: item.valDate ?? "",
+                            brandName: item.txtType ?? "",
+                            lkNumber: item.infoLk?.lkNumber,
+                            category: WorkSheetCategory(rawValue: item.complain?.equipment?.txtKalibrasi ?? "") ?? WorkSheetCategory.none,
+                            status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
+                        )
                     }
                     self.workSheetData.append(contentsOf: workorderData)
                 }

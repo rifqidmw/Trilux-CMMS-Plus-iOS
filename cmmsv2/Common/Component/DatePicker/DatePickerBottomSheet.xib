@@ -20,7 +20,9 @@
                 <outlet property="containerDatePickerView" destination="7R2-Lg-QOS" id="N8z-w1-xI1"/>
                 <outlet property="datePicker" destination="nkr-3J-VQ3" id="dg6-Nt-vt9"/>
                 <outlet property="dismissAreaView" destination="Cq0-j0-MNd" id="1Ni-eu-hwY"/>
+                <outlet property="monthPicker" destination="zEq-oE-rXN" id="hFY-EJ-T2L"/>
                 <outlet property="selectBtn" destination="JI3-SD-o5Z" id="GMs-eZ-wim"/>
+                <outlet property="titleLabel" destination="fd2-RG-Thp" id="vsf-iR-Tcc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,16 +36,24 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7R2-Lg-QOS">
-                    <rect key="frame" x="32" y="256" width="329" height="340"/>
+                    <rect key="frame" x="32" y="364" width="329" height="124"/>
                     <subviews>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="nkr-3J-VQ3">
-                            <rect key="frame" x="16" y="52" width="297" height="216"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="customPrimaryColor"/>
-                            <locale key="locale" localeIdentifier="id"/>
-                        </datePicker>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-bq-Smn">
+                            <rect key="frame" x="16" y="52" width="297" height="0.0"/>
+                            <subviews>
+                                <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-oE-rXN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                </pickerView>
+                                <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="nkr-3J-VQ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="customPrimaryColor"/>
+                                    <locale key="locale" localeIdentifier="id"/>
+                                </datePicker>
+                            </subviews>
+                        </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kt1-uu-EbW">
-                            <rect key="frame" x="16" y="284" width="297" height="40"/>
+                            <rect key="frame" x="16" y="68" width="297" height="40"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4FS-Ve-yab" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="40"/>
@@ -58,7 +68,7 @@
                                 <constraint firstAttribute="height" constant="40" id="4Oo-76-ZuD"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Tanggal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-RG-Thp">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-RG-Thp">
                             <rect key="frame" x="16" y="16" width="297" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="w0x-t6-cl7"/>
@@ -70,16 +80,16 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="nkr-3J-VQ3" secondAttribute="trailing" constant="16" id="5nI-FQ-Aug"/>
+                        <constraint firstItem="eTn-bq-Smn" firstAttribute="leading" secondItem="7R2-Lg-QOS" secondAttribute="leading" constant="16" id="1nF-gF-mLf"/>
                         <constraint firstAttribute="trailing" secondItem="Kt1-uu-EbW" secondAttribute="trailing" constant="16" id="6Ij-YC-gSR"/>
                         <constraint firstItem="fd2-RG-Thp" firstAttribute="leading" secondItem="7R2-Lg-QOS" secondAttribute="leading" constant="16" id="AnJ-Ad-rr1"/>
                         <constraint firstAttribute="trailing" secondItem="fd2-RG-Thp" secondAttribute="trailing" constant="16" id="Pj5-Rg-k08"/>
                         <constraint firstItem="fd2-RG-Thp" firstAttribute="top" secondItem="7R2-Lg-QOS" secondAttribute="top" constant="16" id="W0b-jl-X8Z"/>
-                        <constraint firstItem="Kt1-uu-EbW" firstAttribute="top" secondItem="nkr-3J-VQ3" secondAttribute="bottom" constant="16" id="WtO-gr-wEs"/>
                         <constraint firstAttribute="bottom" secondItem="Kt1-uu-EbW" secondAttribute="bottom" constant="16" id="cEW-un-6os"/>
+                        <constraint firstItem="Kt1-uu-EbW" firstAttribute="top" secondItem="eTn-bq-Smn" secondAttribute="bottom" constant="16" id="hEI-pZ-Wa0"/>
                         <constraint firstItem="Kt1-uu-EbW" firstAttribute="leading" secondItem="7R2-Lg-QOS" secondAttribute="leading" constant="16" id="i1y-vq-XtN"/>
-                        <constraint firstItem="nkr-3J-VQ3" firstAttribute="leading" secondItem="7R2-Lg-QOS" secondAttribute="leading" constant="16" id="yN0-6Y-jNg"/>
-                        <constraint firstItem="nkr-3J-VQ3" firstAttribute="top" secondItem="fd2-RG-Thp" secondAttribute="bottom" constant="16" id="zdz-eF-FKu"/>
+                        <constraint firstItem="eTn-bq-Smn" firstAttribute="top" secondItem="fd2-RG-Thp" secondAttribute="bottom" constant="16" id="ipp-PW-WZG"/>
+                        <constraint firstAttribute="trailing" secondItem="eTn-bq-Smn" secondAttribute="trailing" constant="16" id="nmJ-VO-NFG"/>
                     </constraints>
                 </view>
             </subviews>

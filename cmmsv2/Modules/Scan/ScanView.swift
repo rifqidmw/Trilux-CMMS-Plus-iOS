@@ -15,6 +15,7 @@ class ScanView: BaseViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var dataQR: QRProperties?
+    private var hasNavigated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +73,22 @@ extension ScanView {
             .sink { [weak self] data in
                 guard let self,
                       let navigation = self.navigationController,
-                      let data = data
+                      let data = data,
+                      let id = data.id,
+                      !self.hasNavigated
                 else { return }
-                presenter.showBottomSheetDetailInformation(navigation: navigation, data: data)
+                self.hasNavigated = true
+                self.captureSession.stopRunning()
+                if presenter.type == .preventive {
+                    if presenter.data?.idAsset != String(id) {
+                        self.showAlert(title: "Peringatan", message: "Mohon scan alat yang sesuai")
+                    } else {
+                        var workSheet = WorkSheetListEntity(idAsset: String(id), serialNumber: data.txtSerial ?? "", title: data.txtName ?? "", description: data.txtDescriptions ?? "", room: data.txtRuangan ?? "", installation: data.txtLokasiInstalasi ?? "", dateTime: data.txtInfoUpdate ?? "", brandName: data.txtBrand ?? "", category: WorkSheetCategory.none, status: WorkSheetStatus.none)
+                        presenter.navigateToLoadPreventive(navigation, data: workSheet)
+                    }
+                } else {
+                    presenter.showBottomSheetDetailInformation(navigation: navigation, data: data)
+                }
             }
             .store(in: &anyCancellable)
         
@@ -91,7 +105,22 @@ extension ScanView {
             .sink { [weak self] isShow in
                 guard let self else { return }
                 DispatchQueue.global(qos: .background).async {
-                    isShow ? self.captureSession.stopRunning() : self.captureSession.startRunning()
+                    if isShow {
+                        self.captureSession.stopRunning()
+                    } else {
+                        self.captureSession.startRunning()
+                    }
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                if isLoading {
+                    self.showLoadingPopup()
+                } else {
+                    self.hideLoadingPopup()
                 }
             }
             .store(in: &anyCancellable)

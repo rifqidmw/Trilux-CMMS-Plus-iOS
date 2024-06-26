@@ -50,7 +50,7 @@ class AddComplaintBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
-        self.loadBottomSheeet(view: dismissAreaView)
+        self.showBottomSheet()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,7 +149,7 @@ extension AddComplaintBottomSheet {
         Publishers.Merge3(bottomSheetView.handleBarArea.gesture(), titleView.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.dismissBottomSheet(view: dismissAreaView)
+                self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
     }

@@ -14,6 +14,7 @@ class DelayCorrectiveListView: BaseViewController {
     @IBOutlet weak var searchTextField: SearchTextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var emptyView: UIView!
     
     var presenter: DelayCorrectiveListPresenter?
     var data: [Complaint] = []
@@ -54,6 +55,9 @@ extension DelayCorrectiveListView {
                 self.tableView.reloadData()
                 self.tableView.hideSkeleton()
                 self.showSpinner(false)
+                
+                self.emptyView.isHidden = !data.isEmpty
+                self.tableView.isHidden = data.isEmpty
             }
             .store(in: &anyCancellable)
     }

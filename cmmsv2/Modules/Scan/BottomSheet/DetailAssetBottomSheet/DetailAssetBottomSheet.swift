@@ -11,7 +11,6 @@ import Combine
 class DetailAssetBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var bottomSheetView: BottomSheetView!
-    @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerTitleLabel: UILabel!
@@ -23,6 +22,7 @@ class DetailAssetBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var initialHeightCollectionView: NSLayoutConstraint!
     
     var data: [CategoryModel] = detailInformationData
     var equipment: ScanEquipment?
@@ -46,12 +46,7 @@ extension DetailAssetBottomSheet {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(CategoryCardCVC.nib, forCellWithReuseIdentifier: CategoryCardCVC.identifier)
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 4
-        layout.itemSize = CGSize(width: 72, height: 120)
-        collectionView.collectionViewLayout = layout
+        collectionView.isScrollEnabled = false
     }
     
     private func setupView() {
@@ -75,24 +70,29 @@ extension DetailAssetBottomSheet {
         brandView.configureView(title: "Merk", value: brand)
         typeView.configureView(title: "Tipe", value: type)
         
-        bottomSheetView.containerView.backgroundColor = .clear
         scrollView.makeCornerRadius(32, .topCurve)
+        calculateTotalHeight(data: self.data)
     }
     
     private func setupAction() {
-        Publishers.Merge(
-            bottomSheetView.handleBarArea.gesture(),
-            dismissAreaView.gesture())
-        .sink { [weak self] _ in
-            guard let self else { return }
-            self.dismiss(animated: true)
-        }
-        .store(in: &anyCancellable)
+        bottomSheetView.handleBarArea.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.dismiss(animated: true)
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func calculateTotalHeight(data: [CategoryModel]) {
+        let numberOfRows: CGFloat = 2
+        let itemHeight: CGFloat = CGSize.widthDevice / 2
+        let totalHeight = itemHeight * numberOfRows
+        self.initialHeightCollectionView.constant = totalHeight
     }
     
 }
 
-extension DetailAssetBottomSheet: UICollectionViewDataSource, UICollectionViewDelegate {
+extension DetailAssetBottomSheet: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         data.count
@@ -107,6 +107,10 @@ extension DetailAssetBottomSheet: UICollectionViewDataSource, UICollectionViewDe
         cell.setupCell(data: data[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 4, height: 120)
     }
     
 }

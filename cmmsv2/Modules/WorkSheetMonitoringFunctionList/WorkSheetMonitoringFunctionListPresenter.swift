@@ -55,22 +55,23 @@ extension WorkSheetMonitoringFunctionListPresenter {
                 },
                 receiveValue: { worksheet in
                     DispatchQueue.main.async {
-                        guard let data = worksheet.data
-                        else { return }
+                        guard let data = worksheet.data else { return }
                         let worksheetList = data.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLK ?? "", 
-                                uniqueNumber: item.lkNumber ?? "",
-                                workName: item.assetName ?? "",
-                                workDesc: item.brandName ?? "",
-                                serial: item.serial ?? "",
-                                installation: item.instalasi ?? "",
+                                idLK: item.idLK ?? "",
+                                idAsset: item.idAsset ?? "",
+                                serialNumber: item.serial ?? "",
+                                title: item.assetName ?? "",
+                                description: item.lkInfo ?? "",
                                 room: item.ruangan ?? "",
+                                installation: item.instalasi ?? "",
                                 dateTime: item.dateText ?? "",
                                 brandName: item.brandName ?? "",
-                                lkStatus: item.lkStatus,
+                                lkNumber: item.lkNumber ?? "",
+                                lkStatus: item.lkStatus ?? "",
                                 category: WorkSheetCategory.none,
-                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
+                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
+                            )
                         }
                         self.workSheetData.append(contentsOf: worksheetList)
                     }

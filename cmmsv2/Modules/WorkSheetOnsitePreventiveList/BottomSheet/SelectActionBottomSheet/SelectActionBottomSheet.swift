@@ -23,6 +23,7 @@ class SelectActionBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.showBottomSheet()
     }
     
 }
@@ -57,27 +58,29 @@ extension SelectActionBottomSheet {
         Publishers.Merge(
             bottomSheetView.handleBarArea.gesture(),
             dismissAreaView.gesture())
-        .sink { [weak self] _  in
+        .sink { [weak self] _ in
             guard let self else { return }
-            self.dismiss(animated: true)
+            self.dismissBottomSheet()
         }
         .store(in: &anyCancellable)
         
         workButton.gesture()
-            .sink { [weak self] _  in
-                guard let self,
-                      let delegate = self.delegate
-                else { return }
-                delegate.didTapContinueWorking?(title: "kerjakan")
+            .sink { [weak self] _ in
+                guard let self, let delegate = self.delegate else { return }
+                self.dismissBottomSheet() {
+                    delegate.didTapContinueWorking?(title: "kerjakan")
+                }
             }
             .store(in: &anyCancellable)
         
         seeDetailButton.gesture()
-            .sink { [weak self] _  in
+            .sink { [weak self] _ in
                 guard let self,
                       let delegate = self.delegate
                 else { return }
-                delegate.didTapDetail?(title: "lihat")
+                self.dismissBottomSheet() {
+                    delegate.didTapDetail?(title: "lihat")
+                }
             }
             .store(in: &anyCancellable)
         
