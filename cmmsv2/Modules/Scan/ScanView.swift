@@ -75,6 +75,7 @@ extension ScanView {
                       let navigation = self.navigationController,
                       let data = data,
                       let id = data.id,
+                      let workSheet = presenter.data,
                       !self.hasNavigated
                 else { return }
                 self.hasNavigated = true
@@ -83,7 +84,17 @@ extension ScanView {
                     if presenter.data?.idAsset != String(id) {
                         self.showAlert(title: "Peringatan", message: "Mohon scan alat yang sesuai")
                     } else {
-                        var workSheet = WorkSheetListEntity(idAsset: String(id), serialNumber: data.txtSerial ?? "", title: data.txtName ?? "", description: data.txtDescriptions ?? "", room: data.txtRuangan ?? "", installation: data.txtLokasiInstalasi ?? "", dateTime: data.txtInfoUpdate ?? "", brandName: data.txtBrand ?? "", category: WorkSheetCategory.none, status: WorkSheetStatus.none)
+                        let workSheet = WorkSheetListEntity(idLK: workSheet.idLK,
+                                                            idAsset: String(id),
+                                                            serialNumber: data.txtSerial ?? "",
+                                                            title: data.txtName ?? "",
+                                                            description: data.txtDescriptions ?? "",
+                                                            room: data.txtRuangan ?? "",
+                                                            installation: data.txtLokasiInstalasi ?? "",
+                                                            dateTime: data.txtInfoUpdate ?? "",
+                                                            brandName: data.txtBrand ?? "",
+                                                            category: WorkSheetCategory.none,
+                                                            status: WorkSheetStatus.none)
                         presenter.navigateToLoadPreventive(navigation, data: workSheet)
                     }
                 } else {

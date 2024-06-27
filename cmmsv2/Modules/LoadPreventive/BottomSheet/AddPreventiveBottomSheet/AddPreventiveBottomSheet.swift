@@ -13,7 +13,6 @@ class AddPreventiveBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var containerAssetView: UIView!
-    @IBOutlet weak var containerAssetHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var customHeaderView: CustomHeaderView!
     @IBOutlet weak var serialNumberView: InformationCardView!
     @IBOutlet weak var brandView: InformationCardView!
@@ -83,7 +82,22 @@ extension AddPreventiveBottomSheet {
         
         saveButton.gesture()
             .sink { [weak self] _ in
-                guard let self else { return }
+                guard let self,
+                      let delegate = self.delegate,
+                      let data = self.data,
+                      let id = data.id
+                else { return }
+                
+                if let selectedDate = self.selectedDate {
+                    let request = CreatePreventiveRequest(idAsset: String(id), varian: "2", date: selectedDate)
+                    delegate.didSavePreventive(from: self, request: request)
+                }
+                
+                if let selectedMonth = self.selectedMonth {
+                    let request = CreatePreventiveRequest(idAsset: String(id), varian: "3", date: selectedMonth)
+                    delegate.didSavePreventive(from: self, request: request)
+                }
+                
             }
             .store(in: &anyCancellable)
     }

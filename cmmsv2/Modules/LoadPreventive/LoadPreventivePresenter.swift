@@ -15,6 +15,7 @@ class LoadPreventivePresenter: BasePresenter {
     let data: WorkSheetListEntity?
     
     @Published public var loadPreventiveData: LoadPreventiveData?
+    @Published public var createPreventiveData: CreatePreventiveEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -54,6 +55,30 @@ extension LoadPreventivePresenter {
                     DispatchQueue.main.async {
                         guard let preventiveData = preventive.data else { return }
                         self.loadPreventiveData = preventiveData
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func createPreventive(data: CreatePreventiveRequest) {
+        self.isLoading = true
+        interactor.createPreventive(data: data)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { preventive in
+                    DispatchQueue.main.async {
+                        self.createPreventiveData = preventive
                     }
                 }
             )

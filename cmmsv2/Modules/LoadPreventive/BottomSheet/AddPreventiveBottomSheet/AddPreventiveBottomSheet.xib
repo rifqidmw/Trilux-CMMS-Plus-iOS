@@ -19,7 +19,6 @@
             <connections>
                 <outlet property="bottomSheetView" destination="xct-s9-Pca" id="XhM-4e-tsr"/>
                 <outlet property="brandView" destination="ke5-DO-rPC" id="Qa7-hG-9T7"/>
-                <outlet property="containerAssetHeightConstraint" destination="8WV-9z-vcd" id="2GH-uC-7S0"/>
                 <outlet property="containerAssetView" destination="kUb-jP-3sw" id="E4g-fm-L55"/>
                 <outlet property="containerSelectCategoryHeightConstraint" destination="6sa-sy-I4v" id="bHa-DH-CId"/>
                 <outlet property="containerSelectCategoryView" destination="sRh-zd-lMh" id="kge-ga-jcx"/>
@@ -50,7 +49,7 @@
                             <rect key="frame" x="16" y="34" width="361" height="725"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-aS-rdK">
-                                    <rect key="frame" x="0.0" y="0.0" width="361" height="924"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="966"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGf-wg-k5I">
                                             <rect key="frame" x="8" y="8" width="345" height="24"/>
@@ -71,40 +70,55 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUb-jP-3sw">
-                                            <rect key="frame" x="8" y="44" width="345" height="350"/>
+                                            <rect key="frame" x="8" y="44" width="345" height="392"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fe4-Rz-Fm2">
-                                                    <rect key="frame" x="16" y="16" width="313" height="318"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gt7-WS-9I3" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="48"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="Qis-0D-dOb"/>
+                                                    </constraints>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fe4-Rz-Fm2">
+                                                    <rect key="frame" x="16" y="64" width="313" height="312"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gt7-WS-9I3" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="57.333333333333336"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cip-aQ-X9Z" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="65.333333333333343" width="313" height="57"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="72"/>
                                                             <color key="backgroundColor" name="customLightGrayColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="72" id="4QA-fG-5IP"/>
+                                                            </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jbz-4b-Tsu">
-                                                            <rect key="frame" x="0.0" y="130.33333333333331" width="313" height="57.333333333333343"/>
+                                                            <rect key="frame" x="0.0" y="80" width="313" height="72"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ke5-DO-rPC" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="57.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="72"/>
                                                                     <color key="backgroundColor" name="customLightGrayColor"/>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3n-bm-GW4" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
-                                                                    <rect key="frame" x="160.66666666666663" y="0.0" width="152.33333333333337" height="57.333333333333336"/>
+                                                                    <rect key="frame" x="160.66666666666663" y="0.0" width="152.33333333333337" height="72"/>
                                                                     <color key="backgroundColor" name="customLightGrayColor"/>
                                                                 </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="72" id="xRq-4w-6rM"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9k-KQ-r6j" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="195.66666666666669" width="313" height="57"/>
+                                                            <rect key="frame" x="0.0" y="160" width="313" height="72"/>
                                                             <color key="backgroundColor" name="customLightGrayColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="72" id="y0w-qg-0wo"/>
+                                                            </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xk-37-i4Y" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="260.66666666666669" width="313" height="57.333333333333314"/>
+                                                            <rect key="frame" x="0.0" y="240" width="313" height="72"/>
                                                             <color key="backgroundColor" name="customLightGrayColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="72" id="HOj-YQ-blY"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,15 +126,17 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="350" id="8WV-9z-vcd"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gt7-WS-9I3" secondAttribute="trailing" id="2eQ-BM-frw"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fe4-Rz-Fm2" secondAttribute="bottom" constant="16" id="9ko-eH-16H"/>
-                                                <constraint firstItem="Fe4-Rz-Fm2" firstAttribute="top" secondItem="kUb-jP-3sw" secondAttribute="top" constant="16" id="DmJ-gj-yjN"/>
+                                                <constraint firstItem="Gt7-WS-9I3" firstAttribute="top" secondItem="kUb-jP-3sw" secondAttribute="top" id="FLs-sa-xpl"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fe4-Rz-Fm2" secondAttribute="trailing" constant="16" id="GtR-Lu-LTh"/>
+                                                <constraint firstItem="Fe4-Rz-Fm2" firstAttribute="top" secondItem="Gt7-WS-9I3" secondAttribute="bottom" constant="16" id="QM5-vc-HJ3"/>
+                                                <constraint firstItem="Gt7-WS-9I3" firstAttribute="leading" secondItem="kUb-jP-3sw" secondAttribute="leading" id="T3f-gL-dO2"/>
                                                 <constraint firstItem="Fe4-Rz-Fm2" firstAttribute="leading" secondItem="kUb-jP-3sw" secondAttribute="leading" constant="16" id="gVi-ky-79l"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRh-zd-lMh">
-                                            <rect key="frame" x="8" y="406" width="345" height="450"/>
+                                            <rect key="frame" x="8" y="448" width="345" height="450"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="06K-ld-KPG">
                                                     <rect key="frame" x="16" y="16" width="313" height="418"/>
@@ -161,7 +177,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTd-xr-rRh" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="868" width="345" height="48"/>
+                                            <rect key="frame" x="8" y="910" width="345" height="48"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="48" id="ygf-cz-wSh"/>

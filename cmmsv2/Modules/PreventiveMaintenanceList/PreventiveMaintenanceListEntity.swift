@@ -20,6 +20,7 @@ struct PreventiveCategoryEntity {
 protocol AddPreventiveBottomSheetDelegate: AnyObject {
     func didTapScheduling(from view: AddPreventiveBottomSheet)
     func didTapPlanning(from view: AddPreventiveBottomSheet)
+    func didSavePreventive(from view: AddPreventiveBottomSheet, request: CreatePreventiveRequest)
 }
 
 protocol PreventiveCategoryCellDelegate: AnyObject {

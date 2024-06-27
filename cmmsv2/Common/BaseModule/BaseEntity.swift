@@ -124,7 +124,7 @@ enum WorkSheetStatus: String, Codable {
     }
 }
 
-enum MessageType: String, Codable {
+enum MessageStatusType: String, Codable {
     case success = "Success"
     case errors = "Unauthorized"
     case none = ""
@@ -223,6 +223,25 @@ enum MonitoringStatusType: String, Codable {
         case "Baik": self = .good
         case "X": self = .cross
         case "-": self = .strips
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+enum LoadPreventiveStatus: String, Codable {
+    case scheduling = "Penjadwalan"
+    case planning = "Perencanaan"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Penjadwalan": self = .scheduling
+        case "Perencanaan": self = .planning
         case "": self = .none
         default: self = .none
         }

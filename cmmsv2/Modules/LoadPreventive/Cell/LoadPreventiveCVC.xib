@@ -50,7 +50,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reK-8S-jZB">
                                                 <rect key="frame" x="0.0" y="7.3333333333333428" width="50" height="20"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUn-FQ-D2W">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUn-FQ-D2W">
                                                         <rect key="frame" x="12" y="4" width="26" height="12"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                                         <color key="textColor" name="customPrimaryColor"/>

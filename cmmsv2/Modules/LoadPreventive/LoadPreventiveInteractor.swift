@@ -13,4 +13,8 @@ class LoadPreventiveInteractor: BaseInteractor {
         return api.requestApiPublisher(.loadPreventive(id: id ?? ""))
     }
     
+    func createPreventive(data: CreatePreventiveRequest) -> AnyPublisher<CreatePreventiveEntity, Error> {
+        return api.requestApiPublisher(.createPreventive(data: data))
+    }
+    
 }

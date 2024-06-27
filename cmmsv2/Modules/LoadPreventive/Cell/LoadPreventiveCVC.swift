@@ -41,9 +41,29 @@ extension LoadPreventiveCVC {
         self.hideSkeleton()
         serialNumberLabel.text = data.lkNumber ?? "-"
         dateLabel.text = data.dateText ?? "-"
-        if data.lkFinishstt != "0" {
-            self.statusView.isHidden = true
+        configureStatus(label: data.lkLabel ?? "")
+    }
+    
+    func configureStatus(label: String) {
+        if label.hasPrefix("Perencanaan") {
+            configurePlanningStatus()
+        } else if label.hasPrefix("Penjadwalan") {
+            configureSchedulingStatus()
         }
+    }
+    
+    private func configurePlanningStatus() {
+        statusLabel.text = LoadPreventiveStatus.planning.getStringValue()
+        statusView.backgroundColor = UIColor.customSecondaryColor
+        statusLabel.textColor = UIColor.customPrimaryColor
+        initialStatusViewWidthConstraint.constant = 92
+    }
+    
+    private func configureSchedulingStatus() {
+        statusLabel.text = LoadPreventiveStatus.scheduling.getStringValue()
+        statusView.backgroundColor = UIColor.customIndicatorColor2
+        statusLabel.textColor = UIColor.customIndicatorColor11
+        initialStatusViewWidthConstraint.constant = 86
     }
     
 }

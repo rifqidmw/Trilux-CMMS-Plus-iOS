@@ -25,6 +25,15 @@ extension LoadPreventiveView: AddPreventiveBottomSheetDelegate {
         presenter.showDatePickerBottomSheet(from: navigation, delegate: self, type: .monthYear)
     }
     
+    func didSavePreventive(from view: AddPreventiveBottomSheet, request: CreatePreventiveRequest) {
+        guard let presenter else { return }
+        self.bottomSheet = view
+        DispatchQueue.main.async {
+            self.showLoadingPopup()
+            presenter.createPreventive(data: request)
+        }
+    }
+    
 }
 
 extension LoadPreventiveView: DatePickerBottomSheetDelegate {

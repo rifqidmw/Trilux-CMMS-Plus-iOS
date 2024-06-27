@@ -92,6 +92,7 @@ enum Endpoint {
                           complainId: String,
                           dueDate: String,
                           engineerPendamping: [String])
+    case createPreventive(data: CreatePreventiveRequest)
 }
 
 // MARK: - PATH URL
@@ -205,6 +206,8 @@ extension Endpoint {
             return "lk/create_lanjutan"
         case .createCorrective:
             return "lk/create_korektif"
+        case .createPreventive:
+            return "lk/create_preventif"
         }
     }
 }
@@ -220,7 +223,8 @@ extension Endpoint {
                 .uploadProfile,
                 .workSheetDetail,
                 .createLanjutan,
-                .createCorrective:
+                .createCorrective,
+                .createPreventive:
             return .post
         default:
             return .get
@@ -294,6 +298,13 @@ extension Endpoint {
                 "complain_id": complainId,
                 "due_date": dueDate,
                 "engineer_pendamping": engineerPendamping
+            ]
+            return params
+        case .createPreventive(data: let data):
+            let params: [String: Any] = [
+                "id_asset": data.idAsset ?? "",
+                "varian": data.varian ?? "",
+                "date": data.date ?? ""
             ]
             return params
         default:
