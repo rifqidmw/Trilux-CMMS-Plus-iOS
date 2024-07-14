@@ -27,6 +27,8 @@ class PhysicalMonitoringTVC: UITableViewCell {
     @IBOutlet weak var physicalLabel: UILabel!
     @IBOutlet weak var functionView: UIView!
     @IBOutlet weak var functionLabel: UILabel!
+    @IBOutlet weak var physicalCheckBoxButton: UIImageView!
+    @IBOutlet weak var functionalCheckBoxButton: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,23 +47,38 @@ class PhysicalMonitoringTVC: UITableViewCell {
 
 extension PhysicalMonitoringTVC {
     
-    func setupCell(data: LKData.Pemantauan, type: PhysicalMonitoringCellType? = .content) {
+    func setupCell(data: LKData.Pemantauan, type: PhysicalMonitoringCellType? = .content, activityType: WorkSheetActivityType, isPhysicalSelected: Bool = false, isFunctionalSelected: Bool = false) {
         contentStackView.isHidden = type == .header
         headerStackView.isHidden = type == .content
         
         titleLabel.text = data.label ?? "-"
-        configureLabel(physical: MonitoringStatusType(rawValue: data.fisikText ?? "") ?? MonitoringStatusType.none, functional: MonitoringStatusType(rawValue: data.fungsiText ?? "") ?? MonitoringStatusType.none)
+        configureLabel(physical: MonitoringStatusType(rawValue: data.fisikText ?? "") ?? MonitoringStatusType.none, functional: MonitoringStatusType(rawValue: data.fungsiText ?? "") ?? MonitoringStatusType.none, activityType: activityType)
+        
+        self.physicalCheckBoxButton.image = UIImage(named: isPhysicalSelected ? "checked_checkbox" : "unchecked_checkbox")
+        self.functionalCheckBoxButton.image = UIImage(named: isFunctionalSelected ? "checked_checkbox" : "unchecked_checkbox")
     }
     
-    private func configureLabel(physical: MonitoringStatusType, functional: MonitoringStatusType) {
+    private func configureLabel(physical: MonitoringStatusType, functional: MonitoringStatusType, activityType: WorkSheetActivityType) {
         physicalLabel.text = physical.getStringValue()
         functionLabel.text = functional.getStringValue()
         
         configureStatusView(view: physicalView, label: physicalLabel, status: physical)
         configureStatusView(view: functionView, label: functionLabel, status: functional)
         
-        if physical == .strips && functional == .strips {
-            titleLabel.applyStrikethrough()
+        if activityType == .working || activityType == .correction {
+            self.physicalCheckBoxButton.isHidden = false
+            self.functionalCheckBoxButton.isHidden = false
+            self.physicalView.isHidden = true
+            self.functionView.isHidden = true
+        } else if activityType == .view {
+            self.physicalCheckBoxButton.isHidden = true
+            self.functionalCheckBoxButton.isHidden = true
+            self.physicalView.isHidden = false
+            self.functionView.isHidden = false
+            
+            if physical == .strips && functional == .strips {
+                titleLabel.applyStrikethrough()
+            }
         }
     }
     

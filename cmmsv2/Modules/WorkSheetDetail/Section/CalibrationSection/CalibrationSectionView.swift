@@ -40,6 +40,7 @@ extension CalibrationSectionView {
         tableView.dataSource = self
         tableView.register(CalibrationTVC.nib, forCellReuseIdentifier: CalibrationTVC.identifier)
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
         tableView.makeCornerRadius(8)
     }
     

@@ -33,8 +33,16 @@ class AccordionCell: UITableViewCell {
 extension AccordionCell {
     
     func setupCell(data: AccordionEntity) {
-        self.customHeaderView.configure(icon: data.icon, title: data.title, type: .collapsibleAction, collapseIcon: data.isCollapsed ? "ic_uncollapsible_accordion" : "ic_collapse_accordion")
-        self.containerContentView.isHidden = !data.isCollapsed
+        switch data.type {
+        case .collapsibleAction:
+            self.customHeaderView.configure(icon: data.icon, title: data.title, type: .collapsibleAction, collapseIcon: data.isCollapsed ? "ic_uncollapsible_accordion" : "ic_collapse_accordion")
+        case .dismissSwitch:
+            self.customHeaderView.configure(icon: data.icon, title: data.title, type: .dismissSwitch, radioButtonIcon: data.isCollapsed ? "ic_radio_button_on" : "ic_radio_button_off")
+        default:
+            self.customHeaderView.configure(icon: data.icon, title: data.title, type: data.type)
+        }
+        
+        self.containerContentView.isHidden = data.type == .dismissSwitch ? data.isCollapsed : !data.isCollapsed
         
         if let view = data.view {
             self.contentAccordionView.addSubview(view)

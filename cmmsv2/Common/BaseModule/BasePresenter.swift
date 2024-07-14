@@ -29,8 +29,16 @@ extension BasePresenter {
     
     func navigateToDetailWorkSheet(_ navigation: UINavigationController,
                                    data: WorkSheetRequestEntity,
-                                   type: WorkSheetDetailType) {
-        router.navigateToDetailWorkSheet(navigation, data: data, type: type)
+                                   type: WorkSheetDetailType,
+                                   activity: WorkSheetActivityType = .view) {
+        router.navigateToDetailWorkSheet(navigation, data: data, type: type, activity: activity)
+    }
+    
+    func showUploadMediaBottomSheet(navigation: UINavigationController,
+                                    delegate: UploadMediaBottomSheetDelegate) {
+        let bottomSheet = UploadMediaBottomSheet(nibName: String(describing: UploadMediaBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

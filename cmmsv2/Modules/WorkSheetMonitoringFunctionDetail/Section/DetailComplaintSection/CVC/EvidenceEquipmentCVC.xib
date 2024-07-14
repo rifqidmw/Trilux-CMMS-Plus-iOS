@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,18 +19,31 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lSw-zZ-Ydy">
                         <rect key="frame" x="4" y="4" width="92" height="92"/>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cross_red_ellipse" translatesAutoresizingMaskIntoConstraints="NO" id="OCq-rn-Hil">
+                        <rect key="frame" x="68" y="8" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="63x-HR-jQt"/>
+                            <constraint firstAttribute="height" constant="24" id="faF-xV-aZ4"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="lSw-zZ-Ydy" secondAttribute="bottom" constant="4" id="Gvw-sL-s9u"/>
+                <constraint firstItem="OCq-rn-Hil" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="PGB-Jt-LAE"/>
                 <constraint firstItem="lSw-zZ-Ydy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="YL7-C3-xo6"/>
+                <constraint firstAttribute="trailing" secondItem="OCq-rn-Hil" secondAttribute="trailing" constant="8" id="fRV-rV-6Rt"/>
                 <constraint firstItem="lSw-zZ-Ydy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="hx7-2X-eEk"/>
                 <constraint firstAttribute="trailing" secondItem="lSw-zZ-Ydy" secondAttribute="trailing" constant="4" id="yRo-K3-Ovi"/>
             </constraints>
             <connections>
                 <outlet property="evidenceImageView" destination="lSw-zZ-Ydy" id="MR6-6z-EaZ"/>
+                <outlet property="removeMediaButton" destination="OCq-rn-Hil" id="aYU-zF-jxC"/>
             </connections>
             <point key="canvasLocation" x="77.862595419847324" y="-1.4084507042253522"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_cross_red_ellipse" width="16" height="16"/>
+    </resources>
 </document>

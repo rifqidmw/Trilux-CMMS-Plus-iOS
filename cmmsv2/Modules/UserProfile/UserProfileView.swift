@@ -129,7 +129,6 @@ extension UserProfileView {
                 guard let self,
                       let navigation = self.navigationController
                 else { return }
-                
                 navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
@@ -140,7 +139,6 @@ extension UserProfileView {
                       let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
                 self.showOverlay()
                 presenter.showLogoutPopUp(navigation: navigation, delegate: self)
             }
@@ -152,9 +150,7 @@ extension UserProfileView {
                       let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
-                self.showOverlay()
-                presenter.showBottomSheetChangePicture(navigation: navigation, delegate: self)
+                presenter.showUploadMediaBottomSheet(navigation: navigation, delegate: self)
             }
             .store(in: &anyCancellable)
         

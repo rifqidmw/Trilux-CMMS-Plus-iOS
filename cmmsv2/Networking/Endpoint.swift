@@ -31,7 +31,6 @@ enum Endpoint {
         type: String? = nil,
         sstMedic: String? = nil)
     case infoExpired
-    case uploadProfile(file: URL)
     case detailAssetEquipment(id: String)
     case getNotification(page: Int? = nil, limit: Int? = nil)
     case getComplaintList(
@@ -93,6 +92,8 @@ enum Endpoint {
                           dueDate: String,
                           engineerPendamping: [String])
     case createPreventive(data: CreatePreventiveRequest)
+    case searchSparePart(key: String? = nil)
+    case saveWorkSheet(data: LKStartRequest)
 }
 
 // MARK: - PATH URL
@@ -127,8 +128,6 @@ extension Endpoint {
                 sttMedic: sstMedic)
         case .infoExpired:
             return "info/expired"
-        case .uploadProfile:
-            return "media/uploadprofile"
         case .detailAssetEquipment(let id):
             return "equipments/view/\(id)"
         case .getNotification(let page, let limit):
@@ -208,6 +207,10 @@ extension Endpoint {
             return "lk/create_korektif"
         case .createPreventive:
             return "lk/create_preventif"
+        case .searchSparePart(key: let key):
+            return "lk/search_sparepart?q=\(key ?? "")"
+        case .saveWorkSheet:
+            return "lk/save_lk"
         }
     }
 }
@@ -220,11 +223,11 @@ extension Endpoint {
                 .loginUser,
                 .updateProfile,
                 .changePassword,
-                .uploadProfile,
                 .workSheetDetail,
                 .createLanjutan,
                 .createCorrective,
-                .createPreventive:
+                .createPreventive,
+                .saveWorkSheet:
             return .post
         default:
             return .get
@@ -263,21 +266,6 @@ extension Endpoint {
                 "password": password
             ]
             return params
-        case .uploadProfile(let file):
-            let formData: MultipartFormData = MultipartFormData()
-            formData.append(file, withName: "file", fileName: "filename.jpg", mimeType: "image/jpeg")
-            
-            let params: [String: Any] = [
-                "file": formData
-            ]
-            
-            for (key, value) in params {
-                if let data = "\(value)".data(using: .utf8) {
-                    formData.append(data, withName: key)
-                }
-            }
-            
-            return params
         case .workSheetDetail(let id, let action):
             let params: [String: Any] = [
                 "id_lk": id,
@@ -307,6 +295,134 @@ extension Endpoint {
                 "date": data.date ?? ""
             ]
             return params
+        case .saveWorkSheet(data: let data):
+            let params: [String: Any?] = [
+                "abai_listrik": data.abaiListrik,
+                "abai_pemantauan": data.abaiPemantauan,
+                "abai_persiapan": data.abaiPersiapan,
+                "abai_preventif": data.abaiPreventif,
+                "alat_kalibrasi": data.alatKalibrasi,
+                "analisa": data.analisa,
+                "approve_by": data.approveBy,
+                "asset": [
+                    "assetname": data.asset?.assetname,
+                    "brandname": data.asset?.brandname,
+                    "id_asset": data.asset?.idAsset,
+                    "imgurl": data.asset?.imgurl,
+                    "roomname": data.asset?.roomname,
+                    "sarananame": data.asset?.sarananame,
+                    "serial": data.asset?.serial,
+                    "thumburl": data.asset?.thumburl,
+                    "typename": data.asset?.typename
+                ],
+                "com_respon": data.comRespon,
+                "com_time": data.comTime,
+                "create_at": data.createAt,
+                "create_by": data.createBy,
+                "dipindahkan": data.dipindahkan,
+                "downtime": data.downtime,
+                "engineername": data.engineername,
+                "id_asset": data.idAsset,
+                "id_complain": data.idComplain,
+                "id_kalibrator": data.idKalibrator,
+                "id_lk": data.idLk,
+                "id_relokasi": data.idRelokasi,
+                "jenis_relokasi": data.jenisRelokasi,
+                "keluhan": data.keluhan,
+                "listrik": data.listrik?.map { listrik in
+                    [
+                        "ambang_batas": listrik.ambangBatas,
+                        "desc": listrik.desc,
+                        "key": listrik.key,
+                        "label": listrik.label,
+                        "val_ukur": listrik.valUkur
+                    ]
+                } ?? [],
+                "lk_assign": data.lkAssign,
+                "lk_continue": data.lkContinue,
+                "lk_date": data.lkDate,
+                "lk_durasireal": data.lkDurasireal,
+                "lk_engineer": data.lkEngineer,
+                "lk_finish": data.lkFinish,
+                "lk_finishstt": data.lkFinishstt,
+                "lk_info": data.lkInfo,
+                "lk_jenis": data.lkJenis,
+                "lk_kegiatan": data.lkKegiatan,
+                "lk_label": data.lkLabel,
+                "lk_number": data.lkNumber,
+                "lk_pelapor": data.lkPelapor,
+                "lk_rating": data.lkRating,
+                "lk_start": data.lkStart,
+                "lk_status": data.lkStatus,
+                "lk_varian": data.lkVarian,
+                "lk_webenable": data.lkWebenable,
+                "lkphoto": data.lkphoto?.map { lkphoto in
+                    [
+                        "filename": lkphoto.filename,
+                        "id_lkphoto": lkphoto.idLkphoto,
+                        "note": lkphoto.note,
+                        "photoUrl": lkphoto.photoUrl,
+                        "photo_id": lkphoto.photoID
+                    ]
+                } ?? [],
+                "metode": data.metode,
+                "newpart": data.newpart?.map { newpart in
+                    [
+                        "id_lknewpart": newpart.idLknewpart,
+                        "id_part": newpart.idPart,
+                        "jumlah": newpart.jumlah,
+                        "partname": newpart.partname
+                    ]
+                } ?? [],
+                "pemantauan": data.pemantauan?.map { pemantauan in
+                    [
+                        "fisik": pemantauan.fisik,
+                        "fisik_text": pemantauan.fisikText,
+                        "fungsi": pemantauan.fungsi,
+                        "fungsi_text": pemantauan.fungsiText,
+                        "key": pemantauan.key,
+                        "label": pemantauan.label
+                    ]
+                } ?? [],
+                "persiapan": data.persiapan?.map { persiapan in
+                    [
+                        "key": persiapan.key,
+                        "label": persiapan.label,
+                        "value": persiapan.value,
+                        "value_text": persiapan.valueText
+                    ]
+                } ?? [],
+                "preventif": data.preventif?.map { preventif in
+                    [
+                        "key": preventif.key,
+                        "label": preventif.label,
+                        "value": preventif.value,
+                        "value_text": preventif.valueText
+                    ]
+                } ?? [],
+                "rate_by": data.rateBy,
+                "sparepart": data.sparepart?.map { sparepart in
+                    [
+                        "harga": sparepart.harga,
+                        "id_lksparepart": sparepart.idLksparepart,
+                        "id_part": sparepart.idPart,
+                        "jumlah": sparepart.jumlah,
+                        "jumlah_total": sparepart.jumlahTotal,
+                        "partname": sparepart.partname
+                    ]
+                } ?? [],
+                "stt_laik": data.sttLaik,
+                "task": data.task?.map { task in
+                    [
+                        "id_lktask": task.idLktask,
+                        "lk_task": task.lkTask
+                    ]
+                } ?? []
+            ]
+            
+            let filteredParams = params.compactMapValues { $0 }
+            
+            return filteredParams
         default:
             return nil
         }
@@ -321,14 +437,6 @@ extension Endpoint {
             let params: HTTPHeaders = [
                 "Authorizations": "TokenTriluxCMMS+",
                 "Content-Type": "application/json",
-                "Accept": "*/*"
-            ]
-            return params
-        case .uploadProfile:
-            let params: HTTPHeaders = [
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Authorizations": Constants.token,
-                "RequestType": "api",
                 "Accept": "*/*"
             ]
             return params

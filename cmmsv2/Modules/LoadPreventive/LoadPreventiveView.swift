@@ -117,7 +117,7 @@ extension LoadPreventiveView {
                       let data = presenter.data
                 else { return }
                 let workSheet = WorkSheetRequestEntity(id: data.idLK, action: title.lowercased())
-                presenter.navigateToDetailWorkSheet(navigation, data: workSheet, type: .preventive)
+                presenter.navigateToDetailWorkSheet(navigation, data: workSheet, type: .preventive, activity: .working)
             }
             .store(in: &anyCancellable)
     }
@@ -143,7 +143,7 @@ extension LoadPreventiveView: SkeletonCollectionViewDelegate, SkeletonCollection
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {

@@ -37,4 +37,10 @@ extension UILabel {
         self.attributedText = attributedString
     }
     
+    func removeStrikethrough() {
+        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: self.text ?? "")
+        attributeString.removeAttribute(NSAttributedString.Key.strikethroughStyle, range: NSMakeRange(0, attributeString.length))
+        self.attributedText = attributeString
+    }
+    
 }

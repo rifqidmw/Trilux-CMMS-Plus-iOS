@@ -1,4 +1,4 @@
-// 
+//
 //  UserProfileRouter.swift
 //  cmmsv2
 //
@@ -38,13 +38,6 @@ extension UserProfileRouter {
         navigation.dismiss(animated: true)
         let rootViewController = UINavigationController(rootViewController: vc)
         UIApplication.shared.setRootViewController(rootViewController)
-    }
-    
-    func showBottomSheet(navigation: UINavigationController, view: UIViewController) {
-        view.loadViewIfNeeded()
-        view.modalTransitionStyle = .coverVertical
-        view.modalPresentationStyle = .overCurrentContext
-        UIApplication.topViewController()?.present(view, animated: true, completion: nil)
     }
     
 }

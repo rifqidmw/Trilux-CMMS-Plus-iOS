@@ -109,12 +109,6 @@ extension UserProfilePresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
-    func showBottomSheetChangePicture(navigation: UINavigationController, delegate: ChangePictureBottomSheetDelegate) {
-        let bottomSheet = ChangePictureBottomSheet(nibName: String(describing: ChangePictureBottomSheet.self), bundle: nil)
-        bottomSheet.delegate = delegate
-        router.showBottomSheet(navigation: navigation, view: bottomSheet)
-    }
-    
     func showBottomSheetSignature(navigation: UINavigationController, data: User, delegate: SignatureBottomSheetDelegate) {
         let bottomSheet = SignatureBottomSheet(nibName: String(describing: SignatureBottomSheet.self), bundle: nil)
         bottomSheet.data = data

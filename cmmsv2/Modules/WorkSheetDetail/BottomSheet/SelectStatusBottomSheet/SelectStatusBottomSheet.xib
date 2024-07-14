@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectStatusBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="ZUO-Js-vXi" id="Pe0-rg-mSd"/>
+                <outlet property="dismissAreaView" destination="e3F-Zp-tlH" id="Nlg-qu-cBh"/>
+                <outlet property="tableView" destination="FdY-Ee-YHc" id="0nv-hs-bel"/>
+                <outlet property="titleLabel" destination="oVH-vK-btf" id="b3N-co-idM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3F-Zp-tlH" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUO-Js-vXi" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="318" width="393" height="534"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="L9W-E9-3Ik">
+                            <rect key="frame" x="16" y="34" width="361" height="466"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Status Pekerjaan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVH-vK-btf">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="URI-fP-n4a"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FdY-Ee-YHc">
+                                    <rect key="frame" x="0.0" y="34" width="361" height="432"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="L9W-E9-3Ik" secondAttribute="bottom" constant="34" id="0I9-kL-YlL"/>
+                        <constraint firstItem="L9W-E9-3Ik" firstAttribute="top" secondItem="ZUO-Js-vXi" secondAttribute="top" constant="34" id="0jH-xT-Tlf"/>
+                        <constraint firstItem="L9W-E9-3Ik" firstAttribute="leading" secondItem="ZUO-Js-vXi" secondAttribute="leading" constant="16" id="6YZ-ow-Dfb"/>
+                        <constraint firstAttribute="trailing" secondItem="L9W-E9-3Ik" secondAttribute="trailing" constant="16" id="mn6-mk-0La"/>
+                        <constraint firstAttribute="height" constant="534" id="xKj-jb-urA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="e3F-Zp-tlH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I3R-s7-H8u"/>
+                <constraint firstItem="e3F-Zp-tlH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Jg2-DM-OAg"/>
+                <constraint firstAttribute="bottom" secondItem="ZUO-Js-vXi" secondAttribute="bottom" id="L0q-2b-XV7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="e3F-Zp-tlH" secondAttribute="bottom" id="TQ7-AR-JJb"/>
+                <constraint firstItem="ZUO-Js-vXi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ti0-6s-wLI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e3F-Zp-tlH" secondAttribute="trailing" id="vt0-Qc-zDc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZUO-Js-vXi" secondAttribute="trailing" id="zCP-jf-MmX"/>
+            </constraints>
+            <point key="canvasLocation" x="124" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

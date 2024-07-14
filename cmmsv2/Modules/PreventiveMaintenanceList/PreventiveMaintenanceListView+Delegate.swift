@@ -9,6 +9,16 @@ import UIKit
 
 extension PreventiveMaintenanceListView: WorkSheetOnsitePreventiveDelegate {
     
+    func didTapDownloadPDF() {
+        if let id = self.id {
+            openPDF(with: id) { errorMessage in
+                self.showAlert(title: errorMessage)
+            }
+        } else {
+            self.showAlert(title: "Invalid ID or base URL.")
+        }
+    }
+    
     func didTapDetail(title: String) {
         guard let presenter,
               let navigation = self.navigationController

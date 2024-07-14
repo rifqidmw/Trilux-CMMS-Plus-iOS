@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 protocol SparePartCellDelegate: AnyObject {
-    func didTapRemoveSparePart(id: String)
+    func didTapRemoveSparePart(_ indexPath: IndexPath)
 }
 
 class SparePartTVC: UITableViewCell {
@@ -22,8 +22,6 @@ class SparePartTVC: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var deleteLabel: UILabel!
-    
-    var delegate: SparePartCellDelegate?
     var anyCancellable = Set<AnyCancellable>()
     
     override func awakeFromNib() {
@@ -40,11 +38,11 @@ class SparePartTVC: UITableViewCell {
 
 extension SparePartTVC {
     
-    func setupCell(data: LKData.Sparepart, delegate: SparePartCellDelegate) {
-        titleLabel.text = data.partname ?? "-"
+    func setupCell(name: String?, total: String?, indexPath: IndexPath, delegate: SparePartCellDelegate, activity: WorkSheetActivityType) {
+        titleLabel.text = name ?? "-"
         
         let normalText = NSAttributedString.stylizedText("Jumlah: ", font: UIFont.latoRegular(10), color: UIColor.customDarkGrayColor)
-        let countText = NSAttributedString.stylizedText(data.jumlah ?? "-", font: UIFont.latoRegular(10), color: UIColor.customPrimaryColor)
+        let countText = NSAttributedString.stylizedText(total ?? "-", font: UIFont.latoRegular(10), color: UIColor.customPrimaryColor)
         
         let fullAttributedText = NSMutableAttributedString()
         fullAttributedText.append(normalText)
@@ -52,10 +50,11 @@ extension SparePartTVC {
         
         countLabel.attributedText = fullAttributedText
         
+        deleteLabel.isHidden = (activity == .view)
+        
         deleteLabel.gesture()
-            .sink { [weak self] _ in
-                guard let self, let delegate = self.delegate else { return }
-                delegate.didTapRemoveSparePart(id: data.idPart ?? "")
+            .sink { _ in
+                delegate.didTapRemoveSparePart(indexPath)
             }
             .store(in: &anyCancellable)
     }

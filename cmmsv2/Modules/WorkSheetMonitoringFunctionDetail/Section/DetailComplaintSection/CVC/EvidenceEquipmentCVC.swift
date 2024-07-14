@@ -6,6 +6,16 @@
 //
 
 import UIKit
+import Combine
+
+enum EvidenceEquipmentType {
+    case upload
+    case view
+}
+
+protocol EvidenceEquipmentCellDelegate: AnyObject {
+    func didRemoveMedia(_ indexPath: IndexPath)
+}
 
 class EvidenceEquipmentCVC: UICollectionViewCell {
     
@@ -15,6 +25,8 @@ class EvidenceEquipmentCVC: UICollectionViewCell {
     }()
     
     @IBOutlet weak var evidenceImageView: UIImageView!
+    @IBOutlet weak var removeMediaButton: UIImageView!
+    var anyCancellable = Set<AnyCancellable>()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +37,18 @@ class EvidenceEquipmentCVC: UICollectionViewCell {
 
 extension EvidenceEquipmentCVC {
     
-    func setupCell(url: String?) {
-        evidenceImageView.loadImageUrl(url ?? "")
+    func setupCell(url: String?, type: EvidenceEquipmentType = .view, indexPath: IndexPath? = nil, delegate: EvidenceEquipmentCellDelegate? = nil) {
+        if let urlString = url, let url = URL(string: urlString) {
+            self.evidenceImageView.loadImageUrl(url.absoluteString)
+        }
+        
+        self.removeMediaButton.isHidden = type == .view
+        self.removeMediaButton.gesture()
+            .sink { _ in
+                guard let delegate, let indexPath else { return }
+                delegate.didRemoveMedia(indexPath)
+            }
+            .store(in: &anyCancellable)
     }
     
 }

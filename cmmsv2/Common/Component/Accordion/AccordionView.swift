@@ -8,10 +8,11 @@
 import UIKit
 
 struct AccordionEntity {
-    var title: String
-    var icon: String
+    let title: String
+    let icon: String
     var isCollapsed = false
     var view: UIView?
+    let type: CustomHeaderType
 }
 
 class AccordionView: UIView {
@@ -35,6 +36,7 @@ class AccordionView: UIView {
     private func setupView() {
         let view = loadNib()
         view.frame = self.bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(view)
         self.setupTableView()
         self.configureComponent()
@@ -49,8 +51,8 @@ extension AccordionView {
         containerContentView.addShadow(2, opacity: 0.2)
     }
     
-    func configure(title: String, icon: String, view: UIView) {
-        let entity = AccordionEntity(title: title, icon: icon, isCollapsed: false, view: view)
+    func configure(title: String, icon: String, view: UIView, type: CustomHeaderType = .collapsibleAction) {
+        let entity = AccordionEntity(title: title, icon: icon, isCollapsed: type == .dismissSwitch ? true : false, view: view, type: type)
         self.data.append(entity)
         self.tableView.reloadData()
     }
@@ -79,9 +81,7 @@ extension AccordionView: UITableViewDataSource, UITableViewDelegate {
         else {
             return UITableViewCell()
         }
-        
         cell.setupCell(data: self.data[indexPath.row])
-        
         return cell
     }
     
@@ -90,8 +90,10 @@ extension AccordionView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        tableView.beginUpdates()
         self.data[indexPath.row].isCollapsed = !self.data[indexPath.row].isCollapsed
-        self.tableView.reloadRows(at: [indexPath], with: .none)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        //        tableView.endUpdates()
         self.calculateTotalHeight(for: tableView)
     }
     

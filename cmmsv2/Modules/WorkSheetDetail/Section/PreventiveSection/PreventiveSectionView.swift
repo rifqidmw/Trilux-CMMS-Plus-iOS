@@ -11,8 +11,11 @@ class PreventiveSectionView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var initialHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var helpBannerView: HelpBannerView!
     
+    var activityType: WorkSheetActivityType?
     var data: [LKData.Preventif] = []
+    var selectedStates: [Bool] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,12 +43,31 @@ extension PreventiveSectionView {
         tableView.dataSource = self
         tableView.register(PreventiveTVC.nib, forCellReuseIdentifier: PreventiveTVC.identifier)
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
     }
     
-    func configure(data: [LKData.Preventif]) {
+    func configure(data: [LKData.Preventif], activity: WorkSheetActivityType) {
         self.data = data
+        self.selectedStates = Array(repeating: false, count: data.count)
+        self.activityType = activity
         self.tableView.reloadData()
         self.calculateTotalHeight(for: self.tableView)
+        self.helpBannerView.isHidden = activity == .view
+    }
+    
+    func getSelectedPreventiveData() -> [LKPreventif] {
+        var allData: [LKPreventif] = []
+        for (index, preventive) in data.enumerated() {
+            let isSelected = selectedStates[index]
+            let updatedPersiapan = LKPreventif(
+                key: preventive.key,
+                label: isSelected ? MonitoringStatusType.none.getStringValue() : preventive.label ?? "",
+                value: isSelected ? "1" : "0",
+                valueText: isSelected ? preventive.valueText : MonitoringStatusType.none.getStringValue()
+            )
+            allData.append(updatedPersiapan)
+        }
+        return allData
     }
     
 }
@@ -62,9 +84,16 @@ extension PreventiveSectionView: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row])
+        let isSelected = selectedStates[indexPath.row]
+        cell.setupCell(data: data[indexPath.row], activityType: self.activityType ?? .view, isSelected: isSelected)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let activityType = activityType, activityType == .working || activityType == .correction else { return }
+        selectedStates[indexPath.row].toggle()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

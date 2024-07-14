@@ -7,17 +7,21 @@
 
 import UIKit
 
-protocol SparePartSectionDelegate {
-    func didTapDeleteSparePart(id: String)
+enum SparePartType {
+    case usage
+    case requirement
 }
 
 class SparePartSectionView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var initialHeightConstraint: NSLayoutConstraint!
+    @Published public var totalHeight: CGFloat = 0
     
-    var delegate: SparePartSectionDelegate?
+    var activityType: WorkSheetActivityType?
+    var sparePartType: SparePartType?
     var data: [LKData.Sparepart] = []
+    var selectedStates: [Bool] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,12 +49,51 @@ extension SparePartSectionView {
         tableView.dataSource = self
         tableView.register(SparePartTVC.nib, forCellReuseIdentifier: SparePartTVC.identifier)
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
     }
     
-    func configure(data: [LKData.Sparepart]) {
+    func configure(data: [LKData.Sparepart], activity: WorkSheetActivityType) {
         self.data = data
+        self.selectedStates = Array(repeating: false, count: data.count)
+        self.activityType = activity
         self.tableView.reloadData()
         self.calculateTotalHeight(for: self.tableView)
+    }
+    
+    func addSparePart(_ sparepart: LKData.Sparepart, activity: WorkSheetActivityType) {
+        self.data.append(sparepart)
+        self.selectedStates.append(false)
+        self.activityType = activity
+        self.tableView.reloadData()
+        self.calculateTotalHeight(for: self.tableView)
+    }
+    
+    func getSparePartData() -> [LKSparePart] {
+        var allSparePartData: [LKSparePart] = []
+        for (_, part) in data.enumerated() {
+            let updateSparePartData = LKSparePart(
+                harga: part.harga ?? "",
+                idLksparepart: part.idLksparepart ?? "",
+                idPart: part.idPart ?? "",
+                jumlah: part.jumlah ?? "",
+                jumlahTotal: part.jumlahTotal ?? "",
+                partname: part.partname ?? "")
+            allSparePartData.append(updateSparePartData)
+        }
+        return allSparePartData
+    }
+    
+    func getNewSparePartData() -> [LKNewPart] {
+        var allNewPartData: [LKNewPart] = []
+        for (_, part) in data.enumerated() {
+            let updateNewPart = LKNewPart(
+                idLknewpart: part.idLksparepart ?? "",
+                idPart: part.idPart ?? "",
+                jumlah: part.jumlah ?? "",
+                partname: part.partname ?? "")
+            allNewPartData.append(updateNewPart)
+        }
+        return allNewPartData
     }
     
 }
@@ -67,7 +110,8 @@ extension SparePartSectionView: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.setupCell(data: data[indexPath.row], delegate: self)
+        let selectedData = self.data[indexPath.row]
+        cell.setupCell(name: selectedData.partname, total: selectedData.jumlah, indexPath: indexPath, delegate: self, activity: self.activityType ?? .view)
         
         return cell
     }
@@ -82,16 +126,19 @@ extension SparePartSectionView: UITableViewDataSource, UITableViewDelegate {
             let indexPath = IndexPath(row: row, section: 0)
             totalHeight += tableView.rectForRow(at: indexPath).height
         }
-        initialHeightConstraint.constant = totalHeight
+        self.initialHeightConstraint.constant = totalHeight
+        self.totalHeight = totalHeight
     }
     
 }
 
 extension SparePartSectionView: SparePartCellDelegate {
     
-    func didTapRemoveSparePart(id: String) {
-        guard let delegate else { return }
-        delegate.didTapDeleteSparePart(id: id)
+    func didTapRemoveSparePart(_ indexPath: IndexPath) {
+        self.data.remove(at: indexPath.row)
+        self.selectedStates.remove(at: indexPath.row)
+        self.tableView.reloadData()
+        self.calculateTotalHeight(for: self.tableView)
     }
     
 }

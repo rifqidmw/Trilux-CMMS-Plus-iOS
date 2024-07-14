@@ -33,10 +33,18 @@ class BaseRouter {
     
     func navigateToDetailWorkSheet(_ navigation: UINavigationController,
                                    data: WorkSheetRequestEntity,
-                                   type: WorkSheetDetailType) {
-        let vc = WorkSheetDetailRouter().showView(type: type, data: data)
+                                   type: WorkSheetDetailType,
+                                   activity: WorkSheetActivityType) {
+        let vc = WorkSheetDetailRouter().showView(type: type, data: data, activity: activity)
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
+    }
+    
+    func showBottomSheet(navigation: UINavigationController, view: UIViewController) {
+        view.loadViewIfNeeded()
+        view.modalTransitionStyle = .coverVertical
+        view.modalPresentationStyle = .overCurrentContext
+        UIApplication.topViewController()?.present(view, animated: true, completion: nil)
     }
     
 }

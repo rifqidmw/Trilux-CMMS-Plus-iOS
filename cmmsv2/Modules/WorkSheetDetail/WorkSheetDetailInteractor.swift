@@ -17,4 +17,12 @@ class WorkSheetDetailInteractor: BaseInteractor {
         return api.requestApiPublisher(.calibrator)
     }
     
+    func saveWorkSheet(data: LKStartRequest) -> AnyPublisher<SaveWorkSheetResponseEntity, Error> {
+        return api.requestApiPublisher(.saveWorkSheet(data: data))
+    }
+    
+    func getSparePartList(key: String? = nil) -> AnyPublisher<SearchSparePartEntity, Error> {
+        return api.requestApiPublisher(.searchSparePart(key: key ?? ""))
+    }
+    
 }
