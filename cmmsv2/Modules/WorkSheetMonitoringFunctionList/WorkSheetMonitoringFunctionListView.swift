@@ -18,6 +18,7 @@ class WorkSheetMonitoringFunctionListView: BaseViewController {
     var presenter: WorkSheetMonitoringFunctionListPresenter?
     var data: [WorkSheetListEntity] = []
     var id: String?
+    var workSheet: WorkSheetListEntity?
     
     override func didLoad() {
         super.didLoad()
@@ -126,7 +127,7 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
         else { return }
         
         self.id = id
-        self.showOverlay()
+        self.workSheet = self.data[indexPath.row]
         
         let type: WorkSheetStatus = {
             switch status {
@@ -189,6 +190,26 @@ extension WorkSheetMonitoringFunctionListView: WorkSheetOnsitePreventiveDelegate
         } else {
             self.showAlert(title: "Invalid ID or base URL.")
         }
+    }
+    
+    func didTapContinueWorking(title: String) {
+        guard let presenter,
+              let navigation = self.navigationController,
+              let workSheet,
+              let id
+        else { return }
+        let request = WorkSheetRequestEntity(id: id, action: title)
+        presenter.navigateToScan(from: navigation, .monitoring, data: workSheet, request: request, delegate: self)
+    }
+    
+}
+
+extension WorkSheetMonitoringFunctionListView: ScanViewDelegate {
+    
+    func didNavigateAfterSaveWorkSheet() {
+        guard let presenter, let navigation = self.navigationController else { return }
+        let view = WorkSheetMonitoringFunctionListRouter().showView()
+        presenter.backToPreviousPage(from: navigation, view)
     }
     
 }

@@ -32,7 +32,7 @@ extension PreventiveMaintenanceListView: WorkSheetOnsitePreventiveDelegate {
               let navigation = self.navigationController,
               let workSheet
         else { return }
-        presenter.navigateToScan(from: navigation, data: workSheet)
+        presenter.navigateToScan(from: navigation, .preventive, data: workSheet, delegate: self)
     }
     
 }
@@ -49,6 +49,16 @@ extension PreventiveMaintenanceListView: ActionBarViewDelegate {
     
     func didTapThirdAction() {
         AppLogger.log("-- SORT CLICKED")
+    }
+    
+}
+
+extension PreventiveMaintenanceListView: ScanViewDelegate {
+    
+    func didNavigateAfterSaveWorkSheet() {
+        guard let presenter, let navigation = self.navigationController else { return }
+        let view = PreventiveMaintenanceListRouter().showView()
+        presenter.backToPreviousPage(from: navigation, view)
     }
     
 }

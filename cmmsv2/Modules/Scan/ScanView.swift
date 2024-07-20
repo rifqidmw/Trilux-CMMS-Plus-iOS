@@ -15,6 +15,7 @@ class ScanView: BaseViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var dataQR: QRProperties?
+    weak var delegate: ScanViewDelegate?
     private var hasNavigated = false
     
     override func viewDidLoad() {
@@ -76,29 +77,26 @@ extension ScanView {
                       let data = data,
                       let id = data.id,
                       let workSheet = presenter.data,
+                      let request = presenter.request,
                       !self.hasNavigated
                 else { return }
                 self.hasNavigated = true
                 self.captureSession.stopRunning()
-                if presenter.type == .preventive {
+                switch presenter.type {
+                case .asset:
+                    presenter.showBottomSheetDetailInformation(navigation: navigation, data: data)
+                case .preventive:
                     if presenter.data?.idAsset != String(id) {
                         self.showAlert(title: "Peringatan", message: "Mohon scan alat yang sesuai")
                     } else {
-                        let workSheet = WorkSheetListEntity(idLK: workSheet.idLK,
-                                                            idAsset: String(id),
-                                                            serialNumber: data.txtSerial ?? "",
-                                                            title: data.txtName ?? "",
-                                                            description: data.txtDescriptions ?? "",
-                                                            room: data.txtRuangan ?? "",
-                                                            installation: data.txtLokasiInstalasi ?? "",
-                                                            dateTime: data.txtInfoUpdate ?? "",
-                                                            brandName: data.txtBrand ?? "",
-                                                            category: WorkSheetCategory.none,
-                                                            status: WorkSheetStatus.none)
                         presenter.navigateToLoadPreventive(navigation, data: workSheet)
                     }
-                } else {
-                    presenter.showBottomSheetDetailInformation(navigation: navigation, data: data)
+                case .monitoring:
+                    if presenter.data?.idAsset != String(id) {
+                        self.showAlert(title: "Peringatan", message: "Mohon scan alat yang sesuai")
+                    } else {
+                        presenter.navigateToDetailWorkSheet(navigation, data: request, type: .monitoring, activity: .working, delegate: self)
+                    }
                 }
             }
             .store(in: &anyCancellable)

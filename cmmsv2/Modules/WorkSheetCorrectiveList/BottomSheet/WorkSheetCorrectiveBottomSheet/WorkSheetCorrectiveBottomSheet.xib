@@ -28,10 +28,12 @@
                 <outlet property="inventoryNumberView" destination="GBF-yr-qlB" id="RNM-oh-IrB"/>
                 <outlet property="leadTechnicianView" destination="y8t-05-IbS" id="Xec-fC-c5K"/>
                 <outlet property="lkNumberView" destination="Kzd-Kx-2c6" id="3or-KB-VBB"/>
+                <outlet property="partnerButton" destination="MZr-2F-Qr1" id="Skv-H6-JB2"/>
                 <outlet property="reportDateView" destination="hTr-rB-8pE" id="SBW-jp-vCi"/>
                 <outlet property="reporterView" destination="uzp-0W-W9h" id="Ika-Gv-HGD"/>
                 <outlet property="resumeWorkButton" destination="PeW-7k-8GN" id="O0J-Pa-SrI"/>
                 <outlet property="roomView" destination="3Yd-mi-4sa" id="Dcl-NE-RdE"/>
+                <outlet property="scanQrButton" destination="hLN-to-4gW" id="gj4-o6-5iy"/>
                 <outlet property="seeDetailButton" destination="61f-Kj-7PF" id="mqt-ka-2VR"/>
                 <outlet property="seeWorkButton" destination="L8k-Hp-7Lf" id="p7p-KV-cbo"/>
                 <outlet property="serialNumberView" destination="HhZ-uq-KN4" id="KF0-3s-fvu"/>
@@ -67,7 +69,7 @@
                             <rect key="frame" x="0.0" y="46" width="393" height="750"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-Py-Oys">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="1220"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="1352"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1T-ei-5ae" userLabel="Header Section View">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
@@ -255,48 +257,62 @@
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="24" bottom="8" trailing="24"/>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eB-6Z-zEw" userLabel="Footer Section View">
-                                            <rect key="frame" x="0.0" y="1104" width="393" height="116"/>
+                                            <rect key="frame" x="0.0" y="1104" width="393" height="248"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PGn-lG-ATd">
-                                                    <rect key="frame" x="24" y="0.0" width="345" height="116"/>
+                                                    <rect key="frame" x="24" y="0.0" width="345" height="248"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZr-2F-Qr1" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="0cf-hs-Fhy"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLN-to-4gW" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="66" width="345" height="50"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="jJ3-jF-TKr"/>
+                                                            </constraints>
+                                                        </view>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-Cu-gpo" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-50" width="345" height="50"/>
+                                                            <rect key="frame" x="0.0" y="124" width="345" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="A7K-Lm-HBh"/>
                                                             </constraints>
                                                         </view>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-7k-8GN" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-50" width="345" height="50"/>
+                                                            <rect key="frame" x="0.0" y="124" width="345" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="FIk-ds-1ys"/>
                                                             </constraints>
                                                         </view>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qW-4g-PXf" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-50" width="345" height="50"/>
+                                                            <rect key="frame" x="0.0" y="124" width="345" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="yw3-FT-7p8"/>
                                                             </constraints>
                                                         </view>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8k-Hp-7Lf" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-50" width="345" height="50"/>
+                                                            <rect key="frame" x="0.0" y="124" width="345" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="vJy-ZT-JCd"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-nf-R1q" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                                            <rect key="frame" x="0.0" y="132" width="345" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="wE5-MT-c51"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61f-Kj-7PF" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="66" width="345" height="50"/>
+                                                            <rect key="frame" x="0.0" y="198" width="345" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="1pu-Zh-owH"/>

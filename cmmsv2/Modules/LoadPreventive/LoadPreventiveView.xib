@@ -49,16 +49,14 @@
                                         <constraint firstAttribute="width" constant="56" id="dxV-rh-Uhs"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhY-bf-m8F">
-                                    <rect key="frame" x="109.33333333333333" y="62" width="142.33333333333337" height="29"/>
-                                    <string key="text">Maaf, tidak ditemukan data
-pada tanggal tersebut</string>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tidak ada data." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhY-bf-m8F">
+                                    <rect key="frame" x="141.33333333333334" y="61.999999999999993" width="78.666666666666657" height="14.666666666666664"/>
                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                     <color key="textColor" name="placeholderColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Oe7-et-fTG" firstAttribute="centerY" secondItem="DUs-wu-lwO" secondAttribute="centerY" id="AGb-x7-q3k"/>
                                 <constraint firstItem="JhY-bf-m8F" firstAttribute="centerX" secondItem="DUs-wu-lwO" secondAttribute="centerX" id="L7F-sU-NrX"/>
@@ -80,6 +78,7 @@ pada tanggal tersebut</string>
                             </userDefinedRuntimeAttributes>
                         </collectionView>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8l-kn-F6f" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="16" y="754" width="361" height="48"/>

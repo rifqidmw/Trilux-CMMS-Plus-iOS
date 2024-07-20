@@ -31,6 +31,8 @@ class WorkSheetCorrectiveBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var downloadButton: GeneralButton!
     @IBOutlet weak var seeWorkButton: GeneralButton!
     @IBOutlet weak var seeDetailButton: GeneralButton!
+    @IBOutlet weak var partnerButton: GeneralButton!
+    @IBOutlet weak var scanQrButton: GeneralButton!
     @IBOutlet weak var dismissButton: UIView!
     
     weak var delegate: WorkSheetCorrectiveBottomSheetDelegate?
@@ -38,7 +40,8 @@ class WorkSheetCorrectiveBottomSheet: BaseNonNavigationController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
+        self.showBottomSheet()
     }
     
 }
@@ -70,6 +73,9 @@ extension WorkSheetCorrectiveBottomSheet {
         reporterView.configureView(title: "Pengaduan dilakukan oleh", value: complain.txtTitle ?? "-")
         chronologyView.configureView(title: "Kronologi", value: complain.txtDescriptions ?? "-")
         reportDateView.configureView(title: "Tanggal", value: complain.txtComplainTime ?? "-")
+        partnerButton.isHidden = data.isPendamping != "1"
+        scanQrButton.isHidden = data.stt_qr != "1"
+        resumeWorkButton.isHidden = data.txtStatus != WorkSheetStatus.ongoing.getStringValue()
     }
     
     private func configureSharedComponent() {
@@ -79,6 +85,8 @@ extension WorkSheetCorrectiveBottomSheet {
         downloadButton.configure(title: "Download", type: .normal, backgroundColor: UIColor.customLightGreenColor, titleColor: UIColor.customGreenColor)
         correctionWorkButton.configure(title: "Koreksi Pekerjaan", type: .normal, backgroundColor: UIColor.customLightGreenColor, titleColor: UIColor.customGreenColor)
         seeDetailButton.configure(title: "Lihat")
+        partnerButton.configure(title: "Anda Sebagai Pendamping", backgroundColor: UIColor.customLightGrayColor, titleColor: UIColor.customPrimaryColor)
+        scanQrButton.configure(title: "Scan QR", type: .bordered)
     }
     
     private func setupAction() {
@@ -88,7 +96,7 @@ extension WorkSheetCorrectiveBottomSheet {
             dismissButton.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
-            self.dismiss(animated: true)
+            self.dismissBottomSheet()
         }
         .store(in: &anyCancellable)
         
@@ -98,7 +106,66 @@ extension WorkSheetCorrectiveBottomSheet {
                       let delegate,
                       let data
                 else { return }
-                delegate.didTapDetailCorrective(data: data)
+                self.dismissBottomSheet() {
+                    delegate.didTapDetailCorrective(data: data)
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        resumeWorkButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate = self.delegate,
+                      let workorder = self.data,
+                      let idAsset = workorder.id
+                else { return }
+                let request = WorkSheetRequestEntity(id: String(idAsset), action: "kerjakan")
+                self.dismissBottomSheet() {
+                    delegate.didTapContinue(request)
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        scanQrButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate = self.delegate,
+                      let workorder = self.data,
+                      let equipment = workorder.complain?.equipment,
+                      let idAsset = workorder.id,
+                      let idLK = equipment.id
+                else { return }
+                let request = WorkSheetRequestEntity(id: String(idAsset), action: "kerjakan")
+                let data = WorkSheetListEntity(
+                    idLK: String(idAsset),
+                    idAsset: String(idLK),
+                    serialNumber: equipment.txtSerial ?? "",
+                    title: equipment.txtName ?? "",
+                    description: equipment.txtDescriptions ?? "",
+                    room: equipment.txtRuangan ?? "",
+                    installation: equipment.txtLokasiInstalasi ?? "",
+                    dateTime: equipment.txtTahun ?? "",
+                    brandName: equipment.txtBrand ?? "",
+                    lkNumber: "",
+                    lkStatus: "",
+                    category: WorkSheetCategory.none,
+                    status: WorkSheetStatus.none)
+                self.dismissBottomSheet() {
+                    delegate.didTapScanQR(data, request: request)
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        downloadButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate = self.delegate,
+                      let workorder = self.data,
+                      let idAsset = workorder.id
+                else { return }
+                self.dismissBottomSheet() {
+                    delegate.didTapDownload(String(idAsset))
+                }
             }
             .store(in: &anyCancellable)
     }

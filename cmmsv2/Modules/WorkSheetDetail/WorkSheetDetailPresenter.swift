@@ -56,10 +56,9 @@ extension WorkSheetDetailPresenter {
         switch self.type {
         case .monitoring, .preventive, .calibration:
             self.fetchMonitoringFunctionDetail(id: data.id, action: data.action)
+            self.fetchSparePartList(key: self.sparePartKey)
             if case .calibration = self.type {
                 self.fetchCalibratorList()
-            } else if case .preventive = self.type {
-                self.fetchSparePartList(key: self.sparePartKey)
             }
         default: break
         }

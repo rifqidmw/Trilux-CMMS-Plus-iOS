@@ -34,8 +34,9 @@ class BaseRouter {
     func navigateToDetailWorkSheet(_ navigation: UINavigationController,
                                    data: WorkSheetRequestEntity,
                                    type: WorkSheetDetailType,
-                                   activity: WorkSheetActivityType) {
-        let vc = WorkSheetDetailRouter().showView(type: type, data: data, activity: activity)
+                                   activity: WorkSheetActivityType,
+                                   delegate: WorkSheetDetailViewDelegate? = nil) {
+        let vc = WorkSheetDetailRouter().showView(type: type, data: data, activity: activity, delegate: delegate)
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }
@@ -45,6 +46,21 @@ class BaseRouter {
         view.modalTransitionStyle = .coverVertical
         view.modalPresentationStyle = .overCurrentContext
         UIApplication.topViewController()?.present(view, animated: true, completion: nil)
+    }
+    
+    func navigateToScan(from navigation: UINavigationController, _ type: ScanType, data: WorkSheetListEntity? = nil, request: WorkSheetRequestEntity? = nil, delegate: ScanViewDelegate? = nil) {
+        let vc = ScanRouter().showView(type: type, data: data, request: request, delegate: delegate)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func backToPreviousPage(from navigation: UINavigationController, _ targetViewController: UIViewController) {
+        let viewControllers = navigation.viewControllers
+        for viewController in viewControllers {
+            if viewController.isKind(of: targetViewController.classForCoder) {
+                navigation.popToViewController(viewController, animated: true)
+                return
+            }
+        }
     }
     
 }

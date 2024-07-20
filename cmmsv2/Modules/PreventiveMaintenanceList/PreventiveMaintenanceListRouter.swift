@@ -18,12 +18,3 @@ class PreventiveMaintenanceListRouter: BaseRouter {
     }
     
 }
-
-extension PreventiveMaintenanceListRouter {
-    
-    func navigateToScan(from navigation: UINavigationController, data: WorkSheetListEntity) {
-        let vc = ScanRouter().showView(type: .preventive, data: data)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}

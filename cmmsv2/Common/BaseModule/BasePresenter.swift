@@ -30,8 +30,9 @@ extension BasePresenter {
     func navigateToDetailWorkSheet(_ navigation: UINavigationController,
                                    data: WorkSheetRequestEntity,
                                    type: WorkSheetDetailType,
-                                   activity: WorkSheetActivityType = .view) {
-        router.navigateToDetailWorkSheet(navigation, data: data, type: type, activity: activity)
+                                   activity: WorkSheetActivityType = .view,
+                                   delegate: WorkSheetDetailViewDelegate? = nil) {
+        router.navigateToDetailWorkSheet(navigation, data: data, type: type, activity: activity, delegate: delegate)
     }
     
     func showUploadMediaBottomSheet(navigation: UINavigationController,
@@ -39,6 +40,14 @@ extension BasePresenter {
         let bottomSheet = UploadMediaBottomSheet(nibName: String(describing: UploadMediaBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func navigateToScan(from navigation: UINavigationController, _ type: ScanType, data: WorkSheetListEntity? = nil, request: WorkSheetRequestEntity? = nil, delegate: ScanViewDelegate? = nil) {
+        router.navigateToScan(from: navigation, type, data: data, request: request, delegate: delegate)
+    }
+    
+    func backToPreviousPage(from navigation: UINavigationController, _ view: UIViewController) {
+        router.backToPreviousPage(from: navigation, view)
     }
     
 }

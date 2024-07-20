@@ -89,7 +89,9 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate
                 else { return }
-                delegate.didTapDownloadPDF?()
+                self.dismissBottomSheet() {
+                    delegate.didTapDownloadPDF?()
+                }
             }
             .store(in: &anyCancellable)
         
@@ -98,7 +100,9 @@ extension SelectActionBottomSheet {
                 guard let self,
                       let delegate
                 else { return }
-                delegate.didTapCorrection?(title: "koreksi")
+                self.dismissBottomSheet() {
+                    delegate.didTapCorrection?(title: "koreksi")
+                }
             }
             .store(in: &anyCancellable)
     }

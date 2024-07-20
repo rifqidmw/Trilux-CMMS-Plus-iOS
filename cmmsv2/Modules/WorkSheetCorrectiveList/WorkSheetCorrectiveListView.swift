@@ -18,7 +18,7 @@ class WorkSheetCorrectiveListView: BaseViewController {
     
     var presenter: WorkSheetCorrectiveListPresenter?
     var data: [WorkSheetListEntity] = []
-    var workOrder: WorkOrderData?
+    var workOrder: [WorkOrder] = []
     
     override func didLoad() {
         super.didLoad()
@@ -67,6 +67,8 @@ extension WorkSheetCorrectiveListView {
                     return
                 }
                 self.workOrder = data
+                self.collectionView.reloadData()
+                self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -79,7 +81,8 @@ extension WorkSheetCorrectiveListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Lembar Kerja Korektif", type: .plain)
-        actionBarView.configure(thirdIcon: "ic_setting", thirdTitle: "Status", fourthIcon: "ic_arrow_up_down", fourthTitle: "Urutkan")
+        actionBarView.configure(firstIcon: "gearshape", firstTitle: "Status", secondIcon: "arrow.up.arrow.down.square", secondTitle: "Urutkan")
+        actionBarView.delegate = self
     }
     
     private func setupAction() {
@@ -122,7 +125,8 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSheetCVC.identifier, for: indexPath) as? WorkSheetCVC
+        guard indexPath.row < data.count,
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSheetCVC.identifier, for: indexPath) as? WorkSheetCVC
         else {
             return UICollectionViewCell()
         }
@@ -134,12 +138,9 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
-              let navigation = self.navigationController,
-              let workOrder = self.workOrder,
-              let data = workOrder.wo
+              let navigation = self.navigationController
         else { return }
-        let selectedItem = data[indexPath.row]
-        self.showOverlay()
+        let selectedItem = workOrder[indexPath.row]
         presenter.showBottomSheetCorrective(navigation: navigation, data: selectedItem, delegate: self)
     }
     
@@ -172,12 +173,60 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
 
 extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
     
+    func didTapScanQR(_ data: WorkSheetListEntity, request: WorkSheetRequestEntity) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToScan(from: navigation, .monitoring, data: data, delegate: self)
+    }
+    
+    func didTapContinue(_ request: WorkSheetRequestEntity) {
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.navigateToDetailWorkSheet(navigation, data: request, type: .monitoring, activity: .working, delegate: self)
+    }
+    
     func didTapDetailCorrective(data: WorkOrder) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        self.dismiss(animated: true)
         presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
+    }
+    
+    func didTapDownload(_ id: String) {
+        openPDF(with: id) { errorMessage in
+            self.showAlert(title: errorMessage)
+        }
+    }
+    
+}
+
+extension WorkSheetCorrectiveListView: ActionBarViewDelegate {
+    
+    func didTapFirstAction() {
+        AppLogger.log("FIRST ACTION TAPPED")
+    }
+    
+    func didTapSecondAction() {
+        AppLogger.log("SECOND ACTION TAPPED")
+    }
+    
+}
+
+extension WorkSheetCorrectiveListView: WorkSheetDetailViewDelegate {
+    
+    func didSaveWorkSheet() {
+        guard let navigation = self.navigationController else { return }
+        navigation.popViewController(animated: true)
+    }
+    
+}
+
+extension WorkSheetCorrectiveListView: ScanViewDelegate {
+    
+    func didNavigateAfterSaveWorkSheet() {
+        guard let presenter, let navigation = self.navigationController else { return }
+        let view = WorkSheetCorrectiveListRouter().showView()
+        presenter.backToPreviousPage(from: navigation, view)
     }
     
 }

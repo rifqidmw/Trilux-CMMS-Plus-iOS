@@ -7,9 +7,14 @@
 
 import Foundation
 
+protocol ScanViewDelegate: AnyObject {
+    func didNavigateAfterSaveWorkSheet()
+}
+
 enum ScanType {
     case asset
     case preventive
+    case monitoring
 }
 
 struct QRProperties: Codable {

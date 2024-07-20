@@ -8,6 +8,10 @@
 import UIKit
 import SkeletonView
 
+protocol WorkSheetDetailViewDelegate: AnyObject {
+    func didSaveWorkSheet()
+}
+
 class WorkSheetDetailView: BaseViewController {
     
     @IBOutlet weak var navigationView: CustomNavigationView!
@@ -104,6 +108,8 @@ class WorkSheetDetailView: BaseViewController {
     var lkData: LKData?
     var presenter: WorkSheetDetailPresenter?
     
+    weak var delegate: WorkSheetDetailViewDelegate?
+    
     override func didLoad() {
         super.didLoad()
         self.setupBody()
@@ -172,11 +178,12 @@ extension WorkSheetDetailView {
             .sink { [weak self] data in
                 guard let self,
                       let data,
-                      let navigation = self.navigationController
+                      let navigation = self.navigationController,
+                      let delegate = self.delegate
                 else { return }
                 if data.message == "Success" {
                     self.hideLoadingPopup()
-                    navigation.popViewController(animated: true)
+                    delegate.didSaveWorkSheet()
                 } else {
                     self.hideLoadingPopup()
                     self.showAlert(title: "Terjadi Kesalahan", message: data.message)

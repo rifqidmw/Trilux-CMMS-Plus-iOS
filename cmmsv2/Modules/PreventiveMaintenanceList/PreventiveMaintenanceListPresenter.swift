@@ -87,11 +87,3 @@ extension PreventiveMaintenanceListPresenter {
     }
     
 }
-
-extension PreventiveMaintenanceListPresenter {
-    
-    func navigateToScan(from navigation: UINavigationController, data: WorkSheetListEntity) {
-        router.navigateToScan(from: navigation, data: data)
-    }
-    
-}

@@ -14,6 +14,7 @@ class ScanPresenter: BasePresenter {
     private let router: ScanRouter
     let type: ScanType
     var data: WorkSheetListEntity?
+    var request: WorkSheetRequestEntity?
     
     @Published public var detailEquipmentData: ScanEquipment?
     
@@ -22,11 +23,12 @@ class ScanPresenter: BasePresenter {
     @Published public var isError: Bool = false
     @Published public var isShowBottomSheet: Bool = false
     
-    init(interactor: ScanInteractor, router: ScanRouter, type: ScanType, data: WorkSheetListEntity) {
+    init(interactor: ScanInteractor, router: ScanRouter, type: ScanType, data: WorkSheetListEntity, request: WorkSheetRequestEntity) {
         self.interactor = interactor
         self.router = router
         self.type = type
         self.data = data
+        self.request = request
     }
     
 }
