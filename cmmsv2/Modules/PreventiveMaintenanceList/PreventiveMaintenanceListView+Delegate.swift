@@ -30,9 +30,11 @@ extension PreventiveMaintenanceListView: WorkSheetOnsitePreventiveDelegate {
     func didTapContinueWorking(title: String) {
         guard let presenter,
               let navigation = self.navigationController,
-              let workSheet
+              let workSheet,
+              let id
         else { return }
-        presenter.navigateToScan(from: navigation, .preventive, data: workSheet, delegate: self)
+        let request = WorkSheetRequestEntity(id: id, action: title)
+        presenter.navigateToScan(from: navigation, .monitoring, data: workSheet, request: request, delegate: self)
     }
     
 }
