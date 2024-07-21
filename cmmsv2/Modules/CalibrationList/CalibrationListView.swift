@@ -17,6 +17,7 @@ class CalibrationListView: BaseViewController {
     
     var presenter: CalibrationListPresenter?
     var data: [WorkSheetListEntity] = []
+    var worksheet: WorkSheetListEntity?
     var id: String?
     
     override func didLoad() {
@@ -121,11 +122,13 @@ extension CalibrationListView: SkeletonCollectionViewDataSource, SkeletonCollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
               let navigation = self.navigationController,
-              let id = self.data[indexPath.row].id,
+              let id = self.data[indexPath.row].idLK,
               let status = self.data[indexPath.row].status
         else { return }
         
+        let selectedData = self.data[indexPath.row]
         self.id = id
+        self.worksheet = selectedData
         self.showOverlay()
         
         let type: WorkSheetStatus = {
@@ -169,18 +172,6 @@ extension CalibrationListView: SkeletonCollectionViewDataSource, SkeletonCollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
-    }
-    
-}
-
-extension CalibrationListView: WorkSheetOnsitePreventiveDelegate {
-    
-    func didTapDetail(title: String) {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        let data = WorkSheetRequestEntity(id: self.id, action: title)
-        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .calibration)
     }
     
 }

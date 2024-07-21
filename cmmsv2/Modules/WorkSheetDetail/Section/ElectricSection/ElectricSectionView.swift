@@ -29,23 +29,9 @@ class ElectricSectionView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
         self.setupTableView()
+        
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        adjustHeight()
-    }
-    
-    private func adjustHeight() {
-        var totalHeight: CGFloat = 0
-        for row in 0..<tableView.numberOfRows(inSection: 0) {
-            let indexPath = IndexPath(row: row, section: 0)
-            if let cell = tableView.cellForRow(at: indexPath) {
-                totalHeight += cell.frame.height
-            }
-        }
-        initialHeightConstraint.constant = totalHeight
-    }
 }
 
 extension ElectricSectionView {
@@ -55,12 +41,15 @@ extension ElectricSectionView {
         tableView.dataSource = self
         tableView.register(ElectricTVC.nib, forCellReuseIdentifier: ElectricTVC.identifier)
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
     }
     
     func configure(data: [LKData.Listrik]) {
         self.data = data
         self.tableView.reloadData()
+        self.calculateTotalHeight(for: self.tableView)
     }
+    
 }
 
 extension ElectricSectionView: UITableViewDataSource, UITableViewDelegate {
@@ -82,4 +71,14 @@ extension ElectricSectionView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func calculateTotalHeight(for tableView: UITableView) {
+        var totalHeight: CGFloat = 0
+        for row in 0..<tableView.numberOfRows(inSection: 0) {
+            let indexPath = IndexPath(row: row, section: 0)
+            totalHeight += tableView.rectForRow(at: indexPath).height
+        }
+        initialHeightConstraint.constant = totalHeight
+    }
+    
 }

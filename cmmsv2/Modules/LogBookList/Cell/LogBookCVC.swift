@@ -29,7 +29,7 @@ class LogBookCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addShadow(2.0, position: .bottom, opacity: 0.2)
+        self.addShadow(2, position: .bottom, opacity: 0.2)
         containerContentStackView.makeCornerRadius(8)
         containerContentStackView.addBorder(width: 0.8, colorBorder: UIColor.customLightGrayColor)
         containerStackView.addBorder(width: 1.0, colorBorder: UIColor.customLightGrayColor)

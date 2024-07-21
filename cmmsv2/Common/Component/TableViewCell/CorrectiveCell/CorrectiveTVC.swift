@@ -9,10 +9,6 @@ import UIKit
 import SkeletonView
 import Combine
 
-protocol CorrectiveCellDelegate: AnyObject {
-    func didTapContinueCorrective(data: Complaint, title: CorrectiveTitleType)
-}
-
 class CorrectiveTVC: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
@@ -39,7 +35,7 @@ class CorrectiveTVC: UITableViewCell {
         self.selectionStyle = .none
         self.correctiveImageView.makeCornerRadius(18)
         self.containerView.makeCornerRadius(8)
-        self.containerView.addShadow(6, opacity: 0.2)
+        self.containerView.addShadow(2, position: .bottom, opacity: 0.2)
         self.actionButton.makeCornerRadius(8)
         self.statusView.makeCornerRadius(4)
         self.showSkeletonAnimation()

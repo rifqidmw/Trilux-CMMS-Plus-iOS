@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SortingHistoryBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="applyButton" destination="vtN-jL-ggi" id="vUQ-BP-Rcn"/>
+                <outlet property="bottomSheetView" destination="IXX-FD-NbI" id="nmX-3f-HSs"/>
+                <outlet property="collectionView" destination="ycU-9P-y5R" id="MtG-BY-cd0"/>
+                <outlet property="dismissAreaView" destination="MF4-DC-0Oo" id="q8t-j1-leA"/>
+                <outlet property="titleLabel" destination="Fkz-as-wrY" id="e9Q-HX-8sT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MF4-DC-0Oo" userLabel="DismissAreaView">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXX-FD-NbI" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="598" width="393" height="254"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lUq-cC-Unw">
+                            <rect key="frame" x="16" y="34" width="361" height="186"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Urutkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-as-wrY">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="cay-3a-JSg"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-9P-y5R">
+                                    <rect key="frame" x="0.0" y="36" width="361" height="86"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HFc-KS-yCR">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtN-jL-ggi" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="138" width="361" height="48"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="fOX-cx-wtT"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="lUq-cC-Unw" secondAttribute="bottom" constant="34" id="E0X-vs-O5E"/>
+                        <constraint firstItem="lUq-cC-Unw" firstAttribute="top" secondItem="IXX-FD-NbI" secondAttribute="top" constant="34" id="K4Z-Hp-PyX"/>
+                        <constraint firstAttribute="height" constant="254" id="aqE-lr-3B9"/>
+                        <constraint firstAttribute="trailing" secondItem="lUq-cC-Unw" secondAttribute="trailing" constant="16" id="n4a-EG-c89"/>
+                        <constraint firstItem="lUq-cC-Unw" firstAttribute="leading" secondItem="IXX-FD-NbI" secondAttribute="leading" constant="16" id="ono-nc-wG8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MF4-DC-0Oo" secondAttribute="trailing" id="KJe-kU-RuK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MF4-DC-0Oo" secondAttribute="bottom" id="LBc-oR-mCg"/>
+                <constraint firstAttribute="bottom" secondItem="IXX-FD-NbI" secondAttribute="bottom" id="YnI-jt-HlF"/>
+                <constraint firstItem="MF4-DC-0Oo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fuw-F7-XEX"/>
+                <constraint firstItem="MF4-DC-0Oo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jTb-gX-ufQ"/>
+                <constraint firstItem="IXX-FD-NbI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s0Y-6L-JX6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IXX-FD-NbI" secondAttribute="trailing" id="yPH-dZ-OvB"/>
+            </constraints>
+            <point key="canvasLocation" x="127" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

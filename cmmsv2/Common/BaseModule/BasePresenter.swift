@@ -20,17 +20,43 @@ extension BasePresenter {
         router.navigateToDetailPicture(navigation: navigation, image: image)
     }
     
-    func showSelectActionBottomSheet(_ navigation: UINavigationController,
-                                     type: WorkSheetStatus,
-                                     delegate: WorkSheetOnsitePreventiveDelegate,
-                                     id: String?) {
-        router.showSelectActionBottomSheet(navigation, type: type, delegate: delegate)
+    func showSelectActionBottomSheet(
+        _ navigation: UINavigationController,
+        type: WorkSheetStatus,
+        delegate: WorkSheetOnsitePreventiveDelegate,
+        id: String?) {
+            router.showSelectActionBottomSheet(
+                navigation,
+                type: type,
+                delegate: delegate)
+        }
+    
+    func navigateToDetailWorkSheet(
+        _ navigation: UINavigationController,
+        data: WorkSheetRequestEntity,
+        type: WorkSheetDetailType,
+        activity: WorkSheetActivityType = .view,
+        delegate: WorkSheetDetailViewDelegate? = nil) {
+            router.navigateToDetailWorkSheet(
+                navigation,
+                data: data,
+                type: type,
+                activity: activity,
+                delegate: delegate)
+        }
+    
+    func showUploadMediaBottomSheet(navigation: UINavigationController, delegate: UploadMediaBottomSheetDelegate) {
+        let bottomSheet = UploadMediaBottomSheet(nibName: String(describing: UploadMediaBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
-    func navigateToDetailWorkSheet(_ navigation: UINavigationController,
-                                   data: WorkSheetRequestEntity,
-                                   type: WorkSheetDetailType) {
-        router.navigateToDetailWorkSheet(navigation, data: data, type: type)
+    func navigateToScan(from navigation: UINavigationController, _ type: ScanType, data: WorkSheetListEntity? = nil, request: WorkSheetRequestEntity? = nil, delegate: ScanViewDelegate? = nil) {
+        router.navigateToScan(from: navigation, type, data: data, request: request, delegate: delegate)
+    }
+    
+    func backToPreviousPage(from navigation: UINavigationController, _ view: UIViewController) {
+        router.backToPreviousPage(from: navigation, view)
     }
     
 }

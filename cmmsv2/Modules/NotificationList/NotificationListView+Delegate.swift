@@ -9,6 +9,18 @@ import UIKit
 
 extension NotificationListView: WorkSheetCorrectiveBottomSheetDelegate {
     
+    func didTapDownload(_ id: String) {
+        AppLogger.log("-- CLICKED")
+    }
+    
+    func didTapScanQR(_ data: WorkSheetListEntity, request: WorkSheetRequestEntity) {
+        AppLogger.log("-- CLICKED")
+    }
+    
+    func didTapContinue(_ request: WorkSheetRequestEntity) {
+        AppLogger.log("-- CLICKED")
+    }
+    
     func didTapDetailCorrective(data: WorkOrder) {
         guard let presenter,
               let navigation = self.navigationController

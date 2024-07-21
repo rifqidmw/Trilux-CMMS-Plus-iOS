@@ -24,9 +24,8 @@ class HistoryListPresenter: BasePresenter {
     
     var page: Int = 1
     var limit: Int = 20
-    var tipe: Int = -1
-    var status: Int = 100
-    var keyword: String = ""
+    var hasObstacle: Int = -1
+    var woStatus: String = "approved"
     var isCanLoad = true
     var isFetchingMore = false
     
@@ -34,13 +33,30 @@ class HistoryListPresenter: BasePresenter {
 
 extension HistoryListPresenter {
     
-    func fetchInitData() {
-        self.fetchHistoryList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
+    func fetchInitData(hasObstacle: Int? = nil) {
+        if let hasObstacle = hasObstacle {
+            self.hasObstacle = hasObstacle
+        }
+        self.page = 1
+        self.historyData.removeAll()
+        self.fetchHistoryList(
+            woStatus: self.woStatus,
+            limit: self.limit,
+            hasObstacle: self.hasObstacle, page: self.page
+        )
     }
     
-    func fetchHistoryList(limit: Int, page: Int, tipe: Int, status: Int, keyword: String) {
-        self.isLoading = true
-        interactor.getComplaintHistoryList(limit: limit, page: page, tipe: tipe, keyword: keyword, status: status)
+    func fetchHistoryList(
+        woStatus: String? = nil,
+        limit: Int? = nil,
+        hasObstacle: Int? = nil,
+        page: Int? = nil) {
+            self.isLoading = true
+            interactor.getComplaintHistoryList(
+                woStatus: woStatus,
+                limit: limit,
+                hasObstacle: hasObstacle,
+                page: page)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -55,34 +71,39 @@ extension HistoryListPresenter {
                 },
                 receiveValue: { history in
                     DispatchQueue.main.async {
-                        guard let data = history.data
+                        guard let data = history.data,
+                              let worksheet = data.wo
                         else { return }
-                        let historyList = data.compactMap { item in
+                        let workSheetList = worksheet.compactMap { item in
                             return WorkSheetListEntity(
-                                id: item.idLK ?? "",
-                                uniqueNumber: item.createAt ?? "",
-                                workName: item.assetName ?? "",
-                                workDesc: item.lkEngineer ?? "",
-                                serial: item.serial ?? "",
-                                installation: item.instalasi ?? "",
-                                room: item.ruangan ?? "",
-                                dateTime: item.dateText ?? "",
-                                brandName: item.brandName ?? "",
-                                lkStatus: item.lkStatus,
-                                category: WorkSheetCategory.none,
-                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none)
+                                idLK: String(item.id ?? 0),
+                                idAsset: String(item.complain?.equipment?.id ?? 0),
+                                serialNumber: item.txtSubTitle ?? "",
+                                title: item.txtTitle ?? "",
+                                room: item.txtRuangan ?? "",
+                                installation: item.complain?.equipment?.txtLokasiInstalasi ?? "",
+                                dateTime: item.valDate ?? "",
+                                brandName: item.txtType ?? "",
+                                lkNumber: item.infoLk?.lkNumber,
+                                category: WorkSheetCategory(rawValue: item.complain?.equipment?.txtKalibrasi ?? "") ?? WorkSheetCategory.none,
+                                status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
+                            )
                         }
-                        self.historyData.append(contentsOf: historyList)
+                        self.historyData.append(contentsOf: workSheetList)
                     }
                 }
             )
             .store(in: &anyCancellable)
-    }
+        }
     
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        fetchHistoryList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
+        self.fetchHistoryList(
+            woStatus: self.woStatus,
+            limit: self.limit,
+            hasObstacle: self.hasObstacle,
+            page: self.page)
     }
     
 }
@@ -91,6 +112,12 @@ extension HistoryListPresenter {
     
     func navigateToHistoryDetail(navigation: UINavigationController, data: WorkSheetListEntity) {
         router.navigateToHistoryDetail(navigation: navigation, data: data)
+    }
+    
+    func showHistorySortBottomSheet(from navigation: UINavigationController, _ delegate: SortingHistoryBottomSheetDelegate) {
+        let bottomSheet = SortingHistoryBottomSheet(nibName: String(describing: SortingHistoryBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

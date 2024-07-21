@@ -50,6 +50,7 @@ class AddComplaintBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.showBottomSheet()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,13 +90,6 @@ extension AddComplaintBottomSheet {
         selectEngineerView.configure(title: "Teknisi", placeHolder: "Pilih Teknisi")
         selectPartnerView.configure(title: "Pendamping", placeHolder: "Pilih Pendamping")
         selectDateView.configure(title: "Terjadwal Tanggal", placeHolder: String.getCurrentDateString("dd-MM-yyyy"), type: .date)
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            })
-        }
     }
     
     private func setupAction() {
@@ -158,14 +152,6 @@ extension AddComplaintBottomSheet {
                 self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func dismissBottomSheet() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
-        }) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
     func updateSelectedValues() {

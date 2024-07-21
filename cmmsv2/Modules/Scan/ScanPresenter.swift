@@ -11,7 +11,10 @@ import UIKit
 class ScanPresenter: BasePresenter {
     
     private let interactor: ScanInteractor
-    private let router = ScanRouter()
+    private let router: ScanRouter
+    let type: ScanType
+    var data: WorkSheetListEntity?
+    var request: WorkSheetRequestEntity?
     
     @Published public var detailEquipmentData: ScanEquipment?
     
@@ -20,8 +23,12 @@ class ScanPresenter: BasePresenter {
     @Published public var isError: Bool = false
     @Published public var isShowBottomSheet: Bool = false
     
-    init(interactor: ScanInteractor) {
+    init(interactor: ScanInteractor, router: ScanRouter, type: ScanType, data: WorkSheetListEntity, request: WorkSheetRequestEntity) {
         self.interactor = interactor
+        self.router = router
+        self.type = type
+        self.data = data
+        self.request = request
     }
     
 }
@@ -30,14 +37,14 @@ extension ScanPresenter {
     
     func didScanQRCode(_ qr: QRProperties?) {
         self.isLoading = true
-        self.isShowBottomSheet = true
+        self.isShowBottomSheet = false
         interactor.getDetailEquipment(id: qr?.id ?? "")
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
                     case .finished:
                         self.isLoading = false
-                        self.isShowBottomSheet = false
+                        self.isShowBottomSheet = true
                     case .failure(let error):
                         AppLogger.log(error, logType: .kNetworkResponseError)
                         self.errorMessage = error.localizedDescription
@@ -51,7 +58,7 @@ extension ScanPresenter {
                               let data = equipment.equipment
                         else { return }
                         self.detailEquipmentData = data
-                        self.isShowBottomSheet = false
+                        self.isShowBottomSheet = true
                     }
                 }
             )
@@ -64,6 +71,10 @@ extension ScanPresenter {
     
     func showBottomSheetDetailInformation(navigation: UINavigationController, data: ScanEquipment) {
         router.showBottomSheetDetailInformation(navigation: navigation, data: data)
+    }
+    
+    func navigateToLoadPreventive(_ navigation: UINavigationController, data: WorkSheetListEntity) {
+        router.navigateToLoadPreventive(navigation, data: data)
     }
     
 }

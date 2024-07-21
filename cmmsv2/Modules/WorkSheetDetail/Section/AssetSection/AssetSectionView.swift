@@ -131,7 +131,7 @@ extension AssetSectionView {
             workingStatusLabel.textColor = UIColor.customPrimaryColor
             workingStatusWidthConstraint.constant = 46
         case .ongoing:
-            workingStatusView.backgroundColor = UIColor.customIndicatorColor2 
+            workingStatusView.backgroundColor = UIColor.customIndicatorColor2
             workingStatusLabel.textColor = UIColor.customIndicatorColor11
             workingStatusWidthConstraint.constant = 130
         case .hold:

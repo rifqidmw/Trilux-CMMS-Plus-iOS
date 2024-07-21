@@ -9,13 +9,23 @@ import UIKit
 
 class ScanRouter: BaseRouter {
     
-    func showView() -> ScanView {
-        let interactor = ScanInteractor()
-        let presenter = ScanPresenter(interactor: interactor)
-        let view = ScanView(nibName: String(describing: ScanView.self), bundle: nil)
-        view.presenter = presenter
-        return view
-    }
+    func showView(
+        type: ScanType = .asset,
+        data: WorkSheetListEntity? = nil,
+        request: WorkSheetRequestEntity? = nil,
+        delegate: ScanViewDelegate? = nil) -> ScanView {
+            let interactor = ScanInteractor()
+            let presenter = ScanPresenter(
+                interactor: interactor,
+                router: self,
+                type: type,
+                data: data ?? .init(idAsset: ""),
+                request: request ?? .init(id: "", action: ""))
+            let view = ScanView(nibName: String(describing: ScanView.self), bundle: nil)
+            view.presenter = presenter
+            view.delegate = delegate
+            return view
+        }
     
 }
 
@@ -26,6 +36,11 @@ extension ScanRouter {
         bottomSheet.modalPresentationStyle = .overCurrentContext
         bottomSheet.equipment = data
         navigation.present(bottomSheet, animated: true)
+    }
+    
+    func navigateToLoadPreventive(_ navigation: UINavigationController, data: WorkSheetListEntity) {
+        let vc = LoadPreventiveRouter().showView(data: data)
+        navigation.pushViewController(vc, animated: true)
     }
     
 }

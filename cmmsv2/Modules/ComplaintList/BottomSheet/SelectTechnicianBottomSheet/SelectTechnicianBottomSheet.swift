@@ -28,6 +28,7 @@ class SelectTechnicianBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.showBottomSheet()
         self.filteredData = data
     }
     
@@ -59,12 +60,6 @@ extension SelectTechnicianBottomSheet {
             addButton.isHidden = false
         default: break
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            })
-        }
     }
     
     private func setupTableView() {
@@ -93,14 +88,6 @@ extension SelectTechnicianBottomSheet {
                 self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
-    }
-    
-    private func dismissBottomSheet() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.dismissAreaView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
-        }) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
     private func filterData(with query: String) {

@@ -85,7 +85,7 @@ extension AssetListView {
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Aset", type: .plain)
         searchButton.configure(type: .searchbutton)
-        customActionBar.configure(firstIcon: "ic_installation", firstTitle: "Instalasi", secondIcon: "ic_setting", secondTitle: "Kondisi", thirdIcon: "ic_structural", thirdTitle: "Kategori", fourthIcon: "ic_arrow_up_down", fourthTitle: "Urutkan")
+        customActionBar.configure(firstIcon: "square.and.arrow.down", firstTitle: "Instalasi", secondIcon: "wrench.and.screwdriver", secondTitle: "Kondisi", thirdIcon: "circle.grid.2x2", thirdTitle: "Kategori", fourthIcon: "arrow.up.arrow.down.square", fourthTitle: "Urutkan")
         self.countLabel.isSkeletonable = true
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -113,12 +113,6 @@ extension AssetListView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(AssetCVC.nib, forCellWithReuseIdentifier: AssetCVC.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0)
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 120)
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 8
-        collectionView.collectionViewLayout = layout
         collectionView.isSkeletonable = true
         collectionView.showAnimatedGradientSkeleton()
     }
@@ -194,6 +188,18 @@ extension AssetListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewD
                 presenter.fetchNextPage()
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 120)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
 }

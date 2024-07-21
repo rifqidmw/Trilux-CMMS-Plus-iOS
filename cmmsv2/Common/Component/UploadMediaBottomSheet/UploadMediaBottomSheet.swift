@@ -1,5 +1,5 @@
 //
-//  ChangePictureBottomSheet.swift
+//  UploadMediaBottomSheet.swift
 //  cmmsv2
 //
 //  Created by PRO M1 2020 8/256 on 14/01/24.
@@ -8,23 +8,29 @@
 import UIKit
 import Combine
 
-class ChangePictureBottomSheet: BaseNonNavigationController {
+protocol UploadMediaBottomSheetDelegate: AnyObject {
+    func didSelectPictureFromCamera()
+    func didSelectPictureFromGaleri()
+}
+
+class UploadMediaBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    weak var delegate: ChangePictureBottomSheetDelegate?
+    weak var delegate: UploadMediaBottomSheetDelegate?
     var data: [MenuModel] = changePictureData
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
+        self.showBottomSheet()
     }
     
 }
 
-extension ChangePictureBottomSheet {
+extension UploadMediaBottomSheet {
     
     private func setupBody() {
         setupView()
@@ -51,14 +57,14 @@ extension ChangePictureBottomSheet {
             dismissAreaView.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
-            self.dismiss(animated: true)
+            self.dismissBottomSheet()
         }
         .store(in: &anyCancellable)
     }
     
 }
 
-extension ChangePictureBottomSheet: UITableViewDataSource, UITableViewDelegate {
+extension UploadMediaBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -79,9 +85,13 @@ extension ChangePictureBottomSheet: UITableViewDataSource, UITableViewDelegate {
         guard let delegate else { return }
         switch indexPath.row {
         case 0:
-            delegate.didSelectPictureFromCamera()
+            self.dismissBottomSheet() {
+                delegate.didSelectPictureFromCamera()
+            }
         case 1:
-            delegate.didSelectPictureFromGaleri()
+            self.dismissBottomSheet() {
+                delegate.didSelectPictureFromGaleri()
+            }
         default: break
         }
     }

@@ -7,7 +7,7 @@
 
 struct Hospital: Codable {
     let data: HospitalData?
-    let message: MessageType?
+    let message: MessageStatusType?
     let status: Int?
     
     enum CodingKeys: String, CodingKey {

@@ -10,7 +10,7 @@ import Foundation
 struct EditProfileEntity: Codable {
     let count: Int?
     let data: EditProfileData?
-    let message: MessageType?
+    let message: MessageStatusType?
     let status: Int?
     let reff: [String: String]?
     

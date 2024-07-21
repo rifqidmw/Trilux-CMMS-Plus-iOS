@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SparePartBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="Bnm-G7-aFY" id="Fyp-Oj-wGc"/>
+                <outlet property="containerTextFieldView" destination="RU0-VH-bZ3" id="xlH-7P-ba5"/>
+                <outlet property="dismissAreaView" destination="Ce0-mb-J2h" id="0M1-Fz-7lM"/>
+                <outlet property="tableView" destination="3I6-vz-7aN" id="PlO-d0-Y6p"/>
+                <outlet property="textField" destination="2ZP-qT-UJs" id="Yog-Pr-BY3"/>
+                <outlet property="titleLabel" destination="c9G-ge-tq1" id="Zrz-cU-uCK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ce0-mb-J2h" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnm-G7-aFY" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="123" width="393" height="729"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3Kh-1u-LDQ">
+                            <rect key="frame" x="16" y="34" width="361" height="661"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-ge-tq1">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="aj2-Lm-dEh"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU0-VH-bZ3">
+                                    <rect key="frame" x="0.0" y="34" width="361" height="48"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cari suku cadang yang diinginkan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ZP-qT-UJs">
+                                            <rect key="frame" x="16" y="0.0" width="329" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" name="customLightGrayColor"/>
+                                    <constraints>
+                                        <constraint firstItem="2ZP-qT-UJs" firstAttribute="top" secondItem="RU0-VH-bZ3" secondAttribute="top" id="3G4-EW-OJw"/>
+                                        <constraint firstAttribute="trailing" secondItem="2ZP-qT-UJs" secondAttribute="trailing" constant="16" id="Cyx-8l-A0H"/>
+                                        <constraint firstItem="2ZP-qT-UJs" firstAttribute="leading" secondItem="RU0-VH-bZ3" secondAttribute="leading" constant="16" id="pyg-or-ApR"/>
+                                        <constraint firstAttribute="height" constant="48" id="wyV-oh-2JN"/>
+                                        <constraint firstAttribute="bottom" secondItem="2ZP-qT-UJs" secondAttribute="bottom" id="zTx-37-yFo"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3I6-vz-7aN">
+                                    <rect key="frame" x="0.0" y="98" width="361" height="563"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3Kh-1u-LDQ" firstAttribute="top" secondItem="Bnm-G7-aFY" secondAttribute="top" constant="34" id="66s-uA-3Jt"/>
+                        <constraint firstItem="3Kh-1u-LDQ" firstAttribute="leading" secondItem="Bnm-G7-aFY" secondAttribute="leading" constant="16" id="Ren-0t-IGO"/>
+                        <constraint firstAttribute="bottom" secondItem="3Kh-1u-LDQ" secondAttribute="bottom" constant="34" id="aWd-sr-2B5"/>
+                        <constraint firstAttribute="trailing" secondItem="3Kh-1u-LDQ" secondAttribute="trailing" constant="16" id="cGm-x9-o8i"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Bnm-G7-aFY" secondAttribute="bottom" id="BGF-3U-giM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ce0-mb-J2h" secondAttribute="bottom" id="CkZ-FI-1JO"/>
+                <constraint firstItem="Ce0-mb-J2h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ibe-3j-r4T"/>
+                <constraint firstItem="Bnm-G7-aFY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="LeG-DA-fwp"/>
+                <constraint firstItem="Ce0-mb-J2h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mij-y9-hx5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ce0-mb-J2h" secondAttribute="trailing" id="Rdx-rv-5oC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bnm-G7-aFY" secondAttribute="trailing" id="STl-rE-hE7"/>
+                <constraint firstItem="Bnm-G7-aFY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a0W-wG-Tbd"/>
+            </constraints>
+            <point key="canvasLocation" x="92" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

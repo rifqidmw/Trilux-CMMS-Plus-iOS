@@ -15,6 +15,7 @@ class LoadPreventivePresenter: BasePresenter {
     let data: WorkSheetListEntity?
     
     @Published public var loadPreventiveData: LoadPreventiveData?
+    @Published public var createPreventiveData: CreatePreventiveEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -31,7 +32,8 @@ class LoadPreventivePresenter: BasePresenter {
 extension LoadPreventivePresenter {
     
     func fetchInitData() {
-        self.fetchPreventiveLoadList(id: self.data?.id ?? "")
+        guard let data = self.data, let idAsset = data.idAsset else { return }
+        self.fetchPreventiveLoadList(id: idAsset)
     }
     
     func fetchPreventiveLoadList(id: String?) {
@@ -59,16 +61,49 @@ extension LoadPreventivePresenter {
             .store(in: &anyCancellable)
     }
     
+    func createPreventive(data: CreatePreventiveRequest) {
+        self.isLoading = true
+        interactor.createPreventive(data: data)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { preventive in
+                    DispatchQueue.main.async {
+                        self.createPreventiveData = preventive
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
 }
 
 extension LoadPreventivePresenter {
     
-    func showBottomSheetAddPreventive(from navigation: UINavigationController) {
+    func showBottomSheetAddPreventive(from navigation: UINavigationController, _ delegate: AddPreventiveBottomSheetDelegate) {
         guard let data = self.loadPreventiveData,
               let asset = data.asset
         else { return }
-        router.showBottomSheetAddPreventive(from: navigation, data: asset)
+        let bottomSheet = AddPreventiveBottomSheet(nibName: String(describing: AddPreventiveBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.data = asset
+        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
     }
     
+    func showDatePickerBottomSheet(from navigation: UINavigationController, delegate: DatePickerBottomSheetDelegate, type: DatePickerBottomSheetType) {
+        let bottomSheet = DatePickerBottomSheet(nibName: String(describing: DatePickerBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.type = type
+        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+    }
     
 }

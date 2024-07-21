@@ -6,14 +6,7 @@
 //
 
 import UIKit
-
-struct PreventiveCategoryEntity {
-    var isSelected = false
-    let title: String
-    let description: String
-    let selectDateTitle: String
-    let selectDateTitlePlaceHolder: String
-}
+import Combine
 
 class PreventiveCategoryTVC: UITableViewCell {
     
@@ -30,6 +23,8 @@ class PreventiveCategoryTVC: UITableViewCell {
     @IBOutlet weak var selectDateButton: UIView!
     @IBOutlet weak var selectDateLabel: UILabel!
     @IBOutlet weak var selectDateIconImageView: UIImageView!
+    
+    var anyCancellable = Set<AnyCancellable>()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,14 +43,28 @@ class PreventiveCategoryTVC: UITableViewCell {
 
 extension PreventiveCategoryTVC {
     
-    func setupCell(data: PreventiveCategoryEntity) {
-        containerView.addBorder(width: 1, colorBorder: data.isSelected ? UIColor.customPrimaryColor : UIColor.customDarkGrayColor)
+    func setupCell(data: PreventiveCategoryEntity, delegate: PreventiveCategoryCellDelegate, index: Int) {
+        self.layoutIfNeeded()
+        containerView.addBorder(width: data.isSelected ? 1.5 : 1, colorBorder: data.isSelected ? UIColor.customPrimaryColor : UIColor.customDarkGrayColor)
         titleLabel.text = data.title
         checkBoxImageView.image = UIImage(named: data.isSelected ? "ic_checkbox_ellipse_selected" : "ic_checkbox_ellipse_unselected")
         descriptionLabel.text = data.description
         selectTypeDateLabel.text = data.selectDateTitle
-        selectDateLabel.text = data.selectDateTitlePlaceHolder
         selectDateIconImageView.image = UIImage(named: data.isSelected ? "ic_calendar_selected" : "ic_calendar_unselected")
+        
+        if let selectedDate = data.selectedDate, !selectedDate.isEmpty {
+            selectDateLabel.text = selectedDate
+        } else if let selectedMonth = data.selectedMonth, !selectedMonth.isEmpty {
+            selectDateLabel.text = selectedMonth
+        } else {
+            selectDateLabel.text = data.selectDateTitlePlaceHolder
+        }
+        
+        selectDateButton.gesture()
+            .sink { _ in
+                delegate.didTapSelectDate(index: index)
+            }
+            .store(in: &anyCancellable)
     }
     
 }

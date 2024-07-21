@@ -19,6 +19,7 @@ class PreventiveMaintenanceListView: BaseViewController {
     var presenter: PreventiveMaintenanceListPresenter?
     var data: [WorkSheetListEntity] = []
     var id: String?
+    var workSheet: WorkSheetListEntity?
     
     override func didLoad() {
         super.didLoad()
@@ -40,7 +41,8 @@ extension PreventiveMaintenanceListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Pemeliharaan Preventif", type: .plain)
-        actionBarView.configure(firstIcon: "ic_installation", firstTitle: "Installasi", secondIcon: "ic_setting", secondTitle: "Status", thirdIcon: "ic_arrow_up_down", thirdTitle: "Urutkan")
+        actionBarView.configure(firstIcon: "square.and.arrow.down", firstTitle: "Installasi", secondIcon: "gearshape", secondTitle: "Status", thirdIcon: "arrow.up.arrow.down.square", thirdTitle: "Urutkan")
+        actionBarView.delegate = self
     }
     
     private func fetchInitialData() {
@@ -123,12 +125,12 @@ extension PreventiveMaintenanceListView: SkeletonCollectionViewDataSource, Skele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
               let navigation = self.navigationController,
-              let id = self.data[indexPath.row].id,
+              let id = self.data[indexPath.row].idLK,
               let status = self.data[indexPath.row].status
         else { return }
         
+        self.workSheet = self.data[indexPath.row]
         self.id = id
-        self.showOverlay()
         
         let type: WorkSheetStatus = {
             switch status {
@@ -161,6 +163,7 @@ extension PreventiveMaintenanceListView: SkeletonCollectionViewDataSource, Skele
             
             DispatchQueue.main.async {
                 presenter.fetchNextPage()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -171,18 +174,6 @@ extension PreventiveMaintenanceListView: SkeletonCollectionViewDataSource, Skele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
-    }
-    
-}
-
-extension PreventiveMaintenanceListView: WorkSheetOnsitePreventiveDelegate {
-    
-    func didTapDetail(title: String) {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        let data = WorkSheetRequestEntity(id: self.id, action: title)
-        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .preventive)
     }
     
 }

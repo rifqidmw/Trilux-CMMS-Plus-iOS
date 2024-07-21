@@ -91,7 +91,7 @@ extension PreventiveCalendarListView {
     
     private func fetchInitialData() {
         guard let presenter = presenter else { return }
-        presenter.fetchInitData(month: self.month ?? String.getCurrentDateString("MMMM yyyy"))
+        presenter.fetchInitData(month: self.month ?? String.getCurrentDateString("yyyy-MM-dd"))
         showSpinner(true)
     }
     
@@ -134,7 +134,7 @@ extension PreventiveCalendarListView {
                 self.data = data
                 self.collectionView.reloadData()
                 self.collectionView.hideSkeleton()
-                self.dateLabel.text = date ?? String.getCurrentDateString("dd MMMM yyyy")
+                self.dateLabel.text = date ?? String.getCurrentDateString("yyyy-MM-dd")
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -153,7 +153,7 @@ extension PreventiveCalendarListView: FSCalendarDelegate, FSCalendarDelegateAppe
         guard let presenter = presenter else { return }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: date)
         self.date = dateString
         
@@ -166,7 +166,7 @@ extension PreventiveCalendarListView: FSCalendarDelegate, FSCalendarDelegateAppe
         let currentPageDate = calendar.currentPage
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let monthString = dateFormatter.string(from: currentPageDate)
         
         self.month = monthString
@@ -263,7 +263,7 @@ extension PreventiveCalendarListView: SkeletonCollectionViewDataSource, Skeleton
             self.showSpinner(true)
             
             DispatchQueue.main.async {
-                presenter.fetchNextPage(date: self.date ?? String.getCurrentDateString("dd MMMM yyyy"))
+                presenter.fetchNextPage(date: self.date ?? String.getCurrentDateString("yyyy-MM-dd"))
             }
         }
     }

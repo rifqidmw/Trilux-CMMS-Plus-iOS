@@ -69,7 +69,7 @@ extension UserProfileView: SignatureBottomSheetDelegate {
     
 }
 
-extension UserProfileView: ChangePictureBottomSheetDelegate {
+extension UserProfileView: UploadMediaBottomSheetDelegate {
     
     func didSelectPictureFromCamera() {
         self.cameraSelectedType = .profile

@@ -40,6 +40,7 @@ extension TaskSectionView {
         tableView.dataSource = self
         tableView.register(TaskItemTVC.nib, forCellReuseIdentifier: TaskItemTVC.identifier)
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
     }
     
     func configure(data: [LKData.Task]) {

@@ -30,7 +30,7 @@ class HistoryDetailPresenter: BasePresenter {
 extension HistoryDetailPresenter {
     
     func fetchInitData() {
-        guard let data, let id = data.id else { return }
+        guard let data, let id = data.idLK else { return }
         self.fetchHistoryDetail(id: id)
     }
     

@@ -9,6 +9,9 @@ import Foundation
 
 protocol WorkSheetCorrectiveBottomSheetDelegate: AnyObject {
     func didTapDetailCorrective(data: WorkOrder)
+    func didTapScanQR(_ data: WorkSheetListEntity, request: WorkSheetRequestEntity)
+    func didTapContinue(_ request: WorkSheetRequestEntity)
+    func didTapDownload(_ id: String)
 }
 
 struct WorkSheetCorrectiveListEntity: Codable {

@@ -12,11 +12,6 @@ enum CameraSelectionType {
     case signature
 }
 
-protocol ChangePictureBottomSheetDelegate: AnyObject {
-    func didSelectPictureFromCamera()
-    func didSelectPictureFromGaleri()
-}
-
 struct MediaProfileEntity: Codable {
     let data: ProfileData?
     let message: String?

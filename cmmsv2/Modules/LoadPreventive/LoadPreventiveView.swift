@@ -17,6 +17,7 @@ class LoadPreventiveView: BaseViewController {
     
     var data: [LoadPreventiveList] = []
     var presenter: LoadPreventivePresenter?
+    var bottomSheet: AddPreventiveBottomSheet?
     
     override func didLoad() {
         super.didLoad()
@@ -63,6 +64,22 @@ extension LoadPreventiveView {
                 self.collectionView.hideSkeleton()
             }
             .store(in: &anyCancellable)
+        
+        presenter.$createPreventiveData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.hideLoadingPopup()
+                if data.message == "Success" {
+                    self.dismissBottomSheet()
+                    self.fetchInitialData()
+                    self.reloadCollectionViewWithAnimation()
+                } else {
+                    if let bottomSheet = self.bottomSheet {
+                        bottomSheet.showAlert(title: "Peringatan", message: data.message)
+                    }
+                }
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {
@@ -88,8 +105,19 @@ extension LoadPreventiveView {
         customNavigationView.actionLabel.gesture()
             .sink { [weak self] _ in
                 guard let self, let navigation = self.navigationController else { return }
-                self.showOverlay()
-                presenter.showBottomSheetAddPreventive(from: navigation)
+                presenter.showBottomSheetAddPreventive(from: navigation, self)
+            }
+            .store(in: &anyCancellable)
+        
+        workButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let title = self.workButton.titleLabel.text,
+                      let navigation = self.navigationController,
+                      let data = presenter.data
+                else { return }
+                let workSheet = WorkSheetRequestEntity(id: data.idLK, action: title.lowercased())
+                presenter.navigateToDetailWorkSheet(navigation, data: workSheet, type: .preventive, activity: .working)
             }
             .store(in: &anyCancellable)
     }
@@ -98,6 +126,12 @@ extension LoadPreventiveView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(LoadPreventiveCVC.nib, forCellWithReuseIdentifier: LoadPreventiveCVC.identifier)
+    }
+    
+    func reloadCollectionViewWithAnimation() {
+        UIView.transition(with: collectionView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.collectionView.reloadData()
+        }, completion: nil)
     }
     
 }
@@ -109,7 +143,7 @@ extension LoadPreventiveView: SkeletonCollectionViewDelegate, SkeletonCollection
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {

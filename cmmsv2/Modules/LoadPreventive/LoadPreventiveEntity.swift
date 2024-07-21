@@ -161,3 +161,29 @@ struct LoadPreventiveAsset: Codable {
         case txtInfoUpdate = "txtInfoUpdate"
     }
 }
+
+struct CreatePreventiveRequest: Codable {
+    let idAsset: String?
+    let varian: String?
+    let date: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idAsset = "id_asset"
+        case varian = "varian"
+        case date = "date"
+    }
+}
+
+struct CreatePreventiveEntity: Codable {
+    let data: CreatePreventiveData?
+    let message: String?
+    let status: Int?
+}
+
+struct CreatePreventiveData: Codable {
+    let idLk: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idLk = "id_lk"
+    }
+}

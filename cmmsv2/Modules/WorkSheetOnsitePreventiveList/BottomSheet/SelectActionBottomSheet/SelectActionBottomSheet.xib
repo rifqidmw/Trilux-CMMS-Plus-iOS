@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2n-SP-6th" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="433"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfJ-Sf-izq" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
@@ -98,10 +98,10 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="rfJ-Sf-izq" secondAttribute="bottom" id="16p-i7-6aM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rfJ-Sf-izq" secondAttribute="trailing" id="91B-K8-ds2"/>
-                <constraint firstItem="L2n-SP-6th" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DUl-4f-bSb"/>
-                <constraint firstItem="rfJ-Sf-izq" firstAttribute="top" secondItem="L2n-SP-6th" secondAttribute="bottom" id="Lor-hb-VpJ"/>
+                <constraint firstItem="L2n-SP-6th" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DUl-4f-bSb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L2n-SP-6th" secondAttribute="trailing" id="MVN-yP-xAU"/>
                 <constraint firstItem="rfJ-Sf-izq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZQj-Aj-r4b"/>
+                <constraint firstAttribute="bottom" secondItem="L2n-SP-6th" secondAttribute="bottom" id="ae7-VG-rff"/>
                 <constraint firstItem="L2n-SP-6th" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k0b-bu-rit"/>
             </constraints>
             <point key="canvasLocation" x="52.671755725190835" y="-1.4084507042253522"/>

@@ -78,6 +78,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    func reloadTableViewWithAnimation(_ tableView: UITableView) {
+        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            tableView.reloadData()
+        }, completion: nil)
+    }
+    
+    func reloadCollectionViewWithAnimation(_ collectionView: UICollectionView) {
+        UIView.transition(with: collectionView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            collectionView.reloadData()
+        }, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         didLoad()
@@ -200,6 +212,16 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         alertController.addAction(action)
         DispatchQueue.main.async {
             self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func dismissBottomSheet(completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+        }) { _ in
+            self.dismiss(animated: true) {
+                completion?()
+            }
         }
     }
     

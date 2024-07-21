@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterStatusBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="applyButton" destination="Des-I1-FoF" id="oaZ-I1-0OQ"/>
+                <outlet property="bottomSheetView" destination="3fq-M6-33u" id="6wy-ne-ct9"/>
+                <outlet property="collectionView" destination="BOC-2a-P3U" id="X2a-PG-5YY"/>
+                <outlet property="dismissAreaView" destination="vBE-ey-0l1" id="LfY-HR-utk"/>
+                <outlet property="titleLabel" destination="oUi-B1-2n0" id="gcq-Vy-ixm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-ey-0l1">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fq-M6-33u" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="622" width="393" height="230"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zPo-e7-7EK">
+                            <rect key="frame" x="16" y="34" width="361" height="162"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-B1-2n0" userLabel="Asset Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="XZ3-oz-SC7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-2a-P3U">
+                                    <rect key="frame" x="0.0" y="36" width="361" height="62"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3b-e5-Ker">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-I1-FoF" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="114" width="361" height="48"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="LnD-qv-NVw"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zPo-e7-7EK" secondAttribute="trailing" constant="16" id="HaO-zw-AjA"/>
+                        <constraint firstItem="zPo-e7-7EK" firstAttribute="leading" secondItem="3fq-M6-33u" secondAttribute="leading" constant="16" id="OI0-gl-Kh0"/>
+                        <constraint firstAttribute="height" constant="230" id="WW3-Kg-qBn"/>
+                        <constraint firstItem="zPo-e7-7EK" firstAttribute="top" secondItem="3fq-M6-33u" secondAttribute="top" constant="34" id="rq2-H6-vB9"/>
+                        <constraint firstAttribute="bottom" secondItem="zPo-e7-7EK" secondAttribute="bottom" constant="34" id="vgq-Za-dKI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3fq-M6-33u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GsX-Y5-C71"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3fq-M6-33u" secondAttribute="trailing" id="GuJ-0N-KlE"/>
+                <constraint firstAttribute="bottom" secondItem="vBE-ey-0l1" secondAttribute="bottom" id="NIm-TM-Boh"/>
+                <constraint firstItem="vBE-ey-0l1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Z90-j9-xpo"/>
+                <constraint firstItem="vBE-ey-0l1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b2i-pc-EdK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vBE-ey-0l1" secondAttribute="trailing" id="kBX-ag-o8l"/>
+                <constraint firstAttribute="bottom" secondItem="3fq-M6-33u" secondAttribute="bottom" id="wK6-1D-gaP"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

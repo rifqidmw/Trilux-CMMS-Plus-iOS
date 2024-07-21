@@ -18,7 +18,7 @@ class WorkSheetCorrectiveListView: BaseViewController {
     
     var presenter: WorkSheetCorrectiveListPresenter?
     var data: [WorkSheetListEntity] = []
-    var workOrder: WorkOrderData?
+    var workOrder: [WorkOrder] = []
     
     override func didLoad() {
         super.didLoad()
@@ -67,6 +67,8 @@ extension WorkSheetCorrectiveListView {
                     return
                 }
                 self.workOrder = data
+                self.collectionView.reloadData()
+                self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -79,7 +81,8 @@ extension WorkSheetCorrectiveListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Lembar Kerja Korektif", type: .plain)
-        actionBarView.configure(thirdIcon: "ic_setting", thirdTitle: "Status", fourthIcon: "ic_arrow_up_down", fourthTitle: "Urutkan")
+        actionBarView.configure(firstIcon: "gearshape", firstTitle: "Status", secondIcon: "arrow.up.arrow.down.square", secondTitle: "Urutkan")
+        actionBarView.delegate = self
     }
     
     private func setupAction() {
@@ -122,7 +125,8 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSheetCVC.identifier, for: indexPath) as? WorkSheetCVC
+        guard indexPath.row < data.count,
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkSheetCVC.identifier, for: indexPath) as? WorkSheetCVC
         else {
             return UICollectionViewCell()
         }
@@ -134,12 +138,9 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
-              let navigation = self.navigationController,
-              let workOrder = self.workOrder,
-              let data = workOrder.wo
+              let navigation = self.navigationController
         else { return }
-        let selectedItem = data[indexPath.row]
-        self.showOverlay()
+        let selectedItem = workOrder[indexPath.row]
         presenter.showBottomSheetCorrective(navigation: navigation, data: selectedItem, delegate: self)
     }
     
@@ -166,18 +167,6 @@ extension WorkSheetCorrectiveListView: SkeletonCollectionViewDataSource, Skeleto
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
-    }
-    
-}
-
-extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
-    
-    func didTapDetailCorrective(data: WorkOrder) {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        self.dismiss(animated: true)
-        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
     }
     
 }

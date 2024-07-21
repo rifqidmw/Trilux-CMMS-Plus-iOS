@@ -7,6 +7,23 @@
 
 import Foundation
 
+enum WorkSheetActionType {
+    case seeing
+    case working
+}
+
+enum WorkSheetDetailType {
+    case monitoring
+    case calibration
+    case preventive
+}
+
+enum WorkSheetActivityType {
+    case correction
+    case working
+    case view
+}
+
 // MARK: - Monitoring Function Entity
 struct MonitoringFunctionEntity: Codable {
     let data: LKData?
@@ -57,7 +74,7 @@ struct LKData: Codable {
     let abaiListrik: String?
     let task: [Task]?
     let sparepart: [Sparepart]?
-    let newpart: [String]?
+    let newpart: [LKNewPart]?
     let lkphoto: [Lkphoto]?
     let idKalibrator: String?
     let metode: String?
@@ -71,58 +88,58 @@ struct LKData: Codable {
     let namaPelapor: String?
     
     enum CodingKeys: String, CodingKey {
-        case idLK
+        case idLK = "id_lk"
         case lkNumber = "lk_number"
-        case lkJenis
-        case lkVarian
+        case lkJenis = "lk_jenis"
+        case lkVarian = "lk_varian"
         case lkDate = "lk_date"
-        case lkEngineer
-        case lkAssign
-        case idAsset
-        case lkLabel
+        case lkEngineer = "lk_engineer"
+        case lkAssign = "lk_assign"
+        case idAsset = "id_asset"
+        case lkLabel = "lk_label"
         case lkInfo = "lk_info"
         case lkStatus = "lk_status"
         case lkFinishstt = "lk_finishstt"
-        case lkWebenable
-        case lkStart
-        case lkFinish
-        case lkContinue
-        case lkDurasireal
-        case lkRating
-        case createBy
-        case approveBy
-        case rateBy
-        case createAt
-        case idComplain
-        case comTime
-        case comRespon
-        case downtime
-        case lkPelapor
-        case analisa
-        case keluhan
-        case dipindahkan
-        case persiapan
-        case preventif
-        case pemantauan
-        case listrik
-        case abaiPersiapan
-        case abaiPreventif
-        case abaiPemantauan
-        case abaiListrik
-        case task
-        case sparepart
-        case newpart
-        case lkphoto
+        case lkWebenable = "lk_webenable"
+        case lkStart = "lk_start"
+        case lkFinish = "lk_finish"
+        case lkContinue = "lk_continue"
+        case lkDurasireal = "lk_durasireal"
+        case lkRating = "lk_rating"
+        case createBy = "create_by"
+        case approveBy = "approve_by"
+        case rateBy = "rate_by"
+        case createAt = "create_at"
+        case idComplain = "id_complain"
+        case comTime = "com_time"
+        case comRespon = "com_respon"
+        case downtime = "downtime"
+        case lkPelapor = "lk_pelapor"
+        case analisa = "analisa"
+        case keluhan = "keluhan"
+        case dipindahkan = "dipindahkan"
+        case persiapan = "persiapan"
+        case preventif = "preventif"
+        case pemantauan = "pemantauan"
+        case listrik = "listrik"
+        case abaiPersiapan = "abai_persiapan"
+        case abaiPreventif = "abai_preventif"
+        case abaiPemantauan = "abai_pemantauan"
+        case abaiListrik = "abai_listrik"
+        case task = "task"
+        case sparepart = "sparepart"
+        case newpart = "newpart"
+        case lkphoto = "lkphoto"
         case idKalibrator = "id_kalibrator"
-        case metode
+        case metode = "metode"
         case sttLaik = "stt_laik"
-        case idRelokasi
-        case jenisRelokasi
-        case lkKegiatan
-        case asset
+        case idRelokasi = "id_relokasi"
+        case jenisRelokasi = "jenis_relokasi"
+        case lkKegiatan = "lk_kegiatan"
+        case asset = "asset"
         case alatKalibrasi = "alat_kalibrasi"
-        case engineername
-        case namaPelapor
+        case engineername = "engineer_name"
+        case namaPelapor = "nama_pelapor"
     }
     
     struct Asset: Codable {
@@ -332,13 +349,331 @@ struct Kalibrator: Codable {
     }
 }
 
-enum WorkSheetActionType {
-    case seeing
-    case working
+struct SparePartEntity: Codable {
+    let data: [SparePartData]?
+    let message: String?
+    let status: Int?
 }
 
-enum WorkSheetDetailType {
-    case monitoring
-    case calibration
-    case preventive
+struct SparePartData: Codable {
+    let idPart: String?
+    let name: String?
+    let partname: String?
+    let harga: Int?
+    let desc: String?
+    let pn: String?
+    let tipe: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idPart = "id_part"
+        case name
+        case partname
+        case harga
+        case desc
+        case pn
+        case tipe
+    }
+}
+
+// MARK: - REQUEST ENTITY
+struct LKStartRequest: Codable {
+    let abaiListrik, abaiPemantauan, abaiPersiapan, abaiPreventif: String?
+    let alatKalibrasi: [LKData.AlatKalibrasi]?
+    let analisa: [String]?
+    let approveBy: String?
+    let asset: LKData.Asset?
+    let comRespon, comTime, createAt, createBy: String?
+    let dipindahkan, downtime, engineername, idAsset: String?
+    let idComplain, idKalibrator, idLk, idRelokasi: String?
+    let jenisRelokasi, keluhan: String?
+    let listrik: [ListrikLK]?
+    let lkAssign, lkContinue, lkDate, lkDurasireal: String?
+    let lkEngineer, lkFinish, lkFinishstt, lkInfo: String?
+    let lkJenis, lkKegiatan, lkLabel, lkNumber: String?
+    let lkPelapor, lkRating, lkStart, lkStatus: String?
+    let lkVarian, lkWebenable: String?
+    let lkphoto: [PhotoLK]?
+    let metode: String?
+    let newpart: [LKNewPart]?
+    let persiapan, preventif: [LKPreventif]?
+    let pemantauan: [LKPemantauan]?
+    let rateBy, sttLaik: String?
+    let sparepart: [LKSparePart]?
+    let task: [TaskLK]?
+    
+    enum CodingKeys: String, CodingKey {
+        case abaiListrik = "abai_listrik"
+        case abaiPemantauan = "abai_pemantauan"
+        case abaiPersiapan = "abai_persiapan"
+        case abaiPreventif = "abai_preventif"
+        case alatKalibrasi = "alat_kalibrasi"
+        case analisa
+        case approveBy = "approve_by"
+        case asset
+        case comRespon = "com_respon"
+        case comTime = "com_time"
+        case createAt = "create_at"
+        case createBy = "create_by"
+        case dipindahkan
+        case downtime
+        case engineername
+        case idAsset = "id_asset"
+        case idComplain = "id_complain"
+        case idKalibrator = "id_kalibrator"
+        case idLk = "id_lk"
+        case idRelokasi = "id_relokasi"
+        case jenisRelokasi = "jenis_relokasi"
+        case keluhan
+        case listrik
+        case lkAssign = "lk_assign"
+        case lkContinue = "lk_continue"
+        case lkDate = "lk_date"
+        case lkDurasireal = "lk_durasireal"
+        case lkEngineer = "lk_engineer"
+        case lkFinish = "lk_finish"
+        case lkFinishstt = "lk_finishstt"
+        case lkInfo = "lk_info"
+        case lkJenis = "lk_jenis"
+        case lkKegiatan = "lk_kegiatan"
+        case lkLabel = "lk_label"
+        case lkNumber = "lk_number"
+        case lkPelapor = "lk_pelapor"
+        case lkRating = "lk_rating"
+        case lkStart = "lk_start"
+        case lkStatus = "lk_status"
+        case lkVarian = "lk_varian"
+        case lkWebenable = "lk_webenable"
+        case lkphoto
+        case metode
+        case newpart
+        case pemantauan
+        case persiapan
+        case preventif
+        case rateBy = "rate_by"
+        case sparepart
+        case sttLaik = "stt_laik"
+        case task
+    }
+    
+    init(abaiListrik: String? = nil, abaiPemantauan: String? = nil, abaiPersiapan: String? = nil, abaiPreventif: String? = nil, alatKalibrasi: [LKData.AlatKalibrasi]? = nil, analisa: [String]? = nil, approveBy: String? = nil, asset: LKData.Asset? = nil, comRespon: String? = nil, comTime: String? = nil, createAt: String? = nil, createBy: String? = nil, dipindahkan: String? = nil, downtime: String? = nil, engineername: String? = nil, idAsset: String? = nil, idComplain: String? = nil, idKalibrator: String? = nil, idLk: String? = nil, idRelokasi: String? = nil, jenisRelokasi: String? = nil, keluhan: String? = nil, listrik: [ListrikLK]? = nil, lkAssign: String? = nil, lkContinue: String? = nil, lkDate: String? = nil, lkDurasireal: String? = nil, lkEngineer: String? = nil, lkFinish: String? = nil, lkFinishstt: String? = nil, lkInfo: String? = nil, lkJenis: String? = nil, lkKegiatan: String? = nil, lkLabel: String? = nil, lkNumber: String? = nil, lkPelapor: String? = nil, lkRating: String? = nil, lkStart: String? = nil, lkStatus: String? = nil, lkVarian: String? = nil, lkWebenable: String? = nil, lkphoto: [PhotoLK]? = nil, metode: String? = nil, newpart: [LKNewPart]? = nil, pemantauan: [LKPemantauan]? = nil, persiapan: [LKPreventif]? = nil, preventif: [LKPreventif]? = nil, rateBy: String? = nil, sttLaik: String? = nil, sparepart: [LKSparePart]? = nil, task: [TaskLK]? = nil) {
+        self.abaiListrik = abaiListrik
+        self.abaiPemantauan = abaiPemantauan
+        self.abaiPersiapan = abaiPersiapan
+        self.abaiPreventif = abaiPreventif
+        self.alatKalibrasi = alatKalibrasi
+        self.analisa = analisa
+        self.approveBy = approveBy
+        self.asset = asset
+        self.comRespon = comRespon
+        self.comTime = comTime
+        self.createAt = createAt
+        self.createBy = createBy
+        self.dipindahkan = dipindahkan
+        self.downtime = downtime
+        self.engineername = engineername
+        self.idAsset = idAsset
+        self.idComplain = idComplain
+        self.idKalibrator = idKalibrator
+        self.idLk = idLk
+        self.idRelokasi = idRelokasi
+        self.jenisRelokasi = jenisRelokasi
+        self.keluhan = keluhan
+        self.listrik = listrik
+        self.lkAssign = lkAssign
+        self.lkContinue = lkContinue
+        self.lkDate = lkDate
+        self.lkDurasireal = lkDurasireal
+        self.lkEngineer = lkEngineer
+        self.lkFinish = lkFinish
+        self.lkFinishstt = lkFinishstt
+        self.lkInfo = lkInfo
+        self.lkJenis = lkJenis
+        self.lkKegiatan = lkKegiatan
+        self.lkLabel = lkLabel
+        self.lkNumber = lkNumber
+        self.lkPelapor = lkPelapor
+        self.lkRating = lkRating
+        self.lkStart = lkStart
+        self.lkStatus = lkStatus
+        self.lkVarian = lkVarian
+        self.lkWebenable = lkWebenable
+        self.lkphoto = lkphoto
+        self.metode = metode
+        self.newpart = newpart
+        self.pemantauan = pemantauan
+        self.persiapan = persiapan
+        self.preventif = preventif
+        self.rateBy = rateBy
+        self.sttLaik = sttLaik
+        self.sparepart = sparepart
+        self.task = task
+    }
+}
+
+// MARK: - Asset
+struct AssetLK: Codable {
+    let assetname, brandname, idAsset: String?
+    let imgurl: String?
+    let roomname, sarananame, serial: String?
+    let thumburl: String?
+    let typename: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case assetname
+        case brandname
+        case idAsset = "id_asset"
+        case imgurl
+        case roomname
+        case sarananame
+        case serial
+        case thumburl
+        case typename
+    }
+}
+
+// MARK: - Listrik
+struct ListrikLK: Codable {
+    let ambangBatas, desc, key, label: String?
+    let valUkur: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case ambangBatas = "ambang_batas"
+        case desc
+        case key
+        case label
+        case valUkur = "val_ukur"
+    }
+}
+
+// MARK: - Lkphoto
+struct PhotoLK: Codable {
+    let filename, idLkphoto, note: String?
+    let photoUrl: String?
+    let photoID: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case filename
+        case idLkphoto = "id_lkphoto"
+        case note
+        case photoUrl
+        case photoID = "photo_id"
+    }
+}
+
+// MARK: - Newpart
+struct LKNewPart: Codable {
+    let idLknewpart, idPart, jumlah, partname: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idLknewpart = "id_lknewpart"
+        case idPart = "id_part"
+        case jumlah
+        case partname
+    }
+}
+
+// MARK: - Preventif
+struct LKPreventif: Codable {
+    let key, label, value, valueText: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case key
+        case label
+        case value
+        case valueText = "value_text"
+    }
+}
+
+// MARK: - Pemantauan
+struct LKPemantauan: Codable {
+    let fisik, fisikText, fungsi, fungsiText, key, label: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case fisik
+        case fisikText = "fisik_text"
+        case fungsi
+        case fungsiText = "fungsi_text"
+        case key
+        case label
+    }
+}
+
+// MARK: - Sparepart
+struct LKSparePart: Codable {
+    let harga, idLksparepart, idPart, jumlah: String?
+    let jumlahTotal, partname: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case harga
+        case idLksparepart = "id_lksparepart"
+        case idPart = "id_part"
+        case jumlah
+        case jumlahTotal = "jumlah_total"
+        case partname
+    }
+}
+
+// MARK: - Task
+struct TaskLK: Codable {
+    let idLktask, lkTask: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idLktask = "id_lktask"
+        case lkTask = "lk_task"
+    }
+}
+
+// MARK: - SAVE WORK SHEET RESPONSE
+struct SaveWorkSheetResponseEntity: Codable {
+    let data: WorkSheetResponseData?
+    let message: String?
+    let status: Int?
+}
+
+struct WorkSheetResponseData: Codable {
+    let idLK: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idLK = "id_lk"
+    }
+}
+
+// MARK: - SEARCH SPARE PART
+struct SearchSparePartEntity: Codable {
+    let data: [SearchSparePartData]?
+    let message: String?
+    let status: Int?
+}
+
+struct SearchSparePartData: Codable {
+    let idPart: String?
+    let name: String?
+    let partname: String?
+    let harga: Int?
+    let desc: String?
+    let pn: String?
+    let tipe: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idPart = "id_part"
+        case name
+        case partname
+        case harga
+        case desc
+        case pn
+        case tipe
+    }
+}
+
+// MARK: - MEDIA RESPONSE
+struct MediaEntity: Codable {
+    let count: Int?
+    let data: MediaData?
+    let message: String?
+    let status: Int?
+    let reff: ReffData?
+}
+
+struct MediaData: Codable {
+    let medias: [Media]?
 }

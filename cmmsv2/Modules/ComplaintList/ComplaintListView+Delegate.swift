@@ -21,6 +21,7 @@ extension ComplaintListView: AddComplaintBottomSheetDelegate {
     func didTapCreateAdvanceWorkSheet(_ view: AddComplaintBottomSheet, engineerId: String, complainId: String, dueDate: String, engineerPendamping: [String], title: CorrectiveTitleType) {
         guard let presenter else { return }
         self.bottomSheet = view
+        self.showLoadingPopup()
         switch title {
         case .advanced:
             presenter.createAdvanceWorkSheet(engineerId: engineerId, complainId: complainId, dueDate: dueDate, engineerPendamping: engineerPendamping)
@@ -78,7 +79,7 @@ extension ComplaintListView: SelectTechnicianBottomSheetDelegate, DatePickerBott
         }
     }
     
-    func didSelectDate(_ date: Date) {
+    func didSelectDate(_ date: Date, type: DatePickerBottomSheetType) {
         if let bottomSheet = self.bottomSheet {
             bottomSheet.selectedDate = date
             bottomSheet.updateSelectedValues()
@@ -87,22 +88,32 @@ extension ComplaintListView: SelectTechnicianBottomSheetDelegate, DatePickerBott
     
 }
 
-extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate {
+extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate, FilterStatusBottomSheetDelegate {
     
     func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String) {
         guard let presenter = presenter else { return }
         
         if text.isEmpty {
             presenter.fetchInitData(keyword: "")
-            self.reloadTableViewWithAnimation()
+            self.reloadTableViewWithAnimation(self.tableView)
         } else {
             presenter.fetchInitData(keyword: text)
-            self.reloadTableViewWithAnimation()
+            self.reloadTableViewWithAnimation(self.tableView)
         }
     }
     
     func didTapFourthAction() {
-        AppLogger.log("-- CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showFilterStatusBottomSheet(from: navigation, delegate: self)
+    }
+    
+    func didSelectStatusFilter(_ status: [StatusFilterEntity]) {
+        guard let presenter else { return }
+        let statusString = status.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
+        presenter.fetchInitData(status: statusString)
+        self.reloadTableViewWithAnimation(self.tableView)
     }
     
 }

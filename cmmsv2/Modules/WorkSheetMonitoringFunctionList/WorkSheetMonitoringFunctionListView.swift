@@ -18,6 +18,7 @@ class WorkSheetMonitoringFunctionListView: BaseViewController {
     var presenter: WorkSheetMonitoringFunctionListPresenter?
     var data: [WorkSheetListEntity] = []
     var id: String?
+    var workSheet: WorkSheetListEntity?
     
     override func didLoad() {
         super.didLoad()
@@ -121,12 +122,12 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
               let navigation = self.navigationController,
-              let id = self.data[indexPath.row].id,
+              let id = self.data[indexPath.row].idLK,
               let status = self.data[indexPath.row].status
         else { return }
         
         self.id = id
-        self.showOverlay()
+        self.workSheet = self.data[indexPath.row]
         
         let type: WorkSheetStatus = {
             switch status {
@@ -167,28 +168,6 @@ extension WorkSheetMonitoringFunctionListView: SkeletonCollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
-    }
-    
-}
-
-extension WorkSheetMonitoringFunctionListView: WorkSheetOnsitePreventiveDelegate {
-    
-    func didTapDetail(title: String) {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        let data = WorkSheetRequestEntity(id: self.id, action: title)
-        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .monitoring)
-    }
-    
-    func didTapDownloadPDF() {
-        if let id = self.id {
-            openPDF(with: id) { errorMessage in
-                self.showAlert(title: errorMessage)
-            }
-        } else {
-            self.showAlert(title: "Invalid ID or base URL.")
-        }
     }
     
 }

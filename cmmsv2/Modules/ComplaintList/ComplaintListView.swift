@@ -58,6 +58,7 @@ extension ComplaintListView {
                 self.data = data
                 self.tableView.reloadData()
                 self.tableView.hideSkeleton()
+                self.hideLoadingPopup()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -66,9 +67,10 @@ extension ComplaintListView {
             .sink { [weak self] data in
                 guard let self, let data else { return }
                 if data.message == "Success" {
-                    self.dismiss(animated: true)
+                    self.hideLoadingPopup()
+                    self.dismissBottomSheet()
                     self.fetchInitialData()
-                    self.tableView.reloadData()
+                    self.reloadTableViewWithAnimation(self.tableView)
                 }
             }
             .store(in: &anyCancellable)
@@ -77,9 +79,10 @@ extension ComplaintListView {
             .sink { [weak self] data in
                 guard let self, let data else { return }
                 if data.message == "Success" {
-                    self.dismiss(animated: true)
+                    self.hideLoadingPopup()
+                    self.dismissBottomSheet()
                     self.fetchInitialData()
-                    self.tableView.reloadData()
+                    self.reloadTableViewWithAnimation(self.tableView)
                 }
             }
             .store(in: &anyCancellable)
@@ -87,7 +90,7 @@ extension ComplaintListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Pengaduan Korektif", type: .plain)
-        actionTabBarView.configure(fourthIcon: "rectangle.and.pencil.and.ellipsis", fourthTitle: "Status")
+        actionTabBarView.configure(fourthIcon: "gearshape", fourthTitle: "Status")
         actionTabBarView.delegate = self
         searchTextField.delegate = self
         spinner.isHidden = true
@@ -120,12 +123,6 @@ extension ComplaintListView {
         tableView.separatorStyle = .none
         tableView.isSkeletonable = true
         tableView.showAnimatedGradientSkeleton()
-    }
-    
-    func reloadTableViewWithAnimation() {
-        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.tableView.reloadData()
-        }, completion: nil)
     }
     
 }

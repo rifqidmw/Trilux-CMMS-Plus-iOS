@@ -30,15 +30,12 @@ class CustomHeaderView: UIView {
     @IBOutlet weak var containerTitleView: UIStackView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var containerActionStackView: UIStackView!
-    @IBOutlet weak var actionLabelView: UIView!
     @IBOutlet weak var actionLabel: UILabel!
-    @IBOutlet weak var dismissSwitchView: UIView!
-    @IBOutlet weak var switchButton: UISwitch!
+    @IBOutlet weak var containerSwitchButton: UIStackView!
+    @IBOutlet weak var switchButton: UIImageView!
     @IBOutlet weak var dismissLabel: UILabel!
-    @IBOutlet weak var collapsibleActionView: UIView!
     @IBOutlet weak var collapseAccordionIconImageView: UIImageView!
-    @IBOutlet weak var collapsibleActionCountView: UIView!
+    @IBOutlet weak var containerCollapsibleActionCountView: UIStackView!
     @IBOutlet weak var collapsibleAccordionCountImageView: UIImageView!
     @IBOutlet weak var countView: UIView!
     @IBOutlet weak var countLabel: UILabel!
@@ -60,6 +57,7 @@ class CustomHeaderView: UIView {
     private func setupView() {
         let view = loadNib()
         view.frame = self.bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(view)
         containerView.makeCornerRadius(8, .topCurve)
         countView.makeCornerRadius(12)
@@ -70,7 +68,14 @@ class CustomHeaderView: UIView {
 
 extension CustomHeaderView {
     
-    func configure(icon: String? = nil, title: String, labelAction: String? = nil, count: Int? = nil, type: CustomHeaderType, collapseIcon: String? = "ic_collapse_accordion") {
+    func configure(icon: String? = nil,
+                   title: String,
+                   labelAction: String? = nil,
+                   count: Int? = nil,
+                   type: CustomHeaderType,
+                   collapseIcon: String? = "ic_collapse_accordion",
+                   radioButtonIcon: String? = "ic_radio_button_off") {
+        self.layoutIfNeeded()
         titleLabel.text = title
         iconImageView.image = UIImage(named: icon ?? "ic_trilux_logo_splash")
         actionLabel.text = labelAction
@@ -78,22 +83,23 @@ extension CustomHeaderView {
         
         switch type {
         case .plain:
-            containerActionStackView.isHidden = true
+            actionLabel.isHidden = true
         case .plainWithoutSeparator:
             separatorView.isHidden = true
-            containerActionStackView.isHidden = true
+            actionLabel.isHidden = true
         case .actionLabel:
-            actionLabelView.isHidden = false
+            actionLabel.isHidden = false
         case .dismissSwitch:
-            dismissSwitchView.isHidden = false
+            containerSwitchButton.isHidden = false
+            switchButton.image = UIImage(named: radioButtonIcon ?? "ic_radio_button_off")
         case .collapsibleAction:
-            collapsibleActionView.isHidden = false
+            collapseAccordionIconImageView.isHidden = false
             collapseAccordionIconImageView.image = UIImage(named: collapseIcon ?? "ic_collapse_accordion")
         case .collapsibleWithCount:
-            collapsibleActionCountView.isHidden = false
+            containerCollapsibleActionCountView.isHidden = false
         case .formHeader:
             separatorView.isHidden = true
-            containerActionStackView.isHidden = true
+            actionLabel.isHidden = true
             containerView.backgroundColor = UIColor.customPrimaryColor
             titleLabel.textColor = UIColor.white
             iconImageView.isHidden = true
