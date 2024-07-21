@@ -92,13 +92,14 @@ extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate, Fil
     
     func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String) {
         guard let presenter = presenter else { return }
-        
+        self.showLoadingPopup()
         if text.isEmpty {
             presenter.fetchInitData(keyword: "")
             self.reloadTableViewWithAnimation(self.tableView)
         } else {
             presenter.fetchInitData(keyword: text)
             self.reloadTableViewWithAnimation(self.tableView)
+            
         }
     }
     

@@ -53,7 +53,8 @@ extension WorkSheetMonitoringFunctionListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
+                self.hideLoadingPopup()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
@@ -74,6 +75,7 @@ extension WorkSheetMonitoringFunctionListView {
     
     private func setupView() {
         navigationView.configure(toolbarTitle: "Lembar Kerja Pemantauan Fungsi", type: .plain)
+        searchTextField.delegate = self
     }
     
     private func setupAction() {

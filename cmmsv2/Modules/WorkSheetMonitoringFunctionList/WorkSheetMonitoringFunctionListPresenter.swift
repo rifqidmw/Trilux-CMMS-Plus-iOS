@@ -34,13 +34,34 @@ class WorkSheetMonitoringFunctionListPresenter: BasePresenter {
 
 extension WorkSheetMonitoringFunctionListPresenter {
     
-    func fetchInitData() {
-        self.fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
+    func fetchInitData(keyword: String? = nil) {
+        if let keyword = keyword {
+            self.keyword = keyword
+        }
+        
+        self.page = 1
+        self.workSheetData.removeAll()
+        self.fetchWorkSheetMonitoringFunctionList(
+            limit: self.limit,
+            page: self.page,
+            tipe: self.tipe,
+            status: self.status,
+            keyword: self.keyword)
     }
     
-    func fetchWorkSheetMonitoringFunctionList(limit: Int, page: Int, tipe: Int, status: Int, keyword: String) {
-        self.isLoading = true
-        interactor.getWorkSheetMonitoringFunctionList(limit: limit, page: page, tipe: tipe, keyword: keyword, status: status)
+    func fetchWorkSheetMonitoringFunctionList(
+        limit: Int,
+        page: Int,
+        tipe: Int,
+        status: Int,
+        keyword: String) {
+            self.isLoading = true
+            interactor.getWorkSheetMonitoringFunctionList(
+                limit: limit,
+                page: page,
+                tipe: tipe,
+                keyword: keyword,
+                status: status)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -78,12 +99,17 @@ extension WorkSheetMonitoringFunctionListPresenter {
                 }
             )
             .store(in: &anyCancellable)
-    }
+        }
     
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        fetchWorkSheetMonitoringFunctionList(limit: self.limit, page: self.page, tipe: self.tipe, status: self.status, keyword: self.keyword)
+        fetchWorkSheetMonitoringFunctionList(
+            limit: self.limit,
+            page: self.page,
+            tipe: self.tipe,
+            status: self.status,
+            keyword: self.keyword)
     }
     
 }

@@ -48,3 +48,19 @@ extension CalibrationListView: ScanViewDelegate {
     }
     
 }
+
+extension CalibrationListView: SearchTextFieldDelegate {
+    
+    func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String) {
+        guard let presenter = presenter else { return }
+        self.showLoadingPopup()
+        if text.isEmpty {
+            presenter.fetchInitData(keyword: "")
+            self.reloadCollectionViewWithAnimation(self.collectionView)
+        } else {
+            presenter.fetchInitData(keyword: text)
+            self.reloadCollectionViewWithAnimation(self.collectionView)
+        }
+    }
+    
+}

@@ -40,6 +40,7 @@ extension CalibrationListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Kalibrasi", type: .plain)
+        searchTextField.delegate = self
     }
     
     private func fetchInitialData() {
@@ -57,7 +58,8 @@ extension CalibrationListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
+                self.hideLoadingPopup()
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }

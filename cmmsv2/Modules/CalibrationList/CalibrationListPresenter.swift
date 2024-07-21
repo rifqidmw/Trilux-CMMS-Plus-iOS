@@ -32,7 +32,12 @@ class CalibrationListPresenter: BasePresenter {
 
 extension CalibrationListPresenter {
     
-    func fetchInitData() {
+    func fetchInitData(keyword: String? = nil) {
+        if let keyword = keyword {
+            self.keyword = keyword
+        }
+        self.page = 1
+        self.calibrationData.removeAll()
         self.fetchCalibrationList(keyword: self.keyword, limit: self.limit, page: self.page)
     }
     

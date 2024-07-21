@@ -18,6 +18,7 @@ class DelayCorrectiveListView: BaseViewController {
     
     var presenter: DelayCorrectiveListPresenter?
     var data: [Complaint] = []
+    var bottomSheet: AddComplaintBottomSheet?
     
     override func didLoad() {
         super.didLoad()
@@ -52,7 +53,8 @@ extension DelayCorrectiveListView {
                     return
                 }
                 self.data = data
-                self.tableView.reloadData()
+                self.reloadTableViewWithAnimation(self.tableView)
+                self.hideLoadingPopup()
                 self.tableView.hideSkeleton()
                 self.showSpinner(false)
                 
@@ -60,10 +62,35 @@ extension DelayCorrectiveListView {
                 self.tableView.isHidden = data.isEmpty
             }
             .store(in: &anyCancellable)
+        
+        presenter.$advanceWorkSheet
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                if data.message == "Success" {
+                    self.hideLoadingPopup()
+                    self.dismissBottomSheet()
+                    self.fetchInitialData()
+                    self.reloadTableViewWithAnimation(self.tableView)
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$acceptCorrective
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                if data.message == "Success" {
+                    self.hideLoadingPopup()
+                    self.dismissBottomSheet()
+                    self.fetchInitialData()
+                    self.reloadTableViewWithAnimation(self.tableView)
+                }
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Korektif Tertunda", type: .plain)
+        searchTextField.delegate = self
     }
     
     private func setupAction() {
