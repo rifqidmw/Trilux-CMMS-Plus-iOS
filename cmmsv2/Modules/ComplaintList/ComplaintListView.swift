@@ -56,9 +56,9 @@ extension ComplaintListView {
                 }
                 
                 self.data = data
-                self.tableView.reloadData()
-                self.tableView.hideSkeleton()
+                self.reloadTableViewWithAnimation(self.tableView)
                 self.hideLoadingPopup()
+                self.tableView.hideSkeleton()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)

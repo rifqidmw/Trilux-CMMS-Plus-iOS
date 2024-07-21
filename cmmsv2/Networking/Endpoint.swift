@@ -150,9 +150,9 @@ extension Endpoint {
             limit: let limit,
             page: let page,
             tipe: let tipe,
-            keyword: let keyboard,
+            keyword: let keyword,
             status: let status):
-            return generateWorkSheetMonitoringFunctionURL(limit: limit, page: page, tipe: tipe, keyboard: keyboard, status: status)
+            return generateWorkSheetMonitoringFunctionURL(limit: limit, page: page, tipe: tipe, keyword: keyword, status: status)
         case .workSheetCorrective(
             woType: let woType,
             woStatus: let woStatus,
@@ -525,14 +525,14 @@ extension Endpoint {
         limit: Int? = nil,
         page: Int? = nil,
         tipe: Int? = nil,
-        keyboard: String? = nil,
+        keyword: String? = nil,
         status: Int? = nil
     ) -> String {
         let queryString = [
             limit.map { "limit=\($0)" },
             page.map { "page=\($0)" },
             tipe.map { "tipe=\($0)" },
-            keyboard.map { "keyboard\($0)" },
+            keyword.map { "keyword=\($0)" },
             status.map { "status=\($0)" }
         ].compactMap { $0 }.joined(separator: "&")
         
