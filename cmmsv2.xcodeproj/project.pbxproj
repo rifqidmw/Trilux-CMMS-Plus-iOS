@@ -435,6 +435,12 @@
 		CEAF27E92BDE098B00CCC5EE /* SignatureBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF27E72BDE098B00CCC5EE /* SignatureBottomSheet.swift */; };
 		CEAF27EB2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF27EA2BDE099E00CCC5EE /* SignatureBottomSheet.xib */; };
 		CEAF27EC2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF27EA2BDE099E00CCC5EE /* SignatureBottomSheet.xib */; };
+		CEB465B32C4CBC9800B10341 /* SortingHistoryBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB465B22C4CBC9800B10341 /* SortingHistoryBottomSheet.xib */; };
+		CEB465B42C4CBC9800B10341 /* SortingHistoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB465B12C4CBC9800B10341 /* SortingHistoryBottomSheet.swift */; };
+		CEB465B52C4CBC9800B10341 /* SortingHistoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB465B12C4CBC9800B10341 /* SortingHistoryBottomSheet.swift */; };
+		CEB465B62C4CBC9800B10341 /* SortingHistoryBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB465B22C4CBC9800B10341 /* SortingHistoryBottomSheet.xib */; };
+		CEB465B92C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB465B82C4CC94200B10341 /* HistoryListView+Delegate.swift */; };
+		CEB465BA2C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB465B82C4CC94200B10341 /* HistoryListView+Delegate.swift */; };
 		CEB6A6F82C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6A6F72C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift */; };
 		CEB6A6F92C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6A6F72C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift */; };
 		CEB6A6FB2C4C144600D279E1 /* WorkSheetCorrectiveListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6A6FA2C4C144600D279E1 /* WorkSheetCorrectiveListView+Delegate.swift */; };
@@ -1092,6 +1098,9 @@
 		CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+Delegate.swift"; sourceTree = "<group>"; };
 		CEAF27E72BDE098B00CCC5EE /* SignatureBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureBottomSheet.swift; sourceTree = "<group>"; };
 		CEAF27EA2BDE099E00CCC5EE /* SignatureBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignatureBottomSheet.xib; sourceTree = "<group>"; };
+		CEB465B12C4CBC9800B10341 /* SortingHistoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingHistoryBottomSheet.swift; sourceTree = "<group>"; };
+		CEB465B22C4CBC9800B10341 /* SortingHistoryBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingHistoryBottomSheet.xib; sourceTree = "<group>"; };
+		CEB465B82C4CC94200B10341 /* HistoryListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryListView+Delegate.swift"; sourceTree = "<group>"; };
 		CEB6A6F72C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkSheetMonitoringFunctionListView+Delegate.swift"; sourceTree = "<group>"; };
 		CEB6A6FA2C4C144600D279E1 /* WorkSheetCorrectiveListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkSheetCorrectiveListView+Delegate.swift"; sourceTree = "<group>"; };
 		CEB6A6FD2C4C148E00D279E1 /* CalibrationListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalibrationListView+Delegate.swift"; sourceTree = "<group>"; };
@@ -1941,7 +1950,6 @@
 		CE8B88CB2C29887200AF8F63 /* FilterStatusBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B88D22C29BCC000AF8F63 /* StatusFilterCell */,
 				CE8B88CC2C29890F00AF8F63 /* FilterStatusBottomSheet.swift */,
 				CE8B88CD2C29890F00AF8F63 /* FilterStatusBottomSheet.xib */,
 			);
@@ -1976,6 +1984,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0EC4A02B775F6600888BE8 /* MedicAssetCell */,
+				CE8B88D22C29BCC000AF8F63 /* StatusFilterCell */,
 				CEC2C8432BD247E900A9D454 /* WorkSheetCell */,
 			);
 			path = CollectionViewCell;
@@ -2191,6 +2200,23 @@
 			path = SignatureBottomSheet;
 			sourceTree = "<group>";
 		};
+		CEB465B02C4CBC7600B10341 /* SortingBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEB465B12C4CBC9800B10341 /* SortingHistoryBottomSheet.swift */,
+				CEB465B22C4CBC9800B10341 /* SortingHistoryBottomSheet.xib */,
+			);
+			path = SortingBottomSheet;
+			sourceTree = "<group>";
+		};
+		CEB465B72C4CBD7000B10341 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEB465B02C4CBC7600B10341 /* SortingBottomSheet */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		CEB703862BA8788F004583C7 /* PreventiveCalendarList */ = {
 			isa = PBXGroup;
 			children = (
@@ -2208,11 +2234,13 @@
 		CEC1B0542BA1E37600DF6A4F /* HistoryList */ = {
 			isa = PBXGroup;
 			children = (
+				CEB465B72C4CBD7000B10341 /* BottomSheet */,
 				CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */,
 				CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */,
 				CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */,
 				CEC1B0582BA1E39700DF6A4F /* HistoryListView.swift */,
 				CEC1B0592BA1E39700DF6A4F /* HistoryListView.xib */,
+				CEB465B82C4CC94200B10341 /* HistoryListView+Delegate.swift */,
 				CEC1B05A2BA1E39700DF6A4F /* HistoryListEntity.swift */,
 			);
 			path = HistoryList;
@@ -3115,6 +3143,7 @@
 				CE4012302B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE2329F52C42EC010087450A /* MediaSectionView.xib in Resources */,
 				CE40121F2B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CEB465B32C4CBC9800B10341 /* SortingHistoryBottomSheet.xib in Resources */,
 				CE58FA602C0C310D0067D8C4 /* PreventiveSectionView.xib in Resources */,
 				CE3108772BE265E500660275 /* MutationInformationView.xib in Resources */,
 				CEF4E0CE2C07ACF500444EA9 /* PreventiveSchedulerBottomSheet.xib in Resources */,
@@ -3266,6 +3295,7 @@
 				CE4012312B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE2329F72C42EC010087450A /* MediaSectionView.xib in Resources */,
 				CE4012202B5D595600517F7C /* WorkSheetDetailTVC.xib in Resources */,
+				CEB465B62C4CBC9800B10341 /* SortingHistoryBottomSheet.xib in Resources */,
 				CE58FA622C0C310D0067D8C4 /* PreventiveSectionView.xib in Resources */,
 				CE3108782BE265E500660275 /* MutationInformationView.xib in Resources */,
 				CEF4E0D02C07ACF500444EA9 /* PreventiveSchedulerBottomSheet.xib in Resources */,
@@ -3542,6 +3572,7 @@
 				CEB703A92BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */,
 				CE40121D2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
 				CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
+				CEB465B42C4CBC9800B10341 /* SortingHistoryBottomSheet.swift in Sources */,
 				CEF43CC02C3F35E900B34FE2 /* SelectStatusBottomSheet.swift in Sources */,
 				CEC1B0652BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */,
 				CE9E7D972B529F4500240A7D /* UserProfileView.swift in Sources */,
@@ -3609,6 +3640,7 @@
 				CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */,
 				CEFA75902B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC12B70ED9B0063D844 /* WorkSheetDetailInteractor.swift in Sources */,
+				CEB465B92C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */,
 				CEEED8722B7A86CB00672952 /* ScanView.swift in Sources */,
 				CE4255F42BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE1434452C4B5543008D2C18 /* ScanView+Delegate.swift in Sources */,
@@ -3836,6 +3868,7 @@
 				CEB703AA2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */,
 				CE40121E2B5D595600517F7C /* WorkSheetDetailTVC.swift in Sources */,
 				CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
+				CEB465B52C4CBC9800B10341 /* SortingHistoryBottomSheet.swift in Sources */,
 				CEF43CC32C3F35E900B34FE2 /* SelectStatusBottomSheet.swift in Sources */,
 				CEC1B0662BA1E39700DF6A4F /* HistoryListEntity.swift in Sources */,
 				CE9E7D982B529F4500240A7D /* UserProfileView.swift in Sources */,
@@ -3903,6 +3936,7 @@
 				CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */,
 				CEFA75912B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC22B70ED9B0063D844 /* WorkSheetDetailInteractor.swift in Sources */,
+				CEB465BA2C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */,
 				CEEED8732B7A86CB00672952 /* ScanView.swift in Sources */,
 				CE4255F52BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE1434462C4B5543008D2C18 /* ScanView+Delegate.swift in Sources */,

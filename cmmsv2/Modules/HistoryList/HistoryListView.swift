@@ -77,7 +77,8 @@ extension HistoryListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Riwayat Pengaduan", type: .plain)
-        actionBarView.configure(fourthIcon: "ic_setting", fourthTitle: "Kondisi")
+        actionBarView.configure(firstIcon: "wrench.and.screwdriver", firstTitle: "Kondisi")
+        actionBarView.delegate = self
     }
     
     private func setupAction() {

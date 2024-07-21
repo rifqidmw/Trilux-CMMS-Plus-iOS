@@ -70,7 +70,7 @@ extension ComplaintListView {
                     self.hideLoadingPopup()
                     self.dismissBottomSheet()
                     self.fetchInitialData()
-                    self.reloadTableViewWithAnimation()
+                    self.reloadTableViewWithAnimation(self.tableView)
                 }
             }
             .store(in: &anyCancellable)
@@ -82,7 +82,7 @@ extension ComplaintListView {
                     self.hideLoadingPopup()
                     self.dismissBottomSheet()
                     self.fetchInitialData()
-                    self.reloadTableViewWithAnimation()
+                    self.reloadTableViewWithAnimation(self.tableView)
                 }
             }
             .store(in: &anyCancellable)
@@ -123,12 +123,6 @@ extension ComplaintListView {
         tableView.separatorStyle = .none
         tableView.isSkeletonable = true
         tableView.showAnimatedGradientSkeleton()
-    }
-    
-    func reloadTableViewWithAnimation() {
-        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.tableView.reloadData()
-        }, completion: nil)
     }
     
 }

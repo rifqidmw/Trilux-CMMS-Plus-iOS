@@ -9,17 +9,16 @@ import Combine
 
 class HistoryListInteractor: BaseInteractor {
     
-    func getComplaintHistoryList(limit: Int? = nil,
-                                 page: Int? = nil,
-                                 tipe: Int? = nil,
-                                 keyword: String? = nil,
-                                 status: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
-        return api.requestApiPublisher(.workSheetMonitoringFunction(
-            limit: limit,
-            page: page,
-            tipe: tipe,
-            keyword: keyword,
-            status: status))
-    }
+    func getComplaintHistoryList(
+        woStatus: String? = nil,
+        limit: Int? = nil,
+        hasObstacle: Int? = nil,
+        page: Int? = nil) -> AnyPublisher<WorkSheetCorrectiveListEntity, Error> {
+            return api.requestApiPublisher(.workSheetCorrective(
+                woStatus: woStatus,
+                limit: limit,
+                hasObstacle: hasObstacle,
+                page: page))
+        }
     
 }

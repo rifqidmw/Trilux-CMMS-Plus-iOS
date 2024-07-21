@@ -86,7 +86,7 @@ extension FilterStatusBottomSheet: UICollectionViewDataSource, UICollectionViewD
         
         let statusFilter = self.data[indexPath.row]
         let isSelected = selectedStatuses.contains(statusFilter.id ?? "0")
-        cell.configure(data: statusFilter, isSelected: isSelected)
+        cell.configure(title: statusFilter.status?.getStringValue() ?? "", isSelected: isSelected)
         
         return cell
     }

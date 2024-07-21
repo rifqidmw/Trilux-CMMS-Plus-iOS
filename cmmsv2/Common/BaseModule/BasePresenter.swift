@@ -20,23 +20,32 @@ extension BasePresenter {
         router.navigateToDetailPicture(navigation: navigation, image: image)
     }
     
-    func showSelectActionBottomSheet(_ navigation: UINavigationController,
-                                     type: WorkSheetStatus,
-                                     delegate: WorkSheetOnsitePreventiveDelegate,
-                                     id: String?) {
-        router.showSelectActionBottomSheet(navigation, type: type, delegate: delegate)
-    }
+    func showSelectActionBottomSheet(
+        _ navigation: UINavigationController,
+        type: WorkSheetStatus,
+        delegate: WorkSheetOnsitePreventiveDelegate,
+        id: String?) {
+            router.showSelectActionBottomSheet(
+                navigation,
+                type: type,
+                delegate: delegate)
+        }
     
-    func navigateToDetailWorkSheet(_ navigation: UINavigationController,
-                                   data: WorkSheetRequestEntity,
-                                   type: WorkSheetDetailType,
-                                   activity: WorkSheetActivityType = .view,
-                                   delegate: WorkSheetDetailViewDelegate? = nil) {
-        router.navigateToDetailWorkSheet(navigation, data: data, type: type, activity: activity, delegate: delegate)
-    }
+    func navigateToDetailWorkSheet(
+        _ navigation: UINavigationController,
+        data: WorkSheetRequestEntity,
+        type: WorkSheetDetailType,
+        activity: WorkSheetActivityType = .view,
+        delegate: WorkSheetDetailViewDelegate? = nil) {
+            router.navigateToDetailWorkSheet(
+                navigation,
+                data: data,
+                type: type,
+                activity: activity,
+                delegate: delegate)
+        }
     
-    func showUploadMediaBottomSheet(navigation: UINavigationController,
-                                    delegate: UploadMediaBottomSheetDelegate) {
+    func showUploadMediaBottomSheet(navigation: UINavigationController, delegate: UploadMediaBottomSheetDelegate) {
         let bottomSheet = UploadMediaBottomSheet(nibName: String(describing: UploadMediaBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         router.showBottomSheet(navigation: navigation, view: bottomSheet)

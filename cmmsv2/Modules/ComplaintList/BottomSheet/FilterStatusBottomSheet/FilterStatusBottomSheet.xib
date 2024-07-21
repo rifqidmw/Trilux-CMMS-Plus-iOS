@@ -36,46 +36,45 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fq-M6-33u" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="622" width="393" height="230"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-B1-2n0" userLabel="Asset Label">
-                            <rect key="frame" x="16" y="32" width="361" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="XZ3-oz-SC7"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                            <color key="textColor" name="customDarkGrayColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-2a-P3U">
-                            <rect key="frame" x="16" y="68" width="361" height="66"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3b-e5-Ker">
-                                <size key="itemSize" width="128" height="128"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-I1-FoF" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                            <rect key="frame" x="16" y="150" width="361" height="48"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="48" id="LnD-qv-NVw"/>
-                            </constraints>
-                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zPo-e7-7EK">
+                            <rect key="frame" x="16" y="34" width="361" height="162"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-B1-2n0" userLabel="Asset Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="XZ3-oz-SC7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-2a-P3U">
+                                    <rect key="frame" x="0.0" y="36" width="361" height="62"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3b-e5-Ker">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-I1-FoF" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="114" width="361" height="48"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="LnD-qv-NVw"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="oUi-B1-2n0" firstAttribute="leading" secondItem="3fq-M6-33u" secondAttribute="leading" constant="16" id="AcQ-oI-Tep"/>
-                        <constraint firstAttribute="trailing" secondItem="BOC-2a-P3U" secondAttribute="trailing" constant="16" id="FWl-bd-gCO"/>
-                        <constraint firstItem="BOC-2a-P3U" firstAttribute="top" secondItem="oUi-B1-2n0" secondAttribute="bottom" constant="16" id="J3O-H2-zS8"/>
+                        <constraint firstAttribute="trailing" secondItem="zPo-e7-7EK" secondAttribute="trailing" constant="16" id="HaO-zw-AjA"/>
+                        <constraint firstItem="zPo-e7-7EK" firstAttribute="leading" secondItem="3fq-M6-33u" secondAttribute="leading" constant="16" id="OI0-gl-Kh0"/>
                         <constraint firstAttribute="height" constant="230" id="WW3-Kg-qBn"/>
-                        <constraint firstAttribute="trailing" secondItem="oUi-B1-2n0" secondAttribute="trailing" constant="16" id="duo-b9-KR0"/>
-                        <constraint firstItem="Des-I1-FoF" firstAttribute="top" secondItem="BOC-2a-P3U" secondAttribute="bottom" constant="16" id="g8c-2y-gZk"/>
-                        <constraint firstAttribute="bottom" secondItem="Des-I1-FoF" secondAttribute="bottom" constant="32" id="gbu-YV-k5u"/>
-                        <constraint firstAttribute="trailing" secondItem="Des-I1-FoF" secondAttribute="trailing" constant="16" id="mHy-BU-0U0"/>
-                        <constraint firstItem="BOC-2a-P3U" firstAttribute="leading" secondItem="3fq-M6-33u" secondAttribute="leading" constant="16" id="p2f-gT-iAj"/>
-                        <constraint firstItem="oUi-B1-2n0" firstAttribute="top" secondItem="3fq-M6-33u" secondAttribute="top" constant="32" id="s0A-Hk-srd"/>
-                        <constraint firstItem="Des-I1-FoF" firstAttribute="leading" secondItem="3fq-M6-33u" secondAttribute="leading" constant="16" id="xrL-J1-sOx"/>
+                        <constraint firstItem="zPo-e7-7EK" firstAttribute="top" secondItem="3fq-M6-33u" secondAttribute="top" constant="34" id="rq2-H6-vB9"/>
+                        <constraint firstAttribute="bottom" secondItem="zPo-e7-7EK" secondAttribute="bottom" constant="34" id="vgq-Za-dKI"/>
                     </constraints>
                 </view>
             </subviews>

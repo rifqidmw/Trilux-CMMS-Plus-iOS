@@ -25,8 +25,8 @@ class StatusFilterCell: UICollectionViewCell {
 
 extension StatusFilterCell {
     
-    func configure(data: StatusFilterEntity, isSelected: Bool) {
-        titleLabel.text = data.status?.getStringValue().capitalized
+    func configure(title: String, isSelected: Bool) {
+        titleLabel.text = title.capitalized
         titleLabel.textColor = isSelected ? UIColor.customPrimaryColor : UIColor.customDarkGrayColor
         self.backgroundColor = isSelected ? UIColor.customSecondaryColor : UIColor.customLightGrayColor
     }

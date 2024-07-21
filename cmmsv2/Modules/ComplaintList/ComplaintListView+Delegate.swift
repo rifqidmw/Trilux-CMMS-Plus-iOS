@@ -95,10 +95,10 @@ extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate, Fil
         
         if text.isEmpty {
             presenter.fetchInitData(keyword: "")
-            self.reloadTableViewWithAnimation()
+            self.reloadTableViewWithAnimation(self.tableView)
         } else {
             presenter.fetchInitData(keyword: text)
-            self.reloadTableViewWithAnimation()
+            self.reloadTableViewWithAnimation(self.tableView)
         }
     }
     
@@ -113,7 +113,7 @@ extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate, Fil
         guard let presenter else { return }
         let statusString = status.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
         presenter.fetchInitData(status: statusString)
-        self.reloadTableViewWithAnimation()
+        self.reloadTableViewWithAnimation(self.tableView)
     }
     
 }
