@@ -58,8 +58,11 @@ enum Endpoint {
     )
     case workSheetPreventive(
         limit: Int? = nil,
-        page: Int? = nil,
-        engineer: Int? = nil)
+        sort: String? = nil,
+        keyword: String? = nil,
+        idInstallation: String? = nil,
+        status: String? = nil,
+        page: Int? = nil)
     case calibrationList(keyword: String? = nil, limit: Int? = nil, page: Int? = nil)
     case logBookList(
         limit: Int? = nil,
@@ -162,13 +165,20 @@ extension Endpoint {
             keyword: let keyword,
             page: let page):
             return generateWorkSheetCorrectiveURL(woType: woType, woStatus: woStatus, limit: limit, sort: sort, hasObstacle: hasObstacle, keyword: keyword, page: page)
-        case .workSheetPreventive(limit: let limit,
-                                  page: let page,
-                                  engineer: let engineer):
+        case .workSheetPreventive(
+            limit: let limit,
+            sort: let sort,
+            keyword: let keyword,
+            idInstallation: let idInstallation,
+            status: let status,
+            page: let page):
             return generateWorkSheetPreventiveURL(
                 limit: limit,
-                page: page,
-                engineer: engineer)
+                sort: sort,
+                keyword: keyword,
+                idInstallation: idInstallation,
+                status: status,
+                page: page)
         case .calibrationList(keyword: let keyword, limit: let limit, page: let page):
             return generateCalibrationURL(keyword: keyword, limit: limit, page: page)
         case .logBookList(limit: let limit, page: let page, date: let date):
@@ -554,7 +564,7 @@ extension Endpoint {
             woType.map { "wo_type=\($0)" },
             woStatus.map { "wo_status=\($0)" },
             limit.map { "limit=\($0)" },
-            sort.map { "sort\($0)" },
+            sort.map { "sort=\($0)" },
             hasObstacle.map { "has_obstacle=\($0)" },
             keyword.map { "keyword=\($0)" },
             page.map { "page=\($0)" }
@@ -567,13 +577,19 @@ extension Endpoint {
     
     private func generateWorkSheetPreventiveURL(
         limit: Int? = nil,
-        page: Int? = nil,
-        engineer: Int? = nil
+        sort: String? = nil,
+        keyword: String? = nil,
+        idInstallation: String? = nil,
+        status: String? = nil,
+        page: Int? = nil
     ) -> String {
         let queryString = [
             limit.map { "limit=\($0)" },
-            page.map { "page=\($0)" },
-            engineer.map { "engineer=\($0)" }
+            sort.map { "sort=\($0)" },
+            keyword.map { "keyword=\($0)" },
+            idInstallation.map { "id_instalasi=\($0)" },
+            status.map { "status=\($0)" },
+            page.map { "page=\($0)" }
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/listpreventif" + (queryString.isEmpty ? "" : "?\(queryString)")

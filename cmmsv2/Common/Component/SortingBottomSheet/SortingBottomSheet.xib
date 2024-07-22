@@ -14,12 +14,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SortingHistoryBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SortingBottomSheet" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="applyButton" destination="vtN-jL-ggi" id="vUQ-BP-Rcn"/>
                 <outlet property="bottomSheetView" destination="IXX-FD-NbI" id="nmX-3f-HSs"/>
                 <outlet property="collectionView" destination="ycU-9P-y5R" id="MtG-BY-cd0"/>
                 <outlet property="dismissAreaView" destination="MF4-DC-0Oo" id="q8t-j1-leA"/>
+                <outlet property="initialHeightBottomSheet" destination="aqE-lr-3B9" id="Uh0-OH-bDP"/>
                 <outlet property="titleLabel" destination="Fkz-as-wrY" id="e9Q-HX-8sT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

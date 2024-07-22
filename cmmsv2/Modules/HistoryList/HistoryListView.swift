@@ -51,7 +51,8 @@ extension HistoryListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
+                self.hideLoadingPopup()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }

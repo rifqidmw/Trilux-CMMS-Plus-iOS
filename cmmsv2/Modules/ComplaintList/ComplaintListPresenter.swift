@@ -20,6 +20,11 @@ class ComplaintListPresenter: BasePresenter {
     @Published public var complaint: [Complaint] = []
     @Published public var advanceWorkSheet: CreateLanjutanEntity?
     @Published public var acceptCorrective: AcceptCorrectiveEntity?
+    var filterStatusData: [StatusFilterEntity] = [
+        StatusFilterEntity(id: "0", status: .open),
+        StatusFilterEntity(id: "1", status: .progress),
+        StatusFilterEntity(id: "2", status: .closed),
+    ]
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -45,6 +50,7 @@ extension ComplaintListPresenter {
         if let keyword = keyword {
             self.keyword = keyword
         }
+        
         self.page = 1
         self.complaint.removeAll()
         self.fetchComplaintListData(
@@ -96,7 +102,7 @@ extension ComplaintListPresenter {
         page += 1
         fetchComplaintListData(
             equipmentId: self.equipmentId,
-            status: self.status, 
+            status: self.status,
             limit: self.limit,
             page: self.page,
             dateFilter: self.dateFilter,
@@ -210,6 +216,7 @@ extension ComplaintListPresenter {
     
     func showFilterStatusBottomSheet(from navigation: UINavigationController, delegate: FilterStatusBottomSheetDelegate) {
         let bottomSheet = FilterStatusBottomSheet(nibName: String(describing: FilterStatusBottomSheet.self), bundle: nil)
+        bottomSheet.data = self.filterStatusData
         bottomSheet.delegate = delegate
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }

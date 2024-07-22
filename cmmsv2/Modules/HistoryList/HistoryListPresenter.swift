@@ -17,6 +17,11 @@ class HistoryListPresenter: BasePresenter {
     }
     
     @Published public var historyData: [WorkSheetListEntity] = []
+    var sortingHistoryData: [SortingEntity] = [
+        SortingEntity(id: 0, sortType: .all, hasObstacle: -1),
+        SortingEntity(id: 1, sortType: .hold, hasObstacle: 1),
+        SortingEntity(id: 2, sortType: .done, hasObstacle: 0)
+    ]
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -114,9 +119,10 @@ extension HistoryListPresenter {
         router.navigateToHistoryDetail(navigation: navigation, data: data)
     }
     
-    func showHistorySortBottomSheet(from navigation: UINavigationController, _ delegate: SortingHistoryBottomSheetDelegate) {
-        let bottomSheet = SortingHistoryBottomSheet(nibName: String(describing: SortingHistoryBottomSheet.self), bundle: nil)
+    func showHistorySortBottomSheet(from navigation: UINavigationController, _ delegate: SortingBottomSheetDelegate) {
+        let bottomSheet = SortingBottomSheet(nibName: String(describing: SortingBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
+        bottomSheet.data = self.sortingHistoryData
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

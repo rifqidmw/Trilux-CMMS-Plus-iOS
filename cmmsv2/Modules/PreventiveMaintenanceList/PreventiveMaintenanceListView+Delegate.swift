@@ -46,11 +46,13 @@ extension PreventiveMaintenanceListView: ActionBarViewDelegate {
     }
     
     func didTapSecondAction() {
-        AppLogger.log("-- STATUS CLICKED")
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.showFilterStatusBottomSheet(from: navigation, delegate: self)
     }
     
     func didTapThirdAction() {
-        AppLogger.log("-- SORT CLICKED")
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.showHistorySortBottomSheet(from: navigation, self)
     }
     
 }
@@ -61,6 +63,45 @@ extension PreventiveMaintenanceListView: ScanViewDelegate {
         guard let presenter, let navigation = self.navigationController else { return }
         let view = PreventiveMaintenanceListRouter().showView()
         presenter.backToPreviousPage(from: navigation, view)
+    }
+    
+}
+
+extension PreventiveMaintenanceListView: SearchTextFieldDelegate {
+    
+    func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String) {
+        guard let presenter = presenter else { return }
+        self.showLoadingPopup()
+        if text.isEmpty {
+            presenter.fetchInitData(keyword: "")
+            self.reloadCollectionViewWithAnimation(self.collectionView)
+        } else {
+            presenter.fetchInitData(keyword: text)
+            self.reloadCollectionViewWithAnimation(self.collectionView)
+        }
+    }
+    
+}
+
+extension PreventiveMaintenanceListView: FilterStatusBottomSheetDelegate {
+    
+    func didSelectStatusFilter(_ status: [StatusFilterEntity]) {
+        guard let presenter else { return }
+        self.showLoadingPopup()
+        let statusString = status.map { $0.id ?? "" }.first
+        presenter.fetchInitData(status: statusString)
+        self.reloadCollectionViewWithAnimation(self.collectionView)
+    }
+    
+}
+
+extension PreventiveMaintenanceListView: SortingBottomSheetDelegate {
+    
+    func didTapApplySort(_ sort: SortingEntity) {
+        guard let presenter else { return }
+        self.showLoadingPopup()
+        presenter.fetchInitData(sort: sort.sortType?.getStringValue().lowercased())
+        self.reloadCollectionViewWithAnimation(self.collectionView)
     }
     
 }

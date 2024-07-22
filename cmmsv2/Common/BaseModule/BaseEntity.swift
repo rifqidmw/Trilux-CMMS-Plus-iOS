@@ -252,6 +252,88 @@ enum LoadPreventiveStatus: String, Codable {
     }
 }
 
+enum FilterStatusType: String, Codable {
+    case all
+    case open
+    case closed
+    case progress
+    case finish
+    case rated
+    case approved
+    case delay
+    case failed
+    case none
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Semua": self = .all
+        case "Open": self = .open
+        case "Closed": self = .closed
+        case "Progress": self = .progress
+        case "Finish": self = .finish
+        case "Rated": self = .rated
+        case "Approved": self = .approved
+        case "Delay": self = .delay
+        case "Failed": self = .failed
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+struct StatusFilterEntity: Codable {
+    let id: String?
+    let status: FilterStatusType?
+}
+
+struct SortingEntity: Codable {
+    var id: Int?
+    var sortType: SortingType?
+    var hasObstacle: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case sortType = "sort_type"
+        case hasObstacle = "has_obstacle"
+    }
+    
+    init(id: Int? = nil, sortType: SortingType? = nil, hasObstacle: Int? = nil) {
+        self.id = id
+        self.sortType = sortType
+        self.hasObstacle = hasObstacle
+    }
+}
+
+enum SortingType: String, Codable {
+    case all = "Semua"
+    case hold = "Riwayat Korektif Terkendala"
+    case done = "Riwayat Korektif Terselesaikan"
+    case latest = "Terbaru"
+    case longest = "Terlama"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Semua": self = .all
+        case "Riwayat Korektif Terkendala": self = .hold
+        case "Riwayat Korektif Terselesaikan": self = .done
+        case "Tunda Perbaikan": self = .hold
+        case "Terbaru": self = .latest
+        case "Terlama": self = .longest
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
 enum CellType {
     case calibration
     case preventiveMaintenance
