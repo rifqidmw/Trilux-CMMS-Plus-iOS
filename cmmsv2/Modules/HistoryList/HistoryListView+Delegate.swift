@@ -16,10 +16,11 @@ extension HistoryListView: ActionBarViewDelegate {
     
 }
 
-extension HistoryListView: SortingHistoryBottomSheetDelegate {
+extension HistoryListView: SortingBottomSheetDelegate {
     
-    func didTapApplyHistorySort(_ sort: HistorySortEntity) {
+    func didTapApplySort(_ sort: SortingEntity) {
         guard let presenter else { return }
+        self.showLoadingPopup()
         presenter.fetchInitData(hasObstacle: sort.hasObstacle)
         self.reloadCollectionViewWithAnimation(self.collectionView)
     }

@@ -19,14 +19,11 @@ class FilterStatusBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var applyButton: GeneralButton!
+    @IBOutlet weak var initialHeightCollectionView: NSLayoutConstraint!
     
     weak var delegate: FilterStatusBottomSheetDelegate?
     var selectedStatuses: Set<String> = []
-    var data: [StatusFilterEntity] = [
-        StatusFilterEntity(id: "0", status: .open),
-        StatusFilterEntity(id: "1", status: .progress),
-        StatusFilterEntity(id: "2", status: .closed),
-    ]
+    var data: [StatusFilterEntity] = []
     
     override func didLoad() {
         super.didLoad()
@@ -34,6 +31,7 @@ class FilterStatusBottomSheet: BaseNonNavigationController {
         self.showBottomSheet()
         self.selectedStatuses = Set(data.map { $0.id ?? "0"})
         self.collectionView.reloadData()
+        self.initialHeightCollectionView.constant = 200 + self.calculateCollectionView(self.data)
     }
     
 }
@@ -50,6 +48,9 @@ extension FilterStatusBottomSheet {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(StatusFilterCell.nib, forCellWithReuseIdentifier: StatusFilterCell.identifier)
+        
+        let layout = LeftAlignedCollectionViewFlowLayout()
+        collectionView.collectionViewLayout = layout
     }
     
     private func setupAction() {
@@ -68,6 +69,12 @@ extension FilterStatusBottomSheet {
                 self.dismissBottomSheet()
             }
             .store(in: &anyCancellable)
+    }
+    
+    private func calculateCollectionView(_ data: [StatusFilterEntity]) -> CGFloat {
+        let initialHeight: CGFloat = 30
+        let totalHeight = (CGFloat(data.count) * initialHeight) / 4
+        return totalHeight
     }
     
 }
@@ -104,7 +111,11 @@ extension FilterStatusBottomSheet: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 30)
+        let text = self.data[indexPath.row].status?.getStringValue()
+        let width = UILabel().textWidth(
+            font: UIFont.robotoRegular(12),
+            text: text ?? "")
+        return CGSize(width: width + 32, height: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

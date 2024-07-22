@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WorkSheetCorrectiveListRouter: BaseInteractor {
+class WorkSheetCorrectiveListRouter: BaseRouter {
     
     func showView() -> WorkSheetCorrectiveListView {
         let interactor = WorkSheetCorrectiveListInteractor()

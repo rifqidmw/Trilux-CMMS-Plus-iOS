@@ -17,14 +17,29 @@ class PreventiveMaintenanceListPresenter: BasePresenter {
     }
     
     @Published public var preventiveData: [WorkSheetListEntity] = []
+    var filterStatusData: [StatusFilterEntity] = [
+        StatusFilterEntity(id: "-1", status: .all),
+        StatusFilterEntity(id: "1", status: .open),
+        StatusFilterEntity(id: "2", status: .progress),
+        StatusFilterEntity(id: "3", status: .rated),
+        StatusFilterEntity(id: "10", status: .approved),
+        StatusFilterEntity(id: "100", status: .finish)
+    ]
+    var sortingHistoryData: [SortingEntity] = [
+        SortingEntity(id: 0, sortType: .latest, hasObstacle: -1),
+        SortingEntity(id: 1, sortType: .longest, hasObstacle: -1)
+    ]
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    var engineer: Int = 0
     var limit: Int = 20
     var page: Int = 1
+    var sort: String = "terbaru"
+    var keyword: String = ""
+    var idInstallation: String = ""
+    var status: String = "-1"
     var isCanLoad = true
     var isFetchingMore = false
     
@@ -32,15 +47,45 @@ class PreventiveMaintenanceListPresenter: BasePresenter {
 
 extension PreventiveMaintenanceListPresenter {
     
-    func fetchInitData() {
-        self.fetchWorkSheetPreventiveList(limit: self.limit, page: self.page, engineer: self.engineer)
+    func fetchInitData(keyword: String? = nil, sort: String? = nil, status: String? = nil) {
+        if let keyword = keyword {
+            self.keyword = keyword
+        }
+        
+        if let status = status {
+            self.status = status
+        }
+        
+        if let sort = sort {
+            self.sort = sort
+        }
+        
+        self.page = 1
+        self.preventiveData.removeAll()
+        self.fetchWorkSheetPreventiveList(
+            limit: self.limit,
+            sort: self.sort,
+            keyword: self.keyword,
+            idInstallation: self.idInstallation,
+            status: self.status,
+            page: self.page)
     }
     
-    func fetchWorkSheetPreventiveList(limit: Int,
-                                      page: Int,
-                                      engineer: Int) {
-        self.isLoading = true
-        interactor.getWorkSheetPreventive(limit: limit, page: page, engineer: engineer)
+    func fetchWorkSheetPreventiveList(
+        limit: Int,
+        sort: String,
+        keyword: String,
+        idInstallation: String,
+        status: String,
+        page: Int) {
+            self.isLoading = true
+            interactor.getWorkSheetPreventive(
+                limit: limit,
+                sort: sort,
+                keyword: keyword,
+                idInstallation: idInstallation,
+                status: status,
+                page: page)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -78,12 +123,36 @@ extension PreventiveMaintenanceListPresenter {
                 }
             )
             .store(in: &anyCancellable)
-    }
+        }
     
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        self.fetchWorkSheetPreventiveList(limit: self.limit, page: self.page, engineer: self.engineer)
+        self.fetchWorkSheetPreventiveList(
+            limit: self.limit,
+            sort: self.sort,
+            keyword: self.keyword,
+            idInstallation: self.idInstallation,
+            status: self.status,
+            page: self.page)
+    }
+    
+}
+
+extension PreventiveMaintenanceListPresenter {
+    
+    func showFilterStatusBottomSheet(from navigation: UINavigationController, delegate: FilterStatusBottomSheetDelegate) {
+        let bottomSheet = FilterStatusBottomSheet(nibName: String(describing: FilterStatusBottomSheet.self), bundle: nil)
+        bottomSheet.data = self.filterStatusData
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func showHistorySortBottomSheet(from navigation: UINavigationController, _ delegate: SortingBottomSheetDelegate) {
+        let bottomSheet = SortingBottomSheet(nibName: String(describing: SortingBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.data = self.sortingHistoryData
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

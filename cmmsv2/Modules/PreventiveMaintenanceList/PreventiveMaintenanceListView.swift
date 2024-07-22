@@ -43,6 +43,7 @@ extension PreventiveMaintenanceListView {
         customNavigationView.configure(toolbarTitle: "Pemeliharaan Preventif", type: .plain)
         actionBarView.configure(firstIcon: "square.and.arrow.down", firstTitle: "Installasi", secondIcon: "gearshape", secondTitle: "Status", thirdIcon: "arrow.up.arrow.down.square", thirdTitle: "Urutkan")
         actionBarView.delegate = self
+        searchTextField.delegate = self
     }
     
     private func fetchInitialData() {
@@ -60,7 +61,8 @@ extension PreventiveMaintenanceListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
+                self.hideLoadingPopup()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
@@ -163,7 +165,7 @@ extension PreventiveMaintenanceListView: SkeletonCollectionViewDataSource, Skele
             
             DispatchQueue.main.async {
                 presenter.fetchNextPage()
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
             }
         }
     }

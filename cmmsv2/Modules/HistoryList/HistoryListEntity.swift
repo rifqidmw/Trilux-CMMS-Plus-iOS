@@ -7,40 +7,6 @@
 
 import Foundation
 
-struct HistorySortEntity: Codable {
-    var id: Int?
-    var sortType: HistorySortType?
-    var hasObstacle: Int?
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case sortType = "sort_type"
-        case hasObstacle = "has_obstacle"
-    }
-}
-
-enum HistorySortType: String, Codable {
-    case all = "Semua"
-    case hold = "Riwayat Korektif Terkendala"
-    case done = "Riwayat Korektif Terselesaikan"
-    case none = ""
-    
-    init?(rawValue: String) {
-        switch rawValue {
-        case "Semua": self = .all
-        case "Riwayat Korektif Terkendala": self = .hold
-        case "Riwayat Korektif Terselesaikan": self = .done
-        case "Tunda Perbaikan": self = .hold
-        case "": self = .none
-        default: self = .none
-        }
-    }
-    
-    func getStringValue() -> String {
-        return rawValue
-    }
-}
-
 struct HistoryListEntity {
     let id = UUID()
     let date: String

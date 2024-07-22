@@ -39,11 +39,13 @@ extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
 extension WorkSheetCorrectiveListView: ActionBarViewDelegate {
     
     func didTapFirstAction() {
-        AppLogger.log("FIRST ACTION TAPPED")
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.showFilterStatusBottomSheet(from: navigation, delegate: self)
     }
     
     func didTapSecondAction() {
-        AppLogger.log("SECOND ACTION TAPPED")
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.showHistorySortBottomSheet(from: navigation, self)
     }
     
 }
@@ -63,6 +65,45 @@ extension WorkSheetCorrectiveListView: ScanViewDelegate {
         guard let presenter, let navigation = self.navigationController else { return }
         let view = WorkSheetCorrectiveListRouter().showView()
         presenter.backToPreviousPage(from: navigation, view)
+    }
+    
+}
+
+extension WorkSheetCorrectiveListView: SearchTextFieldDelegate {
+    
+    func searchTextField(_ searchTextField: SearchTextField, didChangeText text: String) {
+        guard let presenter = presenter else { return }
+        self.showLoadingPopup()
+        if text.isEmpty {
+            presenter.fetchInitData(keyword: "")
+            self.reloadCollectionViewWithAnimation(self.collectionView)
+        } else {
+            presenter.fetchInitData(keyword: text)
+            self.reloadCollectionViewWithAnimation(self.collectionView)
+        }
+    }
+    
+}
+
+extension WorkSheetCorrectiveListView: FilterStatusBottomSheetDelegate {
+    
+    func didSelectStatusFilter(_ status: [StatusFilterEntity]) {
+        guard let presenter else { return }
+        self.showLoadingPopup()
+        let woStatusString = status.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
+        presenter.fetchInitData(woStatus: woStatusString)
+        self.reloadCollectionViewWithAnimation(self.collectionView)
+    }
+    
+}
+
+extension WorkSheetCorrectiveListView: SortingBottomSheetDelegate {
+    
+    func didTapApplySort(_ sort: SortingEntity) {
+        guard let presenter else { return }
+        self.showLoadingPopup()
+        presenter.fetchInitData(sort: sort.sortType?.getStringValue().lowercased())
+        self.reloadCollectionViewWithAnimation(self.collectionView)
     }
     
 }

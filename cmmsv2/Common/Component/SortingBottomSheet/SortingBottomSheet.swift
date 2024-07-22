@@ -8,26 +8,23 @@
 import UIKit
 import Combine
 
-protocol SortingHistoryBottomSheetDelegate: AnyObject {
-    func didTapApplyHistorySort(_ sort: HistorySortEntity)
+protocol SortingBottomSheetDelegate: AnyObject {
+    func didTapApplySort(_ sort: SortingEntity)
 }
 
-class SortingHistoryBottomSheet: BaseNonNavigationController {
+class SortingBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var applyButton: GeneralButton!
+    @IBOutlet weak var initialHeightBottomSheet: NSLayoutConstraint!
     
-    weak var delegate: SortingHistoryBottomSheetDelegate?
-    var selectedSortItem: HistorySortEntity?
+    weak var delegate: SortingBottomSheetDelegate?
+    var selectedSortItem: SortingEntity?
     var selectedIndex: IndexPath?
-    let data: [HistorySortEntity] = [
-        HistorySortEntity(id: 0, sortType: .all, hasObstacle: -1),
-        HistorySortEntity(id: 1, sortType: .hold, hasObstacle: 1),
-        HistorySortEntity(id: 2, sortType: .done, hasObstacle: 0)
-    ]
+    var data: [SortingEntity] = []
     
     override func didLoad() {
         super.didLoad()
@@ -37,11 +34,12 @@ class SortingHistoryBottomSheet: BaseNonNavigationController {
     
 }
 
-extension SortingHistoryBottomSheet {
+extension SortingBottomSheet {
     
     private func setupBody() {
         setupView()
         setupAction()
+        initialHeightBottomSheet.constant = 200 + self.calculateCollectionView(self.data)
     }
     
     private func setupView() {
@@ -53,9 +51,12 @@ extension SortingHistoryBottomSheet {
         collectionView.register(StatusFilterCell.nib, forCellWithReuseIdentifier: StatusFilterCell.identifier)
         collectionView.isScrollEnabled = false
         
-        if let defaultIndex = data.firstIndex(where: { $0.sortType == .all }) {
-            selectedIndex = IndexPath(row: defaultIndex, section: 0)
-            selectedSortItem = data[defaultIndex]
+        let layout = LeftAlignedCollectionViewFlowLayout()
+        collectionView.collectionViewLayout = layout
+        
+        if !data.isEmpty {
+            selectedIndex = IndexPath(row: 0, section: 0)
+            selectedSortItem = data[0]
         }
     }
     
@@ -67,7 +68,7 @@ extension SortingHistoryBottomSheet {
                       let selectedSortItem
                 else { return }
                 self.dismissBottomSheet() {
-                    delegate.didTapApplyHistorySort(selectedSortItem)
+                    delegate.didTapApplySort(selectedSortItem)
                 }
             }
             .store(in: &anyCancellable)
@@ -82,9 +83,15 @@ extension SortingHistoryBottomSheet {
         .store(in: &anyCancellable)
     }
     
+    private func calculateCollectionView(_ data: [SortingEntity]) -> CGFloat {
+        let initialHeight: CGFloat = 30
+        let totalHeight = (CGFloat(data.count) * initialHeight) / 2
+        return totalHeight
+    }
+    
 }
 
-extension SortingHistoryBottomSheet: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension SortingBottomSheet: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.data.count
@@ -118,7 +125,11 @@ extension SortingHistoryBottomSheet: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: indexPath.row == 0 ? 130 : 200, height: 30)
+        let text = self.data[indexPath.row].sortType?.getStringValue()
+        let width = UILabel().textWidth(
+            font: UIFont.robotoRegular(12),
+            text: text ?? "")
+        return CGSize(width: width + 32, height: 30)
     }
     
 }

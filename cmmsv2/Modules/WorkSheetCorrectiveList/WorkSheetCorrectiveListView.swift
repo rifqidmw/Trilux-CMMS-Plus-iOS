@@ -53,7 +53,8 @@ extension WorkSheetCorrectiveListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
+                self.hideLoadingPopup()
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
@@ -66,8 +67,10 @@ extension WorkSheetCorrectiveListView {
                     self?.showSpinner(false)
                     return
                 }
+                
                 self.workOrder = data
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
+                self.hideLoadingPopup()
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
@@ -83,6 +86,7 @@ extension WorkSheetCorrectiveListView {
         customNavigationView.configure(toolbarTitle: "Lembar Kerja Korektif", type: .plain)
         actionBarView.configure(firstIcon: "gearshape", firstTitle: "Status", secondIcon: "arrow.up.arrow.down.square", secondTitle: "Urutkan")
         actionBarView.delegate = self
+        searchTextField.delegate = self
     }
     
     private func setupAction() {

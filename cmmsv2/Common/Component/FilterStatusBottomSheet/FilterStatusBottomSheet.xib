@@ -20,6 +20,7 @@
                 <outlet property="bottomSheetView" destination="3fq-M6-33u" id="6wy-ne-ct9"/>
                 <outlet property="collectionView" destination="BOC-2a-P3U" id="X2a-PG-5YY"/>
                 <outlet property="dismissAreaView" destination="vBE-ey-0l1" id="LfY-HR-utk"/>
+                <outlet property="initialHeightCollectionView" destination="WW3-Kg-qBn" id="1FT-lc-B55"/>
                 <outlet property="titleLabel" destination="oUi-B1-2n0" id="gcq-Vy-ixm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
