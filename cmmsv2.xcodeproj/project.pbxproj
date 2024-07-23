@@ -299,6 +299,10 @@
 		CE8208962B823C5300CD4242 /* TimeGroupHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208932B823C5300CD4242 /* TimeGroupHeaderCRV.swift */; };
 		CE8208972B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8208942B823C5300CD4242 /* TimeGroupHeaderCRV.xib */; };
 		CE8208982B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8208942B823C5300CD4242 /* TimeGroupHeaderCRV.xib */; };
+		CE829B042C4FFF3B0056F429 /* InstallationBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE829B022C4FFF3B0056F429 /* InstallationBottomSheet.swift */; };
+		CE829B052C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE829B032C4FFF3B0056F429 /* InstallationBottomSheet.xib */; };
+		CE829B062C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE829B032C4FFF3B0056F429 /* InstallationBottomSheet.xib */; };
+		CE829B072C4FFF3B0056F429 /* InstallationBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE829B022C4FFF3B0056F429 /* InstallationBottomSheet.swift */; };
 		CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */; };
 		CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */; };
 		CE82D4522B47DDB200A54124 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82D44B2B47DDB200A54124 /* LoginRouter.swift */; };
@@ -1033,6 +1037,8 @@
 		CE82088D2B823BDE00CD4242 /* NotificationItemCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationItemCVC.xib; sourceTree = "<group>"; };
 		CE8208932B823C5300CD4242 /* TimeGroupHeaderCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGroupHeaderCRV.swift; sourceTree = "<group>"; };
 		CE8208942B823C5300CD4242 /* TimeGroupHeaderCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGroupHeaderCRV.xib; sourceTree = "<group>"; };
+		CE829B022C4FFF3B0056F429 /* InstallationBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationBottomSheet.swift; sourceTree = "<group>"; };
+		CE829B032C4FFF3B0056F429 /* InstallationBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstallationBottomSheet.xib; sourceTree = "<group>"; };
 		CE82D44A2B47DDB200A54124 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CE82D44B2B47DDB200A54124 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		CE82D44C2B47DDB200A54124 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -1924,6 +1930,15 @@
 			path = CollectionReusableView;
 			sourceTree = "<group>";
 		};
+		CE829B012C4FFED60056F429 /* InstallationBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CE829B022C4FFF3B0056F429 /* InstallationBottomSheet.swift */,
+				CE829B032C4FFF3B0056F429 /* InstallationBottomSheet.xib */,
+			);
+			path = InstallationBottomSheet;
+			sourceTree = "<group>";
+		};
 		CE82D4482B47DD8600A54124 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -2600,6 +2615,7 @@
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
 				CE9F90FE2B4F919F004C027A /* InformationCard */,
 				CE9BC1C52BE3D17000D20086 /* InformationDetail */,
+				CE829B012C4FFED60056F429 /* InstallationBottomSheet */,
 				CEC2C83C2BD1750300A9D454 /* SearchTextField */,
 				CEF049A62C1C4A7A006B6FFD /* Select */,
 				CEB465B02C4CBC7600B10341 /* SortingBottomSheet */,
@@ -3194,6 +3210,7 @@
 				CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CEF049B82C1C80D2006B6FFD /* SelectTechnicialCell.xib in Resources */,
 				CE7C3BD52C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
+				CE829B052C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C72C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
@@ -3346,6 +3363,7 @@
 				CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CEF049BA2C1C80D2006B6FFD /* SelectTechnicialCell.xib in Resources */,
 				CE7C3BD62C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
+				CE829B062C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C92C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
@@ -3472,6 +3490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE829B042C4FFF3B0056F429 /* InstallationBottomSheet.swift in Sources */,
 				CE29F8E62BF9256B0077405C /* HistoryDetailView+Collection.swift in Sources */,
 				CECB3E252B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
@@ -3769,6 +3788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE829B072C4FFF3B0056F429 /* InstallationBottomSheet.swift in Sources */,
 				CE29F8E72BF9256B0077405C /* HistoryDetailView+Collection.swift in Sources */,
 				CECB3E262B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,

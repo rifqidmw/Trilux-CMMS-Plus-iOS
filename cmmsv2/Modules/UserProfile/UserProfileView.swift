@@ -139,7 +139,6 @@ extension UserProfileView {
                       let presenter,
                       let navigation = self.navigationController
                 else { return }
-                self.showOverlay()
                 presenter.showLogoutPopUp(navigation: navigation, delegate: self)
             }
             .store(in: &anyCancellable)
@@ -235,7 +234,6 @@ extension UserProfileView: UITableViewDataSource, UITableViewDelegate {
         case 1:
             presenter.navigateToChangePassword(navigation: navigation)
         case 2:
-            self.showOverlay()
             presenter.showBottomSheetSignature(navigation: navigation, data: data, delegate: self)
         default: break
         }

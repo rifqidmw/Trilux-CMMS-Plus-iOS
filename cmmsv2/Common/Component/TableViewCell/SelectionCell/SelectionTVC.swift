@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum SelectionCellType {
+    case plain
+    case withDesc
+}
+
 class SelectionTVC: UITableViewCell {
     
     static let identifier = String(describing: SelectionTVC.self)
@@ -15,6 +20,7 @@ class SelectionTVC: UITableViewCell {
     }()
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var iconArrowImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -31,8 +37,12 @@ class SelectionTVC: UITableViewCell {
 
 extension SelectionTVC {
     
-    func setupCell(title: String) {
+    func setupCell(title: String, description: String? = nil, type: SelectionCellType = .plain) {
         self.titleLabel.text = title
+        self.descriptionLabel.isHidden = type == .plain ? true : false
+        if let description = description {
+            self.descriptionLabel.text = description
+        }
     }
     
 }

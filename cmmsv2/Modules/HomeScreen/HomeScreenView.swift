@@ -58,7 +58,6 @@ extension HomeScreenView {
                       let navigation = self.navigationController
                 else { return }
                 if data.isExpired == 1 {
-                    self.showOverlay()
                     presenter.showExpiredBottomSheet(navigation: navigation, expiredDate: data.expiredDate)
                 }
             }

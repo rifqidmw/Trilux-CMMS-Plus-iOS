@@ -21,7 +21,8 @@ class AllCategoriesBottomSheet: BaseNonNavigationController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
+        self.showBottomSheet()
     }
     
 }
@@ -54,7 +55,7 @@ extension AllCategoriesBottomSheet {
             dismissAreaView.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
-            self.dismiss(animated: true)
+            self.dismissBottomSheet()
         }
         .store(in: &anyCancellable)
     }
@@ -92,19 +93,33 @@ extension AllCategoriesBottomSheet: UICollectionViewDataSource, UICollectionView
         guard let delegate = self.delegate else { return }
         switch indexPath.row {
         case 0:
-            delegate.didTapAssetCategory()
+            self.dismissBottomSheet() {
+                delegate.didTapAssetCategory()
+            }
         case 1:
-            delegate.didTapComplaintCategory()
+            self.dismissBottomSheet() {
+                delegate.didTapComplaintCategory()
+            }
         case 2:
-            delegate.didTapWorkSheetCategory()
+            self.dismissBottomSheet() {
+                delegate.didTapWorkSheetCategory()
+            }
         case 3:
-            delegate.didTapHistoryCategory()
+            self.dismissBottomSheet() {
+                delegate.didTapHistoryCategory()
+            }
         case 4:
-            delegate.didTapDelayCorrectiveCategory()
+            self.dismissBottomSheet() {
+                delegate.didTapDelayCorrectiveCategory()
+            }
         case 5:
-            delegate.didTapLogBookCategory()
+            self.dismissBottomSheet() {
+                delegate.didTapLogBookCategory()
+            }
         case 6:
-            delegate.didTapPreventiveCalendarCategory()
+            self.dismissBottomSheet() {
+                delegate.didTapPreventiveCalendarCategory()
+            }
         default: break
         }
     }

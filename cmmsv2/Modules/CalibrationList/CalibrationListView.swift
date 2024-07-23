@@ -131,7 +131,6 @@ extension CalibrationListView: SkeletonCollectionViewDataSource, SkeletonCollect
         let selectedData = self.data[indexPath.row]
         self.id = id
         self.worksheet = selectedData
-        self.showOverlay()
         
         let type: WorkSheetStatus = {
             switch status {

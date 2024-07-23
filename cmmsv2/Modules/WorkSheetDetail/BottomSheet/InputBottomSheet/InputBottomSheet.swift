@@ -32,8 +32,8 @@ class InputBottomSheet: BaseNonNavigationController {
     
     override func didLoad() {
         super.didLoad()
-        self.showBottomSheet()
         self.setupBody()
+        self.showBottomSheet()
     }
     
 }
@@ -66,9 +66,10 @@ extension InputBottomSheet {
     }
     
     private func setupAction() {
-        Publishers.Merge3(dismissAreaView.gesture(),
-                          bottomSheetView.handleBarArea.gesture(),
-                          cancelButton.gesture())
+        Publishers.Merge3(
+            dismissAreaView.gesture(),
+            bottomSheetView.handleBarArea.gesture(),
+            cancelButton.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
             self.dismissBottomSheet()

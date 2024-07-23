@@ -63,7 +63,10 @@ enum Endpoint {
         idInstallation: String? = nil,
         status: String? = nil,
         page: Int? = nil)
-    case calibrationList(keyword: String? = nil, limit: Int? = nil, page: Int? = nil)
+    case calibrationList(
+        keyword: String? = nil,
+        limit: Int? = nil,
+        page: Int? = nil)
     case logBookList(
         limit: Int? = nil,
         page: Int? = nil,
@@ -86,21 +89,25 @@ enum Endpoint {
     case delayCorrectiveDetail(id: String?)
     case calibrator
     case userFilter(job: String?)
-    case createLanjutan(engineerId: String,
-                        complainId: String,
-                        dueDate: String,
-                        engineerPendamping: [String])
-    case createCorrective(engineerId: String,
-                          complainId: String,
-                          dueDate: String,
-                          engineerPendamping: [String])
+    case createLanjutan(
+        engineerId: String,
+        complainId: String,
+        dueDate: String,
+        engineerPendamping: [String])
+    case createCorrective(
+        engineerId: String,
+        complainId: String,
+        dueDate: String,
+        engineerPendamping: [String])
     case createPreventive(data: CreatePreventiveRequest)
     case searchSparePart(key: String? = nil)
     case saveWorkSheet(data: LKStartRequest)
+    case getInstallation
 }
 
 // MARK: - PATH URL
 extension Endpoint {
+    
     func path() -> String {
         switch self {
         case .registerHospital:
@@ -221,12 +228,16 @@ extension Endpoint {
             return "lk/search_sparepart?q=\(key ?? "")"
         case .saveWorkSheet:
             return "lk/save_lk"
+        case .getInstallation:
+            return "penerimaan/get_installasi"
         }
     }
+    
 }
 
 // MARK: - METHOD
 extension Endpoint {
+    
     func method() -> HTTPMethod {
         switch self {
         case .registerHospital,
@@ -243,10 +254,12 @@ extension Endpoint {
             return .get
         }
     }
+    
 }
 
 // MARK: - PARAMETER
 extension Endpoint {
+    
     var parameter: [String: Any]? {
         switch self {
         case .registerHospital(let code):
@@ -437,10 +450,12 @@ extension Endpoint {
             return nil
         }
     }
+    
 }
 
 // MARK: - HEADER
 extension Endpoint {
+    
     var header: HTTPHeaders {
         switch self {
         case .registerHospital:
@@ -459,10 +474,12 @@ extension Endpoint {
             return params
         }
     }
+    
 }
 
 // MARK: - GENERATE URL
 extension Endpoint {
+    
     func urlString() -> String {
         switch self {
         case .registerHospital:
@@ -471,6 +488,7 @@ extension Endpoint {
             return Constants.baseURL + path()
         }
     }
+    
 }
 
 // MARK: - GENERATE ENDPOINT

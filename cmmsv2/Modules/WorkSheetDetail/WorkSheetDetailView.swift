@@ -178,7 +178,6 @@ extension WorkSheetDetailView {
             .sink { [weak self] data in
                 guard let self,
                       let data,
-                      let navigation = self.navigationController,
                       let delegate = self.delegate
                 else { return }
                 if data.message == "Success" {

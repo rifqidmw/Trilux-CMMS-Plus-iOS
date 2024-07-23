@@ -253,16 +253,16 @@ enum LoadPreventiveStatus: String, Codable {
 }
 
 enum FilterStatusType: String, Codable {
-    case all
-    case open
-    case closed
-    case progress
-    case finish
-    case rated
-    case approved
-    case delay
-    case failed
-    case none
+    case all = "Semua"
+    case open = "Open"
+    case closed = "Closed"
+    case progress = "Progress"
+    case finish = "Finish"
+    case rated = "Rated"
+    case approved = "Approved"
+    case delay = "Delay"
+    case failed = "Failed"
+    case none = ""
     
     init?(rawValue: String) {
         switch rawValue {
@@ -291,7 +291,7 @@ struct StatusFilterEntity: Codable {
 }
 
 struct SortingEntity: Codable {
-    var id: Int?
+    var id: String?
     var sortType: SortingType?
     var hasObstacle: Int?
     
@@ -301,7 +301,7 @@ struct SortingEntity: Codable {
         case hasObstacle = "has_obstacle"
     }
     
-    init(id: Int? = nil, sortType: SortingType? = nil, hasObstacle: Int? = nil) {
+    init(id: String? = nil, sortType: SortingType? = nil, hasObstacle: Int? = nil) {
         self.id = id
         self.sortType = sortType
         self.hasObstacle = hasObstacle
@@ -310,20 +310,31 @@ struct SortingEntity: Codable {
 
 enum SortingType: String, Codable {
     case all = "Semua"
-    case hold = "Riwayat Korektif Terkendala"
+    case delay = "Riwayat Korektif Terkendala"
     case done = "Riwayat Korektif Terselesaikan"
+    case hold = "Tunda Perbaikan"
     case latest = "Terbaru"
     case longest = "Terlama"
+    case open = "Open"
+    case progress = "Progress"
+    case rated = "Selesai/Rating"
+    case approve = "Approve"
+    case finish = "Finish"
     case none = ""
     
     init?(rawValue: String) {
         switch rawValue {
         case "Semua": self = .all
-        case "Riwayat Korektif Terkendala": self = .hold
+        case "Riwayat Korektif Terkendala": self = .delay
         case "Riwayat Korektif Terselesaikan": self = .done
         case "Tunda Perbaikan": self = .hold
         case "Terbaru": self = .latest
         case "Terlama": self = .longest
+        case "Open": self = .open
+        case "Progress": self = .progress
+        case "Selesai/Rating": self = .rated
+        case "Approve": self = .approve
+        case "Finish": self = .finish
         case "": self = .none
         default: self = .none
         }

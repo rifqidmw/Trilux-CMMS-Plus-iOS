@@ -8,8 +8,13 @@
 import UIKit
 import Combine
 
+enum FilterStatusBottomSheetType {
+    case multiple
+    case single
+}
+
 protocol FilterStatusBottomSheetDelegate: AnyObject {
-    func didSelectStatusFilter(_ status: [StatusFilterEntity])
+    func didSelectStatusFilter(_ multiple: [StatusFilterEntity], single: StatusFilterEntity)
 }
 
 class FilterStatusBottomSheet: BaseNonNavigationController {
@@ -24,6 +29,9 @@ class FilterStatusBottomSheet: BaseNonNavigationController {
     weak var delegate: FilterStatusBottomSheetDelegate?
     var selectedStatuses: Set<String> = []
     var data: [StatusFilterEntity] = []
+    var selectedIndex: IndexPath?
+    var selectedStatus: StatusFilterEntity?
+    var type: FilterStatusBottomSheetType = .multiple
     
     override func didLoad() {
         super.didLoad()
@@ -51,15 +59,26 @@ extension FilterStatusBottomSheet {
         
         let layout = LeftAlignedCollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
+        
+        if type == .single {
+            if !data.isEmpty {
+                selectedIndex = IndexPath(row: 0, section: 0)
+                selectedStatus = data[0]
+            }
+        }
     }
     
     private func setupAction() {
         applyButton.gesture()
             .sink { [weak self] _ in
-                guard let self, let delegate = self.delegate else { return }
+                guard let self,
+                      let delegate = self.delegate,
+                      let selectedStatus
+                else { return }
                 let selectedFilters = data.filter { self.selectedStatuses.contains($0.id ?? "0") }
-                delegate.didSelectStatusFilter(selectedFilters)
-                self.dismissBottomSheet()
+                self.dismissBottomSheet() {
+                    delegate.didSelectStatusFilter(selectedFilters, single: selectedStatus)
+                }
             }
             .store(in: &anyCancellable)
         
@@ -91,9 +110,15 @@ extension FilterStatusBottomSheet: UICollectionViewDataSource, UICollectionViewD
             return UICollectionViewCell()
         }
         
-        let statusFilter = self.data[indexPath.row]
-        let isSelected = selectedStatuses.contains(statusFilter.id ?? "0")
-        cell.configure(title: statusFilter.status?.getStringValue() ?? "", isSelected: isSelected)
+        if type == .multiple {
+            let statusFilter = self.data[indexPath.row]
+            let isSelected = selectedStatuses.contains(statusFilter.id ?? "0")
+            cell.configure(title: statusFilter.status?.getStringValue() ?? "", isSelected: isSelected)
+        } else {
+            let sortEntity = data[indexPath.row]
+            let isSelected = indexPath == selectedIndex
+            cell.configure(title: sortEntity.status?.getStringValue() ?? "", isSelected: isSelected)
+        }
         
         return cell
     }
@@ -101,13 +126,28 @@ extension FilterStatusBottomSheet: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let statusFilter = self.data[indexPath.row]
         
-        if selectedStatuses.contains(statusFilter.id ?? "0") {
-            selectedStatuses.remove(statusFilter.id ?? "0")
-        } else {
-            selectedStatuses.insert(statusFilter.id ?? "0")
+        switch type {
+        case .multiple:
+            if selectedStatuses.contains(statusFilter.id ?? "0") {
+                selectedStatuses.remove(statusFilter.id ?? "0")
+            } else {
+                selectedStatuses.insert(statusFilter.id ?? "0")
+            }
+        case .single:
+            if let selectedIndex = selectedIndex {
+                collectionView.deselectItem(at: selectedIndex, animated: true)
+                let previousCell = collectionView.cellForItem(at: selectedIndex) as? StatusFilterCell
+                previousCell?.configure(title: data[selectedIndex.row].status?.getStringValue() ?? "", isSelected: false)
+            }
+            
+            selectedIndex = indexPath
+            selectedStatus = data[indexPath.row]
+            
+            let cell = collectionView.cellForItem(at: indexPath) as? StatusFilterCell
+            cell?.configure(title: data[indexPath.row].status?.getStringValue() ?? "", isSelected: true)
         }
         
-        collectionView.reloadItems(at: [indexPath])
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

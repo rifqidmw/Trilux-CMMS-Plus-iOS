@@ -17,6 +17,7 @@ class PreventiveMaintenanceListPresenter: BasePresenter {
     }
     
     @Published public var preventiveData: [WorkSheetListEntity] = []
+    var installationList: [InstallationData] = []
     var filterStatusData: [StatusFilterEntity] = [
         StatusFilterEntity(id: "-1", status: .all),
         StatusFilterEntity(id: "1", status: .open),
@@ -26,8 +27,8 @@ class PreventiveMaintenanceListPresenter: BasePresenter {
         StatusFilterEntity(id: "100", status: .finish)
     ]
     var sortingHistoryData: [SortingEntity] = [
-        SortingEntity(id: 0, sortType: .latest, hasObstacle: -1),
-        SortingEntity(id: 1, sortType: .longest, hasObstacle: -1)
+        SortingEntity(id: "0", sortType: .latest, hasObstacle: -1),
+        SortingEntity(id: "1", sortType: .longest, hasObstacle: -1)
     ]
     
     @Published public var errorMessage: String = ""
@@ -47,29 +48,37 @@ class PreventiveMaintenanceListPresenter: BasePresenter {
 
 extension PreventiveMaintenanceListPresenter {
     
-    func fetchInitData(keyword: String? = nil, sort: String? = nil, status: String? = nil) {
-        if let keyword = keyword {
-            self.keyword = keyword
+    func fetchInitData(
+        keyword: String? = nil,
+        sort: String? = nil,
+        status: String? = nil,
+        idInstallation: String? = nil) {
+            if let keyword = keyword {
+                self.keyword = keyword
+            }
+            
+            if let status = status {
+                self.status = status
+            }
+            
+            if let sort = sort {
+                self.sort = sort
+            }
+            
+            if let idInstallation = idInstallation {
+                self.idInstallation = idInstallation
+            }
+            
+            self.page = 1
+            self.preventiveData.removeAll()
+            self.fetchWorkSheetPreventiveList(
+                limit: self.limit,
+                sort: self.sort,
+                keyword: self.keyword,
+                idInstallation: self.idInstallation,
+                status: self.status,
+                page: self.page)
         }
-        
-        if let status = status {
-            self.status = status
-        }
-        
-        if let sort = sort {
-            self.sort = sort
-        }
-        
-        self.page = 1
-        self.preventiveData.removeAll()
-        self.fetchWorkSheetPreventiveList(
-            limit: self.limit,
-            sort: self.sort,
-            keyword: self.keyword,
-            idInstallation: self.idInstallation,
-            status: self.status,
-            page: self.page)
-    }
     
     func fetchWorkSheetPreventiveList(
         limit: Int,
@@ -125,6 +134,31 @@ extension PreventiveMaintenanceListPresenter {
             .store(in: &anyCancellable)
         }
     
+    func fetchInstallationList() {
+        self.isLoading = true
+        interactor.getInstallationList()
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { installation in
+                    DispatchQueue.main.async {
+                        guard let data = installation.data else { return }
+                        self.installationList = data
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
@@ -145,6 +179,7 @@ extension PreventiveMaintenanceListPresenter {
         let bottomSheet = FilterStatusBottomSheet(nibName: String(describing: FilterStatusBottomSheet.self), bundle: nil)
         bottomSheet.data = self.filterStatusData
         bottomSheet.delegate = delegate
+        bottomSheet.type = .single
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
@@ -152,6 +187,13 @@ extension PreventiveMaintenanceListPresenter {
         let bottomSheet = SortingBottomSheet(nibName: String(describing: SortingBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         bottomSheet.data = self.sortingHistoryData
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func showInstallationBottomSheet(from navigation: UINavigationController, _ delegate: InstallationBottomSheetDelegate) {
+        let bottomSheet = InstallationBottomSheet(nibName: String(describing: InstallationBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.data = self.installationList
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

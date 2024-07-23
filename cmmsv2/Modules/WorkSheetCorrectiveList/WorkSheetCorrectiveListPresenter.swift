@@ -28,8 +28,8 @@ class WorkSheetCorrectiveListPresenter: BasePresenter {
         StatusFilterEntity(id: "6", status: .failed),
     ]
     var sortingHistoryData: [SortingEntity] = [
-        SortingEntity(id: 0, sortType: .latest, hasObstacle: -1),
-        SortingEntity(id: 1, sortType: .longest, hasObstacle: -1)
+        SortingEntity(id: "0", sortType: .latest, hasObstacle: -1),
+        SortingEntity(id: "1", sortType: .longest, hasObstacle: -1)
     ]
     
     @Published public var errorMessage: String = ""

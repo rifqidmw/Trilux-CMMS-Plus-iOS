@@ -99,8 +99,9 @@ extension DatePickerBottomSheet {
                 } else {
                     selectedDate = self.datePicker.date
                 }
-                delegate.didSelectDate(selectedDate, type: type)
-                self.dismissBottomSheet()
+                self.dismissBottomSheet() {
+                    delegate.didSelectDate(selectedDate, type: type)
+                }
             }
             .store(in: &anyCancellable)
     }

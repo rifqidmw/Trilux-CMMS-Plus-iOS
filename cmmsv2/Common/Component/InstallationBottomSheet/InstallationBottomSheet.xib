@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InstallationBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="vVq-IP-i48" id="0Vp-fV-fr7"/>
+                <outlet property="containerTextFieldView" destination="pyb-pt-MnF" id="vNU-fO-wTI"/>
+                <outlet property="dismissAreaView" destination="dsF-Vp-IwS" id="zlD-IG-Xex"/>
+                <outlet property="tableView" destination="Zry-Wr-Mxh" id="1ro-le-xXb"/>
+                <outlet property="textField" destination="46b-ie-aMq" id="cyP-a9-xds"/>
+                <outlet property="titleLabel" destination="Wos-BM-g0h" id="gCU-46-wUS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsF-Vp-IwS" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVq-IP-i48" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="218" width="393" height="634"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jnL-mV-EQa">
+                            <rect key="frame" x="16" y="34" width="361" height="566"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Instalasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wos-BM-g0h">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="6Lj-lc-Q1L"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyb-pt-MnF">
+                                    <rect key="frame" x="0.0" y="34" width="361" height="48"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cari instalasi yang diinginkan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46b-ie-aMq">
+                                            <rect key="frame" x="16" y="0.0" width="329" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" name="customLightGrayColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="46b-ie-aMq" secondAttribute="trailing" constant="16" id="1Hl-G6-PQN"/>
+                                        <constraint firstAttribute="height" constant="48" id="AYr-pQ-xug"/>
+                                        <constraint firstItem="46b-ie-aMq" firstAttribute="top" secondItem="pyb-pt-MnF" secondAttribute="top" id="JPY-oG-mjd"/>
+                                        <constraint firstItem="46b-ie-aMq" firstAttribute="leading" secondItem="pyb-pt-MnF" secondAttribute="leading" constant="16" id="jct-nc-x4d"/>
+                                        <constraint firstAttribute="bottom" secondItem="46b-ie-aMq" secondAttribute="bottom" id="nQK-zb-YiI"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zry-Wr-Mxh">
+                                    <rect key="frame" x="0.0" y="98" width="361" height="468"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="jnL-mV-EQa" secondAttribute="bottom" constant="34" id="Bss-cn-Yrs"/>
+                        <constraint firstItem="jnL-mV-EQa" firstAttribute="leading" secondItem="vVq-IP-i48" secondAttribute="leading" constant="16" id="JKW-mI-NnU"/>
+                        <constraint firstAttribute="height" constant="634" id="Pce-mV-8oI"/>
+                        <constraint firstItem="jnL-mV-EQa" firstAttribute="top" secondItem="vVq-IP-i48" secondAttribute="top" constant="34" id="XKR-o2-R1o"/>
+                        <constraint firstAttribute="trailing" secondItem="jnL-mV-EQa" secondAttribute="trailing" constant="16" id="jPc-tc-Xa4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dsF-Vp-IwS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7Yv-E8-ydl"/>
+                <constraint firstItem="vVq-IP-i48" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dm4-SJ-mZW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dsF-Vp-IwS" secondAttribute="trailing" id="E5L-Q0-XwO"/>
+                <constraint firstAttribute="bottom" secondItem="vVq-IP-i48" secondAttribute="bottom" id="iU7-BQ-Uez"/>
+                <constraint firstItem="dsF-Vp-IwS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kFK-Vt-0fE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dsF-Vp-IwS" secondAttribute="bottom" id="psF-jp-JVO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vVq-IP-i48" secondAttribute="trailing" id="s8o-qZ-YfC"/>
+            </constraints>
+            <point key="canvasLocation" x="124" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

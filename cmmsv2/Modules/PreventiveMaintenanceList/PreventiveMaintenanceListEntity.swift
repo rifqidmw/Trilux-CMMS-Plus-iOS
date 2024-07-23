@@ -26,3 +26,23 @@ protocol AddPreventiveBottomSheetDelegate: AnyObject {
 protocol PreventiveCategoryCellDelegate: AnyObject {
     func didTapSelectDate(index: Int)
 }
+
+struct InstallationEntity: Codable {
+    let data: [InstallationData]?
+    let message: String?
+    let status: Int?
+}
+
+struct InstallationData: Codable {
+    let id: String?
+    let name: String?
+    let idGroup: String?
+    let groupName: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case idGroup = "id_group"
+        case groupName = "group_name"
+    }
+}
