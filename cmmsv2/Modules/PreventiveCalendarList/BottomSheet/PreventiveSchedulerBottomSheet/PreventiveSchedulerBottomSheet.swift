@@ -19,7 +19,8 @@ class PreventiveSchedulerBottomSheet: BaseNonNavigationController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
+        self.showBottomSheet()
     }
     
 }
@@ -41,7 +42,6 @@ extension PreventiveSchedulerBottomSheet {
                 guard let self,
                       let delegate = self.delegate
                 else { return }
-                
                 delegate.didTapCreatePreventive()
             }
             .store(in: &anyCancellable)
@@ -52,7 +52,7 @@ extension PreventiveSchedulerBottomSheet {
             popUpView.dismissAreaView.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
-            self.dismiss(animated: true)
+            self.dismissBottomSheet()
         }
         .store(in: &anyCancellable)
     }

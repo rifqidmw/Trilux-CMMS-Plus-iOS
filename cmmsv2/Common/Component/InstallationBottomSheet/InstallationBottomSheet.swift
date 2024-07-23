@@ -1,71 +1,45 @@
 //
-//  SelectStatusBottomSheet.swift
+//  InstallationBottomSheet.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 11/07/24.
+//  Created by PRO M1 2020 8/256 on 23/07/24.
 //
 
 import UIKit
 import Combine
 
-struct WorkingStatusEntity: Codable {
-    var id: String?
-    var lkStatus: String?
-    var label: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case lkStatus = "lk_status"
-        case label
-    }
+protocol InstallationBottomSheetDelegate: AnyObject {
+    func didSelectInstallation(_ installation: InstallationData)
 }
 
-struct WorkingFinishStatusEntity: Codable {
-    var id: String?
-    var lkFinishstt: String?
-    var label: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case lkFinishstt = "lk_finishstt"
-        case label
-    }
-}
-
-enum SelectStatusType {
-    case normal
-    case finish
-}
-
-protocol SelectStatusBottomSheetDelegate: AnyObject {
-    func didSelectStatus(_ status: WorkingStatusEntity)
-    func didSelectFinishStatus(_ finishStt: WorkingFinishStatusEntity)
-}
-
-class SelectStatusBottomSheet: BaseNonNavigationController {
+class InstallationBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var containerTextFieldView: UIView!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    var type: SelectStatusType?
-    var statusData: [WorkingStatusEntity] = []
-    var finishStatusData: [WorkingFinishStatusEntity] = []
-    weak var delegate: SelectStatusBottomSheetDelegate?
+    var data: [InstallationData] = []
+    var filteredData: [InstallationData] = []
+    weak var delegate: InstallationBottomSheetDelegate?
     
     override func didLoad() {
         super.didLoad()
         self.setupBody()
         self.showBottomSheet()
+        self.filteredData = self.data
     }
     
 }
 
-extension SelectStatusBottomSheet {
+extension InstallationBottomSheet {
     
     private func setupBody() {
+        setupView()
         setupAction()
+        setupDelegate()
         setupTableView()
     }
     
@@ -74,6 +48,10 @@ extension SelectStatusBottomSheet {
         self.tableView.delegate = self
         self.tableView.register(SelectionTVC.nib, forCellReuseIdentifier: SelectionTVC.identifier)
         self.tableView.separatorStyle = .none
+    }
+    
+    private func setupView() {
+        self.containerTextFieldView.makeCornerRadius(8)
     }
     
     private func setupAction() {
@@ -87,16 +65,16 @@ extension SelectStatusBottomSheet {
         .store(in: &anyCancellable)
     }
     
+    private func setupDelegate() {
+        self.textField.delegate = self
+    }
+    
 }
 
-extension SelectStatusBottomSheet: UITableViewDataSource, UITableViewDelegate {
+extension InstallationBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.type == .normal {
-            return self.statusData.count
-        } else {
-            return self.finishStatusData.count
-        }
+        return self.filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,11 +83,8 @@ extension SelectStatusBottomSheet: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        if self.type == .normal {
-            cell.setupCell(title: self.statusData[indexPath.row].label ?? "")
-        } else {
-            cell.setupCell(title: self.finishStatusData[indexPath.row].label ?? "")
-        }
+        let groupedData = self.filteredData[indexPath.row]
+        cell.setupCell(title: groupedData.name ?? "", description: groupedData.groupName, type: .withDesc)
         
         return cell
     }
@@ -117,16 +92,32 @@ extension SelectStatusBottomSheet: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate else { return }
         self.dismissBottomSheet() {
-            if self.type == .normal {
-                delegate.didSelectStatus(self.statusData[indexPath.row])
-            } else {
-                delegate.didSelectFinishStatus(self.finishStatusData[indexPath.row])
-            }
+            delegate.didSelectInstallation(self.filteredData[indexPath.row])
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+}
+
+extension InstallationBottomSheet: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        if text.isEmpty {
+            self.filteredData = self.data
+        } else {
+            self.filteredData = self.data.filter { $0.name?.contains(text.lowercased()) ?? false }
+        }
+        self.tableView.reloadData()
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        self.filteredData = self.data
+        self.tableView.reloadData()
+        return true
     }
     
 }

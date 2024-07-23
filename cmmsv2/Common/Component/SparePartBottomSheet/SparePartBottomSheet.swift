@@ -33,8 +33,8 @@ class SparePartBottomSheet: BaseNonNavigationController {
     
     override func didLoad() {
         super.didLoad()
-        self.showBottomSheet()
         self.setupBody()
+        self.showBottomSheet()
         self.filteredData = self.data
     }
     
@@ -68,8 +68,9 @@ extension SparePartBottomSheet {
     }
     
     private func setupAction() {
-        Publishers.Merge(dismissAreaView.gesture(),
-                         bottomSheetView.handleBarArea.gesture())
+        Publishers.Merge(
+            dismissAreaView.gesture(),
+            bottomSheetView.handleBarArea.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
             self.dismissBottomSheet()

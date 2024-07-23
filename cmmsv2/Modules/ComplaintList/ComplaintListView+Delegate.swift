@@ -110,9 +110,9 @@ extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate, Fil
         presenter.showFilterStatusBottomSheet(from: navigation, delegate: self)
     }
     
-    func didSelectStatusFilter(_ status: [StatusFilterEntity]) {
+    func didSelectStatusFilter(_ multiple: [StatusFilterEntity], single: StatusFilterEntity) {
         guard let presenter else { return }
-        let statusString = status.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
+        let statusString = multiple.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
         presenter.fetchInitData(status: statusString)
         self.reloadTableViewWithAnimation(self.tableView)
     }

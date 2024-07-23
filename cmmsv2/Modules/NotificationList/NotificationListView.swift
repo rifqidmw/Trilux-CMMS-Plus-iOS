@@ -246,7 +246,6 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
         switch selectedType {
         case .worksheet:
             if let workOrderData = self.workSheetData.first(where: { $0.id == itemId }) {
-                self.showOverlay()
                 presenter.showBottomSheetCorrective(navigation: navigation, data: workOrderData, delegate: self)
             } else {
                 self.showAlert(title: "Terjadi Kesalahan", message: "Tidak ada data yang cocok")

@@ -31,6 +31,7 @@ class SignatureBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.showBottomSheet()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +61,7 @@ extension SignatureBottomSheet {
             dismissAreaView.gesture())
         .sink { [weak self] _ in
             guard let self else { return }
-            self.dismiss(animated: true)
+            self.dismissBottomSheet()
         }
         .store(in: &anyCancellable)
         

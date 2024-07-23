@@ -49,6 +49,7 @@ extension PreventiveMaintenanceListView {
     private func fetchInitialData() {
         guard let presenter else { return }
         presenter.fetchInitData()
+        presenter.fetchInstallationList()
     }
     
     private func bindingData() {

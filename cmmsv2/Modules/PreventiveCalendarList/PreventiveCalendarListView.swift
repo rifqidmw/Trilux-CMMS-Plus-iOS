@@ -244,7 +244,6 @@ extension PreventiveCalendarListView: SkeletonCollectionViewDataSource, Skeleton
               let status = self.data[indexPath.row].status
         else { return }
         if status == .done {
-            self.showOverlay()
             presenter.showPreventiveBottomSheet(from: navigation, delegate: self)
         } else {
             presenter.navigateToLoadPreventive(from: navigation, data: self.data[indexPath.row])

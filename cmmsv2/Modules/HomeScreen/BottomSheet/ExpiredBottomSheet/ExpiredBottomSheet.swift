@@ -20,7 +20,8 @@ class ExpiredBottomSheet: BaseNonNavigationController {
     
     override func didLoad() {
         super.didLoad()
-        setupBody()
+        self.setupBody()
+        self.showBottomSheet()
     }
     
 }

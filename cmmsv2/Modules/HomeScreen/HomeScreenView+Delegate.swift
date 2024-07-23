@@ -13,7 +13,6 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        self.showOverlay()
         presenter.showBottomSheetAllCategories(navigation: navigation, delegate: self)
     }
     
@@ -21,7 +20,6 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        self.showOverlay()
         presenter.showBottomSheetAsset(navigation: navigation, delegate: self)
     }
     
@@ -36,7 +34,6 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        self.showOverlay()
         presenter.showBottomSheetWorkSheet(navigation: navigation, delegate: self)
     }
     
@@ -127,7 +124,6 @@ extension HomeScreenView: AllCategoriesBottomSheetDelegate {
               let navigation = self.navigationController
         else { return }
         navigation.dismiss(animated: true) {
-            self.showOverlay()
             presenter.showBottomSheetAsset(navigation: navigation, delegate: self)
         }
     }
@@ -145,10 +141,7 @@ extension HomeScreenView: AllCategoriesBottomSheetDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        navigation.dismiss(animated: true) {
-            self.showOverlay()
-            presenter.showBottomSheetWorkSheet(navigation: navigation, delegate: self)
-        }
+        presenter.showBottomSheetWorkSheet(navigation: navigation, delegate: self)
     }
     
     func didTapHistoryCategory() {

@@ -16,7 +16,17 @@ class PreventiveMaintenanceListInteractor: BaseInteractor {
         idInstallation: String? = nil,
         status: String? = nil,
         page: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
-            return api.requestApiPublisher(.workSheetPreventive(limit: limit, sort: sort, keyword: keyword, idInstallation: idInstallation, status: status, page: page))
+            return api.requestApiPublisher(.workSheetPreventive(
+                limit: limit,
+                sort: sort,
+                keyword: keyword,
+                idInstallation: idInstallation,
+                status: status,
+                page: page))
         }
+    
+    func getInstallationList() -> AnyPublisher<InstallationEntity, Error> {
+        return api.requestApiPublisher(.getInstallation)
+    }
     
 }

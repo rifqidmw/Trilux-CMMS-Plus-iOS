@@ -84,8 +84,9 @@ extension SelectTechnicianBottomSheet {
                 guard let self,
                       let delegate = self.delegate
                 else { return }
-                delegate.selectMultipleTechnician(Array(self.selectedTechnicians))
-                self.dismissBottomSheet()
+                self.dismissBottomSheet() {
+                    delegate.selectMultipleTechnician(Array(self.selectedTechnicians))
+                }
             }
             .store(in: &anyCancellable)
     }

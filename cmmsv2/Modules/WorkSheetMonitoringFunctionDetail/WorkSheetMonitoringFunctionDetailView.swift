@@ -72,7 +72,6 @@ extension WorkSheetMonitoringFunctionDetailView: WorkSheetDetailDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        self.showOverlay()
         presenter.showBottomSheetAllEvidence(navigation: navigation)
     }
     

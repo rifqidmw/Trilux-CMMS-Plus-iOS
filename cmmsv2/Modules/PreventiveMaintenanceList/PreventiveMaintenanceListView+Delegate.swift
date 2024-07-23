@@ -42,7 +42,8 @@ extension PreventiveMaintenanceListView: WorkSheetOnsitePreventiveDelegate {
 extension PreventiveMaintenanceListView: ActionBarViewDelegate {
     
     func didTapFirstAction() {
-        AppLogger.log("-- INSTALLATION CLICKED")
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.showInstallationBottomSheet(from: navigation, self)
     }
     
     func didTapSecondAction() {
@@ -85,11 +86,10 @@ extension PreventiveMaintenanceListView: SearchTextFieldDelegate {
 
 extension PreventiveMaintenanceListView: FilterStatusBottomSheetDelegate {
     
-    func didSelectStatusFilter(_ status: [StatusFilterEntity]) {
+    func didSelectStatusFilter(_ multiple: [StatusFilterEntity], single: StatusFilterEntity) {
         guard let presenter else { return }
         self.showLoadingPopup()
-        let statusString = status.map { $0.id ?? "" }.first
-        presenter.fetchInitData(status: statusString)
+        presenter.fetchInitData(status: single.id)
         self.reloadCollectionViewWithAnimation(self.collectionView)
     }
     
@@ -101,6 +101,17 @@ extension PreventiveMaintenanceListView: SortingBottomSheetDelegate {
         guard let presenter else { return }
         self.showLoadingPopup()
         presenter.fetchInitData(sort: sort.sortType?.getStringValue().lowercased())
+        self.reloadCollectionViewWithAnimation(self.collectionView)
+    }
+    
+}
+
+extension PreventiveMaintenanceListView: InstallationBottomSheetDelegate {
+    
+    func didSelectInstallation(_ installation: InstallationData) {
+        guard let presenter else { return }
+        self.showLoadingPopup()
+        presenter.fetchInitData(idInstallation: installation.id)
         self.reloadCollectionViewWithAnimation(self.collectionView)
     }
     

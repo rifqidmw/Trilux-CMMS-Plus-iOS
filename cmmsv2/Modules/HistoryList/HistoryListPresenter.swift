@@ -18,9 +18,9 @@ class HistoryListPresenter: BasePresenter {
     
     @Published public var historyData: [WorkSheetListEntity] = []
     var sortingHistoryData: [SortingEntity] = [
-        SortingEntity(id: 0, sortType: .all, hasObstacle: -1),
-        SortingEntity(id: 1, sortType: .hold, hasObstacle: 1),
-        SortingEntity(id: 2, sortType: .done, hasObstacle: 0)
+        SortingEntity(id: "0", sortType: .all, hasObstacle: -1),
+        SortingEntity(id: "1", sortType: .hold, hasObstacle: 1),
+        SortingEntity(id: "2", sortType: .done, hasObstacle: 0)
     ]
     
     @Published public var errorMessage: String = ""

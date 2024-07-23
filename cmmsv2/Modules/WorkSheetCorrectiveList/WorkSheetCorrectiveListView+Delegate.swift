@@ -87,10 +87,10 @@ extension WorkSheetCorrectiveListView: SearchTextFieldDelegate {
 
 extension WorkSheetCorrectiveListView: FilterStatusBottomSheetDelegate {
     
-    func didSelectStatusFilter(_ status: [StatusFilterEntity]) {
+    func didSelectStatusFilter(_ multiple: [StatusFilterEntity], single: StatusFilterEntity) {
         guard let presenter else { return }
         self.showLoadingPopup()
-        let woStatusString = status.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
+        let woStatusString = multiple.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
         presenter.fetchInitData(woStatus: woStatusString)
         self.reloadCollectionViewWithAnimation(self.collectionView)
     }
