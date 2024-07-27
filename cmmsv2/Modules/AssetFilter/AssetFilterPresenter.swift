@@ -1,17 +1,17 @@
 //
-//  AssetListPresenter.swift
+//  AssetFilterPresenter.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 09/02/24.
+//  Created by PRO M1 2020 8/256 on 25/07/24.
 //
 
+import Foundation
 import UIKit
 
-class AssetListPresenter: BasePresenter {
+class AssetFilterPresenter: BasePresenter {
     
-    private let interactor: AssetListInteractor
-    private let router: AssetListRouter
-    let type: AssetType
+    private let interactor: AssetFilterInteractor
+    private let router = AssetFilterRouter()
     
     @Published public var equipmentData: EquipmentEntity?
     @Published public var equipment: [Equipment] = []
@@ -44,7 +44,7 @@ class AssetListPresenter: BasePresenter {
     
     var search: String = ""
     var condition: String = ""
-    var group: String = ""
+    var group: String = "1"
     var sttKalibrasi: String = ""
     var category: String = ""
     var sort: String = "terbaru"
@@ -56,23 +56,26 @@ class AssetListPresenter: BasePresenter {
     var isCanLoad = true
     var isFetchingMore = false
     
-    init(interactor: AssetListInteractor, router: AssetListRouter, type: AssetType) {
+    init(interactor: AssetFilterInteractor) {
         self.interactor = interactor
-        self.router = router
-        self.type = type
     }
     
 }
 
-extension AssetListPresenter {
+extension AssetFilterPresenter {
     
     func fetchInitData(
+        search: String? = nil,
         group: String? = nil,
         sort: String? = nil,
         idInstallation: String? = nil,
         category: String? = nil,
         condition: String? = nil,
         sttCalibration: String? = nil) {
+            if let search = search {
+                self.search = search
+            }
+            
             if let group = group {
                 self.group = group
             }
@@ -207,14 +210,10 @@ extension AssetListPresenter {
     
 }
 
-extension AssetListPresenter {
+extension AssetFilterPresenter {
     
-    func navigateToAssetFilter(from navigation: UINavigationController) {
-        router.navigateToAssetFilter(from: navigation)
-    }
-    
-    func navigateToDetailAsset(navigation: UINavigationController, data: Equipment) {
-        router.navigateToDetailAsset(navigation: navigation, type: self.type, data: data)
+    func navigateToDetailAsset(navigation: UINavigationController, data: Equipment, type: AssetType) {
+        router.navigateToDetailAsset(navigation: navigation, type: type, data: data)
     }
     
     func showSortBottomSheet(from navigation: UINavigationController, _ delegate: SortingBottomSheetDelegate) {

@@ -8,6 +8,10 @@
 import UIKit
 import XLPagerTabStrip
 
+protocol AdditionalDocumentsViewDelegate: AnyObject {
+    func didSelectImageDocument(url: String)
+}
+
 class AdditionalDocumentsView: BaseViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -72,14 +76,21 @@ extension AdditionalDocumentsView: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 158, height: 174)
+        let width = (collectionView.bounds.width / 2) - 8
+        return CGSize(width: width, height: 174)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedFile = self.data[indexPath.row]
-        if selectedFile.url == "" {
-            self.showAlert(title: "Dokumen tidak ditemukan!")
+        if let selectedFile = selectedFile.url {
+            if selectedFile.isEmpty {
+                self.showAlert(title: "Dokumen tidak ditemukan!")
+            } else {
+                guard let parentView = self.parentView,
+                      let delegate = parentView.delegate
+                else { return }
+                delegate.didSelectImageDocument(url: selectedFile)
+            }
         }
     }
-    
 }

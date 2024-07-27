@@ -26,4 +26,9 @@ extension AssetListRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToAssetFilter(from navigation: UINavigationController) {
+        let vc = AssetFilterRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

@@ -92,7 +92,7 @@ extension HomeScreenRouter {
         let vc = DelayCorrectiveListRouter().showView()
         navigation.pushViewController(vc, animated: true)
     }
-
+    
     func navigateToHistoryList(navigation: UINavigationController) {
         let vc = HistoryListRouter().showView()
         navigation.pushViewController(vc, animated: true)
@@ -105,6 +105,11 @@ extension HomeScreenRouter {
     
     func navigateToCalendarPreventive(navigation: UINavigationController) {
         let vc = PreventiveCalendarListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToAssetFilter(from navigation: UINavigationController) {
+        let vc = AssetFilterRouter().showView()
         navigation.pushViewController(vc, animated: true)
     }
     

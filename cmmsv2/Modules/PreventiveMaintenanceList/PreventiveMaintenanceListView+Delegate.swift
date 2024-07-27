@@ -97,7 +97,7 @@ extension PreventiveMaintenanceListView: FilterStatusBottomSheetDelegate {
 
 extension PreventiveMaintenanceListView: SortingBottomSheetDelegate {
     
-    func didTapApplySort(_ sort: SortingEntity) {
+    func didTapApplySort(_ sort: SortingEntity, type: SortingBottomSheetType) {
         guard let presenter else { return }
         self.showLoadingPopup()
         presenter.fetchInitData(sort: sort.sortType?.getStringValue().lowercased())

@@ -41,7 +41,8 @@ extension AssetListView {
     
     private func fetchInitData() {
         guard let presenter else { return }
-        presenter.fetchInitData()
+        presenter.fetchInitData(group: presenter.type == .medic ? "1" : "2")
+        presenter.fetchInstallationList()
     }
     
     private func bindingData() {
@@ -55,7 +56,8 @@ extension AssetListView {
                       let count = reff.totalItem
                 else { return }
                 
-                self.collectionView.reloadData()
+                self.hideLoadingPopup()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.hideSkeletonAnimation()
                 
                 if count.isEmpty {
@@ -75,7 +77,8 @@ extension AssetListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
+                self.hideLoadingPopup()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.showSpinner(false)
                 self.hideSkeletonAnimation()
             }
@@ -85,7 +88,15 @@ extension AssetListView {
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Aset", type: .plain)
         searchButton.configure(type: .searchbutton)
-        customActionBar.configure(firstIcon: "square.and.arrow.down", firstTitle: "Instalasi", secondIcon: "wrench.and.screwdriver", secondTitle: "Kondisi", thirdIcon: "circle.grid.2x2", thirdTitle: "Kategori", fourthIcon: "arrow.up.arrow.down.square", fourthTitle: "Urutkan")
+        customActionBar.configure(
+            firstIcon: "square.and.arrow.down",
+            firstTitle: "Instalasi",
+            secondIcon: "wrench.and.screwdriver",
+            secondTitle: "Kondisi",
+            thirdIcon: "circle.grid.2x2",
+            thirdTitle: "Kategori",
+            fourthIcon: "arrow.up.arrow.down.square",
+            fourthTitle: "Urutkan")
         self.countLabel.isSkeletonable = true
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -99,12 +110,20 @@ extension AssetListView {
     }
     
     private func setupAction() {
+        guard let presenter else { return }
         customNavigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
                       let navigation = self.navigationController
                 else { return }
                 navigation.popViewController(animated: true)
+            }
+            .store(in: &anyCancellable)
+        
+        searchButton.gesture()
+            .sink { [weak self] _ in
+                guard let self, let navigation = self.navigationController else { return }
+                presenter.navigateToAssetFilter(from: navigation)
             }
             .store(in: &anyCancellable)
     }
@@ -152,7 +171,7 @@ extension AssetListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -200,26 +219,6 @@ extension AssetListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
-    }
-    
-}
-
-extension AssetListView: ActionBarViewDelegate {
-    
-    func didTapFirstAction() {
-        AppLogger.log("FIRST ACTION TAPPED")
-    }
-    
-    func didTapSecondAction() {
-        AppLogger.log("SECOND ACTION TAPPED")
-    }
-    
-    func didTapThirdAction() {
-        AppLogger.log("THIRD ACTION TAPPED")
-    }
-    
-    func didTapFourthAction() {
-        AppLogger.log("FOURTH ACTION TAPPED")
     }
     
 }

@@ -1,13 +1,14 @@
 //
-//  AssetListInteractor.swift
+//  AssetFilterInteractor.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 09/02/24.
+//  Created by PRO M1 2020 8/256 on 25/07/24.
 //
 
+import Foundation
 import Combine
 
-class AssetListInteractor: BaseInteractor {
+class AssetFilterInteractor: BaseInteractor {
     
     func getListAsset(
         search: String? = nil,

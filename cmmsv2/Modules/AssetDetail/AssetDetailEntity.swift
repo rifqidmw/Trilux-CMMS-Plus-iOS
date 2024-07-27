@@ -204,7 +204,7 @@ struct EquipmentMainCoastData: Codable {
 struct EquipmentMainCoast: Codable {
     let id: String?
     let txtIIC: String?
-    let txtAIC: Int?
+    let txtAIC: Double?
     let txtMaintenance: String?
     let txtPengganti: String?
     let txtUsiaTeknis: String?

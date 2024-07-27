@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,15 +38,22 @@
                                 <color key="textColor" name="customDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-RB-qc8">
+                                <rect key="frame" x="16" y="16" width="160" height="149.66666666666666"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="customLightGrayColor"/>
                         <constraints>
+                            <constraint firstItem="Cmg-RB-qc8" firstAttribute="top" secondItem="fcZ-pP-TeX" secondAttribute="top" constant="16" id="2rl-UF-EMV"/>
                             <constraint firstItem="JuZ-v3-nup" firstAttribute="centerX" secondItem="fcZ-pP-TeX" secondAttribute="centerX" id="3Ez-Jt-6cg"/>
                             <constraint firstAttribute="trailing" secondItem="JuZ-v3-nup" secondAttribute="trailing" constant="16" id="6k4-4w-Ztd"/>
+                            <constraint firstItem="Cmg-RB-qc8" firstAttribute="leading" secondItem="fcZ-pP-TeX" secondAttribute="leading" constant="16" id="BP3-p3-wrW"/>
                             <constraint firstItem="eXn-vR-dpL" firstAttribute="leading" secondItem="fcZ-pP-TeX" secondAttribute="leading" constant="16" id="Vcu-Vn-m0x"/>
                             <constraint firstAttribute="bottom" secondItem="JuZ-v3-nup" secondAttribute="bottom" constant="16" id="aR7-7v-XMx"/>
                             <constraint firstItem="eXn-vR-dpL" firstAttribute="top" secondItem="fcZ-pP-TeX" secondAttribute="top" constant="16" id="ax3-so-Ez7"/>
+                            <constraint firstItem="JuZ-v3-nup" firstAttribute="top" secondItem="Cmg-RB-qc8" secondAttribute="bottom" constant="16" id="kII-sY-gDS"/>
                             <constraint firstItem="JuZ-v3-nup" firstAttribute="leading" secondItem="fcZ-pP-TeX" secondAttribute="leading" constant="16" id="mX8-ef-Ptu"/>
+                            <constraint firstAttribute="trailing" secondItem="Cmg-RB-qc8" secondAttribute="trailing" constant="16" id="mic-IY-upN"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -59,6 +66,7 @@
             </constraints>
             <connections>
                 <outlet property="containerView" destination="fcZ-pP-TeX" id="4rS-ON-1Lp"/>
+                <outlet property="documentImageView" destination="Cmg-RB-qc8" id="Wa2-QH-779"/>
                 <outlet property="iconDocumentImageView" destination="eXn-vR-dpL" id="EdP-U5-WJG"/>
                 <outlet property="titleLabel" destination="JuZ-v3-nup" id="oWi-Y2-dKc"/>
             </connections>

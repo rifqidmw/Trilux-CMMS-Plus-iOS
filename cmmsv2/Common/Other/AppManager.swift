@@ -13,6 +13,7 @@ enum AppManager {
     private static let hospitalKey = "hospital"
     private static let isRegisteredKey = "isRegistered"
     private static let isLoggedInKey = "isLoggedIn"
+    private static let searchHistoryKey = "searchHistory"
     
     static func setUser(_ data: User?) {
         do {
@@ -78,6 +79,49 @@ enum AppManager {
     
     static func deleteObject(_ key: String) {
         UserDefaults.standard.removeObject(forKey: key)
+    }
+    
+    static func setSearchHistory(_ data: AssetFilterEntity) {
+        var searchHistory = getSearchHistory() ?? []
+        searchHistory.append(data)
+        
+        do {
+            let encoder = JSONEncoder()
+            let dataEncode = try encoder.encode(searchHistory)
+            UserDefaults.standard.set(dataEncode, forKey: searchHistoryKey)
+        } catch {
+            AppLogger.log("-- Error encoding search history data: \(error)")
+        }
+    }
+    
+    static func getSearchHistory() -> [AssetFilterEntity]? {
+        if let dataObject = UserDefaults.standard.data(forKey: searchHistoryKey) {
+            do {
+                let decoder = JSONDecoder()
+                let response = try decoder.decode([AssetFilterEntity].self, from: dataObject)
+                return response
+            } catch {
+                AppLogger.log("-- Error decoding search history data: \(error)")
+            }
+        }
+        return nil
+    }
+    
+    static func deleteSearchHistory(by id: UUID) {
+        var searchHistory = getSearchHistory() ?? []
+        searchHistory.removeAll { $0.id == id }
+        
+        do {
+            let encoder = JSONEncoder()
+            let dataEncode = try encoder.encode(searchHistory)
+            UserDefaults.standard.set(dataEncode, forKey: searchHistoryKey)
+        } catch {
+            AppLogger.log("-- Error encoding search history data: \(error)")
+        }
+    }
+    
+    static func clearAllSearchHistory() {
+        UserDefaults.standard.removeObject(forKey: searchHistoryKey)
     }
     
 }

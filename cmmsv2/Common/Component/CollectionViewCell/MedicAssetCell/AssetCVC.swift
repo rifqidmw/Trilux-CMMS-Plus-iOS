@@ -73,7 +73,7 @@ extension AssetCVC {
          correctiveCategoryView,
          preventiveCategoryView].forEach {
             $0.isSkeletonable = true
-            $0.showGradientSkeleton()
+            $0.showAnimatedGradientSkeleton()
         }
     }
     

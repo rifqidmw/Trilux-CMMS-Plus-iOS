@@ -74,6 +74,7 @@ extension HomeScreenView {
     }
     
     private func setupAction() {
+        guard let presenter else { return }
         scanningButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
@@ -90,10 +91,8 @@ extension HomeScreenView {
         navigationView.profileImageView.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
                 presenter.navigateToUserProfile(navigation: navigation)
             }
             .store(in: &anyCancellable)
@@ -101,11 +100,18 @@ extension HomeScreenView {
         navigationView.notificationView.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
                 presenter.navigateToNotificationList(navigation: navigation)
+            }
+            .store(in: &anyCancellable)
+        
+        searchButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let navigation = self.navigationController
+                else { return }
+                presenter.navigateToAssetFilter(from: navigation)
             }
             .store(in: &anyCancellable)
     }

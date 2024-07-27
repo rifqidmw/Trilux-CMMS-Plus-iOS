@@ -81,9 +81,13 @@ extension AssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
         guard let delegate else { return }
         switch indexPath.row {
         case 0:
-            delegate.didTapAssetMedic()
+            self.dismissBottomSheet() {
+                delegate.didTapAssetMedic()
+            }
         case 1:
-            delegate.didTapAssetNonMedic()
+            self.dismissBottomSheet() {
+                delegate.didTapAssetNonMedic()
+            }
         default: break
         }
     }
