@@ -21,25 +21,27 @@ class BaseRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func showSelectActionBottomSheet(_ navigation: UINavigationController,
-                                     type: WorkSheetStatus,
-                                     delegate: WorkSheetOnsitePreventiveDelegate) {
-        let bottomSheet = SelectActionBottomSheet(nibName: String(describing: SelectActionBottomSheet.self), bundle: nil)
-        bottomSheet.delegate = delegate
-        bottomSheet.type = type
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
-    }
+    func showSelectActionBottomSheet(
+        _ navigation: UINavigationController,
+        type: WorkSheetStatus,
+        delegate: WorkSheetOnsitePreventiveDelegate) {
+            let bottomSheet = SelectActionBottomSheet(nibName: String(describing: SelectActionBottomSheet.self), bundle: nil)
+            bottomSheet.delegate = delegate
+            bottomSheet.type = type
+            bottomSheet.modalPresentationStyle = .overCurrentContext
+            navigation.present(bottomSheet, animated: true)
+        }
     
-    func navigateToDetailWorkSheet(_ navigation: UINavigationController,
-                                   data: WorkSheetRequestEntity,
-                                   type: WorkSheetDetailType,
-                                   activity: WorkSheetActivityType,
-                                   delegate: WorkSheetDetailViewDelegate? = nil) {
-        let vc = WorkSheetDetailRouter().showView(type: type, data: data, activity: activity, delegate: delegate)
-        navigation.dismiss(animated: true)
-        navigation.pushViewController(vc, animated: true)
-    }
+    func navigateToDetailWorkSheet(
+        _ navigation: UINavigationController,
+        data: WorkSheetRequestEntity,
+        type: WorkSheetDetailType,
+        activity: WorkSheetActivityType,
+        delegate: WorkSheetDetailViewDelegate? = nil) {
+            let vc = WorkSheetDetailRouter().showView(type: type, data: data, activity: activity, delegate: delegate)
+            navigation.dismiss(animated: true)
+            navigation.pushViewController(vc, animated: true)
+        }
     
     func showBottomSheet(navigation: UINavigationController, view: UIViewController) {
         view.loadViewIfNeeded()
@@ -61,6 +63,13 @@ class BaseRouter {
                 return
             }
         }
+    }
+    
+    func goToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
+        let vc = LoginRouter().showView()
+        vc.data = data
+        let rootViewController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.setRootViewController(rootViewController)
     }
     
 }

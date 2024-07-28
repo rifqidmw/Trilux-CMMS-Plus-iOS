@@ -32,12 +32,4 @@ extension UserProfileRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func navigateToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
-        let vc = LoginRouter().showView()
-        vc.data = data
-        navigation.dismiss(animated: true)
-        let rootViewController = UINavigationController(rootViewController: vc)
-        UIApplication.shared.setRootViewController(rootViewController)
-    }
-    
 }

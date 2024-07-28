@@ -65,6 +65,46 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         presenter.navigateToCalendarPreventive(navigation: navigation)
     }
     
+    func didTapMaintenanceCategory() {
+        self.showAlert(title: "Pemeliharaan")
+    }
+    
+    func didTapWorkSheetApprovalCategory() {
+        self.showAlert(title: "Persetujuan Lembar Kerja")
+    }
+    
+    func didTapComplaintHistoryCategory() {
+        self.showAlert(title: "Riwayat Pengaduan")
+    }
+    
+    func didTapMonitoringFunctionCategory() {
+        self.showAlert(title: "Pemeliharaan Fungsi")
+    }
+    
+    func didTapPreventiveCategory() {
+        self.showAlert(title: "Preventif")
+    }
+    
+    func didTapAssetInfoCategory() {
+        self.showAlert(title: "Informasi Asset")
+    }
+    
+    func didTapPrintRoomCategory() {
+        self.showAlert(title: "Informasi Ruangan")
+    }
+    
+    func didTapMaintenanceInfoCategory() {
+        self.showAlert(title: "Informasi Pemeliharaan")
+    }
+    
+    func didTapMutationInfoCategory() {
+        self.showAlert(title: "Informasi Mutasi")
+    }
+    
+    func didTapCalibrationCategory() {
+        self.showAlert(title: "Kalibrasi")
+    }
+    
 }
 
 extension HomeScreenView: WorkSheetBottomSheetDelegate {

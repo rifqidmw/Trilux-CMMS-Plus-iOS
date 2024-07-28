@@ -8,6 +8,7 @@
 import Foundation
 
 struct Constants {
+    
     public static var baseURL: String {
         return Bundle.main.infoDictionary?["BASE_URL"] as? String ?? ""
     }
@@ -17,6 +18,7 @@ struct Constants {
     }
     
     public static var token: String {
-        return UserDefaults.standard.string(forKey: "valToken") ?? ""
+        return AppManager.getUserToken() ?? ""
     }
+    
 }

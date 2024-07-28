@@ -40,8 +40,9 @@ extension HomeScreenView {
     private func setupView() {
         setupNavigationView()
         searchButton.configure(type: .searchbutton)
-        scanningButton.configure(title: "Scanning Alat", type: .withIcon, icon: "ic_scan")
+        scanningButton.configure(title: "Scan Alat", type: .withIcon, icon: "ic_scan")
         categoryView.delegate = self
+        categoryView.updateDataForRole()
     }
     
     private func fetchInitData() {
@@ -65,12 +66,15 @@ extension HomeScreenView {
     }
     
     private func setupNavigationView() {
-        guard let name = UserDefaults.standard.string(forKey: "txtName"),
-              let hospitalName = UserDefaults.standard.string(forKey: "hospitalName"),
-              let image = UserDefaults.standard.string(forKey: "valImage")
+        guard let hospital = AppManager.getHospital(),
+              let user = AppManager.getUser(),
+              let name = user.txtName,
+              let hospitalName = hospital.name,
+              let image = user.valImage,
+              let position = user.valPosition
         else { return }
-        
-        navigationView.configure(username: name, headline: hospitalName, image: image, type: .homeToolbar)
+        RoleManager.shared.updateRole(with: position)
+        self.navigationView.configure(username: name, headline: hospitalName, image: image, type: .homeToolbar)
     }
     
     private func setupAction() {
@@ -83,7 +87,6 @@ extension HomeScreenView {
                 else {
                     return
                 }
-                
                 presenter.navigateToScan(navigation: navigation)
             }
             .store(in: &anyCancellable)

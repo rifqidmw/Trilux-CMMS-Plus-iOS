@@ -95,7 +95,7 @@ extension CorrectiveTVC {
             actionButton.configure(title: "Pendamping", type: .withIcon, icon: "ic_screwdriver_white")
         }
         
-        if let userLocal = UserDefaults.standard.string(forKey: "valPosition") {
+        if let userLocal = AppManager.getUser()?.valPosition {
             switch userLocal {
             case "1":
                 if data.canDeleteLk == true {
@@ -111,7 +111,7 @@ extension CorrectiveTVC {
         }
         
         if data.valStatus == "0" {
-            if let localUser = UserDefaults.standard.string(forKey: "valPosition") {
+            if let localUser = AppManager.getUser()?.valPosition {
                 if localUser == "2" {
                     actionButton.isHidden = false
                     actionButton.configure(title: "Terima", type: .withIcon, icon: "ic_screwdriver_white")

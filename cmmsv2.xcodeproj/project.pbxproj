@@ -567,6 +567,8 @@
 		CEC897142B77394D006CB552 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC897122B77394D006CB552 /* ToastView.swift */; };
 		CEC897162B77395C006CB552 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC897152B77395C006CB552 /* ToastView.xib */; };
 		CEC897172B77395C006CB552 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC897152B77395C006CB552 /* ToastView.xib */; };
+		CECA99242C569FD600FE655E /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA99232C569FD600FE655E /* RoleManager.swift */; };
+		CECA99252C569FD600FE655E /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA99232C569FD600FE655E /* RoleManager.swift */; };
 		CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA42B45D962004A260D /* AppDelegate.swift */; };
 		CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA62B45D962004A260D /* SceneDelegate.swift */; };
 		CECB3DA92B45D962004A260D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA82B45D962004A260D /* ViewController.swift */; };
@@ -1198,6 +1200,7 @@
 		CEC337022B6EF6FF00B16026 /* lottie_expired.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lottie_expired.json; sourceTree = "<group>"; };
 		CEC897122B77394D006CB552 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		CEC897152B77395C006CB552 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
+		CECA99232C569FD600FE655E /* RoleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManager.swift; sourceTree = "<group>"; };
 		CECB3DA12B45D962004A260D /* cmmsv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cmmsv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECB3DA42B45D962004A260D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECB3DA62B45D962004A260D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -2383,8 +2386,7 @@
 		CEC207B62B4B04230073FA1E /* Section */ = {
 			isa = PBXGroup;
 			children = (
-				CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */,
-				CEC207B72B4B04550073FA1E /* CategorySectionView.xib */,
+				CECA99262C56A89D00FE655E /* CategorySection */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -2466,6 +2468,15 @@
 				CEC897152B77395C006CB552 /* ToastView.xib */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		CECA99262C56A89D00FE655E /* CategorySection */ = {
+			isa = PBXGroup;
+			children = (
+				CEC207BA2B4B045D0073FA1E /* CategorySectionView.swift */,
+				CEC207B72B4B04550073FA1E /* CategorySectionView.xib */,
+			);
+			path = CategorySection;
 			sourceTree = "<group>";
 		};
 		CECB3D982B45D962004A260D = {
@@ -2649,6 +2660,7 @@
 				CECB3E372B45E4B9004A260D /* Constants.swift */,
 				CEE976352C15D4E300848E46 /* FileDownloader.swift */,
 				CEEFDA6A2BDFEAD600DFF70B /* FileUploader.swift */,
+				CECA99232C569FD600FE655E /* RoleManager.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -3756,6 +3768,7 @@
 				CE3108592BE20D2000660275 /* AssetDetailEntity.swift in Sources */,
 				CEE79ED92B713E810063D844 /* CustomHeaderView.swift in Sources */,
 				CE82D4502B47DDB200A54124 /* LoginPresenter.swift in Sources */,
+				CECA99242C569FD600FE655E /* RoleManager.swift in Sources */,
 				CEFA75902B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC12B70ED9B0063D844 /* WorkSheetDetailInteractor.swift in Sources */,
 				CEB465B92C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */,
@@ -4065,6 +4078,7 @@
 				CE31085A2BE20D2000660275 /* AssetDetailEntity.swift in Sources */,
 				CEE79EDA2B713E810063D844 /* CustomHeaderView.swift in Sources */,
 				CE82D4512B47DDB200A54124 /* LoginPresenter.swift in Sources */,
+				CECA99252C569FD600FE655E /* RoleManager.swift in Sources */,
 				CEFA75912B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC22B70ED9B0063D844 /* WorkSheetDetailInteractor.swift in Sources */,
 				CEB465BA2C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */,

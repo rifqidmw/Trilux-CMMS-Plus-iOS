@@ -18,14 +18,3 @@ class ChangePasswordRouter: BaseRouter {
     }
     
 }
-
-extension ChangePasswordRouter {
-    
-    func navigateToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
-        let vc = LoginRouter().showView()
-        vc.data = data
-        navigation.dismiss(animated: true)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}

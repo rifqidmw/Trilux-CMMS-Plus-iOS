@@ -107,7 +107,9 @@ extension UserProfileView {
     }
     
     private func setupView() {
-        guard let tagLine = UserDefaults.standard.string(forKey: "tagLine") else { return }
+        guard let hospital = AppManager.getHospital(),
+              let tagLine = hospital.tagline
+        else { return }
         tagLineLabel.text = tagLine
         navigationView.configure(toolbarTitle: "Profil Pengguna", type: .plain)
         containerProfileView.makeCornerRadius(12)
@@ -167,31 +169,29 @@ extension UserProfileView {
     }
     
     private func setupSkeleton() {
-        [
-            userProfileImageView,
-            userNameLabel,
-            tagLineLabel,
-            copyToClipboardButton,
-            workUnitView,
-            positionView,
-            jobView
+        [userProfileImageView,
+         userNameLabel,
+         tagLineLabel,
+         copyToClipboardButton,
+         workUnitView,
+         positionView,
+         jobView
         ].forEach {
             $0.isSkeletonable = true
-            $0.showGradientSkeleton()
+            $0.showAnimatedGradientSkeleton()
         }
     }
     
     private func hideSkeletonAnimation() {
-        [
-            userProfileImageView,
-            userNameLabel,
-            tagLineLabel,
-            copyToClipboardButton,
-            workUnitView,
-            positionView,
-            jobView
+        [userProfileImageView,
+         userNameLabel,
+         tagLineLabel,
+         copyToClipboardButton,
+         workUnitView,
+         positionView,
+         jobView
         ].forEach {
-            $0?.hideSkeleton()
+            $0.hideSkeleton()
         }
     }
     

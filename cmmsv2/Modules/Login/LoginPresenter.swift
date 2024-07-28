@@ -13,7 +13,6 @@ class LoginPresenter: BasePresenter {
     private let interactor: LoginInteractor
     private let router = LoginRouter()
     
-    @Published public var userProfile: User?
     @Published public var userData: UserProfileEntity?
     
     @Published public var errorMessage: String = ""
@@ -45,27 +44,7 @@ extension LoginPresenter {
                 },
                 receiveValue: { user in
                     DispatchQueue.main.async {
-                        guard let userData = user.data,
-                              let userProfile = userData.user
-                        else { return }
-                        
-                        switch user.message {
-                        case .success:
-                            UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
-                            UserDefaults.standard.setValue(userProfile.txtName, forKey: "txtName")
-                            UserDefaults.standard.setValue(userProfile.valImage, forKey: "valImage")
-                            UserDefaults.standard.setValue(userProfile.valImageId, forKey: "valImageId")
-                            UserDefaults.standard.setValue(userProfile.txtJabatan, forKey: "txtJabatan")
-                            UserDefaults.standard.setValue(userProfile.txtUnitKerja, forKey: "txtUnitKerja")
-                            UserDefaults.standard.setValue(userProfile.txtTelepon, forKey: "txtTelepon")
-                            UserDefaults.standard.setValue(userProfile.valToken, forKey: "valToken")
-                            UserDefaults.standard.setValue(userProfile.valPosition, forKey: "valPosition")
-                            
-                            self.userProfile = userProfile
-                            self.userData = user
-                            self.navigateToHomeScreen(navigation: navigation)
-                        default: break
-                        }
+                        self.userData = user
                     }
                 }
             )

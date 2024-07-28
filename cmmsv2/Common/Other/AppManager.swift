@@ -9,11 +9,12 @@ import Foundation
 
 enum AppManager {
     
-    private static let userKey = "user"
-    private static let hospitalKey = "hospital"
+    private static let userKey = "userStored"
+    private static let hospitalKey = "hospitalStored"
     private static let isRegisteredKey = "isRegistered"
     private static let isLoggedInKey = "isLoggedIn"
-    private static let searchHistoryKey = "searchHistory"
+    private static let searchHistoryKey = "searchHistoryStored"
+    private static let userTokenKey = "valToken"
     
     static func setUser(_ data: User?) {
         do {
@@ -26,13 +27,9 @@ enum AppManager {
     }
     
     static func getUser() -> User? {
-        if let dataObject = UserDefaults.standard.data(forKey: userKey) {
-            do {
-                let decoder = JSONDecoder()
-                let response = try decoder.decode(User.self, from: dataObject)
-                return response
-            } catch {
-                AppLogger.log("-- Error decoding user data: \(error)")
+        if let dataObject = UserDefaults.standard.object(forKey: userKey) as? Data {
+            if let data = try? JSONDecoder().decode(User.self, from: dataObject) {
+                return data
             }
         }
         return nil
@@ -49,13 +46,28 @@ enum AppManager {
     }
     
     static func getHospital() -> HospitalDetail? {
-        if let dataObject = UserDefaults.standard.data(forKey: hospitalKey) {
-            do {
-                let decoder = JSONDecoder()
-                let response = try decoder.decode(HospitalDetail.self, from: dataObject)
-                return response
-            } catch {
-                AppLogger.log("-- Error decoding hospital data: \(error)")
+        if let dataObject = UserDefaults.standard.object(forKey: hospitalKey) as? Data {
+            if let data = try? JSONDecoder().decode(HospitalDetail.self, from: dataObject) {
+                return data
+            }
+        }
+        return nil
+    }
+    
+    static func setUserToken(_ data: String?) {
+        do {
+            let encoder = JSONEncoder()
+            let dataEncode = try encoder.encode(data)
+            UserDefaults.standard.set(dataEncode, forKey: userTokenKey)
+        } catch {
+            AppLogger.log("-- Error encoding user token data: \(error)")
+        }
+    }
+    
+    static func getUserToken() -> String? {
+        if let dataObject = UserDefaults.standard.object(forKey: userTokenKey) as? Data {
+            if let data = try? JSONDecoder().decode(String.self, from: dataObject) {
+                return data
             }
         }
         return nil
@@ -65,16 +77,16 @@ enum AppManager {
         UserDefaults.standard.setValue(isRegistered, forKey: isRegisteredKey)
     }
     
-    static func getIsRegistered() {
-        UserDefaults.standard.bool(forKey: isRegisteredKey)
+    static func getIsRegistered() -> Bool {
+        return UserDefaults.standard.bool(forKey: isRegisteredKey)
     }
     
     static func setIsLoggedIn(_ isLoggedIn: Bool) {
         UserDefaults.standard.setValue(isLoggedIn, forKey: isLoggedInKey)
     }
     
-    static func getIsLoggedIn() {
-        UserDefaults.standard.bool(forKey: isLoggedInKey)
+    static func getIsLoggedIn() -> Bool {
+        return UserDefaults.standard.bool(forKey: isLoggedInKey)
     }
     
     static func deleteObject(_ key: String) {
