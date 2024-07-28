@@ -45,15 +45,19 @@ class SearchTextField: UIView {
     }
     
     @objc private func textFieldDidChange() {
-        guard let text = textField.text else { return }
-        delegate?.searchTextField(self, didChangeText: text)
+        guard let text = textField.text,
+              let delegate = self.delegate
+        else { return }
+        delegate.searchTextField(self, didChangeText: text)
     }
     
 }
 
 extension SearchTextField: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
 }

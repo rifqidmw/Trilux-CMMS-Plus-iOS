@@ -59,4 +59,8 @@ extension BasePresenter {
         router.backToPreviousPage(from: navigation, view)
     }
     
+    func navigateToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
+        router.goToLoginPage(navigation: navigation, data: data)
+    }
+    
 }

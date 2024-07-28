@@ -320,6 +320,8 @@ enum SortingType: String, Codable {
     case rated = "Selesai/Rating"
     case approve = "Approve"
     case finish = "Finish"
+    case medic = "Medic"
+    case equipment = "Perlengkapan"
     case none = ""
     
     init?(rawValue: String) {
@@ -335,6 +337,64 @@ enum SortingType: String, Codable {
         case "Selesai/Rating": self = .rated
         case "Approve": self = .approve
         case "Finish": self = .finish
+        case "Medic": self = .medic
+        case "Perlengkapan": self = .equipment
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+struct AssetConditionEntity: Codable {
+    var id: String?
+    var assetCondition: AssetConditionType?
+}
+
+struct CalibrationConditionEntity: Codable {
+    var id: String?
+    var calibrationCondition: StatusCalibrationConditionType?
+}
+
+enum AssetConditionType: String, Codable {
+    case all = "Semua Kondisi"
+    case good = "Baik"
+    case notOperated = "Tidak Beroprasi"
+    case damaged = "Rusak"
+    case badlyDamaged = "Rusak Berat"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Semua Kondisi": self = .all
+        case "Baik": self = .good
+        case "Rusak": self = .damaged
+        case "Rusak Berat": self = .badlyDamaged
+        case "Terbaru": self = .badlyDamaged
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+enum StatusCalibrationConditionType: String, Codable {
+    case all = "Semua Status Kalibrasi"
+    case laik = "Laik"
+    case unlaik = "Tidak Laik"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Semua Status Kalibrasi": self = .all
+        case "Laik": self = .laik
+        case "Tidak Laik": self = .unlaik
         case "": self = .none
         default: self = .none
         }

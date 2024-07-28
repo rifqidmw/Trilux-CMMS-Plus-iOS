@@ -35,10 +35,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fq-M6-33u" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="622" width="393" height="230"/>
+                    <rect key="frame" x="0.0" y="618" width="393" height="234"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zPo-e7-7EK">
-                            <rect key="frame" x="16" y="34" width="361" height="162"/>
+                            <rect key="frame" x="16" y="34" width="361" height="166"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-B1-2n0" userLabel="Asset Label">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
@@ -50,7 +50,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-2a-P3U">
-                                    <rect key="frame" x="0.0" y="36" width="361" height="62"/>
+                                    <rect key="frame" x="0.0" y="36" width="361" height="66"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3b-e5-Ker">
                                         <size key="itemSize" width="128" height="128"/>
@@ -60,7 +60,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-I1-FoF" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="114" width="361" height="48"/>
+                                    <rect key="frame" x="0.0" y="118" width="361" height="48"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="LnD-qv-NVw"/>
@@ -73,7 +73,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="zPo-e7-7EK" secondAttribute="trailing" constant="16" id="HaO-zw-AjA"/>
                         <constraint firstItem="zPo-e7-7EK" firstAttribute="leading" secondItem="3fq-M6-33u" secondAttribute="leading" constant="16" id="OI0-gl-Kh0"/>
-                        <constraint firstAttribute="height" constant="230" id="WW3-Kg-qBn"/>
+                        <constraint firstAttribute="height" constant="234" id="WW3-Kg-qBn"/>
                         <constraint firstItem="zPo-e7-7EK" firstAttribute="top" secondItem="3fq-M6-33u" secondAttribute="top" constant="34" id="rq2-H6-vB9"/>
                         <constraint firstAttribute="bottom" secondItem="zPo-e7-7EK" secondAttribute="bottom" constant="34" id="vgq-Za-dKI"/>
                     </constraints>

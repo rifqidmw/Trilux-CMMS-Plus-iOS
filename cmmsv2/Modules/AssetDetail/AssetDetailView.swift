@@ -27,6 +27,7 @@ class AssetDetailView: BaseViewController {
     @IBOutlet weak var stripTabBarView: UIView!
     @IBOutlet weak var stripTabBarViewHeightConstraint: NSLayoutConstraint!
     
+    weak var delegate: AdditionalDocumentsViewDelegate?
     var presenter: AssetDetailPresenter?
     @Published public var generalInfoData: EquipmentDetail?
     @Published public var filesData: [File] = []
@@ -66,45 +67,41 @@ extension AssetDetailView {
         presenter.$assetInfoData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self = self else { return }
-                if let data = data {
-                    self.generalInfoData = data
-                    self.assetNameLabel.text = data.txtName
-                    self.backgroundImageView.loadImageUrl(data.valImage ?? "")
-                    self.assetImageView.loadImageUrl(data.valImage ?? "")
-                    self.serialNumberLabel.text = "SN: \(data.txtSerial ?? "")"
-                    self.assetTypeLabel.text = presenter.type == .medic ? "Medic" : "Non-Medic"
-                }
+                guard let self = self, let data else { return }
+                self.generalInfoData = data
+                self.assetNameLabel.text = data.txtName
+                self.backgroundImageView.loadImageUrl(data.valImage ?? "")
+                self.assetImageView.loadImageUrl(data.valImage ?? "")
+                self.serialNumberLabel.text = "SN: \(data.txtSerial ?? "")"
+                self.assetTypeLabel.text = presenter.type == .medic ? "Medic" : "Non-Medic"
+                AppLogger.log("-- THIS IS ASSET INFO DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
         presenter.$assetTechnicalData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self = self else { return }
-                if let data = data {
-                    self.technicalData = data
-                }
+                guard let self = self, let data else { return }
+                self.technicalData = data
+                AppLogger.log("-- THIS IS TECHNICAL INFO DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
         presenter.$assetAcceptanceData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self = self else { return }
-                if let data = data {
-                    self.acceptanceData = data
-                }
+                guard let self = self, let data else { return }
+                self.acceptanceData = data
+                AppLogger.log("-- THIS IS ASSET ACCEPTANCE DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
         presenter.$assetCostData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self = self else { return }
-                if let data = data {
-                    self.costData = data
-                }
+                guard let self = self, let data else { return }
+                self.costData = data
+                AppLogger.log("-- THIS IS ASSET COST DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
@@ -113,6 +110,7 @@ extension AssetDetailView {
             .sink { [weak self] data in
                 guard let self = self else { return }
                 self.filesData = data
+                AppLogger.log("-- THIS IS ASSET FILES DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
@@ -179,6 +177,7 @@ extension AssetDetailView {
         
         let additionalDocument = AdditionalDocumentsView(nibName: String(describing: AdditionalDocumentsView.self), bundle: nil)
         additionalDocument.parentView = self
+        self.delegate = self
         
         self.views = [generalInformation, toolsInformation, acceptanceInformation, mutationInformation, additionalDocument]
     }
@@ -202,6 +201,17 @@ extension AssetDetailView {
          self.seeProgressButton].forEach {
             $0.hideSkeleton()
         }
+    }
+    
+}
+
+extension AssetDetailView: AdditionalDocumentsViewDelegate {
+    
+    func didSelectImageDocument(url: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailPicture(navigation: navigation, image: url)
     }
     
 }

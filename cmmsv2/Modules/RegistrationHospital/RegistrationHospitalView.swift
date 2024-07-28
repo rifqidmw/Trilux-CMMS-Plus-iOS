@@ -30,17 +30,19 @@ extension RegistrationHospitalView {
     private func setupBody() {
         setupView()
         setupAction()
+        bindingData()
         showFailMessage()
     }
     
     private func setupView() {
+        guard let presenter else { return }
         backgroundView.backgroundType = .splash
         backgroundView.makeCornerRadius(24, .bottomCurve)
         containerView.makeCornerRadius(8)
         buttonRegister.makeCornerRadius(8)
         buttonRegister.addShadow(8, color: UIColor.customPrimaryColor.cgColor)
         
-        presenter?.$isLoading
+        presenter.$isLoading
             .sink { [weak self] isLoading in
                 guard let self else { return }
                 isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
@@ -61,6 +63,28 @@ extension RegistrationHospitalView {
                     self.showAlert(title: "Terjadi Kesalahan", message: "Mohon masukkan kode rumah sakit!")
                 } else {
                     presenter.registerHospital(code: code, navigation: navigation)
+                }
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func bindingData() {
+        guard let presenter else { return }
+        presenter.$hospitalData
+            .sink { [weak self] data in
+                guard let self,
+                      let navigation = self.navigationController,
+                      let data = data,
+                      let hospital = data.data,
+                      let hospitalDetail = hospital.hospital
+                else { return }
+                switch data.message {
+                case .success:
+                    AppManager.setIsRegistered(true)
+                    AppManager.setHospital(hospitalDetail)
+                    let data = HospitalTheme(logo: hospitalDetail.logo, tagline: hospitalDetail.tagline)
+                    presenter.navigateToLoginPage(navigation: navigation, data: data)
+                default: break
                 }
             }
             .store(in: &anyCancellable)

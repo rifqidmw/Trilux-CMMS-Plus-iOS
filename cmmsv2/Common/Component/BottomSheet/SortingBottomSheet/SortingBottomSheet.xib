@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SortingBottomSheet" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="allCategoryButton" destination="15N-J3-EIr" id="0p3-8h-lbQ"/>
                 <outlet property="applyButton" destination="vtN-jL-ggi" id="vUQ-BP-Rcn"/>
                 <outlet property="bottomSheetView" destination="IXX-FD-NbI" id="nmX-3f-HSs"/>
                 <outlet property="collectionView" destination="ycU-9P-y5R" id="MtG-BY-cd0"/>
@@ -40,15 +41,26 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lUq-cC-Unw">
                             <rect key="frame" x="16" y="34" width="361" height="186"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Urutkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-as-wrY">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hcc-Mp-WHb">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Urutkan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-as-wrY">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semua Kategori" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15N-J3-EIr">
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="20"/>
+                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                            <color key="textColor" name="customPrimaryColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="cay-3a-JSg"/>
+                                        <constraint firstAttribute="height" constant="20" id="lgQ-Tq-1HQ"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                    <color key="textColor" name="customDarkGrayColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                </stackView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-9P-y5R">
                                     <rect key="frame" x="0.0" y="36" width="361" height="86"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,6 +108,9 @@
     <resources>
         <namedColor name="customDarkGrayColor">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customPrimaryColor">
+            <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

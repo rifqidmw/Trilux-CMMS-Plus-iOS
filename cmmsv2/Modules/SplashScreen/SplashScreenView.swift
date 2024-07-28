@@ -14,8 +14,8 @@ class SplashScreenView: BaseViewController {
     @IBOutlet var backgroundView: BackgroundView!
     @IBOutlet weak var containerView: UIStackView!
     
-    private let isRegistered = UserDefaults.standard.bool(forKey: "isRegistered")
-    private let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+    private let isRegistered = AppManager.getIsRegistered()
+    private let isLoggedIn = AppManager.getIsLoggedIn()
     
     override func didLoad() {
         super.didLoad()
@@ -60,8 +60,10 @@ extension SplashScreenView {
         presenter.$isError
             .sink { [weak self] isError in
                 guard let self = self else { return }
-                let logo = UserDefaults.standard.string(forKey: "triluxLogo") ?? ""
-                let tagline = UserDefaults.standard.string(forKey: "tagLine") ?? ""
+                
+                let hospital = AppManager.getHospital()
+                let logo = hospital?.logo ?? ""
+                let tagline = hospital?.tagline ?? ""
                 let hospitalTheme = HospitalTheme(logo: logo, tagline: tagline)
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -71,7 +73,7 @@ extension SplashScreenView {
                         } else if !self.isLoggedIn {
                             presenter.navigateToLoginPage(data: hospitalTheme)
                         } else {
-                            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+                            AppManager.deleteObject("isLoggedIn")
                             presenter.navigateToLoginPage(data: hospitalTheme)
                         }
                     }

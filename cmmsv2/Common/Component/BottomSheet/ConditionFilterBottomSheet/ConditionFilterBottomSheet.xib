@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConditionFilterBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="applyButton" destination="SvP-nF-COg" id="hxs-qc-Us4"/>
+                <outlet property="assetCollectionView" destination="72M-vC-q8a" id="6ls-kp-xdZ"/>
+                <outlet property="assetConditionTitle" destination="HWB-v1-Wc1" id="0jS-nI-h7i"/>
+                <outlet property="bottomSheetView" destination="edN-jd-vQa" id="5Ud-p1-Fka"/>
+                <outlet property="dismissAreaView" destination="s3n-3a-8rI" id="ed9-3Y-cc0"/>
+                <outlet property="statusCalibrationCollectionView" destination="Y5x-Fp-CSK" id="QQ5-uk-O0g"/>
+                <outlet property="statusCalibrationTitle" destination="6hu-PA-tti" id="LxU-bM-EsO"/>
+                <outlet property="titlePageLabel" destination="goB-hk-Pua" id="yub-ct-Agl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3n-3a-8rI">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edN-jd-vQa" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="468" width="393" height="384"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="naS-68-XAo">
+                            <rect key="frame" x="16" y="34" width="361" height="316"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kondisi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goB-hk-Pua">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Tci-Go-qJ4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SWr-9H-i6B">
+                                    <rect key="frame" x="0.0" y="36" width="361" height="216"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="P1u-ee-OEk">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="130"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kondisi Aset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWB-v1-Wc1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="12"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
+                                                    <color key="textColor" name="placeholderColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="72M-vC-q8a" userLabel="Asset Collection View">
+                                                    <rect key="frame" x="0.0" y="16" width="361" height="114"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HHq-lO-tM9">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                </collectionView>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HlJ-Pg-7Ru">
+                                            <rect key="frame" x="0.0" y="146" width="361" height="70"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Kalibrasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-PA-tti">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="12"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
+                                                    <color key="textColor" name="placeholderColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Y5x-Fp-CSK" userLabel="Calibration Collection View">
+                                                    <rect key="frame" x="0.0" y="16" width="361" height="54"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DRl-nZ-ZHI">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="Dqm-Rm-fZI"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SvP-nF-COg" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="268" width="361" height="48"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="zMH-ln-6vv"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="naS-68-XAo" secondAttribute="bottom" constant="34" id="3cD-Wp-cAB"/>
+                        <constraint firstItem="naS-68-XAo" firstAttribute="leading" secondItem="edN-jd-vQa" secondAttribute="leading" constant="16" id="ZGr-Wp-oct"/>
+                        <constraint firstAttribute="trailing" secondItem="naS-68-XAo" secondAttribute="trailing" constant="16" id="fKf-Bk-1k4"/>
+                        <constraint firstItem="naS-68-XAo" firstAttribute="top" secondItem="edN-jd-vQa" secondAttribute="top" constant="34" id="q7z-Pz-7Mi"/>
+                        <constraint firstAttribute="height" constant="384" id="xPC-Zb-fbC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="s3n-3a-8rI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2YS-Xf-toc"/>
+                <constraint firstAttribute="bottom" secondItem="edN-jd-vQa" secondAttribute="bottom" id="4fj-20-FWs"/>
+                <constraint firstItem="s3n-3a-8rI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GRk-CT-nqd"/>
+                <constraint firstItem="edN-jd-vQa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cQh-Eg-rrZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s3n-3a-8rI" secondAttribute="bottom" id="drO-Fi-0Ih"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s3n-3a-8rI" secondAttribute="trailing" id="gug-T8-ZcO"/>
+                <constraint firstItem="edN-jd-vQa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tj6-hI-fNw"/>
+            </constraints>
+            <point key="canvasLocation" x="31.297709923664122" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="placeholderColor">
+            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

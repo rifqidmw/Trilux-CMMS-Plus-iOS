@@ -8,8 +8,17 @@
 import UIKit
 import Combine
 
+enum SortingBottomSheetType {
+    case plain
+    case cateogry
+}
+
 protocol SortingBottomSheetDelegate: AnyObject {
-    func didTapApplySort(_ sort: SortingEntity)
+    func didTapApplySort(_ sort: SortingEntity, type: SortingBottomSheetType)
+}
+
+@objc protocol SortingBottomSheetDelegateOptional: AnyObject {
+    @objc optional func didTapAllButton()
 }
 
 class SortingBottomSheet: BaseNonNavigationController {
@@ -17,11 +26,14 @@ class SortingBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var allCategoryButton: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var applyButton: GeneralButton!
     @IBOutlet weak var initialHeightBottomSheet: NSLayoutConstraint!
     
     weak var delegate: SortingBottomSheetDelegate?
+    weak var optionalDelegate: SortingBottomSheetDelegateOptional?
+    var type: SortingBottomSheetType? = .plain
     var selectedSortItem: SortingEntity?
     var selectedIndex: IndexPath?
     var data: [SortingEntity] = []
@@ -54,9 +66,16 @@ extension SortingBottomSheet {
         let layout = LeftAlignedCollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
         
-        if !data.isEmpty {
-            selectedIndex = IndexPath(row: 0, section: 0)
-            selectedSortItem = data[0]
+        switch self.type {
+        case .plain:
+            if !data.isEmpty {
+                selectedIndex = IndexPath(row: 0, section: 0)
+                selectedSortItem = data[0]
+            }
+        case .cateogry:
+            allCategoryButton.isHidden = false
+            titleLabel.text = "Kategori"
+        default: break
         }
     }
     
@@ -65,10 +84,22 @@ extension SortingBottomSheet {
             .sink { [weak self] _ in
                 guard let self,
                       let delegate = self.delegate,
-                      let selectedSortItem
+                      let selectedSortItem,
+                      let type
                 else { return }
                 self.dismissBottomSheet() {
-                    delegate.didTapApplySort(selectedSortItem)
+                    delegate.didTapApplySort(selectedSortItem, type: type)
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        allCategoryButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let delegate = self.optionalDelegate
+                else { return }
+                self.dismissBottomSheet() {
+                    delegate.didTapAllButton?()
                 }
             }
             .store(in: &anyCancellable)

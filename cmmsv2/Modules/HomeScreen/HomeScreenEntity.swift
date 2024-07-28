@@ -19,13 +19,23 @@ enum ListingType: Int {
 
 protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapAllCategory()
-    func didTapAsset()
-    func didTapComplaint()
-    func didTapWorkSheet()
-    func didTapHistory()
-    func didTapDelayCorrective()
-    func didTapLogBook()
-    func didTapPreventiveCalendar()
+    func didTapAssetCategory()
+    func didTapComplaintCategory()
+    func didTapWorkSheetCategory()
+    func didTapHistoryCategory()
+    func didTapDelayCorrectiveCategory()
+    func didTapLogBookCategory()
+    func didTapPreventiveCalendarCategory()
+    func didTapMaintenanceCategory()
+    func didTapWorkSheetApprovalCategory()
+    func didTapComplaintHistoryCategory()
+    func didTapMonitoringFunctionCategory()
+    func didTapPreventiveCategory()
+    func didTapAssetInfoCategory()
+    func didTapPrintRoomCategory()
+    func didTapMaintenanceInfoCategory()
+    func didTapMutationInfoCategory()
+    func didTapCalibrationCategory()
 }
 
 protocol AllCategoriesBottomSheetDelegate: AnyObject {
@@ -87,7 +97,7 @@ struct ExpiredData: Codable {
 struct CategoryModel: Identifiable {
     let id = UUID()
     let image: String
-    let title: String
+    let title: CategoryTitle
     var isUpdated: Bool = false
 }
 
@@ -98,26 +108,93 @@ struct MenuModel: Identifiable {
     let subTitle: String
 }
 
-let categoryData: [CategoryModel] = [
-    CategoryModel(image: "ic_sitemap", title: "Lihat Semua Kategori"),
-    CategoryModel(image: "ic_hospital", title: "Aset"),
-    CategoryModel(image: "ic_notes_with_pencil", title: "Pengaduan"),
-    CategoryModel(image: "ic_bill", title: "Lembar Kerja"),
-    CategoryModel(image: "ic_calendar_with_stopwatch", title: "Riwayat"),
-    CategoryModel(image: "ic_gear_clock", title: "Korektif Tertunda"),
-    CategoryModel(image: "ic_log_book", title: "Log Book"),
-    CategoryModel(image: "ic_calendar_with_wrench", title: "Kalender Preventif")
+enum CategoryTitle: String {
+    case all = "Lihat Semua Kategori"
+    case asset = "Aset"
+    case complaint = "Pengaduan"
+    case workSheet = "Lembar Kerja"
+    case history = "Riwayat"
+    case delayCorrective = "Korektif Tertunda"
+    case logBook = "Log Book"
+    case preventiveCalendar = "Kalender Preventif"
+    case maintenance = "Pemeliharaan"
+    case workSheetApproval = "Persetujuan Lembar Kerja"
+    case complaintHistory = "Riwayat Pengaduan"
+    case monitoringFunction = "Pemantauan Fungsi"
+    case preventive = "Preventif"
+    case assetInfo = "Info Aset"
+    case printRoom = "Print Label Ruangan"
+    case maintenanceInfo = "Info Pemeliharaan"
+    case mutationInfo = "Info Mutasi"
+    case calibration = "Kalibrasi"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Lihat Semua Kategori": self = .all
+        case "Aset": self = .asset
+        case "Pengaduan": self = .complaint
+        case "Lembar Kerja": self = .workSheet
+        case "Riwayat": self = .history
+        case "Korektif Tertunda": self = .delayCorrective
+        case "Log Book": self = .logBook
+        case "Kalender Preventif": self = .preventiveCalendar
+        case "Pemeliharaan": self = .maintenance
+        case "Persetujuan Lembar Kerja": self = .workSheetApproval
+        case "Riwayat Pengaduan": self = .complaintHistory
+        case "Pemantauan Fungsi": self = .monitoringFunction
+        case "Preventif": self = .preventive
+        case "Info Aset": self = .assetInfo
+        case "Print Label Ruangan": self = .printRoom
+        case "Info Pemeliharaan": self = .maintenanceInfo
+        case "Info Mutasi": self = .mutationInfo
+        case "Kalibrasi": self = .calibration
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+let categoryDataEngineer: [CategoryModel] = [
+    CategoryModel(image: "ic_sitemap", title: .all),
+    CategoryModel(image: "ic_hospital", title: .asset),
+    CategoryModel(image: "ic_notes_with_pencil", title: .complaint),
+    CategoryModel(image: "ic_bill", title: .workSheet),
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: .history),
+    CategoryModel(image: "ic_gear_clock", title: .delayCorrective),
+    CategoryModel(image: "ic_log_book", title: .logBook),
+    CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar)
 ]
 
-let allCategoryData: [CategoryModel] = [
-    CategoryModel(image: "ic_hospital", title: "Aset"),
-    CategoryModel(image: "ic_notes_with_pencil", title: "Pengaduan"),
-    CategoryModel(image: "ic_bill", title: "Lembar Kerja"),
-    CategoryModel(image: "ic_calendar_with_stopwatch", title: "Riwayat"),
-    CategoryModel(image: "ic_gear_clock", title: "Korektif Tertunda"),
-    CategoryModel(image: "ic_log_book", title: "Log Book"),
-    CategoryModel(image: "ic_calendar_with_wrench", title: "Kalender Preventif")
-    
+let categoryDataIPSRS: [CategoryModel] = [
+    CategoryModel(image: "ic_sitemap", title: .all),
+    CategoryModel(image: "ic_hospital", title: .asset),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: .maintenance),
+    CategoryModel(image: "ic_document_list_ellipse", title: .workSheetApproval),
+    CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: .complaintHistory),
+]
+
+let categoryBottomSheetEngineerData: [CategoryModel] = [
+    CategoryModel(image: "ic_hospital", title: .asset),
+    CategoryModel(image: "ic_notes_with_pencil", title: .complaint),
+    CategoryModel(image: "ic_bill", title: .workSheet),
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: .history),
+    CategoryModel(image: "ic_gear_clock", title: .delayCorrective),
+    CategoryModel(image: "ic_log_book", title: .logBook),
+    CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar)
+]
+
+let categoryBottomSheetIPSRSData: [CategoryModel] = [
+    CategoryModel(image: "ic_hospital", title: .asset),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: .maintenance),
+    CategoryModel(image: "ic_document_list_ellipse", title: .workSheetApproval),
+    CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: .complaintHistory)
 ]
 
 let assetData: [MenuModel] = [
@@ -133,11 +210,11 @@ let worksheetData: [MenuModel] = [
 ]
 
 let detailInformationData: [CategoryModel] = [
-    CategoryModel(image: "ic_bill", title: "Pemantauan Fungsi"),
-    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Preventif"),
-    CategoryModel(image: "ic_hospital", title: "Info Aset"),
-    CategoryModel(image: "ic_printer", title: "Print Label Ruangan"),
-    CategoryModel(image: "ic_bubble_chat_with_gear", title: "Info Pemeliharaan"),
-    CategoryModel(image: "ic_mutation", title: "Info Mutasi"),
-    CategoryModel(image: "ic_speedometer", title: "Kalibrasi")
+    CategoryModel(image: "ic_bill", title: .monitoringFunction),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: .preventive),
+    CategoryModel(image: "ic_hospital", title: .assetInfo),
+    CategoryModel(image: "ic_printer", title: .printRoom),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: .maintenanceInfo),
+    CategoryModel(image: "ic_mutation", title: .mutationInfo),
+    CategoryModel(image: "ic_speedometer", title: .calibration)
 ]

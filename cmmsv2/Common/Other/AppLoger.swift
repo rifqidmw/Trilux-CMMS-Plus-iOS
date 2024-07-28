@@ -9,6 +9,7 @@ import Foundation
 import os
 
 class AppLogger {
+    
     static let log = AppLogger()
     
     var isLogEnabled: Bool {
@@ -56,6 +57,7 @@ class AppLogger {
             }
         }
     }
+    
 }
 
 enum LogType: Int {

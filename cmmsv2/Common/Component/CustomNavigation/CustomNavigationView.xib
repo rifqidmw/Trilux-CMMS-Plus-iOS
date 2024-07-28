@@ -76,7 +76,7 @@
                                                 <constraint firstAttribute="height" constant="36" id="cMq-dX-eCA"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="119-gY-1oK">
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="119-gY-1oK">
                                             <rect key="frame" x="30" y="10" width="8" height="8"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81n-Ly-4iP">
@@ -199,7 +199,7 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="arrow.left" catalog="system" width="32" height="32"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="dummy_profile" width="44" height="44"/>
         <namedColor name="customDarkGrayColor">

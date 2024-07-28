@@ -12,6 +12,8 @@ class ChangePasswordPresenter: BasePresenter {
     private let interactor: ChangePasswordInteractor
     private let router = ChangePasswordRouter()
     
+    @Published public var userData: UserProfileEntity?
+    
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
@@ -41,29 +43,11 @@ extension ChangePasswordPresenter {
                 },
                 receiveValue: { user in
                     DispatchQueue.main.async {
-                        switch user.message {
-                        case .success:
-                            guard let logo = UserDefaults.standard.string(forKey: "triluxLogo"),
-                                  let tagline = UserDefaults.standard.string(forKey: "tagLine")
-                            else { return }
-                            let data = HospitalTheme(logo: logo, tagline: tagline)
-                            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
-                            UserDefaults.standard.removeObject(forKey: "valToken")
-                            self.navigateToLoginPage(navigation: navigation, data: data)
-                        default: break
-                        }
+                        self.userData = user
                     }
                 }
             )
             .store(in: &anyCancellable)
-    }
-    
-}
-
-extension ChangePasswordPresenter {
-    
-    func navigateToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
-        router.navigateToLoginPage(navigation: navigation, data: data)
     }
     
 }

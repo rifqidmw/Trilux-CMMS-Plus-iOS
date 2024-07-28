@@ -29,7 +29,7 @@ extension CategoryCardCVC {
     
     func setupCell(data: CategoryModel) {
         categoryImageView.image = UIImage(named: data.image)
-        categoryLabel.text = data.title
+        categoryLabel.text = data.title.getStringValue()
         badgeView.isHidden = !data.isUpdated
         
         categoryImageContainerView.makeCornerRadius(12)

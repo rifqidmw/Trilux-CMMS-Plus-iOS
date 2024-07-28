@@ -294,15 +294,17 @@ extension BaseViewController {
     }
     
     func logout() {
-        guard let logo = UserDefaults.standard.string(forKey: "triluxLogo"),
-              let tagline = UserDefaults.standard.string(forKey: "tagLine") else { return }
+        guard let hospital = AppManager.getHospital(),
+              let logo = hospital.logo,
+              let tagline = hospital.tagline
+        else { return }
         let data = HospitalTheme(logo: logo, tagline: tagline)
         
         DispatchQueue.main.async {
             let vc = LoginRouter().showView()
             vc.data = data
-            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
-            UserDefaults.standard.removeObject(forKey: "valToken")
+            AppManager.deleteObject("isLoggedIn")
+            AppManager.deleteObject("valToken")
             
             let rootViewController = UINavigationController(rootViewController: vc)
             UIApplication.shared.setRootViewController(rootViewController)

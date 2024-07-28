@@ -18,14 +18,3 @@ class RegistrationHospitalRouter: BaseRouter {
     }
     
 }
-
-extension RegistrationHospitalRouter {
-    
-    func goToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
-        let vc = LoginRouter().showView()
-        vc.data = data
-        let rootViewController = UINavigationController(rootViewController: vc)
-        UIApplication.shared.setRootViewController(rootViewController)
-    }
-    
-}

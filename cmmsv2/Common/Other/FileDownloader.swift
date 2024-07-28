@@ -8,6 +8,7 @@
 import UIKit
 
 func openPDF(with id: String, onFailure: @escaping (String) -> Void) {
+    
     guard !id.isEmpty else {
         onFailure("Invalid ID or base URL.")
         return
@@ -25,4 +26,5 @@ func openPDF(with id: String, onFailure: @escaping (String) -> Void) {
             onFailure("Failed to open the URL.")
         }
     }
+    
 }

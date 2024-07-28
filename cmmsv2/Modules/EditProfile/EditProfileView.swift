@@ -90,13 +90,14 @@ extension EditProfileView {
                       let name = nameTextField.textField.text,
                       let job = jobTextField.textField.text,
                       let workUnit = workUnitTextField.textField.text,
-                      var phoneNumber = phoneNumberTextField.textField.text
+                      var phoneNumber = phoneNumberTextField.textField.text,
+                      let user = AppManager.getUser()
                 else { return }
                 if phoneNumber.hasPrefix("+62") {
                     phoneNumber = String(phoneNumber.dropFirst(3))
                 }
                 
-                let imageId = UserDefaults.standard.integer(forKey: "valImageId")
+                let imageId = Int(user.valImageId ?? "")
                 let fullPhoneNumber = "+62" + phoneNumber
                 
                 if name.isEmpty || job.isEmpty || workUnit.isEmpty || phoneNumber.isEmpty {
@@ -106,7 +107,7 @@ extension EditProfileView {
                         name: name,
                         position: job,
                         workUnit: workUnit,
-                        imageId: imageId,
+                        imageId: imageId ?? 0,
                         phoneNumber: fullPhoneNumber,
                         navigation: navigation)
                 }

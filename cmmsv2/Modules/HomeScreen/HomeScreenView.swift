@@ -40,8 +40,9 @@ extension HomeScreenView {
     private func setupView() {
         setupNavigationView()
         searchButton.configure(type: .searchbutton)
-        scanningButton.configure(title: "Scanning Alat", type: .withIcon, icon: "ic_scan")
+        scanningButton.configure(title: "Scan Alat", type: .withIcon, icon: "ic_scan")
         categoryView.delegate = self
+        categoryView.updateDataForRole()
     }
     
     private func fetchInitData() {
@@ -65,15 +66,19 @@ extension HomeScreenView {
     }
     
     private func setupNavigationView() {
-        guard let name = UserDefaults.standard.string(forKey: "txtName"),
-              let hospitalName = UserDefaults.standard.string(forKey: "hospitalName"),
-              let image = UserDefaults.standard.string(forKey: "valImage")
+        guard let hospital = AppManager.getHospital(),
+              let user = AppManager.getUser(),
+              let name = user.txtName,
+              let hospitalName = hospital.name,
+              let image = user.valImage,
+              let position = user.valPosition
         else { return }
-        
-        navigationView.configure(username: name, headline: hospitalName, image: image, type: .homeToolbar)
+        RoleManager.shared.updateRole(with: position)
+        self.navigationView.configure(username: name, headline: hospitalName, image: image, type: .homeToolbar)
     }
     
     private func setupAction() {
+        guard let presenter else { return }
         scanningButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
@@ -82,7 +87,6 @@ extension HomeScreenView {
                 else {
                     return
                 }
-                
                 presenter.navigateToScan(navigation: navigation)
             }
             .store(in: &anyCancellable)
@@ -90,10 +94,8 @@ extension HomeScreenView {
         navigationView.profileImageView.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
                 presenter.navigateToUserProfile(navigation: navigation)
             }
             .store(in: &anyCancellable)
@@ -101,11 +103,18 @@ extension HomeScreenView {
         navigationView.notificationView.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
-                
                 presenter.navigateToNotificationList(navigation: navigation)
+            }
+            .store(in: &anyCancellable)
+        
+        searchButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let navigation = self.navigationController
+                else { return }
+                presenter.navigateToAssetFilter(from: navigation)
             }
             .store(in: &anyCancellable)
     }

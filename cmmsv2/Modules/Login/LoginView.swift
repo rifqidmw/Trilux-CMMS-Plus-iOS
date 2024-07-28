@@ -37,6 +37,7 @@ extension LoginView {
     private func setupBody() {
         setupView()
         setupAction()
+        bindingData()
         showFailMessage()
     }
     
@@ -56,6 +57,28 @@ extension LoginView {
             .sink { [weak self] isLoading in
                 guard let self else { return }
                 isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func bindingData() {
+        guard let presenter else { return }
+        presenter.$userData
+            .sink { [weak self] data in
+                guard let self,
+                      let data = data,
+                      let user = data.data,
+                      let userProfile = user.user,
+                      let navigation = self.navigationController
+                else { return }
+                switch data.message {
+                case .success:
+                    AppManager.setIsLoggedIn(true)
+                    AppManager.setUser(userProfile)
+                    AppManager.setUserToken(userProfile.valToken)
+                    presenter.navigateToHomeScreen(navigation: navigation)
+                default: break
+                }
             }
             .store(in: &anyCancellable)
     }

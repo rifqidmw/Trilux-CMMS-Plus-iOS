@@ -13,13 +13,14 @@ extension UserProfileView: LogoutPopUpBottomSheetDelegate {
     
     func didTapLogout() {
         guard let presenter,
-              let logo = UserDefaults.standard.string(forKey: "triluxLogo"),
-              let tagline = UserDefaults.standard.string(forKey: "tagLine"),
+              let hospital = AppManager.getHospital(),
+              let logo = hospital.logo,
+              let tagline = hospital.tagline,
               let navigation = self.navigationController
         else { return }
         let data = HospitalTheme(logo: logo, tagline: tagline)
-        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
-        UserDefaults.standard.removeObject(forKey: "valToken")
+        AppManager.deleteObject("isLoggedIn")
+        AppManager.deleteObject("valToken")
         presenter.navigateToLoginPage(navigation: navigation, data: data)
     }
     
@@ -153,10 +154,11 @@ extension UserProfileView: UIImagePickerControllerDelegate, UINavigationControll
                               let profile = user.media,
                               let idString = profile.id,
                               let imageId = Int(idString),
-                              let name = UserDefaults.standard.string(forKey: "txtName"),
-                              let position = UserDefaults.standard.string(forKey: "txtJabatan"),
-                              let workUnit = UserDefaults.standard.string(forKey: "txtUnitKerja"),
-                              let phoneNumber = UserDefaults.standard.string(forKey: "txtTelepon")
+                              let userStored = AppManager.getUser(),
+                              let name = userStored.txtName,
+                              let position = userStored.txtJabatan,
+                              let workUnit = userStored.txtUnitKerja,
+                              let phoneNumber = userStored.txtTelepon
                         else { return }
                         
                         presenter.updateProfile(name: name, position: position, workUnit: workUnit, imageId: imageId, phoneNumber: phoneNumber)

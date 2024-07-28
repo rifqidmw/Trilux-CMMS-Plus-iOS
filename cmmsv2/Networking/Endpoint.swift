@@ -23,13 +23,17 @@ enum Endpoint {
         passwordConfirm: String,
         password: String)
     case assetList(
-        serial: String? = nil,
-        locationId: String? = nil,
-        limit: Int? = nil,
-        page: Int? = nil,
         search: String? = nil,
+        condition: String? = nil,
+        limit: Int? = nil,
         type: String? = nil,
-        sstMedic: String? = nil)
+        sttKalibrasi: String? = nil,
+        category: String? = nil,
+        sort: String? = nil,
+        sttQr: String? = nil,
+        idInstallation: String? = nil,
+        idRoom: String? = nil,
+        page: Int? = nil)
     case infoExpired
     case detailAssetEquipment(id: String)
     case getNotification(page: Int? = nil, limit: Int? = nil)
@@ -121,21 +125,29 @@ extension Endpoint {
         case .changePassword:
             return "profile/change_password"
         case .assetList(
-            let serial,
-            let locationId,
-            let limit,
-            let page,
-            let search,
-            let type,
-            let sstMedic):
+            search: let search,
+            condition: let condition,
+            limit: let limit,
+            type: let type,
+            sttKalibrasi: let sttKalibrasi,
+            category: let category,
+            sort: let sort,
+            sttQr: let sttQr,
+            idInstallation: let idIntallation,
+            idRoom: let idRoom,
+            page: let page):
             return generateEquipmentListURL(
-                serial: serial,
-                locationID: locationId,
-                limit: limit,
-                page: page,
                 search: search,
+                condition: condition,
+                limit: limit,
                 type: type,
-                sttMedic: sstMedic)
+                sttKalibrasi: sttKalibrasi,
+                category: category,
+                sort: sort,
+                sttQr: sttQr,
+                idInstallation: idIntallation,
+                idRoom: idRoom,
+                page: page)
         case .infoExpired:
             return "info/expired"
         case .detailAssetEquipment(let id):
@@ -495,24 +507,32 @@ extension Endpoint {
 extension Endpoint {
     
     private func generateEquipmentListURL(
-        serial: String? = nil,
-        locationID: String? = nil,
-        limit: Int? = nil,
-        page: Int? = nil,
         search: String? = nil,
+        condition: String? = nil,
+        limit: Int? = nil,
         type: String? = nil,
-        sttMedic: String? = nil) -> String {
+        sttKalibrasi: String? = nil,
+        category: String? = nil,
+        sort: String? = nil,
+        sttQr: String? = nil,
+        idInstallation: String? = nil,
+        idRoom: String? = nil,
+        page: Int? = nil) -> String {
             let queryString = [
-                serial.map { "serial=\($0)" },
-                locationID.map { "location_id=\($0)" },
                 search.map { "search=\($0)" },
-                type.map { "jenis=\($0)" },
-                sttMedic.map { "stt_medik=\($0)" },
+                condition.map { "kondisi=\($0)" },
                 limit.map { "limit=\($0)" },
-                page.map { "page=\($0)" }
+                type.map { "jenis=\($0)" },
+                sttKalibrasi.map { "stt_kalibrasi=\($0)" },
+                category.map { "kategori=\($0)" },
+                sort.map { "sort=\($0)" },
+                sttQr.map { "stt_qr=\($0)" },
+                idInstallation.map { "id_instalasi=\($0)" },
+                idRoom.map { "id_room=\($0)" },
+                page.map { "page=\($0)" },
             ].compactMap { $0 }.joined(separator: "&")
             
-            let url = "equipments" + (queryString.isEmpty ? "" : "?\(queryString)")
+            let url = "equipments/list" + (queryString.isEmpty ? "" : "?\(queryString)")
             
             return url.replacingOccurrences(of: " ", with: "%20")
         }

@@ -20,6 +20,7 @@ class WorkSheetBottomSheet: BaseNonNavigationController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.showBottomSheet()
     }
     
 }
@@ -80,13 +81,21 @@ extension WorkSheetBottomSheet: UITableViewDataSource, UITableViewDelegate {
         guard let delegate else { return }
         switch indexPath.row {
         case 0:
-            delegate.didTapWorkSheetFunctionMonitoring()
+            self.dismissBottomSheet() {
+                delegate.didTapWorkSheetFunctionMonitoring()
+            }
         case 1:
-            delegate.didTapWorkSheetCorrective()
+            self.dismissBottomSheet() {
+                delegate.didTapWorkSheetCorrective()
+            }
         case 2:
-            delegate.didTapMaintenancePreventive()
+            self.dismissBottomSheet() {
+                delegate.didTapMaintenancePreventive()
+            }
         case 3:
-            delegate.didTapCalibration()
+            self.dismissBottomSheet() {
+                delegate.didTapCalibration()
+            }
         default: break
         }
     }

@@ -49,9 +49,7 @@ extension UserProfilePresenter {
                         guard let userData = user.data,
                               let userProfile = userData.user
                         else { return }
-                        UserDefaults.standard.setValue(userProfile.txtName, forKey: "txtName")
-                        UserDefaults.standard.setValue(userProfile.valImage, forKey: "valImage")
-                        UserDefaults.standard.setValue(userProfile.valImageId, forKey: "valImageId")
+                        AppManager.setUser(userProfile)
                         self.userProfile = userProfile
                     }
                 }
@@ -97,10 +95,6 @@ extension UserProfilePresenter {
     
     func navigateToEditProfile(navigation: UINavigationController, data: User) {
         router.goToEditProfile(navigation: navigation, data: data)
-    }
-    
-    func navigateToLoginPage(navigation: UINavigationController, data: HospitalTheme) {
-        router.navigateToLoginPage(navigation: navigation, data: data)
     }
     
     func showLogoutPopUp(navigation: UINavigationController, delegate: LogoutPopUpBottomSheetDelegate) {
