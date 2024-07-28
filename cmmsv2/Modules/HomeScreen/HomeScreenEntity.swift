@@ -179,7 +179,7 @@ let categoryDataIPSRS: [CategoryModel] = [
     CategoryModel(image: "ic_calendar_with_stopwatch", title: .complaintHistory),
 ]
 
-let allCategoryData: [CategoryModel] = [
+let categoryBottomSheetEngineerData: [CategoryModel] = [
     CategoryModel(image: "ic_hospital", title: .asset),
     CategoryModel(image: "ic_notes_with_pencil", title: .complaint),
     CategoryModel(image: "ic_bill", title: .workSheet),
@@ -187,7 +187,14 @@ let allCategoryData: [CategoryModel] = [
     CategoryModel(image: "ic_gear_clock", title: .delayCorrective),
     CategoryModel(image: "ic_log_book", title: .logBook),
     CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar)
-    
+]
+
+let categoryBottomSheetIPSRSData: [CategoryModel] = [
+    CategoryModel(image: "ic_hospital", title: .asset),
+    CategoryModel(image: "ic_bubble_chat_with_gear", title: .maintenance),
+    CategoryModel(image: "ic_document_list_ellipse", title: .workSheetApproval),
+    CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
+    CategoryModel(image: "ic_calendar_with_stopwatch", title: .complaintHistory)
 ]
 
 let assetData: [MenuModel] = [

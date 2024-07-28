@@ -17,7 +17,7 @@ class AllCategoriesBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var initialHeightCollectionView: NSLayoutConstraint!
     
     weak var delegate: AllCategoriesBottomSheetDelegate?
-    var data: [CategoryModel] = allCategoryData
+    var data: [CategoryModel] = []
     
     override func didLoad() {
         super.didLoad()
@@ -58,6 +58,18 @@ extension AllCategoriesBottomSheet {
             self.dismissBottomSheet()
         }
         .store(in: &anyCancellable)
+    }
+    
+    func updateDataForRole() {
+        switch RoleManager.shared.currentUserRole {
+        case .engineer:
+            data = categoryBottomSheetEngineerData
+        case .ipsrs:
+            data = categoryBottomSheetIPSRSData
+        default:
+            data = []
+        }
+        collectionView.reloadData()
     }
     
     private func calculateTotalHeight() {
