@@ -29,6 +29,7 @@ class InstallationBottomSheet: BaseNonNavigationController {
         super.didLoad()
         self.setupBody()
         self.showBottomSheet()
+        self.configureKeyboard()
         self.filteredData = self.data
     }
     

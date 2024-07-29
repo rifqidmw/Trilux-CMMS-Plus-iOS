@@ -114,6 +114,7 @@ class WorkSheetDetailView: BaseViewController {
         super.didLoad()
         self.setupBody()
         self.validateUser()
+        self.configureKeyboard()
     }
     
 }
@@ -137,10 +138,18 @@ extension WorkSheetDetailView {
     
     private func bindingData() {
         guard let presenter else { return }
+        presenter.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
+            }
+            .store(in: &anyCancellable)
+        
         presenter.$dataLK
             .sink { [weak self] data in
                 guard let self else { return }
                 self.lkData = data
+                self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
         
@@ -152,7 +161,7 @@ extension WorkSheetDetailView {
                       let reff = data.reff,
                       let activity = presenter.activity
                 else { return }
-                self.hideAnimationSkeleton()
+                self.hideLoadingPopup()
                 self.configureRecommendationEvaluation(detail.lkInfo ?? "-", activity: activity)
                 self.configureAssetSection(detail, reff: reff)
                 self.configurePreparationSection(detail.persiapan ?? [], activity: activity)
@@ -170,6 +179,7 @@ extension WorkSheetDetailView {
         presenter.$calibratorList
             .sink { [weak self] data in
                 guard let self else { return }
+                self.hideLoadingPopup()
                 self.calibrators = data
             }
             .store(in: &anyCancellable)
@@ -180,11 +190,10 @@ extension WorkSheetDetailView {
                       let data,
                       let delegate = self.delegate
                 else { return }
+                self.hideLoadingPopup()
                 if data.message == "Success" {
-                    self.hideLoadingPopup()
                     delegate.didSaveWorkSheet()
                 } else {
-                    self.hideLoadingPopup()
                     self.showAlert(title: "Terjadi Kesalahan", message: data.message)
                 }
             }
@@ -310,9 +319,6 @@ extension WorkSheetDetailView {
         self.cancelButton.configure(title: "Batal", backgroundColor: UIColor.customIndicatorColor3, titleColor: UIColor.customIndicatorColor4)
         self.saveButton.configure(title: "Selesai")
         self.mediaSectionView.delegate = self
-        DispatchQueue.main.async {
-            self.showAnimationSkeleton()
-        }
     }
     
     private func configureTextField() {
@@ -446,37 +452,6 @@ extension WorkSheetDetailView {
 }
 
 extension WorkSheetDetailView {
-    
-    private func showAnimationSkeleton() {
-        [self.assetSectionView.customHeader.iconImageView,
-         self.preparationSectionView,
-         self.calibrationMeasurementSectionView,
-         self.physicalMonitoringSectionView,
-         self.preventiveSectionView,
-         self.electricSectionView,
-         self.taskSectionView,
-         self.calibratorView.valueLabel,
-         self.calibrationStatusView.valueLabel,
-         self.recommendationLabel].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
-        }
-    }
-    
-    private func hideAnimationSkeleton() {
-        [self.assetSectionView.customHeader.iconImageView,
-         self.preparationSectionView,
-         self.calibrationMeasurementSectionView,
-         self.physicalMonitoringSectionView,
-         self.preventiveSectionView,
-         self.electricSectionView,
-         self.taskSectionView,
-         self.calibratorView.valueLabel,
-         self.calibrationStatusView.valueLabel,
-         self.recommendationLabel].forEach {
-            $0.hideSkeleton()
-        }
-    }
     
     private func configureSharedComponent() {
         guard let presenter else { return }

@@ -12,6 +12,8 @@ import XLPagerTabStrip
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
+    var isEngineer = false
+    var isIPSRS = false
     var isSwipeBackAble = true
     var anyCancellable = Set<AnyCancellable>()
     var pagerTabStripViewController: ButtonBarPagerTabStripViewController?
@@ -96,6 +98,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationSetup()
         configureKeyboard()
         listenNotification()
+        setupUserRole()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -249,6 +252,20 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
                     }
                 }
             }
+        }
+    }
+    
+    func setupUserRole() {
+        let role = RoleManager.shared.currentUserRole
+        switch role {
+        case .ipsrs:
+            self.isIPSRS = true
+            self.isEngineer = false
+        case .engineer:
+            self.isIPSRS = false
+            self.isEngineer = true
+        case .unknown:
+            break
         }
     }
     

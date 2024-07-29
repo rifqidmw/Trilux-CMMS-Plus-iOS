@@ -301,6 +301,18 @@
 		CE7C3BD72C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C3BD22C0F6DEA00B78740 /* CustomLoadingView.swift */; };
 		CE7C3BD92C0F712E00B78740 /* lottie_spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7C3BD82C0F712E00B78740 /* lottie_spinner.json */; };
 		CE7C3BDA2C0F712E00B78740 /* lottie_spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7C3BD82C0F712E00B78740 /* lottie_spinner.json */; };
+		CE7D4E842C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E7E2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift */; };
+		CE7D4E852C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E7F2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift */; };
+		CE7D4E862C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E802C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift */; };
+		CE7D4E872C581D4D001F8D67 /* WorkSheetApprovalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E812C581D4D001F8D67 /* WorkSheetApprovalListView.swift */; };
+		CE7D4E882C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E832C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift */; };
+		CE7D4E892C581D4D001F8D67 /* WorkSheetApprovalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D4E822C581D4D001F8D67 /* WorkSheetApprovalListView.xib */; };
+		CE7D4E8A2C581D4D001F8D67 /* WorkSheetApprovalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D4E822C581D4D001F8D67 /* WorkSheetApprovalListView.xib */; };
+		CE7D4E8B2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E7E2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift */; };
+		CE7D4E8C2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E7F2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift */; };
+		CE7D4E8D2C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E802C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift */; };
+		CE7D4E8E2C581D4D001F8D67 /* WorkSheetApprovalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E812C581D4D001F8D67 /* WorkSheetApprovalListView.swift */; };
+		CE7D4E8F2C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4E832C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift */; };
 		CE7F35B82BDE51EC00EA5536 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F35B72BDE51EC00EA5536 /* AppManager.swift */; };
 		CE7F35B92BDE51EC00EA5536 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F35B72BDE51EC00EA5536 /* AppManager.swift */; };
 		CE82087F2B82391F00CD4242 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */; };
@@ -497,6 +509,10 @@
 		CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
 		CEBEF7512C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */; };
 		CEBEF7522C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */; };
+		CEBF70C02C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF70BE2C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift */; };
+		CEBF70C12C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBF70BF2C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib */; };
+		CEBF70C22C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF70BE2C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift */; };
+		CEBF70C32C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBF70BF2C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib */; };
 		CEC1B05B2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05C2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */; };
 		CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */; };
@@ -1068,6 +1084,12 @@
 		CE7C3BD22C0F6DEA00B78740 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
 		CE7C3BD32C0F6DEA00B78740 /* CustomLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingView.xib; sourceTree = "<group>"; };
 		CE7C3BD82C0F712E00B78740 /* lottie_spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie_spinner.json; sourceTree = "<group>"; };
+		CE7D4E7E2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetApprovalListPresenter.swift; sourceTree = "<group>"; };
+		CE7D4E7F2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetApprovalListRouter.swift; sourceTree = "<group>"; };
+		CE7D4E802C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetApprovalListInteractor.swift; sourceTree = "<group>"; };
+		CE7D4E812C581D4D001F8D67 /* WorkSheetApprovalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetApprovalListView.swift; sourceTree = "<group>"; };
+		CE7D4E822C581D4D001F8D67 /* WorkSheetApprovalListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetApprovalListView.xib; sourceTree = "<group>"; };
+		CE7D4E832C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetApprovalListEntity.swift; sourceTree = "<group>"; };
 		CE7F35B72BDE51EC00EA5536 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		CE8208792B82391F00CD4242 /* NotificationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListPresenter.swift; sourceTree = "<group>"; };
 		CE82087A2B82391F00CD4242 /* NotificationListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListRouter.swift; sourceTree = "<group>"; };
@@ -1165,6 +1187,8 @@
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 		CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Ext.swift"; sourceTree = "<group>"; };
 		CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationListView+Delegate.swift"; sourceTree = "<group>"; };
+		CEBF70BE2C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetApprovalTVC.swift; sourceTree = "<group>"; };
+		CEBF70BF2C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetApprovalTVC.xib; sourceTree = "<group>"; };
 		CEC1B0552BA1E39700DF6A4F /* HistoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListPresenter.swift; sourceTree = "<group>"; };
 		CEC1B0562BA1E39700DF6A4F /* HistoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListRouter.swift; sourceTree = "<group>"; };
 		CEC1B0572BA1E39700DF6A4F /* HistoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListInteractor.swift; sourceTree = "<group>"; };
@@ -1967,6 +1991,20 @@
 			path = CustomLoading;
 			sourceTree = "<group>";
 		};
+		CE7D4E7D2C581D08001F8D67 /* WorkSheetApprovalList */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF70BD2C5836B100DB40A0 /* Cell */,
+				CE7D4E7E2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift */,
+				CE7D4E7F2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift */,
+				CE7D4E802C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift */,
+				CE7D4E812C581D4D001F8D67 /* WorkSheetApprovalListView.swift */,
+				CE7D4E822C581D4D001F8D67 /* WorkSheetApprovalListView.xib */,
+				CE7D4E832C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift */,
+			);
+			path = WorkSheetApprovalList;
+			sourceTree = "<group>";
+		};
 		CE8208782B82390100CD4242 /* NotificationList */ = {
 			isa = PBXGroup;
 			children = (
@@ -2312,6 +2350,15 @@
 			path = PreventiveCalendarList;
 			sourceTree = "<group>";
 		};
+		CEBF70BD2C5836B100DB40A0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF70BE2C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift */,
+				CEBF70BF2C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CEC1B0542BA1E37600DF6A4F /* HistoryList */ = {
 			isa = PBXGroup;
 			children = (
@@ -2562,6 +2609,7 @@
 				CEEED8652B7A86A800672952 /* Scan */,
 				CEF72EEE2B4681D200815E4C /* SplashScreen */,
 				CE9E7D642B529D9400240A7D /* UserProfile */,
+				CE7D4E7D2C581D08001F8D67 /* WorkSheetApprovalList */,
 				CEFD6D172BF2711E00A8BA04 /* WorkSheetCorrectiveDetail */,
 				CE0B3AE22B9B865A00A55B81 /* WorkSheetCorrectiveList */,
 				CEE79EB62B70ED7C0063D844 /* WorkSheetDetail */,
@@ -3251,6 +3299,7 @@
 				CE7C3BD92C0F712E00B78740 /* lottie_spinner.json in Resources */,
 				CE916A882C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
+				CEBF70C12C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */,
 				CEE780BA2C0C558B001BA9C2 /* ElectricSectionView.xib in Resources */,
 				CE4012302B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE2329F52C42EC010087450A /* MediaSectionView.xib in Resources */,
@@ -3282,6 +3331,7 @@
 				CECC8F6B2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */,
 				CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CEF4E0D52C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
+				CE7D4E892C581D4D001F8D67 /* WorkSheetApprovalListView.xib in Resources */,
 				CE2FA5252B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
 				CECB3DDF2B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
@@ -3407,6 +3457,7 @@
 				CE7C3BDA2C0F712E00B78740 /* lottie_spinner.json in Resources */,
 				CE916A8A2C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
+				CEBF70C32C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */,
 				CEE780BC2C0C558B001BA9C2 /* ElectricSectionView.xib in Resources */,
 				CE4012312B5D7E7C00517F7C /* FullScreenPictureView.xib in Resources */,
 				CE2329F72C42EC010087450A /* MediaSectionView.xib in Resources */,
@@ -3438,6 +3489,7 @@
 				CECC8F6D2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */,
 				CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CEF4E0D72C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
+				CE7D4E8A2C581D4D001F8D67 /* WorkSheetApprovalListView.xib in Resources */,
 				CE2FA5262B5CC04200756586 /* ImageCardSectionView.xib in Resources */,
 				CECB3DE02B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
@@ -3626,6 +3678,7 @@
 				CE7064F82BFF57D500BB5BA7 /* AccordionCell.swift in Sources */,
 				CE7F35B82BDE51EC00EA5536 /* AppManager.swift in Sources */,
 				CE4012452B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
+				CEBF70C02C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift in Sources */,
 				CE0EC4AF2B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012432B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
 				CE684AE12C51833600F15BDE /* AssetFilterPresenter.swift in Sources */,
@@ -3642,6 +3695,11 @@
 				CEE8CB8D2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */,
 				CE2329F42C42EC010087450A /* MediaSectionView.swift in Sources */,
 				CEE67D272B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift in Sources */,
+				CE7D4E842C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift in Sources */,
+				CE7D4E852C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift in Sources */,
+				CE7D4E862C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift in Sources */,
+				CE7D4E872C581D4D001F8D67 /* WorkSheetApprovalListView.swift in Sources */,
+				CE7D4E882C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift in Sources */,
 				CECB3E102B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CE31086F2BE2659F00660275 /* AdditionalDocumentsView.swift in Sources */,
 				CE2FA5172B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailInteractor.swift in Sources */,
@@ -3936,6 +3994,7 @@
 				CE7064FA2BFF57D500BB5BA7 /* AccordionCell.swift in Sources */,
 				CE7F35B92BDE51EC00EA5536 /* AppManager.swift in Sources */,
 				CE4012462B5D924F00517F7C /* WorkSheetOnsitePreventiveListRouter.swift in Sources */,
+				CEBF70C22C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift in Sources */,
 				CE0EC4B02B79092E00888BE8 /* ActionBarView.swift in Sources */,
 				CE4012442B5D924F00517F7C /* WorkSheetOnsitePreventiveListPresenter.swift in Sources */,
 				CE684AE72C51833600F15BDE /* AssetFilterPresenter.swift in Sources */,
@@ -3952,6 +4011,11 @@
 				CEE8CB8E2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */,
 				CE2329F62C42EC010087450A /* MediaSectionView.swift in Sources */,
 				CEE67D282B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift in Sources */,
+				CE7D4E8B2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift in Sources */,
+				CE7D4E8C2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift in Sources */,
+				CE7D4E8D2C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift in Sources */,
+				CE7D4E8E2C581D4D001F8D67 /* WorkSheetApprovalListView.swift in Sources */,
+				CE7D4E8F2C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift in Sources */,
 				CECB3E112B45E273004A260D /* CGSize+Ext.swift in Sources */,
 				CE3108702BE2659F00660275 /* AdditionalDocumentsView.swift in Sources */,
 				CE2FA5182B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailInteractor.swift in Sources */,
