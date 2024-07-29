@@ -113,4 +113,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToWorkSheetApproval(from navigation: UINavigationController) {
+        let vc = WorkSheetApprovalListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

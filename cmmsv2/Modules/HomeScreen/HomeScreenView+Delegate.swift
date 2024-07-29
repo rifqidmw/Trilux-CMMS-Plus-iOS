@@ -70,7 +70,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapWorkSheetApprovalCategory() {
-        self.showAlert(title: "Persetujuan Lembar Kerja")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToWorkSheetApproval(from: navigation)
     }
     
     func didTapComplaintHistoryCategory() {

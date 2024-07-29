@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import IQKeyboardManagerSwift
 
 class BaseNonNavigationController: UIViewController {
     
@@ -22,6 +23,7 @@ class BaseNonNavigationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         didLoad()
+        configureKeyboard()
         AppLogger.log(String(describing: self), logType: .kNavigation)
     }
     
@@ -63,6 +65,15 @@ class BaseNonNavigationController: UIViewController {
                 completion?()
             }
         }
+    }
+    
+    func configureKeyboard() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "DONE"
+        IQKeyboardManager.shared.toolbarTintColor = .customDarkGrayColor
     }
     
 }

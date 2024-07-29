@@ -33,6 +33,7 @@ class AssetFilterView: BaseViewController {
         super.viewDidLoad()
         self.setupBody()
         self.validateUser()
+        self.configureKeyboard()
     }
     
 }

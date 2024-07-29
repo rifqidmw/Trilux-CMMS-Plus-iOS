@@ -107,6 +107,11 @@ enum Endpoint {
     case searchSparePart(key: String? = nil)
     case saveWorkSheet(data: LKStartRequest)
     case getInstallation
+    case approvalList(
+        woType: String?,
+        woStatus: String?,
+        limit: Int?,
+        page: Int?)
 }
 
 // MARK: - PATH URL
@@ -242,6 +247,16 @@ extension Endpoint {
             return "lk/save_lk"
         case .getInstallation:
             return "penerimaan/get_installasi"
+        case .approvalList(
+            woType: let woType,
+            woStatus: let woStatus,
+            limit: let limit,
+            page: let page):
+            return generateApprovalURL(
+                woType: woType,
+                woStatus: woStatus,
+                limit: limit,
+                page: page)
         }
     }
     
@@ -517,25 +532,26 @@ extension Endpoint {
         sttQr: String? = nil,
         idInstallation: String? = nil,
         idRoom: String? = nil,
-        page: Int? = nil) -> String {
-            let queryString = [
-                search.map { "search=\($0)" },
-                condition.map { "kondisi=\($0)" },
-                limit.map { "limit=\($0)" },
-                type.map { "jenis=\($0)" },
-                sttKalibrasi.map { "stt_kalibrasi=\($0)" },
-                category.map { "kategori=\($0)" },
-                sort.map { "sort=\($0)" },
-                sttQr.map { "stt_qr=\($0)" },
-                idInstallation.map { "id_instalasi=\($0)" },
-                idRoom.map { "id_room=\($0)" },
-                page.map { "page=\($0)" },
-            ].compactMap { $0 }.joined(separator: "&")
-            
-            let url = "equipments/list" + (queryString.isEmpty ? "" : "?\(queryString)")
-            
-            return url.replacingOccurrences(of: " ", with: "%20")
-        }
+        page: Int? = nil
+    ) -> String {
+        let queryString = [
+            search.map { "search=\($0)" },
+            condition.map { "kondisi=\($0)" },
+            limit.map { "limit=\($0)" },
+            type.map { "jenis=\($0)" },
+            sttKalibrasi.map { "stt_kalibrasi=\($0)" },
+            category.map { "kategori=\($0)" },
+            sort.map { "sort=\($0)" },
+            sttQr.map { "stt_qr=\($0)" },
+            idInstallation.map { "id_instalasi=\($0)" },
+            idRoom.map { "id_room=\($0)" },
+            page.map { "page=\($0)" },
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "equipments/list" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: " ", with: "%20")
+    }
     
     private func generateNotificationListURL(page: Int? = nil, limit: Int? = nil) -> String {
         let queryString = [
@@ -554,20 +570,21 @@ extension Endpoint {
         equipmentId: String? = nil,
         status: String? = nil,
         dateFilter: String? = nil,
-        keyword: String? = nil) -> String {
-            let queryString = [
-                limit.map { "limit=\($0)" },
-                page.map { "page=\($0)" },
-                status.map { "status=\($0)" },
-                keyword.map { "keyword=\($0)" },
-                dateFilter.map { "date_filter=\($0)" },
-                equipmentId.map { "equipment_id=\($0)" }
-            ].compactMap { $0 }.joined(separator: "&")
-            
-            let url = "complains/list" + (queryString.isEmpty ? "" : "?\(queryString)")
-            
-            return url.replacingOccurrences(of: " ", with: "%20")
-        }
+        keyword: String? = nil
+    ) -> String {
+        let queryString = [
+            limit.map { "limit=\($0)" },
+            page.map { "page=\($0)" },
+            status.map { "status=\($0)" },
+            keyword.map { "keyword=\($0)" },
+            dateFilter.map { "date_filter=\($0)" },
+            equipmentId.map { "equipment_id=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "complains/list" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: " ", with: "%20")
+    }
     
     private func generateWorkSheetMonitoringFunctionURL(
         limit: Int? = nil,
@@ -681,6 +698,24 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/listkalibrasi" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateApprovalURL(
+        woType: String? = nil,
+        woStatus: String? = nil,
+        limit: Int? = nil,
+        page: Int? = nil
+    ) -> String {
+        let queryString = [
+            woType.map { "wo_type=\($0)" },
+            woStatus.map { "wo_status=\($0)" },
+            limit.map { "limit=\($0)" },
+            page.map { "page=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "lk/listapprove" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }
