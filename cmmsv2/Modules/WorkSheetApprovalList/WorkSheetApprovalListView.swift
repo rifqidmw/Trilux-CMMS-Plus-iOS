@@ -70,6 +70,7 @@ extension WorkSheetApprovalListView {
                 
                 self.data = data
                 self.tableView.hideSkeleton()
+                self.hideLoadingPopup()
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.showSpinner(false)
                 
@@ -79,6 +80,7 @@ extension WorkSheetApprovalListView {
         presenter.$approvalWorkSheet
             .sink { [weak self] data in
                 guard let self, let data else { return }
+                self.hideLoadingPopup()
                 if data.message == "Success" {
                     presenter.fetchInitData()
                 } else {
@@ -173,6 +175,7 @@ extension WorkSheetApprovalListView: ApproveWorkSheetBottomSheetDelegate {
     
     func didTapApprove(woId: String, status: String) {
         guard let presenter else { return }
+        self.showLoadingPopup()
         let data = ApproveWorkSheetRequest(woId: woId, status: status)
         presenter.approvingWorkSheet(data: data)
     }
