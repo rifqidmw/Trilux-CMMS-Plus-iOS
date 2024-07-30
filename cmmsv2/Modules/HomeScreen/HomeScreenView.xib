@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SZB-gw-7Hy">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="454"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="486"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-o3-hIJ" userLabel="Navigation View">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
@@ -70,40 +70,23 @@
                                         <constraint firstAttribute="height" constant="150" id="ZiP-4f-BIp"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNl-he-dKb" userLabel="Scan View">
-                                    <rect key="frame" x="0.0" y="342" width="393" height="48"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tfm-sE-0fo">
+                                    <rect key="frame" x="0.0" y="342" width="393" height="144"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZt-0T-HyK" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="0.0" width="361" height="48"/>
+                                            <rect key="frame" x="16" y="16" width="361" height="48"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="bZt-0T-HyK" secondAttribute="bottom" id="FNt-Xn-aeu"/>
-                                        <constraint firstItem="bZt-0T-HyK" firstAttribute="top" secondItem="bNl-he-dKb" secondAttribute="top" id="MP7-dE-TPa"/>
-                                        <constraint firstItem="bZt-0T-HyK" firstAttribute="leading" secondItem="bNl-he-dKb" secondAttribute="leading" constant="16" id="Nkc-uH-eQr"/>
-                                        <constraint firstAttribute="height" constant="48" id="aXw-hp-FLU"/>
-                                        <constraint firstAttribute="trailing" secondItem="bZt-0T-HyK" secondAttribute="trailing" constant="16" id="sUr-Hc-CKc"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nw5-jj-X1r">
-                                    <rect key="frame" x="0.0" y="406" width="393" height="48"/>
-                                    <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfS-HH-4c5" customClass="ToastView" customModule="cmmsv2" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="0.0" width="361" height="48"/>
+                                            <rect key="frame" x="16" y="80" width="361" height="48"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="KfS-HH-4c5" secondAttribute="bottom" id="FV6-1i-aYj"/>
-                                        <constraint firstAttribute="trailing" secondItem="KfS-HH-4c5" secondAttribute="trailing" constant="16" id="ILR-sf-Vf4"/>
-                                        <constraint firstItem="KfS-HH-4c5" firstAttribute="top" secondItem="Nw5-jj-X1r" secondAttribute="top" id="JqN-qV-4eW"/>
-                                        <constraint firstAttribute="height" constant="48" id="Zj5-pz-6dm"/>
-                                        <constraint firstItem="KfS-HH-4c5" firstAttribute="leading" secondItem="Nw5-jj-X1r" secondAttribute="leading" constant="16" id="zAF-Tz-7Ul"/>
+                                        <constraint firstAttribute="height" constant="144" id="sRq-Sc-hZq"/>
                                     </constraints>
-                                </view>
+                                    <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>

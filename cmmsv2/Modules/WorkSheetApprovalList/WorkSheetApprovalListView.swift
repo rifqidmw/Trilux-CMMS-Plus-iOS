@@ -75,6 +75,17 @@ extension WorkSheetApprovalListView {
                 
             }
             .store(in: &anyCancellable)
+        
+        presenter.$approvalWorkSheet
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                if data.message == "Success" {
+                    presenter.fetchInitData()
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
+                }
+            }
+            .store(in: &anyCancellable)
     }
     
     private func showSpinner(_ isShow: Bool) {
@@ -112,6 +123,14 @@ extension WorkSheetApprovalListView: SkeletonTableViewDataSource, SkeletonTableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let selectedData = self.data[indexPath.row]
+        presenter.showBottomSheetApproval(from: navigation, data: selectedData, self)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -138,6 +157,24 @@ extension WorkSheetApprovalListView: SkeletonTableViewDataSource, SkeletonTableV
     
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
+    }
+    
+}
+
+extension WorkSheetApprovalListView: ApproveWorkSheetBottomSheetDelegate {
+    
+    func didTapDetail(id: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let data = WorkSheetRequestEntity(id: id, action: "lihat")
+        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .preventive)
+    }
+    
+    func didTapApprove(woId: String, status: String) {
+        guard let presenter else { return }
+        let data = ApproveWorkSheetRequest(woId: woId, status: status)
+        presenter.approvingWorkSheet(data: data)
     }
     
 }

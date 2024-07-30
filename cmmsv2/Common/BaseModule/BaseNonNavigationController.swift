@@ -12,6 +12,8 @@ import IQKeyboardManagerSwift
 class BaseNonNavigationController: UIViewController {
     
     var anyCancellable = Set<AnyCancellable>()
+    var isEngineer = false
+    var isIPSRS = false
     
     let overlayView: UIView = {
         let view = UIView()
@@ -24,6 +26,7 @@ class BaseNonNavigationController: UIViewController {
         super.viewDidLoad()
         didLoad()
         configureKeyboard()
+        setupUserRole()
         AppLogger.log(String(describing: self), logType: .kNavigation)
     }
     
@@ -74,6 +77,20 @@ class BaseNonNavigationController: UIViewController {
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "DONE"
         IQKeyboardManager.shared.toolbarTintColor = .customDarkGrayColor
+    }
+    
+    func setupUserRole() {
+        let role = RoleManager.shared.currentUserRole
+        switch role {
+        case .ipsrs:
+            self.isIPSRS = true
+            self.isEngineer = false
+        case .engineer:
+            self.isIPSRS = false
+            self.isEngineer = true
+        case .unknown:
+            break
+        }
     }
     
 }

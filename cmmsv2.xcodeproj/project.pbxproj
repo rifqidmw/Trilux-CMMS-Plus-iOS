@@ -465,6 +465,10 @@
 		CE9F91082B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F91062B4F970D004C027A /* DetailAssetBottomSheet.xib */; };
 		CE9F910A2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* DetailAssetBottomSheet.swift */; };
 		CE9F910B2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F91092B4F9717004C027A /* DetailAssetBottomSheet.swift */; };
+		CEADA5032C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADA5012C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift */; };
+		CEADA5042C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEADA5022C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib */; };
+		CEADA5052C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADA5012C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift */; };
+		CEADA5062C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEADA5022C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib */; };
 		CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
 		CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */; };
 		CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */; };
@@ -1165,6 +1169,8 @@
 		CE9F91022B4F9434004C027A /* InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCardView.swift; sourceTree = "<group>"; };
 		CE9F91062B4F970D004C027A /* DetailAssetBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAssetBottomSheet.xib; sourceTree = "<group>"; };
 		CE9F91092B4F9717004C027A /* DetailAssetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssetBottomSheet.swift; sourceTree = "<group>"; };
+		CEADA5012C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveWorkSheetBottomSheet.swift; sourceTree = "<group>"; };
+		CEADA5022C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApproveWorkSheetBottomSheet.xib; sourceTree = "<group>"; };
 		CEAF063B2B6F8EE200239C97 /* ExpiredBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredBottomSheet.swift; sourceTree = "<group>"; };
 		CEAF063C2B6F8EE200239C97 /* ExpiredBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpiredBottomSheet.xib; sourceTree = "<group>"; };
 		CEAF06412B6FE1F100239C97 /* UserProfileView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileView+Delegate.swift"; sourceTree = "<group>"; };
@@ -1994,6 +2000,7 @@
 		CE7D4E7D2C581D08001F8D67 /* WorkSheetApprovalList */ = {
 			isa = PBXGroup;
 			children = (
+				CEADA4FF2C59356A005BF97D /* BottomSheet */,
 				CEBF70BD2C5836B100DB40A0 /* Cell */,
 				CE7D4E7E2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift */,
 				CE7D4E7F2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift */,
@@ -2307,6 +2314,23 @@
 				CE9F91062B4F970D004C027A /* DetailAssetBottomSheet.xib */,
 			);
 			path = DetailAssetBottomSheet;
+			sourceTree = "<group>";
+		};
+		CEADA4FF2C59356A005BF97D /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEADA5002C593574005BF97D /* ApproveWorkSheetBottomSheet */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		CEADA5002C593574005BF97D /* ApproveWorkSheetBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEADA5012C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift */,
+				CEADA5022C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib */,
+			);
+			path = ApproveWorkSheetBottomSheet;
 			sourceTree = "<group>";
 		};
 		CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */ = {
@@ -3319,6 +3343,7 @@
 				CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B12C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
 				CE7545532C3ADE09002234F8 /* InputBottomSheet.xib in Resources */,
+				CEADA5042C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */,
 				CE916A792C0634D000C8B153 /* PreparationTVC.xib in Resources */,
 				CEE780CF2C0C755F001BA9C2 /* TaskSectionView.xib in Resources */,
 				CE9E7D752B529EB300240A7D /* ChangePasswordView.xib in Resources */,
@@ -3477,6 +3502,7 @@
 				CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B32C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
 				CE7545552C3ADE09002234F8 /* InputBottomSheet.xib in Resources */,
+				CEADA5062C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */,
 				CE916A7B2C0634D000C8B153 /* PreparationTVC.xib in Resources */,
 				CEE780D12C0C755F001BA9C2 /* TaskSectionView.xib in Resources */,
 				CE9E7D762B529EB300240A7D /* ChangePasswordView.xib in Resources */,
@@ -3867,6 +3893,7 @@
 				CEB6A6FE2C4C148E00D279E1 /* CalibrationListView+Delegate.swift in Sources */,
 				CEE780D02C0C755F001BA9C2 /* TaskSectionView.swift in Sources */,
 				CEF049A92C1C4AA6006B6FFD /* SelectView.swift in Sources */,
+				CEADA5032C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */,
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEC336F92B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
@@ -4183,6 +4210,7 @@
 				CEB6A6FF2C4C148E00D279E1 /* CalibrationListView+Delegate.swift in Sources */,
 				CEE780D22C0C755F001BA9C2 /* TaskSectionView.swift in Sources */,
 				CEF049AB2C1C4AA6006B6FFD /* SelectView.swift in Sources */,
+				CEADA5052C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */,
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEC336FA2B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,

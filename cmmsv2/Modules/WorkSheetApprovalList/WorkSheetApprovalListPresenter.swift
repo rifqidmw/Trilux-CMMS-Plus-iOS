@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class WorkSheetApprovalListPresenter: BasePresenter {
     
@@ -17,6 +18,7 @@ class WorkSheetApprovalListPresenter: BasePresenter {
     }
     
     @Published public var approvalList: [WorkSheetApproval] = []
+    @Published public var approvalWorkSheet: ApproveWorkSheetEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -34,6 +36,7 @@ class WorkSheetApprovalListPresenter: BasePresenter {
 extension WorkSheetApprovalListPresenter {
     
     func fetchInitData() {
+        self.approvalList.removeAll()
         self.fetchWorkSheetApprovalList(
             woType: self.woType,
             woStatus: self.woStatus,
@@ -76,6 +79,30 @@ extension WorkSheetApprovalListPresenter {
             .store(in: &anyCancellable)
         }
     
+    func approvingWorkSheet(data: ApproveWorkSheetRequest) {
+        self.isLoading = true
+        interactor.approveWorkSheet(data: data)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { approval in
+                    DispatchQueue.main.async {
+                        self.approvalWorkSheet = approval
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
     func fetchNextPage() {
         guard !isFetchingMore && isCanLoad else { return }
         self.page += 1
@@ -84,6 +111,17 @@ extension WorkSheetApprovalListPresenter {
             woStatus: self.woStatus,
             limit: self.limit,
             page: self.page)
+    }
+    
+}
+
+extension WorkSheetApprovalListPresenter {
+    
+    func showBottomSheetApproval(from navigation: UINavigationController, data: WorkSheetApproval, _ delegate: ApproveWorkSheetBottomSheetDelegate) {
+        let bottomSheet = ApproveWorkSheetBottomSheet(nibName: String(describing: ApproveWorkSheetBottomSheet.self), bundle: nil)
+        bottomSheet.data = data
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

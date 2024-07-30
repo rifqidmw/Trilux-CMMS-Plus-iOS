@@ -22,4 +22,8 @@ class WorkSheetApprovalListInteractor: BaseInteractor {
                 page: page))
         }
     
+    func approveWorkSheet(data: ApproveWorkSheetRequest) -> AnyPublisher<ApproveWorkSheetEntity, Error> {
+        return api.requestApiPublisher(.approveWorkSheet(data: data))
+    }
+    
 }
