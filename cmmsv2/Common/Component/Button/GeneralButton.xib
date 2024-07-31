@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,12 +30,6 @@
             <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEH-Qa-1pp">
-                    <rect key="frame" x="174" y="19.666666666666668" width="34" height="17.000000000000004"/>
-                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C0T-TG-1vo">
                     <rect key="frame" x="16" y="17" width="24" height="22.333333333333336"/>
                     <color key="tintColor" name="customPrimaryColor"/>
@@ -45,28 +39,35 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cari..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgq-Jb-hAu">
-                    <rect key="frame" x="48" y="18.666666666666664" width="40" height="18.666666666666664"/>
+                    <rect key="frame" x="48" y="18.333333333333336" width="40" height="19.333333333333336"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                     <color key="textColor" name="placeholderColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M44-6k-rYg">
-                    <rect key="frame" x="140" y="14" width="26" height="28"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="26" id="udr-pt-uIP"/>
-                    </constraints>
-                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uk4-l1-1yz">
+                    <rect key="frame" x="157" y="3" width="68" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M44-6k-rYg">
+                            <rect key="frame" x="0.0" y="0.0" width="26" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="26" id="udr-pt-uIP"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEH-Qa-1pp">
+                            <rect key="frame" x="34" y="0.0" width="34" height="50"/>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" name="primaryColor"/>
             <constraints>
-                <constraint firstItem="M44-6k-rYg" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="BZs-cQ-1rD"/>
                 <constraint firstItem="C0T-TG-1vo" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="S0B-57-EYt"/>
                 <constraint firstItem="C0T-TG-1vo" firstAttribute="leading" secondItem="QBu-Fm-zlw" secondAttribute="leading" constant="16" id="Ypr-7T-hdV"/>
-                <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerX" secondItem="QBu-Fm-zlw" secondAttribute="centerX" id="aBv-qN-nGq"/>
-                <constraint firstItem="PEH-Qa-1pp" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="cpi-Zi-8ZS"/>
-                <constraint firstItem="PEH-Qa-1pp" firstAttribute="leading" secondItem="M44-6k-rYg" secondAttribute="trailing" constant="8" id="gTE-QB-sgj"/>
-                <constraint firstAttribute="bottom" secondItem="M44-6k-rYg" secondAttribute="bottom" constant="14" id="ixh-PZ-ybX"/>
-                <constraint firstItem="M44-6k-rYg" firstAttribute="top" secondItem="QBu-Fm-zlw" secondAttribute="top" constant="14" id="lHG-Mz-ndU"/>
+                <constraint firstItem="uk4-l1-1yz" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="ZuJ-H8-FQV"/>
+                <constraint firstItem="uk4-l1-1yz" firstAttribute="centerX" secondItem="QBu-Fm-zlw" secondAttribute="centerX" id="pNm-19-jli"/>
                 <constraint firstItem="cgq-Jb-hAu" firstAttribute="leading" secondItem="C0T-TG-1vo" secondAttribute="trailing" constant="8" id="pfP-ku-I0d"/>
                 <constraint firstItem="cgq-Jb-hAu" firstAttribute="centerY" secondItem="QBu-Fm-zlw" secondAttribute="centerY" id="xLG-J5-NCw"/>
             </constraints>

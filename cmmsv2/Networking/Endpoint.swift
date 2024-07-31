@@ -113,6 +113,7 @@ enum Endpoint {
         limit: Int?,
         page: Int?)
     case approveWorkSheet(data: ApproveWorkSheetRequest)
+    case trackComplaint(id: String?)
 }
 
 // MARK: - PATH URL
@@ -260,6 +261,8 @@ extension Endpoint {
                 page: page)
         case .approveWorkSheet:
             return "lk/approve"
+        case .trackComplaint(id: let id):
+            return "equipments/track_complain?id=\(id ?? "")"
         }
     }
     

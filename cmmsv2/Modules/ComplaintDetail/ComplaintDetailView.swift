@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import SkeletonView
 
 class ComplaintDetailView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var containerAssetView: UIView!
-    @IBOutlet weak var assetNameLabel: UILabel!
+    @IBOutlet weak var assetHeaderView: CustomHeaderView!
     @IBOutlet weak var serialNumberView: InformationCardView!
     @IBOutlet weak var brandView: InformationCardView!
     @IBOutlet weak var typeView: InformationCardView!
@@ -22,18 +22,21 @@ class ComplaintDetailView: BaseViewController {
     @IBOutlet weak var containerTroubleView: UIView!
     @IBOutlet weak var damageTopicView: InformationCardView!
     @IBOutlet weak var damageChronologyView: InformationCardView!
+    @IBOutlet weak var topicHeaderView: CustomHeaderView!
     
     @IBOutlet weak var containerWorkSheetView: UIView!
-    @IBOutlet weak var serialNumberLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var statusView: UIView!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var workSheetHeaderView: CustomHeaderView!
+    @IBOutlet weak var emptyWorkSheetView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var initialHeightTableViewConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var pictureHeaderView: CustomHeaderView!
     @IBOutlet weak var containerDamagePictureView: UIView!
     @IBOutlet weak var emptyPictureView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var medias: [Media] = []
+    var workSheet: [WoList] = []
     var presenter: ComplaintDetailPresenter?
     
     override func didLoad() {
@@ -52,6 +55,7 @@ extension ComplaintDetailView {
         setupView()
         setupAction()
         setupCollectionView()
+        setupTableView()
     }
     
     private func fetchInitialData() {
@@ -66,10 +70,11 @@ extension ComplaintDetailView {
             .sink { [weak self] data in
                 guard let self,
                       let data,
-                      let media = data.medias
+                      let media = data.medias,
+                      let woList = data.valWoList
                 else { return }
-                self.assetNameLabel.text = data.equipment?.txtName ?? ""
-                
+                self.hideAnimationSkeleton()
+                self.assetHeaderView.configure(icon: "ic_notes_board", title: data.equipment?.txtName ?? "", type: .plain)
                 self.serialNumberView.configureView(title: "Serial Number", value: data.equipment?.txtSerial ?? "-")
                 self.brandView.configureView(title: "Merk", value: data.equipment?.txtBrand ?? "-")
                 self.typeView.configureView(title: "Tipe", value: data.equipment?.txtType ?? "-")
@@ -78,12 +83,20 @@ extension ComplaintDetailView {
                 self.damageTopicView.configureView(title: "Topik Kerusakan", value: data.txtTitle ?? "-")
                 self.damageChronologyView.configureView(title: "Kronologi Kerusakan", value: data.txtDescriptions ?? "-")
                 
-                self.serialNumberLabel.text = data.valWoList?.first?.lkNumber ?? "-"
-                self.dateLabel.text = "\(data.valWoList?.first?.engineerName ?? "-") • \(data.valWoList?.first?.lkDate ?? "-")"
-                self.configureStatus(status: CorrectiveStatusType(rawValue: ((data.valWoList?.first?.statusText ?? .none) ?? "")) ?? .none)
+                self.workSheet = woList
+                self.reloadTableViewWithAnimation(self.tableView)
+                self.calculateTotalHeight(for: self.tableView)
+                
+                if woList.isEmpty {
+                    self.emptyWorkSheetView.isHidden = false
+                    self.tableView.isHidden = true
+                } else {
+                    self.emptyWorkSheetView.isHidden = true
+                    self.tableView.isHidden = false
+                }
                 
                 self.medias = media
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 
                 if media.isEmpty {
                     self.emptyPictureView.isHidden = false
@@ -113,27 +126,12 @@ extension ComplaintDetailView {
         containerDamagePictureView.makeCornerRadius(8)
         containerDamagePictureView.addShadow(0.4)
         
-        statusView.makeCornerRadius(4)
-    }
-    
-    private func configureStatus(status: CorrectiveStatusType) {
-        statusLabel.text = status.getStringValue().capitalized
+        topicHeaderView.configure(icon: "ic_statistic_down", title: "Permasalahan", type: .plain)
+        workSheetHeaderView.configure(icon: "ic_notes_board", title: "Lembar Kerja", type: .plain)
+        pictureHeaderView.configure(icon: "ic_image", title: "Foto Kerusakan", type: .plain)
         
-        switch status {
-        case .open:
-            statusView.backgroundColor = UIColor.customLightGreenColor
-            statusLabel.textColor = UIColor.customIndicatorColor8
-        case .closed:
-            statusView.backgroundColor = UIColor.customSecondaryColor
-            statusLabel.textColor = UIColor.customPrimaryColor
-        case .progress:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-        case .delay:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-        case .none:
-            statusView.isHidden = true
+        DispatchQueue.main.async {
+            self.showAnimationSkeleton()
         }
     }
     
@@ -152,7 +150,80 @@ extension ComplaintDetailView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(EvidenceEquipmentCVC.nib, forCellWithReuseIdentifier: EvidenceEquipmentCVC.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(ValWorkSheetCell.nib, forCellReuseIdentifier: ValWorkSheetCell.identifier)
+        tableView.separatorStyle = .none
+    }
+    
+    private func showAnimationSkeleton() {
+        [self.assetHeaderView.iconImageView,
+         self.assetHeaderView.titleLabel,
+         self.topicHeaderView.iconImageView,
+         self.topicHeaderView.titleLabel,
+         self.workSheetHeaderView.iconImageView,
+         self.workSheetHeaderView.titleLabel,
+         self.pictureHeaderView.iconImageView,
+         self.pictureHeaderView.titleLabel,
+         self.collectionView,
+         self.tableView].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func hideAnimationSkeleton() {
+        [self.assetHeaderView.iconImageView,
+         self.assetHeaderView.titleLabel,
+         self.topicHeaderView.iconImageView,
+         self.topicHeaderView.titleLabel,
+         self.workSheetHeaderView.iconImageView,
+         self.workSheetHeaderView.titleLabel,
+         self.pictureHeaderView.iconImageView,
+         self.pictureHeaderView.titleLabel,
+         self.collectionView,
+         self.tableView].forEach {
+            $0.hideSkeleton()
+        }
+    }
+    
+}
+
+extension ComplaintDetailView: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.workSheet.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ValWorkSheetCell.identifier, for: indexPath) as? ValWorkSheetCell
+        else {
+            return UITableViewCell()
+        }
+        
+        let adjustedData = self.workSheet[indexPath.row]
+        cell.setupCell(
+            adjustedData.lkNumber,
+            date: adjustedData.lkDate,
+            engineer: adjustedData.engineerName,
+            CorrectiveStatusType(rawValue: ((adjustedData.statusText) ?? "")) ?? CorrectiveStatusType.none)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func calculateTotalHeight(for tableView: UITableView) {
+        var totalHeight: CGFloat = 0
+        for row in 0..<tableView.numberOfRows(inSection: 0) {
+            let indexPath = IndexPath(row: row, section: 0)
+            totalHeight += tableView.rectForRow(at: indexPath).height
+        }
+        initialHeightTableViewConstraint.constant = totalHeight
     }
     
 }
@@ -175,7 +246,7 @@ extension ComplaintDetailView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: collectionView.frame.height)
+        return CGSize(width: CGSize.widthDevice / 3.8, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -189,6 +260,10 @@ extension ComplaintDetailView: UICollectionViewDataSource, UICollectionViewDeleg
               let image = selectedItem.valUrl
         else { return }
         presenter.navigateToDetailPicture(navigation: navigation, image: image)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
 }

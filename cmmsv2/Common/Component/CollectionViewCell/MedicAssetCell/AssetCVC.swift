@@ -59,7 +59,7 @@ extension AssetCVC {
         self.correctiveCategoryView.makeCornerRadius(4)
         self.assetBadgeView.makeCornerRadius(4, .leftCurve)
         self.containerCategoryStackView.distribution = .fillProportionally
-        self.assetLabel.textAlignment = .center
+        self.assetLabel.textAlignment = .left
     }
     
     private func setupSkeleton() {

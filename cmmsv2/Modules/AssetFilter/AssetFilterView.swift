@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class AssetFilterView: BaseViewController {
     
@@ -164,6 +165,8 @@ extension AssetFilterView {
         historyTableView.separatorStyle = .none
         historyTableView.showsVerticalScrollIndicator = false
         historyTableView.showsHorizontalScrollIndicator = false
+        historyTableView.isScrollEnabled = true
+        historyTableView.isUserInteractionEnabled = true
     }
     
     private func setupCollectionView() {
@@ -172,6 +175,8 @@ extension AssetFilterView {
         assetCollectionView.register(AssetCVC.nib, forCellWithReuseIdentifier: AssetCVC.identifier)
         assetCollectionView.isSkeletonable = true
         assetCollectionView.showAnimatedGradientSkeleton()
+        assetCollectionView.isScrollEnabled = true
+        assetCollectionView.isUserInteractionEnabled = true
     }
     
     func configureHistoryData() {

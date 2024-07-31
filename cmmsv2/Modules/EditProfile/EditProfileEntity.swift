@@ -44,7 +44,7 @@ struct EditProfileUser: Codable {
     let txtUnitKerja: String?
     let txtTelepon: String?
     let valToken: String?
-    let valScope: [Int]?
+    let valScope: ValScope?
     let valPeringkat: [Int]?
     let valDeviceToken: String?
     let isPolisi: String?

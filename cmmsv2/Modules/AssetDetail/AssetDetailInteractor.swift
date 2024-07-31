@@ -29,4 +29,8 @@ class AssetDetailInteractor: BaseInteractor {
         return api.requestApiPublisher(.assetAcceptance(id: id))
     }
     
+    func getComplaintTracking(id: String?) -> AnyPublisher<TrackComplaintEntity, Error> {
+        return api.requestApiPublisher(.trackComplaint(id: id ?? ""))
+    }
+    
 }

@@ -27,4 +27,22 @@ extension String {
         return dateFormatter.string(from: Date())
     }
     
+    static func parseDate(_ dateString: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: dateString)
+    }
+    
+    static func formattedDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy MMMM dd"
+        return dateFormatter.string(from: date)
+    }
+    
+    static func formattedTime(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: date)
+    }
+    
 }
