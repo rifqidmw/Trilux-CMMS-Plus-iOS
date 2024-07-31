@@ -26,16 +26,13 @@ class InformationCardView: UIView {
     private func setupView() {
         let view = loadNib()
         view.frame = self.bounds
-        self.addSubview(view)
         view.makeCornerRadius(8)
-        self.makeCornerRadius(8)
         
+        self.addSubview(view)
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.makeCornerRadius(8)
         self.isSkeletonable = true
         self.showAnimatedGradientSkeleton()
-        
-        self.valueLabel.isSkeletonable = true
-        self.valueLabel.showAnimatedGradientSkeleton()
-        
     }
     
 }

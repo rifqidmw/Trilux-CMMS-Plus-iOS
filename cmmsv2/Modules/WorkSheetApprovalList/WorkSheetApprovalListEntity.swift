@@ -141,3 +141,25 @@ struct Complain: Codable {
         let idPendamping: [String]?
     }
 }
+
+struct ApproveWorkSheetEntity: Codable {
+    let count: Int?
+    let data: ApproveWorkSheetData?
+    let message: String?
+    let status: Int?
+    let reff: ReffData?
+}
+
+struct ApproveWorkSheetData: Codable {
+    let woDetail: WorkSheetApproval?
+}
+
+struct ApproveWorkSheetRequest: Codable {
+    let woId: String?
+    let status: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case woId = "wo_id"
+        case status = "status"
+    }
+}

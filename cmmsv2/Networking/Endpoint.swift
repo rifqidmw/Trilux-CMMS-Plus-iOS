@@ -112,6 +112,7 @@ enum Endpoint {
         woStatus: String?,
         limit: Int?,
         page: Int?)
+    case approveWorkSheet(data: ApproveWorkSheetRequest)
 }
 
 // MARK: - PATH URL
@@ -257,6 +258,8 @@ extension Endpoint {
                 woStatus: woStatus,
                 limit: limit,
                 page: page)
+        case .approveWorkSheet:
+            return "lk/approve"
         }
     }
     
@@ -275,7 +278,8 @@ extension Endpoint {
                 .createLanjutan,
                 .createCorrective,
                 .createPreventive,
-                .saveWorkSheet:
+                .saveWorkSheet,
+                .approveWorkSheet:
             return .post
         default:
             return .get
@@ -473,6 +477,12 @@ extension Endpoint {
             let filteredParams = params.compactMapValues { $0 }
             
             return filteredParams
+        case .approveWorkSheet(let data):
+            let params: [String: Any] = [
+                "wo_id": data.woId ?? "",
+                "status": data.status ?? ""
+            ]
+            return params
         default:
             return nil
         }

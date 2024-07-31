@@ -11,7 +11,7 @@ import SkeletonView
 class UserProfileView: BaseViewController {
     
     @IBOutlet weak var navigationView: CustomNavigationView!
-    @IBOutlet weak var containerProfileView: UIView!
+    @IBOutlet weak var containerProfileStackView: UIStackView!
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tagLineLabel: UILabel!
@@ -112,8 +112,8 @@ extension UserProfileView {
         else { return }
         tagLineLabel.text = tagLine
         navigationView.configure(toolbarTitle: "Profil Pengguna", type: .plain)
-        containerProfileView.makeCornerRadius(12)
-        containerProfileView.addShadow(6, opacity: 0.2)
+        containerProfileStackView.makeCornerRadius(12)
+        containerProfileStackView.addShadow(6, opacity: 0.2)
         userProfileImageView.makeCornerRadius(12)
         changeImageButton.configure(title: "Ganti Gambar")
         logoutButton.configure(title: "Keluar", backgroundColor: UIColor.indicatorColor3, titleColor: UIColor.customRed)
