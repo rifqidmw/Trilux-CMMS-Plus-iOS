@@ -24,6 +24,7 @@ class AssetDetailView: BaseViewController {
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var assetTypeLabel: UILabel!
     @IBOutlet weak var seeProgressButton: GeneralButton!
+    @IBOutlet weak var updateTechDataButton: GeneralButton!
     @IBOutlet weak var stripTabBarView: UIView!
     @IBOutlet weak var stripTabBarViewHeightConstraint: NSLayoutConstraint!
     
@@ -92,7 +93,6 @@ extension AssetDetailView {
             .sink { [weak self] data in
                 guard let self = self, let data else { return }
                 self.acceptanceData = data
-                AppLogger.log("-- THIS IS ASSET ACCEPTANCE DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
@@ -101,7 +101,6 @@ extension AssetDetailView {
             .sink { [weak self] data in
                 guard let self = self, let data else { return }
                 self.costData = data
-                AppLogger.log("-- THIS IS ASSET COST DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
@@ -110,7 +109,6 @@ extension AssetDetailView {
             .sink { [weak self] data in
                 guard let self = self else { return }
                 self.filesData = data
-                AppLogger.log("-- THIS IS ASSET FILES DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
@@ -134,10 +132,14 @@ extension AssetDetailView {
         containerTabBarView.addShadow(0.8)
         seeDetailButton.makeCornerRadius(12)
         seeDetailButton.addShadow(0.8)
-        seeProgressButton.configure(title: "Lihat Progres", type: .bordered, backgroundColor: .white, titleColor: UIColor.customDarkGrayColor)
+        seeProgressButton.configure(title: "Lihat Progres", type: .bordered)
+        updateTechDataButton.configure(title: "Update Data Teknis", type: .withIcon, icon: "ic_pencil_with_canvas_outline")
+        updateTechDataButton.isHidden = RoleManager.shared.currentUserRole == .engineer
+        
     }
     
     private func setupAction() {
+        guard let presenter else { return }
         seeDetailButton.gesture()
             .sink { [weak self] _ in
                 guard self != nil else { return }
@@ -147,8 +149,14 @@ extension AssetDetailView {
         
         seeProgressButton.gesture()
             .sink { [weak self] _ in
-                guard self != nil else { return }
-                AppLogger.log("-- CLICKED")
+                guard let self,
+                      let navigation = self.navigationController
+                else { return }
+                if presenter.trackData.isEmpty {
+                    self.showAlert(title: "Terjadi kesalahan", message: "Maaf data tidak ditemukan")
+                } else {
+                    presenter.showTrackingBottomSheet(from: navigation)
+                }
             }
             .store(in: &anyCancellable)
         
@@ -158,6 +166,13 @@ extension AssetDetailView {
                       let navigation = self.navigationController
                 else { return }
                 navigation.popViewController(animated: true)
+            }
+            .store(in: &anyCancellable)
+        
+        updateTechDataButton.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.showAlert(title: "Update data teknis")
             }
             .store(in: &anyCancellable)
     }
@@ -187,7 +202,8 @@ extension AssetDetailView {
          self.assetNameLabel,
          self.serialNumberLabel,
          self.assetTypeLabel,
-         self.seeProgressButton].forEach {
+         self.seeProgressButton,
+         self.updateTechDataButton].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
         }
@@ -198,7 +214,8 @@ extension AssetDetailView {
          self.assetNameLabel,
          self.serialNumberLabel,
          self.assetTypeLabel,
-         self.seeProgressButton].forEach {
+         self.seeProgressButton,
+         self.updateTechDataButton].forEach {
             $0.hideSkeleton()
         }
     }

@@ -338,3 +338,34 @@ struct DeliveryDocument: Codable {
         case data
     }
 }
+
+struct TrackComplaintEntity: Codable {
+    let data: [TrackComplaintData]?
+    let message: String?
+    let status: Int?
+}
+
+struct TrackComplaintData: Codable {
+    let tanggal: String?
+    let title: TrackInfoType?
+    let info: String?
+}
+
+enum TrackInfoType: String, Codable {
+    case received = "Pengaduan Diterima"
+    case created = "Pengaduan Dibuat"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Pengaduan Diterima": self = .received
+        case "Pengaduan Dibuat": self = .created
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}

@@ -46,6 +46,16 @@ protocol AllCategoriesBottomSheetDelegate: AnyObject {
     func didTapDelayCorrectiveCategory()
     func didTapLogBookCategory()
     func didTapPreventiveCalendarCategory()
+    func didTapMaintenanceCategory()
+    func didTapWorkSheetApprovalCategory()
+    func didTapComplaintHistoryCategory()
+    func didTapMonitoringFunctionCategory()
+    func didTapPreventiveCategory()
+    func didTapAssetInfoCategory()
+    func didTapPrintRoomCategory()
+    func didTapMaintenanceInfoCategory()
+    func didTapMutationInfoCategory()
+    func didTapCalibrationCategory()
 }
 
 protocol WorkSheetBottomSheetDelegate: AnyObject {

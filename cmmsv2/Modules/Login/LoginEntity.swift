@@ -70,36 +70,6 @@ struct User: Codable {
         case ttd
     }
     
-    enum ValScope: Codable {
-        case strings([String])
-        case ints([Int])
-        
-        init(from decoder: Decoder) throws {
-            let container = try decoder.singleValueContainer()
-            if let strings = try? container.decode([String].self) {
-                self = .strings(strings)
-                return
-            }
-            if let ints = try? container.decode([Int].self) {
-                self = .ints(ints)
-                return
-            }
-            throw DecodingError.typeMismatch(
-                ValScope.self,
-                DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Expected [String] or [Int]")
-            )
-        }
-        
-        func encode(to encoder: Encoder) throws {
-            var container = encoder.singleValueContainer()
-            switch self {
-            case .strings(let strings):
-                try container.encode(strings)
-            case .ints(let ints):
-                try container.encode(ints)
-            }
-        }
-    }
 }
 
 struct HospitalTheme: Codable {
@@ -109,5 +79,36 @@ struct HospitalTheme: Codable {
     enum CodingKeys: CodingKey {
         case logo
         case tagline
+    }
+}
+
+enum ValScope: Codable {
+    case strings([String])
+    case ints([Int])
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let strings = try? container.decode([String].self) {
+            self = .strings(strings)
+            return
+        }
+        if let ints = try? container.decode([Int].self) {
+            self = .ints(ints)
+            return
+        }
+        throw DecodingError.typeMismatch(
+            ValScope.self,
+            DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Expected [String] or [Int]")
+        )
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .strings(let strings):
+            try container.encode(strings)
+        case .ints(let ints):
+            try container.encode(ints)
+        }
     }
 }

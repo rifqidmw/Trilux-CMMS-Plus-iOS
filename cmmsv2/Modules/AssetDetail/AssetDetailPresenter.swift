@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class AssetDetailPresenter: BasePresenter {
     
@@ -13,6 +14,7 @@ class AssetDetailPresenter: BasePresenter {
     private let router: AssetDetailRouter
     let type: AssetType
     let data: Equipment?
+    var trackData: [TrackComplaintData] = []
     
     @Published public var assetInfoData: EquipmentDetail?
     @Published public var assetFilesData: [File] = []
@@ -44,6 +46,7 @@ extension AssetDetailPresenter {
         fetchAssetCost(id: id)
         fetchAcceptanceAsset(id: id)
         fetchAssetFiles(id: id)
+        fetchComplaintTracking(id: id)
     }
     
     func fetchAssetDetail(id: String) {
@@ -183,6 +186,41 @@ extension AssetDetailPresenter {
                 }
             )
             .store(in: &anyCancellable)
+    }
+    
+    func fetchComplaintTracking(id: String) {
+        self.isLoading = true
+        interactor.getComplaintTracking(id: id)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { tracking in
+                    DispatchQueue.main.async {
+                        guard let data = tracking.data else { return }
+                        self.trackData = data
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+}
+
+extension AssetDetailPresenter {
+    
+    func showTrackingBottomSheet(from navigation: UINavigationController) {
+        let bottomSheet = TrackProgressBottomSheet(nibName: String(describing: TrackProgressBottomSheet.self), bundle: nil)
+        bottomSheet.data = self.trackData
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

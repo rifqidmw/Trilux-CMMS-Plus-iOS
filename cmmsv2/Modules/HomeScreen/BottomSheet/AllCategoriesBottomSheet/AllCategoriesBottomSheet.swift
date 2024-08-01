@@ -69,12 +69,13 @@ extension AllCategoriesBottomSheet {
         default:
             data = []
         }
-        collectionView.reloadData()
     }
     
     private func calculateTotalHeight() {
         let cellHeight: CGFloat = 120
-        let totalHeight = (CGFloat(self.data.count) - 3) * cellHeight
+        let numberOfColumns: CGFloat = 2
+        let numberOfRows = ceil(CGFloat(self.data.count) / numberOfColumns)
+        let totalHeight = numberOfRows * cellHeight
         initialHeightCollectionView.constant = totalHeight
     }
     
@@ -103,36 +104,81 @@ extension AllCategoriesBottomSheet: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let delegate = self.delegate else { return }
-        switch indexPath.row {
-        case 0:
+        let selectedItem = self.data[indexPath.row]
+        
+        switch selectedItem.title {
+        case .all:
+            break
+        case .asset:
             self.dismissBottomSheet() {
                 delegate.didTapAssetCategory()
             }
-        case 1:
+        case .complaint:
             self.dismissBottomSheet() {
                 delegate.didTapComplaintCategory()
             }
-        case 2:
+        case .workSheet:
             self.dismissBottomSheet() {
                 delegate.didTapWorkSheetCategory()
             }
-        case 3:
+        case .history:
             self.dismissBottomSheet() {
                 delegate.didTapHistoryCategory()
             }
-        case 4:
+        case .delayCorrective:
             self.dismissBottomSheet() {
                 delegate.didTapDelayCorrectiveCategory()
             }
-        case 5:
+        case .logBook:
             self.dismissBottomSheet() {
                 delegate.didTapLogBookCategory()
             }
-        case 6:
+        case .preventiveCalendar:
             self.dismissBottomSheet() {
                 delegate.didTapPreventiveCalendarCategory()
             }
-        default: break
+        case .maintenance:
+            self.dismissBottomSheet() {
+                delegate.didTapMaintenanceCategory()
+            }
+        case .workSheetApproval:
+            self.dismissBottomSheet() {
+                delegate.didTapWorkSheetApprovalCategory()
+            }
+        case .complaintHistory:
+            self.dismissBottomSheet() {
+                delegate.didTapComplaintHistoryCategory()
+            }
+        case .monitoringFunction:
+            self.dismissBottomSheet() {
+                delegate.didTapMonitoringFunctionCategory()
+            }
+        case .preventive:
+            self.dismissBottomSheet() {
+                delegate.didTapPreventiveCategory()
+            }
+        case .assetInfo:
+            self.dismissBottomSheet() {
+                delegate.didTapAssetInfoCategory()
+            }
+        case .printRoom:
+            self.dismissBottomSheet() {
+                delegate.didTapPrintRoomCategory()
+            }
+        case .maintenanceInfo:
+            self.dismissBottomSheet() {
+                delegate.didTapMaintenanceInfoCategory()
+            }
+        case .mutationInfo:
+            self.dismissBottomSheet() {
+                delegate.didTapMutationInfoCategory()
+            }
+        case .calibration:
+            self.dismissBottomSheet() {
+                delegate.didTapCalibrationCategory()
+            }
+        case .none:
+            break
         }
     }
     
