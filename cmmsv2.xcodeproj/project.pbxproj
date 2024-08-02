@@ -599,6 +599,10 @@
 		CEC897142B77394D006CB552 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC897122B77394D006CB552 /* ToastView.swift */; };
 		CEC897162B77395C006CB552 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC897152B77395C006CB552 /* ToastView.xib */; };
 		CEC897172B77395C006CB552 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC897152B77395C006CB552 /* ToastView.xib */; };
+		CEC927D42C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC927D32C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib */; };
+		CEC927D52C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC927D22C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift */; };
+		CEC927D62C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC927D32C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib */; };
+		CEC927D72C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC927D22C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift */; };
 		CECA99242C569FD600FE655E /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA99232C569FD600FE655E /* RoleManager.swift */; };
 		CECA99252C569FD600FE655E /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA99232C569FD600FE655E /* RoleManager.swift */; };
 		CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA42B45D962004A260D /* AppDelegate.swift */; };
@@ -1248,6 +1252,8 @@
 		CEC337022B6EF6FF00B16026 /* lottie_expired.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lottie_expired.json; sourceTree = "<group>"; };
 		CEC897122B77394D006CB552 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		CEC897152B77395C006CB552 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
+		CEC927D22C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValWorkSheetCorrectionCell.swift; sourceTree = "<group>"; };
+		CEC927D32C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValWorkSheetCorrectionCell.xib; sourceTree = "<group>"; };
 		CECA99232C569FD600FE655E /* RoleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManager.swift; sourceTree = "<group>"; };
 		CECB3DA12B45D962004A260D /* cmmsv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cmmsv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECB3DA42B45D962004A260D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -2153,6 +2159,7 @@
 				CEAF9E382C5A307500EFBBC2 /* StepperCell */,
 				CEE780C52C0C6D07001BA9C2 /* TaskCell */,
 				CE9878842C5ACA25008E0F77 /* ValWorkSheetCell */,
+				CEC927D12C5BFD26008B00EE /* ValWorkSheetCorrectionCell */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -2586,6 +2593,15 @@
 				CEC897152B77395C006CB552 /* ToastView.xib */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		CEC927D12C5BFD26008B00EE /* ValWorkSheetCorrectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEC927D22C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift */,
+				CEC927D32C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib */,
+			);
+			path = ValWorkSheetCorrectionCell;
 			sourceTree = "<group>";
 		};
 		CECA99262C56A89D00FE655E /* CategorySection */ = {
@@ -3446,6 +3462,7 @@
 				CE40123A2B5D875100517F7C /* AllEvidenceBottomSheet.xib in Resources */,
 				CEC207A72B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
 				CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */,
+				CEC927D42C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
 				CEAF27EB2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2172B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9342C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
@@ -3608,6 +3625,7 @@
 				CE40123B2B5D875100517F7C /* AllEvidenceBottomSheet.xib in Resources */,
 				CEC207A82B4ADDE70073FA1E /* CustomNavigationView.xib in Resources */,
 				CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */,
+				CEC927D62C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
 				CEAF27EC2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2182B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9362C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
@@ -3928,6 +3946,7 @@
 				CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */,
 				CE9E7D9B2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E502B45E6E6004A260D /* ApiManager.swift in Sources */,
+				CEC927D52C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift in Sources */,
 				CEB703A32BA87FBD004583C7 /* PreventiveCalendarListInteractor.swift in Sources */,
 				CE2FA5132B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailPresenter.swift in Sources */,
 				CE4255EF2BA704E5002B558C /* LogBookListEntity.swift in Sources */,
@@ -4248,6 +4267,7 @@
 				CEEED86F2B7A86CB00672952 /* ScanRouter.swift in Sources */,
 				CE9E7D9C2B529F4500240A7D /* UserProfileEntity.swift in Sources */,
 				CECB3E512B45E6E6004A260D /* ApiManager.swift in Sources */,
+				CEC927D72C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift in Sources */,
 				CEB703A42BA87FBD004583C7 /* PreventiveCalendarListInteractor.swift in Sources */,
 				CE2FA5142B5CBD5C00756586 /* WorkSheetMonitoringFunctionDetailPresenter.swift in Sources */,
 				CE4255F02BA704E5002B558C /* LogBookListEntity.swift in Sources */,

@@ -34,6 +34,13 @@ extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
         }
     }
     
+    func didTapAssetImage(_ data: Equipment, type: AssetType) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailAsset(from: navigation, type, data: data)
+    }
+    
 }
 
 extension WorkSheetCorrectiveListView: ActionBarViewDelegate {

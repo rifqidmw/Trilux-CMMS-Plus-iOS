@@ -28,7 +28,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zIf-b8-PVy">
                         <rect key="frame" x="0.0" y="16" width="320" height="68"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_step_not_started" translatesAutoresizingMaskIntoConstraints="NO" id="nce-lG-NWk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_step_complete" translatesAutoresizingMaskIntoConstraints="NO" id="nce-lG-NWk">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="zP1-Cu-1O8"/>
@@ -75,14 +75,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsN-im-gZk">
-                                                        <rect key="frame" x="120" y="0.0" width="22" height="17.333333333333332"/>
+                                                        <rect key="frame" x="120" y="0.0" width="24" height="17.333333333333332"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNz-zx-r4r">
-                                                                <rect key="frame" x="8" y="7.6666666666666572" width="6" height="2"/>
+                                                                <rect key="frame" x="8" y="7.6666666666666572" width="8" height="2"/>
                                                                 <color key="backgroundColor" name="placeholderColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="HTX-ON-BAy"/>
-                                                                    <constraint firstAttribute="width" constant="6" id="gkE-DO-xqq"/>
+                                                                    <constraint firstAttribute="width" constant="8" id="gkE-DO-xqq"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -94,10 +94,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAV-Sv-BnS">
-                                                        <rect key="frame" x="142" y="0.0" width="54" height="17.333333333333332"/>
+                                                        <rect key="frame" x="144" y="0.0" width="52" height="17.333333333333332"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:50" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46b-V3-0bH">
-                                                                <rect key="frame" x="4" y="2.0000000000000009" width="46" height="13.333333333333336"/>
+                                                                <rect key="frame" x="4" y="2.0000000000000009" width="44" height="13.333333333333336"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                                 <color key="textColor" name="indicatorColor10"/>
                                                                 <nil key="highlightedColor"/>
@@ -152,7 +152,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_step_not_started" width="24" height="24"/>
+        <image name="ic_step_complete" width="24" height="24"/>
         <namedColor name="customDarkGrayColor">
             <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

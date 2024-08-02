@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class DelayCorrectiveDetailView: BaseViewController {
     
@@ -26,20 +27,18 @@ class DelayCorrectiveDetailView: BaseViewController {
     
     @IBOutlet weak var containerWorkSheetView: UIView!
     @IBOutlet weak var headerWorkSheetView: CustomHeaderView!
-    
-    @IBOutlet weak var detailWorkSheetView: UIView!
-    @IBOutlet weak var detailWorkSheetStackView: UIStackView!
-    @IBOutlet weak var serialNumberLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var statusView: UIView!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var emptyWorkSheetView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var initialHeightTableViewConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var containerDamagePictureView: UIView!
     @IBOutlet weak var headerDamagePictureView: CustomHeaderView!
+    @IBOutlet weak var emptyMediaView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var presenter: DelayCorrectiveDetailPresenter?
     var media: [Media] = []
+    var woList: [DelayCorrectiveWorkOrder] = []
     
     override func didLoad() {
         super.didLoad()
@@ -56,6 +55,7 @@ extension DelayCorrectiveDetailView {
         bindingData()
         setupView()
         setupAction()
+        setupTableView()
         setupCollectionView()
         showAnimationSkeleton()
     }
@@ -77,7 +77,27 @@ extension DelayCorrectiveDetailView {
                 else { return }
                 self.hideAnimationSkeleton()
                 self.media = medias
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
+                
+                if media.isEmpty {
+                    self.emptyMediaView.isHidden = false
+                    self.collectionView.isHidden = true
+                } else {
+                    self.emptyMediaView.isHidden = true
+                    self.collectionView.isHidden = false
+                }
+                
+                self.woList = workSheet
+                self.reloadTableViewWithAnimation(self.tableView)
+                self.calculateTotalHeight(for: self.tableView)
+                
+                if workSheet.isEmpty {
+                    self.emptyWorkSheetView.isHidden = false
+                    self.tableView.isHidden = true
+                } else {
+                    self.emptyWorkSheetView.isHidden = true
+                    self.tableView.isHidden = false
+                }
                 
                 self.headerAssetView.configure(icon: "ic_notes_board", title: equipment.txtName ?? "-", type: .plain)
                 self.serialNumberView.configureView(title: "Serial Number", value: equipment.txtSerial ?? "-")
@@ -87,10 +107,6 @@ extension DelayCorrectiveDetailView {
                 
                 self.troubleTopicView.configureView(title: "Topik Kerusakan", value: data.txtTitle ?? "-")
                 self.troubleChronologyView.configureView(title: "Kronologi Kerusakan", value: data.txtDescriptions ?? "-")
-                
-                self.serialNumberLabel.text = workSheet.first?.lkNumber ?? "-"
-                self.dateLabel.text = "\(workSheet.first?.engineerName ?? "-") • \(workSheet.first?.lkDate ?? "-")"
-                self.statusLabel.text = workSheet.first?.statusText ?? "-"
             }
             .store(in: &anyCancellable)
     }
@@ -110,9 +126,6 @@ extension DelayCorrectiveDetailView {
         headerWorkSheetView.configure(icon: "ic_notes_board", title: "Lembar Kerja", type: .plain)
         containerWorkSheetView.makeCornerRadius(8)
         containerWorkSheetView.addShadow(0.8)
-        detailWorkSheetView.makeCornerRadius(8)
-        detailWorkSheetView.addShadow(0.8, position: .bottom)
-        statusView.makeCornerRadius(8)
         
         headerDamagePictureView.configure(icon: "ic_image", title: "Foto Kerusakan", type: .plain)
         containerDamagePictureView.makeCornerRadius(8)
@@ -134,6 +147,13 @@ extension DelayCorrectiveDetailView {
         collectionView.register(EvidenceEquipmentCVC.nib, forCellWithReuseIdentifier: EvidenceEquipmentCVC.identifier)
     }
     
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(ValWorkSheetCell.nib, forCellReuseIdentifier: ValWorkSheetCell.identifier)
+        tableView.separatorStyle = .none
+    }
+    
     private func showAnimationSkeleton() {
         [self.headerAssetView.iconImageView,
          self.headerAssetView.titleLabel,
@@ -142,7 +162,9 @@ extension DelayCorrectiveDetailView {
          self.headerWorkSheetView.iconImageView,
          self.headerWorkSheetView.titleLabel,
          self.headerDamagePictureView.iconImageView,
-         self.headerDamagePictureView.titleLabel
+         self.headerDamagePictureView.titleLabel,
+         self.collectionView,
+         self.tableView
         ].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
@@ -157,7 +179,9 @@ extension DelayCorrectiveDetailView {
          self.headerWorkSheetView.iconImageView,
          self.headerWorkSheetView.titleLabel,
          self.headerDamagePictureView.iconImageView,
-         self.headerDamagePictureView.titleLabel
+         self.headerDamagePictureView.titleLabel,
+         self.collectionView,
+         self.tableView
         ].forEach {
             $0.hideSkeleton()
         }
@@ -165,6 +189,41 @@ extension DelayCorrectiveDetailView {
     
 }
 
+extension DelayCorrectiveDetailView: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.woList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ValWorkSheetCell.identifier, for: indexPath) as? ValWorkSheetCell
+        else {
+            return UITableViewCell()
+        }
+        
+        let adjustedData = self.woList[indexPath.row]
+        cell.setupCell(
+            adjustedData.lkNumber,
+            date: adjustedData.lkDate,
+            engineer: adjustedData.engineerName,
+            WorkSheetStatus(rawValue: ((adjustedData.statusText) ?? "")) ?? WorkSheetStatus.none)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func calculateTotalHeight(for tableView: UITableView) {
+        var totalHeight: CGFloat = 0
+        for row in 0..<tableView.numberOfRows(inSection: 0) {
+            let indexPath = IndexPath(row: row, section: 0)
+            totalHeight += tableView.rectForRow(at: indexPath).height
+        }
+        initialHeightTableViewConstraint.constant = totalHeight
+    }
+    
+}
 
 extension DelayCorrectiveDetailView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

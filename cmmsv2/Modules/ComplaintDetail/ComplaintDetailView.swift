@@ -11,7 +11,7 @@ import SkeletonView
 class ComplaintDetailView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerContentStackView: UIStackView!
     @IBOutlet weak var containerAssetView: UIView!
     @IBOutlet weak var assetHeaderView: CustomHeaderView!
     @IBOutlet weak var serialNumberView: InformationCardView!
@@ -111,8 +111,8 @@ extension ComplaintDetailView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Detail Pengaduan", type: .plain)
-        containerView.makeCornerRadius(8)
-        containerView.addShadow(0.4)
+        containerContentStackView.makeCornerRadius(8)
+        containerContentStackView.addShadow(0.4)
         
         containerAssetView.makeCornerRadius(8)
         containerAssetView.addShadow(0.4)
@@ -208,7 +208,7 @@ extension ComplaintDetailView: UITableViewDataSource, UITableViewDelegate {
             adjustedData.lkNumber,
             date: adjustedData.lkDate,
             engineer: adjustedData.engineerName,
-            CorrectiveStatusType(rawValue: ((adjustedData.statusText) ?? "")) ?? CorrectiveStatusType.none)
+            WorkSheetStatus(rawValue: ((adjustedData.statusText) ?? "")) ?? WorkSheetStatus.none)
         
         return cell
     }
@@ -246,7 +246,7 @@ extension ComplaintDetailView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGSize.widthDevice / 3.8, height: collectionView.frame.height)
+        return CGSize(width: CGSize.widthDevice / 3, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -260,10 +260,6 @@ extension ComplaintDetailView: UICollectionViewDataSource, UICollectionViewDeleg
               let image = selectedItem.valUrl
         else { return }
         presenter.navigateToDetailPicture(navigation: navigation, image: image)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
 }

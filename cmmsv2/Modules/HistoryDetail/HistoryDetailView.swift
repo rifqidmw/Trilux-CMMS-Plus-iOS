@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class HistoryDetailView: BaseViewController {
     
@@ -20,6 +21,7 @@ class HistoryDetailView: BaseViewController {
     @IBOutlet weak var workSheetView: UIView!
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var statusTitleLabel: UILabel!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var responseTimeView: InformationCardView!
@@ -112,6 +114,7 @@ extension HistoryDetailView {
                 self.dateLabel.text = "\(workOrder.txtEngineerName ?? "") - \(workOrder.valDelegatedTime ?? "-")"
                 self.statusLabel.text = status
                 self.statusView.isHidden = status != "Korektif"
+                self.statusTitleLabel.isHidden = status != "Korektif"
                 self.responseTimeView.configureView(title: "Response Time", value: complain.txtResponseTime ?? "-")
                 self.workStartView.configureView(title: "Mulai Bekerja", value: workOrder.valStartTime ?? "-")
                 self.workEndView.configureView(title: "Selesai Bekerja", value: workOrder.valEndTime ?? "-")
@@ -146,12 +149,21 @@ extension HistoryDetailView {
                 self.view.layoutIfNeeded()
             }
             .store(in: &anyCancellable)
+        
+        presenter.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoad in
+                guard let self else { return }
+                isLoad ? self.showAnimationSkeleton() : self.hideAnimationSkeleton()
+            }
+            .store(in: &anyCancellable)
     }
     
     private func configureSharedComponent() {
         customNavigationView.configure(toolbarTitle: "Riwayat", type: .plain)
         statusView.makeCornerRadius(8)
         headerImageView.makeCornerRadius(12)
+        headerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         containerHeaderView.makeCornerRadius(12)
         containerHeaderView.addShadow(0.8)
         workSheetView.makeCornerRadius(12)
@@ -180,7 +192,6 @@ extension HistoryDetailView {
         setupCollectionView(damagedPictureCollectionView)
         setupTableView()
         configureSharedComponent()
-        showAnimationSkeleton()
     }
     
     private func setupAction() {

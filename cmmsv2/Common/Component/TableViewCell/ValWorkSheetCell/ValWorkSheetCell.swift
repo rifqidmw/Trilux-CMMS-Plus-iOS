@@ -40,7 +40,7 @@ class ValWorkSheetCell: UITableViewCell {
 
 extension ValWorkSheetCell {
     
-    func showAnimationSkeleton() {
+    private func showAnimationSkeleton() {
         [self.lkNumberLabel,
          self.dateLabel,
          self.statusView].forEach {
@@ -49,7 +49,7 @@ extension ValWorkSheetCell {
         }
     }
     
-    func hideAnimationSkeleton() {
+    private func hideAnimationSkeleton() {
         [self.lkNumberLabel,
          self.dateLabel,
          self.statusView].forEach {
@@ -61,34 +61,54 @@ extension ValWorkSheetCell {
         _ lkNumber: String?,
         date: String?,
         engineer: String?,
-        _ status: CorrectiveStatusType?) {
+        _ status: WorkSheetStatus?) {
             self.hideAnimationSkeleton()
             self.lkNumberLabel.text = lkNumber ?? ""
             self.dateLabel.text = "\(engineer ?? "") • \(date ?? "")"
             self.configureStatus(status: status ?? .none)
         }
     
-    private func configureStatus(status: CorrectiveStatusType) {
-        statusLabel.text = status.getStringValue().capitalized
+    private func configureStatus(status: WorkSheetStatus) {
+        self.statusLabel.text = status.getStringValue()
+        
         switch status {
-        case .open:
+        case .done:
             self.statusView.backgroundColor = UIColor.customLightGreenColor
             self.statusLabel.textColor = UIColor.customIndicatorColor8
-            self.statusViewWidthConstraint.constant = 80
-        case .closed:
+            self.statusViewWidthConstraint.constant = 160
+        case .open:
             self.statusView.backgroundColor = UIColor.customSecondaryColor
             self.statusLabel.textColor = UIColor.customPrimaryColor
-            self.statusViewWidthConstraint.constant = 86
-        case .progress:
+            self.statusViewWidthConstraint.constant = 46
+        case .ongoing:
             self.statusView.backgroundColor = UIColor.customIndicatorColor2
             self.statusLabel.textColor = UIColor.customIndicatorColor11
-            self.statusViewWidthConstraint.constant = 92
-        case .delay:
+            self.statusViewWidthConstraint.constant = 130
+        case .hold:
             self.statusView.backgroundColor = UIColor.customIndicatorColor2
             self.statusLabel.textColor = UIColor.customIndicatorColor11
             self.statusViewWidthConstraint.constant = 100
-        case .none:
-            statusView.isHidden = true
+        case .close:
+            self.statusView.backgroundColor = UIColor.customLightGreenColor
+            self.statusLabel.textColor = UIColor.customIndicatorColor8
+            self.statusViewWidthConstraint.constant = 46
+        case .removed:
+            self.statusView.backgroundColor = UIColor.customIndicatorColor3
+            self.statusLabel.textColor = UIColor.customIndicatorColor4
+            self.statusViewWidthConstraint.constant = 220
+        case .progressDelay:
+            self.statusView.backgroundColor = UIColor.customIndicatorColor2
+            self.statusLabel.textColor = UIColor.customIndicatorColor11
+            self.statusViewWidthConstraint.constant = 100
+        case .progress:
+            self.statusView.backgroundColor = UIColor.customIndicatorColor2
+            self.statusLabel.textColor = UIColor.customIndicatorColor11
+            self.statusViewWidthConstraint.constant = 80
+        case .draft:
+            self.statusView.backgroundColor = UIColor.customIndicatorColor2
+            self.statusLabel.textColor = UIColor.customIndicatorColor11
+            self.statusViewWidthConstraint.constant = 50
+        default: break
         }
     }
     

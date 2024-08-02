@@ -75,7 +75,6 @@ extension AssetDetailView {
                 self.assetImageView.loadImageUrl(data.valImage ?? "")
                 self.serialNumberLabel.text = "SN: \(data.txtSerial ?? "")"
                 self.assetTypeLabel.text = presenter.type == .medic ? "Medic" : "Non-Medic"
-                AppLogger.log("-- THIS IS ASSET INFO DATA: \(data)")
             }
             .store(in: &anyCancellable)
         
@@ -84,7 +83,6 @@ extension AssetDetailView {
             .sink { [weak self] data in
                 guard let self = self, let data else { return }
                 self.technicalData = data
-                AppLogger.log("-- THIS IS TECHNICAL INFO DATA: \(data)")
             }
             .store(in: &anyCancellable)
         

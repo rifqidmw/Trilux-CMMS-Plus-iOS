@@ -72,4 +72,14 @@ class BaseRouter {
         UIApplication.shared.setRootViewController(rootViewController)
     }
     
+    func navigateToDetailAsset(from navigation: UINavigationController, _ type: AssetType, data: Equipment) {
+        let vc = AssetDetailRouter().showView(type: type, data: data)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToAssetFilter(from navigation: UINavigationController) {
+        let vc = AssetFilterRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

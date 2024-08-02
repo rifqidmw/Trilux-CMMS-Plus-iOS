@@ -139,10 +139,6 @@ extension HomeScreenPresenter {
         router.navigateToCalendarPreventive(navigation: navigation)
     }
     
-    func navigateToAssetFilter(from navigation: UINavigationController) {
-        router.navigateToAssetFilter(from: navigation)
-    }
-    
     func navigateToWorkSheetApproval(from navigation: UINavigationController) {
         router.navigateToWorkSheetApproval(from: navigation)
     }
