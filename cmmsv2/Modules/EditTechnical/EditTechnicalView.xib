@@ -57,7 +57,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swH-wR-Beu">
-                    <rect key="frame" x="0.0" y="115" width="393" height="615"/>
+                    <rect key="frame" x="0.0" y="115" width="393" height="623"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="59m-IE-Ofv">
                             <rect key="frame" x="16" y="16" width="361" height="1582"/>
@@ -273,17 +273,17 @@
                     </constraints>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-9S-RJi">
-                    <rect key="frame" x="0.0" y="730" width="393" height="88"/>
+                    <rect key="frame" x="0.0" y="738" width="393" height="80"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sXR-mY-BAZ">
-                            <rect key="frame" x="16" y="16" width="361" height="56"/>
+                            <rect key="frame" x="16" y="16" width="361" height="48"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSv-ia-bpj" userLabel="Cancel Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="48"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKP-0W-gfI" userLabel="Save Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="56"/>
+                                    <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="48"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
@@ -294,7 +294,7 @@
                         <constraint firstAttribute="bottom" secondItem="sXR-mY-BAZ" secondAttribute="bottom" constant="16" id="Vmq-LB-U74"/>
                         <constraint firstItem="sXR-mY-BAZ" firstAttribute="top" secondItem="DPm-9S-RJi" secondAttribute="top" constant="16" id="Wcx-vX-QX6"/>
                         <constraint firstItem="sXR-mY-BAZ" firstAttribute="leading" secondItem="DPm-9S-RJi" secondAttribute="leading" constant="16" id="b38-oS-qZA"/>
-                        <constraint firstAttribute="height" constant="88" id="nrv-QS-cfB"/>
+                        <constraint firstAttribute="height" constant="80" id="nrv-QS-cfB"/>
                         <constraint firstAttribute="trailing" secondItem="sXR-mY-BAZ" secondAttribute="trailing" constant="16" id="t5w-Sf-OyB"/>
                     </constraints>
                 </view>
