@@ -13,4 +13,8 @@ class HomeScreenInteractor: BaseInteractor {
         return api.requestApiPublisher(.infoExpired)
     }
     
+    func getReminderPreventive(date: String?) -> AnyPublisher<ReminderPreventiveEntity, Error> {
+        return api.requestApiPublisher(.reminderPreventive(date: date ?? ""))
+    }
+    
 }

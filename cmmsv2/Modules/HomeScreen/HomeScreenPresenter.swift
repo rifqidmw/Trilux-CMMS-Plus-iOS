@@ -13,6 +13,7 @@ class HomeScreenPresenter: BasePresenter {
     private let router = HomeScreenRouter()
     
     @Published public var expiredData: ExpiredData?
+    @Published public var reminderData: ReminderPreventiveEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -44,6 +45,30 @@ extension HomeScreenPresenter {
                 receiveValue: { expired in
                     DispatchQueue.main.async {
                         self.expiredData = expired.data
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchReminderPreventive(date: String?) {
+        self.isLoading = true
+        interactor.getReminderPreventive(date: date ?? "")
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { reminderData in
+                    DispatchQueue.main.async {
+                        self.reminderData = reminderData
                     }
                 }
             )
