@@ -114,6 +114,8 @@ enum Endpoint {
         page: Int?)
     case approveWorkSheet(data: ApproveWorkSheetRequest)
     case trackComplaint(id: String?)
+    case loadTechnical(id: String?)
+    case saveTechnical(data: EditTechnicalRequestEntity)
 }
 
 // MARK: - PATH URL
@@ -263,6 +265,10 @@ extension Endpoint {
             return "lk/approve"
         case .trackComplaint(id: let id):
             return "equipments/track_complain?id=\(id ?? "")"
+        case .loadTechnical(id: let id):
+            return "equipments/load_teknis?id=\(id ?? "")"
+        case .saveTechnical:
+            return "equipments/save_teknis"
         }
     }
     
@@ -282,7 +288,8 @@ extension Endpoint {
                 .createCorrective,
                 .createPreventive,
                 .saveWorkSheet,
-                .approveWorkSheet:
+                .approveWorkSheet,
+                .saveTechnical:
             return .post
         default:
             return .get
@@ -484,6 +491,26 @@ extension Endpoint {
             let params: [String: Any] = [
                 "wo_id": data.woId ?? "",
                 "status": data.status ?? ""
+            ]
+            return params
+        case .saveTechnical(let data):
+            let params: [String: Any] = [
+                "frekuensi": data.frekuensi,
+                "fungsi": data.fungsi,
+                "id_asset": data.idAsset,
+                "insiden": data.insiden,
+                "klsresiko": data.klsresiko,
+                "melopsi": data.melopsi,
+                "pemeliharaan": data.pemeliharaan,
+                "pengganti": data.pengganti,
+                "power": data.power,
+                "priority": data.priority,
+                "recpengganti": data.recpengganti,
+                "resiko": data.resiko,
+                "tech": data.tech,
+                "urut_medik": data.urutMedik,
+                "usia": data.usia,
+                "year": data.year
             ]
             return params
         default:

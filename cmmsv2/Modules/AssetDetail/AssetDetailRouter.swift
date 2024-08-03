@@ -18,3 +18,12 @@ class AssetDetailRouter: BaseRouter {
     }
     
 }
+
+extension AssetDetailRouter {
+    
+    func navigateToUpdateTechnicalData(from navigation: UINavigationController, _ data: Equipment) {
+        let vc = EditTechnicalRouter().showView(data: data)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+}

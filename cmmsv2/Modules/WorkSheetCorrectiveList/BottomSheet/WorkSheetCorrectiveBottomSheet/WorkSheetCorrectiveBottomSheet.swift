@@ -177,7 +177,7 @@ extension WorkSheetCorrectiveBottomSheet {
                 else { return }
                 
                 var type: AssetType?
-                switch workorder.txtType {
+                switch workorder.valType {
                 case "1":
                     type = .medic
                 case "2":

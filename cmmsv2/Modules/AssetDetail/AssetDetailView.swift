@@ -169,8 +169,11 @@ extension AssetDetailView {
         
         updateTechDataButton.gesture()
             .sink { [weak self] _ in
-                guard let self else { return }
-                self.showAlert(title: "Update data teknis")
+                guard let self,
+                      let navigation = self.navigationController,
+                      let asset = presenter.data
+                else { return }
+                presenter.navigateToUpdateTechnicalData(from: navigation, asset)
             }
             .store(in: &anyCancellable)
     }

@@ -1,18 +1,25 @@
 //
-//  InstallationBottomSheet.swift
+//  SelectTechnicalDataBottomSheet.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 23/07/24.
+//  Created by PRO M1 2020 8/256 on 03/08/24.
 //
 
 import UIKit
 import Combine
 
-protocol InstallationBottomSheetDelegate: AnyObject {
-    func didSelectInstallation(_ installation: InstallationData)
+enum SelectTechnicalDataBottomSheetType {
+    case technology
+    case priority
+    case frequency
+    case melopsi
 }
 
-class InstallationBottomSheet: BaseNonNavigationController {
+protocol SelectTechnicalDataBottomSheetDelegate: AnyObject {
+    func didSelectItem(_ key: String, type: SelectTechnicalDataBottomSheetType)
+}
+
+class SelectTechnicalDataBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
@@ -21,9 +28,10 @@ class InstallationBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    var data: [InstallationData] = []
-    var filteredData: [InstallationData] = []
-    weak var delegate: InstallationBottomSheetDelegate?
+    var data: [ReferenceItem] = []
+    var filteredData: [ReferenceItem] = []
+    var type: SelectTechnicalDataBottomSheetType?
+    weak var delegate: SelectTechnicalDataBottomSheetDelegate?
     
     override func didLoad() {
         super.didLoad()
@@ -34,7 +42,7 @@ class InstallationBottomSheet: BaseNonNavigationController {
     
 }
 
-extension InstallationBottomSheet {
+extension SelectTechnicalDataBottomSheet {
     
     private func setupBody() {
         setupView()
@@ -48,12 +56,21 @@ extension InstallationBottomSheet {
         self.tableView.delegate = self
         self.tableView.register(SelectionTVC.nib, forCellReuseIdentifier: SelectionTVC.identifier)
         self.tableView.separatorStyle = .none
-        self.tableView.showsVerticalScrollIndicator = false
-        self.tableView.showsHorizontalScrollIndicator = false
     }
     
     private func setupView() {
+        guard let type else { return }
         self.containerTextFieldView.makeCornerRadius(8)
+        switch type {
+        case .frequency:
+            self.titleLabel.text = "Pilih Frekuensi Pemeliharaan"
+        case .melopsi:
+            self.titleLabel.text = "Pilih EML Faktor"
+        case .priority:
+            self.titleLabel.text = "Pilih Prioritas"
+        case .technology:
+            self.titleLabel.text = "Teknologi"
+        }
     }
     
     private func setupAction() {
@@ -73,7 +90,7 @@ extension InstallationBottomSheet {
     
 }
 
-extension InstallationBottomSheet: UITableViewDataSource, UITableViewDelegate {
+extension SelectTechnicalDataBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.filteredData.count
@@ -85,16 +102,15 @@ extension InstallationBottomSheet: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        let groupedData = self.filteredData[indexPath.row]
-        cell.setupCell(title: groupedData.name ?? "", description: groupedData.groupName, type: .withDesc)
+        cell.setupCell(title: self.filteredData[indexPath.row].value ?? "")
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let delegate else { return }
+        guard let delegate, let type else { return }
         self.dismissBottomSheet() {
-            delegate.didSelectInstallation(self.filteredData[indexPath.row])
+            delegate.didSelectItem(self.filteredData[indexPath.row].key ?? "", type: type)
         }
     }
     
@@ -104,14 +120,14 @@ extension InstallationBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-extension InstallationBottomSheet: UITextFieldDelegate {
+extension SelectTechnicalDataBottomSheet: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text else { return }
         if text.isEmpty {
             self.filteredData = self.data
         } else {
-            self.filteredData = self.data.filter { $0.name?.contains(text.lowercased()) ?? false }
+            self.filteredData = self.data.filter { $0.value?.lowercased().contains(text.lowercased()) ?? false }
         }
         self.tableView.reloadData()
     }

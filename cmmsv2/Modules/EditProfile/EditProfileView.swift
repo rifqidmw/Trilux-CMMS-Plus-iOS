@@ -24,7 +24,6 @@ class EditProfileView: BaseViewController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
-        self.configureKeyboard()
         self.validateUser()
     }
     

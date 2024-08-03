@@ -135,11 +135,11 @@ extension WorkSheetCorrectiveDetailView {
             .sink { [weak self] _ in
                 guard let self,
                       let navigation = self.navigationController,
-                      let data = presenter.complaintEquipment
+                      let data = presenter.data
                 else { return }
                 
                 var type: AssetType?
-                switch data.txtType {
+                switch data.valType {
                 case "1":
                     type = .medic
                 case "2":

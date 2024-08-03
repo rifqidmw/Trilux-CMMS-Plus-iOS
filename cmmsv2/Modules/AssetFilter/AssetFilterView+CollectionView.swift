@@ -28,7 +28,7 @@ extension AssetFilterView: UICollectionViewDelegate, UICollectionViewDataSource,
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailAsset(navigation: navigation, data: self.assetData[indexPath.row], type: presenter.group == "1" ? .medic : .nonMedic)
+        presenter.navigateToDetailAsset(from: navigation, presenter.group == "1" ? .medic : .nonMedic, data: self.assetData[indexPath.row])
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

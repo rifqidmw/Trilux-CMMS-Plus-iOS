@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditTechnicalView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="SSv-ia-bpj" id="5mt-mh-KhP"/>
+                <outlet property="classRiskTextField" destination="ctb-cH-bNm" id="aSi-q2-xIG"/>
+                <outlet property="containerBottomButtonView" destination="DPm-9S-RJi" id="Lld-zJ-pp4"/>
+                <outlet property="containerEquipmentManagementStackView" destination="lbB-cC-goU" id="HZy-kz-h9p"/>
+                <outlet property="containerMMELStackView" destination="hs0-mZ-Hdv" id="UkZ-Ps-vTd"/>
+                <outlet property="containerTechnicalDataStackView" destination="6rE-NJ-cNS" id="GQK-yj-CD7"/>
+                <outlet property="customNavigationView" destination="c2B-m1-wTs" id="Ido-hN-kmo"/>
+                <outlet property="equipmentManagementHeaderView" destination="ezb-AS-N3S" id="eK3-3H-2sV"/>
+                <outlet property="functionTextField" destination="Vi7-Yk-ipa" id="C7I-hh-uYC"/>
+                <outlet property="incidentTextField" destination="EsO-bV-pbH" id="d7y-2E-IlD"/>
+                <outlet property="maintenanceTextField" destination="ksD-4u-BnF" id="Trd-Tr-qmq"/>
+                <outlet property="mmelHeaderView" destination="f26-fl-QkQ" id="pnb-gg-f6K"/>
+                <outlet property="powerConsumptionTextField" destination="y9I-Ur-jbT" id="Tqr-nR-zOJ"/>
+                <outlet property="replacementValueTextField" destination="Rmd-Rv-dvO" id="7Ey-y9-GtZ"/>
+                <outlet property="riskTextField" destination="NOu-D1-Cqn" id="XSo-go-TpU"/>
+                <outlet property="saveButton" destination="lKP-0W-gfI" id="f6z-DV-HCd"/>
+                <outlet property="selectMELFactorView" destination="3XM-HO-bcf" id="Q9z-wd-d6j"/>
+                <outlet property="selectMaintenanceFrequencyView" destination="eEJ-B2-07q" id="FbV-Rx-Ukt"/>
+                <outlet property="selectPriorityView" destination="GZu-0b-0jS" id="25K-Cg-vKU"/>
+                <outlet property="selectTechnologyView" destination="sXr-QT-b1b" id="mbV-e3-jfH"/>
+                <outlet property="serialNumberTextField" destination="KCj-oz-Qo1" id="mbA-w2-oJm"/>
+                <outlet property="technicalAgeTextField" destination="JTC-5I-uAc" id="JeH-rU-IKO"/>
+                <outlet property="technicalDataHeaderView" destination="JCc-b2-A9E" id="MAh-bj-BRa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yearBuyTextField" destination="7N9-xx-YOH" id="qnz-zk-uoN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2B-m1-wTs" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="5IO-Gk-BPR"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swH-wR-Beu">
+                    <rect key="frame" x="0.0" y="115" width="393" height="615"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="59m-IE-Ofv">
+                            <rect key="frame" x="16" y="16" width="361" height="1582"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6rE-NJ-cNS" userLabel="Technical Data Stack View">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="548"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCc-b2-A9E" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="thn-2z-G44"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AoC-aV-DUt">
+                                            <rect key="frame" x="0.0" y="48" width="361" height="500"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-oz-Qo1" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="16" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="oX3-jS-X5s"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXr-QT-b1b" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="110" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="zep-D3-prD"/>
+                                                    </constraints>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-TG-oD6">
+                                                    <rect key="frame" x="16" y="204" width="329" height="92"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9I-Ur-jbT" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="78"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="78" id="fFP-EL-bDp"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Satuan dalam Watt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeU-xQ-6VQ">
+                                                            <rect key="frame" x="0.0" y="80" width="329" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="tB4-D5-1sq"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                                            <color key="textColor" name="placeholderColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZu-0b-0jS" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="312" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="nRH-g5-vTq"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctb-cH-bNm" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="406" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="Upw-oK-2P9"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-cC-goU" userLabel="Equipment Management Stack View">
+                                    <rect key="frame" x="0.0" y="564" width="361" height="534"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-AS-N3S" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="Dkw-AV-mSL"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yCT-m2-dO2">
+                                            <rect key="frame" x="0.0" y="48" width="361" height="486"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vi7-Yk-ipa" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="16" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="abp-lI-bzt"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOu-D1-Cqn" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="110" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="9FX-ws-pck"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-4u-BnF" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="204" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="8Wl-8Y-lVe"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsO-bV-pbH" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="298" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="H1v-na-S8R"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEJ-B2-07q" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="392" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="6yP-ZK-YMv"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hs0-mZ-Hdv" userLabel="MMEL Stack View">
+                                    <rect key="frame" x="0.0" y="1114" width="361" height="468"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f26-fl-QkQ" customClass="CustomHeaderView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="LYK-3S-UhQ"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tEZ-tB-SXr">
+                                            <rect key="frame" x="0.0" y="48" width="361" height="420"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-xx-YOH" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="16" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="Ya7-OE-CFh"/>
+                                                    </constraints>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="wCb-hB-rtb">
+                                                    <rect key="frame" x="16" y="110" width="329" height="92"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-5I-uAc" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="78"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="78" id="5vn-6F-Ki5"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Satuan dalam Tahun" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rd-1i-XNc">
+                                                            <rect key="frame" x="0.0" y="80" width="329" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="7bF-rS-ijV"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                                            <color key="textColor" name="placeholderColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XM-HO-bcf" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="218" width="329" height="78"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="eny-4u-9sr"/>
+                                                    </constraints>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Huc-XV-MmX">
+                                                    <rect key="frame" x="16" y="312" width="329" height="92"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmd-Rv-dvO" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="78"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="78" id="h7M-wo-OXM"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rekomendasi Rp 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5w-GX-mRi">
+                                                            <rect key="frame" x="0.0" y="80" width="329" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="rX6-ff-5ln"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                                            <color key="textColor" name="placeholderColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="59m-IE-Ofv" firstAttribute="top" secondItem="swH-wR-Beu" secondAttribute="top" constant="16" id="AUP-gP-bBv"/>
+                        <constraint firstItem="59m-IE-Ofv" firstAttribute="leading" secondItem="swH-wR-Beu" secondAttribute="leading" constant="16" id="YGg-yq-AJC"/>
+                        <constraint firstItem="59m-IE-Ofv" firstAttribute="centerX" secondItem="swH-wR-Beu" secondAttribute="centerX" id="kZx-o9-f3m"/>
+                        <constraint firstAttribute="bottom" secondItem="59m-IE-Ofv" secondAttribute="bottom" constant="16" id="mEW-aC-mlM"/>
+                        <constraint firstAttribute="trailing" secondItem="59m-IE-Ofv" secondAttribute="trailing" constant="16" id="xQR-HP-eMI"/>
+                    </constraints>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-9S-RJi">
+                    <rect key="frame" x="0.0" y="730" width="393" height="88"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sXR-mY-BAZ">
+                            <rect key="frame" x="16" y="16" width="361" height="56"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSv-ia-bpj" userLabel="Cancel Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="56"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKP-0W-gfI" userLabel="Save Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="56"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="sXR-mY-BAZ" secondAttribute="bottom" constant="16" id="Vmq-LB-U74"/>
+                        <constraint firstItem="sXR-mY-BAZ" firstAttribute="top" secondItem="DPm-9S-RJi" secondAttribute="top" constant="16" id="Wcx-vX-QX6"/>
+                        <constraint firstItem="sXR-mY-BAZ" firstAttribute="leading" secondItem="DPm-9S-RJi" secondAttribute="leading" constant="16" id="b38-oS-qZA"/>
+                        <constraint firstAttribute="height" constant="88" id="nrv-QS-cfB"/>
+                        <constraint firstAttribute="trailing" secondItem="sXR-mY-BAZ" secondAttribute="trailing" constant="16" id="t5w-Sf-OyB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="swH-wR-Beu" firstAttribute="top" secondItem="c2B-m1-wTs" secondAttribute="bottom" id="18M-gY-LDA"/>
+                <constraint firstItem="c2B-m1-wTs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3s2-La-MAg"/>
+                <constraint firstItem="DPm-9S-RJi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8xD-oT-RPB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c2B-m1-wTs" secondAttribute="trailing" id="AkF-b8-VNs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="swH-wR-Beu" secondAttribute="trailing" id="Zfw-X3-BYQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DPm-9S-RJi" secondAttribute="bottom" id="ddr-XE-2cg"/>
+                <constraint firstAttribute="trailing" secondItem="DPm-9S-RJi" secondAttribute="trailing" id="doy-pR-K26"/>
+                <constraint firstItem="c2B-m1-wTs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fTc-lQ-YkA"/>
+                <constraint firstItem="DPm-9S-RJi" firstAttribute="top" secondItem="swH-wR-Beu" secondAttribute="bottom" id="pQQ-N4-yOe"/>
+                <constraint firstItem="swH-wR-Beu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v0c-vB-il5"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="placeholderColor">
+            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

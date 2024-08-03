@@ -811,6 +811,22 @@
 		CEE79EDA2B713E810063D844 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE79ED82B713E810063D844 /* CustomHeaderView.swift */; };
 		CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */; };
 		CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */; };
+		CEE8620A2C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE862082C5CF6B000AA4317 /* EditTechnicalView.xib */; };
+		CEE8620B2C5CF6B000AA4317 /* EditTechnicalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862042C5CF6B000AA4317 /* EditTechnicalPresenter.swift */; };
+		CEE8620C2C5CF6B000AA4317 /* EditTechnicalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862052C5CF6B000AA4317 /* EditTechnicalRouter.swift */; };
+		CEE8620D2C5CF6B000AA4317 /* EditTechnicalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862062C5CF6B000AA4317 /* EditTechnicalInteractor.swift */; };
+		CEE8620E2C5CF6B000AA4317 /* EditTechnicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862072C5CF6B000AA4317 /* EditTechnicalView.swift */; };
+		CEE8620F2C5CF6B000AA4317 /* EditTechnicalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862092C5CF6B000AA4317 /* EditTechnicalEntity.swift */; };
+		CEE862102C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE862082C5CF6B000AA4317 /* EditTechnicalView.xib */; };
+		CEE862112C5CF6B000AA4317 /* EditTechnicalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862042C5CF6B000AA4317 /* EditTechnicalPresenter.swift */; };
+		CEE862122C5CF6B000AA4317 /* EditTechnicalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862052C5CF6B000AA4317 /* EditTechnicalRouter.swift */; };
+		CEE862132C5CF6B000AA4317 /* EditTechnicalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862062C5CF6B000AA4317 /* EditTechnicalInteractor.swift */; };
+		CEE862142C5CF6B000AA4317 /* EditTechnicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862072C5CF6B000AA4317 /* EditTechnicalView.swift */; };
+		CEE862152C5CF6B000AA4317 /* EditTechnicalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862092C5CF6B000AA4317 /* EditTechnicalEntity.swift */; };
+		CEE862192C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE862182C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib */; };
+		CEE8621A2C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862172C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift */; };
+		CEE8621B2C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE862182C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib */; };
+		CEE8621C2C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE862172C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift */; };
 		CEE8CB8D2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8CB872BF7C8FD006E59B7 /* HistoryDetailPresenter.swift */; };
 		CEE8CB8E2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8CB872BF7C8FD006E59B7 /* HistoryDetailPresenter.swift */; };
 		CEE8CB8F2BF7C8FD006E59B7 /* HistoryDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8CB882BF7C8FD006E59B7 /* HistoryDetailRouter.swift */; };
@@ -1362,6 +1378,14 @@
 		CEE79ED42B7122580063D844 /* AssetSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetSectionView.xib; sourceTree = "<group>"; };
 		CEE79ED82B713E810063D844 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		CEE862042C5CF6B000AA4317 /* EditTechnicalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTechnicalPresenter.swift; sourceTree = "<group>"; };
+		CEE862052C5CF6B000AA4317 /* EditTechnicalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTechnicalRouter.swift; sourceTree = "<group>"; };
+		CEE862062C5CF6B000AA4317 /* EditTechnicalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTechnicalInteractor.swift; sourceTree = "<group>"; };
+		CEE862072C5CF6B000AA4317 /* EditTechnicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTechnicalView.swift; sourceTree = "<group>"; };
+		CEE862082C5CF6B000AA4317 /* EditTechnicalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTechnicalView.xib; sourceTree = "<group>"; };
+		CEE862092C5CF6B000AA4317 /* EditTechnicalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTechnicalEntity.swift; sourceTree = "<group>"; };
+		CEE862172C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTechnicalDataBottomSheet.swift; sourceTree = "<group>"; };
+		CEE862182C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectTechnicalDataBottomSheet.xib; sourceTree = "<group>"; };
 		CEE8CB872BF7C8FD006E59B7 /* HistoryDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailPresenter.swift; sourceTree = "<group>"; };
 		CEE8CB882BF7C8FD006E59B7 /* HistoryDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailRouter.swift; sourceTree = "<group>"; };
 		CEE8CB892BF7C8FD006E59B7 /* HistoryDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailInteractor.swift; sourceTree = "<group>"; };
@@ -2682,6 +2706,7 @@
 				CE4D12162C096029007184B2 /* DelayCorrectiveDetail */,
 				CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
+				CEE862032C5CF66D00AA4317 /* EditTechnical */,
 				CE4012212B5D7D6000517F7C /* FullScreenPicture */,
 				CEE8CB862BF7C8E7006E59B7 /* HistoryDetail */,
 				CEC1B0542BA1E37600DF6A4F /* HistoryList */,
@@ -2859,6 +2884,7 @@
 				CEF43A2C2C53935B0066B65A /* ConditionFilterBottomSheet */,
 				CE8B88CB2C29887200AF8F63 /* FilterStatusBottomSheet */,
 				CE829B012C4FFED60056F429 /* InstallationBottomSheet */,
+				CEE862162C5D86DD00AA4317 /* SelectTechnicalDataBottomSheet */,
 				CEB465B02C4CBC7600B10341 /* SortingBottomSheet */,
 				CE5EC2DB2C3CE189005D5426 /* SparePartBottomSheet */,
 				CE98787D2C5A86BC008E0F77 /* TrackProgressBottomSheet */,
@@ -3068,6 +3094,28 @@
 				CEE79EDB2B713E9C0063D844 /* CustomHeaderView.xib */,
 			);
 			path = CustomHeader;
+			sourceTree = "<group>";
+		};
+		CEE862032C5CF66D00AA4317 /* EditTechnical */ = {
+			isa = PBXGroup;
+			children = (
+				CEE862042C5CF6B000AA4317 /* EditTechnicalPresenter.swift */,
+				CEE862052C5CF6B000AA4317 /* EditTechnicalRouter.swift */,
+				CEE862062C5CF6B000AA4317 /* EditTechnicalInteractor.swift */,
+				CEE862072C5CF6B000AA4317 /* EditTechnicalView.swift */,
+				CEE862082C5CF6B000AA4317 /* EditTechnicalView.xib */,
+				CEE862092C5CF6B000AA4317 /* EditTechnicalEntity.swift */,
+			);
+			path = EditTechnical;
+			sourceTree = "<group>";
+		};
+		CEE862162C5D86DD00AA4317 /* SelectTechnicalDataBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CEE862172C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift */,
+				CEE862182C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib */,
+			);
+			path = SelectTechnicalDataBottomSheet;
 			sourceTree = "<group>";
 		};
 		CEE8CB862BF7C8E7006E59B7 /* HistoryDetail */ = {
@@ -3364,6 +3412,7 @@
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
 				CE8B88D52C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */,
 				CE497AF52C34569A00D565EE /* ElectricInputSectionView.xib in Resources */,
+				CEE862192C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEF049AA2C1C4AA6006B6FFD /* SelectView.xib in Resources */,
 				CE6286952C19D0BE00CB552F /* CorrectiveTVC.xib in Resources */,
@@ -3401,6 +3450,7 @@
 				CECB3E0D2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21B2B5C38620034B9FE /* ImageCardView.xib in Resources */,
+				CEE8620A2C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
 				CE4255ED2BA704E5002B558C /* LogBookListView.xib in Resources */,
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F02BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
@@ -3527,6 +3577,7 @@
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
 				CE8B88D82C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */,
 				CE497AF72C34569A00D565EE /* ElectricInputSectionView.xib in Resources */,
+				CEE8621B2C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEF049AC2C1C4AA6006B6FFD /* SelectView.xib in Resources */,
 				CE6286972C19D0BE00CB552F /* CorrectiveTVC.xib in Resources */,
@@ -3564,6 +3615,7 @@
 				CECB3E0E2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */,
+				CEE862102C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
 				CE4255EE2BA704E5002B558C /* LogBookListView.xib in Resources */,
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F22BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
@@ -3848,6 +3900,11 @@
 				CEC1B05B2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */,
 				CEC2079F2B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CE916A732C06348B00C8B153 /* PreparationSectionView.swift in Sources */,
+				CEE8620B2C5CF6B000AA4317 /* EditTechnicalPresenter.swift in Sources */,
+				CEE8620C2C5CF6B000AA4317 /* EditTechnicalRouter.swift in Sources */,
+				CEE8620D2C5CF6B000AA4317 /* EditTechnicalInteractor.swift in Sources */,
+				CEE8620E2C5CF6B000AA4317 /* EditTechnicalView.swift in Sources */,
+				CEE8620F2C5CF6B000AA4317 /* EditTechnicalEntity.swift in Sources */,
 				CEF43CC72C3F408E00B34FE2 /* StatusSection.swift in Sources */,
 				CE916A892C0640C100C8B153 /* CalibrationTVC.swift in Sources */,
 				CE3108552BE20D2000660275 /* AssetDetailView.swift in Sources */,
@@ -3983,6 +4040,7 @@
 				CEE780BB2C0C558B001BA9C2 /* ElectricSectionView.swift in Sources */,
 				CEFB4F152B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
 				CE684AD82C517F3900F15BDE /* AssetListView+Delegate.swift in Sources */,
+				CEE8621A2C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift in Sources */,
 				CEC1B0772BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */,
 				CE31087B2BE2662C00660275 /* ToolsInformationView.swift in Sources */,
 				CEFD6D1E2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailPresenter.swift in Sources */,
@@ -4169,6 +4227,11 @@
 				CEC1B05C2BA1E39700DF6A4F /* HistoryListPresenter.swift in Sources */,
 				CEC207A02B4AD6870073FA1E /* HomeScreenView.swift in Sources */,
 				CE916A752C06348B00C8B153 /* PreparationSectionView.swift in Sources */,
+				CEE862112C5CF6B000AA4317 /* EditTechnicalPresenter.swift in Sources */,
+				CEE862122C5CF6B000AA4317 /* EditTechnicalRouter.swift in Sources */,
+				CEE862132C5CF6B000AA4317 /* EditTechnicalInteractor.swift in Sources */,
+				CEE862142C5CF6B000AA4317 /* EditTechnicalView.swift in Sources */,
+				CEE862152C5CF6B000AA4317 /* EditTechnicalEntity.swift in Sources */,
 				CEF43CCA2C3F408E00B34FE2 /* StatusSection.swift in Sources */,
 				CE916A8B2C0640C100C8B153 /* CalibrationTVC.swift in Sources */,
 				CE3108562BE20D2000660275 /* AssetDetailView.swift in Sources */,
@@ -4304,6 +4367,7 @@
 				CEE780BD2C0C558B001BA9C2 /* ElectricSectionView.swift in Sources */,
 				CEFB4F162B4930460033D37D /* RegistrationHospitalEntity.swift in Sources */,
 				CE684AD92C517F3900F15BDE /* AssetListView+Delegate.swift in Sources */,
+				CEE8621C2C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.swift in Sources */,
 				CEC1B0782BA217E600DF6A4F /* DelayCorrectiveListRouter.swift in Sources */,
 				CE31087C2BE2662C00660275 /* ToolsInformationView.swift in Sources */,
 				CEFD6D1F2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailPresenter.swift in Sources */,
