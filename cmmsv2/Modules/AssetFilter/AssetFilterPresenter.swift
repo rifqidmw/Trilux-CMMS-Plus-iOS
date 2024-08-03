@@ -212,10 +212,6 @@ extension AssetFilterPresenter {
 
 extension AssetFilterPresenter {
     
-    func navigateToDetailAsset(navigation: UINavigationController, data: Equipment, type: AssetType) {
-        router.navigateToDetailAsset(navigation: navigation, type: type, data: data)
-    }
-    
     func showSortBottomSheet(from navigation: UINavigationController, _ delegate: SortingBottomSheetDelegate) {
         let bottomSheet = SortingBottomSheet(nibName: String(describing: SortingBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate

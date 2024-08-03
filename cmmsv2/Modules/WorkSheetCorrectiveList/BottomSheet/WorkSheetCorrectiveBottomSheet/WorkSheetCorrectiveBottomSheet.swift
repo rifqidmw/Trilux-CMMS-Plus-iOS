@@ -168,6 +168,30 @@ extension WorkSheetCorrectiveBottomSheet {
                 }
             }
             .store(in: &anyCancellable)
+        
+        imageCardView.gesture()
+            .sink { [weak self] _ in
+                guard let self = self,
+                      let delegate = self.delegate,
+                      let workorder = self.data
+                else { return }
+                
+                var type: AssetType?
+                switch workorder.valType {
+                case "1":
+                    type = .medic
+                case "2":
+                    type = .nonMedic
+                default: break
+                }
+                
+                let equipment = Equipment(from: workorder)
+                self.dismissBottomSheet() {
+                    delegate.didTapAssetImage(equipment, type: type ?? .none)
+                }
+            }
+            .store(in: &anyCancellable)
+        
     }
     
 }

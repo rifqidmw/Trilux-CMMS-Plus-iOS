@@ -223,4 +223,8 @@ extension AssetDetailPresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
+    func navigateToUpdateTechnicalData(from navigation: UINavigationController, _ data: Equipment) {
+        router.navigateToUpdateTechnicalData(from: navigation, data)
+    }
+    
 }

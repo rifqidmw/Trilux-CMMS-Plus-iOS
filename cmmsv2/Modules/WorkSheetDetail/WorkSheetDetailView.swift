@@ -114,7 +114,6 @@ class WorkSheetDetailView: BaseViewController {
         super.didLoad()
         self.setupBody()
         self.validateUser()
-        self.configureKeyboard()
     }
     
 }

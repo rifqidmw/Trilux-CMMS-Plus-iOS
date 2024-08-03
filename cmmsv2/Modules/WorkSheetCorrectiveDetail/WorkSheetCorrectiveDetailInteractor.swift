@@ -13,4 +13,8 @@ class WorkSheetCorrectiveDetailInteractor: BaseInteractor {
         return api.requestApiPublisher(.complaintDetail(id: id))
     }
     
+    func getComplaintTracking(id: String?) -> AnyPublisher<TrackComplaintEntity, Error> {
+        return api.requestApiPublisher(.trackComplaint(id: id ?? ""))
+    }
+    
 }

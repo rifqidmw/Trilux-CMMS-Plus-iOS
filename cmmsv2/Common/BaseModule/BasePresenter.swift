@@ -63,4 +63,12 @@ extension BasePresenter {
         router.goToLoginPage(navigation: navigation, data: data)
     }
     
+    func navigateToDetailAsset(from navigation: UINavigationController, _ type: AssetType, data: Equipment) {
+        router.navigateToDetailAsset(from: navigation, type, data: data)
+    }
+    
+    func navigateToAssetFilter(from navigation: UINavigationController) {
+        router.navigateToAssetFilter(from: navigation)
+    }
+    
 }

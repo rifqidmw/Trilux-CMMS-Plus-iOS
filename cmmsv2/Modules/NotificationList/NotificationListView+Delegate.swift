@@ -9,6 +9,10 @@ import UIKit
 
 extension NotificationListView: WorkSheetCorrectiveBottomSheetDelegate {
     
+    func didTapAssetImage(_ data: Equipment, type: AssetType) {
+        AppLogger.log("-- CLICKED")
+    }
+    
     func didTapDownload(_ id: String) {
         AppLogger.log("-- CLICKED")
     }

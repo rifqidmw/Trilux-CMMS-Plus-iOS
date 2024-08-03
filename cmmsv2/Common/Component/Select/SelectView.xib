@@ -32,14 +32,14 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUb-6f-Jvw">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="14"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                    <color key="textColor" name="placeholderColor"/>
+                    <color key="textColor" name="customDarkGrayColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3i-os-M2l">
-                    <rect key="frame" x="0.0" y="18" width="393" height="62"/>
+                    <rect key="frame" x="0.0" y="22" width="393" height="58"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBt-Ec-cD2">
-                            <rect key="frame" x="16" y="21" width="325" height="20"/>
+                            <rect key="frame" x="16" y="19" width="325" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="DsX-FW-alL"/>
                             </constraints>
@@ -48,7 +48,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_collapse_accordion" translatesAutoresizingMaskIntoConstraints="NO" id="kue-rX-Zxe">
-                            <rect key="frame" x="357" y="21" width="20" height="20"/>
+                            <rect key="frame" x="357" y="19" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="Cti-IT-JY3"/>
                                 <constraint firstAttribute="width" constant="20" id="zWA-x3-V74"/>
@@ -73,7 +73,7 @@
                 <constraint firstAttribute="trailing" secondItem="q3i-os-M2l" secondAttribute="trailing" id="OnR-3H-1Ve"/>
                 <constraint firstAttribute="trailing" secondItem="hUb-6f-Jvw" secondAttribute="trailing" id="WF4-Nn-Vf2"/>
                 <constraint firstItem="hUb-6f-Jvw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sXY-CP-6Vf"/>
-                <constraint firstItem="q3i-os-M2l" firstAttribute="top" secondItem="hUb-6f-Jvw" secondAttribute="bottom" constant="4" id="zhi-XR-sCz"/>
+                <constraint firstItem="q3i-os-M2l" firstAttribute="top" secondItem="hUb-6f-Jvw" secondAttribute="bottom" constant="8" id="zhi-XR-sCz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="32.824427480916029" y="-1.4084507042253522"/>
@@ -86,9 +86,6 @@
         </namedColor>
         <namedColor name="customLightGrayColor">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="placeholderColor">
-            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

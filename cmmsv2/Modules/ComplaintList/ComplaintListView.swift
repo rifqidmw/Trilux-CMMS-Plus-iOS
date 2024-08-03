@@ -25,7 +25,6 @@ class ComplaintListView: BaseViewController {
         super.didLoad()
         self.setupBody()
         self.validateUser()
-        self.configureKeyboard()
     }
     
 }

@@ -18,13 +18,3 @@ class AssetFilterRouter: BaseRouter {
     }
     
 }
-
-extension AssetFilterRouter {
-    
-    func navigateToDetailAsset(navigation: UINavigationController, type: AssetType, data: Equipment) {
-        let vc = AssetDetailRouter().showView(type: type, data: data)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}
-

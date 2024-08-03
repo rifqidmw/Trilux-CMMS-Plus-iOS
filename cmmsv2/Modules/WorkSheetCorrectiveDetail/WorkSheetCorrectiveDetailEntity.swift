@@ -190,3 +190,37 @@ struct CorrectiveEquipment: Codable {
         case txtInfoUpdate
     }
 }
+
+// MARK: - EQUIPMENT ENTITY EXTENSION FOR NAVIGATE TO DETAIL
+extension Equipment {
+    init(from workOrder: CorrectiveEquipment) {
+        self.id = String(workOrder.id ?? 0)
+        self.txtName = workOrder.txtName ?? ""
+        self.valImage = workOrder.valImage ?? ""
+        self.valQR = workOrder.valQR ?? ""
+        self.txtRuangan = workOrder.txtRuangan ?? ""
+        self.valRoomId = String(workOrder.valRoomId ?? 0)
+        self.txtRoomId = workOrder.txtRoomId ?? ""
+        self.txtSubRuangan = workOrder.txtSubRuangan ?? ""
+        self.txtLokasiName = workOrder.txtLokasiName ?? ""
+        self.txtSerial = workOrder.txtSerial ?? ""
+        self.txtBrand = workOrder.txtBrand ?? ""
+        self.txtType = workOrder.txtType ?? ""
+        self.txtInventaris = workOrder.txtInventaris ?? ""
+        self.badgeAsset = workOrder.badgeAsset ?? ""
+        self.badgeTeknis = workOrder.badgeTeknis ?? ""
+        self.statusKalibrasi = workOrder.statusKalibrasi
+        self.stt_qr = workOrder.sttQR ?? ""
+        self.valRusak = workOrder.valRusak ?? 0
+        self.txtRusak = workOrder.txtRusak ?? ""
+        self.valKalibrasi = workOrder.valKalibrasi ?? 0
+        self.txtKalibrasi = workOrder.txtKalibrasi ?? ""
+        self.valKorektif = workOrder.valKorektif ?? 0
+        self.txtKorektif = workOrder.txtKorektif ?? ""
+        self.valPreventif = workOrder.valPreventif ?? 0
+        self.txtPreventif = workOrder.txtPreventif ?? ""
+        self.valIsComplainable = workOrder.valIsComplainable ?? 0
+        self.txtCantComplainReason = workOrder.txtCantComplainReason ?? ""
+        self.txtInfoUpdate = workOrder.txtInfoUpdate ?? ""
+    }
+}

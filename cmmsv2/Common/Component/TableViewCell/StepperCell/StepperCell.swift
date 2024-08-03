@@ -41,22 +41,11 @@ class StepperCell: UITableViewCell {
 extension StepperCell {
     
     func setupCell(data: TrackComplaintData) {
-        self.trackTitleLabel.text = data.title?.getStringValue() ?? ""
-        self.trackDescriptionLabel.text = data.info
-        self.configureProgress(data.title ?? .none)
+        self.trackTitleLabel.text = data.title ?? ""
+        self.trackDescriptionLabel.text = data.info ?? ""
         if let date = String.parseDate(data.tanggal ?? "") {
             self.dateLabel.text = String.formattedDate(date)
             self.timeLabel.text = String.formattedTime(date)
-        }
-    }
-    
-    private func configureProgress(_ info: TrackInfoType) {
-        switch info {
-        case .created:
-            self.iconProgressImageView.image = UIImage(named: "ic_step_not_started")
-        case .received:
-            self.iconProgressImageView.image = UIImage(named: "ic_step_progress")
-        default: break
         }
     }
     
