@@ -19,11 +19,13 @@ class PreventiveCalendarListPresenter: BasePresenter {
     
     @Published public var preventiveList: [PreventiveScheduleData] = []
     @Published public var preventiveScheduleList: [WorkSheetListEntity] = []
+    var technicianList: SelectTechnicianEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
+    var idEngineer: String? = ""
     var limit: Int = 20
     var page: Int = 1
     var isCanLoad = true
@@ -34,7 +36,15 @@ class PreventiveCalendarListPresenter: BasePresenter {
 extension PreventiveCalendarListPresenter {
     
     func fetchInitData(idEngineer: String? = nil, month: String? = nil) {
+        if let idEngineer = idEngineer {
+            self.idEngineer = idEngineer
+        }
+        
+        self.page = 1
+        self.preventiveList.removeAll()
+        self.preventiveScheduleList.removeAll()
         self.fetchCalendarPreventiveList(idEngineer: idEngineer, month: month)
+        self.fetchTechnicianList(job: "2")
     }
     
     func fetchCalendarPreventiveList(idEngineer: String? = nil, month: String? = nil) {
@@ -62,9 +72,9 @@ extension PreventiveCalendarListPresenter {
             .store(in: &anyCancellable)
     }
     
-    func fetchPreventiveSchedule(idEngineer: String? = nil, date: String? = nil, page: Int? = nil, limit: Int? = nil) {
+    func fetchPreventiveSchedule(date: String? = nil, page: Int? = nil, limit: Int? = nil) {
         self.isLoading = true
-        interactor.getSchedulePreventiveList(idEngineer: idEngineer, date: date, page: page, limit: limit)
+        interactor.getSchedulePreventiveList(date: date, page: page, limit: limit)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -106,10 +116,34 @@ extension PreventiveCalendarListPresenter {
             .store(in: &anyCancellable)
     }
     
-    func fetchNextPage(idEngineer: String? = nil, date: String? = nil) {
+    func fetchNextPage(date: String? = nil) {
         guard !isFetchingMore && isCanLoad else { return }
         page += 1
-        fetchPreventiveSchedule(idEngineer: idEngineer, date: date, page: self.page, limit: self.limit)
+        fetchPreventiveSchedule(date: date, page: self.page, limit: self.limit)
+    }
+    
+    func fetchTechnicianList(job: String) {
+        self.isLoading = true
+        interactor.getTechnicianList(job: job)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { technicians in
+                    DispatchQueue.main.async {
+                        self.technicianList = technicians
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
     }
     
 }
@@ -122,6 +156,17 @@ extension PreventiveCalendarListPresenter {
     
     func showPreventiveBottomSheet(from navigation: UINavigationController, delegate: PreventiveSchedulerBottomSheetDelegate) {
         router.showPreventiveBottomSheet(navigation, delegate: delegate)
+    }
+    
+    func showSelectTechnicianBottomSheet(from navigation: UINavigationController, _ delegate: SelectTechnicianBottomSheetDelegate) {
+        let bottomSheet = SelectTechnicianBottomSheet(nibName: String(describing: SelectTechnicianBottomSheet.self), bundle: nil)
+        let userList = self.technicianList?.data?.users?.compactMap { item in
+            return TechnicianEntity(id: item.valId, name: item.txtName, isSelected: false)
+        }
+        bottomSheet.data = userList ?? []
+        bottomSheet.type = .selectOne
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

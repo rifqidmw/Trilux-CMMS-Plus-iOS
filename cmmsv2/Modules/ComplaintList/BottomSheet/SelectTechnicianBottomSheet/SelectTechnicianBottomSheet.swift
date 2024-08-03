@@ -24,6 +24,7 @@ class SelectTechnicianBottomSheet: BaseNonNavigationController {
     var filteredData: [TechnicianEntity] = []
     var data: [TechnicianEntity] = []
     var selectedTechnicians: Set<TechnicianEntity> = []
+    private var isSelectAll: Bool = false
     
     override func didLoad() {
         super.didLoad()
@@ -52,11 +53,12 @@ extension SelectTechnicianBottomSheet {
         case .selectOne:
             textField.placeholder = "Cari Teknisi yang diinginkan"
             titleLabel.text = "Pilih Teknisi"
+            selectAllButton.isHidden = true
         case .selectMultiple:
             textField.placeholder = "Cari Pendamping yang diinginkan"
             titleLabel.text = "Pilih Pendamping"
             addButton.configure(title: "Tambah")
-            selectAllButton.isHidden = true
+            selectAllButton.isHidden = false
             addButton.isHidden = false
         default: break
         }
@@ -89,6 +91,13 @@ extension SelectTechnicianBottomSheet {
                 }
             }
             .store(in: &anyCancellable)
+        
+        selectAllButton.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.selectAllTechnicians()
+            }
+            .store(in: &anyCancellable)
     }
     
     private func filterData(with query: String) {
@@ -106,6 +115,16 @@ extension SelectTechnicianBottomSheet {
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         filterData(with: textField.text ?? "")
+    }
+    
+    private func selectAllTechnicians() {
+        isSelectAll.toggle()
+        if isSelectAll {
+            selectedTechnicians = Set(filteredData)
+        } else {
+            selectedTechnicians.removeAll()
+        }
+        tableView.reloadData()
     }
     
 }

@@ -131,7 +131,11 @@ extension WorkSheetCVC {
     }
     
     private func configureStatus(status: WorkSheetStatus) {
-        thirdBadgeTitleLabel.text = status.getStringValue()
+        if status == .none {
+            thirdBadgeTitleLabel.text = "Tidak diketahui"
+        } else {
+            thirdBadgeTitleLabel.text = status.getStringValue()
+        }
         
         switch status {
         case .done:
@@ -170,7 +174,10 @@ extension WorkSheetCVC {
             thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
             thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
             thirdBadgeViewWidthConstraint.constant = 50
-        default: break
+        case .none:
+            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
+            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
+            thirdBadgeViewWidthConstraint.constant = 100
         }
     }
     
