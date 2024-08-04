@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ReminderPreventiveCell" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="UY3-54-8K3">
+                        <rect key="frame" x="0.0" y="8" width="320" height="134"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="j8L-XC-pof">
+                                <rect key="frame" x="16" y="16" width="288" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwc-wG-rck" userLabel="Unique Number Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="20"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
+                                        <color key="textColor" name="customPrimaryColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbA-97-pNG" userLabel="Status View">
+                                        <rect key="frame" x="198" y="0.0" width="90" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysY-K9-n6r">
+                                                <rect key="frame" x="4" y="4" width="82" height="12"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
+                                                <color key="textColor" name="indicatorColor8"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="lightGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="0nE-xn-H1V"/>
+                                            <constraint firstAttribute="trailing" secondItem="ysY-K9-n6r" secondAttribute="trailing" constant="4" id="Eks-gB-9f2"/>
+                                            <constraint firstAttribute="bottom" secondItem="ysY-K9-n6r" secondAttribute="bottom" constant="4" id="IJs-Ao-QMD"/>
+                                            <constraint firstItem="ysY-K9-n6r" firstAttribute="top" secondItem="tbA-97-pNG" secondAttribute="top" constant="4" id="Kkq-jJ-Q5I"/>
+                                            <constraint firstItem="ysY-K9-n6r" firstAttribute="leading" secondItem="tbA-97-pNG" secondAttribute="leading" constant="4" id="l5R-IR-hU7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="TM0-kd-ysf"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5E-px-P4e">
+                                <rect key="frame" x="16" y="42" width="288" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="a9C-AG-Y28"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                <color key="textColor" name="customDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llt-pI-HaJ">
+                                <rect key="frame" x="16" y="68" width="288" height="11"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                <color key="textColor" name="customDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-sn-40M">
+                                <rect key="frame" x="16" y="85" width="288" height="10.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                <color key="textColor" name="customDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ein-AA-kFG">
+                                <rect key="frame" x="16" y="101.66666666666667" width="288" height="10.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                <color key="textColor" name="customDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPX-fq-0LX">
+                                <rect key="frame" x="16" y="118" width="288" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="8"/>
+                                <color key="textColor" name="placeholderColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="UY3-54-8K3" secondAttribute="bottom" constant="8" id="64L-6z-KNe"/>
+                    <constraint firstItem="UY3-54-8K3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="P0Q-rM-KLl"/>
+                    <constraint firstItem="UY3-54-8K3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fFb-V3-WcE"/>
+                    <constraint firstAttribute="trailing" secondItem="UY3-54-8K3" secondAttribute="trailing" id="oWu-yO-oIS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="assetNameLabel" destination="x5E-px-P4e" id="vJH-x7-tvG"/>
+                <outlet property="brandLabel" destination="Llt-pI-HaJ" id="pdq-ll-H0F"/>
+                <outlet property="containerContentStackView" destination="UY3-54-8K3" id="jVT-7G-DoX"/>
+                <outlet property="lkNumberLabel" destination="Mwc-wG-rck" id="0nW-16-MGF"/>
+                <outlet property="roomLabel" destination="HPX-fq-0LX" id="KGQ-LM-u6L"/>
+                <outlet property="statusLabel" destination="ysY-K9-n6r" id="zyv-fv-zQl"/>
+                <outlet property="statusView" destination="tbA-97-pNG" id="OXg-hp-IAk"/>
+                <outlet property="statusViewWidthConstraint" destination="0nE-xn-H1V" id="j64-XK-n64"/>
+                <outlet property="technicianLabel" destination="Ein-AA-kFG" id="qbE-b1-N91"/>
+                <outlet property="typeLabel" destination="QSX-sn-40M" id="bfv-U5-eas"/>
+            </connections>
+            <point key="canvasLocation" x="33.587786259541986" y="-1.4084507042253522"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customPrimaryColor">
+            <color red="0.0" green="0.69019607843137254" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="indicatorColor8">
+            <color red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightGreenColor">
+            <color red="0.88627450980392153" green="0.95294117647058818" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="placeholderColor">
+            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
