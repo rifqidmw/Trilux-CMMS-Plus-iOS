@@ -96,14 +96,14 @@ extension LoadPreventivePresenter {
         let bottomSheet = AddPreventiveBottomSheet(nibName: String(describing: AddPreventiveBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         bottomSheet.data = asset
-        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showDatePickerBottomSheet(from navigation: UINavigationController, delegate: DatePickerBottomSheetDelegate, type: DatePickerBottomSheetType) {
         let bottomSheet = DatePickerBottomSheet(nibName: String(describing: DatePickerBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         bottomSheet.type = type
-        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

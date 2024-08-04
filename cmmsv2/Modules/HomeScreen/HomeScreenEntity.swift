@@ -228,3 +228,99 @@ let detailInformationData: [CategoryModel] = [
     CategoryModel(image: "ic_mutation", title: .mutationInfo),
     CategoryModel(image: "ic_speedometer", title: .calibration)
 ]
+
+// MARK: - REMINDER PREVENTIVE
+struct ReminderPreventiveEntity: Codable {
+    let data: [ReminderPreventiveData]?
+    let message: String?
+    let status: Int?
+}
+
+// MARK: - LkData
+struct ReminderPreventiveData: Codable {
+    let idLk: String?
+    let lkNumber: String?
+    let lkJenis: String?
+    let lkVarian: String?
+    let lkDate: String?
+    let lkEngineer: String?
+    let lkAssign: String?
+    let idAsset: String?
+    let lkLabel: String?
+    let lkInfo: String?
+    let lkStatus: String?
+    let lkFinishstt: String?
+    let lkWebenable: String?
+    let lkStart: String?
+    let lkFinish: String?
+    let lkContinue: String?
+    let lkDurasireal: String?
+    let lkRating: String?
+    let createBy: String?
+    let approveBy: String?
+    let rateBy: String?
+    let createAt: String?
+    let expired: String?
+    let lkGeneralflag: String?
+    let extra: String?
+    let txtJenis: String?
+    let txtStatus: String?
+    let txtFinishStatus: String?
+    let txtEngineerName: String?
+    let dateText: String?
+    let assetimage: String?
+    let assetname: String?
+    let brandname: String?
+    let typename: String?
+    let serial: String?
+    let instalasi: String?
+    let ruangan: String?
+    let isPendamping: String?
+    let canPendamping: String?
+    let infoLk: InfoLk?
+    let namaPerating: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idLk = "id_lk"
+        case lkNumber = "lk_number"
+        case lkJenis = "lk_jenis"
+        case lkVarian = "lk_varian"
+        case lkDate = "lk_date"
+        case lkEngineer = "lk_engineer"
+        case lkAssign = "lk_assign"
+        case idAsset = "id_asset"
+        case lkLabel = "lk_label"
+        case lkInfo = "lk_info"
+        case lkStatus = "lk_status"
+        case lkFinishstt = "lk_finishstt"
+        case lkWebenable = "lk_webenable"
+        case lkStart = "lk_start"
+        case lkFinish = "lk_finish"
+        case lkContinue = "lk_continue"
+        case lkDurasireal = "lk_durasireal"
+        case lkRating = "lk_rating"
+        case createBy = "create_by"
+        case approveBy = "approve_by"
+        case rateBy = "rate_by"
+        case createAt = "create_at"
+        case expired
+        case lkGeneralflag = "lk_generalflag"
+        case extra
+        case txtJenis
+        case txtStatus
+        case txtFinishStatus
+        case txtEngineerName
+        case dateText = "date_text"
+        case assetimage
+        case assetname
+        case brandname
+        case typename
+        case serial
+        case instalasi
+        case ruangan
+        case isPendamping
+        case canPendamping
+        case infoLk
+        case namaPerating = "nama_perating"
+    }
+}

@@ -224,3 +224,22 @@ extension HomeScreenView: AllCategoriesBottomSheetDelegate {
     }
     
 }
+
+extension HomeScreenView: ReminderPreventiveBottomSheetDelegate, ScanViewDelegate {
+    
+    func didTapDetailPreventive(_ data: WorkSheetRequestEntity, wo: WorkSheetListEntity) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToScan(from: navigation, .monitoring, data: wo, request: data, delegate: self)
+    }
+    
+    func didNavigateAfterSaveWorkSheet() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let view = HomeScreenRouter().showView()
+        presenter.backToPreviousPage(from: navigation, view)
+    }
+    
+}

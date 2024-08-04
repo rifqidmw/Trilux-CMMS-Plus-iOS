@@ -13,8 +13,12 @@ class PreventiveCalendarListInteractor: BaseInteractor {
         return api.requestApiPublisher(.calendarPreventiveList(idEngineer: idEngineer, month: month))
     }
     
-    func getSchedulePreventiveList(idEngineer: String? = nil, date: String? = nil, page: Int? = nil, limit: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
-        return api.requestApiPublisher(.schedulePreventiveList(idEngineer: idEngineer, date: date))
+    func getSchedulePreventiveList(date: String? = nil, page: Int? = nil, limit: Int? = nil) -> AnyPublisher<WorkSheetEntity, Error> {
+        return api.requestApiPublisher(.schedulePreventiveList(date: date))
+    }
+    
+    func getTechnicianList(job: String) -> AnyPublisher<SelectTechnicianEntity, Error> {
+        return api.requestApiPublisher(.userFilter(job: job))
     }
     
 }

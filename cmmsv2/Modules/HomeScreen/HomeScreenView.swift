@@ -48,6 +48,7 @@ extension HomeScreenView {
     private func fetchInitData() {
         guard let presenter else { return }
         presenter.fetchInitData()
+        presenter.fetchReminderPreventive(date: String.getCurrentDateString("yyyy-MM-dd"))
     }
     
     private func bindingData() {
@@ -61,6 +62,20 @@ extension HomeScreenView {
                 if data.isExpired == 1 {
                     presenter.showExpiredBottomSheet(navigation: navigation, expiredDate: data.expiredDate)
                 }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$reminderData
+            .sink { [weak self] data in
+                guard let self = self,
+                      let detail = data,
+                      let list = detail.data,
+                      !list.isEmpty,
+                      let navigation = self.navigationController
+                else { return }
+                
+                presenter.reminderList = list
+                presenter.showReminderPreventiveBottomSheet(navigation: navigation, delegate: self)
             }
             .store(in: &anyCancellable)
     }

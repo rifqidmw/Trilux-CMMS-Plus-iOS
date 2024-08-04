@@ -39,7 +39,9 @@ extension ScanView {
     
     private func setupQRCode() {
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {
-            self.showAlert(title: "Perangkat Anda tidak mendukung pemindaian.")
+            self.showAlert(title: "Perangkat Anda tidak mendukung pemindaian.") {
+                self.navigationController?.popViewController(animated: true)
+            }
             return
         }
         
@@ -138,6 +140,7 @@ extension ScanView {
 }
 
 extension ScanView: AVCaptureMetadataOutputObjectsDelegate {
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if let metadataObject = metadataObjects.first {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject,
@@ -163,4 +166,5 @@ extension ScanView: AVCaptureMetadataOutputObjectsDelegate {
             }
         }
     }
+    
 }

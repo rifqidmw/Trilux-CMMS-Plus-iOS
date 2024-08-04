@@ -51,6 +51,14 @@
 		CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE14C21A2B5C38620034B9FE /* ImageCardView.xib */; };
 		CE14C21E2B5C38680034B9FE /* ImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14C21D2B5C38680034B9FE /* ImageCardView.swift */; };
 		CE14C21F2B5C38680034B9FE /* ImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14C21D2B5C38680034B9FE /* ImageCardView.swift */; };
+		CE1DDDBA2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1DDDB92C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib */; };
+		CE1DDDBB2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DDDB82C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift */; };
+		CE1DDDBC2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1DDDB92C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib */; };
+		CE1DDDBD2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DDDB82C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift */; };
+		CE1DDDC12C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1DDDC02C5ED99D0078FA6E /* ReminderPreventiveCell.xib */; };
+		CE1DDDC22C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DDDBF2C5ED99D0078FA6E /* ReminderPreventiveCell.swift */; };
+		CE1DDDC32C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1DDDC02C5ED99D0078FA6E /* ReminderPreventiveCell.xib */; };
+		CE1DDDC42C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DDDBF2C5ED99D0078FA6E /* ReminderPreventiveCell.swift */; };
 		CE2329F42C42EC010087450A /* MediaSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2329F22C42EC010087450A /* MediaSectionView.swift */; };
 		CE2329F52C42EC010087450A /* MediaSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2329F32C42EC010087450A /* MediaSectionView.xib */; };
 		CE2329F62C42EC010087450A /* MediaSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2329F22C42EC010087450A /* MediaSectionView.swift */; };
@@ -994,6 +1002,10 @@
 		CE14C2142B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetCorrectiveBottomSheet.xib; sourceTree = "<group>"; };
 		CE14C21A2B5C38620034B9FE /* ImageCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCardView.xib; sourceTree = "<group>"; };
 		CE14C21D2B5C38680034B9FE /* ImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCardView.swift; sourceTree = "<group>"; };
+		CE1DDDB82C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPreventiveBottomSheet.swift; sourceTree = "<group>"; };
+		CE1DDDB92C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderPreventiveBottomSheet.xib; sourceTree = "<group>"; };
+		CE1DDDBF2C5ED99D0078FA6E /* ReminderPreventiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPreventiveCell.swift; sourceTree = "<group>"; };
+		CE1DDDC02C5ED99D0078FA6E /* ReminderPreventiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderPreventiveCell.xib; sourceTree = "<group>"; };
 		CE2329F22C42EC010087450A /* MediaSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSectionView.swift; sourceTree = "<group>"; };
 		CE2329F32C42EC010087450A /* MediaSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaSectionView.xib; sourceTree = "<group>"; };
 		CE29F8E52BF9256B0077405C /* HistoryDetailView+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryDetailView+Collection.swift"; sourceTree = "<group>"; };
@@ -1566,6 +1578,25 @@
 				CE14C21A2B5C38620034B9FE /* ImageCardView.xib */,
 			);
 			path = ImageCard;
+			sourceTree = "<group>";
+		};
+		CE1DDDB72C5EB5320078FA6E /* ReminderPreventiveBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DDDBE2C5ED97A0078FA6E /* Cell */,
+				CE1DDDB82C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift */,
+				CE1DDDB92C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib */,
+			);
+			path = ReminderPreventiveBottomSheet;
+			sourceTree = "<group>";
+		};
+		CE1DDDBE2C5ED97A0078FA6E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DDDBF2C5ED99D0078FA6E /* ReminderPreventiveCell.swift */,
+				CE1DDDC02C5ED99D0078FA6E /* ReminderPreventiveCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CE2329F12C42EBD90087450A /* MediaSection */ = {
@@ -2899,6 +2930,7 @@
 				CECB777A2B4C79270069AC05 /* AllCategoriesBottomSheet */,
 				CEE67D382B54428400D0844B /* AssetBottomSheet */,
 				CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */,
+				CE1DDDB72C5EB5320078FA6E /* ReminderPreventiveBottomSheet */,
 				CEE67D312B54425300D0844B /* WorkSheetBottomSheet */,
 			);
 			path = BottomSheet;
@@ -3425,6 +3457,7 @@
 				CE9A4B382C26F83F0008932B /* PartnerCell.xib in Resources */,
 				CEE780C82C0C6D1F001BA9C2 /* TaskItemTVC.xib in Resources */,
 				CE4012192B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
+				CE1DDDC12C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */,
 				CEE780C12C0C56AA001BA9C2 /* ElectricTVC.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -3484,6 +3517,7 @@
 				CE75455A2C3AF221002234F8 /* AddTaskSectionView.xib in Resources */,
 				CE4D121D2C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				CE1DDDBA2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */,
 				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D262BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
 				CEE07C952B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib in Resources */,
@@ -3590,6 +3624,7 @@
 				CE9A4B3A2C26F83F0008932B /* PartnerCell.xib in Resources */,
 				CEE780CA2C0C6D1F001BA9C2 /* TaskItemTVC.xib in Resources */,
 				CE40121A2B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
+				CE1DDDC32C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */,
 				CEE780C32C0C56AA001BA9C2 /* ElectricTVC.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
@@ -3649,6 +3684,7 @@
 				CE75455C2C3AF221002234F8 /* AddTaskSectionView.xib in Resources */,
 				CE4D12232C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				CE1DDDBC2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */,
 				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D272BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
 				CEE07C962B9F408A00EFBFB8 /* PreventiveMaintenanceListView.xib in Resources */,
@@ -3986,6 +4022,7 @@
 				CEFA75902B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC12B70ED9B0063D844 /* WorkSheetDetailInteractor.swift in Sources */,
 				CEB465B92C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */,
+				CE1DDDBB2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift in Sources */,
 				CEEED8722B7A86CB00672952 /* ScanView.swift in Sources */,
 				CE4255F42BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE1434452C4B5543008D2C18 /* ScanView+Delegate.swift in Sources */,
@@ -4088,6 +4125,7 @@
 				CE9E7D712B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CE58FA5A2C0B8A3A0067D8C4 /* PhysicalMonitoringTVC.swift in Sources */,
 				CEE79ED22B71222B0063D844 /* AssetSectionView.swift in Sources */,
+				CE1DDDC22C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */,
 				CEAF9E3B2C5A309300EFBBC2 /* StepperCell.swift in Sources */,
 				CE0A8CD52C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */,
 				CE58FA682C0C32410067D8C4 /* PreventiveTVC.swift in Sources */,
@@ -4313,6 +4351,7 @@
 				CEFA75912B768E4500B74E1B /* AssetListInteractor.swift in Sources */,
 				CEE79EC22B70ED9B0063D844 /* WorkSheetDetailInteractor.swift in Sources */,
 				CEB465BA2C4CC94200B10341 /* HistoryListView+Delegate.swift in Sources */,
+				CE1DDDBD2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.swift in Sources */,
 				CEEED8732B7A86CB00672952 /* ScanView.swift in Sources */,
 				CE4255F52BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE1434462C4B5543008D2C18 /* ScanView+Delegate.swift in Sources */,
@@ -4415,6 +4454,7 @@
 				CE9E7D722B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CE58FA5C2C0B8A3A0067D8C4 /* PhysicalMonitoringTVC.swift in Sources */,
 				CEE79ED32B71222B0063D844 /* AssetSectionView.swift in Sources */,
+				CE1DDDC42C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */,
 				CEAF9E3D2C5A309300EFBBC2 /* StepperCell.swift in Sources */,
 				CE0A8CD72C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */,
 				CE58FA6A2C0C32410067D8C4 /* PreventiveTVC.swift in Sources */,

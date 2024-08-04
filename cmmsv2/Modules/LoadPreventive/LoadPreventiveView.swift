@@ -166,7 +166,8 @@ extension LoadPreventiveView: SkeletonCollectionViewDelegate, SkeletonCollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 2.1, height: 120)
+        let width = (collectionView.bounds.width / 2) - 8
+        return CGSize(width: width, height: 174)
     }
     
 }

@@ -61,6 +61,16 @@ extension PreventiveCalendarListView {
                 navigation.popViewController(animated: true)
             }
             .store(in: &anyCancellable)
+        
+        filterButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let navigation = self.navigationController,
+                      let presenter
+                else { return }
+                presenter.showSelectTechnicianBottomSheet(from: navigation, self)
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupCalendar() {
@@ -106,9 +116,10 @@ extension PreventiveCalendarListView {
                 }
                 
                 self.preventiveData = data
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.collectionView.hideSkeleton()
                 self.calendarView.reloadData()
+                self.hideLoadingPopup()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -132,9 +143,11 @@ extension PreventiveCalendarListView {
                 }
                 
                 self.data = data
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.collectionView.hideSkeleton()
                 self.dateLabel.text = date ?? String.getCurrentDateString("yyyy-MM-dd")
+                self.calendarView.reloadData()
+                self.hideLoadingPopup()
                 self.showSpinner(false)
             }
             .store(in: &anyCancellable)
@@ -158,7 +171,7 @@ extension PreventiveCalendarListView: FSCalendarDelegate, FSCalendarDelegateAppe
         self.date = dateString
         
         self.fetchInitialData()
-        presenter.fetchPreventiveSchedule(idEngineer: "", date: dateString)
+        presenter.fetchPreventiveSchedule(date: dateString)
         showSpinner(true)
     }
     
@@ -240,14 +253,9 @@ extension PreventiveCalendarListView: SkeletonCollectionViewDataSource, Skeleton
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let presenter,
-              let navigation = self.navigationController,
-              let status = self.data[indexPath.row].status
+              let navigation = self.navigationController
         else { return }
-        if status == .done {
-            presenter.showPreventiveBottomSheet(from: navigation, delegate: self)
-        } else {
-            presenter.navigateToLoadPreventive(from: navigation, data: self.data[indexPath.row])
-        }
+        presenter.navigateToLoadPreventive(from: navigation, data: self.data[indexPath.row])
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -269,10 +277,19 @@ extension PreventiveCalendarListView: SkeletonCollectionViewDataSource, Skeleton
     
 }
 
-extension PreventiveCalendarListView: PreventiveSchedulerBottomSheetDelegate {
+extension PreventiveCalendarListView: SelectTechnicianBottomSheetDelegate {
     
-    func didTapCreatePreventive() {
-        AppLogger.log("-- CLICKED")
+    func didSelectTechnician(_ name: TechnicianEntity) {
+        guard let presenter else { return }
+        self.showLoadingPopup()
+        let idEngineer = name.id
+        presenter.fetchInitData(idEngineer: idEngineer, month: self.month ?? String.getCurrentDateString("yyyy-MM-dd"))
+        self.reloadCollectionViewWithAnimation(self.collectionView)
+        self.calendarView.reloadData()
+    }
+    
+    func selectMultipleTechnician(_ names: [TechnicianEntity]) {
+        AppLogger.log("-- THIS IS TECHNICIANS: \(names)")
     }
     
 }

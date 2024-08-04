@@ -77,7 +77,6 @@ enum Endpoint {
         date: String? = nil)
     case calendarPreventiveList(idEngineer: String? = nil, month: String? = nil)
     case schedulePreventiveList(
-        idEngineer: String? = nil,
         date: String? = nil,
         page: Int? = nil,
         limit: Int? = nil)
@@ -116,6 +115,7 @@ enum Endpoint {
     case trackComplaint(id: String?)
     case loadTechnical(id: String?)
     case saveTechnical(data: EditTechnicalRequestEntity)
+    case reminderPreventive(date: String?)
 }
 
 // MARK: - PATH URL
@@ -213,8 +213,8 @@ extension Endpoint {
             return generateLogBookURL(limit: limit, page: page, date: date)
         case .calendarPreventiveList(idEngineer: let idEngineer, month: let month):
             return "lk/kalender_preventif?id_engineer=\(idEngineer ?? "")&bulan=\(month ?? "")"
-        case .schedulePreventiveList(let idEngineer, date: let date, let page, let limit):
-            return generateSchedulePreventiveURL(idEngineer: idEngineer ?? "", date: date ?? "", page: page ?? 0, limit: limit ?? 0)
+        case .schedulePreventiveList(date: let date, let page, let limit):
+            return generateSchedulePreventiveURL(date: date ?? "", page: page ?? 0, limit: limit ?? 0)
         case .assetDetail(id: let id):
             return "equipments/view?id=\(id ?? "")"
         case .assetMainCost(id: let id):
@@ -269,6 +269,8 @@ extension Endpoint {
             return "equipments/load_teknis?id=\(id ?? "")"
         case .saveTechnical:
             return "equipments/save_teknis"
+        case .reminderPreventive(date: let date):
+            return "lk/reminder_preventif?tanggal=\(date ?? "")"
         }
     }
     
@@ -709,13 +711,11 @@ extension Endpoint {
     }
     
     private func generateSchedulePreventiveURL(
-        idEngineer: String? = nil,
         date: String? = nil,
         page: Int? = nil,
         limit: Int? = nil
     ) -> String {
         let queryString = [
-            idEngineer.map { "id_engineer=\($0)" },
             date.map { "tanggal=\($0)" },
             page.map { "page=\($0)" },
             limit.map { "limit=\($0)" }

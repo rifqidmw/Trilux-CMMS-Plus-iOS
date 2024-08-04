@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReminderPreventiveBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="paT-bf-hZc" id="Hd4-F6-o8i"/>
+                <outlet property="closeButton" destination="bTu-F6-Rm2" id="vof-z2-sO5"/>
+                <outlet property="dismissAreaView" destination="yE3-4H-lfk" id="smG-cc-mKS"/>
+                <outlet property="tableView" destination="T3k-lZ-HCS" id="wO1-mL-dMR"/>
+                <outlet property="titleLabel" destination="GVx-S0-vsA" id="wDf-Lx-Dxg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yE3-4H-lfk" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paT-bf-hZc" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="328" width="393" height="524"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HPh-27-dBQ">
+                            <rect key="frame" x="16" y="34" width="361" height="456"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TYQ-df-hpy">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jadwal Kalender Preventif Hari Ini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVx-S0-vsA">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="20"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_close_circle" translatesAutoresizingMaskIntoConstraints="NO" id="bTu-F6-Rm2">
+                                            <rect key="frame" x="341" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="tpy-N8-may"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Hw6-ZM-Z75"/>
+                                    </constraints>
+                                </stackView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-lZ-HCS">
+                                    <rect key="frame" x="0.0" y="36" width="361" height="420"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="524" id="2Ah-b2-lhm"/>
+                        <constraint firstItem="HPh-27-dBQ" firstAttribute="leading" secondItem="paT-bf-hZc" secondAttribute="leading" constant="16" id="3gm-MA-60a"/>
+                        <constraint firstAttribute="bottom" secondItem="HPh-27-dBQ" secondAttribute="bottom" constant="34" id="MVv-Ew-OIh"/>
+                        <constraint firstAttribute="trailing" secondItem="HPh-27-dBQ" secondAttribute="trailing" constant="16" id="WDz-Ws-htc"/>
+                        <constraint firstItem="HPh-27-dBQ" firstAttribute="top" secondItem="paT-bf-hZc" secondAttribute="top" constant="34" id="qbE-6S-6PF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="paT-bf-hZc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Ij-nP-hJ3"/>
+                <constraint firstAttribute="bottom" secondItem="paT-bf-hZc" secondAttribute="bottom" id="7Gm-Ze-XqS"/>
+                <constraint firstAttribute="trailing" secondItem="yE3-4H-lfk" secondAttribute="trailing" id="ac3-av-u4e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yE3-4H-lfk" secondAttribute="bottom" id="roQ-6S-0Kd"/>
+                <constraint firstItem="yE3-4H-lfk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="srt-z1-Ajm"/>
+                <constraint firstItem="yE3-4H-lfk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="y4p-r0-lIj"/>
+                <constraint firstItem="paT-bf-hZc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zH4-jj-eWx"/>
+            </constraints>
+            <point key="canvasLocation" x="32.824427480916029" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_close_circle" width="24" height="24"/>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -13,6 +13,8 @@ class HomeScreenPresenter: BasePresenter {
     private let router = HomeScreenRouter()
     
     @Published public var expiredData: ExpiredData?
+    @Published public var reminderData: ReminderPreventiveEntity?
+    var reminderList: [ReminderPreventiveData] = []
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -50,9 +52,42 @@ extension HomeScreenPresenter {
             .store(in: &anyCancellable)
     }
     
+    func fetchReminderPreventive(date: String?) {
+        self.isLoading = true
+        interactor.getReminderPreventive(date: date ?? "")
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { reminderData in
+                    DispatchQueue.main.async {
+                        guard let reminderList = reminderData.data else { return }
+                        self.reminderData = reminderData
+                        self.reminderList = reminderList
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
 }
 
 extension HomeScreenPresenter {
+    
+    func showReminderPreventiveBottomSheet(navigation: UINavigationController, delegate: ReminderPreventiveBottomSheetDelegate) {
+        let bottomSheet = ReminderPreventiveBottomSheet(nibName: String(describing: ReminderPreventiveBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.data = self.reminderList
+        router.showBottomSheet(view: bottomSheet, navigation: navigation)
+    }
     
     func showBottomSheetAllCategories(navigation: UINavigationController, delegate: AllCategoriesBottomSheetDelegate) {
         let bottomSheet = AllCategoriesBottomSheet(nibName: String(describing: AllCategoriesBottomSheet.self), bundle: nil)
