@@ -26,4 +26,9 @@ extension AssetDetailRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToDetailInformation(from navigation: UINavigationController, _ id: String?) {
+        let vc = EquipmentMaintenanceRouter().showView(idAsset: id ?? "")
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

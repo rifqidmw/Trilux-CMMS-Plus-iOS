@@ -116,6 +116,7 @@ enum Endpoint {
     case loadTechnical(id: String?)
     case saveTechnical(data: EditTechnicalRequestEntity)
     case reminderPreventive(date: String?)
+    case equipmentMainStatus(id: String?)
 }
 
 // MARK: - PATH URL
@@ -271,6 +272,8 @@ extension Endpoint {
             return "equipments/save_teknis"
         case .reminderPreventive(date: let date):
             return "lk/reminder_preventif?tanggal=\(date ?? "")"
+        case .equipmentMainStatus(id: let id):
+            return "equipments/mainstatus?id=\(id ?? "")"
         }
     }
     

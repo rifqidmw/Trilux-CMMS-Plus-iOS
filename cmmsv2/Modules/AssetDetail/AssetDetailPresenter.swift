@@ -227,4 +227,8 @@ extension AssetDetailPresenter {
         router.navigateToUpdateTechnicalData(from: navigation, data)
     }
     
+    func navigateToDetailInformation(from navigation: UINavigationController, _ id: String?) {
+        router.navigateToDetailInformation(from: navigation, id ?? "")
+    }
+    
 }
