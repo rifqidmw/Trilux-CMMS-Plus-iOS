@@ -225,11 +225,11 @@ extension AssetDetailView {
 
 extension AssetDetailView: AdditionalDocumentsViewDelegate {
     
-    func didSelectImageDocument(url: String) {
+    func didSelectImageDocument(url: String, type: DocumentType) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailPicture(navigation: navigation, image: url)
+        presenter.navigateToDetailDocument(navigation: navigation, file: url, type: type)
     }
     
 }

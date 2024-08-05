@@ -48,7 +48,9 @@ extension HomeScreenView {
     private func fetchInitData() {
         guard let presenter else { return }
         presenter.fetchInitData()
-        presenter.fetchReminderPreventive(date: String.getCurrentDateString("yyyy-MM-dd"))
+        if RoleManager.shared.currentUserRole == .engineer {
+            presenter.fetchReminderPreventive(date: String.getCurrentDateString("yyyy-MM-dd"))
+        }
     }
     
     private func bindingData() {

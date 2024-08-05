@@ -15,6 +15,7 @@ enum AppManager {
     private static let isLoggedInKey = "isLoggedIn"
     private static let searchHistoryKey = "searchHistoryStored"
     private static let userTokenKey = "valToken"
+    private static let userRoleKey = "currentUserRole"
     
     static func setUser(_ data: User?) {
         do {
@@ -134,6 +135,25 @@ enum AppManager {
     
     static func clearAllSearchHistory() {
         UserDefaults.standard.removeObject(forKey: searchHistoryKey)
+    }
+    
+    static func setUserRole(_ data: String?) {
+        do {
+            let encoder = JSONEncoder()
+            let dataEncode = try encoder.encode(data)
+            UserDefaults.standard.set(dataEncode, forKey: userRoleKey)
+        } catch {
+            AppLogger.log("-- Error encoding user role data: \(error)")
+        }
+    }
+    
+    static func getUserRole() -> String? {
+        if let dataObject = UserDefaults.standard.object(forKey: userRoleKey) as? Data {
+            if let data = try? JSONDecoder().decode(String.self, from: dataObject) {
+                return data
+            }
+        }
+        return nil
     }
     
 }

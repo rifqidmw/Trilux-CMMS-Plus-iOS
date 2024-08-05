@@ -16,8 +16,8 @@ class BasePresenter: NSObject {
 
 extension BasePresenter {
     
-    func navigateToDetailPicture(navigation: UINavigationController, image: String) {
-        router.navigateToDetailPicture(navigation: navigation, image: image)
+    func navigateToDetailDocument(navigation: UINavigationController, file: String?, type: DocumentType = .image) {
+        router.navigateToDetailDocument(navigation: navigation, file: file ?? "", type: type)
     }
     
     func showSelectActionBottomSheet(

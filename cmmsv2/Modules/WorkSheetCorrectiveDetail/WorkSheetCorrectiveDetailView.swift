@@ -279,7 +279,7 @@ extension WorkSheetCorrectiveDetailView: UICollectionViewDataSource, UICollectio
               let navigation = self.navigationController,
               let image = selectedItem.valUrl
         else { return }
-        presenter.navigateToDetailPicture(navigation: navigation, image: image)
+        presenter.navigateToDetailDocument(navigation: navigation, file: image)
     }
     
 }

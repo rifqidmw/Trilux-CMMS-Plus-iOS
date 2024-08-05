@@ -16,8 +16,8 @@ class BaseRouter {
         UIApplication.shared.windows.first?.rootViewController = rootController
     }
     
-    func navigateToDetailPicture(navigation: UINavigationController, image: String) {
-        let vc = FullScreenPictureRouter().showView(image: image)
+    func navigateToDetailDocument(navigation: UINavigationController, file: String?, type: DocumentType) {
+        let vc = DocumentRouter().showView(file: file ?? "", type: type)
         navigation.pushViewController(vc, animated: true)
     }
     

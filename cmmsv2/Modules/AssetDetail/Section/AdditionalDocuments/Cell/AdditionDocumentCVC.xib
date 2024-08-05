@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
@@ -25,13 +28,36 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcZ-pP-TeX">
                         <rect key="frame" x="4" y="4" width="192" height="212"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bill_fill" translatesAutoresizingMaskIntoConstraints="NO" id="eXn-vR-dpL">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Rp-rb-VAj">
                                 <rect key="frame" x="16" y="16" width="36" height="36"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szp-cY-b0o" userLabel="Badge View">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="8"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIn-6c-4yL">
+                                                <rect key="frame" x="4" y="4" width="42" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
+                                                <color key="textColor" name="indicatorColor8"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="lightGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ZIn-6c-4yL" secondAttribute="bottom" constant="4" id="TT9-61-jTZ"/>
+                                            <constraint firstItem="ZIn-6c-4yL" firstAttribute="top" secondItem="szp-cY-b0o" secondAttribute="top" constant="4" id="g0Y-u0-OAL"/>
+                                            <constraint firstItem="ZIn-6c-4yL" firstAttribute="leading" secondItem="szp-cY-b0o" secondAttribute="leading" constant="4" id="lO5-fL-KDg"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZIn-6c-4yL" secondAttribute="trailing" constant="4" id="rHw-rN-gre"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bill_fill" translatesAutoresizingMaskIntoConstraints="NO" id="eXn-vR-dpL">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="PaK-mO-rV6"/>
-                                    <constraint firstAttribute="width" constant="36" id="bct-sQ-1Wa"/>
+                                    <constraint firstAttribute="width" constant="36" id="NBB-Oi-WY7"/>
+                                    <constraint firstAttribute="height" constant="36" id="bP0-G6-wcP"/>
                                 </constraints>
-                            </imageView>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuZ-v3-nup">
                                 <rect key="frame" x="16" y="181.66666666666666" width="160" height="14.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
@@ -47,10 +73,10 @@
                             <constraint firstItem="Cmg-RB-qc8" firstAttribute="top" secondItem="fcZ-pP-TeX" secondAttribute="top" constant="16" id="2rl-UF-EMV"/>
                             <constraint firstItem="JuZ-v3-nup" firstAttribute="centerX" secondItem="fcZ-pP-TeX" secondAttribute="centerX" id="3Ez-Jt-6cg"/>
                             <constraint firstAttribute="trailing" secondItem="JuZ-v3-nup" secondAttribute="trailing" constant="16" id="6k4-4w-Ztd"/>
+                            <constraint firstItem="9Rp-rb-VAj" firstAttribute="top" secondItem="fcZ-pP-TeX" secondAttribute="top" constant="16" id="Adf-jO-gTW"/>
                             <constraint firstItem="Cmg-RB-qc8" firstAttribute="leading" secondItem="fcZ-pP-TeX" secondAttribute="leading" constant="16" id="BP3-p3-wrW"/>
-                            <constraint firstItem="eXn-vR-dpL" firstAttribute="leading" secondItem="fcZ-pP-TeX" secondAttribute="leading" constant="16" id="Vcu-Vn-m0x"/>
                             <constraint firstAttribute="bottom" secondItem="JuZ-v3-nup" secondAttribute="bottom" constant="16" id="aR7-7v-XMx"/>
-                            <constraint firstItem="eXn-vR-dpL" firstAttribute="top" secondItem="fcZ-pP-TeX" secondAttribute="top" constant="16" id="ax3-so-Ez7"/>
+                            <constraint firstItem="9Rp-rb-VAj" firstAttribute="leading" secondItem="fcZ-pP-TeX" secondAttribute="leading" constant="16" id="jOw-27-Gt8"/>
                             <constraint firstItem="JuZ-v3-nup" firstAttribute="top" secondItem="Cmg-RB-qc8" secondAttribute="bottom" constant="16" id="kII-sY-gDS"/>
                             <constraint firstItem="JuZ-v3-nup" firstAttribute="leading" secondItem="fcZ-pP-TeX" secondAttribute="leading" constant="16" id="mX8-ef-Ptu"/>
                             <constraint firstAttribute="trailing" secondItem="Cmg-RB-qc8" secondAttribute="trailing" constant="16" id="mic-IY-upN"/>
@@ -65,6 +91,7 @@
                 <constraint firstAttribute="bottom" secondItem="fcZ-pP-TeX" secondAttribute="bottom" constant="4" id="rim-Wy-XT7"/>
             </constraints>
             <connections>
+                <outlet property="badgePDFView" destination="szp-cY-b0o" id="uo4-3U-XEo"/>
                 <outlet property="containerView" destination="fcZ-pP-TeX" id="4rS-ON-1Lp"/>
                 <outlet property="documentImageView" destination="Cmg-RB-qc8" id="Wa2-QH-779"/>
                 <outlet property="iconDocumentImageView" destination="eXn-vR-dpL" id="EdP-U5-WJG"/>
@@ -80,6 +107,12 @@
         </namedColor>
         <namedColor name="customLightGrayColor">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="indicatorColor8">
+            <color red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightGreenColor">
+            <color red="0.88627450980392153" green="0.95294117647058818" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

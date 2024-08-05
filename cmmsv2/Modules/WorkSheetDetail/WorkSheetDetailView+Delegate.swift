@@ -110,7 +110,7 @@ extension WorkSheetDetailView: MediaSectionViewDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailPicture(navigation: navigation, image: url)
+        presenter.navigateToDetailDocument(navigation: navigation, file: url)
     }
     
 }
