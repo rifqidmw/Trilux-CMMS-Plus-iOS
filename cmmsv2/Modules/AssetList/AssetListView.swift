@@ -189,7 +189,7 @@ extension AssetListView: SkeletonCollectionViewDelegate, SkeletonCollectionViewD
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailAsset(from: navigation, presenter.type, data: self.data[indexPath.row])
+        presenter.navigateToDetailAsset(from: navigation, presenter.type, id: self.data[indexPath.row].id ?? "")
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

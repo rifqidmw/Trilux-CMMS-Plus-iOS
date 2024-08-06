@@ -115,10 +115,6 @@ extension HistoryListPresenter {
 
 extension HistoryListPresenter {
     
-    func navigateToHistoryDetail(navigation: UINavigationController, data: WorkSheetListEntity) {
-        router.navigateToHistoryDetail(navigation: navigation, data: data)
-    }
-    
     func showHistorySortBottomSheet(from navigation: UINavigationController, _ delegate: SortingBottomSheetDelegate) {
         let bottomSheet = SortingBottomSheet(nibName: String(describing: SortingBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate

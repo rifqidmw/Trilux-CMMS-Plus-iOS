@@ -11,9 +11,19 @@ class RoleManager {
     
     static let shared = RoleManager()
     
-    private init() {}
+    private init() {
+        if let savedRole = AppManager.getUserRole() {
+            currentUserRole = UserRole(valPosition: savedRole)
+        } else {
+            currentUserRole = .unknown
+        }
+    }
     
-    var currentUserRole: UserRole = .unknown
+    var currentUserRole: UserRole {
+        didSet {
+            AppManager.setUserRole(currentUserRole.rawValue)
+        }
+    }
     
     func updateRole(with valPosition: String) {
         currentUserRole = UserRole(valPosition: valPosition)
@@ -21,7 +31,7 @@ class RoleManager {
     
 }
 
-enum UserRole {
+enum UserRole: String {
     case ipsrs
     case engineer
     case unknown
@@ -35,5 +45,9 @@ enum UserRole {
         default:
             self = .unknown
         }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
     }
 }

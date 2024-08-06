@@ -245,7 +245,7 @@ extension DelayCorrectiveDetailView: UICollectionViewDataSource, UICollectionVie
               let navigation = self.navigationController
         else { return }
         let selectedPicture = self.media[indexPath.row].valUrl ?? ""
-        presenter.navigateToDetailPicture(navigation: navigation, image: selectedPicture)
+        presenter.navigateToDetailDocument(navigation: navigation, file: selectedPicture)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

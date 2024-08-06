@@ -20,10 +20,6 @@ class WorkSheetMonitoringFunctionDetailPresenter: BasePresenter {
 
 extension WorkSheetMonitoringFunctionDetailPresenter {
     
-    func navigateToFullScreenPicture(navigation: UINavigationController, titlePage: String, image: String) {
-        router.goToFullScreenPicture(navigation: navigation, titlePage: titlePage, image: image)
-    }
-    
     func showBottomSheetAllEvidence(navigation: UINavigationController) {
         router.showAllEvidenceBottomSheet(navigation: navigation)
     }

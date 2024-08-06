@@ -11,7 +11,7 @@ class ComplaintDetailPresenter: BasePresenter {
     
     private let interactor: ComplaintDetailInteractor
     private let router = ComplaintDetailRouter()
-    let data: Complaint?
+    let id: String?
     
     @Published public var complaintData: ComplaintDetail?
     
@@ -19,9 +19,9 @@ class ComplaintDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: ComplaintDetailInteractor, data: Complaint) {
+    init(interactor: ComplaintDetailInteractor, id: String) {
         self.interactor = interactor
-        self.data = data
+        self.id = id
     }
     
 }
@@ -29,8 +29,8 @@ class ComplaintDetailPresenter: BasePresenter {
 extension ComplaintDetailPresenter {
     
     func fetchInitialData() {
-        guard let data, let id = data.id else { return }
-        self.fetchDetailComplaintData(id: id)
+        guard let id else { return }
+        self.fetchDetailComplaintData(id: Int(id) ?? 0)
     }
     
     func fetchDetailComplaintData(id: Int) {

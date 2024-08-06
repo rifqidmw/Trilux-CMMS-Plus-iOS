@@ -21,14 +21,8 @@ class HomeScreenRouter: BaseRouter {
 
 extension HomeScreenRouter {
     
-    func navigateToWorkSheetList(navigation: UINavigationController) {
+    func navigateToWorkSheetMonitoringList(from navigation: UINavigationController) {
         let vc = WorkSheetMonitoringFunctionListRouter().showView()
-        navigation.dismiss(animated: true)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-    func navigateToWorkSheetOnsitePreventive(navigation: UINavigationController) {
-        let vc = WorkSheetOnsitePreventiveListRouter().showView()
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
     }
@@ -37,11 +31,6 @@ extension HomeScreenRouter {
         let vc = WorkSheetCorrectiveListRouter().showView()
         navigation.dismiss(animated: true)
         navigation.pushViewController(vc, animated: true)
-    }
-    
-    func showBottomSheet(view: UIViewController, navigation: UINavigationController) {
-        view.modalPresentationStyle = .overCurrentContext
-        navigation.present(view, animated: true)
     }
     
     func goToUserProfile(navigation: UINavigationController) {

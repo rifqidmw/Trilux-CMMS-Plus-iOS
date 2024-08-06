@@ -114,9 +114,9 @@ extension LoadPreventiveView {
                 guard let self,
                       let title = self.workButton.titleLabel.text,
                       let navigation = self.navigationController,
-                      let data = presenter.data
+                      let id = presenter.idLk
                 else { return }
-                let workSheet = WorkSheetRequestEntity(id: data.idLK, action: title.lowercased())
+                let workSheet = WorkSheetRequestEntity(id: id, action: title.lowercased())
                 presenter.navigateToDetailWorkSheet(navigation, data: workSheet, type: .preventive, activity: .working)
             }
             .store(in: &anyCancellable)
@@ -168,6 +168,10 @@ extension LoadPreventiveView: SkeletonCollectionViewDelegate, SkeletonCollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.bounds.width / 2) - 8
         return CGSize(width: width, height: 174)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 64, right: 0)
     }
     
 }

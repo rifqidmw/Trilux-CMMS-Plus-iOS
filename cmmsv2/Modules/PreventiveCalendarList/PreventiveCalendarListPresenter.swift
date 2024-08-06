@@ -150,12 +150,10 @@ extension PreventiveCalendarListPresenter {
 
 extension PreventiveCalendarListPresenter {
     
-    func navigateToLoadPreventive(from navigation: UINavigationController, data: WorkSheetListEntity) {
-        router.navigateToLoadPreventive(navigation, data: data)
-    }
-    
     func showPreventiveBottomSheet(from navigation: UINavigationController, delegate: PreventiveSchedulerBottomSheetDelegate) {
-        router.showPreventiveBottomSheet(navigation, delegate: delegate)
+        let bottomSheet = PreventiveSchedulerBottomSheet(nibName: String(describing: PreventiveSchedulerBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showSelectTechnicianBottomSheet(from navigation: UINavigationController, _ delegate: SelectTechnicianBottomSheetDelegate) {

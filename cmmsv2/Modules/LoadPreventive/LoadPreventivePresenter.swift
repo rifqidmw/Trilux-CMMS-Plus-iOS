@@ -12,7 +12,8 @@ class LoadPreventivePresenter: BasePresenter {
     
     private let interactor: LoadPreventiveInteractor
     private let router: LoadPreventiveRouter
-    let data: WorkSheetListEntity?
+    let idAsset: String?
+    let idLk: String?
     
     @Published public var loadPreventiveData: LoadPreventiveData?
     @Published public var createPreventiveData: CreatePreventiveEntity?
@@ -21,10 +22,11 @@ class LoadPreventivePresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: LoadPreventiveInteractor, router: LoadPreventiveRouter, data: WorkSheetListEntity) {
+    init(interactor: LoadPreventiveInteractor, router: LoadPreventiveRouter, idAsset: String, idLk: String) {
         self.interactor = interactor
         self.router = router
-        self.data = data
+        self.idAsset = idAsset
+        self.idLk = idLk
     }
     
 }
@@ -32,7 +34,7 @@ class LoadPreventivePresenter: BasePresenter {
 extension LoadPreventivePresenter {
     
     func fetchInitData() {
-        guard let data = self.data, let idAsset = data.idAsset else { return }
+        guard let idAsset else { return }
         self.fetchPreventiveLoadList(id: idAsset)
     }
     

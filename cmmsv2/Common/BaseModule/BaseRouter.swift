@@ -10,14 +10,14 @@ import UIKit
 
 class BaseRouter {
     
-    func backToHomeScreen() {
+    func goToHomeScreen(navigation: UINavigationController) {
         let vc = HomeScreenRouter().showView()
-        let rootController = UINavigationController(rootViewController: vc)
-        UIApplication.shared.windows.first?.rootViewController = rootController
+        let rootViewController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.setRootViewController(rootViewController)
     }
     
-    func navigateToDetailPicture(navigation: UINavigationController, image: String) {
-        let vc = FullScreenPictureRouter().showView(image: image)
+    func navigateToDetailDocument(navigation: UINavigationController, file: String?, type: DocumentType) {
+        let vc = DocumentRouter().showView(file: file ?? "", type: type)
         navigation.pushViewController(vc, animated: true)
     }
     
@@ -72,13 +72,38 @@ class BaseRouter {
         UIApplication.shared.setRootViewController(rootViewController)
     }
     
-    func navigateToDetailAsset(from navigation: UINavigationController, _ type: AssetType, data: Equipment) {
-        let vc = AssetDetailRouter().showView(type: type, data: data)
+    func navigateToDetailAsset(from navigation: UINavigationController, _ type: AssetType, id: String?) {
+        let vc = AssetDetailRouter().showView(type: type, id: id ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     
     func navigateToAssetFilter(from navigation: UINavigationController) {
         let vc = AssetFilterRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
+        let vc = ComplaintDetailRouter().showView(id: id ?? "")
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToDetailDelayCorrective(from navigation: UINavigationController, id: String?) {
+        let vc = DelayCorrectiveDetailRouter().showView(id: id ?? "")
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToHistoryDetail(navigation: UINavigationController, id: String?) {
+        let vc = HistoryDetailRouter().showView(id: id ?? "")
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, _ idAsset: String?, _ idComplaint: String?) {
+        let vc = WorkSheetCorrectiveDetailRouter().showView(idAset: idAsset ?? "", idComplaint: idComplaint ?? "")
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToLoadPreventive(_ navigation: UINavigationController, idAsset: String?, idLk: String?) {
+        let vc = LoadPreventiveRouter().showView(idAsset: idAsset ?? "", idLk: idLk ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     

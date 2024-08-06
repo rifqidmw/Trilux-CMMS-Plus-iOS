@@ -9,7 +9,7 @@ import UIKit
 
 extension NotificationListView: WorkSheetCorrectiveBottomSheetDelegate {
     
-    func didTapAssetImage(_ data: Equipment, type: AssetType) {
+    func didTapAssetImage(_ id: String, type: AssetType) {
         AppLogger.log("-- CLICKED")
     }
     
@@ -30,7 +30,7 @@ extension NotificationListView: WorkSheetCorrectiveBottomSheetDelegate {
               let navigation = self.navigationController
         else { return }
         self.dismiss(animated: true)
-        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
+        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, String(data.id ?? 0), String(data.complain?.id ?? 0))
     }
     
 }

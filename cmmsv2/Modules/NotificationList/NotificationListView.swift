@@ -252,7 +252,7 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
             }
         case .complaint:
             if let complaintData = self.complaintData.first(where: { $0.id == itemId }) {
-                presenter.navigateToComplaintDetail(navigation: navigation, data: complaintData)
+                presenter.navigateToComplaintDetail(navigation: navigation, id: String(complaintData.id ?? 0))
             } else {
                 self.showAlert(title: "Terjadi Kesalahan", message: "Tidak ada data yang cocok")
             }

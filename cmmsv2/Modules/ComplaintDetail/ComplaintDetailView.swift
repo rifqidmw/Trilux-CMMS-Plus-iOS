@@ -259,7 +259,7 @@ extension ComplaintDetailView: UICollectionViewDataSource, UICollectionViewDeleg
               let navigation = self.navigationController,
               let image = selectedItem.valUrl
         else { return }
-        presenter.navigateToDetailPicture(navigation: navigation, image: image)
+        presenter.navigateToDetailDocument(navigation: navigation, file: image)
     }
     
 }

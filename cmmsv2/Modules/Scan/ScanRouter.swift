@@ -28,19 +28,3 @@ class ScanRouter: BaseRouter {
         }
     
 }
-
-extension ScanRouter {
-    
-    func showBottomSheetDetailInformation(navigation: UINavigationController, data: ScanEquipment) {
-        let bottomSheet = DetailAssetBottomSheet(nibName: String(describing: DetailAssetBottomSheet.self), bundle: nil)
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        bottomSheet.equipment = data
-        navigation.present(bottomSheet, animated: true)
-    }
-    
-    func navigateToLoadPreventive(_ navigation: UINavigationController, data: WorkSheetListEntity) {
-        let vc = LoadPreventiveRouter().showView(data: data)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}

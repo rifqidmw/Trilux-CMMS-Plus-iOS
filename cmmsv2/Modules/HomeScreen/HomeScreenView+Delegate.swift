@@ -116,7 +116,7 @@ extension HomeScreenView: WorkSheetBottomSheetDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToWorkSheetList(navigation: navigation)
+        presenter.navigateToWorkSheetMonitoringList(from: navigation)
     }
     
     func didTapWorkSheetCorrective() {

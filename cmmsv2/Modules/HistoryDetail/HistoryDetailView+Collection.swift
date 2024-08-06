@@ -46,10 +46,10 @@ extension HistoryDetailView: UICollectionViewDataSource, UICollectionViewDelegat
         switch collectionView {
         case self.damagedPictureCollectionView:
             let selectedDamagedPicture = self.damagedMediaList[indexPath.row].valUrl ?? ""
-            presenter.navigateToDetailPicture(navigation: navigation, image: selectedDamagedPicture)
+            presenter.navigateToDetailDocument(navigation: navigation, file: selectedDamagedPicture)
         case self.repairPictureCollectionView:
             let selectedRepairPicture = self.repairedMediaList[indexPath.row].valUrl ?? ""
-            presenter.navigateToDetailPicture(navigation: navigation, image: selectedRepairPicture)
+            presenter.navigateToDetailDocument(navigation: navigation, file: selectedRepairPicture)
         default: break
         }
     }

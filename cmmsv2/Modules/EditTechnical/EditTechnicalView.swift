@@ -160,7 +160,7 @@ extension EditTechnicalView {
                 let request = EditTechnicalRequestEntity(
                     frekuensi: self.selectedFrequency ?? "",
                     fungsi:  funcData?.key ?? "",
-                    idAsset: presenter.data?.id ?? "",
+                    idAsset: presenter.id ?? "",
                     insiden:  insiden?.key ?? "",
                     klsresiko: clsRisk?.key ?? "",
                     melopsi: self.selectedMelopsi ?? "",

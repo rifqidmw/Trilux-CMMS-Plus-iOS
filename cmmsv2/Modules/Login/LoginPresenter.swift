@@ -52,11 +52,3 @@ extension LoginPresenter {
     }
     
 }
-
-extension LoginPresenter {
-    
-    func navigateToHomeScreen(navigation: UINavigationController) {
-        router.goToHomeScreen(navigation: navigation)
-    }
-    
-}

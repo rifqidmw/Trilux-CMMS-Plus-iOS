@@ -12,7 +12,7 @@ class EditTechnicalPresenter: BasePresenter {
     
     private let interactor: EditTechnicalInteractor
     private let router: EditTechnicalRouter
-    let data: Equipment?
+    let id: String?
     
     @Published public var technicalData: TechnicalEntity?
     @Published public var saveTechnicalData: SaveTechnicalEntity?
@@ -22,10 +22,10 @@ class EditTechnicalPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: EditTechnicalInteractor, router: EditTechnicalRouter, data: Equipment) {
+    init(interactor: EditTechnicalInteractor, router: EditTechnicalRouter, id: String) {
         self.interactor = interactor
         self.router = router
-        self.data = data
+        self.id = id
     }
     
 }
@@ -33,9 +33,7 @@ class EditTechnicalPresenter: BasePresenter {
 extension EditTechnicalPresenter {
     
     func fetchInitData() {
-        guard let data = data,
-              let id = data.id
-        else { return }
+        guard let id else { return }
         fetchLoadTechnicalData(id: id)
     }
     

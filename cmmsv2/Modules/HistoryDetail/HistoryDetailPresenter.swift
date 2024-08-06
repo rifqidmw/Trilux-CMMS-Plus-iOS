@@ -11,7 +11,7 @@ class HistoryDetailPresenter: BasePresenter {
     
     private let interactor: HistoryDetailInteractor
     private let router: HistoryDetailRouter
-    let data: WorkSheetListEntity?
+    let id: String?
     
     @Published public var historyDetail: HistoryDetailEntity?
     
@@ -19,10 +19,10 @@ class HistoryDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: HistoryDetailInteractor, router: HistoryDetailRouter, data: WorkSheetListEntity) {
+    init(interactor: HistoryDetailInteractor, router: HistoryDetailRouter, id: String) {
         self.interactor = interactor
         self.router = router
-        self.data = data
+        self.id = id
     }
     
 }
@@ -30,7 +30,7 @@ class HistoryDetailPresenter: BasePresenter {
 extension HistoryDetailPresenter {
     
     func fetchInitData() {
-        guard let data, let id = data.idLK else { return }
+        guard let id else { return }
         self.fetchHistoryDetail(id: id)
     }
     

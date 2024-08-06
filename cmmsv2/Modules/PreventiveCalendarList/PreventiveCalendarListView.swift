@@ -255,7 +255,9 @@ extension PreventiveCalendarListView: SkeletonCollectionViewDataSource, Skeleton
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToLoadPreventive(from: navigation, data: self.data[indexPath.row])
+        let selectedIdLk = self.data[indexPath.row].idLK ?? ""
+        let selectedIdAsset = self.data[indexPath.row].idAsset ?? ""
+        presenter.navigateToLoadPreventive(navigation, idAsset: selectedIdAsset, idLk: selectedIdLk)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

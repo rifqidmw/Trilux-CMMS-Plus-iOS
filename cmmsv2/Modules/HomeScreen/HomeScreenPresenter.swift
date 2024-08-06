@@ -86,40 +86,36 @@ extension HomeScreenPresenter {
         let bottomSheet = ReminderPreventiveBottomSheet(nibName: String(describing: ReminderPreventiveBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         bottomSheet.data = self.reminderList
-        router.showBottomSheet(view: bottomSheet, navigation: navigation)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showBottomSheetAllCategories(navigation: UINavigationController, delegate: AllCategoriesBottomSheetDelegate) {
         let bottomSheet = AllCategoriesBottomSheet(nibName: String(describing: AllCategoriesBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         bottomSheet.updateDataForRole()
-        router.showBottomSheet(view: bottomSheet, navigation: navigation)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showBottomSheetWorkSheet(navigation: UINavigationController, delegate: WorkSheetBottomSheetDelegate) {
         let bottomSheet = WorkSheetBottomSheet(nibName: String(describing: WorkSheetBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
-        router.showBottomSheet(view: bottomSheet, navigation: navigation)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showBottomSheetAsset(navigation: UINavigationController, delegate: AssetBottomSheetDelegate) {
         let bottomSheet = AssetBottomSheet(nibName: String(describing: AssetBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
-        router.showBottomSheet(view: bottomSheet, navigation: navigation)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showExpiredBottomSheet(navigation: UINavigationController, expiredDate: String) {
         let bottomSheet = ExpiredBottomSheet(nibName: String(describing: ExpiredBottomSheet.self), bundle: nil)
         bottomSheet.expiredDate = expiredDate
-        router.showBottomSheet(view: bottomSheet, navigation: navigation)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
-    func navigateToWorkSheetList(navigation: UINavigationController) {
-        router.navigateToWorkSheetList(navigation: navigation)
-    }
-    
-    func navigateToWorkSheetOnsitePreventive(navigation: UINavigationController) {
-        router.navigateToWorkSheetOnsitePreventive(navigation: navigation)
+    func navigateToWorkSheetMonitoringList(from navigation: UINavigationController) {
+        router.navigateToWorkSheetMonitoringList(from: navigation)
     }
     
     func navigateToWorkSheetCorrective(navigation: UINavigationController) {

@@ -9,9 +9,9 @@ import UIKit
 
 class AssetDetailRouter: BaseRouter {
     
-    func showView(type: AssetType, data: Equipment) -> AssetDetailView {
+    func showView(type: AssetType, id: String?) -> AssetDetailView {
         let interactor = AssetDetailInteractor()
-        let presenter = AssetDetailPresenter(interactor: interactor, router: self, type: type, data: data)
+        let presenter = AssetDetailPresenter(interactor: interactor, router: self, type: type, id: id ?? "")
         let view = AssetDetailView(nibName: String(describing: AssetDetailView.self), bundle: nil)
         view.presenter = presenter
         return view
@@ -21,8 +21,13 @@ class AssetDetailRouter: BaseRouter {
 
 extension AssetDetailRouter {
     
-    func navigateToUpdateTechnicalData(from navigation: UINavigationController, _ data: Equipment) {
-        let vc = EditTechnicalRouter().showView(data: data)
+    func navigateToUpdateTechnicalData(from navigation: UINavigationController, _ id: String?) {
+        let vc = EditTechnicalRouter().showView(id: id ?? "")
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToDetailInformation(from navigation: UINavigationController, _ id: String?) {
+        let vc = EquipmentMaintenanceRouter().showView(idAsset: id ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     

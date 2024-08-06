@@ -21,13 +21,6 @@ class WorkSheetMonitoringFunctionDetailRouter: BaseRouter {
 
 extension WorkSheetMonitoringFunctionDetailRouter {
     
-    func goToFullScreenPicture(navigation: UINavigationController, titlePage: String, image: String) {
-        let vc = FullScreenPictureRouter().showView(image: "")
-        vc.titlePage = titlePage
-        vc.image = image
-        navigation.pushViewController(vc, animated: true)
-    }
-    
     func showAllEvidenceBottomSheet(navigation: UINavigationController) {
         let bottomSheet = AllEvidenceBottomSheet(nibName: String(describing: AllEvidenceBottomSheet.self), bundle: nil)
         bottomSheet.modalPresentationStyle = .overCurrentContext

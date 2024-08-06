@@ -9,7 +9,7 @@ import UIKit
 import XLPagerTabStrip
 
 protocol AdditionalDocumentsViewDelegate: AnyObject {
-    func didSelectImageDocument(url: String)
+    func didSelectImageDocument(url: String, type: DocumentType)
 }
 
 class AdditionalDocumentsView: BaseViewController, IndicatorInfoProvider {
@@ -70,7 +70,8 @@ extension AdditionalDocumentsView: UICollectionViewDataSource, UICollectionViewD
             return UICollectionViewCell()
         }
         
-        cell.setupCell(data: self.data[indexPath.row])
+        let fileData = self.data[indexPath.row]
+        cell.setupCell(data: fileData)
         
         return cell
     }
@@ -82,15 +83,37 @@ extension AdditionalDocumentsView: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedFile = self.data[indexPath.row]
-        if let selectedFile = selectedFile.url {
-            if selectedFile.isEmpty {
-                self.showAlert(title: "Dokumen tidak ditemukan!")
-            } else {
-                guard let parentView = self.parentView,
-                      let delegate = parentView.delegate
-                else { return }
-                delegate.didSelectImageDocument(url: selectedFile)
+        guard let parentView = self.parentView,
+              let delegate = parentView.delegate
+        else { return }
+        
+        if let url = selectedFile.url, url.isEmpty {
+            self.showAlert(title: "Terjadi Kesalahan", message: "Maaf file tidak ditemukan")
+        }
+        
+        if let url = selectedFile.url, !url.isEmpty, let documentType = documentType(for: url) {
+            switch documentType {
+            case .image:
+                delegate.didSelectImageDocument(url: url, type: .image)
+            case .pdf:
+                delegate.didSelectImageDocument(url: url, type: .pdf)
             }
         }
     }
+    
+    func documentType(for url: String) -> DocumentType? {
+        guard !url.isEmpty else {
+            return nil
+        }
+        let fileExtension = (url as NSString).pathExtension.lowercased()
+        switch fileExtension {
+        case "jpg", "jpeg", "png":
+            return .image
+        case "pdf":
+            return .pdf
+        default:
+            return nil
+        }
+    }
+    
 }

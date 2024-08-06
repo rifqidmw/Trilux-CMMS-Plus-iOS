@@ -124,7 +124,7 @@ extension HistoryListView: SkeletonCollectionViewDataSource, SkeletonCollectionV
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToHistoryDetail(navigation: navigation, data: self.data[indexPath.row])
+        presenter.navigateToHistoryDetail(navigation: navigation, id: self.data[indexPath.row].idLK)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

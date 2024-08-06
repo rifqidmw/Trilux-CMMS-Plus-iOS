@@ -20,13 +20,3 @@ class WorkSheetDetailRouter: BaseRouter {
     }
     
 }
-
-extension WorkSheetDetailRouter {
-    
-    func showBottomSheet(nav: UINavigationController, bottomSheetView: UIViewController) {
-        bottomSheetView.loadViewIfNeeded()
-        bottomSheetView.modalPresentationStyle = .overCurrentContext
-        UIApplication.topViewController()?.present(bottomSheetView, animated: true, completion: nil)
-    }
-    
-}

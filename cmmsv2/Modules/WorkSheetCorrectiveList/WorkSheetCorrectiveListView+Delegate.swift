@@ -25,7 +25,7 @@ extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
+        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, String(data.id ?? 0), String(data.complain?.id ?? 0))
     }
     
     func didTapDownload(_ id: String) {
@@ -34,11 +34,11 @@ extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
         }
     }
     
-    func didTapAssetImage(_ data: Equipment, type: AssetType) {
+    func didTapAssetImage(_ id: String, type: AssetType) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailAsset(from: navigation, type, data: data)
+        presenter.navigateToDetailAsset(from: navigation, type, id: id)
     }
     
 }
@@ -97,7 +97,7 @@ extension WorkSheetCorrectiveListView: FilterStatusBottomSheetDelegate {
     func didSelectStatusFilter(_ multiple: [StatusFilterEntity], single: StatusFilterEntity) {
         guard let presenter else { return }
         self.showLoadingPopup()
-        let woStatusString = multiple.map { $0.status?.rawValue ?? "" }.joined(separator: ",")
+        let woStatusString = multiple.map { $0.status?.rawValue ?? "" }.joined(separator: ",").lowercased()
         presenter.fetchInitData(woStatus: woStatusString)
         self.reloadCollectionViewWithAnimation(self.collectionView)
     }

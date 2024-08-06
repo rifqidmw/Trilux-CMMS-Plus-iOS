@@ -18,12 +18,3 @@ class ComplaintListRouter: BaseRouter {
     }
     
 }
-
-extension ComplaintListRouter {
-    
-    func navigateToComplaintDetail(navigation: UINavigationController, data: Complaint) {
-        let vc = ComplaintDetailRouter().showView(data: data)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}

@@ -30,13 +30,13 @@ class AssetDetailView: BaseViewController {
     
     weak var delegate: AdditionalDocumentsViewDelegate?
     var presenter: AssetDetailPresenter?
+    
     @Published public var generalInfoData: EquipmentDetail?
     @Published public var filesData: [File] = []
     @Published public var costData: EquipmentMainCoast?
     @Published public var technicalData: EquipmentTechnical?
     @Published public var acceptanceData: DeliveryAcceptanceData?
     @Published public var isLoading: Bool = false
-    var maxContentHeight: CGFloat = 0
     
     override func didLoad() {
         super.didLoad()
@@ -140,8 +140,11 @@ extension AssetDetailView {
         guard let presenter else { return }
         seeDetailButton.gesture()
             .sink { [weak self] _ in
-                guard self != nil else { return }
-                AppLogger.log("-- CLICKED")
+                guard let self,
+                      let navigation = self.navigationController,
+                      let id = presenter.id
+                else { return }
+                presenter.navigateToDetailInformation(from: navigation, id)
             }
             .store(in: &anyCancellable)
         
@@ -171,9 +174,9 @@ extension AssetDetailView {
             .sink { [weak self] _ in
                 guard let self,
                       let navigation = self.navigationController,
-                      let asset = presenter.data
+                      let id = presenter.id
                 else { return }
-                presenter.navigateToUpdateTechnicalData(from: navigation, asset)
+                presenter.navigateToUpdateTechnicalData(from: navigation, id)
             }
             .store(in: &anyCancellable)
     }
@@ -225,11 +228,11 @@ extension AssetDetailView {
 
 extension AssetDetailView: AdditionalDocumentsViewDelegate {
     
-    func didSelectImageDocument(url: String) {
+    func didSelectImageDocument(url: String, type: DocumentType) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailPicture(navigation: navigation, image: url)
+        presenter.navigateToDetailDocument(navigation: navigation, file: url, type: type)
     }
     
 }

@@ -149,17 +149,17 @@ extension WorkSheetCorrectiveListPresenter {
 extension WorkSheetCorrectiveListPresenter {
     
     func showBottomSheetCorrective(navigation: UINavigationController, data: WorkOrder, delegate: WorkSheetCorrectiveBottomSheetDelegate) {
-        router.showBottomSheetCorrective(navigation: navigation, data: data, delegate: delegate)
-    }
-    
-    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, data: WorkOrder) {
-        router.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
+        let bottomSheet = WorkSheetCorrectiveBottomSheet(nibName: String(describing: WorkSheetCorrectiveBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.data = data
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showFilterStatusBottomSheet(from navigation: UINavigationController, delegate: FilterStatusBottomSheetDelegate) {
         let bottomSheet = FilterStatusBottomSheet(nibName: String(describing: FilterStatusBottomSheet.self), bundle: nil)
         bottomSheet.data = self.filterStatusData
         bottomSheet.delegate = delegate
+        bottomSheet.type = .multiple
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

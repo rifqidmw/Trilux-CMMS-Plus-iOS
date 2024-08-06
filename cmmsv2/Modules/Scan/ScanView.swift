@@ -78,7 +78,6 @@ extension ScanView {
                       let navigation = self.navigationController,
                       let data = data,
                       let id = data.id,
-                      let workSheet = presenter.data,
                       let request = presenter.request,
                       !self.hasNavigated
                 else { return }
@@ -91,7 +90,7 @@ extension ScanView {
                     if presenter.data?.idAsset != String(id) {
                         self.showAlert(title: "Peringatan", message: "Mohon scan alat yang sesuai")
                     } else {
-                        presenter.navigateToLoadPreventive(navigation, data: workSheet)
+                        presenter.navigateToLoadPreventive(navigation, idAsset: presenter.data?.idAsset ?? "", idLk: presenter.data?.idLK)
                     }
                 case .monitoring:
                     if presenter.data?.idAsset != String(id) {

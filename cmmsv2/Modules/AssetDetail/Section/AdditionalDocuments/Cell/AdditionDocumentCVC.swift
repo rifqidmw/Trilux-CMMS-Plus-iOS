@@ -16,13 +16,18 @@ class AdditionDocumentCVC: UICollectionViewCell {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var iconDocumentImageView: UIImageView!
+    @IBOutlet weak var badgePDFView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var documentImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.containerView.makeCornerRadius(8)
-        self.containerView.addShadow(0.4)
+        self.containerView.addShadow(0.1, position: .bottom, opacity: 0.2)
+        self.badgePDFView.makeCornerRadius(4)
+        self.badgePDFView.addShadow(0.1, position: .bottom, opacity: 0.2)
+        self.iconDocumentImageView.makeCornerRadius(4)
+        self.iconDocumentImageView.addShadow(0.1, position: .bottom, opacity: 0.2)
     }
     
 }
@@ -31,14 +36,35 @@ extension AdditionDocumentCVC {
     
     func setupCell(data: File) {
         self.titleLabel.text = data.title
-        if let imageUrl = data.url, !imageUrl.isEmpty {
-            self.documentImageView.isHidden = false
-            self.iconDocumentImageView.isHidden = true
-            self.documentImageView.loadImageUrl(imageUrl)
-            self.documentImageView.makeCornerRadius(8)
-        } else {
-            self.documentImageView.isHidden = true
-            self.iconDocumentImageView.isHidden = false
+        self.iconDocumentImageView.isHidden = false
+        
+        if let url = data.url, !url.isEmpty, let documentType = documentType(for: url) {
+            switch documentType {
+            case .image:
+                self.documentImageView.isHidden = false
+                self.iconDocumentImageView.isHidden = true
+                self.badgePDFView.isHidden = true
+                self.documentImageView.loadImageUrl(url)
+                self.documentImageView.makeCornerRadius(8)
+            case .pdf:
+                self.iconDocumentImageView.isHidden = true
+                self.badgePDFView.isHidden = false
+            }
+        }
+    }
+    
+    func documentType(for url: String) -> DocumentType? {
+        guard !url.isEmpty else {
+            return nil
+        }
+        let fileExtension = (url as NSString).pathExtension.lowercased()
+        switch fileExtension {
+        case "jpg", "jpeg", "png":
+            return .image
+        case "pdf":
+            return .pdf
+        default:
+            return nil
         }
     }
     
