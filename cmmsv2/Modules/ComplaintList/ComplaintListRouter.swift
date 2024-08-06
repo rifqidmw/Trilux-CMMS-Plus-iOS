@@ -21,8 +21,8 @@ class ComplaintListRouter: BaseRouter {
 
 extension ComplaintListRouter {
     
-    func navigateToComplaintDetail(navigation: UINavigationController, data: Complaint) {
-        let vc = ComplaintDetailRouter().showView(data: data)
+    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
+        let vc = ComplaintDetailRouter().showView(id: id ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     

@@ -567,6 +567,10 @@
 		CEB8C36A2C60D5B30040B485 /* PreventiveInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8C3672C60D5B30040B485 /* PreventiveInformationView.swift */; };
 		CEB8C36B2C60D5B30040B485 /* PreventiveInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB8C3682C60D5B30040B485 /* PreventiveInformationView.xib */; };
 		CEB8C36C2C60D5B30040B485 /* PreventiveInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8C3672C60D5B30040B485 /* PreventiveInformationView.swift */; };
+		CEB8C3702C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB8C36F2C610E040040B485 /* AssetMaintenanceInfoCell.xib */; };
+		CEB8C3712C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8C36E2C610E040040B485 /* AssetMaintenanceInfoCell.swift */; };
+		CEB8C3722C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB8C36F2C610E040040B485 /* AssetMaintenanceInfoCell.xib */; };
+		CEB8C3732C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8C36E2C610E040040B485 /* AssetMaintenanceInfoCell.swift */; };
 		CEBEF7512C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */; };
 		CEBEF7522C138DA300E4C61D /* NotificationListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */; };
 		CEBF70C02C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF70BE2C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift */; };
@@ -1296,6 +1300,8 @@
 		CEB8C3622C60D5730040B485 /* MonitoringInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitoringInformationView.xib; sourceTree = "<group>"; };
 		CEB8C3672C60D5B30040B485 /* PreventiveInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveInformationView.swift; sourceTree = "<group>"; };
 		CEB8C3682C60D5B30040B485 /* PreventiveInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveInformationView.xib; sourceTree = "<group>"; };
+		CEB8C36E2C610E040040B485 /* AssetMaintenanceInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetMaintenanceInfoCell.swift; sourceTree = "<group>"; };
+		CEB8C36F2C610E040040B485 /* AssetMaintenanceInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetMaintenanceInfoCell.xib; sourceTree = "<group>"; };
 		CEBEF7502C138DA300E4C61D /* NotificationListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationListView+Delegate.swift"; sourceTree = "<group>"; };
 		CEBF70BE2C5836CC00DB40A0 /* WorkSheetApprovalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetApprovalTVC.swift; sourceTree = "<group>"; };
 		CEBF70BF2C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetApprovalTVC.xib; sourceTree = "<group>"; };
@@ -2247,6 +2253,7 @@
 		CE90B1872B9A1EBE00515AD6 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				CEB8C36D2C610DDD0040B485 /* AssetMaintenanceInfoCell */,
 				CE6286912C19D09A00CB552F /* CorrectiveCell */,
 				CEC1B0672BA1ECB400DF6A4F /* HistoryCell */,
 				CE9F90F02B4F758C004C027A /* MenuItemCell */,
@@ -2615,6 +2622,15 @@
 				CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */,
 			);
 			path = PreventiveCalendarList;
+			sourceTree = "<group>";
+		};
+		CEB8C36D2C610DDD0040B485 /* AssetMaintenanceInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEB8C36E2C610E040040B485 /* AssetMaintenanceInfoCell.swift */,
+				CEB8C36F2C610E040040B485 /* AssetMaintenanceInfoCell.xib */,
+			);
+			path = AssetMaintenanceInfoCell;
 			sourceTree = "<group>";
 		};
 		CEBF70BD2C5836B100DB40A0 /* Cell */ = {
@@ -3588,6 +3604,7 @@
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CE422DD92BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
 				CEC2C8412BD1756500A9D454 /* SearchTextField.xib in Resources */,
+				CEB8C3702C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */,
 				CE2F2CEB2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
 				CECB3DB12B45D963004A260D /* LaunchScreen.storyboard in Resources */,
 				CE8208972B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */,
@@ -3762,6 +3779,7 @@
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CE422DDA2BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
 				CEC2C8422BD1756500A9D454 /* SearchTextField.xib in Resources */,
+				CEB8C3722C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */,
 				CE2F2CEC2B5D42AB001D312F /* DetailComplaintSectionView.xib in Resources */,
 				CECB3DC62B45DAFF004A260D /* LaunchScreen.storyboard in Resources */,
 				CE8208982B823C5300CD4242 /* TimeGroupHeaderCRV.xib in Resources */,
@@ -4152,6 +4170,7 @@
 				CEC207A32B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CE0F20D02B754B73008702E0 /* DropdownView.swift in Sources */,
 				CECB3E412B45E62B004A260D /* BasePresenter.swift in Sources */,
+				CEB8C3712C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */,
 				CEE8CB912BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
 				CE74361F2BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
@@ -4492,6 +4511,7 @@
 				CEC207A42B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CE0F20D12B754B73008702E0 /* DropdownView.swift in Sources */,
 				CECB3E422B45E62B004A260D /* BasePresenter.swift in Sources */,
+				CEB8C3732C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */,
 				CEE8CB922BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
 				CE7436202BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,

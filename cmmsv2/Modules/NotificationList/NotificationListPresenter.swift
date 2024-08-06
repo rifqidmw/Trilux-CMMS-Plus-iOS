@@ -165,8 +165,8 @@ extension NotificationListPresenter {
         router.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
     }
     
-    func navigateToComplaintDetail(navigation: UINavigationController, data: Complaint) {
-        router.navigateToComplaintDetail(navigation: navigation, data: data)
+    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
+        router.navigateToComplaintDetail(navigation: navigation, id: id ?? "")
     }
     
 }

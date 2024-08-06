@@ -152,7 +152,7 @@ extension ComplaintListView: SkeletonTableViewDataSource, SkeletonTableViewDeleg
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToComplaintDetail(navigation: navigation, data: self.data[indexPath.row])
+        presenter.navigateToComplaintDetail(navigation: navigation, id: String(self.data[indexPath.row].id ?? 0))
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

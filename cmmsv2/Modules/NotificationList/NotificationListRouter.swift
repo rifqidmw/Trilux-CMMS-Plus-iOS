@@ -34,8 +34,8 @@ extension NotificationListRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func navigateToComplaintDetail(navigation: UINavigationController, data: Complaint) {
-        let vc = ComplaintDetailRouter().showView(data: data)
+    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
+        let vc = ComplaintDetailRouter().showView(id: id ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     

@@ -117,6 +117,15 @@ enum Endpoint {
     case saveTechnical(data: EditTechnicalRequestEntity)
     case reminderPreventive(date: String?)
     case equipmentMainStatus(id: String?)
+    case inspection(
+        limit: Int,
+        id: String?,
+        page: Int)
+    case equipmentComplaint(
+        limit: Int,
+        id: String?,
+        page: Int
+    )
 }
 
 // MARK: - PATH URL
@@ -274,6 +283,10 @@ extension Endpoint {
             return "lk/reminder_preventif?tanggal=\(date ?? "")"
         case .equipmentMainStatus(id: let id):
             return "equipments/mainstatus?id=\(id ?? "")"
+        case .inspection(limit: let limit, id: let id, page: let page):
+            return generateInspectionURL(limit: limit, id: id, page: page)
+        case .equipmentComplaint(limit: let limit, id: let id, page: let page):
+            return generateEquipmentComplaintURL(limit: limit, id: id ?? "", page: page)
         }
     }
     
@@ -741,6 +754,38 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/listkalibrasi" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateInspectionURL(
+        limit: Int? = nil,
+        id: String? = nil,
+        page: Int? = nil
+    ) -> String {
+        let queryString = [
+            limit.map { "limit=\($0)" },
+            id.map { "id=\($0)" },
+            page.map { "page=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "equipments/inspeksi" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateEquipmentComplaintURL(
+        limit: Int? = nil,
+        id: String? = nil,
+        page: Int? = nil
+    ) -> String {
+        let queryString = [
+            limit.map { "limit=\($0)" },
+            id.map { "id=\($0)" },
+            page.map { "page=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "equipments/pengaduan" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }

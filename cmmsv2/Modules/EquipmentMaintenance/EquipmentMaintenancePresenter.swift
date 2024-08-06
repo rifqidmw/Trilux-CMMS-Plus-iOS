@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class EquipmentMaintenancePresenter: BasePresenter {
     
@@ -16,6 +17,8 @@ class EquipmentMaintenancePresenter: BasePresenter {
     @Published public var technicalInfoData: EquipmentTechnical?
     @Published public var mainStatusInfoData: EquipmentMainStatusEntity?
     @Published public var assetCostInfoData: EquipmentMainCoast?
+    @Published public var inspectionInfoData: InspectionEntity?
+    @Published public var equipmentComplaintInfoData: [EquipmentComplaintData] = []
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -112,6 +115,63 @@ extension EquipmentMaintenancePresenter {
                 }
             )
             .store(in: &anyCancellable)
+    }
+    
+    func fetchInspectionData(limit: Int, id: String?, page: Int) {
+        self.isLoading = true
+        interactor.getInspection(limit: limit, id: id ?? "", page: page)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { inspection in
+                    DispatchQueue.main.async {
+                        self.inspectionInfoData = inspection
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchEquipmentComplaint(limit: Int, id: String?, page: Int) {
+        self.isLoading = true
+        interactor.getEquipmentComplaint(limit: limit, id: id ?? "", page: page)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { complaint in
+                    DispatchQueue.main.async {
+                        guard let complaintList = complaint.data else { return }
+                        self.equipmentComplaintInfoData.append(contentsOf: complaintList)
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+}
+
+extension EquipmentMaintenancePresenter {
+    
+    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
+        router.navigateToComplaintDetail(navigation: navigation, id: id)
     }
     
 }

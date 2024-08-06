@@ -82,6 +82,8 @@ extension EquipmentMaintenanceView {
         generalInformation.parentView = self
         
         let complaintInfo = ComplaintInformationView(nibName: String(describing: ComplaintInformationView.self), bundle: nil)
+        complaintInfo.parentView = self
+        complaintInfo.delegate = self
         
         let monitoringInfo = MonitoringInformationView(nibName: String(describing: MonitoringInformationView.self), bundle: nil)
         
@@ -90,6 +92,17 @@ extension EquipmentMaintenanceView {
         let calibrationInfo = CalibrationInformationView(nibName: String(describing: CalibrationInformationView.self), bundle: nil)
         
         self.views = [generalInformation, complaintInfo, monitoringInfo, preventiveInfo, calibrationInfo]
+    }
+    
+}
+
+extension EquipmentMaintenanceView: ComplaintInformationViewDelegate {
+    
+    func didTapComplaintItem(id: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToComplaintDetail(navigation: navigation, id: id)
     }
     
 }

@@ -21,4 +21,12 @@ class EquipmentMaintenanceInteractor: BaseInteractor {
         return api.requestApiPublisher(.assetMainCost(id: id))
     }
     
+    func getInspection(limit: Int, id: String?, page: Int) -> AnyPublisher<InspectionEntity, Error> {
+        return api.requestApiPublisher(.inspection(limit: limit, id: id, page: page))
+    }
+    
+    func getEquipmentComplaint(limit: Int, id: String?, page: Int) -> AnyPublisher<EquipmentComplaintEntity, Error> {
+        return api.requestApiPublisher(.equipmentComplaint(limit: limit, id: id, page: page))
+    }
+    
 }

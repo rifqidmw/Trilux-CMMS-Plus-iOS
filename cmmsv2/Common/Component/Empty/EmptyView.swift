@@ -34,7 +34,7 @@ class EmptyView: UIView {
 
 extension EmptyView {
     
-    func setupCell(_ title: String, description: String) {
+    func configure(_ title: String, description: String) {
         self.titleLabel.text = title
         self.descriptionLabel.text = description
     }

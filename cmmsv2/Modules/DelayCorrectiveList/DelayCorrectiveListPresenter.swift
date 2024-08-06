@@ -79,7 +79,7 @@ extension DelayCorrectiveListPresenter {
                         guard let data = complains.data,
                               let complainsData = data.complains
                         else { return }
-                        self.complaint = complainsData
+                        self.complaint.append(contentsOf: complainsData)
                     }
                 }
             )
