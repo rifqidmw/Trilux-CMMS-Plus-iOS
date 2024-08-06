@@ -171,7 +171,7 @@ extension WorkSheetDetailPresenter {
         let bottomSheet = InputBottomSheet(nibName: String(describing: InputBottomSheet.self), bundle: nil)
         bottomSheet.delegate = delegate
         bottomSheet.type = type
-        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showSelectSparePartBottomSheet(from navigation: UINavigationController, delegate: SparePartBottomSheetDelegate, type: SparePartBottomSheetType) {
@@ -179,7 +179,7 @@ extension WorkSheetDetailPresenter {
         bottomSheet.data = self.sparePartList
         bottomSheet.delegate = delegate
         bottomSheet.type = type
-        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
     func showSelectStatusBottomSheet(from navigation: UINavigationController, delegate: SelectStatusBottomSheetDelegate, type: SelectStatusType) {
@@ -188,7 +188,7 @@ extension WorkSheetDetailPresenter {
         bottomSheet.finishStatusData = self.finishStatusData
         bottomSheet.type = type
         bottomSheet.delegate = delegate
-        router.showBottomSheet(nav: navigation, bottomSheetView: bottomSheet)
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

@@ -35,7 +35,7 @@ class AssetMaintenanceInfoCell: UITableViewCell {
         self.showAnimationSkeleton()
         
         self.containerContentStackView.makeCornerRadius(8)
-        self.containerContentStackView.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerContentStackView.addShadow(2, opacity: 0.2)
         
         self.containerMaintenanceImageView.makeCornerRadius(8, .leftCurve)
         self.maintenanceImageView.makeCornerRadius(8, .leftCurve)

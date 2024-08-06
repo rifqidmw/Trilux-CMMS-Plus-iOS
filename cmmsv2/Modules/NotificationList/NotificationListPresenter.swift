@@ -158,15 +158,10 @@ extension NotificationListPresenter {
 extension NotificationListPresenter {
     
     func showBottomSheetCorrective(navigation: UINavigationController, data: WorkOrder, delegate: WorkSheetCorrectiveBottomSheetDelegate) {
-        router.showBottomSheetCorrective(navigation: navigation, data: data, delegate: delegate)
-    }
-    
-    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, data: WorkOrder) {
-        router.navigateToDetailWorkSheetCorrective(navigation: navigation, data: data)
-    }
-    
-    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
-        router.navigateToComplaintDetail(navigation: navigation, id: id ?? "")
+        let bottomSheet = WorkSheetCorrectiveBottomSheet(nibName: String(describing: WorkSheetCorrectiveBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.data = data
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

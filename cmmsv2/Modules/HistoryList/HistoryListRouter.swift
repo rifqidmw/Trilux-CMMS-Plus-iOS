@@ -18,12 +18,3 @@ class HistoryListRouter: BaseRouter {
     }
     
 }
-
-extension HistoryListRouter {
-    
-    func navigateToHistoryDetail(navigation: UINavigationController, data: WorkSheetListEntity) {
-        let vc = HistoryDetailRouter().showView(data: data)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}

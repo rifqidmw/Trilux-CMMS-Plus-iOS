@@ -18,25 +18,3 @@ class NotificationListRouter: BaseRouter {
     }
     
 }
-
-extension NotificationListRouter {
-    
-    func showBottomSheetCorrective(navigation: UINavigationController, data: WorkOrder, delegate: WorkSheetCorrectiveBottomSheetDelegate) {
-        let bottomSheet = WorkSheetCorrectiveBottomSheet(nibName: String(describing: WorkSheetCorrectiveBottomSheet.self), bundle: nil)
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        bottomSheet.delegate = delegate
-        bottomSheet.data = data
-        navigation.present(bottomSheet, animated: true)
-    }
-    
-    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, data: WorkOrder) {
-        let vc = WorkSheetCorrectiveDetailRouter().showView(data: data)
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
-        let vc = ComplaintDetailRouter().showView(id: id ?? "")
-        navigation.pushViewController(vc, animated: true)
-    }
-    
-}

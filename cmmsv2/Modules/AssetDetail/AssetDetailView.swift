@@ -142,9 +142,9 @@ extension AssetDetailView {
             .sink { [weak self] _ in
                 guard let self,
                       let navigation = self.navigationController,
-                      let data = presenter.data
+                      let id = presenter.id
                 else { return }
-                presenter.navigateToDetailInformation(from: navigation, data.id)
+                presenter.navigateToDetailInformation(from: navigation, id)
             }
             .store(in: &anyCancellable)
         
@@ -174,9 +174,9 @@ extension AssetDetailView {
             .sink { [weak self] _ in
                 guard let self,
                       let navigation = self.navigationController,
-                      let asset = presenter.data
+                      let id = presenter.id
                 else { return }
-                presenter.navigateToUpdateTechnicalData(from: navigation, asset)
+                presenter.navigateToUpdateTechnicalData(from: navigation, id)
             }
             .store(in: &anyCancellable)
     }

@@ -69,7 +69,6 @@ extension ComplaintInformationView {
         guard let view = parentView,
               let presenter = view.presenter
         else { return }
-        presenter.fetchInspectionData(limit: self.limit, id: presenter.idAsset ?? "", page: self.page)
         presenter.fetchEquipmentComplaint(limit: self.limit, id: presenter.idAsset, page: self.page)
     }
     
@@ -127,19 +126,19 @@ extension ComplaintInformationView: SkeletonTableViewDataSource, SkeletonTableVi
         let adjustedData = self.data[indexPath.row]
         let image = adjustedData.photos?.first?.thumb ?? ""
         
-        let titleComplaint = NSAttributedString.stylizedText("Keluhan: ", font: UIFont.robotoBold(12), color: UIColor.customPlaceholderColor)
-        let complaintLabel = NSAttributedString.stylizedText(adjustedData.txtTitle ?? "-", font: UIFont.robotoBold(12), color: UIColor.customDarkGrayColor)
+        let titleComplaint = NSAttributedString.stylizedText("Keluhan: ", font: UIFont.robotoBold(10), color: UIColor.customPlaceholderColor)
+        let complaintLabel = NSAttributedString.stylizedText(adjustedData.txtTitle ?? "-", font: UIFont.robotoBold(10), color: UIColor.customDarkGrayColor)
         let fullComplaintLabel = NSMutableAttributedString()
         fullComplaintLabel.append(titleComplaint)
         fullComplaintLabel.append(complaintLabel)
         
-        let titleDescription = NSAttributedString.stylizedText("Kronologi: ", font: UIFont.robotoBold(12), color: UIColor.customPlaceholderColor)
-        let descriptionLabel = NSAttributedString.stylizedText(adjustedData.txtPengaduan ?? "-", font: UIFont.robotoBold(12), color: UIColor.customDarkGrayColor)
+        let titleDescription = NSAttributedString.stylizedText("Kronologi: ", font: UIFont.robotoBold(10), color: UIColor.customPlaceholderColor)
+        let descriptionLabel = NSAttributedString.stylizedText(adjustedData.txtPengaduan ?? "-", font: UIFont.robotoBold(10), color: UIColor.customDarkGrayColor)
         let fullDescriptionLabel = NSMutableAttributedString()
         fullDescriptionLabel.append(titleDescription)
         fullDescriptionLabel.append(descriptionLabel)
         
-        let lkCount = "Lembar Kerja \(adjustedData.detailLK?.count ?? 0) Lembar"
+        let lkCount = "\(adjustedData.detailLK?.count ?? 0) Lembar Kerja"
         
         cell.setupCell(image: image, firstText: fullComplaintLabel, secondText: fullDescriptionLabel, fifthText: lkCount, secondDate: adjustedData.txtTanggal ?? "")
         

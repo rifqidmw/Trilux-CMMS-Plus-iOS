@@ -130,6 +130,47 @@ struct EquipmentComplaintPhoto: Codable {
     let thumb: String?
 }
 
+struct EquipmentCalibrationEntity: Codable {
+    let data: [EquipmentCalibrationData]?
+    let reff: ReffData?
+    let message: String?
+    let status: Int?
+}
+
+struct EquipmentCalibrationData: Codable {
+    let id: String?
+    let idAsset: String?
+    let tglKalibrasi: String?
+    let idKalibrator: String?
+    let petugas: String?
+    let metode: String?
+    let sttLaik: String?
+    let linkSertifikat: String?
+    let tglSertifikat: String?
+    let tglExpire: String?
+    let keterangan: String?
+    let tglImport: String?
+    let kalibrator: String?
+    let statusText: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case idAsset = "id_asset"
+        case tglKalibrasi = "tgl_kalibrasi"
+        case idKalibrator = "id_kalibrator"
+        case petugas
+        case metode
+        case sttLaik = "stt_laik"
+        case linkSertifikat = "link_sertifikat"
+        case tglSertifikat = "tgl_sertifikat"
+        case tglExpire = "tgl_expire"
+        case keterangan
+        case tglImport = "tgl_import"
+        case kalibrator
+        case statusText = "status_text"
+    }
+}
+
 enum StatusValue: Codable {
     case string(String)
     case integer(Int)

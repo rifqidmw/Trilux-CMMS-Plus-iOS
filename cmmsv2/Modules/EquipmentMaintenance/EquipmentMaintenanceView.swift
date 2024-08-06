@@ -86,17 +86,47 @@ extension EquipmentMaintenanceView {
         complaintInfo.delegate = self
         
         let monitoringInfo = MonitoringInformationView(nibName: String(describing: MonitoringInformationView.self), bundle: nil)
+        monitoringInfo.parentView = self
+        monitoringInfo.delegate = self
         
         let preventiveInfo = PreventiveInformationView(nibName: String(describing: PreventiveInformationView.self), bundle: nil)
+        preventiveInfo.parentView = self
+        preventiveInfo.delegate = self
         
         let calibrationInfo = CalibrationInformationView(nibName: String(describing: CalibrationInformationView.self), bundle: nil)
+        calibrationInfo.parentView = self
+        calibrationInfo.delegate = self
         
         self.views = [generalInformation, complaintInfo, monitoringInfo, preventiveInfo, calibrationInfo]
     }
     
 }
 
-extension EquipmentMaintenanceView: ComplaintInformationViewDelegate {
+extension EquipmentMaintenanceView: ComplaintInformationViewDelegate, MonitoringInformationViewDelegate, PreventiveInformationViewDelegate, CalibrationInformationViewDelegate {
+    
+    func didTapCalibrationItem(id: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let data = WorkSheetRequestEntity(id: id, action: "lihat")
+        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .calibration)
+    }
+    
+    func didTapPreventiveItem(id: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let data = WorkSheetRequestEntity(id: id, action: "lihat")
+        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .preventive)
+    }
+    
+    func didTapMonitoringItem(id: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        let data = WorkSheetRequestEntity(id: id, action: "lihat")
+        presenter.navigateToDetailWorkSheet(navigation, data: data, type: .monitoring)
+    }
     
     func didTapComplaintItem(id: String) {
         guard let presenter,

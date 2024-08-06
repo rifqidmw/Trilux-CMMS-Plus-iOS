@@ -71,13 +71,14 @@ extension FilterStatusBottomSheet {
     private func setupAction() {
         applyButton.gesture()
             .sink { [weak self] _ in
-                guard let self,
-                      let delegate = self.delegate,
-                      let selectedStatus
-                else { return }
-                let selectedFilters = data.filter { self.selectedStatuses.contains($0.id ?? "0") }
+                guard let self, let delegate else { return }
+                let selectedFilters = self.data.filter { self.selectedStatuses.contains($0.id ?? "0") }
                 self.dismissBottomSheet() {
-                    delegate.didSelectStatusFilter(selectedFilters, single: selectedStatus)
+                    if self.type == .single, let selectedStatus = self.selectedStatus {
+                        delegate.didSelectStatusFilter([], single: selectedStatus)
+                    } else {
+                        delegate.didSelectStatusFilter(selectedFilters, single: StatusFilterEntity(id: "", status: FilterStatusType.none))
+                    }
                 }
             }
             .store(in: &anyCancellable)

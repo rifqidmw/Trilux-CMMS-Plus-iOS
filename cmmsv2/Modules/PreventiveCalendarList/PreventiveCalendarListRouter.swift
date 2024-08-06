@@ -18,22 +18,3 @@ class PreventiveCalendarListRouter: BaseRouter {
     }
     
 }
-
-extension PreventiveCalendarListRouter {
-    
-    func navigateToLoadPreventive(_ navigation: UINavigationController, data: WorkSheetListEntity) {
-        let vc = LoadPreventiveRouter().showView(data: data)
-        navigation.pushViewController(vc, animated: true)
-        
-    }
-    
-    func showPreventiveBottomSheet(_ navigation: UINavigationController, delegate: PreventiveSchedulerBottomSheetDelegate) {
-        let bottomSheet = PreventiveSchedulerBottomSheet(nibName: String(describing: PreventiveSchedulerBottomSheet.self), bundle: nil)
-        bottomSheet.delegate = delegate
-        bottomSheet.modalTransitionStyle = .coverVertical
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        navigation.present(bottomSheet, animated: true)
-    }
-    
-}
-

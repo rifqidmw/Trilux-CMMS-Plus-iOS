@@ -27,7 +27,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnG-t7-mQp" userLabel="Container View">
-                        <rect key="frame" x="16" y="4" width="361" height="102"/>
+                        <rect key="frame" x="0.0" y="4" width="393" height="102"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-k9-AVv" userLabel="Mark View">
                                 <rect key="frame" x="0.0" y="16" width="8" height="20"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-06-21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9S-SB-Fsq" userLabel="Date Time Label">
-                                <rect key="frame" x="291.33333333333331" y="16" width="53.666666666666686" height="16"/>
+                                <rect key="frame" x="323.33333333333331" y="16" width="53.666666666666686" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="vQH-7L-Id1"/>
                                 </constraints>
@@ -65,13 +65,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUU-7H-OZ0" userLabel="Short Title Label">
-                                <rect key="frame" x="16" y="48" width="329" height="14"/>
+                                <rect key="frame" x="16" y="48" width="361" height="14"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="customDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YJ-8Y-CtT" userLabel="Title Label">
-                                <rect key="frame" x="16" y="66" width="329" height="20"/>
+                                <rect key="frame" x="16" y="66" width="361" height="20"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
                                 <color key="textColor" name="placeholderColor"/>
                                 <nil key="highlightedColor"/>
@@ -100,8 +100,8 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="MnG-t7-mQp" secondAttribute="bottom" constant="4" id="8lK-z4-XUI"/>
                 <constraint firstItem="MnG-t7-mQp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="9zT-hj-beD"/>
-                <constraint firstAttribute="trailing" secondItem="MnG-t7-mQp" secondAttribute="trailing" constant="16" id="C9k-IZ-8jP"/>
-                <constraint firstItem="MnG-t7-mQp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="QH5-gf-bSW"/>
+                <constraint firstAttribute="trailing" secondItem="MnG-t7-mQp" secondAttribute="trailing" id="C9k-IZ-8jP"/>
+                <constraint firstItem="MnG-t7-mQp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QH5-gf-bSW"/>
             </constraints>
             <connections>
                 <outlet property="badgeLabel" destination="dl4-of-n8j" id="EXz-Zv-f0O"/>

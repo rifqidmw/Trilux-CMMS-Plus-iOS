@@ -79,6 +79,7 @@ extension WorkSheetMonitoringFunctionDetailView: WorkSheetDetailDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
+        presenter.navigateToDetailDocument(navigation: navigation, file: image)
     }
     
 }

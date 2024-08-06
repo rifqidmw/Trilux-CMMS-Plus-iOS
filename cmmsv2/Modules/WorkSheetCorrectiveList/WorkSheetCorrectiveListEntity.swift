@@ -12,7 +12,7 @@ protocol WorkSheetCorrectiveBottomSheetDelegate: AnyObject {
     func didTapScanQR(_ data: WorkSheetListEntity, request: WorkSheetRequestEntity)
     func didTapContinue(_ request: WorkSheetRequestEntity)
     func didTapDownload(_ id: String)
-    func didTapAssetImage(_ data: Equipment, type: AssetType)
+    func didTapAssetImage(_ id: String, type: AssetType)
 }
 
 struct WorkSheetCorrectiveListEntity: Codable {
@@ -357,38 +357,4 @@ struct WorkOrderReff: Codable {
     let pageSize: String?
     let totalPage: String?
     let totalItem: String?
-}
-
-// MARK: - EQUIPMENT ENTITY EXTENSION FOR NAVIGATE TO DETAIL
-extension Equipment {
-    init(from workOrder: WorkOrder) {
-        self.id = workOrder.valEquipmentId
-        self.txtName = workOrder.complain?.equipment?.txtName ?? ""
-        self.valImage = workOrder.complain?.equipment?.valImage ?? ""
-        self.valQR = workOrder.complain?.equipment?.valQR ?? ""
-        self.txtRuangan = workOrder.txtRuangan
-        self.valRoomId = String(workOrder.complain?.equipment?.valRoomId ?? 0)
-        self.txtRoomId = workOrder.complain?.equipment?.txtRoomId ?? ""
-        self.txtSubRuangan = workOrder.complain?.equipment?.txtSubRuangan ?? ""
-        self.txtLokasiName = workOrder.txtLokasiName
-        self.txtSerial = workOrder.complain?.equipment?.txtSerial ?? ""
-        self.txtBrand = workOrder.complain?.equipment?.txtBrand ?? ""
-        self.txtType = workOrder.txtType
-        self.txtInventaris = workOrder.complain?.equipment?.txtInventaris ?? ""
-        self.badgeAsset = workOrder.complain?.equipment?.badgeAsset ?? ""
-        self.badgeTeknis = workOrder.complain?.equipment?.badgeTeknis ?? ""
-        self.statusKalibrasi = workOrder.complain?.equipment?.statusKalibrasi
-        self.stt_qr = workOrder.stt_qr
-        self.valRusak = workOrder.complain?.equipment?.valRusak ?? 0
-        self.txtRusak = workOrder.complain?.equipment?.txtRusak ?? ""
-        self.valKalibrasi = workOrder.complain?.equipment?.valKalibrasi ?? 0
-        self.txtKalibrasi = workOrder.complain?.equipment?.txtKalibrasi ?? ""
-        self.valKorektif = workOrder.complain?.equipment?.valKorektif ?? 0
-        self.txtKorektif = workOrder.complain?.equipment?.txtKorektif ?? ""
-        self.valPreventif = workOrder.complain?.equipment?.valPreventif ?? 0
-        self.txtPreventif = workOrder.complain?.equipment?.txtPreventif ?? ""
-        self.valIsComplainable = workOrder.complain?.equipment?.valIsComplainable ?? 0
-        self.txtCantComplainReason = workOrder.complain?.equipment?.txtCantComplainReason ?? ""
-        self.txtInfoUpdate = workOrder.complain?.equipment?.txtInfoUpdate ?? ""
-    }
 }

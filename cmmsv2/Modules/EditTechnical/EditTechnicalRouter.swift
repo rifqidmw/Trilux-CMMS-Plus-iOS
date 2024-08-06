@@ -9,9 +9,9 @@ import UIKit
 
 class EditTechnicalRouter: BaseRouter {
     
-    func showView(data: Equipment) -> EditTechnicalView {
+    func showView(id: String?) -> EditTechnicalView {
         let interactor = EditTechnicalInteractor()
-        let presenter = EditTechnicalPresenter(interactor: interactor, router: self, data: data)
+        let presenter = EditTechnicalPresenter(interactor: interactor, router: self, id: id ?? "")
         let view = EditTechnicalView(nibName: String(describing: EditTechnicalView.self), bundle: nil)
         view.presenter = presenter
         return view

@@ -173,10 +173,6 @@ extension DelayCorrectiveListPresenter {
 
 extension DelayCorrectiveListPresenter {
     
-    func navigateToDetailComplaint(from navigation: UINavigationController, data: Complaint) {
-        router.navigateToDetailComplaint(from: navigation, data: data)
-    }
-    
     func showAddComplaintBottomSheet(from navigation: UINavigationController, data: Complaint, _ delegate: AddComplaintBottomSheetDelegate, type: CorrectiveTitleType) {
         let bottomSheet = AddComplaintBottomSheet(nibName: String(describing: AddComplaintBottomSheet.self), bundle: nil)
         bottomSheet.type = type

@@ -134,21 +134,10 @@ extension WorkSheetCorrectiveDetailView {
         moreDetailButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let navigation = self.navigationController,
-                      let data = presenter.data
+                      let navigation = self.navigationController
                 else { return }
                 
-                var type: AssetType?
-                switch data.valType {
-                case "1":
-                    type = .medic
-                case "2":
-                    type = .nonMedic
-                default: break
-                }
-                
-                let equipment = Equipment(from: data)
-                presenter.navigateToDetailAsset(from: navigation, type ?? .none, data: equipment)
+                presenter.navigateToDetailAsset(from: navigation, .none, id: presenter.idAsset ?? "")
             }
             .store(in: &anyCancellable)
         

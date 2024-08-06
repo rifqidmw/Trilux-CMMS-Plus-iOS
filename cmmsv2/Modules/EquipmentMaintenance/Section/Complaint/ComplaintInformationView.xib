@@ -32,19 +32,29 @@
                     <rect key="frame" x="16" y="0.0" width="361" height="852"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MGP-IQ-ry3">
-                            <rect key="frame" x="0.0" y="75" width="361" height="711"/>
+                            <rect key="frame" x="0.0" y="75" width="361" height="727"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berhasil menemukan 3000 Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg0-Jk-QI0">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49q-ca-CpF">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berhasil menemukan 3000 Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg0-Jk-QI0">
+                                            <rect key="frame" x="8" y="0.0" width="345" height="20"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="6WN-Vh-m1u"/>
+                                        <constraint firstAttribute="bottom" secondItem="Eg0-Jk-QI0" secondAttribute="bottom" id="2ed-x9-yBp"/>
+                                        <constraint firstItem="Eg0-Jk-QI0" firstAttribute="top" secondItem="49q-ca-CpF" secondAttribute="top" id="4fc-sb-6uv"/>
+                                        <constraint firstAttribute="trailing" secondItem="Eg0-Jk-QI0" secondAttribute="trailing" constant="8" id="Nz2-hi-A0S"/>
+                                        <constraint firstItem="Eg0-Jk-QI0" firstAttribute="leading" secondItem="49q-ca-CpF" secondAttribute="leading" constant="8" id="atH-Sj-Uya"/>
+                                        <constraint firstAttribute="height" constant="20" id="qQP-Rt-kAx"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                    <color key="textColor" name="customDarkGrayColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-N0-wmi">
-                                    <rect key="frame" x="0.0" y="20" width="361" height="691"/>
+                                    <rect key="frame" x="0.0" y="20" width="361" height="707"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -58,7 +68,7 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="0.0" bottom="32" trailing="0.0"/>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="0.0" bottom="16" trailing="0.0"/>
                 </stackView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0VI-Wa-j2G">
                     <rect key="frame" x="176.66666666666666" y="812" width="40" height="40"/>

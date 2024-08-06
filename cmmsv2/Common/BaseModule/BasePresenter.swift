@@ -63,12 +63,36 @@ extension BasePresenter {
         router.goToLoginPage(navigation: navigation, data: data)
     }
     
-    func navigateToDetailAsset(from navigation: UINavigationController, _ type: AssetType, data: Equipment) {
-        router.navigateToDetailAsset(from: navigation, type, data: data)
+    func navigateToDetailAsset(from navigation: UINavigationController, _ type: AssetType, id: String?) {
+        router.navigateToDetailAsset(from: navigation, type, id: id ?? "")
     }
     
     func navigateToAssetFilter(from navigation: UINavigationController) {
         router.navigateToAssetFilter(from: navigation)
+    }
+    
+    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
+        router.navigateToComplaintDetail(navigation: navigation, id: id ?? "")
+    }
+    
+    func navigateToDetailDelayCorrective(from navigation: UINavigationController, id: String?) {
+        router.navigateToDetailDelayCorrective(from: navigation, id: id ?? "")
+    }
+    
+    func navigateToHistoryDetail(navigation: UINavigationController, id: String?) {
+        router.navigateToHistoryDetail(navigation: navigation, id: id ?? "")
+    }
+    
+    func navigateToHomeScreen(navigation: UINavigationController) {
+        router.goToHomeScreen(navigation: navigation)
+    }
+    
+    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, _ idAsset: String?, _ idComplaint: String?) {
+        router.navigateToDetailWorkSheetCorrective(navigation: navigation, idAsset ?? "", idComplaint ?? "")
+    }
+    
+    func navigateToLoadPreventive(_ navigation: UINavigationController, idAsset: String?, idLk: String?) {
+        router.navigateToLoadPreventive(navigation, idAsset: idAsset ?? "", idLk: idLk ?? "")
     }
     
 }

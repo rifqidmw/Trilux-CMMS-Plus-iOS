@@ -13,7 +13,7 @@ class AssetDetailPresenter: BasePresenter {
     private let interactor: AssetDetailInteractor
     private let router: AssetDetailRouter
     let type: AssetType
-    let data: Equipment?
+    let id: String?
     var trackData: [TrackComplaintData] = []
     
     @Published public var assetInfoData: EquipmentDetail?
@@ -26,11 +26,11 @@ class AssetDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: AssetDetailInteractor, router: AssetDetailRouter, type: AssetType, data: Equipment) {
+    init(interactor: AssetDetailInteractor, router: AssetDetailRouter, type: AssetType, id: String) {
         self.interactor = interactor
         self.router = router
         self.type = type
-        self.data = data
+        self.id = id
     }
     
 }
@@ -38,9 +38,7 @@ class AssetDetailPresenter: BasePresenter {
 extension AssetDetailPresenter {
     
     func fetchInitialData() {
-        guard let data,
-              let id = data.id
-        else { return }
+        guard let id else { return }
         fetchAssetDetail(id: id)
         fetchAssetTechnical(id: id)
         fetchAssetCost(id: id)
@@ -223,8 +221,8 @@ extension AssetDetailPresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
-    func navigateToUpdateTechnicalData(from navigation: UINavigationController, _ data: Equipment) {
-        router.navigateToUpdateTechnicalData(from: navigation, data)
+    func navigateToUpdateTechnicalData(from navigation: UINavigationController, _ id: String?) {
+        router.navigateToUpdateTechnicalData(from: navigation, id)
     }
     
     func navigateToDetailInformation(from navigation: UINavigationController, _ id: String?) {

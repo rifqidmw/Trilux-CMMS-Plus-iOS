@@ -25,6 +25,14 @@ class EquipmentMaintenanceInteractor: BaseInteractor {
         return api.requestApiPublisher(.inspection(limit: limit, id: id, page: page))
     }
     
+    func getPreventive(limit: Int, id: String?, page: Int) -> AnyPublisher<InspectionEntity, Error> {
+        return api.requestApiPublisher(.equipmentPreventive(limit: limit, id: id, page: page))
+    }
+    
+    func getCalibration(limit: Int, id: String?, page: Int) -> AnyPublisher<EquipmentCalibrationEntity, Error> {
+        return api.requestApiPublisher(.equipmentCalibration(limit: limit, id: id, page: page))
+    }
+    
     func getEquipmentComplaint(limit: Int, id: String?, page: Int) -> AnyPublisher<EquipmentComplaintEntity, Error> {
         return api.requestApiPublisher(.equipmentComplaint(limit: limit, id: id, page: page))
     }

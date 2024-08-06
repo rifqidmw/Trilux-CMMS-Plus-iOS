@@ -12,7 +12,8 @@ class WorkSheetCorrectiveDetailPresenter: BasePresenter {
     
     private let interactor: WorkSheetCorrectiveDetailInteractor
     private let router: WorkSheetCorrectiveDetailRouter
-    let data: WorkOrder?
+    let idAsset: String?
+    let idComplaint: String?
     
     @Published public var complaintData: WorkSheetCorrectiveComplaint?
     var complaintEquipment: CorrectiveEquipment?
@@ -22,10 +23,11 @@ class WorkSheetCorrectiveDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: WorkSheetCorrectiveDetailInteractor, router: WorkSheetCorrectiveDetailRouter, data: WorkOrder) {
+    init(interactor: WorkSheetCorrectiveDetailInteractor, router: WorkSheetCorrectiveDetailRouter, idAsset: String, idComplaint: String) {
         self.interactor = interactor
         self.router = router
-        self.data = data
+        self.idAsset = idAsset
+        self.idComplaint = idComplaint
     }
     
 }
@@ -33,13 +35,8 @@ class WorkSheetCorrectiveDetailPresenter: BasePresenter {
 extension WorkSheetCorrectiveDetailPresenter {
     
     func fetchInitialData() {
-        guard let data,
-              let complain = data.complain,
-              let id = complain.id,
-              let asset = complain.equipment,
-              let idAsset = asset.id
-        else { return }
-        self.fetchDetailCorrective(id: id)
+        guard let idAsset, let idComplaint else { return }
+        self.fetchDetailCorrective(id: Int(idComplaint) ?? 0)
         self.fetchComplaintTracking(id: String(idAsset))
     }
     

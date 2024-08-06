@@ -9,9 +9,9 @@ import UIKit
 
 class DelayCorrectiveDetailRouter: BaseRouter {
     
-    func showView(data: Complaint) -> DelayCorrectiveDetailView {
+    func showView(id: String?) -> DelayCorrectiveDetailView {
         let interactor = DelayCorrectiveDetailInteractor()
-        let presenter = DelayCorrectiveDetailPresenter(interactor: interactor, router: self, data: data)
+        let presenter = DelayCorrectiveDetailPresenter(interactor: interactor, router: self, id: id ?? "")
         let view = DelayCorrectiveDetailView(nibName: String(describing: DelayCorrectiveDetailView.self), bundle: nil)
         view.presenter = presenter
         return view

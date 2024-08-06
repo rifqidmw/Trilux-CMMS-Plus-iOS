@@ -185,10 +185,6 @@ extension ComplaintListPresenter {
 
 extension ComplaintListPresenter {
     
-    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
-        router.navigateToComplaintDetail(navigation: navigation, id: id ?? "")
-    }
-    
     func showAddComplaintBottomSheet(from navigation: UINavigationController, data: Complaint, _ delegate: AddComplaintBottomSheetDelegate, type: CorrectiveTitleType) {
         let bottomSheet = AddComplaintBottomSheet(nibName: String(describing: AddComplaintBottomSheet.self), bundle: nil)
         bottomSheet.type = type
@@ -218,6 +214,7 @@ extension ComplaintListPresenter {
         let bottomSheet = FilterStatusBottomSheet(nibName: String(describing: FilterStatusBottomSheet.self), bundle: nil)
         bottomSheet.data = self.filterStatusData
         bottomSheet.delegate = delegate
+        bottomSheet.type = .multiple
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

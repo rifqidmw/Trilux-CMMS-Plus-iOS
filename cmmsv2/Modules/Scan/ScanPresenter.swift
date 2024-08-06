@@ -70,11 +70,9 @@ extension ScanPresenter {
 extension ScanPresenter {
     
     func showBottomSheetDetailInformation(navigation: UINavigationController, data: ScanEquipment) {
-        router.showBottomSheetDetailInformation(navigation: navigation, data: data)
-    }
-    
-    func navigateToLoadPreventive(_ navigation: UINavigationController, data: WorkSheetListEntity) {
-        router.navigateToLoadPreventive(navigation, data: data)
+        let bottomSheet = DetailAssetBottomSheet(nibName: String(describing: DetailAssetBottomSheet.self), bundle: nil)
+        bottomSheet.equipment = data
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
 }

@@ -9,9 +9,9 @@ import UIKit
 
 class WorkSheetCorrectiveDetailRouter: BaseRouter {
     
-    func showView(data: WorkOrder) -> WorkSheetCorrectiveDetailView {
+    func showView(idAset: String?, idComplaint: String?) -> WorkSheetCorrectiveDetailView {
         let interactor = WorkSheetCorrectiveDetailInteractor()
-        let presenter = WorkSheetCorrectiveDetailPresenter(interactor: interactor, router: self, data: data)
+        let presenter = WorkSheetCorrectiveDetailPresenter(interactor: interactor, router: self, idAsset: idAset ?? "", idComplaint: idComplaint ?? "")
         let view = WorkSheetCorrectiveDetailView(nibName: String(describing: WorkSheetCorrectiveDetailView.self), bundle: nil)
         view.presenter = presenter
         return view

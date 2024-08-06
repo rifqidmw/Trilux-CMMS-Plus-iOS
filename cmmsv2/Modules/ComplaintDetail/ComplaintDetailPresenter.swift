@@ -30,7 +30,7 @@ extension ComplaintDetailPresenter {
     
     func fetchInitialData() {
         guard let id else { return }
-        self.fetchDetailComplaintData(id: Int(id ?? "") ?? 0)
+        self.fetchDetailComplaintData(id: Int(id) ?? 0)
     }
     
     func fetchDetailComplaintData(id: Int) {

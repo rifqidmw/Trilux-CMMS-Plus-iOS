@@ -147,7 +147,7 @@ extension DelayCorrectiveListView: SkeletonTableViewDataSource, SkeletonTableVie
               let navigation = self.navigationController
         else { return }
         let complaintSelected = self.data[indexPath.row]
-        presenter.navigateToDetailComplaint(from: navigation, data: complaintSelected)
+        presenter.navigateToComplaintDetail(navigation: navigation, id: String(complaintSelected.id ?? 0))
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

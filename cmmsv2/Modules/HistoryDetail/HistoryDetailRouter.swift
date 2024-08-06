@@ -9,9 +9,9 @@ import UIKit
 
 class HistoryDetailRouter: BaseRouter {
     
-    func showView(data: WorkSheetListEntity) -> HistoryDetailView {
+    func showView(id: String?) -> HistoryDetailView {
         let interactor = HistoryDetailInteractor()
-        let presenter = HistoryDetailPresenter(interactor: interactor, router: self, data: data)
+        let presenter = HistoryDetailPresenter(interactor: interactor, router: self, id: id ?? "")
         let view = HistoryDetailView(nibName: String(describing: HistoryDetailView.self), bundle: nil)
         view.presenter = presenter
         return view

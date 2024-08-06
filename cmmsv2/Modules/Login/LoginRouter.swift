@@ -18,13 +18,3 @@ class LoginRouter: BaseRouter {
     }
     
 }
-
-extension LoginRouter {
-    
-    func goToHomeScreen(navigation: UINavigationController) {
-        let vc = HomeScreenRouter().showView()
-        let rootViewController = UINavigationController(rootViewController: vc)
-        UIApplication.shared.setRootViewController(rootViewController)
-    }
-    
-}

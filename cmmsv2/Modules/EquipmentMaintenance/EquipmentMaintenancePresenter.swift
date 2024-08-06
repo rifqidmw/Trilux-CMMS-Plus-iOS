@@ -17,8 +17,10 @@ class EquipmentMaintenancePresenter: BasePresenter {
     @Published public var technicalInfoData: EquipmentTechnical?
     @Published public var mainStatusInfoData: EquipmentMainStatusEntity?
     @Published public var assetCostInfoData: EquipmentMainCoast?
-    @Published public var inspectionInfoData: InspectionEntity?
+    @Published public var inspectionInfoData: [InspectionData] = []
+    @Published public var preventiveInfoData: [InspectionData] = []
     @Published public var equipmentComplaintInfoData: [EquipmentComplaintData] = []
+    @Published public var equipmentCalibrationInfoData: [EquipmentCalibrationData] = []
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -134,7 +136,58 @@ extension EquipmentMaintenancePresenter {
                 },
                 receiveValue: { inspection in
                     DispatchQueue.main.async {
-                        self.inspectionInfoData = inspection
+                        guard let inspectionList = inspection.data else { return }
+                        self.inspectionInfoData = inspectionList
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchPreventiveData(limit: Int, id: String?, page: Int) {
+        self.isLoading = true
+        interactor.getPreventive(limit: limit, id: id ?? "", page: page)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { preventive in
+                    DispatchQueue.main.async {
+                        guard let inspectionList = preventive.data else { return }
+                        self.preventiveInfoData = inspectionList
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchCalibrationData(limit: Int, id: String?, page: Int) {
+        self.isLoading = true
+        interactor.getCalibration(limit: limit, id: id ?? "", page: page)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { calibration in
+                    DispatchQueue.main.async {
+                        guard let calibrationList = calibration.data else { return }
+                        self.equipmentCalibrationInfoData = calibrationList
                     }
                 }
             )
@@ -164,14 +217,6 @@ extension EquipmentMaintenancePresenter {
                 }
             )
             .store(in: &anyCancellable)
-    }
-    
-}
-
-extension EquipmentMaintenancePresenter {
-    
-    func navigateToComplaintDetail(navigation: UINavigationController, id: String?) {
-        router.navigateToComplaintDetail(navigation: navigation, id: id)
     }
     
 }

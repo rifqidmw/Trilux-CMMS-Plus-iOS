@@ -11,7 +11,7 @@ class DelayCorrectiveDetailPresenter: BasePresenter {
     
     private let interactor: DelayCorrectiveDetailInteractor
     private let router: DelayCorrectiveDetailRouter
-    let data: Complaint?
+    let id: String?
     
     @Published public var complaintData: DelayCorrectiveData?
     
@@ -19,10 +19,10 @@ class DelayCorrectiveDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: DelayCorrectiveDetailInteractor, router: DelayCorrectiveDetailRouter, data: Complaint) {
+    init(interactor: DelayCorrectiveDetailInteractor, router: DelayCorrectiveDetailRouter, id: String) {
         self.interactor = interactor
         self.router = router
-        self.data = data
+        self.id = id
     }
     
 }
@@ -30,8 +30,8 @@ class DelayCorrectiveDetailPresenter: BasePresenter {
 extension DelayCorrectiveDetailPresenter {
     
     func fetchInitialData() {
-        guard let data, let id = data.id else { return }
-        fetchComplaintCorrectiveDetail(id: String(id))
+        guard let id else { return }
+        fetchComplaintCorrectiveDetail(id: id)
     }
     
     func fetchComplaintCorrectiveDetail(id: String?) {
