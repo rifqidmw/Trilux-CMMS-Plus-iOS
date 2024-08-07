@@ -53,7 +53,7 @@
                     <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nUG-7e-BEC">
-                            <rect key="frame" x="16" y="16" width="361" height="742"/>
+                            <rect key="frame" x="16" y="16" width="361" height="734"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="MNt-xW-tBs">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="350"/>
@@ -197,10 +197,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lK8-xM-xxk" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="686" width="361" height="56"/>
+                                    <rect key="frame" x="0.0" y="686" width="361" height="48"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="56" id="NwQ-2l-4gM"/>
+                                        <constraint firstAttribute="height" constant="48" id="NwQ-2l-4gM"/>
                                     </constraints>
                                 </view>
                             </subviews>

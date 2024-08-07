@@ -116,7 +116,7 @@ extension UserProfileView {
         containerProfileStackView.addShadow(6, opacity: 0.2)
         userProfileImageView.makeCornerRadius(12)
         changeImageButton.configure(title: "Ganti Gambar")
-        logoutButton.configure(title: "Keluar", backgroundColor: UIColor.indicatorColor3, titleColor: UIColor.customRed)
+        logoutButton.configure(title: "Keluar", backgroundColor: UIColor.customRedColor, titleColor: UIColor.white)
         
         if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             versionLabel.text = "Versi \(appVersion)"

@@ -26,7 +26,7 @@ class NotificationItemCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.containerView.makeCornerRadius(8)
-        self.addShadow(6, opacity: 0.2)
+        self.addShadow(2, position: .bottom, opacity: 0.2)
         self.markView.makeCornerRadius(4, .rightCurve)
         self.badgeView.makeCornerRadius(4)
         self.setupSkeleton()
