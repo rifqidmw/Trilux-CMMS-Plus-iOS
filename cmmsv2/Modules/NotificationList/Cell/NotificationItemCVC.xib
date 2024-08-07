@@ -30,15 +30,15 @@
                         <rect key="frame" x="4" y="4" width="385" height="102"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-k9-AVv" userLabel="Mark View">
-                                <rect key="frame" x="0.0" y="16" width="8" height="20"/>
+                                <rect key="frame" x="0.0" y="16" width="4" height="20"/>
                                 <color key="backgroundColor" name="customPrimaryColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="8" id="2rx-YM-wiH"/>
+                                    <constraint firstAttribute="width" constant="4" id="2rx-YM-wiH"/>
                                     <constraint firstAttribute="height" constant="20" id="WLl-z5-QJH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md0-pS-SNq" userLabel="Badge View">
-                                <rect key="frame" x="16" y="16" width="68" height="20"/>
+                                <rect key="frame" x="12" y="16" width="68" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lembar Kerja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl4-of-n8j" userLabel="Badge Label">
                                         <rect key="frame" x="4" y="4" width="60" height="12"/>

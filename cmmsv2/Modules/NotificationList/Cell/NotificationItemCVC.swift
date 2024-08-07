@@ -28,8 +28,6 @@ class NotificationItemCVC: UICollectionViewCell {
         self.setupSkeleton()
         self.containerView.makeCornerRadius(8)
         self.addShadow(2, position: .bottom, opacity: 0.2)
-        self.markView.makeCornerRadius(4, .rightCurve)
-        self.badgeView.makeCornerRadius(4)
     }
     
 }
@@ -58,6 +56,8 @@ extension NotificationItemCVC {
     }
     
     func setupCell(data: NotificationList) {
+        markView.makeCornerRadius(4, .rightCurve)
+        badgeView.makeCornerRadius(4)
         hideSkeletonAnimation()
         configureBadgeView(type: NotificationType(rawValue: data.type_string?.rawValue ?? "") ?? NotificationType.none)
         dateTimeLabel.text = data.time ?? ""
