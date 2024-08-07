@@ -9,13 +9,15 @@ import Foundation
 
 enum AppManager {
     
-    private static let userKey = "userStored"
-    private static let hospitalKey = "hospitalStored"
-    private static let isRegisteredKey = "isRegistered"
-    private static let isLoggedInKey = "isLoggedIn"
-    private static let searchHistoryKey = "searchHistoryStored"
-    private static let userTokenKey = "valToken"
-    private static let userRoleKey = "currentUserRole"
+    static let userKey = "userStored"
+    static let hospitalKey = "hospitalStored"
+    static let isRegisteredKey = "isRegistered"
+    static let isLoggedInKey = "isLoggedIn"
+    static let searchHistoryKey = "searchHistoryStored"
+    static let userTokenKey = "valToken"
+    static let userRoleKey = "currentUserRole"
+    static let notificationKey = "notificationStored"
+    static let isOpenedNotifKey = "isNotifOpened"
     
     static func setUser(_ data: User?) {
         do {
@@ -72,26 +74,6 @@ enum AppManager {
             }
         }
         return nil
-    }
-    
-    static func setIsRegistered(_ isRegistered: Bool) {
-        UserDefaults.standard.setValue(isRegistered, forKey: isRegisteredKey)
-    }
-    
-    static func getIsRegistered() -> Bool {
-        return UserDefaults.standard.bool(forKey: isRegisteredKey)
-    }
-    
-    static func setIsLoggedIn(_ isLoggedIn: Bool) {
-        UserDefaults.standard.setValue(isLoggedIn, forKey: isLoggedInKey)
-    }
-    
-    static func getIsLoggedIn() -> Bool {
-        return UserDefaults.standard.bool(forKey: isLoggedInKey)
-    }
-    
-    static func deleteObject(_ key: String) {
-        UserDefaults.standard.removeObject(forKey: key)
     }
     
     static func setSearchHistory(_ data: AssetFilterEntity) {
@@ -154,6 +136,60 @@ enum AppManager {
             }
         }
         return nil
+    }
+    
+    static func setNotificationList(_ data: [NotificationList]) {
+        var notificationList = getNotificationList() ?? []
+        notificationList.append(contentsOf: data)
+        
+        do {
+            let encoder = JSONEncoder()
+            let dataEncode = try encoder.encode(notificationList)
+            UserDefaults.standard.set(dataEncode, forKey: notificationKey)
+        } catch {
+            AppLogger.log("-- Error encoding  notification list data: \(error)")
+        }
+    }
+    
+    static func getNotificationList() -> [NotificationList]? {
+        if let dataObject = UserDefaults.standard.data(forKey: notificationKey) {
+            do {
+                let decoder = JSONDecoder()
+                let response = try decoder.decode([NotificationList].self, from: dataObject)
+                return response
+            } catch {
+                AppLogger.log("-- Error decoding notification list data: \(error)")
+            }
+        }
+        return nil
+    }
+    
+    static func setIsRegistered(_ isRegistered: Bool) {
+        UserDefaults.standard.setValue(isRegistered, forKey: isRegisteredKey)
+    }
+    
+    static func getIsRegistered() -> Bool {
+        return UserDefaults.standard.bool(forKey: isRegisteredKey)
+    }
+    
+    static func setIsLoggedIn(_ isLoggedIn: Bool) {
+        UserDefaults.standard.setValue(isLoggedIn, forKey: isLoggedInKey)
+    }
+    
+    static func getIsLoggedIn() -> Bool {
+        return UserDefaults.standard.bool(forKey: isLoggedInKey)
+    }
+    
+    static func setIsOpenedNotification(_ isLoggedIn: Bool) {
+        UserDefaults.standard.setValue(isLoggedIn, forKey: isOpenedNotifKey)
+    }
+    
+    static func getIsOpenedNotification() -> Bool {
+        return UserDefaults.standard.bool(forKey: isOpenedNotifKey)
+    }
+    
+    static func deleteObject(_ key: String) {
+        UserDefaults.standard.removeObject(forKey: key)
     }
     
 }

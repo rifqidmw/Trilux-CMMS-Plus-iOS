@@ -45,9 +45,20 @@ extension HomeScreenView {
         categoryView.updateDataForRole()
     }
     
+    private func checkStoredNotificationList(_ data: [NotificationList]) {
+        guard let storedNotifications = AppManager.getNotificationList() else { return }
+        if storedNotifications.isEqual(to: data) {
+            AppManager.setIsOpenedNotification(false)
+        } else {
+            AppManager.setIsOpenedNotification(true)
+            AppManager.setNotificationList(data)
+        }
+    }
+    
     private func fetchInitData() {
         guard let presenter else { return }
         presenter.fetchInitData()
+        presenter.fetchListNotificationData()
         if RoleManager.shared.currentUserRole == .engineer {
             presenter.fetchReminderPreventive(date: String.getCurrentDateString("yyyy-MM-dd"))
         }
@@ -78,6 +89,13 @@ extension HomeScreenView {
                 
                 presenter.reminderList = list
                 presenter.showReminderPreventiveBottomSheet(navigation: navigation, delegate: self)
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$notification
+            .sink { [weak self] data in
+                guard let self else { return }
+                self.checkStoredNotificationList(data)
             }
             .store(in: &anyCancellable)
     }

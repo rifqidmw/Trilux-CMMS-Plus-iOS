@@ -25,11 +25,11 @@ class NotificationItemCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.setupSkeleton()
         self.containerView.makeCornerRadius(8)
         self.addShadow(2, position: .bottom, opacity: 0.2)
         self.markView.makeCornerRadius(4, .rightCurve)
         self.badgeView.makeCornerRadius(4)
-        self.setupSkeleton()
     }
     
 }
@@ -37,22 +37,22 @@ class NotificationItemCVC: UICollectionViewCell {
 extension NotificationItemCVC {
     
     private func setupSkeleton() {
-        [markView,
-         badgeView,
-         dateTimeLabel,
-         shortTitleLabel,
-         titleLabel].forEach {
+        [self.markView,
+         self.badgeView,
+         self.dateTimeLabel,
+         self.shortTitleLabel,
+         self.titleLabel].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
         }
     }
     
     private func hideSkeletonAnimation() {
-        [markView,
-         badgeView,
-         dateTimeLabel,
-         shortTitleLabel,
-         titleLabel].forEach {
+        [self.markView,
+         self.badgeView,
+         self.dateTimeLabel,
+         self.shortTitleLabel,
+         self.titleLabel].forEach {
             $0.hideSkeleton()
         }
     }
@@ -65,15 +65,14 @@ extension NotificationItemCVC {
         titleLabel.text = data.title
     }
     
-    
     private func configureBadgeView(type: NotificationType) {
         badgeLabel.text = type.getStringValue()
         
         switch type {
         case .complaint:
-            badgeView.backgroundColor = UIColor.customIndicatorColor2
-            markView.backgroundColor = UIColor.customIndicatorColor2
-            badgeLabel.textColor = UIColor.customIndicatorColor11
+            badgeView.backgroundColor = UIColor.customIndicatorColor3
+            markView.backgroundColor = UIColor.customIndicatorColor3
+            badgeLabel.textColor = UIColor.customRedColor
         case .worksheet:
             badgeView.backgroundColor = UIColor.customSecondaryColor
             markView.backgroundColor = UIColor.customSecondaryColor
@@ -98,7 +97,17 @@ extension NotificationItemCVC {
             badgeView.backgroundColor = UIColor.customLightGreenColor
             markView.backgroundColor = UIColor.customLightGreenColor
             badgeLabel.textColor = UIColor.customIndicatorColor10
-        default: break
+        case .approveLk:
+            badgeView.backgroundColor = UIColor.customLightGreenColor
+            markView.backgroundColor = UIColor.customLightGreenColor
+            badgeLabel.textColor = UIColor.customIndicatorColor10
+        case .acceptanceAsset:
+            badgeView.backgroundColor = UIColor.customSecondaryColor
+            markView.backgroundColor = UIColor.customSecondaryColor
+            badgeLabel.textColor = UIColor.customPrimaryColor
+        case .none:
+            break
         }
     }
+    
 }

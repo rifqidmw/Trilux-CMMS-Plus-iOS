@@ -17,4 +17,8 @@ class HomeScreenInteractor: BaseInteractor {
         return api.requestApiPublisher(.reminderPreventive(date: date ?? ""))
     }
     
+    func getNotification() -> AnyPublisher<NotificationListEntity, Error> {
+        return api.requestApiPublisher(.getNotification(page: 1, limit: 300))
+    }
+    
 }

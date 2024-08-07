@@ -507,10 +507,6 @@
 		CEB703A82BA87FBD004583C7 /* PreventiveCalendarListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB7039D2BA87FBD004583C7 /* PreventiveCalendarListView.xib */; };
 		CEB703A92BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */; };
 		CEB703AA2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */; };
-		CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
-		CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */; };
-		CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */; };
-		CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */; };
 		CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */; };
 		CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */; };
 		CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */; };
@@ -1234,8 +1230,6 @@
 		CEB7039C2BA87FBD004583C7 /* PreventiveCalendarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarListView.swift; sourceTree = "<group>"; };
 		CEB7039D2BA87FBD004583C7 /* PreventiveCalendarListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveCalendarListView.xib; sourceTree = "<group>"; };
 		CEB7039E2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCalendarListEntity.swift; sourceTree = "<group>"; };
-		CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HospitalModel.xcdatamodel; sourceTree = "<group>"; };
-		CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		CEB7A63D2B696F0500D27FFF /* NSManagedObjectContext+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Ext.swift"; sourceTree = "<group>"; };
 		CEB7A6402B69734100D27FFF /* NSPersistentContainer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Ext.swift"; sourceTree = "<group>"; };
 		CEB8C3552C60D4D50040B485 /* CalibrationInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationInformationView.swift; sourceTree = "<group>"; };
@@ -1621,15 +1615,6 @@
 				CECC8F692C2338BE0071DF75 /* DatePickerBottomSheet.xib */,
 			);
 			path = DatePicker;
-			sourceTree = "<group>";
-		};
-		CE2C82762B681FDE00053933 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */,
-				CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		CE2E3AE92BA09E2F00094AD0 /* CalibrationList */ = {
@@ -2812,7 +2797,6 @@
 				CECB3E362B45E468004A260D /* BaseModule */,
 				CECB3E352B45E462004A260D /* Component */,
 				CECB3E342B45E450004A260D /* Configuration */,
-				CE2C82762B681FDE00053933 /* Models */,
 				CECB3E332B45E444004A260D /* Other */,
 			);
 			path = Common;
@@ -4005,7 +3989,6 @@
 				CEF5D7CD2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CE73274C2BECA849000AD875 /* ComplaintDetailView.swift in Sources */,
 				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
-				CEB7A63B2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE90B1572B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
 				CE4255E52BA704E5002B558C /* LogBookListPresenter.swift in Sources */,
 				CEFD6D242BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.swift in Sources */,
@@ -4158,7 +4141,6 @@
 				CEE780DE2C0C7922001BA9C2 /* SparePartTVC.swift in Sources */,
 				CEE67D2F2B54394900D0844B /* WorkSheetMonitoringFunctionListEntity.swift in Sources */,
 				CEE79EBD2B70ED9B0063D844 /* WorkSheetDetailPresenter.swift in Sources */,
-				CEB7A6372B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CEE8CB932BF7C8FD006E59B7 /* HistoryDetailView.swift in Sources */,
 				CE8B88CF2C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */,
 				CEB6A6F82C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift in Sources */,
@@ -4333,7 +4315,6 @@
 				CEF5D7CE2B6D311700FDE752 /* SplashScreenEntity.swift in Sources */,
 				CE73274D2BECA849000AD875 /* ComplaintDetailView.swift in Sources */,
 				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
-				CEB7A63C2B69669400D27FFF /* UserModel.xcdatamodeld in Sources */,
 				CE90B1582B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
 				CE4255E62BA704E5002B558C /* LogBookListPresenter.swift in Sources */,
 				CEFD6D252BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.swift in Sources */,
@@ -4486,7 +4467,6 @@
 				CEE780E02C0C7922001BA9C2 /* SparePartTVC.swift in Sources */,
 				CEE67D302B54394900D0844B /* WorkSheetMonitoringFunctionListEntity.swift in Sources */,
 				CEE79EBE2B70ED9B0063D844 /* WorkSheetDetailPresenter.swift in Sources */,
-				CEB7A6382B69668B00D27FFF /* HospitalModel.xcdatamodeld in Sources */,
 				CEE8CB942BF7C8FD006E59B7 /* HistoryDetailView.swift in Sources */,
 				CE8B88D02C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */,
 				CEB6A6F92C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift in Sources */,
@@ -4804,29 +4784,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CEB7A6352B69668B00D27FFF /* HospitalModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */,
-			);
-			currentVersion = CEB7A6362B69668B00D27FFF /* HospitalModel.xcdatamodel */;
-			path = HospitalModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		CEB7A6392B69669400D27FFF /* UserModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */,
-			);
-			currentVersion = CEB7A63A2B69669400D27FFF /* UserModel.xcdatamodel */;
-			path = UserModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CECB3D992B45D962004A260D /* Project object */;
 }

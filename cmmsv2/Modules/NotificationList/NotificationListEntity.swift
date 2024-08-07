@@ -31,7 +31,7 @@ struct NotificationListData: Codable {
     }
 }
 
-struct NotificationList: Codable {
+struct NotificationList: Codable, Equatable {
     let id: String?
     let title: String?
     let short_title: String?
@@ -59,6 +59,21 @@ struct NotificationList: Codable {
         case is_read
         case id_notif_recipient
     }
+    
+    static func ==(lhs: NotificationList, rhs: NotificationList) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.title == rhs.title &&
+        lhs.short_title == rhs.short_title &&
+        lhs.type == rhs.type &&
+        lhs.type_string == rhs.type_string &&
+        lhs.link == rhs.link &&
+        lhs.time == rhs.time &&
+        lhs.item_id == rhs.item_id &&
+        lhs.equipment_id == rhs.equipment_id &&
+        lhs.content == rhs.content &&
+        lhs.is_read == rhs.is_read &&
+        lhs.id_notif_recipient == rhs.id_notif_recipient
+    }
 }
 
 struct NotificationListReff: Codable {
@@ -78,4 +93,18 @@ struct NotificationListReff: Codable {
 struct NotificationSection {
     var timeCategory: String
     var notifications: [NotificationList]
+}
+
+extension Array where Element == NotificationList {
+    func isEqual(to other: [NotificationList]) -> Bool {
+        guard self.count == other.count else {
+            return false
+        }
+        for (index, element) in self.enumerated() {
+            if element != other[index] {
+                return false
+            }
+        }
+        return true
+    }
 }
