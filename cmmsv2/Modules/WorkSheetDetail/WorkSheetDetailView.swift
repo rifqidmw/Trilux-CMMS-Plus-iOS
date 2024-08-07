@@ -329,12 +329,13 @@ extension WorkSheetDetailView {
     }
     
     private func setupAction() {
+        guard let presenter else { return }
         navigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self,
                       let navigation = self.navigationController
                 else { return }
-                navigation.popViewController(animated: true)
+                presenter.showExitConfirmBottomSheet(from: navigation, self)
             }
             .store(in: &anyCancellable)
         
@@ -343,14 +344,13 @@ extension WorkSheetDetailView {
                 guard let self,
                       let navigation = self.navigationController
                 else { return }
-                navigation.popViewController(animated: true)
+                presenter.showExitConfirmBottomSheet(from: navigation, self)
             }
             .store(in: &anyCancellable)
         
         taskInputHeaderView.actionLabel.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
                 presenter.showInputBottomSheet(from: navigation, delegate: self, type: .text)
@@ -360,7 +360,6 @@ extension WorkSheetDetailView {
         usageSparePartHeaderView.actionLabel.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
                 self.addUsageSparePartSectionView.sparePartType = .usage
@@ -372,7 +371,6 @@ extension WorkSheetDetailView {
         requirementSparePartHeaderView.actionLabel.gesture()
             .sink { [weak self] _ in
                 guard let self,
-                      let presenter,
                       let navigation = self.navigationController
                 else { return }
                 self.addRequirementSparePartSectionView.sparePartType = .requirement

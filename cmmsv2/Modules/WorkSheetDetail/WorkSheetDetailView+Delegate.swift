@@ -192,3 +192,12 @@ extension WorkSheetDetailView: UIImagePickerControllerDelegate, UINavigationCont
     }
     
 }
+
+extension WorkSheetDetailView: ConfirmExitBottomSheetDelegate {
+    
+    func didTapExitWorkSheet() {
+        guard let navigation = self.navigationController else { return }
+        navigation.popViewController(animated: true)
+    }
+    
+}
