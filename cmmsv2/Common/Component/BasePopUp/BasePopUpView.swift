@@ -37,22 +37,29 @@ class BasePopUpView: UIView {
 
 extension BasePopUpView {
     
-    func configureView(icon: String, title: String, firstMessage: String, boldText: String, secondMessage: String, leftButtonTitle: String, rightButtonTitle: String) {
-        
-        let firstMessageText = NSAttributedString.stylizedText(firstMessage, font: UIFont.robotoRegular(14), color: UIColor.customPlaceholderColor)
-        let highlightedText = NSAttributedString.stylizedText(boldText, font: UIFont.robotoBold(14), color: UIColor.customPrimaryColor)
-        let secondMessageText = NSAttributedString.stylizedText(secondMessage, font: UIFont.robotoRegular(14), color: UIColor.customPlaceholderColor)
-        
-        let fullAttributedText = NSMutableAttributedString()
-        fullAttributedText.append(firstMessageText)
-        fullAttributedText.append(highlightedText)
-        fullAttributedText.append(secondMessageText)
-
-        messageLabel.attributedText = fullAttributedText
-        iconImageView.image = UIImage(named: icon)
-        titleLabel.text = title
-        agreeButton.configure(title: leftButtonTitle, type: .bordered)
-        cancelButton.configure(title: rightButtonTitle)
-    }
+    func configureView(
+        icon: String,
+        title: String,
+        firstMessage: String? = nil,
+        boldText: String? = nil,
+        secondMessage: String? = nil,
+        leftButtonTitle: String,
+        rightButtonTitle: String) {
+            
+            let firstMessageText = NSAttributedString.stylizedText(firstMessage ?? "", font: UIFont.robotoRegular(14), color: UIColor.customPlaceholderColor)
+            let highlightedText = NSAttributedString.stylizedText(boldText ?? "", font: UIFont.robotoBold(14), color: UIColor.customPrimaryColor)
+            let secondMessageText = NSAttributedString.stylizedText(secondMessage ?? "", font: UIFont.robotoRegular(14), color: UIColor.customPlaceholderColor)
+            
+            let fullAttributedText = NSMutableAttributedString()
+            fullAttributedText.append(firstMessageText)
+            fullAttributedText.append(highlightedText)
+            fullAttributedText.append(secondMessageText)
+            
+            messageLabel.attributedText = fullAttributedText
+            iconImageView.image = UIImage(named: icon)
+            titleLabel.text = title
+            agreeButton.configure(title: leftButtonTitle, type: .bordered)
+            cancelButton.configure(title: rightButtonTitle)
+        }
     
 }

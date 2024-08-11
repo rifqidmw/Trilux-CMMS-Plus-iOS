@@ -170,6 +170,8 @@ enum NotificationType: String, Codable {
     case inbox = "Inbox"
     case reception = "Penerimaan"
     case mutation = "Mutasi Alat"
+    case approveLk = "Approve LK"
+    case acceptanceAsset = "Penerimaan Alat"
     case none = ""
     
     init?(rawValue: String) {
@@ -181,6 +183,8 @@ enum NotificationType: String, Codable {
         case "Inbox": self = .inbox
         case "Penerimaan": self = .rating
         case "Mutasi Alat": self = .mutation
+        case "Approve LK": self = .approveLk
+        case "Penerimaan Alat": self = .acceptanceAsset
         case "": self = .none
         default: self = .none
         }

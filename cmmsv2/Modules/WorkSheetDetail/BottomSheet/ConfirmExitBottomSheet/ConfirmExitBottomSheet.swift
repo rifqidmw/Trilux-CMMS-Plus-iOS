@@ -1,21 +1,21 @@
 //
-//  PreventiveSchedulerBottomSheet.swift
+//  ConfirmExitBottomSheet.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 30/05/24.
+//  Created by PRO M1 2020 8/256 on 07/08/24.
 //
 
 import UIKit
 import Combine
 
-protocol PreventiveSchedulerBottomSheetDelegate: AnyObject {
-    func didTapCreatePreventive()
+protocol ConfirmExitBottomSheetDelegate: AnyObject {
+    func didTapExitWorkSheet()
 }
 
-class PreventiveSchedulerBottomSheet: BaseNonNavigationController {
+class ConfirmExitBottomSheet: BaseNonNavigationController {
     
     @IBOutlet var popUpView: BasePopUpView!
-    weak var delegate: PreventiveSchedulerBottomSheetDelegate?
+    weak var delegate: ConfirmExitBottomSheetDelegate?
     
     override func didLoad() {
         super.didLoad()
@@ -25,7 +25,7 @@ class PreventiveSchedulerBottomSheet: BaseNonNavigationController {
     
 }
 
-extension PreventiveSchedulerBottomSheet {
+extension ConfirmExitBottomSheet {
     
     private func setupBody() {
         setupView()
@@ -33,7 +33,7 @@ extension PreventiveSchedulerBottomSheet {
     }
     
     private func setupView() {
-        popUpView.configureView(icon: "ic_calendar_with_wrench", title: "Jadwalkan Preventif", firstMessage: "Apakah Anda yakin ingin ", boldText: "menambahkan", secondMessage: " jadwal preventif untuk alat ini?", leftButtonTitle: "Tidak", rightButtonTitle: "Ya")
+        popUpView.configureView(icon: "ic_warning_ellipse", title: "Konfirmasi keluar dari halaman ini?", leftButtonTitle: "Tidak", rightButtonTitle: "Ya")
     }
     
     private func setupAction() {
@@ -43,7 +43,7 @@ extension PreventiveSchedulerBottomSheet {
                       let delegate = self.delegate
                 else { return }
                 self.dismissBottomSheet() {
-                    delegate.didTapCreatePreventive()
+                    delegate.didTapExitWorkSheet()
                 }
             }
             .store(in: &anyCancellable)

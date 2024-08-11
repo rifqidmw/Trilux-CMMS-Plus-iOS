@@ -73,7 +73,7 @@ extension SplashScreenView {
                         } else if !self.isLoggedIn {
                             presenter.navigateToLoginPage(data: hospitalTheme)
                         } else {
-                            AppManager.deleteObject("isLoggedIn")
+                            AppManager.deleteObject(AppManager.isLoggedInKey)
                             presenter.navigateToLoginPage(data: hospitalTheme)
                         }
                     }

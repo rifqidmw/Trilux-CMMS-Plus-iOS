@@ -28,7 +28,6 @@
                 <outlet property="containerHomeToolbarView" destination="6DK-LA-9lY" id="Ggu-cx-Y9i"/>
                 <outlet property="containerPlainView" destination="WIj-9o-CCO" id="6tO-9J-9Yz"/>
                 <outlet property="notificationDotView" destination="119-gY-1oK" id="nrg-e7-umG"/>
-                <outlet property="notificationLabel" destination="81n-Ly-4iP" id="TUG-ta-Xqu"/>
                 <outlet property="notificationView" destination="y93-og-aot" id="SJC-sI-d2S"/>
                 <outlet property="profileImageView" destination="gJe-Yr-LAh" id="qwf-hX-ktd"/>
                 <outlet property="profileView" destination="BNV-j9-jvL" id="N5E-um-uRz"/>
@@ -69,30 +68,18 @@
                                     <rect key="frame" x="269" y="0.0" width="48" height="48"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bell" translatesAutoresizingMaskIntoConstraints="NO" id="iug-pA-sku">
-                                            <rect key="frame" x="12" y="12" width="24" height="24"/>
+                                            <rect key="frame" x="10" y="10" width="28" height="28"/>
                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="24" id="Did-ne-GKU"/>
-                                                <constraint firstAttribute="height" constant="24" id="cMq-dX-eCA"/>
+                                                <constraint firstAttribute="width" constant="28" id="Did-ne-GKU"/>
+                                                <constraint firstAttribute="height" constant="28" id="cMq-dX-eCA"/>
                                             </constraints>
                                         </imageView>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="119-gY-1oK">
-                                            <rect key="frame" x="30" y="10" width="8" height="8"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81n-Ly-4iP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="8"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="6"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                            <rect key="frame" x="28" y="12" width="8" height="8"/>
                                             <color key="backgroundColor" name="redColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="81n-Ly-4iP" secondAttribute="trailing" id="5zG-hA-npA"/>
-                                                <constraint firstAttribute="bottom" secondItem="81n-Ly-4iP" secondAttribute="bottom" id="Mg0-Ug-PKg"/>
                                                 <constraint firstAttribute="height" constant="8" id="oDo-51-zhT"/>
-                                                <constraint firstItem="81n-Ly-4iP" firstAttribute="leading" secondItem="119-gY-1oK" secondAttribute="leading" id="vnU-kh-P0s"/>
-                                                <constraint firstItem="81n-Ly-4iP" firstAttribute="top" secondItem="119-gY-1oK" secondAttribute="top" id="wvm-4q-2j6"/>
                                                 <constraint firstAttribute="width" constant="8" id="zQA-qD-z95"/>
                                             </constraints>
                                         </view>
@@ -100,9 +87,9 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="78l-yT-F45"/>
-                                        <constraint firstItem="119-gY-1oK" firstAttribute="top" secondItem="y93-og-aot" secondAttribute="top" constant="10" id="Zll-Vj-t5b"/>
+                                        <constraint firstItem="119-gY-1oK" firstAttribute="top" secondItem="y93-og-aot" secondAttribute="top" constant="12" id="Zll-Vj-t5b"/>
                                         <constraint firstItem="iug-pA-sku" firstAttribute="centerX" secondItem="y93-og-aot" secondAttribute="centerX" id="azs-3H-9pk"/>
-                                        <constraint firstAttribute="trailing" secondItem="119-gY-1oK" secondAttribute="trailing" constant="10" id="icF-31-CIG"/>
+                                        <constraint firstAttribute="trailing" secondItem="119-gY-1oK" secondAttribute="trailing" constant="12" id="icF-31-CIG"/>
                                         <constraint firstItem="iug-pA-sku" firstAttribute="centerY" secondItem="y93-og-aot" secondAttribute="centerY" id="sD7-WR-hvH"/>
                                         <constraint firstAttribute="width" constant="48" id="wJN-V3-zhh"/>
                                     </constraints>

@@ -51,7 +51,7 @@ extension NotificationListView {
                     return
                 }
                 self.data = data
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
@@ -61,7 +61,7 @@ extension NotificationListView {
             .sink { [weak self] data in
                 guard let self else { return }
                 self.workSheetData = data
-                self.collectionView.reloadData()
+                self.reloadCollectionViewWithAnimation(self.collectionView)
                 self.collectionView.hideSkeleton()
                 self.showSpinner(false)
             }
@@ -81,11 +81,6 @@ extension NotificationListView {
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Notifikasi", type: .plain)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.collectionView.isSkeletonable = true
-            self.collectionView.showAnimatedGradientSkeleton()
-        }
         
     }
     
@@ -110,11 +105,7 @@ extension NotificationListView {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: TimeGroupHeaderCRV.identifier)
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 110)
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.headerReferenceSize = CGSize(width: collectionView.frame.size.width, height: 38)
         collectionView.collectionViewLayout = layout
         collectionView.isSkeletonable = true
         collectionView.showAnimatedGradientSkeleton()
@@ -140,42 +131,43 @@ extension NotificationListView {
         
         let result = groupedNotifications.map { (time: $0.key, notifications: $0.value) }
         
-        let sortedResult = result.sorted { $0.time > $1.time }
+        let sortedResult = result.sorted {
+            guard let date1 = dateFromString($0.notifications.first?.time ?? ""),
+                  let date2 = dateFromString($1.notifications.first?.time ?? "") else { return false }
+            return date1 > date2
+        }
         
         return sortedResult
     }
     
-    
     func getTimeCategoryHeader(for date: String) -> String {
-        let timeCategory = getTimeCategory(for: date)
-        return timeCategory
+        return getTimeCategory(for: date)
     }
     
     private func getTimeCategory(for dateString: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        guard let date = dateFormatter.date(from: dateString) else {
+        guard let date = dateFromString(dateString) else {
             return "Unknown"
         }
         
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date, to: Date())
+        let now = Date()
+        let components = calendar.dateComponents([.year, .month, .day], from: date, to: now)
         
-        if let year = components.year, year > 2 {
-            return "\(year) Tahun lalu"
-        } else if let year = components.year, year == 2 {
-            return "2 Tahun lalu"
-        } else if let year = components.year, year == 1 {
-            return "Tahun lalu"
-        } else if let month = components.month, month > 1 {
-            return "\(month) Bulan lalu"
-        } else if let month = components.month, month == 1 {
-            return "Bulan lalu"
+        if let year = components.year, year > 0 {
+            return year > 1 ? "\(year) Tahun lalu" : "Tahun lalu"
+        } else if let month = components.month, month > 0 {
+            return month > 1 ? "\(month) Bulan lalu" : "Bulan lalu"
         } else if let day = components.day, day > 0 {
             return "Bulan ini"
         } else {
             return "Hari ini"
         }
+    }
+    
+    private func dateFromString(_ dateString: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateFormatter.date(from: dateString)
     }
     
 }
@@ -187,7 +179,7 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 10
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
@@ -276,6 +268,22 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
                 presenter.fetchNextPage()
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 110)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 38)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
 }

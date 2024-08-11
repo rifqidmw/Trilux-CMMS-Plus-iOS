@@ -303,8 +303,10 @@ extension BaseViewController {
         DispatchQueue.main.async {
             let vc = LoginRouter().showView()
             vc.data = data
-            AppManager.deleteObject("isLoggedIn")
-            AppManager.deleteObject("valToken")
+            AppManager.deleteObject(AppManager.isLoggedInKey)
+            AppManager.deleteObject(AppManager.userTokenKey)
+            AppManager.deleteObject(AppManager.notificationKey)
+            AppManager.deleteObject(AppManager.isOpenedNotifKey)
             
             let rootViewController = UINavigationController(rootViewController: vc)
             UIApplication.shared.setRootViewController(rootViewController)

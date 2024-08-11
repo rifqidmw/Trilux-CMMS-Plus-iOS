@@ -12,7 +12,6 @@ class NotificationListPresenter: BasePresenter {
     private let interactor: NotificationListInteractor
     private let router = NotificationListRouter()
     
-    @Published public var notificationData: NotificationListEntity?
     @Published public var notification: [NotificationList] = []
     @Published public var workSheetDetail: HistoryDetailEntity?
     @Published public var workSheetData: [WorkOrder] = []
@@ -23,7 +22,7 @@ class NotificationListPresenter: BasePresenter {
     @Published public var isError: Bool = false
     
     var page: Int = 1
-    var limit: Int = 20
+    var limit: Int = 300
     var isCanLoad = true
     var isFetchingMore = false
     
@@ -61,8 +60,9 @@ extension NotificationListPresenter {
                         guard let data = notif.data,
                               let notification = data.notifications
                         else { return }
-                        self.notificationData = notif
                         self.notification.append(contentsOf: notification)
+                        AppManager.setNotificationList(notification)
+                        AppManager.setIsOpenedNotification(true)
                     }
                 }
             )

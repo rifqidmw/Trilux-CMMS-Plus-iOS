@@ -64,6 +64,7 @@ extension CustomNavigationView {
         profileImageView.loadImageUrl(image ?? "")
         toolbarTitleLabel.text = toolbarTitle
         actionLabel.text = actionTitle
+        notificationDotView.isHidden = AppManager.getIsOpenedNotification()
         
         switch type {
         case .plain:

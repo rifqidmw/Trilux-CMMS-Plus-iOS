@@ -14,6 +14,7 @@ class HomeScreenPresenter: BasePresenter {
     
     @Published public var expiredData: ExpiredData?
     @Published public var reminderData: ReminderPreventiveEntity?
+    @Published public var notification: [NotificationList] = []
     var reminderList: [ReminderPreventiveData] = []
     
     @Published public var errorMessage: String = ""
@@ -72,6 +73,34 @@ extension HomeScreenPresenter {
                         guard let reminderList = reminderData.data else { return }
                         self.reminderData = reminderData
                         self.reminderList = reminderList
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchListNotificationData() {
+        self.isLoading = true
+        interactor.getNotification()
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { notif in
+                    DispatchQueue.main.async {
+                        guard let data = notif.data,
+                              let newNotifications = data.notifications
+                        else { return }
+                        self.notification = newNotifications
+                        AppManager.setNotificationList(newNotifications)
                     }
                 }
             )

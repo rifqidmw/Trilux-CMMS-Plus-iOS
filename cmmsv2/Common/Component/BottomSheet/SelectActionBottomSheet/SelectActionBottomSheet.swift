@@ -8,6 +8,13 @@
 import UIKit
 import Combine
 
+@objc protocol WorkSheetOnsitePreventiveDelegate: AnyObject {
+    @objc optional func didTapDetail(title: String)
+    @objc optional func didTapContinueWorking(title: String)
+    @objc optional func didTapDownloadPDF()
+    @objc optional func didTapCorrection(title: String)
+}
+
 class SelectActionBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!

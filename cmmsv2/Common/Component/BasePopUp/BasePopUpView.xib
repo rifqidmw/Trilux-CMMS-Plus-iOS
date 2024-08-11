@@ -34,68 +34,59 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-Wg-9ak" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="503"/>
+                    <rect key="frame" x="0.0" y="59" width="393.33333333333331" height="532.66666666666663"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1q-Bs-gYF" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="562" width="393" height="290"/>
+                    <rect key="frame" x="0.0" y="591.66666666666663" width="393.33333333333331" height="260.33333333333337"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prc-zk-IWl">
-                            <rect key="frame" x="167.66666666666666" y="36" width="58" height="58"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="58" id="Mwc-3m-bje"/>
-                                <constraint firstAttribute="width" constant="58" id="ipr-13-0F2"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUA-l6-J1O">
-                            <rect key="frame" x="16" y="118" width="361" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="22" id="gZZ-XI-eXc"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                            <color key="textColor" name="customDarkGrayColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhP-1n-aL9">
-                            <rect key="frame" x="50" y="156" width="293" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="0YQ-zD-mLG"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                            <color key="textColor" name="placeholderColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o4x-gI-6Pr">
-                            <rect key="frame" x="16" y="218" width="361" height="36"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-CK-sgc">
+                            <rect key="frame" x="16" y="34.000000000000014" width="361.33333333333331" height="192.33333333333337"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-a2-5Qj" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="36"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxH-VX-3bX" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="36"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prc-zk-IWl">
+                                    <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="58"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="58" id="Mwc-3m-bje"/>
+                                        <constraint firstAttribute="width" constant="58" id="ipr-13-0F2"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUA-l6-J1O">
+                                    <rect key="frame" x="0.0" y="78" width="361.33333333333331" height="21.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhP-1n-aL9">
+                                    <rect key="frame" x="0.0" y="119.66666666666676" width="361.33333333333331" height="16.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="placeholderColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o4x-gI-6Pr">
+                                    <rect key="frame" x="0.0" y="156.33333333333337" width="361.33333333333331" height="36"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-a2-5Qj" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="36"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxH-VX-3bX" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="184.66666666666669" y="0.0" width="176.66666666666669" height="36"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="CLf-6t-95P"/>
+                                    </constraints>
+                                </stackView>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="36" id="CLf-6t-95P"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="o4x-gI-6Pr" secondAttribute="trailing" constant="16" id="6eq-bR-35t"/>
-                        <constraint firstItem="o4x-gI-6Pr" firstAttribute="leading" secondItem="E1q-Bs-gYF" secondAttribute="leading" constant="16" id="Lc4-pp-RAf"/>
-                        <constraint firstItem="rUA-l6-J1O" firstAttribute="top" secondItem="prc-zk-IWl" secondAttribute="bottom" constant="24" id="TC8-iG-Mr9"/>
-                        <constraint firstAttribute="bottom" secondItem="o4x-gI-6Pr" secondAttribute="bottom" constant="36" id="WUe-mo-Je7"/>
-                        <constraint firstAttribute="height" constant="290" id="dZv-go-Q1Z"/>
-                        <constraint firstItem="prc-zk-IWl" firstAttribute="centerX" secondItem="E1q-Bs-gYF" secondAttribute="centerX" id="gJV-jy-6yL"/>
-                        <constraint firstItem="prc-zk-IWl" firstAttribute="top" secondItem="E1q-Bs-gYF" secondAttribute="top" constant="36" id="oEN-Ie-ZRR"/>
-                        <constraint firstItem="rhP-1n-aL9" firstAttribute="top" secondItem="rUA-l6-J1O" secondAttribute="bottom" constant="16" id="pCo-Rg-SFA"/>
-                        <constraint firstItem="rUA-l6-J1O" firstAttribute="leading" secondItem="E1q-Bs-gYF" secondAttribute="leading" constant="16" id="pIc-db-zsM"/>
-                        <constraint firstAttribute="trailing" secondItem="rhP-1n-aL9" secondAttribute="trailing" constant="50" id="sao-dI-VPw"/>
-                        <constraint firstItem="rhP-1n-aL9" firstAttribute="leading" secondItem="E1q-Bs-gYF" secondAttribute="leading" constant="50" id="ukg-XB-vWn"/>
-                        <constraint firstAttribute="trailing" secondItem="rUA-l6-J1O" secondAttribute="trailing" constant="16" id="wWC-JX-9rB"/>
+                        <constraint firstItem="Ffx-CK-sgc" firstAttribute="leading" secondItem="E1q-Bs-gYF" secondAttribute="leading" constant="16" id="2xB-ll-jFi"/>
+                        <constraint firstAttribute="trailing" secondItem="Ffx-CK-sgc" secondAttribute="trailing" constant="16" id="8hM-qt-dAp"/>
+                        <constraint firstAttribute="bottom" secondItem="Ffx-CK-sgc" secondAttribute="bottom" constant="34" id="KWg-w9-aut"/>
+                        <constraint firstItem="Ffx-CK-sgc" firstAttribute="top" secondItem="E1q-Bs-gYF" secondAttribute="top" constant="34" id="h7C-Ey-73c"/>
                     </constraints>
                 </view>
             </subviews>

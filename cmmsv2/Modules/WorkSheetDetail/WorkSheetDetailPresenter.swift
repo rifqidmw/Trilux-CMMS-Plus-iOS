@@ -191,4 +191,10 @@ extension WorkSheetDetailPresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
+    func showExitConfirmBottomSheet(from navigation: UINavigationController, _ delegate: ConfirmExitBottomSheetDelegate) {
+        let bottomSheet = ConfirmExitBottomSheet(nibName: String(describing: ConfirmExitBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
 }

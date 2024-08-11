@@ -19,8 +19,10 @@ extension UserProfileView: LogoutPopUpBottomSheetDelegate {
               let navigation = self.navigationController
         else { return }
         let data = HospitalTheme(logo: logo, tagline: tagline)
-        AppManager.deleteObject("isLoggedIn")
-        AppManager.deleteObject("valToken")
+        AppManager.deleteObject(AppManager.isLoggedInKey)
+        AppManager.deleteObject(AppManager.userTokenKey)
+        AppManager.deleteObject(AppManager.notificationKey)
+        AppManager.deleteObject(AppManager.isOpenedNotifKey)
         presenter.navigateToLoginPage(navigation: navigation, data: data)
     }
     

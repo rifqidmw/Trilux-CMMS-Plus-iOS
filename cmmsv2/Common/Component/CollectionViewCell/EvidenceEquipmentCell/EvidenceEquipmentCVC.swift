@@ -17,6 +17,11 @@ protocol EvidenceEquipmentCellDelegate: AnyObject {
     func didRemoveMedia(_ indexPath: IndexPath)
 }
 
+protocol WorkSheetDetailDelegate: AnyObject {
+    func didTapImage(titlePage: String, image: String)
+    func didTapSeeAllEvidence()
+}
+
 class EvidenceEquipmentCVC: UICollectionViewCell {
     
     static let identifier = String(describing: EvidenceEquipmentCVC.self)
