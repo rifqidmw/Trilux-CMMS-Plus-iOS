@@ -18,7 +18,7 @@ class HomeScreenInteractor: BaseInteractor {
     }
     
     func getNotification() -> AnyPublisher<NotificationListEntity, Error> {
-        return api.requestApiPublisher(.getNotification(page: 1, limit: 300))
+        return api.requestApiPublisher(.getNotification(page: 1, limit: 80))
     }
     
 }

@@ -97,13 +97,18 @@ class BaseRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, _ idAsset: String?, _ idComplaint: String?) {
-        let vc = WorkSheetCorrectiveDetailRouter().showView(idAset: idAsset ?? "", idComplaint: idComplaint ?? "")
+    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, _ idAsset: String?, _ idComplaint: String?, valType: String?) {
+        let vc = WorkSheetCorrectiveDetailRouter().showView(idAset: idAsset ?? "", idComplaint: idComplaint ?? "", valType: valType ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     
     func navigateToLoadPreventive(_ navigation: UINavigationController, idAsset: String?, idLk: String?) {
         let vc = LoadPreventiveRouter().showView(idAsset: idAsset ?? "", idLk: idLk ?? "")
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToWorkSheetApprovalDetail(from navigation: UINavigationController, id: String?) {
+        let vc = WorkSheetApprovalDetailRouter().showView(id: id ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     

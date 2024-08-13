@@ -137,7 +137,17 @@ extension WorkSheetCorrectiveDetailView {
                       let navigation = self.navigationController
                 else { return }
                 
-                presenter.navigateToDetailAsset(from: navigation, .none, id: presenter.idAsset ?? "")
+                var type: AssetType?
+                
+                switch presenter.valType {
+                case "1":
+                    type = .medic
+                case "2":
+                    type = .nonMedic
+                default: break
+                }
+                
+                presenter.navigateToDetailAsset(from: navigation, type ?? .none, id: presenter.idAsset ?? "")
             }
             .store(in: &anyCancellable)
         

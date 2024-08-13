@@ -171,15 +171,23 @@ extension WorkSheetCorrectiveBottomSheet {
         
         imageCardView.gesture()
             .sink { [weak self] _ in
-                guard let self = self,
-                      let delegate
-                else { return }
+                guard let self = self, let delegate, let data else { return }
+                
+                var type: AssetType?
+                
+                switch data.valType {
+                case "0":
+                    type = .nonMedic
+                case "1":
+                    type = .medic
+                default: break
+                }
+                
                 self.dismissBottomSheet() {
-                    delegate.didTapAssetImage(String(self.data?.complain?.equipment?.id ?? 0), type: .none)
+                    delegate.didTapAssetImage(String(self.data?.complain?.equipment?.id ?? 0), type: type ?? .none)
                 }
             }
             .store(in: &anyCancellable)
-        
     }
     
 }

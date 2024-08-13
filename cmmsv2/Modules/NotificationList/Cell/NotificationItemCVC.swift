@@ -56,9 +56,9 @@ extension NotificationItemCVC {
     }
     
     func setupCell(data: NotificationList) {
+        hideSkeletonAnimation()
         markView.makeCornerRadius(4, .rightCurve)
         badgeView.makeCornerRadius(4)
-        hideSkeletonAnimation()
         configureBadgeView(type: NotificationType(rawValue: data.type_string?.rawValue ?? "") ?? NotificationType.none)
         dateTimeLabel.text = data.time ?? ""
         shortTitleLabel.text = data.short_title

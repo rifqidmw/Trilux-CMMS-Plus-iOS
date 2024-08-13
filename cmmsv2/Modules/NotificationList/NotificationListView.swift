@@ -77,11 +77,18 @@ extension NotificationListView {
             }
             .store(in: &anyCancellable)
         
+        presenter.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                isLoading ? self.collectionView.showAnimatedGradientSkeleton() : self.collectionView.hideSkeleton()
+            }
+            .store(in: &anyCancellable)
+        
     }
     
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Notifikasi", type: .plain)
-        
     }
     
     private func setupAction() {
@@ -108,7 +115,6 @@ extension NotificationListView {
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
         collectionView.isSkeletonable = true
-        collectionView.showAnimatedGradientSkeleton()
     }
     
     private func showSpinner(_ isShow: Bool) {
@@ -247,6 +253,10 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
                 presenter.navigateToComplaintDetail(navigation: navigation, id: String(complaintData.id ?? 0))
             } else {
                 self.showAlert(title: "Terjadi Kesalahan", message: "Tidak ada data yang cocok")
+            }
+        case .approveLk:
+            if let id = self.data[indexPath.row].item_id {
+                presenter.navigateToWorkSheetApprovalDetail(from: navigation, id: id)
             }
         default:
             break
