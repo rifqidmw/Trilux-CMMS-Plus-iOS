@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class ComplaintDetailView: BaseViewController {
     
@@ -73,7 +72,7 @@ extension ComplaintDetailView {
                       let media = data.medias,
                       let woList = data.valWoList
                 else { return }
-                self.hideAnimationSkeleton()
+                self.hideLoadingPopup()
                 self.assetHeaderView.configure(icon: "ic_notes_board", title: data.equipment?.txtName ?? "", type: .plain)
                 self.serialNumberView.configureView(title: "Serial Number", value: data.equipment?.txtSerial ?? "-")
                 self.brandView.configureView(title: "Merk", value: data.equipment?.txtBrand ?? "-")
@@ -107,6 +106,13 @@ extension ComplaintDetailView {
                 }
             }
             .store(in: &anyCancellable)
+        
+        presenter.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {
@@ -129,10 +135,6 @@ extension ComplaintDetailView {
         topicHeaderView.configure(icon: "ic_statistic_down", title: "Permasalahan", type: .plain)
         workSheetHeaderView.configure(icon: "ic_notes_board", title: "Lembar Kerja", type: .plain)
         pictureHeaderView.configure(icon: "ic_image", title: "Foto Kerusakan", type: .plain)
-        
-        DispatchQueue.main.async {
-            self.showAnimationSkeleton()
-        }
     }
     
     private func setupAction() {
@@ -157,37 +159,6 @@ extension ComplaintDetailView {
         tableView.delegate = self
         tableView.register(ValWorkSheetCell.nib, forCellReuseIdentifier: ValWorkSheetCell.identifier)
         tableView.separatorStyle = .none
-    }
-    
-    private func showAnimationSkeleton() {
-        [self.assetHeaderView.iconImageView,
-         self.assetHeaderView.titleLabel,
-         self.topicHeaderView.iconImageView,
-         self.topicHeaderView.titleLabel,
-         self.workSheetHeaderView.iconImageView,
-         self.workSheetHeaderView.titleLabel,
-         self.pictureHeaderView.iconImageView,
-         self.pictureHeaderView.titleLabel,
-         self.collectionView,
-         self.tableView].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
-        }
-    }
-    
-    private func hideAnimationSkeleton() {
-        [self.assetHeaderView.iconImageView,
-         self.assetHeaderView.titleLabel,
-         self.topicHeaderView.iconImageView,
-         self.topicHeaderView.titleLabel,
-         self.workSheetHeaderView.iconImageView,
-         self.workSheetHeaderView.titleLabel,
-         self.pictureHeaderView.iconImageView,
-         self.pictureHeaderView.titleLabel,
-         self.collectionView,
-         self.tableView].forEach {
-            $0.hideSkeleton()
-        }
     }
     
 }

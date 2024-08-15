@@ -7,7 +7,6 @@
 
 import UIKit
 import XLPagerTabStrip
-import SkeletonView
 
 class AssetDetailView: BaseViewController {
     
@@ -115,7 +114,7 @@ extension AssetDetailView {
             .sink { [weak self] isLoad in
                 guard let self else { return }
                 self.isLoading = isLoad
-                isLoad ? self.showAnimationSkeleton() : self.hideAnimationSkeleton()
+                isLoad ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
     }
@@ -199,29 +198,6 @@ extension AssetDetailView {
         self.delegate = self
         
         self.views = [generalInformation, toolsInformation, acceptanceInformation, mutationInformation, additionalDocument]
-    }
-    
-    private func showAnimationSkeleton() {
-        [self.assetImageView,
-         self.assetNameLabel,
-         self.serialNumberLabel,
-         self.assetTypeLabel,
-         self.seeProgressButton,
-         self.updateTechDataButton].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
-        }
-    }
-    
-    private func hideAnimationSkeleton() {
-        [self.assetImageView,
-         self.assetNameLabel,
-         self.serialNumberLabel,
-         self.assetTypeLabel,
-         self.seeProgressButton,
-         self.updateTechDataButton].forEach {
-            $0.hideSkeleton()
-        }
     }
     
 }

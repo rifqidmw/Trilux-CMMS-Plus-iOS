@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class WorkSheetApprovalDetailView: BaseViewController {
     
@@ -66,9 +65,6 @@ extension WorkSheetApprovalDetailView {
         assetImageView.makeCornerRadius(8, .topCurve)
         detailButton.configure(title: "Rincian", type: .bordered)
         approveButton.configure(title: "Setujui")
-        //        DispatchQueue.main.async {
-        //            self.showLoadingPopup()
-        //        }
     }
     
     private func setupAction() {

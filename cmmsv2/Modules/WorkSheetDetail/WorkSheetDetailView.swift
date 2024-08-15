@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 protocol WorkSheetDetailViewDelegate: AnyObject {
     func didSaveWorkSheet()
