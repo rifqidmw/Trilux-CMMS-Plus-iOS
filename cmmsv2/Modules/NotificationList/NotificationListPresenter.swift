@@ -22,7 +22,7 @@ class NotificationListPresenter: BasePresenter {
     @Published public var isError: Bool = false
     
     var page: Int = 1
-    var limit: Int = 300
+    var limit: Int = 80
     var isCanLoad = true
     var isFetchingMore = false
     

@@ -14,6 +14,7 @@ class WorkSheetCorrectiveDetailPresenter: BasePresenter {
     private let router: WorkSheetCorrectiveDetailRouter
     let idAsset: String?
     let idComplaint: String?
+    var valType: String?
     
     @Published public var complaintData: WorkSheetCorrectiveComplaint?
     var complaintEquipment: CorrectiveEquipment?
@@ -23,11 +24,12 @@ class WorkSheetCorrectiveDetailPresenter: BasePresenter {
     @Published public var isLoading: Bool = false
     @Published public var isError: Bool = false
     
-    init(interactor: WorkSheetCorrectiveDetailInteractor, router: WorkSheetCorrectiveDetailRouter, idAsset: String, idComplaint: String) {
+    init(interactor: WorkSheetCorrectiveDetailInteractor, router: WorkSheetCorrectiveDetailRouter, idAsset: String, idComplaint: String, valType: String) {
         self.interactor = interactor
         self.router = router
         self.idAsset = idAsset
         self.idComplaint = idComplaint
+        self.valType = valType
     }
     
 }

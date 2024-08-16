@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class DelayCorrectiveDetailView: BaseViewController {
     
@@ -57,7 +56,6 @@ extension DelayCorrectiveDetailView {
         setupAction()
         setupTableView()
         setupCollectionView()
-        showAnimationSkeleton()
     }
     
     private func fetchInitialData() {
@@ -75,7 +73,7 @@ extension DelayCorrectiveDetailView {
                       let workSheet = data.valWoList,
                       let medias = data.medias
                 else { return }
-                self.hideAnimationSkeleton()
+                self.hideLoadingPopup()
                 self.media = medias
                 self.reloadCollectionViewWithAnimation(self.collectionView)
                 
@@ -107,6 +105,13 @@ extension DelayCorrectiveDetailView {
                 
                 self.troubleTopicView.configureView(title: "Topik Kerusakan", value: data.txtTitle ?? "-")
                 self.troubleChronologyView.configureView(title: "Kronologi Kerusakan", value: data.txtDescriptions ?? "-")
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
     }
@@ -152,39 +157,6 @@ extension DelayCorrectiveDetailView {
         tableView.delegate = self
         tableView.register(ValWorkSheetCell.nib, forCellReuseIdentifier: ValWorkSheetCell.identifier)
         tableView.separatorStyle = .none
-    }
-    
-    private func showAnimationSkeleton() {
-        [self.headerAssetView.iconImageView,
-         self.headerAssetView.titleLabel,
-         self.headerTroubleView.iconImageView,
-         self.headerTroubleView.titleLabel,
-         self.headerWorkSheetView.iconImageView,
-         self.headerWorkSheetView.titleLabel,
-         self.headerDamagePictureView.iconImageView,
-         self.headerDamagePictureView.titleLabel,
-         self.collectionView,
-         self.tableView
-        ].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
-        }
-    }
-    
-    private func hideAnimationSkeleton() {
-        [self.headerAssetView.iconImageView,
-         self.headerAssetView.titleLabel,
-         self.headerTroubleView.iconImageView,
-         self.headerTroubleView.titleLabel,
-         self.headerWorkSheetView.iconImageView,
-         self.headerWorkSheetView.titleLabel,
-         self.headerDamagePictureView.iconImageView,
-         self.headerDamagePictureView.titleLabel,
-         self.collectionView,
-         self.tableView
-        ].forEach {
-            $0.hideSkeleton()
-        }
     }
     
 }

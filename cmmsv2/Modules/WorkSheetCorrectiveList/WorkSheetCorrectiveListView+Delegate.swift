@@ -25,7 +25,7 @@ extension WorkSheetCorrectiveListView: WorkSheetCorrectiveBottomSheetDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, String(data.id ?? 0), String(data.complain?.id ?? 0))
+        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, String(data.id ?? 0), String(data.complain?.id ?? 0), valType: data.valType ?? "")
     }
     
     func didTapDownload(_ id: String) {

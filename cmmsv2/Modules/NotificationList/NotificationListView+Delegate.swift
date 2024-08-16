@@ -30,7 +30,7 @@ extension NotificationListView: WorkSheetCorrectiveBottomSheetDelegate {
               let navigation = self.navigationController
         else { return }
         self.dismiss(animated: true)
-        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, String(data.id ?? 0), String(data.complain?.id ?? 0))
+        presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, String(data.id ?? 0), String(data.complain?.id ?? 0), valType: data.valType ?? "")
     }
     
 }

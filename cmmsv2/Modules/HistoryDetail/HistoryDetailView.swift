@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class HistoryDetailView: BaseViewController {
     
@@ -105,7 +104,7 @@ extension HistoryDetailView {
                 let description = workOrder.txtDescriptions ?? ""
                 let status = workOrder.txtType ?? ""
                 
-                self.hideAnimationSkeleton()
+                self.hideLoadingPopup()
                 self.headerImageView.loadImageUrl(equipment.valImage ?? "")
                 self.assetNameLabel.text = equipment.txtName ?? "-"
                 self.roomLabel.text = equipment.txtRuangan ?? "-"
@@ -151,10 +150,9 @@ extension HistoryDetailView {
             .store(in: &anyCancellable)
         
         presenter.$isLoading
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] isLoad in
+            .sink { [weak self] isLoading in
                 guard let self else { return }
-                isLoad ? self.showAnimationSkeleton() : self.hideAnimationSkeleton()
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
     }
@@ -216,33 +214,6 @@ extension HistoryDetailView {
         tableView.delegate = self
         tableView.register(TaskItemTVC.nib, forCellReuseIdentifier: TaskItemTVC.identifier)
         tableView.separatorStyle = .none
-    }
-    
-    private func showAnimationSkeleton() {
-        [self.headerImageView,
-         self.assetNameLabel,
-         self.statusView,
-         self.roomLabel,
-         self.serialNumberLabel,
-         self.dateLabel,
-         self.brandLabel
-        ].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
-        }
-    }
-    
-    private func hideAnimationSkeleton() {
-        [self.headerImageView,
-         self.assetNameLabel,
-         self.statusView,
-         self.roomLabel,
-         self.serialNumberLabel,
-         self.dateLabel,
-         self.brandLabel
-        ].forEach {
-            $0.hideSkeleton()
-        }
     }
     
 }

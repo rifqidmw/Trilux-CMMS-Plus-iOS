@@ -87,12 +87,16 @@ extension BasePresenter {
         router.goToHomeScreen(navigation: navigation)
     }
     
-    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, _ idAsset: String?, _ idComplaint: String?) {
-        router.navigateToDetailWorkSheetCorrective(navigation: navigation, idAsset ?? "", idComplaint ?? "")
+    func navigateToDetailWorkSheetCorrective(navigation: UINavigationController, _ idAsset: String?, _ idComplaint: String?, valType: String?) {
+        router.navigateToDetailWorkSheetCorrective(navigation: navigation, idAsset ?? "", idComplaint ?? "", valType: valType ?? "")
     }
     
     func navigateToLoadPreventive(_ navigation: UINavigationController, idAsset: String?, idLk: String?) {
         router.navigateToLoadPreventive(navigation, idAsset: idAsset ?? "", idLk: idLk ?? "")
+    }
+    
+    func navigateToWorkSheetApprovalDetail(from navigation: UINavigationController, id: String?) {
+        router.navigateToWorkSheetApprovalDetail(from: navigation, id: id ?? "")
     }
     
 }

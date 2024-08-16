@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class WorkSheetCorrectiveDetailView: BaseViewController {
     
@@ -69,7 +68,7 @@ extension WorkSheetCorrectiveDetailView {
                       let media = data.medias,
                       let woList = data.valWoList
                 else { return }
-                self.hideAnimationSkeleton()
+                self.hideLoadingPopup()
                 self.headerImageView.loadImageUrl(equipment.valImage ?? "")
                 self.titleLabel.text = equipment.txtName
                 self.roomLabel.text = equipment.txtRuangan
@@ -103,6 +102,13 @@ extension WorkSheetCorrectiveDetailView {
                 
             }
             .store(in: &anyCancellable)
+        
+        presenter.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {
@@ -115,9 +121,6 @@ extension WorkSheetCorrectiveDetailView {
         containerDetailContentView.makeCornerRadius(12)
         containerDetailContentView.addShadow(0.8)
         emptyView.makeCornerRadius(12)
-        DispatchQueue.main.async {
-            self.showAnimationSkeleton()
-        }
     }
     
     private func setupAction() {
@@ -137,7 +140,17 @@ extension WorkSheetCorrectiveDetailView {
                       let navigation = self.navigationController
                 else { return }
                 
-                presenter.navigateToDetailAsset(from: navigation, .none, id: presenter.idAsset ?? "")
+                var type: AssetType?
+                
+                switch presenter.valType {
+                case "1":
+                    type = .medic
+                case "2":
+                    type = .nonMedic
+                default: break
+                }
+                
+                presenter.navigateToDetailAsset(from: navigation, type ?? .none, id: presenter.idAsset ?? "")
             }
             .store(in: &anyCancellable)
         
@@ -166,41 +179,6 @@ extension WorkSheetCorrectiveDetailView {
         tableView.delegate = self
         tableView.register(ValWorkSheetCorrectionCell.nib, forCellReuseIdentifier: ValWorkSheetCorrectionCell.identifier)
         tableView.separatorStyle = .none
-    }
-    
-    private func showAnimationSkeleton() {
-        [self.headerImageView,
-         self.titleLabel,
-         self.roomLabel,
-         self.serialLabel,
-         self.dateLabel,
-         self.damagedLabel,
-         self.chronologyLabel,
-         self.collectionView,
-         self.tableView,
-         self.moreDetailButton,
-         self.seeProgressButton
-        ].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
-        }
-    }
-    
-    private func hideAnimationSkeleton() {
-        [self.headerImageView,
-         self.titleLabel,
-         self.roomLabel,
-         self.serialLabel,
-         self.dateLabel,
-         self.damagedLabel,
-         self.chronologyLabel,
-         self.collectionView,
-         self.tableView,
-         self.moreDetailButton,
-         self.seeProgressButton
-        ].forEach {
-            $0.hideSkeleton()
-        }
     }
     
 }
