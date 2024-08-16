@@ -40,6 +40,7 @@ class WorkSheetApprovalDetailView: BaseViewController {
     @IBOutlet weak var approveButton: GeneralButton!
     
     var presenter: WorkSheetApprovalDetailPresenter?
+    var data: HistoryDetailEntity?
     
     override func didLoad() {
         super.didLoad()
@@ -64,14 +65,25 @@ extension WorkSheetApprovalDetailView {
         containerAssetStackView.addShadow(2, position: .bottom, opacity: 0.2)
         assetImageView.makeCornerRadius(8, .topCurve)
         detailButton.configure(title: "Rincian", type: .bordered)
-        approveButton.configure(title: "Setujui")
     }
     
     private func setupAction() {
+        guard let presenter else { return }
         customNavigationView.arrowLeftBackButton.gesture()
             .sink { [weak self] _ in
                 guard let self, let navigation = self.navigationController else { return }
                 navigation.popViewController(animated: true)
+            }
+            .store(in: &anyCancellable)
+        
+        detailButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let navigation = self.navigationController,
+                      let detail = data?.data
+                else { return }
+                let data = WorkSheetRequestEntity(id: detail.woDetail?.valEngineerId, action: "lihat")
+                presenter.navigateToDetailWorkSheet(navigation, data: data, type: .monitoring)
             }
             .store(in: &anyCancellable)
     }
@@ -86,8 +98,14 @@ extension WorkSheetApprovalDetailView {
         presenter.$approvalData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self, let rating = data?.data?.woDetail?.valRating else { return }
+                guard let self,
+                      let detail = data?.data,
+                      let woDetail = detail.woDetail
+                else { return }
+                
+                let rating = woDetail.valRating ?? ""
                 self.hideLoadingPopup()
+                self.data = data
                 self.userImageView.layer.cornerRadius = self.userImageView.bounds.width / 2
                 self.userImageView.clipsToBounds = true
                 self.userImageView.loadImageUrl(data?.data?.woDetail?.valEngineerAvatar ?? "-")
@@ -106,6 +124,21 @@ extension WorkSheetApprovalDetailView {
                 self.startTimeLkView.configureView(title: "Mulai Bekerja", value: data?.data?.woDetail?.valStartTime ?? "-")
                 self.endTimeLkView.configureView(title: "Selesai Bekerja", value: data?.data?.woDetail?.valEndTime ?? "-")
                 self.workDurationLkView.configureView(title: "Durasi Bekerja", value: data?.data?.woDetail?.valDuration ?? "-")
+                
+                if woDetail.complain?.valStatus == "1" {
+                    approveButton.configure(title: "Setujui")
+                    approvingWorkSheet()
+                    
+                } else {
+                    approveButton.configure(title: "Disetujui", backgroundColor: UIColor.customPlaceholderColor, titleColor: UIColor.customLightGrayColor)
+                }
+                
+                if data?.status == 404 {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data?.message) {
+                        guard let navigation = self.navigationController else { return }
+                        navigation.popViewController(animated: true)
+                    }
+                }
             }
             .store(in: &anyCancellable)
         
@@ -113,6 +146,34 @@ extension WorkSheetApprovalDetailView {
             .sink { [weak self] isLoading in
                 guard let self else { return }
                 isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$approvalWorkSheet
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.hideLoadingPopup()
+                if data.message == "Success" {
+                    presenter.fetchInitData()
+                    approveButton.configure(title: "Disetujui", backgroundColor: UIColor.customPlaceholderColor, titleColor: UIColor.customLightGrayColor)
+                    approveButton.layoutIfNeeded()
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
+                }
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    private func approvingWorkSheet() {
+        approveButton.gesture()
+            .sink { [weak self] _ in
+                guard let self,
+                      let detail = self.data?.data?.woDetail,
+                      let presenter
+                else { return }
+                self.showLoadingPopup()
+                let requestData = ApproveWorkSheetRequest(woId: detail.valEngineerId, status: detail.stt_qr)
+                presenter.approvingWorkSheet(data: requestData)
             }
             .store(in: &anyCancellable)
     }

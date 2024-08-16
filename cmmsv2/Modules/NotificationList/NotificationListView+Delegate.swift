@@ -9,28 +9,55 @@ import UIKit
 
 extension NotificationListView: WorkSheetCorrectiveBottomSheetDelegate {
     
-    func didTapAssetImage(_ id: String, type: AssetType) {
-        AppLogger.log("-- CLICKED")
-    }
-    
-    func didTapDownload(_ id: String) {
-        AppLogger.log("-- CLICKED")
-    }
-    
     func didTapScanQR(_ data: WorkSheetListEntity, request: WorkSheetRequestEntity) {
-        AppLogger.log("-- CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToScan(from: navigation, .monitoring, data: data, delegate: self)
     }
     
     func didTapContinue(_ request: WorkSheetRequestEntity) {
-        AppLogger.log("-- CLICKED")
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.navigateToDetailWorkSheet(navigation, data: request, type: .monitoring, activity: .working, delegate: self)
     }
     
     func didTapDetailCorrective(data: WorkOrder) {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        self.dismiss(animated: true)
         presenter.navigateToDetailWorkSheetCorrective(navigation: navigation, String(data.id ?? 0), String(data.complain?.id ?? 0), valType: data.valType ?? "")
+    }
+    
+    func didTapDownload(_ id: String) {
+        openPDF(with: id) { errorMessage in
+            self.showAlert(title: errorMessage)
+        }
+    }
+    
+    func didTapAssetImage(_ id: String, type: AssetType) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailAsset(from: navigation, type, id: id)
+    }
+    
+}
+
+extension NotificationListView: ScanViewDelegate {
+    
+    func didNavigateAfterSaveWorkSheet() {
+        guard let presenter, let navigation = self.navigationController else { return }
+        let view = WorkSheetCorrectiveListRouter().showView()
+        presenter.backToPreviousPage(from: navigation, view)
+    }
+    
+}
+
+extension NotificationListView: WorkSheetDetailViewDelegate {
+    
+    func didSaveWorkSheet() {
+        guard let navigation = self.navigationController else { return }
+        navigation.popViewController(animated: true)
     }
     
 }

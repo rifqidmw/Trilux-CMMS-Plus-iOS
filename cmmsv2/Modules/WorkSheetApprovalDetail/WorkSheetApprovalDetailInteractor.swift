@@ -13,4 +13,8 @@ class WorkSheetApprovalDetailInteractor: BaseInteractor {
         return api.requestApiPublisher(.detailHistory(id: id))
     }
     
+    func approveWorkSheet(data: ApproveWorkSheetRequest) -> AnyPublisher<ApproveWorkSheetEntity, Error> {
+        return api.requestApiPublisher(.approveWorkSheet(data: data))
+    }
+    
 }
