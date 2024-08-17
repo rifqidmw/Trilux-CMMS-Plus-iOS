@@ -256,7 +256,11 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
             }
         case .approveLk:
             if let id = self.data[indexPath.row].item_id {
-                presenter.navigateToWorkSheetApprovalDetail(from: navigation, id: id)
+                if id.starts(with: "index?") {
+                    self.showAlert(title: "Terjadi Kesalahan", message: "Tidak ada data yang cocok")
+                } else {
+                    presenter.navigateToWorkSheetApprovalDetail(from: navigation, id: id)
+                }
             }
         default:
             break
