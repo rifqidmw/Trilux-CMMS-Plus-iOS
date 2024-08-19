@@ -14,6 +14,21 @@ extension DelayCorrectiveListView: CorrectiveCellDelegate {
         presenter.showAddComplaintBottomSheet(from: navigation, data: data, self, type: title)
     }
     
+    func didTapDeleteLk(data: Complaint) {
+        guard let presenter, let navigation = self.navigationController else { return }
+        presenter.showConfirmDeleteDelegateLk(navigation: navigation, delegate: self, data: data)
+    }
+    
+}
+
+extension DelayCorrectiveListView: DeleteComplaintBottomSheetDelegate {
+    
+    func didDeleteLk(data: Complaint) {
+        guard let presenter else { return }
+        presenter.deleteWorkSheet(idLk: data.idLkActive ?? "")
+        self.showLoadingPopup()
+    }
+    
 }
 
 extension DelayCorrectiveListView: AddComplaintBottomSheetDelegate {

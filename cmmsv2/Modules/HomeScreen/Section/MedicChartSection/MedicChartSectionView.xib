@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicChartSectionView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="containerStackView" destination="d73-wL-GAw" id="ySU-qt-DfP"/>
+                <outlet property="horizontalBarChartView" destination="eKI-1M-D2A" id="ZhD-50-bSU"/>
+                <outlet property="pieChartView" destination="kTy-9w-j6i" id="mOI-n2-Mey"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d73-wL-GAw">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTy-9w-j6i" customClass="PieChartView" customModule="DGCharts">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="Xky-KN-uig"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKI-1M-D2A" customClass="HorizontalBarChartView" customModule="DGCharts">
+                            <rect key="frame" x="150" y="0.0" width="243" height="300"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="d73-wL-GAw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3rQ-kU-VbP"/>
+                <constraint firstItem="d73-wL-GAw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oue-Z5-E5r"/>
+                <constraint firstAttribute="bottom" secondItem="d73-wL-GAw" secondAttribute="bottom" id="QFR-Za-ceV"/>
+                <constraint firstAttribute="trailing" secondItem="d73-wL-GAw" secondAttribute="trailing" id="RAq-i7-DYs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

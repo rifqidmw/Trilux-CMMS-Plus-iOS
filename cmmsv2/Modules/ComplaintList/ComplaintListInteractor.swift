@@ -38,4 +38,8 @@ class ComplaintListInteractor: BaseInteractor {
         return api.requestApiPublisher(.createCorrective(engineerId: engineerId ?? "", complainId: complainId ?? "", dueDate: dueDate ?? "", engineerPendamping: engineerPendamping ?? []))
     }
     
+    func deleteLk(idLk: String?) -> AnyPublisher<DeleteComplaintEntity, Error> {
+        return api.requestApiPublisher(.deleteLk(id: idLk ?? ""))
+    }
+    
 }

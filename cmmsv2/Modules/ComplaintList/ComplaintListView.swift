@@ -65,11 +65,14 @@ extension ComplaintListView {
         presenter.$advanceWorkSheet
             .sink { [weak self] data in
                 guard let self, let data else { return }
+                self.hideLoadingPopup()
+                self.dismissBottomSheet()
+                self.reloadTableViewWithAnimation(self.tableView)
+                
                 if data.message == "Success" {
-                    self.hideLoadingPopup()
-                    self.dismissBottomSheet()
                     self.fetchInitialData()
-                    self.reloadTableViewWithAnimation(self.tableView)
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
                 }
             }
             .store(in: &anyCancellable)
@@ -77,11 +80,29 @@ extension ComplaintListView {
         presenter.$acceptCorrective
             .sink { [weak self] data in
                 guard let self, let data else { return }
+                self.hideLoadingPopup()
+                self.dismissBottomSheet()
+                self.reloadTableViewWithAnimation(self.tableView)
+                
                 if data.message == "Success" {
-                    self.hideLoadingPopup()
-                    self.dismissBottomSheet()
                     self.fetchInitialData()
-                    self.reloadTableViewWithAnimation(self.tableView)
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
+                }
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$deletedLkData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.hideLoadingPopup()
+                self.dismissBottomSheet()
+                self.reloadTableViewWithAnimation(self.tableView)
+                
+                if data.message == "Success" {
+                    self.fetchInitialData()
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
                 }
             }
             .store(in: &anyCancellable)

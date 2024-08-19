@@ -23,6 +23,7 @@ class CorrectiveTVC: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var actionButton: GeneralButton!
+    @IBOutlet weak var secondActionButton: GeneralButton!
     
     var anyCancellable = Set<AnyCancellable>()
     static let identifier = String(describing: CorrectiveTVC.self)
@@ -37,6 +38,7 @@ class CorrectiveTVC: UITableViewCell {
         self.containerView.makeCornerRadius(8)
         self.containerView.addShadow(2, position: .bottom, opacity: 0.2)
         self.actionButton.makeCornerRadius(8)
+        self.secondActionButton.makeCornerRadius(8)
         self.statusView.makeCornerRadius(4)
         self.showSkeletonAnimation()
     }
@@ -84,41 +86,40 @@ extension CorrectiveTVC {
             }
             .store(in: &anyCancellable)
         
-        
+        secondActionButton.gesture()
+            .sink { _ in
+                delegate.didTapDeleteLk(data: complaint)
+            }
+            .store(in: &anyCancellable)
     }
     
     private func configureActionButton(data: Complaint) {
         actionButton.isHidden = true
+        secondActionButton.isHidden = true
+        let userRole = RoleManager.shared.currentUserRole
         
-        if data.canPendamping == "1" {
-            actionButton.isHidden = false
-            actionButton.configure(title: "Pendamping", type: .withIcon, icon: "ic_screwdriver_white")
-        }
-        
-        if let userLocal = AppManager.getUser()?.valPosition {
-            switch userLocal {
-            case "1":
-                if data.canDeleteLk == true {
-                    actionButton.isHidden = false
-                    actionButton.configure(title: "Delete Delegasi", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customIndicatorColor3, titleColor: UIColor.customIndicatorColor4)
-                }
-            case "2":
+        switch userRole {
+        case .ipsrs:
+            if data.canDeleteLk == true {
                 actionButton.isHidden = false
-                actionButton.configure(title: "Terima", type: .withIcon, icon: "ic_screwdriver_white")
-            default:
-                break
+                actionButton.configure(title: "Hapus Delegasi LK", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customIndicatorColor3, titleColor: UIColor.customIndicatorColor4)
             }
+        case .engineer:
+            actionButton.isHidden = false
+            actionButton.configure(title: "Terima", type: .withIcon, icon: "ic_screwdriver_white")
+        default:
+            break
         }
         
         if data.valStatus == "0" {
-            if let localUser = AppManager.getUser()?.valPosition {
-                if localUser == "2" {
-                    actionButton.isHidden = false
-                    actionButton.configure(title: "Terima", type: .withIcon, icon: "ic_screwdriver_white")
-                } else {
-                    actionButton.isHidden = false
-                    actionButton.configure(title: "Korektif", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customIndicatorColor2, titleColor: UIColor.customIndicatorColor11)
-                }
+            switch userRole {
+            case .engineer:
+                actionButton.isHidden = false
+                actionButton.configure(title: "Terima", type: .withIcon, icon: "ic_screwdriver_white")
+            case .ipsrs:
+                actionButton.isHidden = false
+                actionButton.configure(title: "Korektif", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customPrimaryColor, titleColor: UIColor.customSecondaryColor)
+            default: break
             }
         }
         
@@ -129,6 +130,17 @@ extension CorrectiveTVC {
         if data.isDelay == "1" {
             actionButton.isHidden = false
             actionButton.configure(title: "Korektif Lanjutan", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customIndicatorColor2, titleColor: UIColor.customIndicatorColor11)
+        }
+        
+        if data.canPendamping == "1" && data.canDeleteLk == true {
+            actionButton.isHidden = false
+            actionButton.configure(title: "Pendamping", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customPrimaryColor, titleColor: UIColor.customSecondaryColor)
+            
+            secondActionButton.isHidden = false
+            secondActionButton.configure(title: "Hapus Delegasi LK", type: .withIcon, icon: "ic_trash_red", backgroundColor: UIColor.customIndicatorColor3, titleColor: UIColor.customIndicatorColor4)
+        } else if data.canPendamping == "1"  {
+            actionButton.isHidden = false
+            actionButton.configure(title: "Pendamping", type: .withIcon, icon: "ic_screwdriver_white", backgroundColor: UIColor.customPrimaryColor, titleColor: UIColor.customSecondaryColor)
         }
     }
     
@@ -164,7 +176,8 @@ extension CorrectiveTVC {
          self.statusView,
          self.technicianLabel,
          self.damageLabel,
-         self.actionButton].forEach {
+         self.actionButton,
+         self.secondActionButton].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
         }
@@ -178,7 +191,8 @@ extension CorrectiveTVC {
          self.statusView,
          self.technicianLabel,
          self.damageLabel,
-         self.actionButton].forEach {
+         self.actionButton,
+         self.secondActionButton].forEach {
             $0.hideSkeleton()
         }
     }

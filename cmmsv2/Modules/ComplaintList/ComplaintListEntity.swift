@@ -158,12 +158,14 @@ enum CorrectiveStatusType: String, Codable {
 enum CorrectiveTitleType: String {
     case advanced
     case accept
+    case partner
     case none
     
     init?(rawValue: String) {
         switch rawValue {
         case "Korektif Lanjutan": self = .advanced
         case "Terima": self = .accept
+        case "Pendamping": self = .partner
         case "": self = .none
         default: self = .none
         }
@@ -237,6 +239,7 @@ protocol SelectTechnicianBottomSheetDelegate: AnyObject {
 
 protocol CorrectiveCellDelegate: AnyObject {
     func didTapContinueCorrective(data: Complaint, title: CorrectiveTitleType)
+    func didTapDeleteLk(data: Complaint)
 }
 
 // MARK: - ADVANCED CORRECTIVE RESPONSE
@@ -409,4 +412,18 @@ struct AcceptValIcon: Codable {
     let bg: String?
     let fo: String?
     let lbl: String?
+}
+
+struct DeleteComplaintEntity: Codable {
+    let data: DeleteComplaintData?
+    let message: String?
+    let status: Int?
+}
+
+struct DeleteComplaintData: Codable {
+    let complainId: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case complainId = "complain_id"
+    }
 }
