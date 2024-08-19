@@ -55,6 +55,13 @@ extension BasePresenter {
         router.navigateToScan(from: navigation, type, data: data, request: request, delegate: delegate)
     }
     
+    func showConfirmDeleteDelegateLk(navigation: UINavigationController, delegate: DeleteComplaintBottomSheetDelegate, data: Complaint) {
+        let bottomSheet = DeleteComplaintBottomSheet(nibName: String(describing: DeleteComplaintBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.data = data
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
     func backToPreviousPage(from navigation: UINavigationController, _ view: UIViewController) {
         router.backToPreviousPage(from: navigation, view)
     }

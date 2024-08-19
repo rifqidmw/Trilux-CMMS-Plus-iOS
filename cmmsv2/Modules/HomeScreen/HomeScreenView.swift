@@ -13,6 +13,11 @@ class HomeScreenView: BaseViewController {
     @IBOutlet weak var searchButton: GeneralButton!
     @IBOutlet weak var categoryView: CategorySectionView!
     @IBOutlet weak var scanningButton: GeneralButton!
+    @IBOutlet weak var bannerButton: UIImageView!
+    @IBOutlet weak var complaintChartSectionView: ComplaintChartSectionView!
+    @IBOutlet weak var correctiveChartSectionView: CorrectiveChartSectionView!
+    @IBOutlet weak var medicChartSectionView: MedicChartSectionView!
+    @IBOutlet weak var nonMedicChartSectionView: MedicChartSectionView!
     
     var presenter: HomeScreenPresenter?
     
@@ -26,6 +31,7 @@ class HomeScreenView: BaseViewController {
         super.willAppear()
         self.setupNavigationView()
     }
+    
 }
 
 extension HomeScreenView {
@@ -42,6 +48,9 @@ extension HomeScreenView {
         searchButton.configure(type: .searchbutton)
         scanningButton.configure(title: "Scan Alat", type: .withIcon, icon: "ic_scan")
         categoryView.delegate = self
+        bannerButton.makeCornerRadius(8)
+        medicChartSectionView.type = .medic
+        nonMedicChartSectionView.type = .nonMedic
         categoryView.updateDataForRole()
     }
     

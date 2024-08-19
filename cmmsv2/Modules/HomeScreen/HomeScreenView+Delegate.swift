@@ -66,7 +66,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapMaintenanceCategory() {
-        self.showAlert(title: "Pemeliharaan")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showBottomSheetWorkSheet(navigation: navigation, delegate: self)
     }
     
     func didTapWorkSheetApprovalCategory() {
@@ -123,7 +126,11 @@ extension HomeScreenView: WorkSheetBottomSheetDelegate {
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToWorkSheetCorrective(navigation: navigation)
+        if RoleManager.shared.currentUserRole == .ipsrs {
+            presenter.navigateToComplaintList(navigation: navigation)
+        } else {
+            presenter.navigateToWorkSheetCorrective(navigation: navigation)
+        }
     }
     
     func didTapMaintenancePreventive() {

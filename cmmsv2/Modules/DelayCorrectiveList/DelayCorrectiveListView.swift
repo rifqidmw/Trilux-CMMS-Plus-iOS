@@ -86,6 +86,21 @@ extension DelayCorrectiveListView {
                 }
             }
             .store(in: &anyCancellable)
+        
+        presenter.$deletedLkData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.hideLoadingPopup()
+                self.dismissBottomSheet()
+                self.reloadTableViewWithAnimation(self.tableView)
+                
+                if data.message == "Success" {
+                    self.fetchInitialData()
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
+                }
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {

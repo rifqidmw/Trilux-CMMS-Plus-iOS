@@ -20,6 +20,7 @@ class DelayCorrectiveListPresenter: BasePresenter {
     @Published public var complaint: [Complaint] = []
     @Published public var advanceWorkSheet: CreateLanjutanEntity?
     @Published public var acceptCorrective: AcceptCorrectiveEntity?
+    @Published public var deletedLkData: DeleteComplaintEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -163,6 +164,30 @@ extension DelayCorrectiveListPresenter {
                 receiveValue: { acceptCorrective in
                     DispatchQueue.main.async {
                         self.acceptCorrective = acceptCorrective
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func deleteWorkSheet(idLk: String?) {
+        self.isLoading = true
+        interactor.deleteLk(idLk: idLk ?? "")
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { deletedLk in
+                    DispatchQueue.main.async {
+                        self.deletedLkData = deletedLk
                     }
                 }
             )

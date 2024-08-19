@@ -20,6 +20,7 @@ class ComplaintListPresenter: BasePresenter {
     @Published public var complaint: [Complaint] = []
     @Published public var advanceWorkSheet: CreateLanjutanEntity?
     @Published public var acceptCorrective: AcceptCorrectiveEntity?
+    @Published public var deletedLkData: DeleteComplaintEntity?
     var filterStatusData: [StatusFilterEntity] = [
         StatusFilterEntity(id: "0", status: .open),
         StatusFilterEntity(id: "1", status: .progress),
@@ -64,7 +65,12 @@ extension ComplaintListPresenter {
     }
     
     func fetchComplaintListData(
-        equipmentId: String, status: String, limit: Int, page: Int, dateFilter: String, keyword: String) {
+        equipmentId: String,
+        status: String,
+        limit: Int,
+        page: Int,
+        dateFilter: String,
+        keyword: String) {
             self.isLoading = true
             interactor.getComplaintList(
                 page: page,
@@ -175,6 +181,30 @@ extension ComplaintListPresenter {
                 receiveValue: { acceptCorrective in
                     DispatchQueue.main.async {
                         self.acceptCorrective = acceptCorrective
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func deleteWorkSheet(idLk: String?) {
+        self.isLoading = true
+        interactor.deleteLk(idLk: idLk ?? "")
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { deletedLk in
+                    DispatchQueue.main.async {
+                        self.deletedLkData = deletedLk
                     }
                 }
             )

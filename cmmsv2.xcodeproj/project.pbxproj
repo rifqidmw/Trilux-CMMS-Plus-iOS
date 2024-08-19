@@ -623,6 +623,22 @@
 		CEC927D52C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC927D22C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift */; };
 		CEC927D62C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC927D32C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib */; };
 		CEC927D72C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC927D22C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift */; };
+		CECA02D82C7334CA00008ECC /* DeleteComplaintBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02D62C7334CA00008ECC /* DeleteComplaintBottomSheet.swift */; };
+		CECA02D92C7334CA00008ECC /* DeleteComplaintBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02D72C7334CA00008ECC /* DeleteComplaintBottomSheet.xib */; };
+		CECA02DA2C7334CA00008ECC /* DeleteComplaintBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02D62C7334CA00008ECC /* DeleteComplaintBottomSheet.swift */; };
+		CECA02DB2C7334CA00008ECC /* DeleteComplaintBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02D72C7334CA00008ECC /* DeleteComplaintBottomSheet.xib */; };
+		CECA02E12C7352FF00008ECC /* ComplaintChartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02DF2C7352FF00008ECC /* ComplaintChartSectionView.swift */; };
+		CECA02E22C7352FF00008ECC /* ComplaintChartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02E02C7352FF00008ECC /* ComplaintChartSectionView.xib */; };
+		CECA02E32C7352FF00008ECC /* ComplaintChartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02DF2C7352FF00008ECC /* ComplaintChartSectionView.swift */; };
+		CECA02E42C7352FF00008ECC /* ComplaintChartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02E02C7352FF00008ECC /* ComplaintChartSectionView.xib */; };
+		CECA02E72C73538C00008ECC /* CorrectiveChartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02E52C73538C00008ECC /* CorrectiveChartSectionView.swift */; };
+		CECA02E82C73538C00008ECC /* CorrectiveChartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02E62C73538C00008ECC /* CorrectiveChartSectionView.xib */; };
+		CECA02E92C73538C00008ECC /* CorrectiveChartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02E52C73538C00008ECC /* CorrectiveChartSectionView.swift */; };
+		CECA02EA2C73538C00008ECC /* CorrectiveChartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02E62C73538C00008ECC /* CorrectiveChartSectionView.xib */; };
+		CECA02ED2C7353CA00008ECC /* MedicChartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02EB2C7353CA00008ECC /* MedicChartSectionView.swift */; };
+		CECA02EE2C7353CA00008ECC /* MedicChartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02EC2C7353CA00008ECC /* MedicChartSectionView.xib */; };
+		CECA02EF2C7353CA00008ECC /* MedicChartSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA02EB2C7353CA00008ECC /* MedicChartSectionView.swift */; };
+		CECA02F02C7353CA00008ECC /* MedicChartSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA02EC2C7353CA00008ECC /* MedicChartSectionView.xib */; };
 		CECA99242C569FD600FE655E /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA99232C569FD600FE655E /* RoleManager.swift */; };
 		CECA99252C569FD600FE655E /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA99232C569FD600FE655E /* RoleManager.swift */; };
 		CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB3DA42B45D962004A260D /* AppDelegate.swift */; };
@@ -1300,6 +1316,14 @@
 		CEC897152B77395C006CB552 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
 		CEC927D22C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValWorkSheetCorrectionCell.swift; sourceTree = "<group>"; };
 		CEC927D32C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValWorkSheetCorrectionCell.xib; sourceTree = "<group>"; };
+		CECA02D62C7334CA00008ECC /* DeleteComplaintBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteComplaintBottomSheet.swift; sourceTree = "<group>"; };
+		CECA02D72C7334CA00008ECC /* DeleteComplaintBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteComplaintBottomSheet.xib; sourceTree = "<group>"; };
+		CECA02DF2C7352FF00008ECC /* ComplaintChartSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintChartSectionView.swift; sourceTree = "<group>"; };
+		CECA02E02C7352FF00008ECC /* ComplaintChartSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintChartSectionView.xib; sourceTree = "<group>"; };
+		CECA02E52C73538C00008ECC /* CorrectiveChartSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectiveChartSectionView.swift; sourceTree = "<group>"; };
+		CECA02E62C73538C00008ECC /* CorrectiveChartSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectiveChartSectionView.xib; sourceTree = "<group>"; };
+		CECA02EB2C7353CA00008ECC /* MedicChartSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicChartSectionView.swift; sourceTree = "<group>"; };
+		CECA02EC2C7353CA00008ECC /* MedicChartSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicChartSectionView.xib; sourceTree = "<group>"; };
 		CECA99232C569FD600FE655E /* RoleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManager.swift; sourceTree = "<group>"; };
 		CECB3DA12B45D962004A260D /* cmmsv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cmmsv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECB3DA42B45D962004A260D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -2598,6 +2622,9 @@
 			isa = PBXGroup;
 			children = (
 				CECA99262C56A89D00FE655E /* CategorySection */,
+				CECA02DC2C7352AB00008ECC /* ComplaintChartSection */,
+				CECA02DD2C7352C800008ECC /* CorrectiveChartSection */,
+				CECA02DE2C7352D100008ECC /* MedicChartSection */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -2657,6 +2684,7 @@
 		CEC802882C20B5F7002EE193 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				CECA02D52C7334AB00008ECC /* DeleteComplaintBottomSheet */,
 				CEF049982C1C1FE0006B6FFD /* AddComplaintBottomSheet */,
 				CEF049AD2C1C624C006B6FFD /* SelectTechnicianBottomSheet */,
 			);
@@ -2688,6 +2716,42 @@
 				CEC927D32C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib */,
 			);
 			path = ValWorkSheetCorrectionCell;
+			sourceTree = "<group>";
+		};
+		CECA02D52C7334AB00008ECC /* DeleteComplaintBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CECA02D62C7334CA00008ECC /* DeleteComplaintBottomSheet.swift */,
+				CECA02D72C7334CA00008ECC /* DeleteComplaintBottomSheet.xib */,
+			);
+			path = DeleteComplaintBottomSheet;
+			sourceTree = "<group>";
+		};
+		CECA02DC2C7352AB00008ECC /* ComplaintChartSection */ = {
+			isa = PBXGroup;
+			children = (
+				CECA02DF2C7352FF00008ECC /* ComplaintChartSectionView.swift */,
+				CECA02E02C7352FF00008ECC /* ComplaintChartSectionView.xib */,
+			);
+			path = ComplaintChartSection;
+			sourceTree = "<group>";
+		};
+		CECA02DD2C7352C800008ECC /* CorrectiveChartSection */ = {
+			isa = PBXGroup;
+			children = (
+				CECA02E52C73538C00008ECC /* CorrectiveChartSectionView.swift */,
+				CECA02E62C73538C00008ECC /* CorrectiveChartSectionView.xib */,
+			);
+			path = CorrectiveChartSection;
+			sourceTree = "<group>";
+		};
+		CECA02DE2C7352D100008ECC /* MedicChartSection */ = {
+			isa = PBXGroup;
+			children = (
+				CECA02EB2C7353CA00008ECC /* MedicChartSectionView.swift */,
+				CECA02EC2C7353CA00008ECC /* MedicChartSectionView.xib */,
+			);
+			path = MedicChartSection;
 			sourceTree = "<group>";
 		};
 		CECA99262C56A89D00FE655E /* CategorySection */ = {
@@ -3562,16 +3626,19 @@
 				CECB777F2B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
 				CE58FA592C0B8A3A0067D8C4 /* PhysicalMonitoringTVC.xib in Resources */,
 				CE90B15B2B99605700515AD6 /* ComplaintListView.xib in Resources */,
+				CECA02D92C7334CA00008ECC /* DeleteComplaintBottomSheet.xib in Resources */,
 				CEE67D3A2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
 				CEC2C84B2BD2491500A9D454 /* WorkSheetCVC.xib in Resources */,
 				CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CEB05F5C2C60BBB5004BA1AE /* EmptyView.xib in Resources */,
 				CEF049B82C1C80D2006B6FFD /* SelectTechnicialCell.xib in Resources */,
 				CE7C3BD52C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
+				CECA02E82C73538C00008ECC /* CorrectiveChartSectionView.xib in Resources */,
 				CE829B052C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C72C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
+				CECA02EE2C7353CA00008ECC /* MedicChartSectionView.xib in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91072B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
 				CEF43CC12C3F35E900B34FE2 /* SelectStatusBottomSheet.xib in Resources */,
@@ -3606,6 +3673,7 @@
 				CE9878812C5A86E2008E0F77 /* TrackProgressBottomSheet.xib in Resources */,
 				CE82D4582B47DDB200A54124 /* LoginView.xib in Resources */,
 				CE9BC1CA2BE3D19400D20086 /* InformationDetailView.xib in Resources */,
+				CECA02E22C7352FF00008ECC /* ComplaintChartSectionView.xib in Resources */,
 				CECB3DAC2B45D962004A260D /* Main.storyboard in Resources */,
 				CE9E7DBC2B531E4600240A7D /* UploadMediaBottomSheet.xib in Resources */,
 				CE3108712BE2659F00660275 /* AdditionalDocumentsView.xib in Resources */,
@@ -3733,16 +3801,19 @@
 				CECB77802B4C79610069AC05 /* AllCategoriesBottomSheet.xib in Resources */,
 				CE58FA5B2C0B8A3A0067D8C4 /* PhysicalMonitoringTVC.xib in Resources */,
 				CE90B15C2B99605700515AD6 /* ComplaintListView.xib in Resources */,
+				CECA02DB2C7334CA00008ECC /* DeleteComplaintBottomSheet.xib in Resources */,
 				CEE67D3B2B5442BF00D0844B /* AssetBottomSheet.xib in Resources */,
 				CEC2C84C2BD2491500A9D454 /* WorkSheetCVC.xib in Resources */,
 				CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CEB05F5E2C60BBB5004BA1AE /* EmptyView.xib in Resources */,
 				CEF049BA2C1C80D2006B6FFD /* SelectTechnicialCell.xib in Resources */,
 				CE7C3BD62C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
+				CECA02EA2C73538C00008ECC /* CorrectiveChartSectionView.xib in Resources */,
 				CE829B062C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C92C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
+				CECA02F02C7353CA00008ECC /* MedicChartSectionView.xib in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91082B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
 				CEF43CC22C3F35E900B34FE2 /* SelectStatusBottomSheet.xib in Resources */,
@@ -3777,6 +3848,7 @@
 				CE9878822C5A86E2008E0F77 /* TrackProgressBottomSheet.xib in Resources */,
 				CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */,
 				CE9BC1CB2BE3D19400D20086 /* InformationDetailView.xib in Resources */,
+				CECA02E42C7352FF00008ECC /* ComplaintChartSectionView.xib in Resources */,
 				CECB3DC82B45DAFF004A260D /* Main.storyboard in Resources */,
 				CE9E7DBD2B531E4600240A7D /* UploadMediaBottomSheet.xib in Resources */,
 				CE3108722BE2659F00660275 /* AdditionalDocumentsView.xib in Resources */,
@@ -3964,6 +4036,7 @@
 				CEE780C22C0C56AA001BA9C2 /* ElectricTVC.swift in Sources */,
 				CE9E7D732B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91032B4F9434004C027A /* InformationCardView.swift in Sources */,
+				CECA02ED2C7353CA00008ECC /* MedicChartSectionView.swift in Sources */,
 				CE46B55D2C557DC600C5F8B5 /* AssetFilterView+TableView.swift in Sources */,
 				CEE79EC32B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CEFD6D202BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
@@ -3987,6 +4060,7 @@
 				CE916A732C06348B00C8B153 /* PreparationSectionView.swift in Sources */,
 				CEE8620B2C5CF6B000AA4317 /* EditTechnicalPresenter.swift in Sources */,
 				CEE8620C2C5CF6B000AA4317 /* EditTechnicalRouter.swift in Sources */,
+				CECA02E12C7352FF00008ECC /* ComplaintChartSectionView.swift in Sources */,
 				CEE8620D2C5CF6B000AA4317 /* EditTechnicalInteractor.swift in Sources */,
 				CEE8620E2C5CF6B000AA4317 /* EditTechnicalView.swift in Sources */,
 				CEE8620F2C5CF6B000AA4317 /* EditTechnicalEntity.swift in Sources */,
@@ -4000,6 +4074,7 @@
 				CE9286632C60D29C004F1245 /* InformationSectionView.swift in Sources */,
 				CEB703A92BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */,
 				CEB8C35E2C60D5240040B485 /* ComplaintInformationView.swift in Sources */,
+				CECA02E72C73538C00008ECC /* CorrectiveChartSectionView.swift in Sources */,
 				CEC207BB2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
 				CEB465B42C4CBC9800B10341 /* SortingBottomSheet.swift in Sources */,
 				CEF43CC02C3F35E900B34FE2 /* SelectStatusBottomSheet.swift in Sources */,
@@ -4198,6 +4273,7 @@
 				CE7327462BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */,
 				CEE07C912B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift in Sources */,
 				CE31084F2BE20D2000660275 /* AssetDetailPresenter.swift in Sources */,
+				CECA02D82C7334CA00008ECC /* DeleteComplaintBottomSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4295,6 +4371,7 @@
 				CEE780C42C0C56AA001BA9C2 /* ElectricTVC.swift in Sources */,
 				CE9E7D742B529EB300240A7D /* ChangePasswordView.swift in Sources */,
 				CE9F91042B4F9434004C027A /* InformationCardView.swift in Sources */,
+				CECA02EF2C7353CA00008ECC /* MedicChartSectionView.swift in Sources */,
 				CE46B55E2C557DC600C5F8B5 /* AssetFilterView+TableView.swift in Sources */,
 				CEE79EC42B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CEFD6D212BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
@@ -4318,6 +4395,7 @@
 				CE916A752C06348B00C8B153 /* PreparationSectionView.swift in Sources */,
 				CEE862112C5CF6B000AA4317 /* EditTechnicalPresenter.swift in Sources */,
 				CEE862122C5CF6B000AA4317 /* EditTechnicalRouter.swift in Sources */,
+				CECA02E32C7352FF00008ECC /* ComplaintChartSectionView.swift in Sources */,
 				CEE862132C5CF6B000AA4317 /* EditTechnicalInteractor.swift in Sources */,
 				CEE862142C5CF6B000AA4317 /* EditTechnicalView.swift in Sources */,
 				CEE862152C5CF6B000AA4317 /* EditTechnicalEntity.swift in Sources */,
@@ -4331,6 +4409,7 @@
 				CE9286642C60D29C004F1245 /* InformationSectionView.swift in Sources */,
 				CEB703AA2BA87FBD004583C7 /* PreventiveCalendarListEntity.swift in Sources */,
 				CEB8C3602C60D5240040B485 /* ComplaintInformationView.swift in Sources */,
+				CECA02E92C73538C00008ECC /* CorrectiveChartSectionView.swift in Sources */,
 				CEC207BC2B4B045D0073FA1E /* CategorySectionView.swift in Sources */,
 				CEB465B52C4CBC9800B10341 /* SortingBottomSheet.swift in Sources */,
 				CEF43CC32C3F35E900B34FE2 /* SelectStatusBottomSheet.swift in Sources */,
@@ -4529,6 +4608,7 @@
 				CE7327472BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */,
 				CEE07C922B9F408A00EFBFB8 /* PreventiveMaintenanceListInteractor.swift in Sources */,
 				CE3108502BE20D2000660275 /* AssetDetailPresenter.swift in Sources */,
+				CECA02DA2C7334CA00008ECC /* DeleteComplaintBottomSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
