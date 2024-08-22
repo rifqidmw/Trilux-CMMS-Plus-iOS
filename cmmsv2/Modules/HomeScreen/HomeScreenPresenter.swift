@@ -15,6 +15,7 @@ class HomeScreenPresenter: BasePresenter {
     @Published public var expiredData: ExpiredData?
     @Published public var reminderData: ReminderPreventiveEntity?
     @Published public var notification: [NotificationList] = []
+    @Published public var dashboardStatistic: DashboardStatisticEntity?
     var reminderList: [ReminderPreventiveData] = []
     
     @Published public var errorMessage: String = ""
@@ -101,6 +102,30 @@ extension HomeScreenPresenter {
                         else { return }
                         self.notification = newNotifications
                         AppManager.setNotificationList(newNotifications)
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchDashboardStatistic() {
+        self.isLoading = true
+        interactor.getStatisticLk()
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { statistic in
+                    DispatchQueue.main.async {
+                        self.dashboardStatistic = statistic
                     }
                 }
             )

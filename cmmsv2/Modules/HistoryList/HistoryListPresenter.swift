@@ -31,6 +31,7 @@ class HistoryListPresenter: BasePresenter {
     var limit: Int = 20
     var hasObstacle: Int = -1
     var woStatus: String = "approved"
+    var woType: Int? = nil
     var isCanLoad = true
     var isFetchingMore = false
     
@@ -38,26 +39,35 @@ class HistoryListPresenter: BasePresenter {
 
 extension HistoryListPresenter {
     
-    func fetchInitData(hasObstacle: Int? = nil) {
+    func fetchInitData(hasObstacle: Int? = nil, woType: Int? = nil) {
         if let hasObstacle = hasObstacle {
             self.hasObstacle = hasObstacle
         }
+        
+        if let woType = woType {
+            self.woType = woType
+        }
+        
         self.page = 1
         self.historyData.removeAll()
         self.fetchHistoryList(
-            woStatus: self.woStatus,
+            woStatus: self.woStatus, 
+            woType: self.woType,
             limit: self.limit,
-            hasObstacle: self.hasObstacle, page: self.page
+            hasObstacle: self.hasObstacle, 
+            page: self.page
         )
     }
     
     func fetchHistoryList(
         woStatus: String? = nil,
+        woType: Int? = nil,
         limit: Int? = nil,
         hasObstacle: Int? = nil,
         page: Int? = nil) {
             self.isLoading = true
             interactor.getComplaintHistoryList(
+                woType: woType,
                 woStatus: woStatus,
                 limit: limit,
                 hasObstacle: hasObstacle,
@@ -106,6 +116,7 @@ extension HistoryListPresenter {
         page += 1
         self.fetchHistoryList(
             woStatus: self.woStatus,
+            woType: self.woType,
             limit: self.limit,
             hasObstacle: self.hasObstacle,
             page: self.page)

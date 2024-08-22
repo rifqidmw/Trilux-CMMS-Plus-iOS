@@ -21,4 +21,8 @@ class HomeScreenInteractor: BaseInteractor {
         return api.requestApiPublisher(.getNotification(page: 1, limit: 80))
     }
     
+    func getStatisticLk() -> AnyPublisher<DashboardStatisticEntity, Error> {
+        return api.requestApiPublisher(.dashboardStatistic)
+    }
+    
 }

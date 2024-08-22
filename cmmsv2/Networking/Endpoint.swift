@@ -135,6 +135,7 @@ enum Endpoint {
         id: String?,
         page: Int)
     case deleteLk(id: String?)
+    case dashboardStatistic
 }
 
 // MARK: - PATH URL
@@ -302,6 +303,8 @@ extension Endpoint {
             return generateEquipmentCalibrationURL(limit: limit, id: id ?? "", page: page)
         case .deleteLk(id: let id):
             return "lk/delete_lk_korektif?id=\(id ?? "")"
+        case .dashboardStatistic:
+            return "statistic/lk"
         }
     }
     

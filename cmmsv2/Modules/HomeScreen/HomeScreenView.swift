@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DGCharts
 
 class HomeScreenView: BaseViewController {
     
@@ -14,10 +15,10 @@ class HomeScreenView: BaseViewController {
     @IBOutlet weak var categoryView: CategorySectionView!
     @IBOutlet weak var scanningButton: GeneralButton!
     @IBOutlet weak var bannerButton: UIImageView!
-    @IBOutlet weak var complaintChartSectionView: ComplaintChartSectionView!
-    @IBOutlet weak var correctiveChartSectionView: CorrectiveChartSectionView!
-    @IBOutlet weak var medicChartSectionView: MedicChartSectionView!
-    @IBOutlet weak var nonMedicChartSectionView: MedicChartSectionView!
+    @IBOutlet weak var complaintChartSectionView: DashboardChartView!
+    @IBOutlet weak var correctiveChartSectionView: DashboardChartView!
+    @IBOutlet weak var medicChartSectionView: DashboardChartView!
+    @IBOutlet weak var nonMedicChartSectionView: DashboardChartView!
     
     var presenter: HomeScreenPresenter?
     
@@ -49,8 +50,7 @@ extension HomeScreenView {
         scanningButton.configure(title: "Scan Alat", type: .withIcon, icon: "ic_scan")
         categoryView.delegate = self
         bannerButton.makeCornerRadius(8)
-        medicChartSectionView.type = .medic
-        nonMedicChartSectionView.type = .nonMedic
+        bannerButton.addShadow(0.2)
         categoryView.updateDataForRole()
     }
     
@@ -68,6 +68,7 @@ extension HomeScreenView {
         guard let presenter else { return }
         presenter.fetchInitData()
         presenter.fetchListNotificationData()
+        presenter.fetchDashboardStatistic()
         if RoleManager.shared.currentUserRole == .engineer {
             presenter.fetchReminderPreventive(date: String.getCurrentDateString("yyyy-MM-dd"))
         }
@@ -105,6 +106,16 @@ extension HomeScreenView {
             .sink { [weak self] data in
                 guard let self else { return }
                 self.checkStoredNotificationList(data)
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$dashboardStatistic
+            .sink { [weak self] data in
+                guard let self, let statistic = data?.data?.woStatistics else { return }
+                self.configureComplaintChart(statistic)
+                self.configureCorrectiveChart(statistic)
+                self.configureMedicChart(statistic)
+                self.configureNonMedicChart(statistic)
             }
             .store(in: &anyCancellable)
     }
@@ -161,6 +172,121 @@ extension HomeScreenView {
                 presenter.navigateToAssetFilter(from: navigation)
             }
             .store(in: &anyCancellable)
+        
+        bannerButton.gesture()
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.showAlert(title: "Dashboard Page")
+            }
+            .store(in: &anyCancellable)
+    }
+    
+}
+
+extension HomeScreenView {
+    
+    private func configureComplaintChart(_ data: [WOStatistic]) {
+        let filteredComplaintItem = data.filter { $0.name?.hasPrefix("Pengaduan") ?? false }
+        let complaintEntries = filteredComplaintItem.compactMap { item in
+            let pieChartEntries = PieChartDataEntry(value: Double(item.count ?? "") ?? 0.0, label: item.name)
+            return pieChartEntries
+        }
+        let complaintDataSet = PieChartDataSet(entries: complaintEntries)
+        let complaintColorSet = [UIColor.customPrimaryColor, UIColor.customDarkYellowColor, UIColor.customGreenColor]
+        let totalComplaintCount = filteredComplaintItem.reduce(0) { result, item in
+            result + (Int(item.count ?? "") ?? 0)
+        }
+        let data = ChartAppearanceEntity(
+            titleSection: "Pengaduan",
+            pieEntries: complaintEntries,
+            pieDataSet: complaintDataSet,
+            pieChartColors: complaintColorSet,
+            centerPieChartText: String(totalComplaintCount),
+            pieChartTitleText: "Total Pengaduan",
+            chartCount: String(totalComplaintCount),
+            barStatistic: filteredComplaintItem)
+        
+        self.complaintChartSectionView.configure(data, from: .complaint)
+        self.complaintChartSectionView.delegate = self
+    }
+    
+    private func configureCorrectiveChart(_ data: [WOStatistic]) {
+        let filteredCorrectiveItem = data.filter { $0.name?.hasPrefix("Korektif") ?? false }
+        let correctiveEntries = filteredCorrectiveItem.compactMap { item in
+            let correctiveChartEntrie = PieChartDataEntry(value: Double(item.count ?? "") ?? 0.0, label: item.name)
+            return correctiveChartEntrie
+        }
+        let correctiveDataSet = PieChartDataSet(entries: correctiveEntries)
+        let correctiveColorSet = [UIColor.customPrimaryColor, UIColor.customDarkYellowColor, UIColor.customRedColor]
+        let totalCorrectiveCount = filteredCorrectiveItem.reduce(0) { result, item in
+            result + (Int(item.count ?? "") ?? 0)
+        }
+        let data = ChartAppearanceEntity(
+            titleSection: "Korektif",
+            pieEntries: correctiveEntries,
+            pieDataSet: correctiveDataSet,
+            pieChartColors: correctiveColorSet,
+            centerPieChartText: String(totalCorrectiveCount),
+            pieChartTitleText: "Total Korektif",
+            chartCount: String(totalCorrectiveCount),
+            barStatistic: filteredCorrectiveItem)
+        
+        self.correctiveChartSectionView.configure(data, from: .corrective)
+        self.correctiveChartSectionView.delegate = self
+    }
+    
+    private func configureMedicChart(_ data: [WOStatistic]) {
+        let filteredMedicItem = data.filter {
+            ($0.name?.contains("alat medik") ?? false) && $0.name != "Total alat alat medik"
+        }
+        
+        let medicEntries = filteredMedicItem.compactMap { item in
+            let medicChartEntries = PieChartDataEntry(value: Double(item.count ?? "") ?? 0.0, label: item.name)
+            return medicChartEntries
+        }
+        let medicDataSet = PieChartDataSet(entries: medicEntries)
+        let medicTotalCount = filteredMedicItem.reduce(0) { result, item in
+            result + (Int(item.count ?? "") ?? 0)
+        }
+        let data = ChartAppearanceEntity(
+            titleSection: "Alat Medik",
+            pieEntries: medicEntries,
+            pieDataSet: medicDataSet,
+            pieChartColors: assetStatisticColors,
+            centerPieChartText: String(medicTotalCount),
+            pieChartTitleText: "Total Alat Medik",
+            chartCount: String(medicTotalCount),
+            barStatistic: filteredMedicItem)
+        
+        self.medicChartSectionView.configure(data, from: .medic)
+        self.medicChartSectionView.delegate = self
+    }
+    
+    private func configureNonMedicChart(_ data: [WOStatistic]) {
+        let filteredNonMedicItem = data.filter {
+            ($0.name?.contains("alat non") ?? false) && $0.name != "Total alat alat medik"
+        }
+        
+        let nonMedicEntries = filteredNonMedicItem.compactMap { item in
+            let nonMedicChartEntries = PieChartDataEntry(value: Double(item.count ?? "") ?? 0.0, label: item.name)
+            return nonMedicChartEntries
+        }
+        let nonMedicChartSet = PieChartDataSet(entries: nonMedicEntries)
+        let nonMedicChartCount = filteredNonMedicItem.reduce(0) { result, item in
+            result + (Int(item.count ?? "") ?? 0)
+        }
+        let data = ChartAppearanceEntity(
+            titleSection: "Alat Non Medik",
+            pieEntries: nonMedicEntries,
+            pieDataSet: nonMedicChartSet,
+            pieChartColors: assetStatisticColors,
+            centerPieChartText: String(nonMedicChartCount),
+            pieChartTitleText: "Total Alat Non Medik",
+            chartCount: String(nonMedicChartCount),
+            barStatistic: filteredNonMedicItem)
+        
+        self.nonMedicChartSectionView.configure(data, from: .nonMedic)
+        self.nonMedicChartSectionView.delegate = self
     }
     
 }

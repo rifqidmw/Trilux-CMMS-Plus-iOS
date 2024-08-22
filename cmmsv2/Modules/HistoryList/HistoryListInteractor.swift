@@ -10,11 +10,13 @@ import Combine
 class HistoryListInteractor: BaseInteractor {
     
     func getComplaintHistoryList(
+        woType: Int? = nil,
         woStatus: String? = nil,
         limit: Int? = nil,
         hasObstacle: Int? = nil,
         page: Int? = nil) -> AnyPublisher<WorkSheetCorrectiveListEntity, Error> {
             return api.requestApiPublisher(.workSheetCorrective(
+                woType: woType,
                 woStatus: woStatus,
                 limit: limit,
                 hasObstacle: hasObstacle,
