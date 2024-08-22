@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="containerBarChartView" destination="5Sl-4E-r2s" id="JzP-on-Zcv"/>
+                <outlet property="containerPieChartView" destination="DZO-c9-Hfs" id="sVJ-cR-IL4"/>
+                <outlet property="containerPieChartWidthConstraint" destination="EVm-2U-qPe" id="5rK-aT-9wL"/>
+                <outlet property="containerProgressBarStackView" destination="tdF-42-BqE" id="pSB-0U-VZT"/>
+                <outlet property="containerView" destination="hjz-LT-Lbo" id="hCR-Lt-Iw3"/>
+                <outlet property="pieChartTitleLabel" destination="ByF-0i-glZ" id="2fr-pr-Cr9"/>
+                <outlet property="pieChartView" destination="Xc3-9o-43b" id="aOE-j3-OeL"/>
+                <outlet property="titleLabel" destination="JFC-a0-Svq" id="3pA-FI-MAK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjz-LT-Lbo">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFC-a0-Svq">
+                            <rect key="frame" x="16" y="16" width="361" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="YGr-Ts-Kg1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="customDarkGrayColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dIt-bU-946">
+                            <rect key="frame" x="16" y="50" width="361" height="134"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZO-c9-Hfs">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="134"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xc3-9o-43b" customClass="PieChartView" customModule="DGCharts">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="134"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-0i-glZ">
+                                            <rect key="frame" x="8" y="8" width="134" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="HbF-Xu-dgd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
+                                            <color key="textColor" name="placeholderColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="customLightGrayColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="EVm-2U-qPe"/>
+                                        <constraint firstItem="Xc3-9o-43b" firstAttribute="top" secondItem="DZO-c9-Hfs" secondAttribute="top" id="TCc-kP-XSC"/>
+                                        <constraint firstAttribute="trailing" secondItem="Xc3-9o-43b" secondAttribute="trailing" id="Wvu-FD-fcR"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xc3-9o-43b" secondAttribute="bottom" id="bMX-1r-9Ob"/>
+                                        <constraint firstItem="ByF-0i-glZ" firstAttribute="leading" secondItem="DZO-c9-Hfs" secondAttribute="leading" constant="8" id="coq-ht-R7f"/>
+                                        <constraint firstAttribute="trailing" secondItem="ByF-0i-glZ" secondAttribute="trailing" constant="8" id="mv7-ca-Lo1"/>
+                                        <constraint firstItem="Xc3-9o-43b" firstAttribute="leading" secondItem="DZO-c9-Hfs" secondAttribute="leading" id="o2K-JK-ieZ"/>
+                                        <constraint firstItem="ByF-0i-glZ" firstAttribute="top" secondItem="DZO-c9-Hfs" secondAttribute="top" constant="8" id="qaT-Uk-4DU"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Sl-4E-r2s">
+                                    <rect key="frame" x="166" y="0.0" width="195" height="134"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tdF-42-BqE">
+                                            <rect key="frame" x="8" y="0.0" width="179" height="118"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="customLightGrayColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="tdF-42-BqE" secondAttribute="bottom" constant="16" id="1Om-6K-QxT"/>
+                                        <constraint firstItem="tdF-42-BqE" firstAttribute="top" secondItem="5Sl-4E-r2s" secondAttribute="top" id="Fr0-Dc-7TH"/>
+                                        <constraint firstItem="tdF-42-BqE" firstAttribute="leading" secondItem="5Sl-4E-r2s" secondAttribute="leading" constant="8" id="Qdj-A8-yIq"/>
+                                        <constraint firstAttribute="trailing" secondItem="tdF-42-BqE" secondAttribute="trailing" constant="8" id="qAe-Hs-KSD"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="dIt-bU-946" secondAttribute="bottom" constant="16" id="FXq-Z6-H68"/>
+                        <constraint firstItem="dIt-bU-946" firstAttribute="top" secondItem="JFC-a0-Svq" secondAttribute="bottom" constant="16" id="GjV-1g-0I5"/>
+                        <constraint firstAttribute="trailing" secondItem="dIt-bU-946" secondAttribute="trailing" constant="16" id="JbG-xK-tON"/>
+                        <constraint firstItem="JFC-a0-Svq" firstAttribute="top" secondItem="hjz-LT-Lbo" secondAttribute="top" constant="16" id="KGK-b9-Oel"/>
+                        <constraint firstItem="dIt-bU-946" firstAttribute="leading" secondItem="hjz-LT-Lbo" secondAttribute="leading" constant="16" id="Vr9-j4-WUY"/>
+                        <constraint firstAttribute="trailing" secondItem="JFC-a0-Svq" secondAttribute="trailing" constant="16" id="Ya7-T3-yHC"/>
+                        <constraint firstItem="JFC-a0-Svq" firstAttribute="leading" secondItem="hjz-LT-Lbo" secondAttribute="leading" constant="16" id="kZe-bm-04P"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hjz-LT-Lbo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7zJ-DR-bWP"/>
+                <constraint firstAttribute="bottom" secondItem="hjz-LT-Lbo" secondAttribute="bottom" id="bTy-VQ-YL0"/>
+                <constraint firstAttribute="trailing" secondItem="hjz-LT-Lbo" secondAttribute="trailing" id="jFs-LM-wrF"/>
+                <constraint firstItem="hjz-LT-Lbo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ukf-Wx-jLQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="placeholderColor">
+            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

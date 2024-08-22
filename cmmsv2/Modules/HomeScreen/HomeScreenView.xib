@@ -13,11 +13,11 @@
             <connections>
                 <outlet property="bannerButton" destination="atR-01-Vkf" id="SOg-uB-yvP"/>
                 <outlet property="categoryView" destination="Zwo-aJ-2ms" id="cRB-tf-UnD"/>
-                <outlet property="complaintChartSectionView" destination="uh0-rn-FNz" id="tSx-JE-9SY"/>
-                <outlet property="correctiveChartSectionView" destination="fEC-zl-DLM" id="6hd-xV-d7w"/>
-                <outlet property="medicChartSectionView" destination="Mcd-9z-6SW" id="X3n-4f-aYc"/>
+                <outlet property="complaintChartSectionView" destination="uh0-rn-FNz" id="5iZ-Rr-9UF"/>
+                <outlet property="correctiveChartSectionView" destination="fEC-zl-DLM" id="SJo-Jw-6av"/>
+                <outlet property="medicChartSectionView" destination="Mcd-9z-6SW" id="8u3-l2-VbF"/>
                 <outlet property="navigationView" destination="xDh-H6-m3f" id="V3z-VO-Xb0"/>
-                <outlet property="nonMedicChartSectionView" destination="YaH-vn-KVj" id="hpR-e8-2rK"/>
+                <outlet property="nonMedicChartSectionView" destination="YaH-vn-KVj" id="3Np-LN-gZo"/>
                 <outlet property="scanningButton" destination="bZt-0T-HyK" id="1yC-Sr-cdJ"/>
                 <outlet property="searchButton" destination="ftA-98-Fo5" id="fbt-Z6-DUT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,7 +31,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SZB-gw-7Hy">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="1662"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1862"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-o3-hIJ" userLabel="Navigation View">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
@@ -95,7 +95,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouv-YZ-TBW">
                                     <rect key="frame" x="0.0" y="502" width="393" height="144"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboard_banner" translatesAutoresizingMaskIntoConstraints="NO" id="atR-01-Vkf">
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboard_banner" translatesAutoresizingMaskIntoConstraints="NO" id="atR-01-Vkf">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="144"/>
                                         </imageView>
                                     </subviews>
@@ -108,30 +108,39 @@
                                         <constraint firstAttribute="bottom" secondItem="atR-01-Vkf" secondAttribute="bottom" id="qcQ-dn-uAI"/>
                                     </constraints>
                                 </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i8W-cw-9Xk">
-                                    <rect key="frame" x="0.0" y="662" width="393" height="1000"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i8W-cw-9Xk">
+                                    <rect key="frame" x="0.0" y="662" width="393" height="1200"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-rn-FNz" customClass="ComplaintChartSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-rn-FNz" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="16" y="16" width="361" height="230"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="230" id="rnY-Bi-Qeg"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEC-zl-DLM" customClass="CorrectiveChartSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEC-zl-DLM" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="16" y="262" width="361" height="230"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="230" id="EOf-xS-0U5"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcd-9z-6SW" customClass="MedicChartSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="508" width="361" height="230"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcd-9z-6SW" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="508" width="361" height="330"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="330" id="XDf-l4-0qW"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YaH-vn-KVj" customClass="MedicChartSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="754" width="361" height="230"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YaH-vn-KVj" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="854" width="361" height="330"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="330" id="uoc-PY-Ll2"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1000" id="yZK-5a-5qL"/>
-                                    </constraints>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
                                 </stackView>
                             </subviews>

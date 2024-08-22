@@ -80,7 +80,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapComplaintHistoryCategory() {
-        self.showAlert(title: "Riwayat Pengaduan")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToHistoryList(navigation: navigation)
     }
     
     func didTapMonitoringFunctionCategory() {
@@ -247,6 +250,24 @@ extension HomeScreenView: ReminderPreventiveBottomSheetDelegate, ScanViewDelegat
         else { return }
         let view = HomeScreenRouter().showView()
         presenter.backToPreviousPage(from: navigation, view)
+    }
+    
+}
+
+extension HomeScreenView: DashboardChartViewDelegate {
+    
+    func didTapBarChart(type: DashboardChartType) {
+        guard let presenter, let navigation = self.navigationController else { return }
+        switch type {
+        case .complaint:
+            presenter.navigateToComplaintList(navigation: navigation)
+        case .corrective:
+            presenter.navigateToDelayCorrectiveList(navigation: navigation)
+        case .medic:
+            presenter.navigateToAssetMedicList(navigation: navigation)
+        case .nonMedic:
+            presenter.navigateToAssetNonMedicList(navigation: navigation)
+        }
     }
     
 }

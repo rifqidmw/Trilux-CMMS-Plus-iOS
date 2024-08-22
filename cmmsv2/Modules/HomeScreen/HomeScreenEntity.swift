@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ListingType: Int {
     case asset = 0
@@ -324,3 +325,34 @@ struct ReminderPreventiveData: Codable {
         case namaPerating = "nama_perating"
     }
 }
+
+struct DashboardStatisticEntity: Codable {
+    let count: Int?
+    let data: DashboardStatisticData?
+    let message: String?
+    let status: Int?
+    let reff: [String: String]?
+}
+
+struct DashboardStatisticData: Codable {
+    let woStatistics: [WOStatistic]?
+    
+    enum CodingKeys: String, CodingKey {
+        case woStatistics = "wo_statistics"
+    }
+}
+
+struct WOStatistic: Codable {
+    let name: String?
+    let count: String?
+    let action: String?
+    let filter: String?
+}
+
+let assetStatisticColors: [UIColor] = [
+    UIColor.customRedColor,
+    UIColor.customDarkYellowColor,
+    UIColor.customPrimaryColor,
+    UIColor.customDarkGrayColor,
+    UIColor.customIndicatorColor13
+]

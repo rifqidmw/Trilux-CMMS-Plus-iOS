@@ -21,7 +21,11 @@ extension HistoryListView: SortingBottomSheetDelegate {
     func didTapApplySort(_ sort: SortingEntity, type: SortingBottomSheetType) {
         guard let presenter else { return }
         self.showLoadingPopup()
-        presenter.fetchInitData(hasObstacle: sort.hasObstacle)
+        if RoleManager.shared.currentUserRole == .ipsrs {
+            presenter.fetchInitData(woType: 1)
+        } else {
+            presenter.fetchInitData()
+        }
         self.reloadCollectionViewWithAnimation(self.collectionView)
     }
     

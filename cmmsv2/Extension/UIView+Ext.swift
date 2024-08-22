@@ -129,6 +129,38 @@ extension UIView {
         })
     }
     
+    func createProgressBar(value: Float, color: UIColor, labelText: String) -> UIView {
+        let container = UIView()
+        let label = UILabel()
+        label.text = labelText
+        label.font = UIFont.robotoRegular(10)
+        label.textColor = .customPlaceholderColor
+        
+        let progressBar = UIProgressView(progressViewStyle: .default)
+        progressBar.progress = value
+        progressBar.tintColor = color
+        
+        container.addSubview(label)
+        container.addSubview(progressBar)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            label.topAnchor.constraint(equalTo: container.topAnchor),
+            
+            progressBar.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            progressBar.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            progressBar.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 4),
+            progressBar.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            progressBar.heightAnchor.constraint(equalToConstant: 6)
+        ])
+        
+        return container
+    }
+    
 }
 
 enum ShadowPosition {
