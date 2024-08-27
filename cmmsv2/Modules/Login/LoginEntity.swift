@@ -50,7 +50,7 @@ struct User: Codable {
     let isPolisi: String?
     var ttd: String?
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case txtName
         case txtUsername
         case valImageThumbnail
@@ -70,6 +70,35 @@ struct User: Codable {
         case ttd
     }
     
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        txtName = try container.decodeIfPresent(String.self, forKey: .txtName)
+        txtUsername = try container.decodeIfPresent(String.self, forKey: .txtUsername)
+        valImageThumbnail = try container.decodeIfPresent(String.self, forKey: .valImageThumbnail)
+        valImage = try container.decodeIfPresent(String.self, forKey: .valImage)
+        
+        if let intValue = try? container.decode(Int.self, forKey: .valImageId) {
+            valImageId = String(intValue)
+        } else if let stringValue = try? container.decode(String.self, forKey: .valImageId) {
+            valImageId = stringValue
+        } else {
+            valImageId = nil
+        }
+        
+        valPosition = try container.decodeIfPresent(String.self, forKey: .valPosition)
+        txtJob = try container.decodeIfPresent(String.self, forKey: .txtJob)
+        txtDescriptions = try container.decodeIfPresent(String.self, forKey: .txtDescriptions)
+        txtJabatan = try container.decodeIfPresent(String.self, forKey: .txtJabatan)
+        txtUnitKerja = try container.decodeIfPresent(String.self, forKey: .txtUnitKerja)
+        txtTelepon = try container.decodeIfPresent(String.self, forKey: .txtTelepon)
+        valToken = try container.decodeIfPresent(String.self, forKey: .valToken)
+        valScope = try container.decodeIfPresent(ValScope.self, forKey: .valScope)
+        valPeringkat = try container.decodeIfPresent([Int].self, forKey: .valPeringkat)
+        valDeviceToken = try container.decodeIfPresent(String.self, forKey: .valDeviceToken)
+        isPolisi = try container.decodeIfPresent(String.self, forKey: .isPolisi)
+        ttd = try container.decodeIfPresent(String.self, forKey: .ttd)
+    }
 }
 
 struct HospitalTheme: Codable {

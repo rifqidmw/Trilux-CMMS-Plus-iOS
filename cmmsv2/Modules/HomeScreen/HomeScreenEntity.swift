@@ -37,6 +37,11 @@ protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapMaintenanceInfoCategory()
     func didTapMutationInfoCategory()
     func didTapCalibrationCategory()
+    func didTapMutatingCategory()
+    func didTapHistoryComplaintListCategory()
+    func didTapRoomRequirementCategory()
+    func didTapAssetSuggestCategory()
+    func didTapRatingCategory()
 }
 
 protocol AllCategoriesBottomSheetDelegate: AnyObject {
@@ -57,6 +62,11 @@ protocol AllCategoriesBottomSheetDelegate: AnyObject {
     func didTapMaintenanceInfoCategory()
     func didTapMutationInfoCategory()
     func didTapCalibrationCategory()
+    func didTapMutatingCategory()
+    func didTapComplaintHistoryList()
+    func didTapRoomRequirementCategory()
+    func didTapAssetSuggestCategory()
+    func didTapRatingCategory()
 }
 
 protocol WorkSheetBottomSheetDelegate: AnyObject {
@@ -138,6 +148,11 @@ enum CategoryTitle: String {
     case maintenanceInfo = "Info Pemeliharaan"
     case mutationInfo = "Info Mutasi"
     case calibration = "Kalibrasi"
+    case mutating = "Perpindahan"
+    case historyComplaintList = "Daftar & Riwayat Pengaduan"
+    case roomRequirement = "Kebutuhan Ruangan"
+    case assetSuggest = "Usulan Alat"
+    case rating = "Rating"
     case none = ""
     
     init?(rawValue: String) {
@@ -160,6 +175,11 @@ enum CategoryTitle: String {
         case "Info Pemeliharaan": self = .maintenanceInfo
         case "Info Mutasi": self = .mutationInfo
         case "Kalibrasi": self = .calibration
+        case "Perpindahan": self = .mutating
+        case "Daftar & Riwayat Pengaduan": self = .historyComplaintList
+        case "Kebutuhan Ruangan": self = .roomRequirement
+        case "Usulan Alat": self = .assetSuggest
+        case "Rating": self = .rating
         case "": self = .none
         default: self = .none
         }
@@ -188,6 +208,17 @@ let categoryDataIPSRS: [CategoryModel] = [
     CategoryModel(image: "ic_document_list_ellipse", title: .workSheetApproval),
     CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
     CategoryModel(image: "ic_calendar_with_stopwatch", title: .complaintHistory),
+]
+
+let categoryDataRoom: [CategoryModel] = [
+    CategoryModel(image: "ic_sitemap", title: .all),
+    CategoryModel(image: "ic_hospital", title: .asset),
+    CategoryModel(image: "ic_mutation", title: .mutating),
+    CategoryModel(image: "ic_notes_with_pencil", title: .historyComplaintList),
+    CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
+    CategoryModel(image: "ic_bubble_chat", title: .roomRequirement),
+    CategoryModel(image: "ic_bubble_chat", title: .assetSuggest),
+    CategoryModel(image: "ic_rating_circle", title: .rating)
 ]
 
 let categoryBottomSheetEngineerData: [CategoryModel] = [
