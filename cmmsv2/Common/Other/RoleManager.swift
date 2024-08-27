@@ -34,6 +34,7 @@ class RoleManager {
 enum UserRole: String {
     case ipsrs
     case engineer
+    case room
     case unknown
     
     init(valPosition: String) {
@@ -42,6 +43,8 @@ enum UserRole: String {
             self = .ipsrs
         case "2":
             self = .engineer
+        case "3":
+            self = .room
         default:
             self = .unknown
         }

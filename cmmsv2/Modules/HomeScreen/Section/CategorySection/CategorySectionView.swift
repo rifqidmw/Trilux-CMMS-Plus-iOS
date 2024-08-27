@@ -37,6 +37,8 @@ class CategorySectionView: UIView {
             data = categoryDataEngineer
         case .ipsrs:
             data = categoryDataIPSRS
+        case .room:
+            data = categoryDataRoom
         default:
             data = []
         }
@@ -118,6 +120,16 @@ extension CategorySectionView: UICollectionViewDataSource, UICollectionViewDeleg
             delegate.didTapMutationInfoCategory()
         case .calibration:
             delegate.didTapCalibrationCategory()
+        case .mutating:
+            delegate.didTapMutatingCategory()
+        case .historyComplaintList:
+            delegate.didTapComplaintHistoryCategory()
+        case .roomRequirement:
+            delegate.didTapRoomRequirementCategory()
+        case .assetSuggest:
+            delegate.didTapAssetSuggestCategory()
+        case .rating:
+            delegate.didTapRatingCategory()
         case .none:
             break
         }

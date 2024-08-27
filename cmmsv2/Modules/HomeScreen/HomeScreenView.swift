@@ -19,6 +19,7 @@ class HomeScreenView: BaseViewController {
     @IBOutlet weak var correctiveChartSectionView: DashboardChartView!
     @IBOutlet weak var medicChartSectionView: DashboardChartView!
     @IBOutlet weak var nonMedicChartSectionView: DashboardChartView!
+    @IBOutlet weak var assetChartSectionView: DashboardChartView!
     
     var presenter: HomeScreenPresenter?
     
@@ -116,6 +117,14 @@ extension HomeScreenView {
                 self.configureCorrectiveChart(statistic)
                 self.configureMedicChart(statistic)
                 self.configureNonMedicChart(statistic)
+                self.configureAssetChart(statistic)
+                
+                if RoleManager.shared.currentUserRole == .room {
+                    self.medicChartSectionView.isHidden = true
+                    self.nonMedicChartSectionView.isHidden = true
+                } else {
+                    self.assetChartSectionView.isHidden = true
+                }
             }
             .store(in: &anyCancellable)
     }
@@ -287,6 +296,31 @@ extension HomeScreenView {
         
         self.nonMedicChartSectionView.configure(data, from: .nonMedic)
         self.nonMedicChartSectionView.delegate = self
+    }
+    
+    private func configureAssetChart(_ data: [WOStatistic]) {
+        let filteredAssetItem = data.filter { ($0.name?.contains("alat") ?? false) }
+        
+        let assetEntries = filteredAssetItem.compactMap { item in
+            let allAssetEntries = PieChartDataEntry(value: Double(item.count ?? "") ?? 0.0, label: item.name)
+            return allAssetEntries
+        }
+        let assetChartSet = PieChartDataSet(entries: assetEntries)
+        let assetChartCount = filteredAssetItem.reduce(0) { result, item in
+            result + (Int(item.count ?? "") ?? 0)
+        }
+        let data = ChartAppearanceEntity(
+            titleSection: "Alat",
+            pieEntries: assetEntries,
+            pieDataSet: assetChartSet,
+            pieChartColors: assetStatisticColors,
+            centerPieChartText: String(assetChartCount),
+            pieChartTitleText: "Total Alat",
+            chartCount: String(assetChartCount),
+            barStatistic: filteredAssetItem)
+        
+        self.assetChartSectionView.configure(data, from: .medic)
+        self.assetChartSectionView.delegate = self
     }
     
 }

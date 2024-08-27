@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeScreenView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
+                <outlet property="assetChartSectionView" destination="iyc-cV-IWv" id="cE3-K7-1qa"/>
                 <outlet property="bannerButton" destination="atR-01-Vkf" id="SOg-uB-yvP"/>
                 <outlet property="categoryView" destination="Zwo-aJ-2ms" id="cRB-tf-UnD"/>
                 <outlet property="complaintChartSectionView" destination="uh0-rn-FNz" id="5iZ-Rr-9UF"/>
@@ -31,7 +32,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SZB-gw-7Hy">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="1862"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="2208"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-o3-hIJ" userLabel="Navigation View">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
@@ -109,7 +110,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i8W-cw-9Xk">
-                                    <rect key="frame" x="0.0" y="662" width="393" height="1200"/>
+                                    <rect key="frame" x="0.0" y="662" width="393" height="1546"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-rn-FNz" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="16" y="16" width="361" height="230"/>
@@ -137,6 +138,13 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="330" id="uoc-PY-Ll2"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyc-cV-IWv" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="1200" width="361" height="330"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="330" id="M0i-aM-3fO"/>
                                             </constraints>
                                         </view>
                                     </subviews>

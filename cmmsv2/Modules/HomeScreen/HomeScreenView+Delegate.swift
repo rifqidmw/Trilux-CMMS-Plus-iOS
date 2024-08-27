@@ -114,6 +114,26 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
         self.showAlert(title: "Kalibrasi")
     }
     
+    func didTapMutatingCategory() {
+        self.showAlert(title: "Mutasi")
+    }
+    
+    func didTapHistoryComplaintListCategory() {
+        self.showAlert(title: "Daftar & Riwayat Pengaduan")
+    }
+    
+    func didTapRoomRequirementCategory() {
+        self.showAlert(title: "Kebutuhan Ruangan")
+    }
+    
+    func didTapAssetSuggestCategory() {
+        self.showAlert(title: "Usulan Alat")
+    }
+    
+    func didTapRatingCategory() {
+        self.showAlert(title: "Rating")
+    }
+    
 }
 
 extension HomeScreenView: WorkSheetBottomSheetDelegate {
@@ -231,6 +251,10 @@ extension HomeScreenView: AllCategoriesBottomSheetDelegate {
         navigation.dismiss(animated: true) {
             presenter.navigateToCalendarPreventive(navigation: navigation)
         }
+    }
+    
+    func didTapComplaintHistoryList() {
+        self.showAlert(title: "Daftar & Riwayat Pengaduan")
     }
     
 }
