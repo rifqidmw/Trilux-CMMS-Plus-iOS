@@ -66,6 +66,8 @@ extension AllCategoriesBottomSheet {
             data = categoryBottomSheetEngineerData
         case .ipsrs:
             data = categoryBottomSheetIPSRSData
+        case .room:
+            data = categoryBottomSheetRoomData
         default:
             data = []
         }

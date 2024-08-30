@@ -21,8 +21,9 @@ extension String {
         }
     }
     
-    static func getCurrentDateString(_ formatter: String? = "yyyy-MM-dd") -> String {
+    static func getCurrentDateString(_ formatter: String? = "yyyy-MM-dd", localization: String? = "id_ID") -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: localization ?? "")
         dateFormatter.dateFormat = formatter
         return dateFormatter.string(from: Date())
     }

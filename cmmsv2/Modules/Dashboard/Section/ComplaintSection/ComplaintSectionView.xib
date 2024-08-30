@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComplaintSectionView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="complaintInfoCardView" destination="yDu-8C-JAE" id="OQy-s6-TtX"/>
+                <outlet property="doneInfoCardView" destination="a6o-Up-ji0" id="wUY-yj-EUs"/>
+                <outlet property="openInfoCardView" destination="ao7-fW-k4m" id="nXc-Wd-LfH"/>
+                <outlet property="progressInfoCardView" destination="cWi-nB-fLQ" id="72q-ge-bCV"/>
+                <outlet property="titleSectionLabel" destination="wZ0-7t-Xak" id="oKJ-b1-y3z"/>
+                <outlet property="troubleInfoCardView" destination="wg9-FC-6b4" id="SCv-Tv-4wc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pengaduan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZ0-7t-Xak">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="TR6-Xm-lJs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                    <color key="textColor" name="customDarkGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1T5-Du-FPH">
+                    <rect key="frame" x="0.0" y="34" width="393" height="266"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FoU-oJ-nNo">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDu-8C-JAE" customClass="DashboardCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="125"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao7-fW-k4m" customClass="DashboardCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="204.66666666666663" y="0.0" width="188.33333333333337" height="125"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ex7-hD-WO6">
+                            <rect key="frame" x="0.0" y="141" width="393" height="125"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWi-nB-fLQ" customClass="DashboardCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="125"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6o-Up-ji0" customClass="DashboardCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="136.33333333333334" y="0.0" width="120.33333333333334" height="125"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg9-FC-6b4" customClass="DashboardCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="272.66666666666669" y="0.0" width="120.33333333333331" height="125"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="1T5-Du-FPH" secondAttribute="trailing" id="49W-Eo-VGA"/>
+                <constraint firstItem="wZ0-7t-Xak" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7kp-JZ-yCB"/>
+                <constraint firstAttribute="bottom" secondItem="1T5-Du-FPH" secondAttribute="bottom" id="MDg-up-pA4"/>
+                <constraint firstAttribute="trailing" secondItem="wZ0-7t-Xak" secondAttribute="trailing" id="in2-ts-AwR"/>
+                <constraint firstItem="wZ0-7t-Xak" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ksv-yp-rM2"/>
+                <constraint firstItem="1T5-Du-FPH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oro-5P-C4V"/>
+                <constraint firstItem="1T5-Du-FPH" firstAttribute="top" secondItem="wZ0-7t-Xak" secondAttribute="bottom" constant="16" id="x9w-1W-dWX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="140" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

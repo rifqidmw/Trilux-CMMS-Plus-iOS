@@ -34,43 +34,42 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-Wg-9ak" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393.33333333333331" height="532.66666666666663"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="532.66666666666663"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1q-Bs-gYF" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="591.66666666666663" width="393.33333333333331" height="260.33333333333337"/>
+                    <rect key="frame" x="0.0" y="591.66666666666663" width="393" height="260.33333333333337"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-CK-sgc">
-                            <rect key="frame" x="16" y="34.000000000000014" width="361.33333333333331" height="192.33333333333337"/>
+                            <rect key="frame" x="16" y="34.000000000000014" width="361" height="192.33333333333337"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prc-zk-IWl">
-                                    <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="58"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="58" id="Mwc-3m-bje"/>
-                                        <constraint firstAttribute="width" constant="58" id="ipr-13-0F2"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUA-l6-J1O">
-                                    <rect key="frame" x="0.0" y="78" width="361.33333333333331" height="21.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="78" width="361" height="21.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                     <color key="textColor" name="customDarkGrayColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhP-1n-aL9">
-                                    <rect key="frame" x="0.0" y="119.66666666666676" width="361.33333333333331" height="16.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="119.66666666666676" width="361" height="16.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                     <color key="textColor" name="placeholderColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o4x-gI-6Pr">
-                                    <rect key="frame" x="0.0" y="156.33333333333337" width="361.33333333333331" height="36"/>
+                                    <rect key="frame" x="0.0" y="156.33333333333337" width="361" height="36"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-a2-5Qj" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="36"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxH-VX-3bX" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                            <rect key="frame" x="184.66666666666669" y="0.0" width="176.66666666666669" height="36"/>
+                                            <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="36"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>

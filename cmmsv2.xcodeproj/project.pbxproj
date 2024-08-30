@@ -993,6 +993,54 @@
 		CEFD6D292BF2713C00A8BA04 /* WorkSheetCorrectiveDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD6D1D2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailEntity.swift */; };
 		CEFE59B72B5EBF9200BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
 		CEFE59B82B5EBF9300BE73CB /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */; };
+		FA0DEE702C80E221005EA0E0 /* DashboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DEE6E2C80E221005EA0E0 /* DashboardCardView.swift */; };
+		FA0DEE712C80E221005EA0E0 /* DashboardCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */; };
+		FA0DEE722C80E221005EA0E0 /* DashboardCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */; };
+		FA0DEE732C80E221005EA0E0 /* DashboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DEE6E2C80E221005EA0E0 /* DashboardCardView.swift */; };
+		FA49E5B72C807A4600267925 /* ProfileInformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */; };
+		FA49E5B82C807A4600267925 /* ProfileInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */; };
+		FA49E5B92C807A4600267925 /* ProfileInformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */; };
+		FA49E5BA2C807A4600267925 /* ProfileInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */; };
+		FA74E3652C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */; };
+		FA74E3662C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
+		FA74E3672C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
+		FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */; };
+		FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */; };
+		FAC12A0E2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
+		FAC12A0F2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
+		FAC12A102C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */; };
+		FAC12A142C7FA2C900DBAB83 /* ComplaintSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A132C7FA2C900DBAB83 /* ComplaintSectionView.xib */; };
+		FAC12A152C7FA2C900DBAB83 /* ComplaintSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A122C7FA2C900DBAB83 /* ComplaintSectionView.swift */; };
+		FAC12A162C7FA2C900DBAB83 /* ComplaintSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A122C7FA2C900DBAB83 /* ComplaintSectionView.swift */; };
+		FAC12A172C7FA2C900DBAB83 /* ComplaintSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A132C7FA2C900DBAB83 /* ComplaintSectionView.xib */; };
+		FAC12A1B2C7FA33F00DBAB83 /* RepairSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A1A2C7FA33F00DBAB83 /* RepairSectionView.xib */; };
+		FAC12A1C2C7FA33F00DBAB83 /* RepairSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A192C7FA33F00DBAB83 /* RepairSectionView.swift */; };
+		FAC12A1D2C7FA33F00DBAB83 /* RepairSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A192C7FA33F00DBAB83 /* RepairSectionView.swift */; };
+		FAC12A1E2C7FA33F00DBAB83 /* RepairSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A1A2C7FA33F00DBAB83 /* RepairSectionView.xib */; };
+		FAC12A222C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A212C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib */; };
+		FAC12A232C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A202C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift */; };
+		FAC12A242C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A202C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift */; };
+		FAC12A252C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A212C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib */; };
+		FAC12A292C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A282C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib */; };
+		FAC12A2A2C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A272C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift */; };
+		FAC12A2B2C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A272C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift */; };
+		FAC12A2C2C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A282C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib */; };
+		FAC12A2F2C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A2E2C7FA3F500DBAB83 /* WorkLoadSectionView.xib */; };
+		FAC12A302C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A2D2C7FA3F500DBAB83 /* WorkLoadSectionView.swift */; };
+		FAC12A312C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A2D2C7FA3F500DBAB83 /* WorkLoadSectionView.swift */; };
+		FAC12A322C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A2E2C7FA3F500DBAB83 /* WorkLoadSectionView.xib */; };
+		FACCC1A92C7F31C30023CA43 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACCC1A72C7F31C30023CA43 /* DashboardView.xib */; };
+		FACCC1AA2C7F31C30023CA43 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A32C7F31C30023CA43 /* DashboardPresenter.swift */; };
+		FACCC1AB2C7F31C30023CA43 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A42C7F31C30023CA43 /* DashboardRouter.swift */; };
+		FACCC1AC2C7F31C30023CA43 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A52C7F31C30023CA43 /* DashboardInteractor.swift */; };
+		FACCC1AD2C7F31C30023CA43 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A62C7F31C30023CA43 /* DashboardView.swift */; };
+		FACCC1AE2C7F31C30023CA43 /* DashboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */; };
+		FACCC1AF2C7F31C30023CA43 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A32C7F31C30023CA43 /* DashboardPresenter.swift */; };
+		FACCC1B02C7F31C30023CA43 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A42C7F31C30023CA43 /* DashboardRouter.swift */; };
+		FACCC1B12C7F31C30023CA43 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A52C7F31C30023CA43 /* DashboardInteractor.swift */; };
+		FACCC1B22C7F31C30023CA43 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A62C7F31C30023CA43 /* DashboardView.swift */; };
+		FACCC1B32C7F31C30023CA43 /* DashboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */; };
+		FACCC1B42C7F31C30023CA43 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACCC1A72C7F31C30023CA43 /* DashboardView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1499,6 +1547,30 @@
 		CEFD6D1C2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetCorrectiveDetailView.xib; sourceTree = "<group>"; };
 		CEFD6D1D2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetCorrectiveDetailEntity.swift; sourceTree = "<group>"; };
 		CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		FA0DEE6E2C80E221005EA0E0 /* DashboardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCardView.swift; sourceTree = "<group>"; };
+		FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardCardView.xib; sourceTree = "<group>"; };
+		FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationCardView.swift; sourceTree = "<group>"; };
+		FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInformationCardView.xib; sourceTree = "<group>"; };
+		FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalSummaryCardView.swift; sourceTree = "<group>"; };
+		FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalSummaryCardView.xib; sourceTree = "<group>"; };
+		FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionView.swift; sourceTree = "<group>"; };
+		FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSectionView.xib; sourceTree = "<group>"; };
+		FAC12A122C7FA2C900DBAB83 /* ComplaintSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintSectionView.swift; sourceTree = "<group>"; };
+		FAC12A132C7FA2C900DBAB83 /* ComplaintSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintSectionView.xib; sourceTree = "<group>"; };
+		FAC12A192C7FA33F00DBAB83 /* RepairSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairSectionView.swift; sourceTree = "<group>"; };
+		FAC12A1A2C7FA33F00DBAB83 /* RepairSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepairSectionView.xib; sourceTree = "<group>"; };
+		FAC12A202C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringFunctionSectionView.swift; sourceTree = "<group>"; };
+		FAC12A212C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitoringFunctionSectionView.xib; sourceTree = "<group>"; };
+		FAC12A272C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationDashboardSectionView.swift; sourceTree = "<group>"; };
+		FAC12A282C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationDashboardSectionView.xib; sourceTree = "<group>"; };
+		FAC12A2D2C7FA3F500DBAB83 /* WorkLoadSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLoadSectionView.swift; sourceTree = "<group>"; };
+		FAC12A2E2C7FA3F500DBAB83 /* WorkLoadSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkLoadSectionView.xib; sourceTree = "<group>"; };
+		FACCC1A32C7F31C30023CA43 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		FACCC1A42C7F31C30023CA43 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		FACCC1A52C7F31C30023CA43 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		FACCC1A62C7F31C30023CA43 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		FACCC1A72C7F31C30023CA43 /* DashboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
+		FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEntity.swift; sourceTree = "<group>"; };
 		FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2787,6 +2859,7 @@
 				CE9E7D662B529DFB00240A7D /* ChangePassword */,
 				CE73273F2BECA834000AD875 /* ComplaintDetail */,
 				CE90B14C2B99602300515AD6 /* ComplaintList */,
+				FA7598682C7E552900F773A8 /* Dashboard */,
 				CE4D12162C096029007184B2 /* DelayCorrectiveDetail */,
 				CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */,
 				CEB05F462C6071A5004BA1AE /* Document */,
@@ -2805,6 +2878,7 @@
 				CE82D4492B47DD8E00A54124 /* RegistrationHospital */,
 				CEEED8652B7A86A800672952 /* Scan */,
 				CEF72EEE2B4681D200815E4C /* SplashScreen */,
+				FA74E3622C81EA32002CC8A3 /* StatisticalSummaryCard */,
 				CE9E7D642B529D9400240A7D /* UserProfile */,
 				CE6867F02C6A803B0031C345 /* WorkSheetApprovalDetail */,
 				CE7D4E7D2C581D08001F8D67 /* WorkSheetApprovalList */,
@@ -2933,6 +3007,7 @@
 				CEE79ED72B713DDC0063D844 /* CustomHeader */,
 				CE7C3BD12C0F6DC800B78740 /* CustomLoading */,
 				CEC207A52B4ADDA40073FA1E /* CustomNavigation */,
+				FA0DEE6D2C80E17A005EA0E0 /* DashboardCard */,
 				CE25F4712C2BB75B00F994F7 /* DatePicker */,
 				CE0F20CE2B754B51008702E0 /* Dropdown */,
 				CEB05F592C60BB7C004BA1AE /* Empty */,
@@ -2941,6 +3016,7 @@
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
 				CE9F90FE2B4F919F004C027A /* InformationCard */,
 				CE9BC1C52BE3D17000D20086 /* InformationDetail */,
+				FA49E5B42C807A2700267925 /* ProfileInformationCard */,
 				CEC2C83C2BD1750300A9D454 /* SearchTextField */,
 				CEF049A62C1C4A7A006B6FFD /* Select */,
 				CE90B1872B9A1EBE00515AD6 /* TableViewCell */,
@@ -3400,6 +3476,114 @@
 			path = WorkSheetCorrectiveDetail;
 			sourceTree = "<group>";
 		};
+		FA0DEE6D2C80E17A005EA0E0 /* DashboardCard */ = {
+			isa = PBXGroup;
+			children = (
+				FA0DEE6E2C80E221005EA0E0 /* DashboardCardView.swift */,
+				FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */,
+			);
+			path = DashboardCard;
+			sourceTree = "<group>";
+		};
+		FA49E5B42C807A2700267925 /* ProfileInformationCard */ = {
+			isa = PBXGroup;
+			children = (
+				FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */,
+				FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */,
+			);
+			path = ProfileInformationCard;
+			sourceTree = "<group>";
+		};
+		FA74E3622C81EA32002CC8A3 /* StatisticalSummaryCard */ = {
+			isa = PBXGroup;
+			children = (
+				FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */,
+				FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */,
+			);
+			path = StatisticalSummaryCard;
+			sourceTree = "<group>";
+		};
+		FA7598682C7E552900F773A8 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A092C7FA17800DBAB83 /* Section */,
+				FACCC1A32C7F31C30023CA43 /* DashboardPresenter.swift */,
+				FACCC1A42C7F31C30023CA43 /* DashboardRouter.swift */,
+				FACCC1A52C7F31C30023CA43 /* DashboardInteractor.swift */,
+				FACCC1A62C7F31C30023CA43 /* DashboardView.swift */,
+				FACCC1A72C7F31C30023CA43 /* DashboardView.xib */,
+				FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		FAC12A092C7FA17800DBAB83 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A262C7FA3A400DBAB83 /* CalibrationSection */,
+				FAC12A112C7FA2AF00DBAB83 /* ComplaintSection */,
+				FAC12A1F2C7FA36A00DBAB83 /* MonitoringFunctionSection */,
+				FAC12A0A2C7FA18400DBAB83 /* ProfileSection */,
+				FAC12A182C7FA32400DBAB83 /* RepairSection */,
+				FAC12A332C7FA40000DBAB83 /* WorkLoadSection */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		FAC12A0A2C7FA18400DBAB83 /* ProfileSection */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */,
+				FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */,
+			);
+			path = ProfileSection;
+			sourceTree = "<group>";
+		};
+		FAC12A112C7FA2AF00DBAB83 /* ComplaintSection */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A122C7FA2C900DBAB83 /* ComplaintSectionView.swift */,
+				FAC12A132C7FA2C900DBAB83 /* ComplaintSectionView.xib */,
+			);
+			path = ComplaintSection;
+			sourceTree = "<group>";
+		};
+		FAC12A182C7FA32400DBAB83 /* RepairSection */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A192C7FA33F00DBAB83 /* RepairSectionView.swift */,
+				FAC12A1A2C7FA33F00DBAB83 /* RepairSectionView.xib */,
+			);
+			path = RepairSection;
+			sourceTree = "<group>";
+		};
+		FAC12A1F2C7FA36A00DBAB83 /* MonitoringFunctionSection */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A202C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift */,
+				FAC12A212C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib */,
+			);
+			path = MonitoringFunctionSection;
+			sourceTree = "<group>";
+		};
+		FAC12A262C7FA3A400DBAB83 /* CalibrationSection */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A272C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift */,
+				FAC12A282C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib */,
+			);
+			path = CalibrationSection;
+			sourceTree = "<group>";
+		};
+		FAC12A332C7FA40000DBAB83 /* WorkLoadSection */ = {
+			isa = PBXGroup;
+			children = (
+				FAC12A2D2C7FA3F500DBAB83 /* WorkLoadSectionView.swift */,
+				FAC12A2E2C7FA3F500DBAB83 /* WorkLoadSectionView.xib */,
+			);
+			path = WorkLoadSection;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3497,6 +3681,7 @@
 				CE3108652BE264CC00660275 /* GeneralInformationView.xib in Resources */,
 				CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
 				CE5EC2E62C3CE3FB005D5426 /* SelectionTVC.xib in Resources */,
+				FAC12A1B2C7FA33F00DBAB83 /* RepairSectionView.xib in Resources */,
 				CEC337032B6EF6FF00B16026 /* lottie_expired.json in Resources */,
 				CECB3DDB2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
 				CEF4E0BC2C075C7300444EA9 /* LoadPreventiveView.xib in Resources */,
@@ -3514,6 +3699,7 @@
 				CE6286952C19D0BE00CB552F /* CorrectiveTVC.xib in Resources */,
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CE422DD92BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
+				FA49E5B72C807A4600267925 /* ProfileInformationCardView.xib in Resources */,
 				CEC2C8412BD1756500A9D454 /* SearchTextField.xib in Resources */,
 				CEB8C3702C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */,
 				CECB3DB12B45D963004A260D /* LaunchScreen.storyboard in Resources */,
@@ -3524,6 +3710,7 @@
 				CE1DDDC12C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */,
 				CEE780C12C0C56AA001BA9C2 /* ElectricTVC.xib in Resources */,
 				CE6867FC2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
+				FA0DEE712C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0B2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
@@ -3532,6 +3719,7 @@
 				CECB3DDD2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CE31087D2BE2662C00660275 /* ToolsInformationView.xib in Resources */,
 				CE7C3BD92C0F712E00B78740 /* lottie_spinner.json in Resources */,
+				FA74E3662C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */,
 				CE916A882C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CEBF70C12C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */,
@@ -3545,12 +3733,14 @@
 				CEB703A72BA87FBD004583C7 /* PreventiveCalendarListView.xib in Resources */,
 				CECB3DEB2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CECB3E0D2B45E137004A260D /* Lato-Bold.ttf in Resources */,
+				FACCC1A92C7F31C30023CA43 /* DashboardView.xib in Resources */,
 				CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21B2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CEE8620A2C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
 				CE4255ED2BA704E5002B558C /* LogBookListView.xib in Resources */,
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F02BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
+				FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
 				CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B12C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
 				CEB8C3692C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
@@ -3566,6 +3756,7 @@
 				CECB3E052B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
 				CECB3DE12B45E119004A260D /* Roboto-Black.ttf in Resources */,
 				CECC8F6B2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */,
+				FAC12A142C7FA2C900DBAB83 /* ComplaintSectionView.xib in Resources */,
 				CE67F6652C632AFB0080DC1D /* ConfirmExitBottomSheet.xib in Resources */,
 				CEF5FD232B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CEF4E0D52C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
@@ -3600,8 +3791,10 @@
 				CEAF063F2B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CEB05F5C2C60BBB5004BA1AE /* EmptyView.xib in Resources */,
 				CEF049B82C1C80D2006B6FFD /* SelectTechnicialCell.xib in Resources */,
+				FAC12A222C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib in Resources */,
 				CE7C3BD52C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CED8BBD02C76556100B37EC6 /* DashboardChartView.xib in Resources */,
+				FAC12A2F2C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */,
 				CE829B052C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C72C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
@@ -3631,6 +3824,7 @@
 				CECB3DE72B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE79ED52B7122580063D844 /* AssetSectionView.xib in Resources */,
 				CEAF9E3C2C5A309300EFBBC2 /* StepperCell.xib in Resources */,
+				FAC12A292C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib in Resources */,
 				CEB05F4D2C6072D4004BA1AE /* DocumentView.xib in Resources */,
 				CE8208902B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */,
 				CEE67D2D2B54394900D0844B /* WorkSheetMonitoringFunctionListView.xib in Resources */,
@@ -3670,6 +3864,7 @@
 				CE3108662BE264CC00660275 /* GeneralInformationView.xib in Resources */,
 				CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
 				CE5EC2E72C3CE3FB005D5426 /* SelectionTVC.xib in Resources */,
+				FAC12A1E2C7FA33F00DBAB83 /* RepairSectionView.xib in Resources */,
 				CEC337042B6EF6FF00B16026 /* lottie_expired.json in Resources */,
 				CECB3DDC2B45E119004A260D /* Roboto-Medium.ttf in Resources */,
 				CEF4E0C22C075C7300444EA9 /* LoadPreventiveView.xib in Resources */,
@@ -3687,6 +3882,7 @@
 				CE6286972C19D0BE00CB552F /* CorrectiveTVC.xib in Resources */,
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CE422DDA2BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
+				FA49E5B92C807A4600267925 /* ProfileInformationCardView.xib in Resources */,
 				CEC2C8422BD1756500A9D454 /* SearchTextField.xib in Resources */,
 				CEB8C3722C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */,
 				CECB3DC62B45DAFF004A260D /* LaunchScreen.storyboard in Resources */,
@@ -3697,6 +3893,7 @@
 				CE1DDDC32C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */,
 				CEE780C32C0C56AA001BA9C2 /* ElectricTVC.xib in Resources */,
 				CE6867FD2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
+				FA0DEE722C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0C2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
@@ -3705,6 +3902,7 @@
 				CECB3DDE2B45E119004A260D /* Roboto-LightItalic.ttf in Resources */,
 				CE31087E2BE2662C00660275 /* ToolsInformationView.xib in Resources */,
 				CE7C3BDA2C0F712E00B78740 /* lottie_spinner.json in Resources */,
+				FA74E3672C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */,
 				CE916A8A2C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
 				CEBF70C32C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */,
@@ -3718,12 +3916,14 @@
 				CEB703A82BA87FBD004583C7 /* PreventiveCalendarListView.xib in Resources */,
 				CECB3DEC2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CECB3E0E2B45E137004A260D /* Lato-Bold.ttf in Resources */,
+				FACCC1B42C7F31C30023CA43 /* DashboardView.xib in Resources */,
 				CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CEE862102C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
 				CE4255EE2BA704E5002B558C /* LogBookListView.xib in Resources */,
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F22BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
+				FAC12A102C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
 				CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B32C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
 				CEB8C36B2C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
@@ -3739,6 +3939,7 @@
 				CECB3E062B45E137004A260D /* Lato-BoldItalic.ttf in Resources */,
 				CECB3DE22B45E119004A260D /* Roboto-Black.ttf in Resources */,
 				CECC8F6D2C2338BE0071DF75 /* DatePickerBottomSheet.xib in Resources */,
+				FAC12A172C7FA2C900DBAB83 /* ComplaintSectionView.xib in Resources */,
 				CE67F6682C632AFB0080DC1D /* ConfirmExitBottomSheet.xib in Resources */,
 				CEF5FD242B4A74CB003A72B7 /* BackgroundView.xib in Resources */,
 				CEF4E0D72C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
@@ -3773,8 +3974,10 @@
 				CEAF06402B6F8EE200239C97 /* ExpiredBottomSheet.xib in Resources */,
 				CEB05F5E2C60BBB5004BA1AE /* EmptyView.xib in Resources */,
 				CEF049BA2C1C80D2006B6FFD /* SelectTechnicialCell.xib in Resources */,
+				FAC12A252C7FA37C00DBAB83 /* MonitoringFunctionSectionView.xib in Resources */,
 				CE7C3BD62C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CED8BBD12C76556100B37EC6 /* DashboardChartView.xib in Resources */,
+				FAC12A322C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */,
 				CE829B062C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C92C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
@@ -3804,6 +4007,7 @@
 				CECB3DE82B45E119004A260D /* Roboto-MediumItalic.ttf in Resources */,
 				CEE79ED62B7122580063D844 /* AssetSectionView.xib in Resources */,
 				CEAF9E3E2C5A309300EFBBC2 /* StepperCell.xib in Resources */,
+				FAC12A2C2C7FA3C500DBAB83 /* CalibrationDashboardSectionView.xib in Resources */,
 				CEB05F532C6072D4004BA1AE /* DocumentView.xib in Resources */,
 				CE8208912B823BDE00CD4242 /* NotificationItemCVC.xib in Resources */,
 				CEE67D2E2B54394900D0844B /* WorkSheetMonitoringFunctionListView.xib in Resources */,
@@ -3910,12 +4114,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC12A232C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift in Sources */,
 				CE829B042C4FFF3B0056F429 /* InstallationBottomSheet.swift in Sources */,
 				CE29F8E62BF9256B0077405C /* HistoryDetailView+Collection.swift in Sources */,
 				CECB3E252B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CEE07C8D2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */,
 				CE8208832B82391F00CD4242 /* NotificationListInteractor.swift in Sources */,
+				FAC12A152C7FA2C900DBAB83 /* ComplaintSectionView.swift in Sources */,
 				CE82087F2B82391F00CD4242 /* NotificationListPresenter.swift in Sources */,
 				CE916A7A2C0634D000C8B153 /* PreparationTVC.swift in Sources */,
 				CE5442902B4726360022047D /* GeneralButton.swift in Sources */,
@@ -3939,6 +4145,7 @@
 				CEB05F5D2C60BBB5004BA1AE /* EmptyView.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
+				FAC12A302C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */,
 				CEF43A362C54026B0066B65A /* ConditionFilterBottomSheet.swift in Sources */,
 				CE7064F82BFF57D500BB5BA7 /* AccordionCell.swift in Sources */,
 				CE7F35B82BDE51EC00EA5536 /* AppManager.swift in Sources */,
@@ -3977,6 +4184,7 @@
 				CEF049B72C1C80D2006B6FFD /* SelectTechnicialCell.swift in Sources */,
 				CE2E3AF62BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1552B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
+				FA74E3652C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */,
 				CECB3DA92B45D962004A260D /* ViewController.swift in Sources */,
 				CE92864F2C60C72F004F1245 /* EquipmentMaintenancePresenter.swift in Sources */,
 				CE9286502C60C72F004F1245 /* EquipmentMaintenanceRouter.swift in Sources */,
@@ -4006,6 +4214,12 @@
 				CEFD6D202BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
 				CE4012532B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
+				FACCC1AA2C7F31C30023CA43 /* DashboardPresenter.swift in Sources */,
+				FACCC1AB2C7F31C30023CA43 /* DashboardRouter.swift in Sources */,
+				FAC12A1C2C7FA33F00DBAB83 /* RepairSectionView.swift in Sources */,
+				FACCC1AC2C7F31C30023CA43 /* DashboardInteractor.swift in Sources */,
+				FACCC1AD2C7F31C30023CA43 /* DashboardView.swift in Sources */,
+				FACCC1AE2C7F31C30023CA43 /* DashboardEntity.swift in Sources */,
 				CEFB4F0B2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE4D121E2C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift in Sources */,
 				CE4D121F2C09604B007184B2 /* DelayCorrectiveDetailRouter.swift in Sources */,
@@ -4013,6 +4227,8 @@
 				CE4D12212C09604B007184B2 /* DelayCorrectiveDetailView.swift in Sources */,
 				CE7545592C3AF221002234F8 /* AddTaskSectionView.swift in Sources */,
 				CE4D12222C09604B007184B2 /* DelayCorrectiveDetailEntity.swift in Sources */,
+				FAC12A0E2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */,
+				FAC12A2A2C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift in Sources */,
 				CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E472B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEE07C932B9F408A00EFBFB8 /* PreventiveMaintenanceListView.swift in Sources */,
@@ -4054,6 +4270,7 @@
 				CECB3E162B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CE0EC4A32B775F9A00888BE8 /* AssetCVC.swift in Sources */,
 				CEFE59B72B5EBF9200BE73CB /* UIImageView+Ext.swift in Sources */,
+				FA0DEE702C80E221005EA0E0 /* DashboardCardView.swift in Sources */,
 				CEC2079B2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */,
 				CE9BC1C82BE3D19400D20086 /* InformationDetailView.swift in Sources */,
 				CE2E3AF02BA09E4C00094AD0 /* CalibrationListPresenter.swift in Sources */,
@@ -4173,6 +4390,7 @@
 				CE4255E72BA704E5002B558C /* LogBookListRouter.swift in Sources */,
 				CE9878802C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
 				CEC1B05F2BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
+				FA49E5B82C807A4600267925 /* ProfileInformationCardView.swift in Sources */,
 				CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
 				CE5EC2E52C3CE3FB005D5426 /* SelectionTVC.swift in Sources */,
 				CE0B3AF32B9B869100A55B81 /* WorkSheetCorrectiveListEntity.swift in Sources */,
@@ -4243,12 +4461,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC12A242C7FA37C00DBAB83 /* MonitoringFunctionSectionView.swift in Sources */,
 				CE829B072C4FFF3B0056F429 /* InstallationBottomSheet.swift in Sources */,
 				CE29F8E72BF9256B0077405C /* HistoryDetailView+Collection.swift in Sources */,
 				CECB3E262B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
 				CEE07C8E2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */,
 				CE8208842B82391F00CD4242 /* NotificationListInteractor.swift in Sources */,
+				FAC12A162C7FA2C900DBAB83 /* ComplaintSectionView.swift in Sources */,
 				CE8208802B82391F00CD4242 /* NotificationListPresenter.swift in Sources */,
 				CE916A7C2C0634D000C8B153 /* PreparationTVC.swift in Sources */,
 				CE5442912B4726360022047D /* GeneralButton.swift in Sources */,
@@ -4272,6 +4492,7 @@
 				CEB05F5F2C60BBB5004BA1AE /* EmptyView.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
 				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
+				FAC12A312C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */,
 				CEF43A382C54026B0066B65A /* ConditionFilterBottomSheet.swift in Sources */,
 				CE7064FA2BFF57D500BB5BA7 /* AccordionCell.swift in Sources */,
 				CE7F35B92BDE51EC00EA5536 /* AppManager.swift in Sources */,
@@ -4310,6 +4531,7 @@
 				CEF049B92C1C80D2006B6FFD /* SelectTechnicialCell.swift in Sources */,
 				CE2E3AF72BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1562B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
+				FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */,
 				CECB3DC12B45DAFF004A260D /* ViewController.swift in Sources */,
 				CE9286542C60C72F004F1245 /* EquipmentMaintenancePresenter.swift in Sources */,
 				CE9286552C60C72F004F1245 /* EquipmentMaintenanceRouter.swift in Sources */,
@@ -4339,6 +4561,12 @@
 				CEFD6D212BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
 				CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
+				FACCC1AF2C7F31C30023CA43 /* DashboardPresenter.swift in Sources */,
+				FACCC1B02C7F31C30023CA43 /* DashboardRouter.swift in Sources */,
+				FAC12A1D2C7FA33F00DBAB83 /* RepairSectionView.swift in Sources */,
+				FACCC1B12C7F31C30023CA43 /* DashboardInteractor.swift in Sources */,
+				FACCC1B22C7F31C30023CA43 /* DashboardView.swift in Sources */,
+				FACCC1B32C7F31C30023CA43 /* DashboardEntity.swift in Sources */,
 				CEFB4F0C2B4930460033D37D /* RegistrationHospitalPresenter.swift in Sources */,
 				CE4D12242C09604B007184B2 /* DelayCorrectiveDetailPresenter.swift in Sources */,
 				CE4D12252C09604B007184B2 /* DelayCorrectiveDetailRouter.swift in Sources */,
@@ -4346,6 +4574,8 @@
 				CE4D12272C09604B007184B2 /* DelayCorrectiveDetailView.swift in Sources */,
 				CE75455B2C3AF221002234F8 /* AddTaskSectionView.swift in Sources */,
 				CE4D12282C09604B007184B2 /* DelayCorrectiveDetailEntity.swift in Sources */,
+				FAC12A0F2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */,
+				FAC12A2B2C7FA3C500DBAB83 /* CalibrationDashboardSectionView.swift in Sources */,
 				CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E482B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEE07C942B9F408A00EFBFB8 /* PreventiveMaintenanceListView.swift in Sources */,
@@ -4387,6 +4617,7 @@
 				CECB3E172B45E2B0004A260D /* UIView+Ext.swift in Sources */,
 				CE0EC4A42B775F9A00888BE8 /* AssetCVC.swift in Sources */,
 				CEFE59B82B5EBF9300BE73CB /* UIImageView+Ext.swift in Sources */,
+				FA0DEE732C80E221005EA0E0 /* DashboardCardView.swift in Sources */,
 				CEC2079C2B4AD6870073FA1E /* HomeScreenRouter.swift in Sources */,
 				CE9BC1C92BE3D19400D20086 /* InformationDetailView.swift in Sources */,
 				CE2E3AF12BA09E4C00094AD0 /* CalibrationListPresenter.swift in Sources */,
@@ -4506,6 +4737,7 @@
 				CE4255E82BA704E5002B558C /* LogBookListRouter.swift in Sources */,
 				CE9878832C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
 				CEC1B0602BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
+				FA49E5BA2C807A4600267925 /* ProfileInformationCardView.swift in Sources */,
 				CEC1B05E2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
 				CE5EC2E82C3CE3FB005D5426 /* SelectionTVC.swift in Sources */,
 				CE0B3AF42B9B869100A55B81 /* WorkSheetCorrectiveListEntity.swift in Sources */,
