@@ -30,28 +30,18 @@ class ComplaintSectionView: UIView {
         let view = loadNib()
         view.frame = self.bounds
         self.addSubview(view)
-        self.configureView()
     }
     
 }
 
 extension ComplaintSectionView {
     
-    private func setupBody() {
-        configureView()
-        setupAction()
-    }
-    
-    private func configureView() {
-        self.complaintInfoCardView.configure(image: "ic_document_arrow_rounded_fill", title: "Pengaduan", "-")
-        self.openInfoCardView.configure(image: "ic_document_pencil_rounded_fill", title: "Open", "-")
-        self.progressInfoCardView.configure(image: "ic_document_clock_rounded_fill", title: "Proses", "-")
-        self.doneInfoCardView.configure(image: "ic_document_check_rounded_fill", title: "Selesai", "-")
-        self.troubleInfoCardView.configure(image: "ic_down_time_rounded_fill", title: "Kendala", "-")
-    }
-    
-    private func setupAction() {
-        
+    func configure(_ data: Quarter?) {
+        self.complaintInfoCardView.configure(image: "ic_document_arrow_rounded_fill", title: "Pengaduan", String(data?.total ?? 0))
+        self.openInfoCardView.configure(image: "ic_document_pencil_rounded_fill", title: "Open", String(data?.open ?? 0))
+        self.progressInfoCardView.configure(image: "ic_document_clock_rounded_fill", title: "Proses", String(data?.progress ?? 0))
+        self.doneInfoCardView.configure(image: "ic_document_check_rounded_fill", title: "Selesai", String(data?.selesai ?? 0))
+        self.troubleInfoCardView.configure(image: "ic_down_time_rounded_fill", title: "Kendala", String(data?.kendala ?? 0))
     }
     
 }

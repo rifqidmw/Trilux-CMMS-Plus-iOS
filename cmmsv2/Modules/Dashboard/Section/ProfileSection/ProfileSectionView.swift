@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Combine
+
+protocol ProfileSectionViewDelegate: AnyObject {
+    func didTapSelectEngineer()
+    func didTapSelectDate()
+}
 
 class ProfileSectionView: UIView {
     
-    @IBOutlet weak var titleSectionLabel: UILabel!
     @IBOutlet weak var selectEngineerView: SelectView!
     @IBOutlet weak var selectDateView: SelectView!
     
@@ -20,6 +25,11 @@ class ProfileSectionView: UIView {
     @IBOutlet weak var workUnitInfoCardView: ProfileInformationCardView!
     @IBOutlet weak var positionInfoCardView: ProfileInformationCardView!
     @IBOutlet weak var phoneInfoCardView: ProfileInformationCardView!
+    
+    weak var delegate: ProfileSectionViewDelegate?
+    var selectedTechnician: TechnicianEntity?
+    var selectedDate: Date?
+    var anyCancellable = Set<AnyCancellable>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,32 +45,58 @@ class ProfileSectionView: UIView {
         let view = loadNib()
         view.frame = self.bounds
         self.addSubview(view)
-        self.setupBody()
+        self.setupAction()
     }
     
 }
 
 extension ProfileSectionView {
     
-    private func setupBody() {
-        configureView()
-        setupAction()
-    }
-    
-    private func configureView() {
-        self.titleSectionLabel.text = "Engineer"
+    func configureView(_ data: DashboardEngineer?) {
         self.selectEngineerView.titleLabel.isHidden = true
-        self.selectEngineerView.configure(title: "-", placeHolder: "Engineer")
+        self.selectEngineerView.configure(title: "", placeHolder: "", value: data?.username ?? "")
         self.selectDateView.titleLabel.isHidden = true
-        self.selectDateView.configure(title: "-", placeHolder: "Date")
-        self.workUnitInfoCardView.configure(image: "ic_name_card_rounded_fill", title: "Unit Kerja", "-")
-        self.positionInfoCardView.configure(image: "ic_person_rounded_fill", title: "Jabatan", "-")
-        self.phoneInfoCardView.configure(image: "ic_phone_rounded_fill", title: "Nomor Telepon", "-")
-        self.engineerNameLabel.text = "Maruf"
+        self.workUnitInfoCardView.configure(image: "ic_name_card_rounded_fill", title: "Unit Kerja", data?.unitKerja ?? "")
+        self.positionInfoCardView.configure(image: "ic_person_rounded_fill", title: "Jabatan", data?.jabatan ?? "")
+        self.phoneInfoCardView.configure(image: "ic_phone_rounded_fill", title: "Nomor Telepon", data?.kontak ?? "")
+        self.engineerNameLabel.text = data?.username ?? ""
+        self.profileImageView.loadImageUrl(data?.avatar ?? "")
+        self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.width / 2
+        self.profileImageView.clipsToBounds = true
+        self.profileImageView.layer.masksToBounds = true
+        if let selectedDate = selectedDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.dateFormat = "MMMM yyyy"
+            selectDateView.configure(title: "", placeHolder: "", value: dateFormatter.string(from: selectedDate), type: .date)
+        } else {
+            self.selectDateView.configure(title: "", placeHolder: "", value: String.getCurrentDateString("MMMM yyyy"), type: .date)
+        }
     }
     
     private func setupAction() {
+        self.selectEngineerView.gesture()
+            .sink { [weak self] _ in
+                guard let self, let delegate = self.delegate else { return }
+                delegate.didTapSelectEngineer()
+            }
+            .store(in: &anyCancellable)
         
+        self.selectDateView.gesture()
+            .sink { [weak self] _ in
+                guard let self, let delegate = self.delegate else { return }
+                delegate.didTapSelectDate()
+            }
+            .store(in: &anyCancellable)
+    }
+    
+    func updateSelectedValues() {
+        if let selectedDate = selectedDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.dateFormat = "MMMM yyyy"
+            selectDateView.configure(title: "", placeHolder: "", value: dateFormatter.string(from: selectedDate), type: .date)
+        }
     }
     
 }

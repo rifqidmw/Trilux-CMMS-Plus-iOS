@@ -1041,6 +1041,16 @@
 		FACCC1B22C7F31C30023CA43 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A62C7F31C30023CA43 /* DashboardView.swift */; };
 		FACCC1B32C7F31C30023CA43 /* DashboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */; };
 		FACCC1B42C7F31C30023CA43 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACCC1A72C7F31C30023CA43 /* DashboardView.xib */; };
+		FADB2D932C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */; };
+		FADB2D942C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */; };
+		FADB2D952C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */; };
+		FADB2D962C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */; };
+		FAE08BAF2C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */; };
+		FAE08BB02C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */; };
+		FAE08BB42C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */; };
+		FAE08BB52C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
+		FAE08BB62C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
+		FAE08BB72C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1571,6 +1581,11 @@
 		FACCC1A62C7F31C30023CA43 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		FACCC1A72C7F31C30023CA43 /* DashboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEntity.swift; sourceTree = "<group>"; };
+		FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitoringSectionView.swift; sourceTree = "<group>"; };
+		FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerformanceMonitoringSectionView.xib; sourceTree = "<group>"; };
+		FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView+Delegate.swift"; sourceTree = "<group>"; };
+		FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverviewPanelView.swift; sourceTree = "<group>"; };
+		FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusOverviewPanelView.xib; sourceTree = "<group>"; };
 		FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1736,7 +1751,7 @@
 		CE3108482BE20D0D00660275 /* AssetDetail */ = {
 			isa = PBXGroup;
 			children = (
-				CE31085B2BE260B600660275 /* Section */,
+				CE31085B2BE260B600660275 /* Provider */,
 				CE3108492BE20D2000660275 /* AssetDetailPresenter.swift */,
 				CE31084A2BE20D2000660275 /* AssetDetailRouter.swift */,
 				CE31084B2BE20D2000660275 /* AssetDetailInteractor.swift */,
@@ -1747,7 +1762,7 @@
 			path = AssetDetail;
 			sourceTree = "<group>";
 		};
-		CE31085B2BE260B600660275 /* Section */ = {
+		CE31085B2BE260B600660275 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
 				CE31085E2BE260E500660275 /* AcceptanceInformation */,
@@ -1756,7 +1771,7 @@
 				CE31085F2BE261D600660275 /* MutationInformation */,
 				CE31085D2BE260D900660275 /* ToolsInformation */,
 			);
-			path = Section;
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		CE31085C2BE260CB00660275 /* GeneralInformation */ = {
@@ -2288,7 +2303,7 @@
 			path = BottomSheet;
 			sourceTree = "<group>";
 		};
-		CE92865A2C60CC7D004F1245 /* Section */ = {
+		CE92865A2C60CC7D004F1245 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
 				CE92865F2C60D228004F1245 /* Calibration */,
@@ -2297,7 +2312,7 @@
 				CE92865D2C60D214004F1245 /* MonitoringFunction */,
 				CE92865E2C60D21E004F1245 /* Preventive */,
 			);
-			path = Section;
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		CE92865B2C60CC88004F1245 /* Information */ = {
@@ -2555,7 +2570,7 @@
 		CEB05F602C60C6D0004BA1AE /* EquipmentMaintenance */ = {
 			isa = PBXGroup;
 			children = (
-				CE92865A2C60CC7D004F1245 /* Section */,
+				CE92865A2C60CC7D004F1245 /* Provider */,
 				CE9286482C60C72F004F1245 /* EquipmentMaintenancePresenter.swift */,
 				CE9286492C60C72F004F1245 /* EquipmentMaintenanceRouter.swift */,
 				CE92864A2C60C72F004F1245 /* EquipmentMaintenanceInteractor.swift */,
@@ -3015,10 +3030,12 @@
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
 				CE9F90FE2B4F919F004C027A /* InformationCard */,
 				CE9BC1C52BE3D17000D20086 /* InformationDetail */,
+				FADB2D902C83BAC8007D2ADF /* PerformanceMonitoringSection */,
 				FA49E5B42C807A2700267925 /* ProfileInformationCard */,
 				CEC2C83C2BD1750300A9D454 /* SearchTextField */,
 				CEF049A62C1C4A7A006B6FFD /* Select */,
 				FA74E3622C81EA32002CC8A3 /* StatisticalSummaryCard */,
+				FAE08BB12C84ACF700E456E4 /* StatusOverviewPanel */,
 				CE90B1872B9A1EBE00515AD6 /* TableViewCell */,
 				CE54428B2B4725000022047D /* TextField */,
 				CEC897112B773923006CB552 /* Toast */,
@@ -3513,6 +3530,7 @@
 				FACCC1A62C7F31C30023CA43 /* DashboardView.swift */,
 				FACCC1A72C7F31C30023CA43 /* DashboardView.xib */,
 				FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */,
+				FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -3582,6 +3600,24 @@
 				FAC12A2E2C7FA3F500DBAB83 /* WorkLoadSectionView.xib */,
 			);
 			path = WorkLoadSection;
+			sourceTree = "<group>";
+		};
+		FADB2D902C83BAC8007D2ADF /* PerformanceMonitoringSection */ = {
+			isa = PBXGroup;
+			children = (
+				FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */,
+				FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */,
+			);
+			path = PerformanceMonitoringSection;
+			sourceTree = "<group>";
+		};
+		FAE08BB12C84ACF700E456E4 /* StatusOverviewPanel */ = {
+			isa = PBXGroup;
+			children = (
+				FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */,
+				FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */,
+			);
+			path = StatusOverviewPanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3809,10 +3845,12 @@
 				CE92864E2C60C72F004F1245 /* EquipmentMaintenanceView.xib in Resources */,
 				CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CEC927D42C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
+				FAE08BB42C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */,
 				CEAF27EB2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2172B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9342C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
+				FADB2D932C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */,
 				CEF43A352C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CEC1B06C2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
@@ -3992,10 +4030,12 @@
 				CE9286592C60C72F004F1245 /* EquipmentMaintenanceView.xib in Resources */,
 				CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CEC927D62C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
+				FAE08BB72C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */,
 				CEAF27EC2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2182B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9362C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
+				FADB2D962C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */,
 				CEF43A372C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CEC1B06D2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
@@ -4264,6 +4304,7 @@
 				CECB3E3E2B45E5AB004A260D /* BaseViewController.swift in Sources */,
 				CEC1B0752BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */,
 				CE7372A62B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
+				FAE08BB52C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */,
 				CEB7039F2BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift in Sources */,
 				CE9878872C5ACA5F008E0F77 /* ValWorkSheetCell.swift in Sources */,
 				CEE07C8F2B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift in Sources */,
@@ -4336,6 +4377,7 @@
 				CE90B15D2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
+				FADB2D942C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */,
 				CECC8F6A2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
 				CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */,
@@ -4424,6 +4466,7 @@
 				CE58FA612C0C310D0067D8C4 /* PreventiveSectionView.swift in Sources */,
 				CE9E7D712B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CE58FA5A2C0B8A3A0067D8C4 /* PhysicalMonitoringTVC.swift in Sources */,
+				FAE08BAF2C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */,
 				CEE79ED22B71222B0063D844 /* AssetSectionView.swift in Sources */,
 				CE1DDDC22C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */,
 				CEAF9E3B2C5A309300EFBBC2 /* StepperCell.swift in Sources */,
@@ -4611,6 +4654,7 @@
 				CECB3E3F2B45E5AB004A260D /* BaseViewController.swift in Sources */,
 				CEC1B0762BA217E600DF6A4F /* DelayCorrectiveListPresenter.swift in Sources */,
 				CE7372A72B4990DB009BC450 /* UIFont+Ext.swift in Sources */,
+				FAE08BB62C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */,
 				CEB703A02BA87FBD004583C7 /* PreventiveCalendarListPresenter.swift in Sources */,
 				CE98788A2C5ACA5F008E0F77 /* ValWorkSheetCell.swift in Sources */,
 				CEE07C902B9F408A00EFBFB8 /* PreventiveMaintenanceListRouter.swift in Sources */,
@@ -4683,6 +4727,7 @@
 				CE90B15E2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EC02B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
+				FADB2D952C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */,
 				CECC8F6C2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
 				CEEED86F2B7A86CB00672952 /* ScanRouter.swift in Sources */,
@@ -4771,6 +4816,7 @@
 				CE58FA632C0C310D0067D8C4 /* PreventiveSectionView.swift in Sources */,
 				CE9E7D722B529EB300240A7D /* ChangePasswordInteractor.swift in Sources */,
 				CE58FA5C2C0B8A3A0067D8C4 /* PhysicalMonitoringTVC.swift in Sources */,
+				FAE08BB02C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */,
 				CEE79ED32B71222B0063D844 /* AssetSectionView.swift in Sources */,
 				CE1DDDC42C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */,
 				CEAF9E3D2C5A309300EFBBC2 /* StepperCell.swift in Sources */,

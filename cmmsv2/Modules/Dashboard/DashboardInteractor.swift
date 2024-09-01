@@ -1,16 +1,26 @@
-// 
+//
 //  DashboardInteractor.swift
 //  cmmsv2
 //
 //  Created by macbook  on 28/08/24.
 //
 
-import Foundation
+import Combine
 
 class DashboardInteractor: BaseInteractor {
     
-    // func fetchData(completion: @escaping (Result<ModelResponse, Error>) -> Void) {
-    //    api.requestApi(.exampleEndpoint, completion: completion)
-    // }
+    func getDashboardPerformance(
+        month: String?,
+        year: String?,
+        id: String?) -> AnyPublisher<DashboardEngineerEntity, Error> {
+            return api.requestApiPublisher(.engineerDashboardStatistic(
+                month: month ?? "",
+                year: year ?? "",
+                id: id ?? ""))
+        }
+    
+    func getTechnicianList(job: String) -> AnyPublisher<SelectTechnicianEntity, Error> {
+        return api.requestApiPublisher(.userFilter(job: job))
+    }
     
 }

@@ -30,8 +30,8 @@ class DatePickerBottomSheet: BaseNonNavigationController {
     var type: DatePickerBottomSheetType? = .date
     weak var delegate: DatePickerBottomSheetDelegate?
     
-    private var selectedMonth: Int = 6
-    private var selectedYear: Int = 2004
+    var selectedMonth: Int = 6
+    var selectedYear: Int = 2004
     
     override func didLoad() {
         super.didLoad()

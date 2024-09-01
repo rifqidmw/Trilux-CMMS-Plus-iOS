@@ -90,6 +90,7 @@ extension WorkSheetApprovalDetailView {
     
     private func fetchInitialData() {
         guard let presenter else { return }
+        self.showLoadingPopup()
         presenter.fetchInitData()
     }
     
@@ -139,13 +140,6 @@ extension WorkSheetApprovalDetailView {
                         navigation.popViewController(animated: true)
                     }
                 }
-            }
-            .store(in: &anyCancellable)
-        
-        presenter.$isLoading
-            .sink { [weak self] isLoading in
-                guard let self else { return }
-                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
             }
             .store(in: &anyCancellable)
         
