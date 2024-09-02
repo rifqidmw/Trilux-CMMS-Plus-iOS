@@ -8,9 +8,16 @@
 import UIKit
 import DGCharts
 
+struct StatisticalSummaryDataSet {
+    let targetEntry: BarChartDataEntry
+    let realizationEntry: BarChartDataEntry
+}
+
 class StatisticalSummaryCardView: UIView {
     
     @IBOutlet weak var barChartView: BarChartView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var containerSummaryView: UIView!
     @IBOutlet weak var targetValueLabel: UILabel!
     @IBOutlet weak var realizationValueLabel: UILabel!
@@ -40,29 +47,37 @@ extension StatisticalSummaryCardView {
     private func configureView() {
         self.containerSummaryView.makeCornerRadius(16)
         self.containerSummaryView.addShadow(2.0, opacity: 0.2)
-        self.setupChart()
     }
     
-    func configure(target: String, realization: String, achievement: String) {
-        self.targetValueLabel.text = target
-        self.realizationValueLabel.text = realization
-        self.achievementValueLabel.text = achievement
-    }
+    func configure(
+        title: NSAttributedString,
+        description: String,
+        target: String,
+        realization: String,
+        achievement: String,
+        _ statistic: StatisticalSummaryDataSet) {
+            self.targetValueLabel.text = target
+            self.realizationValueLabel.text = realization
+            self.achievementValueLabel.text = achievement
+            self.setupChart(statistic)
+            self.titleLabel.attributedText = title
+            self.descriptionLabel.text = description
+        }
     
-    func setupChart() {
-        let targetEntry = BarChartDataEntry(x: 0, y: 75)
-        let realizationEntry = BarChartDataEntry(x: 1, y: 0)
+    func setupChart(_ data: StatisticalSummaryDataSet) {
+        let targetEntry = data.targetEntry
+        let realizationEntry = data.realizationEntry
         
         let targetDataSet = BarChartDataSet(entries: [targetEntry], label: "Target")
-        targetDataSet.colors = [UIColor.lightGray]
+        targetDataSet.colors = [UIColor.customPrimaryColor]
         
         let realizationDataSet = BarChartDataSet(entries: [realizationEntry], label: "Realisasi")
-        realizationDataSet.colors = [UIColor.systemBlue]
+        realizationDataSet.colors = [UIColor.customLightGrayColor]
         
-        let data = BarChartData(dataSets: [targetDataSet, realizationDataSet])
-        data.barWidth = 0.3
+        let barChartData = BarChartData(dataSets: [targetDataSet, realizationDataSet])
+        barChartData.barWidth = 0.3
         
-        barChartView.data = data
+        barChartView.data = barChartData
         
         barChartView.xAxis.labelPosition = .bottom
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: ["Target", "Realisasi"])
@@ -70,7 +85,7 @@ extension StatisticalSummaryCardView {
         barChartView.leftAxis.axisMinimum = 0
         barChartView.rightAxis.enabled = false
         barChartView.animate(yAxisDuration: 1.5)
-        barChartView.legend.enabled = true
+        barChartView.legend.enabled = false
     }
     
 }

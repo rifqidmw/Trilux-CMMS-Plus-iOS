@@ -9,13 +9,12 @@ import UIKit
 import Combine
 
 protocol ProfileSectionViewDelegate: AnyObject {
-    func didTapSelectEngineer()
     func didTapSelectDate()
 }
 
 class ProfileSectionView: UIView {
     
-    @IBOutlet weak var selectEngineerView: SelectView!
+    @IBOutlet weak var engineerView: InformationCardView!
     @IBOutlet weak var selectDateView: SelectView!
     
     @IBOutlet weak var profileImageView: UIImageView!
@@ -53,8 +52,8 @@ class ProfileSectionView: UIView {
 extension ProfileSectionView {
     
     func configureView(_ data: DashboardEngineer?) {
-        self.selectEngineerView.titleLabel.isHidden = true
-        self.selectEngineerView.configure(title: "", placeHolder: "", value: data?.username ?? "")
+        self.engineerView.titleLabel.isHidden = true
+        self.engineerView.configureView(title: "", value: data?.username ?? "")
         self.selectDateView.titleLabel.isHidden = true
         self.workUnitInfoCardView.configure(image: "ic_name_card_rounded_fill", title: "Unit Kerja", data?.unitKerja ?? "")
         self.positionInfoCardView.configure(image: "ic_person_rounded_fill", title: "Jabatan", data?.jabatan ?? "")
@@ -75,13 +74,6 @@ extension ProfileSectionView {
     }
     
     private func setupAction() {
-        self.selectEngineerView.gesture()
-            .sink { [weak self] _ in
-                guard let self, let delegate = self.delegate else { return }
-                delegate.didTapSelectEngineer()
-            }
-            .store(in: &anyCancellable)
-        
         self.selectDateView.gesture()
             .sink { [weak self] _ in
                 guard let self, let delegate = self.delegate else { return }

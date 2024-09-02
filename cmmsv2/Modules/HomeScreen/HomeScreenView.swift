@@ -120,7 +120,7 @@ extension HomeScreenView {
                 self.configureNonMedicChart(statistic)
                 self.configureAssetChart(statistic)
                 
-                if RoleManager.shared.currentUserRole == .room {
+                if RoleManager.shared.currentUserRole == .room && RoleManager.shared.currentUserRole == .ipsrs{ // IPSRS JUST TEMPORARY
                     self.medicChartSectionView.isHidden = true
                     self.nonMedicChartSectionView.isHidden = true
                     self.containerBannerButtonView.isHidden = true

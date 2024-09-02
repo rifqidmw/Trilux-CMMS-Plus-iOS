@@ -19,12 +19,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileSectionView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="engineerNameLabel" destination="pqf-cN-R7q" id="Qtq-36-8Wd"/>
+                <outlet property="engineerView" destination="GG7-9J-nNV" id="jHQ-aa-3sg"/>
                 <outlet property="phoneInfoCardView" destination="W7E-3a-iaX" id="d7n-Yd-hfC"/>
                 <outlet property="positionInfoCardView" destination="VFw-ZX-xJW" id="HbE-Th-lzT"/>
                 <outlet property="profileImageView" destination="oyp-Ga-noI" id="jEq-tD-z0U"/>
                 <outlet property="profileLineCircleImageView" destination="0wb-tO-2Uu" id="KPI-MR-wb1"/>
                 <outlet property="selectDateView" destination="0yA-nT-MeQ" id="sbJ-py-YZz"/>
-                <outlet property="selectEngineerView" destination="GG7-9J-nNV" id="TQI-rJ-afS"/>
                 <outlet property="workUnitInfoCardView" destination="ihi-Ku-KjJ" id="8Bp-Pj-Ztc"/>
             </connections>
         </placeholder>
@@ -36,8 +36,8 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="BT8-bT-vVT">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="600"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Ob-2Z-vx6">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="144"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Ob-2Z-vx6">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="154"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRH-TS-9s1">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="16"/>
@@ -48,15 +48,15 @@
                                     <color key="textColor" name="placeholderColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GG7-9J-nNV" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="16" width="393" height="64"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GG7-9J-nNV" customClass="InformationCardView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="24" width="393" height="58"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="64" id="P9v-Ho-eUB"/>
+                                        <constraint firstAttribute="height" constant="58" id="P9v-Ho-eUB"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yA-nT-MeQ" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="80" width="393" height="64"/>
+                                    <rect key="frame" x="0.0" y="90" width="393" height="64"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="64" id="bgf-TX-7Yy"/>
@@ -66,39 +66,39 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-n6-uMU">
-                            <rect key="frame" x="0.0" y="176" width="393" height="424"/>
+                            <rect key="frame" x="0.0" y="186" width="393" height="414"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVV-rD-7T7">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="176"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="166"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="1o6-fW-ETU">
-                                            <rect key="frame" x="0.0" y="16" width="393" height="144"/>
+                                            <rect key="frame" x="0.0" y="16" width="393" height="134"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0N-Sf-4bQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="134"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-Ga-noI">
-                                                            <rect key="frame" x="16" y="16" width="92" height="108"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-Ga-noI">
+                                                            <rect key="frame" x="8" y="12" width="104" height="106"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_circle_line_blue" translatesAutoresizingMaskIntoConstraints="NO" id="0wb-tO-2Uu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="134"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="0wb-tO-2Uu" firstAttribute="leading" secondItem="v0N-Sf-4bQ" secondAttribute="leading" id="7ah-YS-G5q"/>
                                                         <constraint firstItem="0wb-tO-2Uu" firstAttribute="top" secondItem="v0N-Sf-4bQ" secondAttribute="top" id="GiC-Nz-LzJ"/>
-                                                        <constraint firstItem="oyp-Ga-noI" firstAttribute="top" secondItem="v0N-Sf-4bQ" secondAttribute="top" constant="16" id="Hd5-uU-LyS"/>
+                                                        <constraint firstItem="oyp-Ga-noI" firstAttribute="top" secondItem="v0N-Sf-4bQ" secondAttribute="top" constant="12" id="Hd5-uU-LyS"/>
                                                         <constraint firstAttribute="bottom" secondItem="0wb-tO-2Uu" secondAttribute="bottom" id="LgX-JU-BcU"/>
-                                                        <constraint firstAttribute="bottom" secondItem="oyp-Ga-noI" secondAttribute="bottom" constant="20" id="O9D-qL-JVO"/>
-                                                        <constraint firstItem="oyp-Ga-noI" firstAttribute="leading" secondItem="v0N-Sf-4bQ" secondAttribute="leading" constant="16" id="ffi-1B-vie"/>
+                                                        <constraint firstAttribute="bottom" secondItem="oyp-Ga-noI" secondAttribute="bottom" constant="16" id="O9D-qL-JVO"/>
+                                                        <constraint firstItem="oyp-Ga-noI" firstAttribute="leading" secondItem="v0N-Sf-4bQ" secondAttribute="leading" constant="8" id="ffi-1B-vie"/>
                                                         <constraint firstAttribute="width" constant="128" id="ifd-bu-K15"/>
-                                                        <constraint firstAttribute="trailing" secondItem="oyp-Ga-noI" secondAttribute="trailing" constant="20" id="oFW-pK-R5P"/>
+                                                        <constraint firstAttribute="trailing" secondItem="oyp-Ga-noI" secondAttribute="trailing" constant="16" id="oFW-pK-R5P"/>
                                                         <constraint firstAttribute="trailing" secondItem="0wb-tO-2Uu" secondAttribute="trailing" id="uab-gh-1M7"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqf-cN-R7q">
-                                                    <rect key="frame" x="160" y="0.0" width="233" height="144"/>
+                                                    <rect key="frame" x="160" y="0.0" width="233" height="134"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
                                                     <color key="textColor" name="customDarkGrayColor"/>
                                                     <nil key="highlightedColor"/>
@@ -116,7 +116,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YjF-Br-cQC">
-                                    <rect key="frame" x="0.0" y="176" width="393" height="248"/>
+                                    <rect key="frame" x="0.0" y="166" width="393" height="248"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihi-Ku-KjJ" customClass="ProfileInformationCardView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>

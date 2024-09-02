@@ -1041,10 +1041,6 @@
 		FACCC1B22C7F31C30023CA43 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A62C7F31C30023CA43 /* DashboardView.swift */; };
 		FACCC1B32C7F31C30023CA43 /* DashboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */; };
 		FACCC1B42C7F31C30023CA43 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACCC1A72C7F31C30023CA43 /* DashboardView.xib */; };
-		FADB2D932C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */; };
-		FADB2D942C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */; };
-		FADB2D952C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */; };
-		FADB2D962C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */; };
 		FAE08BAF2C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */; };
 		FAE08BB02C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */; };
 		FAE08BB42C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */; };
@@ -1581,8 +1577,6 @@
 		FACCC1A62C7F31C30023CA43 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		FACCC1A72C7F31C30023CA43 /* DashboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEntity.swift; sourceTree = "<group>"; };
-		FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitoringSectionView.swift; sourceTree = "<group>"; };
-		FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerformanceMonitoringSectionView.xib; sourceTree = "<group>"; };
 		FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView+Delegate.swift"; sourceTree = "<group>"; };
 		FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverviewPanelView.swift; sourceTree = "<group>"; };
 		FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusOverviewPanelView.xib; sourceTree = "<group>"; };
@@ -3030,7 +3024,6 @@
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
 				CE9F90FE2B4F919F004C027A /* InformationCard */,
 				CE9BC1C52BE3D17000D20086 /* InformationDetail */,
-				FADB2D902C83BAC8007D2ADF /* PerformanceMonitoringSection */,
 				FA49E5B42C807A2700267925 /* ProfileInformationCard */,
 				CEC2C83C2BD1750300A9D454 /* SearchTextField */,
 				CEF049A62C1C4A7A006B6FFD /* Select */,
@@ -3602,15 +3595,6 @@
 			path = WorkLoadSection;
 			sourceTree = "<group>";
 		};
-		FADB2D902C83BAC8007D2ADF /* PerformanceMonitoringSection */ = {
-			isa = PBXGroup;
-			children = (
-				FADB2D912C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift */,
-				FADB2D922C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib */,
-			);
-			path = PerformanceMonitoringSection;
-			sourceTree = "<group>";
-		};
 		FAE08BB12C84ACF700E456E4 /* StatusOverviewPanel */ = {
 			isa = PBXGroup;
 			children = (
@@ -3850,7 +3834,6 @@
 				CE14C2172B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9342C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
-				FADB2D932C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */,
 				CEF43A352C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CEC1B06C2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
@@ -4035,7 +4018,6 @@
 				CE14C2182B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9362C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
-				FADB2D962C83BB85007D2ADF /* PerformanceMonitoringSectionView.xib in Resources */,
 				CEF43A372C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
 				CEC1B06D2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
@@ -4377,7 +4359,6 @@
 				CE90B15D2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
-				FADB2D942C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */,
 				CECC8F6A2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
 				CEEED86E2B7A86CB00672952 /* ScanRouter.swift in Sources */,
@@ -4727,7 +4708,6 @@
 				CE90B15E2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EC02B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
-				FADB2D952C83BB85007D2ADF /* PerformanceMonitoringSectionView.swift in Sources */,
 				CECC8F6C2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
 				CEEED86F2B7A86CB00672952 /* ScanRouter.swift in Sources */,

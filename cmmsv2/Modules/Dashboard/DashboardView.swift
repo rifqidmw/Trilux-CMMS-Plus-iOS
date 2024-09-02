@@ -39,7 +39,6 @@ extension DashboardView {
         guard let presenter else { return }
         self.showLoadingPopup()
         presenter.fetchPerformanceDashboard(String.getCurrentDateString("MM"), String.getCurrentDateString("yyyy"), id: "0")
-        presenter.fetchTechnicianList(job: "2")
     }
     
     private func bindingData() {
@@ -52,14 +51,16 @@ extension DashboardView {
                 self.profileSectionView.configureView(data.engineer)
                 self.profileSectionView.delegate = self
                 self.profileSectionView.layoutIfNeeded()
-                self.complaintSectionView.configure(data.kwartal)
+                self.complaintSectionView.configure(data.bulanIni)
                 self.complaintSectionView.layoutIfNeeded()
                 self.repairSectionView.configure(data.bulanIni)
                 self.repairSectionView.layoutIfNeeded()
-                self.calibrationSectionView.configure(data.bulanIni)
+                self.calibrationSectionView.configure(data.bulanIni, data.kwartal)
                 self.calibrationSectionView.layoutIfNeeded()
                 self.workLoadSectionView.configure(String(data.beban?.alat?.first?.value ?? 0), totalWorkLoad: String(data.beban?.beban?.first?.value ?? 0))
                 self.workLoadSectionView.layoutIfNeeded()
+                self.monitoringSectionView.configure(data)
+                self.monitoringSectionView.layoutIfNeeded()
             }
             .store(in: &anyCancellable)
     }

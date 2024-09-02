@@ -37,45 +37,45 @@
                     <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="qgI-8c-6nj">
-                            <rect key="frame" x="16" y="16" width="361" height="2540"/>
+                            <rect key="frame" x="16" y="16" width="361" height="2700"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMf-ew-10g" customClass="ProfileSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="361" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="590"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="600" id="Njx-c6-aNA"/>
+                                        <constraint firstAttribute="height" constant="590" id="Njx-c6-aNA"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-Sk-zhk" customClass="ComplaintSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="632" width="361" height="300"/>
+                                    <rect key="frame" x="0.0" y="622" width="361" height="300"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="icO-UE-vIb"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pB-QP-8Mh" customClass="RepairSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="964" width="361" height="300"/>
+                                    <rect key="frame" x="0.0" y="954" width="361" height="320"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="otu-kA-6Hc"/>
+                                        <constraint firstAttribute="height" constant="320" id="otu-kA-6Hc"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g0-I7-Mgd" customClass="MonitoringFunctionSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="1296" width="361" height="700"/>
+                                    <rect key="frame" x="0.0" y="1306" width="361" height="800"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="700" id="WWT-uj-hSQ"/>
+                                        <constraint firstAttribute="height" constant="800" id="WWT-uj-hSQ"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqN-ZE-3vc" customClass="CalibrationDashboardSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="2028" width="361" height="300"/>
+                                    <rect key="frame" x="0.0" y="2138" width="361" height="350"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="0tB-bd-Nhw"/>
+                                        <constraint firstAttribute="height" constant="350" id="0tB-bd-Nhw"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-fv-Lm3" customClass="WorkLoadSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="2360" width="361" height="180"/>
+                                    <rect key="frame" x="0.0" y="2520" width="361" height="180"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="180" id="Hjd-eV-fUv"/>

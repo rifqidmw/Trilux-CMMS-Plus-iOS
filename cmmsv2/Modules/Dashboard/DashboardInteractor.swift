@@ -19,8 +19,4 @@ class DashboardInteractor: BaseInteractor {
                 id: id ?? ""))
         }
     
-    func getTechnicianList(job: String) -> AnyPublisher<SelectTechnicianEntity, Error> {
-        return api.requestApiPublisher(.userFilter(job: job))
-    }
-    
 }

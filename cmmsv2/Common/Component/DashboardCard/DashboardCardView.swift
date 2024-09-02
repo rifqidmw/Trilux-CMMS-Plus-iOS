@@ -51,6 +51,7 @@ extension DashboardCardView {
     private func configureView() {
         self.containerView.makeCornerRadius(16)
         self.containerView.addShadow(2.0, opacity: 0.2)
+        self.iconDashboardCardImageView.makeCornerRadius(8)
     }
     
     private func setupAction() {

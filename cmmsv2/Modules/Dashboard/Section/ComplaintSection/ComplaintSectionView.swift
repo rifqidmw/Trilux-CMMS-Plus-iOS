@@ -36,7 +36,7 @@ class ComplaintSectionView: UIView {
 
 extension ComplaintSectionView {
     
-    func configure(_ data: Quarter?) {
+    func configure(_ data: MonthlyData?) {
         self.complaintInfoCardView.configure(image: "ic_document_arrow_rounded_fill", title: "Pengaduan", String(data?.total ?? 0))
         self.openInfoCardView.configure(image: "ic_document_pencil_rounded_fill", title: "Open", String(data?.open ?? 0))
         self.progressInfoCardView.configure(image: "ic_document_clock_rounded_fill", title: "Proses", String(data?.progress ?? 0))

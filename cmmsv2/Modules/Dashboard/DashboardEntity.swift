@@ -20,6 +20,14 @@ struct DashboardEngineerContent: Codable {
     let bulanIni: MonthlyData?
     let graph: Graph?
     let beban: Load?
+    
+    enum CodingKeys: String, CodingKey {
+        case engineer
+        case kwartal
+        case bulanIni = "bulan_ini"
+        case graph
+        case beban
+    }
 }
 
 struct DashboardEngineer: Codable {
@@ -31,7 +39,10 @@ struct DashboardEngineer: Codable {
     let jabatan: String?
     
     enum CodingKeys: String, CodingKey {
-        case id, username, avatar, kontak
+        case id
+        case username
+        case avatar
+        case kontak
         case unitKerja = "unit_kerja"
         case jabatan
     }
@@ -40,17 +51,29 @@ struct DashboardEngineer: Codable {
 struct Quarter: Codable {
     let data: QuarterData?
     let textKwartal: String?
-    let total, open, progress, selesai, kendala: Int?
-    let sukuCadang, pihak3, lain: Int?
-    let targetInspeksi, realisasiInspeksi: Int?
+    let total: Int?
+    let open: Int?
+    let progress: Int?
+    let selesai: Int?
+    let kendala: Int?
+    let sukuCadang: Int?
+    let pihak3: Int?
+    let lain: Int?
+    let targetInspeksi: Int?
+    let realisasiInspeksi: Int?
     let persenInspeksi: Double?
-    let targetPreventif, realisasiPreventif: Int?
+    let targetPreventif: Int?
+    let realisasiPreventif: Int?
     let persenPreventif: Double?
     
     enum CodingKeys: String, CodingKey {
         case data
         case textKwartal = "text_kwartal"
-        case total, open, progress, selesai, kendala
+        case total
+        case open
+        case progress
+        case selesai
+        case kendala
         case sukuCadang = "suku_cadang"
         case pihak3 = "pihak3"
         case lain
@@ -77,18 +100,34 @@ struct QuarterData: Codable {
 }
 
 struct MonthlyData: Codable {
-    let total, open, progress, selesai, kendala: Int?
-    let sukuCadang, pihak3, lain: Int?
+    let total: Int?
+    let open: Int?
+    let progress: Int?
+    let selesai: Int?
+    let kendala: Int?
+    let sukuCadang: Int?
+    let pihak3: Int?
+    let lain: Int?
     let targetInspeksi: String?
-    let realisasiInspeksi, persenInspeksi: Int?
+    let realisasiInspeksi: Int?
+    let persenInspeksi: Double?
     let targetPreventif: String?
-    let realisasiPreventif, persenPreventif: Int?
-    let targetKalibrasi, realisasiKalibrasi, persenKalibrasi: Int?
-    let laikKalibrasi, tidakLaikKalibrasi: Int?
-    let jadwalPreventifBulan, jadwalPreventifNext: Int?
+    let realisasiPreventif: Int?
+    let persenPreventif: Double?
+    let targetKalibrasi: Int?
+    let realisasiKalibrasi: Int?
+    let persenKalibrasi: Double?
+    let laikKalibrasi: Int?
+    let tidakLaikKalibrasi: Int?
+    let jadwalPreventifBulan: Int?
+    let jadwalPreventifNext: Int?
     
     enum CodingKeys: String, CodingKey {
-        case total, open, progress, selesai, kendala
+        case total
+        case open
+        case progress
+        case selesai
+        case kendala
         case sukuCadang = "suku_cadang"
         case pihak3 = "pihak3"
         case lain
@@ -138,13 +177,13 @@ struct LoadData: Codable {
     let id: String?
     let name: String?
     let value: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case value
     }
-
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -184,7 +223,9 @@ struct Reference: Codable {
     
     enum CodingKeys: String, CodingKey {
         case listEngineer = "list_engineer"
-        case id, bulan, tahun
+        case id
+        case bulan
+        case tahun
         case tahunBulan = "tahun_bulan"
         case listBulan = "list_bulan"
         case listTahun = "list_tahun"

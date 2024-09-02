@@ -9,13 +9,6 @@ import UIKit
 
 extension DashboardView: ProfileSectionViewDelegate {
     
-    func didTapSelectEngineer() {
-        guard let presenter,
-              let navigation = self.navigationController
-        else { return }
-        presenter.showSelectTechnicianBottomSheet(from: navigation, self)
-    }
-    
     func didTapSelectDate() {
         guard let presenter,
               let navigation = self.navigationController
