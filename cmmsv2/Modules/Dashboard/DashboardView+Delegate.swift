@@ -30,6 +30,7 @@ extension DashboardView: SelectTechnicianBottomSheetDelegate, DatePickerBottomSh
     }
     
     func didSelectDate(_ date: Date, type: DatePickerBottomSheetType) {
+        self.showLoadingPopup()
         guard let presenter else { return }
         let dateFormatter = DateFormatter()
         
