@@ -239,6 +239,16 @@ let categoryBottomSheetIPSRSData: [CategoryModel] = [
     CategoryModel(image: "ic_calendar_with_stopwatch", title: .complaintHistory)
 ]
 
+let categoryBottomSheetRoomData: [CategoryModel] = [
+    CategoryModel(image: "ic_hospital", title: .asset),
+    CategoryModel(image: "ic_mutation", title: .mutating),
+    CategoryModel(image: "ic_notes_with_pencil", title: .historyComplaintList),
+    CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
+    CategoryModel(image: "ic_bubble_chat", title: .roomRequirement),
+    CategoryModel(image: "ic_bubble_chat", title: .assetSuggest),
+    CategoryModel(image: "ic_rating_circle", title: .rating)
+]
+
 let assetData: [MenuModel] = [
     MenuModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Tambah data aset medik"),
     MenuModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Tambah data aset non medik")

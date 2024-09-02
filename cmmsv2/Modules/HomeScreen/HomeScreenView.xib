@@ -15,6 +15,7 @@
                 <outlet property="bannerButton" destination="atR-01-Vkf" id="SOg-uB-yvP"/>
                 <outlet property="categoryView" destination="Zwo-aJ-2ms" id="cRB-tf-UnD"/>
                 <outlet property="complaintChartSectionView" destination="uh0-rn-FNz" id="5iZ-Rr-9UF"/>
+                <outlet property="containerBannerButtonView" destination="ouv-YZ-TBW" id="GE3-zu-raO"/>
                 <outlet property="correctiveChartSectionView" destination="fEC-zl-DLM" id="SJo-Jw-6av"/>
                 <outlet property="medicChartSectionView" destination="Mcd-9z-6SW" id="8u3-l2-VbF"/>
                 <outlet property="navigationView" destination="xDh-H6-m3f" id="V3z-VO-Xb0"/>

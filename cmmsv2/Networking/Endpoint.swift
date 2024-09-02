@@ -136,6 +136,7 @@ enum Endpoint {
         page: Int)
     case deleteLk(id: String?)
     case dashboardStatistic
+    case engineerDashboardStatistic(month: String?, year: String?, id: String?)
 }
 
 // MARK: - PATH URL
@@ -305,6 +306,8 @@ extension Endpoint {
             return "lk/delete_lk_korektif?id=\(id ?? "")"
         case .dashboardStatistic:
             return "statistic/lk"
+        case .engineerDashboardStatistic(month: let month, year: let year, id: let id):
+            return "statistic/teknisi?bulan=\(month ?? "")&tahun=\(year ?? "")&id=\(id ?? "")"
         }
     }
     

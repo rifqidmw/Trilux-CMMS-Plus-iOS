@@ -131,18 +131,12 @@ extension WorkSheetDetailView {
     
     private func fetchInitialData() {
         guard let presenter else { return }
+        self.showLoadingPopup()
         presenter.fetchInitialData()
     }
     
     private func bindingData() {
         guard let presenter else { return }
-        presenter.$isLoading
-            .sink { [weak self] isLoading in
-                guard let self else { return }
-                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
-            }
-            .store(in: &anyCancellable)
-        
         presenter.$dataLK
             .sink { [weak self] data in
                 guard let self else { return }

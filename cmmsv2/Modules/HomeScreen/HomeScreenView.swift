@@ -14,6 +14,7 @@ class HomeScreenView: BaseViewController {
     @IBOutlet weak var searchButton: GeneralButton!
     @IBOutlet weak var categoryView: CategorySectionView!
     @IBOutlet weak var scanningButton: GeneralButton!
+    @IBOutlet weak var containerBannerButtonView: UIView!
     @IBOutlet weak var bannerButton: UIImageView!
     @IBOutlet weak var complaintChartSectionView: DashboardChartView!
     @IBOutlet weak var correctiveChartSectionView: DashboardChartView!
@@ -119,9 +120,10 @@ extension HomeScreenView {
                 self.configureNonMedicChart(statistic)
                 self.configureAssetChart(statistic)
                 
-                if RoleManager.shared.currentUserRole == .room {
+                if RoleManager.shared.currentUserRole == .room && RoleManager.shared.currentUserRole == .ipsrs{ // IPSRS JUST TEMPORARY
                     self.medicChartSectionView.isHidden = true
                     self.nonMedicChartSectionView.isHidden = true
+                    self.containerBannerButtonView.isHidden = true
                 } else {
                     self.assetChartSectionView.isHidden = true
                 }
@@ -184,8 +186,10 @@ extension HomeScreenView {
         
         bannerButton.gesture()
             .sink { [weak self] _ in
-                guard let self else { return }
-                self.showAlert(title: "Dashboard Page")
+                guard let self,
+                      let navigation = self.navigationController
+                else { return }
+                presenter.navigateToDashboardPage(navigation: navigation)
             }
             .store(in: &anyCancellable)
     }

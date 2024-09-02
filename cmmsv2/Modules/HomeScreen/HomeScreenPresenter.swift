@@ -228,4 +228,8 @@ extension HomeScreenPresenter {
         router.navigateToWorkSheetApproval(from: navigation)
     }
     
+    func navigateToDashboardPage(navigation: UINavigationController) {
+        router.navigateToDashboardPage(navigation: navigation)
+    }
+    
 }

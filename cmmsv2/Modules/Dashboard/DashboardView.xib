@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="calibrationSectionView" destination="eqN-ZE-3vc" id="6oT-ej-Eql"/>
+                <outlet property="complaintSectionView" destination="y7D-Sk-zhk" id="lGq-Dw-OQH"/>
+                <outlet property="customNavigationView" destination="iiV-1l-i93" id="iTX-2I-REj"/>
+                <outlet property="monitoringSectionView" destination="0g0-I7-Mgd" id="5fV-5p-n53"/>
+                <outlet property="profileSectionView" destination="uMf-ew-10g" id="GD0-u9-o3I"/>
+                <outlet property="repairSectionView" destination="4pB-QP-8Mh" id="xmd-k8-3f7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="workLoadSectionView" destination="tKo-fv-Lm3" id="8ii-d4-yH7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiV-1l-i93" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="g1S-GJ-Z5U"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-Tc-0bg">
+                    <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="qgI-8c-6nj">
+                            <rect key="frame" x="16" y="16" width="361" height="2708"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMf-ew-10g" customClass="ProfileSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="598"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="598" id="Njx-c6-aNA"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-Sk-zhk" customClass="ComplaintSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="630" width="361" height="300"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="icO-UE-vIb"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pB-QP-8Mh" customClass="RepairSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="962" width="361" height="320"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="320" id="otu-kA-6Hc"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g0-I7-Mgd" customClass="MonitoringFunctionSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="1314" width="361" height="800"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="800" id="WWT-uj-hSQ"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqN-ZE-3vc" customClass="CalibrationDashboardSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="2146" width="361" height="350"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="350" id="0tB-bd-Nhw"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-fv-Lm3" customClass="WorkLoadSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="2528" width="361" height="180"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="180" id="Hjd-eV-fUv"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="qgI-8c-6nj" secondAttribute="bottom" constant="16" id="IMp-Zh-pHr"/>
+                        <constraint firstItem="qgI-8c-6nj" firstAttribute="centerX" secondItem="MGe-Tc-0bg" secondAttribute="centerX" id="JLU-WE-uBe"/>
+                        <constraint firstAttribute="trailing" secondItem="qgI-8c-6nj" secondAttribute="trailing" constant="16" id="JoM-zd-K9Q"/>
+                        <constraint firstItem="qgI-8c-6nj" firstAttribute="leading" secondItem="MGe-Tc-0bg" secondAttribute="leading" constant="16" id="SaT-eg-ePu"/>
+                        <constraint firstItem="qgI-8c-6nj" firstAttribute="top" secondItem="MGe-Tc-0bg" secondAttribute="top" constant="16" id="ULd-Zr-oCW"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MGe-Tc-0bg" secondAttribute="trailing" id="3xt-Vm-NDc"/>
+                <constraint firstAttribute="trailing" secondItem="iiV-1l-i93" secondAttribute="trailing" id="546-YC-UjI"/>
+                <constraint firstItem="MGe-Tc-0bg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KDg-9c-WhI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MGe-Tc-0bg" secondAttribute="bottom" id="Tf2-6O-slc"/>
+                <constraint firstItem="iiV-1l-i93" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lWj-xe-Bd6"/>
+                <constraint firstItem="MGe-Tc-0bg" firstAttribute="top" secondItem="iiV-1l-i93" secondAttribute="bottom" id="r2a-br-hOz"/>
+                <constraint firstItem="iiV-1l-i93" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wf9-2W-3pb"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -102,4 +102,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToDashboardPage(navigation: UINavigationController) {
+        let vc = DashboardRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

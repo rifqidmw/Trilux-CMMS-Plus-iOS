@@ -27,39 +27,30 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddb-mO-oaM">
-                    <rect key="frame" x="16" y="30.666666666666668" width="361" height="38.666666666666657"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ihf-8G-W1G">
+                    <rect key="frame" x="16" y="32.333333333333329" width="361" height="35.333333333333329"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au4-Lt-PIR">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="14"/>
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="14.666666666666666"/>
                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                             <color key="textColor" name="placeholderColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qI-Wz-Sf4">
-                            <rect key="frame" x="0.0" y="21.999999999999993" width="361" height="16.666666666666664"/>
+                            <rect key="frame" x="0.0" y="18.666666666666664" width="361" height="16.666666666666664"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                             <color key="textColor" name="darkGray"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="5qI-Wz-Sf4" secondAttribute="bottom" id="0n1-ez-Xal"/>
-                        <constraint firstItem="5qI-Wz-Sf4" firstAttribute="leading" secondItem="ddb-mO-oaM" secondAttribute="leading" id="4k0-5n-n7K"/>
-                        <constraint firstItem="Au4-Lt-PIR" firstAttribute="top" secondItem="ddb-mO-oaM" secondAttribute="top" id="Jbz-62-efy"/>
-                        <constraint firstAttribute="trailing" secondItem="5qI-Wz-Sf4" secondAttribute="trailing" id="LTe-MH-kW7"/>
-                        <constraint firstItem="Au4-Lt-PIR" firstAttribute="leading" secondItem="ddb-mO-oaM" secondAttribute="leading" id="Q4t-uv-eKC"/>
-                        <constraint firstItem="5qI-Wz-Sf4" firstAttribute="top" secondItem="Au4-Lt-PIR" secondAttribute="bottom" constant="8" id="Y0D-B6-dqX"/>
-                        <constraint firstAttribute="trailing" secondItem="Au4-Lt-PIR" secondAttribute="trailing" id="jsU-3g-2sF"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
             <color key="backgroundColor" name="customLightGray"/>
             <constraints>
-                <constraint firstItem="ddb-mO-oaM" firstAttribute="centerY" secondItem="1Xt-tp-Dcf" secondAttribute="centerY" id="Gwe-84-9U2"/>
-                <constraint firstItem="ddb-mO-oaM" firstAttribute="leading" secondItem="1Xt-tp-Dcf" secondAttribute="leading" constant="16" id="Wq5-17-BlM"/>
-                <constraint firstAttribute="trailing" secondItem="ddb-mO-oaM" secondAttribute="trailing" constant="16" id="aj2-de-7dL"/>
+                <constraint firstItem="Ihf-8G-W1G" firstAttribute="centerY" secondItem="1Xt-tp-Dcf" secondAttribute="centerY" id="2WC-YI-fhM"/>
+                <constraint firstAttribute="trailing" secondItem="Ihf-8G-W1G" secondAttribute="trailing" constant="16" id="LlB-BO-bmI"/>
+                <constraint firstItem="Ihf-8G-W1G" firstAttribute="leading" secondItem="1Xt-tp-Dcf" secondAttribute="leading" constant="16" id="Xm2-TR-ebV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="122.90076335877862" y="5.6338028169014089"/>
