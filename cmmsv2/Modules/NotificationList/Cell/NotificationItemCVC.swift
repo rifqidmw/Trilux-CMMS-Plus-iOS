@@ -94,9 +94,9 @@ extension NotificationItemCVC {
             markView.backgroundColor = UIColor.customSecondaryColor
             badgeLabel.textColor = UIColor.customPrimaryColor
         case .mutation:
-            badgeView.backgroundColor = UIColor.customLightGreenColor
-            markView.backgroundColor = UIColor.customLightGreenColor
-            badgeLabel.textColor = UIColor.customIndicatorColor10
+            badgeView.backgroundColor = UIColor.customIndicatorColor3
+            markView.backgroundColor = UIColor.customIndicatorColor3
+            badgeLabel.textColor = UIColor.customRedColor
         case .approveLk:
             badgeView.backgroundColor = UIColor.customLightGreenColor
             markView.backgroundColor = UIColor.customLightGreenColor
@@ -105,6 +105,18 @@ extension NotificationItemCVC {
             badgeView.backgroundColor = UIColor.customSecondaryColor
             markView.backgroundColor = UIColor.customSecondaryColor
             badgeLabel.textColor = UIColor.customPrimaryColor
+        case .assetReturning:
+            badgeView.backgroundColor = UIColor.customIndicatorColor3
+            markView.backgroundColor = UIColor.customIndicatorColor3
+            badgeLabel.textColor = UIColor.customRedColor
+        case .assetLoan:
+            badgeView.backgroundColor = UIColor.customIndicatorColor3
+            markView.backgroundColor = UIColor.customIndicatorColor3
+            badgeLabel.textColor = UIColor.customRedColor
+        case .roomRequirement:
+            badgeView.backgroundColor = UIColor.customLightGreenColor
+            markView.backgroundColor = UIColor.customLightGreenColor
+            badgeLabel.textColor = UIColor.customIndicatorColor10
         case .none:
             break
         }
