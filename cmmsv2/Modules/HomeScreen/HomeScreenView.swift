@@ -114,18 +114,25 @@ extension HomeScreenView {
         presenter.$dashboardStatistic
             .sink { [weak self] data in
                 guard let self, let statistic = data?.data?.woStatistics else { return }
+                
                 self.configureComplaintChart(statistic)
                 self.configureCorrectiveChart(statistic)
                 self.configureMedicChart(statistic)
                 self.configureNonMedicChart(statistic)
                 self.configureAssetChart(statistic)
                 
-                if RoleManager.shared.currentUserRole == .room && RoleManager.shared.currentUserRole == .ipsrs{ // IPSRS JUST TEMPORARY
+                if RoleManager.shared.currentUserRole == .room {
                     self.medicChartSectionView.isHidden = true
                     self.nonMedicChartSectionView.isHidden = true
-                    self.containerBannerButtonView.isHidden = true
                 } else {
                     self.assetChartSectionView.isHidden = true
+                }
+                
+                // IPSRS JUST TEMPORARY
+                if RoleManager.shared.currentUserRole == .ipsrs || RoleManager.shared.currentUserRole == .room {
+                    self.containerBannerButtonView.isHidden = true
+                } else {
+                    self.containerBannerButtonView.isHidden = false
                 }
             }
             .store(in: &anyCancellable)
