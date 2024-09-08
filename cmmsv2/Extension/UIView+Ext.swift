@@ -161,6 +161,56 @@ extension UIView {
         return container
     }
     
+    func configureStatusView(
+        status: WorkSheetStatus,
+        titleLabel: UILabel,
+        widthConstraint: NSLayoutConstraint
+    ) {
+        titleLabel.text = (status == .none) ? "Tidak diketahui" : status.getStringValue()
+        switch status {
+        case .done:
+            self.backgroundColor = UIColor.customLightGreenColor
+            titleLabel.textColor = UIColor.customIndicatorColor8
+            widthConstraint.constant = 160
+        case .open:
+            self.backgroundColor = UIColor.customSecondaryColor
+            titleLabel.textColor = UIColor.customPrimaryColor
+            widthConstraint.constant = 46
+        case .ongoing:
+            self.backgroundColor = UIColor.customIndicatorColor2
+            titleLabel.textColor = UIColor.customIndicatorColor11
+            widthConstraint.constant = 130
+        case .hold:
+            self.backgroundColor = UIColor.customIndicatorColor2
+            titleLabel.textColor = UIColor.customIndicatorColor11
+            widthConstraint.constant = 100
+        case .close:
+            self.backgroundColor = UIColor.customIndicatorColor2
+            titleLabel.textColor = UIColor.customIndicatorColor11
+            widthConstraint.constant = 48
+        case .removed:
+            self.backgroundColor = UIColor.customIndicatorColor3
+            titleLabel.textColor = UIColor.customIndicatorColor4
+            widthConstraint.constant = 220
+        case .progressDelay:
+            self.backgroundColor = UIColor.customIndicatorColor2
+            titleLabel.textColor = UIColor.customIndicatorColor11
+            widthConstraint.constant = 100
+        case .progress:
+            self.backgroundColor = UIColor.customIndicatorColor2
+            titleLabel.textColor = UIColor.customIndicatorColor11
+            widthConstraint.constant = 80
+        case .draft:
+            self.backgroundColor = UIColor.customIndicatorColor2
+            titleLabel.textColor = UIColor.customIndicatorColor11
+            widthConstraint.constant = 50
+        case .none:
+            self.backgroundColor = UIColor.customIndicatorColor2
+            titleLabel.textColor = UIColor.customIndicatorColor11
+            widthConstraint.constant = 100
+        }
+    }
+    
 }
 
 enum ShadowPosition {

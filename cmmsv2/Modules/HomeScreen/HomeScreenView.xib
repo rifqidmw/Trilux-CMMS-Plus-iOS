@@ -32,8 +32,8 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnT-xI-f7C">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SZB-gw-7Hy">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="2208"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SZB-gw-7Hy">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="2168"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-o3-hIJ" userLabel="Navigation View">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
@@ -53,32 +53,32 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOB-zE-StU" userLabel="Search View">
-                                    <rect key="frame" x="0.0" y="88" width="393" height="72"/>
+                                    <rect key="frame" x="0.0" y="72" width="393" height="96"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-98-Fo5" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="12" width="361" height="48"/>
+                                            <rect key="frame" x="16" y="24" width="361" height="48"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="ftA-98-Fo5" secondAttribute="bottom" constant="12" id="8K6-Sb-xLk"/>
-                                        <constraint firstAttribute="height" constant="72" id="DmY-1d-VyR"/>
+                                        <constraint firstAttribute="bottom" secondItem="ftA-98-Fo5" secondAttribute="bottom" constant="24" id="8K6-Sb-xLk"/>
+                                        <constraint firstAttribute="height" constant="96" id="DmY-1d-VyR"/>
                                         <constraint firstItem="ftA-98-Fo5" firstAttribute="centerY" secondItem="BOB-zE-StU" secondAttribute="centerY" id="R7c-EX-GMv"/>
                                         <constraint firstAttribute="trailing" secondItem="ftA-98-Fo5" secondAttribute="trailing" constant="16" id="oVx-zR-sik"/>
-                                        <constraint firstItem="ftA-98-Fo5" firstAttribute="top" secondItem="BOB-zE-StU" secondAttribute="top" constant="12" id="oyS-x7-fXr"/>
+                                        <constraint firstItem="ftA-98-Fo5" firstAttribute="top" secondItem="BOB-zE-StU" secondAttribute="top" constant="24" id="oyS-x7-fXr"/>
                                         <constraint firstItem="ftA-98-Fo5" firstAttribute="leading" secondItem="BOB-zE-StU" secondAttribute="leading" constant="16" id="qqP-Y6-Vyi"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwo-aJ-2ms" customClass="CategorySectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="176" width="393" height="150"/>
+                                    <rect key="frame" x="0.0" y="168" width="393" height="166"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="150" id="ZiP-4f-BIp"/>
+                                        <constraint firstAttribute="height" constant="166" id="ZiP-4f-BIp"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tfm-sE-0fo">
-                                    <rect key="frame" x="0.0" y="342" width="393" height="144"/>
+                                    <rect key="frame" x="0.0" y="334" width="393" height="144"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZt-0T-HyK" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="16" y="16" width="361" height="48"/>
@@ -95,7 +95,7 @@
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouv-YZ-TBW">
-                                    <rect key="frame" x="0.0" y="502" width="393" height="144"/>
+                                    <rect key="frame" x="0.0" y="478" width="393" height="144"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboard_banner" translatesAutoresizingMaskIntoConstraints="NO" id="atR-01-Vkf">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="144"/>
@@ -111,7 +111,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i8W-cw-9Xk">
-                                    <rect key="frame" x="0.0" y="662" width="393" height="1546"/>
+                                    <rect key="frame" x="0.0" y="622" width="393" height="1546"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-rn-FNz" customClass="DashboardChartView" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="16" y="16" width="361" height="230"/>

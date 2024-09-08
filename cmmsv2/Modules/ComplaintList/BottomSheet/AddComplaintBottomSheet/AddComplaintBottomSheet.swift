@@ -145,7 +145,6 @@ extension AddComplaintBottomSheet {
             }
             .store(in: &anyCancellable)
         
-        
         Publishers.Merge3(bottomSheetView.handleBarArea.gesture(), titleView.gesture(), dismissAreaView.gesture())
             .sink { [weak self] _ in
                 guard let self else { return }

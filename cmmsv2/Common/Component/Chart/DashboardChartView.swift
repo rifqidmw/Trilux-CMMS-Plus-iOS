@@ -85,10 +85,10 @@ extension DashboardChartView {
         self.containerView.addShadow(4.0, opacity: 0.2)
         
         self.containerPieChartView.makeCornerRadius(8)
-        self.containerPieChartView.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerPieChartView.addShadow(4, position: .bottom, opacity: 0.2)
         
         self.containerBarChartView.makeCornerRadius(8)
-        self.containerBarChartView.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerBarChartView.addShadow(4, position: .bottom, opacity: 0.2)
         
         self.containerPieChartWidthConstraint.constant = CGSize.widthDevice / 3
     }

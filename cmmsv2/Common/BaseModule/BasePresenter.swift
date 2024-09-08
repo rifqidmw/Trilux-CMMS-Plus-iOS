@@ -62,6 +62,13 @@ extension BasePresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
+    func showRatingBottomSheet(navigation: UINavigationController, data: HistoryDetailEntity.HistoryDetailData?, _ delegate: RatingBottomSheetDelegate) {
+        let bottomSheet = RatingBottomSheet(nibName: String(describing: RatingBottomSheet.self), bundle: nil)
+        bottomSheet.data = data
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
     func backToPreviousPage(from navigation: UINavigationController, _ view: UIViewController) {
         router.backToPreviousPage(from: navigation, view)
     }

@@ -27,7 +27,7 @@ class NotificationItemCVC: UICollectionViewCell {
         super.awakeFromNib()
         self.setupSkeleton()
         self.containerView.makeCornerRadius(8)
-        self.addShadow(2, position: .bottom, opacity: 0.2)
+        self.addShadow(4, position: .bottom, opacity: 0.2)
     }
     
 }
@@ -106,17 +106,17 @@ extension NotificationItemCVC {
             markView.backgroundColor = UIColor.customSecondaryColor
             badgeLabel.textColor = UIColor.customPrimaryColor
         case .assetReturning:
-            badgeView.backgroundColor = UIColor.customIndicatorColor3
-            markView.backgroundColor = UIColor.customIndicatorColor3
-            badgeLabel.textColor = UIColor.customRedColor
+            badgeView.backgroundColor = UIColor.customLightGreenColor
+            markView.backgroundColor = UIColor.customLightGreenColor
+            badgeLabel.textColor = UIColor.customIndicatorColor10
         case .assetLoan:
             badgeView.backgroundColor = UIColor.customIndicatorColor3
             markView.backgroundColor = UIColor.customIndicatorColor3
             badgeLabel.textColor = UIColor.customRedColor
         case .roomRequirement:
-            badgeView.backgroundColor = UIColor.customLightGreenColor
-            markView.backgroundColor = UIColor.customLightGreenColor
-            badgeLabel.textColor = UIColor.customIndicatorColor10
+            badgeView.backgroundColor = UIColor.customIndicatorColor2
+            markView.backgroundColor = UIColor.customIndicatorColor2
+            badgeLabel.textColor = UIColor.customIndicatorColor11
         case .none:
             break
         }

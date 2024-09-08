@@ -1005,6 +1005,10 @@
 		FA74E3662C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3672C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */; };
+		FAA68D0D2C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
+		FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
+		FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
+		FAA68D102C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
 		FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */; };
 		FAC12A0E2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
 		FAC12A0F2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
@@ -1559,6 +1563,8 @@
 		FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInformationCardView.xib; sourceTree = "<group>"; };
 		FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalSummaryCardView.swift; sourceTree = "<group>"; };
 		FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalSummaryCardView.xib; sourceTree = "<group>"; };
+		FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBottomSheet.swift; sourceTree = "<group>"; };
+		FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingBottomSheet.xib; sourceTree = "<group>"; };
 		FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionView.swift; sourceTree = "<group>"; };
 		FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSectionView.xib; sourceTree = "<group>"; };
 		FAC12A122C7FA2C900DBAB83 /* ComplaintSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintSectionView.swift; sourceTree = "<group>"; };
@@ -3055,6 +3061,7 @@
 				CEF43A2C2C53935B0066B65A /* ConditionFilterBottomSheet */,
 				CE8B88CB2C29887200AF8F63 /* FilterStatusBottomSheet */,
 				CE829B012C4FFED60056F429 /* InstallationBottomSheet */,
+				FAA68D0A2C87A18B00A2C8EF /* RatingBottomSheet */,
 				CE4012502B5D99FB00517F7C /* SelectActionBottomSheet */,
 				CEE862162C5D86DD00AA4317 /* SelectTechnicalDataBottomSheet */,
 				CEB465B02C4CBC7600B10341 /* SortingBottomSheet */,
@@ -3528,6 +3535,15 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		FAA68D0A2C87A18B00A2C8EF /* RatingBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */,
+				FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */,
+			);
+			path = RatingBottomSheet;
+			sourceTree = "<group>";
+		};
 		FAC12A092C7FA17800DBAB83 /* Section */ = {
 			isa = PBXGroup;
 			children = (
@@ -3761,6 +3777,7 @@
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F02BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
 				FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
+				FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
 				CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B12C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
 				CEB8C3692C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
@@ -3945,6 +3962,7 @@
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F22BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
 				FAC12A102C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
+				FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
 				CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B32C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
 				CEB8C36B2C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
@@ -4207,6 +4225,7 @@
 				CE2E3AF62BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1552B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
 				FA74E3652C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */,
+				FAA68D0D2C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */,
 				CECB3DA92B45D962004A260D /* ViewController.swift in Sources */,
 				CE92864F2C60C72F004F1245 /* EquipmentMaintenancePresenter.swift in Sources */,
 				CE9286502C60C72F004F1245 /* EquipmentMaintenanceRouter.swift in Sources */,
@@ -4556,6 +4575,7 @@
 				CE2E3AF72BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1562B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
 				FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */,
+				FAA68D102C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */,
 				CECB3DC12B45DAFF004A260D /* ViewController.swift in Sources */,
 				CE9286542C60C72F004F1245 /* EquipmentMaintenancePresenter.swift in Sources */,
 				CE9286552C60C72F004F1245 /* EquipmentMaintenanceRouter.swift in Sources */,

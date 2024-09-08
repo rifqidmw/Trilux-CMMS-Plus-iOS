@@ -47,7 +47,7 @@ extension AssetCVC {
     private func configureSharedComponent() {
         self.makeCornerRadius(8)
         self.containerView.makeCornerRadius(8)
-        self.containerView.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerView.addShadow(4, position: .bottom, opacity: 0.2)
         self.markView.makeCornerRadius(2)
         self.assetImageView.makeCornerRadius(8)
         self.technicalBadgeView.makeCornerRadius(4)

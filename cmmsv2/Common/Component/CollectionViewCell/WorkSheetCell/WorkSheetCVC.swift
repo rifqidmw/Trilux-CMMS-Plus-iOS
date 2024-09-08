@@ -50,7 +50,7 @@ class WorkSheetCVC: UICollectionViewCell {
         self.markView.makeCornerRadius(4, .rightCurve)
         self.containerView.makeCornerRadius(8)
         self.makeCornerRadius(8)
-        self.containerView.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerView.addShadow(4, position: .bottom, opacity: 0.2)
         self.showSkeletonAnimation()
     }
     
@@ -62,7 +62,10 @@ extension WorkSheetCVC {
         hideSkeletonAnimation()
         uniqueNumberLabel.text = data.serialNumber
         workSheetLabel.text = data.title
-        configureStatus(status: data.status ?? .none)
+        thirdBadgeView.configureStatusView(
+            status: data.status ?? .none,
+            titleLabel: thirdBadgeTitleLabel,
+            widthConstraint: thirdBadgeViewWidthConstraint)
         configureCategory(category: data.category ?? .none)
         dateLabel.text = data.dateTime
         
@@ -127,57 +130,6 @@ extension WorkSheetCVC {
             secondBadgeIconImageView.image = UIImage(named: "ic_clock")
             secondBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
         default: break
-        }
-    }
-    
-    private func configureStatus(status: WorkSheetStatus) {
-        if status == .none {
-            thirdBadgeTitleLabel.text = "Tidak diketahui"
-        } else {
-            thirdBadgeTitleLabel.text = status.getStringValue()
-        }
-        
-        switch status {
-        case .done:
-            thirdBadgeView.backgroundColor = UIColor.customLightGreenColor
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor8
-            thirdBadgeViewWidthConstraint.constant = 160
-        case .open:
-            thirdBadgeView.backgroundColor = UIColor.customSecondaryColor
-            thirdBadgeTitleLabel.textColor = UIColor.customPrimaryColor
-            thirdBadgeViewWidthConstraint.constant = 46
-        case .ongoing:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
-            thirdBadgeViewWidthConstraint.constant = 130
-        case .hold:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
-            thirdBadgeViewWidthConstraint.constant = 100
-        case .close:
-            thirdBadgeView.backgroundColor = UIColor.customLightGreenColor
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor8
-            thirdBadgeViewWidthConstraint.constant = 46
-        case .removed:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor3
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor4
-            thirdBadgeViewWidthConstraint.constant = 220
-        case .progressDelay:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
-            thirdBadgeViewWidthConstraint.constant = 100
-        case .progress:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
-            thirdBadgeViewWidthConstraint.constant = 80
-        case .draft:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
-            thirdBadgeViewWidthConstraint.constant = 50
-        case .none:
-            thirdBadgeView.backgroundColor = UIColor.customIndicatorColor2
-            thirdBadgeTitleLabel.textColor = UIColor.customIndicatorColor11
-            thirdBadgeViewWidthConstraint.constant = 100
         }
     }
     

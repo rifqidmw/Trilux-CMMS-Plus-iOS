@@ -262,6 +262,24 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
                     presenter.navigateToWorkSheetApprovalDetail(from: navigation, id: id)
                 }
             }
+        case .rating:
+            let contentOffset = collectionView.contentOffset
+            self.showLoadingPopup()
+            presenter.fetchWorkSheetDetail(id: itemIdString) { [weak self] in
+                guard let self = self,
+                      let navigation = self.navigationController else { return }
+                
+                DispatchQueue.main.async {
+                    self.hideLoadingPopup()
+                    if let data = presenter.workSheetDetail,
+                       let worksheet = data.data {
+                        presenter.showRatingBottomSheet(navigation: navigation, data: worksheet, self)
+                    } else {
+                        self.showAlert(title: "Terjadi Kesalahan", message: "Data tidak ditemukan")
+                    }
+                    self.collectionView.setContentOffset(contentOffset, animated: false)
+                }
+            }
         default:
             break
         }
