@@ -113,4 +113,16 @@ extension BasePresenter {
         router.navigateToWorkSheetApprovalDetail(from: navigation, id: id ?? "")
     }
     
+    func navigateToEquipmentManagement(from navigation: UINavigationController, _ type: EquipmentManagementType) {
+        router.navigateToEquipmentManagement(from: navigation, type)
+    }
+    
+    func navigateToRoomRequirement(from navigation: UINavigationController) {
+        router.navigateToRoomRequirement(from: navigation)
+    }
+    
+    func navigateToEquipmentMutationSelection(from navigation: UINavigationController) {
+        router.navigateToEquipmentMutationSelection(from: navigation)
+    }
+    
 }

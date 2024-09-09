@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EquipmentManagementView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="customNavigationView" destination="QtT-o4-wIm" id="Fue-yr-APH"/>
+                <outlet property="segmentedControl" destination="CdI-jH-Zrz" id="ugp-mH-4pg"/>
+                <outlet property="tableView" destination="BNV-Xk-WW0" id="hOe-X5-W12"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtT-o4-wIm" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="O0S-zN-Axh"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="z7d-6t-DJP">
+                    <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CdI-jH-Zrz">
+                            <rect key="frame" x="16" y="16" width="361" height="57"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="vNg-gk-e5D"/>
+                            </constraints>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BNV-Xk-WW0">
+                            <rect key="frame" x="16" y="88" width="361" height="599"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="z7d-6t-DJP" secondAttribute="bottom" id="B3K-cs-bja"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="z7d-6t-DJP" secondAttribute="trailing" id="UnI-Br-AhX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QtT-o4-wIm" secondAttribute="trailing" id="cvp-Ug-zW3"/>
+                <constraint firstItem="QtT-o4-wIm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hVa-AE-YuM"/>
+                <constraint firstItem="z7d-6t-DJP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kDz-k2-R7r"/>
+                <constraint firstItem="QtT-o4-wIm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q6m-9o-MZy"/>
+                <constraint firstItem="z7d-6t-DJP" firstAttribute="top" secondItem="QtT-o4-wIm" secondAttribute="bottom" id="xPN-cF-lML"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

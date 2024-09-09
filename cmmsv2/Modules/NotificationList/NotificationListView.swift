@@ -280,6 +280,14 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
                     self.collectionView.setContentOffset(contentOffset, animated: false)
                 }
             }
+        case .assetReturning:
+            presenter.navigateToEquipmentManagement(from: navigation, .returning)
+        case .assetLoan:
+            presenter.navigateToEquipmentManagement(from: navigation, .loan)
+        case .roomRequirement:
+            presenter.navigateToRoomRequirement(from: navigation)
+        case .mutation:
+            presenter.navigateToEquipmentMutationSelection(from: navigation)
         default:
             break
         }
