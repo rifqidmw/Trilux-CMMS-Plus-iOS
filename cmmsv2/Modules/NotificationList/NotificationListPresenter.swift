@@ -69,7 +69,7 @@ extension NotificationListPresenter {
             .store(in: &anyCancellable)
     }
     
-    func fetchWorkSheetDetail(id: String?) {
+    func fetchWorkSheetDetail(id: String?, completion: (() -> Void)? = nil) {
         self.isLoading = true
         interactor.getWorkSheetNotification(id: id ?? "")
             .sink(
@@ -87,6 +87,7 @@ extension NotificationListPresenter {
                 receiveValue: { workSheet in
                     DispatchQueue.main.async {
                         self.workSheetDetail = workSheet
+                        completion?()
                     }
                 }
             )

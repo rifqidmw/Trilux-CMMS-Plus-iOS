@@ -38,7 +38,7 @@ extension FormView {
     
     private func configureSharedComponent() {
         self.containerStackView.makeCornerRadius(8)
-        self.containerStackView.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerStackView.addShadow(4, position: .bottom, opacity: 0.2)
         self.headerFormView.makeCornerRadius(8, .topCurve)
         self.headerFormView.titleLabel.numberOfLines = 2
     }

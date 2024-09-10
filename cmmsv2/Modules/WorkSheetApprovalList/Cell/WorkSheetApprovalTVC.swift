@@ -28,7 +28,7 @@ class WorkSheetApprovalTVC: UITableViewCell {
         self.selectionStyle = .none
         self.showAnimationSkeleton()
         self.containerContentView.makeCornerRadius(8)
-        self.containerContentView.addShadow(2, position: .bottom, opacity: 0.2)
+        self.containerContentView.addShadow(4, position: .bottom, opacity: 0.2)
         self.approvalImageView.makeCornerRadius(8)
     }
     

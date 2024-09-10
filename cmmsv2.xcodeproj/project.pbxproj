@@ -1005,6 +1005,10 @@
 		FA74E3662C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3672C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */; };
+		FAA68D0D2C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
+		FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
+		FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
+		FAA68D102C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
 		FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */; };
 		FAC12A0E2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
 		FAC12A0F2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
@@ -1047,6 +1051,42 @@
 		FAE08BB52C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
 		FAE08BB62C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
 		FAE08BB72C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */; };
+		FAF3CCB22C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */; };
+		FAF3CCB32C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */; };
+		FAF3CCB42C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */; };
+		FAF3CCB52C8F66D400630A96 /* EquipmentManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */; };
+		FAF3CCB62C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */; };
+		FAF3CCB72C8F66D400630A96 /* EquipmentManagementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */; };
+		FAF3CCB82C8F66D400630A96 /* EquipmentManagementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */; };
+		FAF3CCB92C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */; };
+		FAF3CCBA2C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */; };
+		FAF3CCBB2C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */; };
+		FAF3CCBC2C8F66D400630A96 /* EquipmentManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */; };
+		FAF3CCBD2C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */; };
+		FAF3CCC52C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */; };
+		FAF3CCC62C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */; };
+		FAF3CCC72C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */; };
+		FAF3CCC82C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */; };
+		FAF3CCC92C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */; };
+		FAF3CCCA2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */; };
+		FAF3CCCB2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */; };
+		FAF3CCCC2C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */; };
+		FAF3CCCD2C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */; };
+		FAF3CCCE2C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */; };
+		FAF3CCCF2C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */; };
+		FAF3CCD02C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */; };
+		FAF3CCD82C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD22C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift */; };
+		FAF3CCD92C8F801100630A96 /* EquipmentMutationSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD32C8F801100630A96 /* EquipmentMutationSelectionRouter.swift */; };
+		FAF3CCDA2C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */; };
+		FAF3CCDB2C8F801100630A96 /* EquipmentMutationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */; };
+		FAF3CCDC2C8F801100630A96 /* EquipmentMutationSelectionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */; };
+		FAF3CCDD2C8F801100630A96 /* EquipmentMutationSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCD62C8F801100630A96 /* EquipmentMutationSelectionView.xib */; };
+		FAF3CCDE2C8F801100630A96 /* EquipmentMutationSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCD62C8F801100630A96 /* EquipmentMutationSelectionView.xib */; };
+		FAF3CCDF2C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD22C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift */; };
+		FAF3CCE02C8F801100630A96 /* EquipmentMutationSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD32C8F801100630A96 /* EquipmentMutationSelectionRouter.swift */; };
+		FAF3CCE12C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */; };
+		FAF3CCE22C8F801100630A96 /* EquipmentMutationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */; };
+		FAF3CCE32C8F801100630A96 /* EquipmentMutationSelectionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1559,6 +1599,8 @@
 		FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInformationCardView.xib; sourceTree = "<group>"; };
 		FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalSummaryCardView.swift; sourceTree = "<group>"; };
 		FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalSummaryCardView.xib; sourceTree = "<group>"; };
+		FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBottomSheet.swift; sourceTree = "<group>"; };
+		FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingBottomSheet.xib; sourceTree = "<group>"; };
 		FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionView.swift; sourceTree = "<group>"; };
 		FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSectionView.xib; sourceTree = "<group>"; };
 		FAC12A122C7FA2C900DBAB83 /* ComplaintSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintSectionView.swift; sourceTree = "<group>"; };
@@ -1580,6 +1622,24 @@
 		FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView+Delegate.swift"; sourceTree = "<group>"; };
 		FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverviewPanelView.swift; sourceTree = "<group>"; };
 		FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusOverviewPanelView.xib; sourceTree = "<group>"; };
+		FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementPresenter.swift; sourceTree = "<group>"; };
+		FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementRouter.swift; sourceTree = "<group>"; };
+		FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementInteractor.swift; sourceTree = "<group>"; };
+		FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementView.swift; sourceTree = "<group>"; };
+		FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentManagementView.xib; sourceTree = "<group>"; };
+		FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementEntity.swift; sourceTree = "<group>"; };
+		FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementPresenter.swift; sourceTree = "<group>"; };
+		FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementRouter.swift; sourceTree = "<group>"; };
+		FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementInteractor.swift; sourceTree = "<group>"; };
+		FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementView.swift; sourceTree = "<group>"; };
+		FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomRequirementView.xib; sourceTree = "<group>"; };
+		FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementEntity.swift; sourceTree = "<group>"; };
+		FAF3CCD22C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionPresenter.swift; sourceTree = "<group>"; };
+		FAF3CCD32C8F801100630A96 /* EquipmentMutationSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionRouter.swift; sourceTree = "<group>"; };
+		FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionInteractor.swift; sourceTree = "<group>"; };
+		FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionView.swift; sourceTree = "<group>"; };
+		FAF3CCD62C8F801100630A96 /* EquipmentMutationSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentMutationSelectionView.xib; sourceTree = "<group>"; };
+		FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionEntity.swift; sourceTree = "<group>"; };
 		FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2875,6 +2935,8 @@
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CEE862032C5CF66D00AA4317 /* EditTechnical */,
 				CEB05F602C60C6D0004BA1AE /* EquipmentMaintenance */,
+				FAF3CCAB2C8F66BA00630A96 /* EquipmentManagement */,
+				FAF3CCD12C8F7FFC00630A96 /* EquipmentMutationSelection */,
 				CEE8CB862BF7C8E7006E59B7 /* HistoryDetail */,
 				CEC1B0542BA1E37600DF6A4F /* HistoryList */,
 				CEC207922B4AD64E0073FA1E /* HomeScreen */,
@@ -2885,6 +2947,7 @@
 				CEB703862BA8788F004583C7 /* PreventiveCalendarList */,
 				CEE07C862B9F405F00EFBFB8 /* PreventiveMaintenanceList */,
 				CE82D4492B47DD8E00A54124 /* RegistrationHospital */,
+				FAF3CCBE2C8F7F0500630A96 /* RoomRequirement */,
 				CEEED8652B7A86A800672952 /* Scan */,
 				CEF72EEE2B4681D200815E4C /* SplashScreen */,
 				CE9E7D642B529D9400240A7D /* UserProfile */,
@@ -3055,6 +3118,7 @@
 				CEF43A2C2C53935B0066B65A /* ConditionFilterBottomSheet */,
 				CE8B88CB2C29887200AF8F63 /* FilterStatusBottomSheet */,
 				CE829B012C4FFED60056F429 /* InstallationBottomSheet */,
+				FAA68D0A2C87A18B00A2C8EF /* RatingBottomSheet */,
 				CE4012502B5D99FB00517F7C /* SelectActionBottomSheet */,
 				CEE862162C5D86DD00AA4317 /* SelectTechnicalDataBottomSheet */,
 				CEB465B02C4CBC7600B10341 /* SortingBottomSheet */,
@@ -3528,6 +3592,15 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		FAA68D0A2C87A18B00A2C8EF /* RatingBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */,
+				FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */,
+			);
+			path = RatingBottomSheet;
+			sourceTree = "<group>";
+		};
 		FAC12A092C7FA17800DBAB83 /* Section */ = {
 			isa = PBXGroup;
 			children = (
@@ -3602,6 +3675,45 @@
 				FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */,
 			);
 			path = StatusOverviewPanel;
+			sourceTree = "<group>";
+		};
+		FAF3CCAB2C8F66BA00630A96 /* EquipmentManagement */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */,
+				FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */,
+				FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */,
+				FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */,
+				FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */,
+				FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */,
+			);
+			path = EquipmentManagement;
+			sourceTree = "<group>";
+		};
+		FAF3CCBE2C8F7F0500630A96 /* RoomRequirement */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */,
+				FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */,
+				FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */,
+				FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */,
+				FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */,
+				FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */,
+			);
+			path = RoomRequirement;
+			sourceTree = "<group>";
+		};
+		FAF3CCD12C8F7FFC00630A96 /* EquipmentMutationSelection */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3CCD22C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift */,
+				FAF3CCD32C8F801100630A96 /* EquipmentMutationSelectionRouter.swift */,
+				FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */,
+				FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */,
+				FAF3CCD62C8F801100630A96 /* EquipmentMutationSelectionView.xib */,
+				FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */,
+			);
+			path = EquipmentMutationSelection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3761,11 +3873,14 @@
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F02BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
 				FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
+				FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
 				CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B12C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
+				FAF3CCB72C8F66D400630A96 /* EquipmentManagementView.xib in Resources */,
 				CEB8C3692C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
 				CE7545532C3ADE09002234F8 /* InputBottomSheet.xib in Resources */,
 				CEADA5042C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */,
+				FAF3CCDD2C8F801100630A96 /* EquipmentMutationSelectionView.xib in Resources */,
 				CE916A792C0634D000C8B153 /* PreparationTVC.xib in Resources */,
 				CEE780CF2C0C755F001BA9C2 /* TaskSectionView.xib in Resources */,
 				CE9E7D752B529EB300240A7D /* ChangePasswordView.xib in Resources */,
@@ -3815,6 +3930,7 @@
 				CE7C3BD52C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CED8BBD02C76556100B37EC6 /* DashboardChartView.xib in Resources */,
 				FAC12A2F2C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */,
+				FAF3CCCA2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */,
 				CE829B052C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C72C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
@@ -3945,11 +4061,14 @@
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
 				CE7064F22BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
 				FAC12A102C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
+				FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
 				CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B32C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
+				FAF3CCB82C8F66D400630A96 /* EquipmentManagementView.xib in Resources */,
 				CEB8C36B2C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
 				CE7545552C3ADE09002234F8 /* InputBottomSheet.xib in Resources */,
 				CEADA5062C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */,
+				FAF3CCDE2C8F801100630A96 /* EquipmentMutationSelectionView.xib in Resources */,
 				CE916A7B2C0634D000C8B153 /* PreparationTVC.xib in Resources */,
 				CEE780D12C0C755F001BA9C2 /* TaskSectionView.xib in Resources */,
 				CE9E7D762B529EB300240A7D /* ChangePasswordView.xib in Resources */,
@@ -3999,6 +4118,7 @@
 				CE7C3BD62C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CED8BBD12C76556100B37EC6 /* DashboardChartView.xib in Resources */,
 				FAC12A322C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */,
+				FAF3CCCB2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */,
 				CE829B062C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C92C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
@@ -4166,6 +4286,11 @@
 				CEC1B0612BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CEB05F5D2C60BBB5004BA1AE /* EmptyView.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
+				FAF3CCC52C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */,
+				FAF3CCC62C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */,
+				FAF3CCC72C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */,
+				FAF3CCC82C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */,
+				FAF3CCC92C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */,
 				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				FAC12A302C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */,
 				CEF43A362C54026B0066B65A /* ConditionFilterBottomSheet.swift in Sources */,
@@ -4184,6 +4309,11 @@
 				CE5442962B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CEF5D7C92B6D311700FDE752 /* SplashScreenView.swift in Sources */,
 				CE46B5602C558E0000C5F8B5 /* AssetFilterView+Delegate.swift in Sources */,
+				FAF3CCD82C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift in Sources */,
+				FAF3CCD92C8F801100630A96 /* EquipmentMutationSelectionRouter.swift in Sources */,
+				FAF3CCDA2C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift in Sources */,
+				FAF3CCDB2C8F801100630A96 /* EquipmentMutationSelectionView.swift in Sources */,
+				FAF3CCDC2C8F801100630A96 /* EquipmentMutationSelectionEntity.swift in Sources */,
 				CEE8CB8D2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */,
 				CE2329F42C42EC010087450A /* MediaSectionView.swift in Sources */,
 				CEE67D272B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift in Sources */,
@@ -4207,6 +4337,7 @@
 				CE2E3AF62BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1552B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
 				FA74E3652C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */,
+				FAA68D0D2C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */,
 				CECB3DA92B45D962004A260D /* ViewController.swift in Sources */,
 				CE92864F2C60C72F004F1245 /* EquipmentMaintenancePresenter.swift in Sources */,
 				CE9286502C60C72F004F1245 /* EquipmentMaintenanceRouter.swift in Sources */,
@@ -4411,6 +4542,11 @@
 				CE3108632BE264CC00660275 /* GeneralInformationView.swift in Sources */,
 				CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE4255E72BA704E5002B558C /* LogBookListRouter.swift in Sources */,
+				FAF3CCB22C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */,
+				FAF3CCB32C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */,
+				FAF3CCB42C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */,
+				FAF3CCB52C8F66D400630A96 /* EquipmentManagementView.swift in Sources */,
+				FAF3CCB62C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */,
 				CE9878802C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
 				CEC1B05F2BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				FA49E5B82C807A4600267925 /* ProfileInformationCardView.swift in Sources */,
@@ -4515,6 +4651,11 @@
 				CEC1B0622BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CEB05F5F2C60BBB5004BA1AE /* EmptyView.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
+				FAF3CCCC2C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */,
+				FAF3CCCD2C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */,
+				FAF3CCCE2C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */,
+				FAF3CCCF2C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */,
+				FAF3CCD02C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */,
 				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				FAC12A312C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */,
 				CEF43A382C54026B0066B65A /* ConditionFilterBottomSheet.swift in Sources */,
@@ -4533,6 +4674,11 @@
 				CE5442972B4727F50022047D /* GeneralTextField.swift in Sources */,
 				CEF5D7CA2B6D311700FDE752 /* SplashScreenView.swift in Sources */,
 				CE46B5612C558E0000C5F8B5 /* AssetFilterView+Delegate.swift in Sources */,
+				FAF3CCDF2C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift in Sources */,
+				FAF3CCE02C8F801100630A96 /* EquipmentMutationSelectionRouter.swift in Sources */,
+				FAF3CCE12C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift in Sources */,
+				FAF3CCE22C8F801100630A96 /* EquipmentMutationSelectionView.swift in Sources */,
+				FAF3CCE32C8F801100630A96 /* EquipmentMutationSelectionEntity.swift in Sources */,
 				CEE8CB8E2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */,
 				CE2329F62C42EC010087450A /* MediaSectionView.swift in Sources */,
 				CEE67D282B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift in Sources */,
@@ -4556,6 +4702,7 @@
 				CE2E3AF72BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
 				CE90B1562B99605700515AD6 /* ComplaintListRouter.swift in Sources */,
 				FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */,
+				FAA68D102C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */,
 				CECB3DC12B45DAFF004A260D /* ViewController.swift in Sources */,
 				CE9286542C60C72F004F1245 /* EquipmentMaintenancePresenter.swift in Sources */,
 				CE9286552C60C72F004F1245 /* EquipmentMaintenanceRouter.swift in Sources */,
@@ -4760,6 +4907,11 @@
 				CE3108642BE264CC00660275 /* GeneralInformationView.swift in Sources */,
 				CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE4255E82BA704E5002B558C /* LogBookListRouter.swift in Sources */,
+				FAF3CCB92C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */,
+				FAF3CCBA2C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */,
+				FAF3CCBB2C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */,
+				FAF3CCBC2C8F66D400630A96 /* EquipmentManagementView.swift in Sources */,
+				FAF3CCBD2C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */,
 				CE9878832C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
 				CEC1B0602BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				FA49E5BA2C807A4600267925 /* ProfileInformationCardView.swift in Sources */,

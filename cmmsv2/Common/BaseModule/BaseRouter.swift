@@ -112,4 +112,19 @@ class BaseRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToEquipmentManagement(from navigation: UINavigationController, _ type: EquipmentManagementType) {
+        let vc = EquipmentManagementRouter().showView(type: type)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToRoomRequirement(from navigation: UINavigationController) {
+        let vc = RoomRequirementRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToEquipmentMutationSelection(from navigation: UINavigationController) {
+        let vc = EquipmentMutationSelectionRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

@@ -62,6 +62,13 @@ extension BasePresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
+    func showRatingBottomSheet(navigation: UINavigationController, data: HistoryDetailEntity.HistoryDetailData?, _ delegate: RatingBottomSheetDelegate) {
+        let bottomSheet = RatingBottomSheet(nibName: String(describing: RatingBottomSheet.self), bundle: nil)
+        bottomSheet.data = data
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
     func backToPreviousPage(from navigation: UINavigationController, _ view: UIViewController) {
         router.backToPreviousPage(from: navigation, view)
     }
@@ -104,6 +111,18 @@ extension BasePresenter {
     
     func navigateToWorkSheetApprovalDetail(from navigation: UINavigationController, id: String?) {
         router.navigateToWorkSheetApprovalDetail(from: navigation, id: id ?? "")
+    }
+    
+    func navigateToEquipmentManagement(from navigation: UINavigationController, _ type: EquipmentManagementType) {
+        router.navigateToEquipmentManagement(from: navigation, type)
+    }
+    
+    func navigateToRoomRequirement(from navigation: UINavigationController) {
+        router.navigateToRoomRequirement(from: navigation)
+    }
+    
+    func navigateToEquipmentMutationSelection(from navigation: UINavigationController) {
+        router.navigateToEquipmentMutationSelection(from: navigation)
     }
     
 }

@@ -62,7 +62,7 @@ extension WorkSheetApprovalDetailView {
     private func setupView() {
         customNavigationView.configure(toolbarTitle: "Approval Lembar Kerja", type: .plain)
         containerAssetStackView.makeCornerRadius(8)
-        containerAssetStackView.addShadow(2, position: .bottom, opacity: 0.2)
+        containerAssetStackView.addShadow(4, position: .bottom, opacity: 0.2)
         assetImageView.makeCornerRadius(8, .topCurve)
         detailButton.configure(title: "Rincian", type: .bordered)
     }

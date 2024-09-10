@@ -61,3 +61,22 @@ extension NotificationListView: WorkSheetDetailViewDelegate {
     }
     
 }
+
+extension NotificationListView: RatingBottomSheetDelegate {
+    
+    func didTapPicture(img: String) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToDetailDocument(navigation: navigation, file: img, type: .image)
+    }
+    
+    func didTapRating(isCanRating: String) {
+        if isCanRating == "0" {
+            self.showAlert(title: "Terjadi kesalahan", message: "Maaf, lembar kerja ini belum bisa diberikan Rating.")
+        } else {
+            self.showAlert(title: "Pemberitahuan", message: "Lembar kerja ini sudah bisa diberikan Rating.")
+        }
+    }
+    
+}

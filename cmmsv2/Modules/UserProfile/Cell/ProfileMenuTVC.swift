@@ -24,7 +24,7 @@ class ProfileMenuTVC: UITableViewCell {
         self.selectionStyle = .none
         self.makeCornerRadius(12)
         containerView.makeCornerRadius(12)
-        containerView.addShadow(2, position: .bottom, opacity: 0.2)
+        containerView.addShadow(4, position: .bottom, opacity: 0.2)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

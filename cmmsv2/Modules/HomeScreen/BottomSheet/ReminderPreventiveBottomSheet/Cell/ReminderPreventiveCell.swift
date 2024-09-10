@@ -68,59 +68,10 @@ extension ReminderPreventiveCell {
         fullTechnicianLabel.append(titleTechnician)
         fullTechnicianLabel.append(techLabel)
         self.technicianLabel.attributedText = fullTechnicianLabel
-        
-        self.configureStatus(status: WorkSheetStatus(rawValue: data.txtStatus ?? "") ?? WorkSheetStatus.none)
-    }
-    
-    private func configureStatus(status: WorkSheetStatus) {
-        if status == .none {
-            statusLabel.text = "Tidak diketahui"
-        } else {
-            statusLabel.text = status.getStringValue()
-        }
-        
-        switch status {
-        case .done:
-            statusView.backgroundColor = UIColor.customLightGreenColor
-            statusLabel.textColor = UIColor.customIndicatorColor8
-            statusViewWidthConstraint.constant = 160
-        case .open:
-            statusView.backgroundColor = UIColor.customSecondaryColor
-            statusLabel.textColor = UIColor.customPrimaryColor
-            statusViewWidthConstraint.constant = 46
-        case .ongoing:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-            statusViewWidthConstraint.constant = 130
-        case .hold:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-            statusViewWidthConstraint.constant = 100
-        case .close:
-            statusView.backgroundColor = UIColor.customLightGreenColor
-            statusLabel.textColor = UIColor.customIndicatorColor8
-            statusViewWidthConstraint.constant = 46
-        case .removed:
-            statusView.backgroundColor = UIColor.customIndicatorColor3
-            statusLabel.textColor = UIColor.customIndicatorColor4
-            statusViewWidthConstraint.constant = 220
-        case .progressDelay:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-            statusViewWidthConstraint.constant = 100
-        case .progress:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-            statusViewWidthConstraint.constant = 80
-        case .draft:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-            statusViewWidthConstraint.constant = 50
-        case .none:
-            statusView.backgroundColor = UIColor.customIndicatorColor2
-            statusLabel.textColor = UIColor.customIndicatorColor11
-            statusViewWidthConstraint.constant = 100
-        }
+        self.statusView.configureStatusView(
+            status: WorkSheetStatus(rawValue: data.txtStatus ?? "") ?? WorkSheetStatus.none,
+            titleLabel: statusLabel,
+            widthConstraint: statusViewWidthConstraint)
     }
     
 }
