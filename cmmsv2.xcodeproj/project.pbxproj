@@ -3179,6 +3179,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF43A2C2C53935B0066B65A /* ConditionFilterBottomSheet */,
+				FA6F5A2B2C9894AC00C28E67 /* ConfirmationReturningBottomSheet */,
 				CE8B88CB2C29887200AF8F63 /* FilterStatusBottomSheet */,
 				CE829B012C4FFED60056F429 /* InstallationBottomSheet */,
 				FAA68D0A2C87A18B00A2C8EF /* RatingBottomSheet */,
@@ -3642,7 +3643,6 @@
 		FA6F5A102C98724500C28E67 /* EquipmentManagementDetail */ = {
 			isa = PBXGroup;
 			children = (
-				FA6F5A2A2C9894A500C28E67 /* BottomSheet */,
 				FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */,
 				FA6F5A122C98726000C28E67 /* EquipmentManagementDetailRouter.swift */,
 				FA6F5A132C98726000C28E67 /* EquipmentManagementDetailInteractor.swift */,
@@ -3660,14 +3660,6 @@
 				FA6F5A252C9885F700C28E67 /* MutationItemCell.xib */,
 			);
 			path = MutationItemCell;
-			sourceTree = "<group>";
-		};
-		FA6F5A2A2C9894A500C28E67 /* BottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				FA6F5A2B2C9894AC00C28E67 /* ConfirmationReturningBottomSheet */,
-			);
-			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		FA6F5A2B2C9894AC00C28E67 /* ConfirmationReturningBottomSheet */ = {
