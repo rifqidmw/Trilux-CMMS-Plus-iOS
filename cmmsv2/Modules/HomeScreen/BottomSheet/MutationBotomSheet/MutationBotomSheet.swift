@@ -1,22 +1,22 @@
 //
-//  AssetBottomSheet.swift
+//  MutationBotomSheet.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 14/01/24.
+//  Created by macbook  on 14/09/24.
 //
 
 import UIKit
 import Combine
 
-class AssetBottomSheet: BaseNonNavigationController {
+class MutationBotomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var initialTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var initialHeightTableViewConstraint: NSLayoutConstraint!
     
-    weak var delegate: AssetBottomSheetDelegate?
-    var data: [MenuModel] = assetData
+    weak var delegate: MutationBottomSheetDelegate?
+    var data: [MenuModel] = mutationData
     
     override func didLoad() {
         super.didLoad()
@@ -26,7 +26,7 @@ class AssetBottomSheet: BaseNonNavigationController {
     
 }
 
-extension AssetBottomSheet {
+extension MutationBotomSheet {
     
     private func setupBody() {
         setupView()
@@ -61,7 +61,7 @@ extension AssetBottomSheet {
     
 }
 
-extension AssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
+extension MutationBotomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -83,11 +83,19 @@ extension AssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 0:
             self.dismissBottomSheet() {
-                delegate.didTapAssetMedic()
+                delegate.didTapAssetLoan()
             }
         case 1:
             self.dismissBottomSheet() {
-                delegate.didTapAssetNonMedic()
+                delegate.didTapAssetReturning()
+            }
+        case 2:
+            self.dismissBottomSheet() {
+                delegate.didTapMutation()
+            }
+        case 3:
+            self.dismissBottomSheet() {
+                delegate.didTapAmprah()
             }
         default: break
         }
@@ -103,7 +111,7 @@ extension AssetBottomSheet: UITableViewDataSource, UITableViewDelegate {
             let indexPath = IndexPath(row: row, section: 0)
             totalHeight += tableView.rectForRow(at: indexPath).height
         }
-        self.initialTableViewHeightConstraint.constant = totalHeight
+        self.initialHeightTableViewConstraint.constant = totalHeight
     }
     
 }

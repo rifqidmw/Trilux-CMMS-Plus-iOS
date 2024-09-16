@@ -81,6 +81,13 @@ protocol AssetBottomSheetDelegate: AnyObject {
     func didTapAssetNonMedic()
 }
 
+protocol MutationBottomSheetDelegate: AnyObject {
+    func didTapAssetLoan()
+    func didTapAssetReturning()
+    func didTapMutation()
+    func didTapAmprah()
+}
+
 struct HomeTheme: Codable {
     let image: String?
     let name: String?
@@ -252,6 +259,13 @@ let categoryBottomSheetRoomData: [CategoryModel] = [
 let assetData: [MenuModel] = [
     MenuModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Tambah data aset medik"),
     MenuModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Tambah data aset non medik")
+]
+
+let mutationData: [MenuModel] = [
+    MenuModel(image: "ic_arrow_direction", title: "Peminjaman Alat", subTitle: "Lihat data peminjaman alat"),
+    MenuModel(image: "ic_arrow_rotation", title: "Pengembalian Alat", subTitle: "Lihat data pengembalian alat"),
+    MenuModel(image: "ic_arrow_turn_right", title: "Mutasi", subTitle: "Lihat data mutasi"),
+    MenuModel(image: "ic_document_download", title: "Amprah", subTitle: "Lihat data amprah")
 ]
 
 let worksheetData: [MenuModel] = [

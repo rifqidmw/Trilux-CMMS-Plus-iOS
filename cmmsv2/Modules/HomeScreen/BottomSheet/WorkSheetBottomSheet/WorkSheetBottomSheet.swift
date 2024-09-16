@@ -13,6 +13,7 @@ class WorkSheetBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var initialHeightTableViewConstraint: NSLayoutConstraint!
     
     weak var delegate: WorkSheetBottomSheetDelegate?
     var data: [MenuModel] = worksheetData
@@ -31,6 +32,7 @@ extension WorkSheetBottomSheet {
         setupView()
         setupAction()
         setupTableView()
+        calculateTotalHeight(for: self.tableView)
     }
     
     private func setupTableView() {
@@ -38,7 +40,6 @@ extension WorkSheetBottomSheet {
         tableView.delegate = self
         tableView.register(MenuItemTVC.nib, forCellReuseIdentifier: MenuItemTVC.identifier)
         tableView.separatorStyle = .none
-        tableView.rowHeight = 60
         tableView.isScrollEnabled = false
     }
     
@@ -98,6 +99,19 @@ extension WorkSheetBottomSheet: UITableViewDataSource, UITableViewDelegate {
             }
         default: break
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func calculateTotalHeight(for tableView: UITableView) {
+        var totalHeight: CGFloat = 0
+        for row in 0..<tableView.numberOfRows(inSection: 0) {
+            let indexPath = IndexPath(row: row, section: 0)
+            totalHeight += tableView.rectForRow(at: indexPath).height
+        }
+        self.initialHeightTableViewConstraint.constant = totalHeight
     }
     
 }

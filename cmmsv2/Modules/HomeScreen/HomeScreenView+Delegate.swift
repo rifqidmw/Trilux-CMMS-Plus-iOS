@@ -115,7 +115,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapMutatingCategory() {
-        self.showAlert(title: "Mutasi")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showBottomSheetMutation(navigation: navigation, delegate: self)
     }
     
     func didTapHistoryComplaintListCategory() {
@@ -292,6 +295,32 @@ extension HomeScreenView: DashboardChartViewDelegate {
         case .nonMedic:
             presenter.navigateToAssetNonMedicList(navigation: navigation)
         }
+    }
+    
+}
+
+extension HomeScreenView: MutationBottomSheetDelegate {
+    
+    func didTapAssetLoan() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToEquipmentManagement(from: navigation, .loan)
+    }
+    
+    func didTapAssetReturning() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToEquipmentManagement(from: navigation, .returning)
+    }
+    
+    func didTapMutation() {
+        self.showAlert(title: "Mutasi")
+    }
+    
+    func didTapAmprah() {
+        self.showAlert(title: "Amprah")
     }
     
 }

@@ -9,10 +9,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EquipmentManagementView" customModule="cmmsv2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EquipmentManagementListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="customNavigationView" destination="QtT-o4-wIm" id="Fue-yr-APH"/>
+                <outlet property="floatingActionButton" destination="y3E-sH-Fiz" id="E8Y-eW-6eY"/>
+                <outlet property="initialHeightFloatingActionButton" destination="FEu-Im-RpM" id="OYn-PF-hCr"/>
                 <outlet property="segmentedControl" destination="CdI-jH-Zrz" id="ugp-mH-4pg"/>
+                <outlet property="spinner" destination="V7E-Ie-9A5" id="Tlq-UC-D5e"/>
                 <outlet property="tableView" destination="BNV-Xk-WW0" id="hOe-X5-W12"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -50,12 +53,31 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
                 </stackView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3E-sH-Fiz" customClass="FloatingActionButton" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="754" width="361" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="FEu-Im-RpM"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="V7E-Ie-9A5">
+                    <rect key="frame" x="176.66666666666666" y="762" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ujc-lE-sZP"/>
+                        <constraint firstAttribute="width" constant="40" id="bhI-RF-p4L"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="V7E-Ie-9A5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0yi-7S-o4K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="z7d-6t-DJP" secondAttribute="bottom" id="B3K-cs-bja"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V7E-Ie-9A5" secondAttribute="bottom" constant="16" id="MKT-Sx-i3h"/>
+                <constraint firstItem="y3E-sH-Fiz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="O9h-g8-w1V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y3E-sH-Fiz" secondAttribute="trailing" constant="16" id="PoV-EO-ncs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="z7d-6t-DJP" secondAttribute="trailing" id="UnI-Br-AhX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="y3E-sH-Fiz" secondAttribute="bottom" constant="16" id="Ymi-c4-XmW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QtT-o4-wIm" secondAttribute="trailing" id="cvp-Ug-zW3"/>
                 <constraint firstItem="QtT-o4-wIm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hVa-AE-YuM"/>
                 <constraint firstItem="z7d-6t-DJP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kDz-k2-R7r"/>

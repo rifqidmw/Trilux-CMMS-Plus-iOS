@@ -1001,6 +1001,28 @@
 		FA49E5B82C807A4600267925 /* ProfileInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */; };
 		FA49E5B92C807A4600267925 /* ProfileInformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */; };
 		FA49E5BA2C807A4600267925 /* ProfileInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */; };
+		FA6F5A0D2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */; };
+		FA6F5A0E2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */; };
+		FA6F5A172C98726000C28E67 /* EquipmentManagementDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */; };
+		FA6F5A182C98726000C28E67 /* EquipmentManagementDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A122C98726000C28E67 /* EquipmentManagementDetailRouter.swift */; };
+		FA6F5A192C98726000C28E67 /* EquipmentManagementDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A132C98726000C28E67 /* EquipmentManagementDetailInteractor.swift */; };
+		FA6F5A1A2C98726000C28E67 /* EquipmentManagementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A142C98726000C28E67 /* EquipmentManagementDetailView.swift */; };
+		FA6F5A1B2C98726000C28E67 /* EquipmentManagementDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A162C98726000C28E67 /* EquipmentManagementDetailEntity.swift */; };
+		FA6F5A1C2C98726000C28E67 /* EquipmentManagementDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6F5A152C98726000C28E67 /* EquipmentManagementDetailView.xib */; };
+		FA6F5A1D2C98726000C28E67 /* EquipmentManagementDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6F5A152C98726000C28E67 /* EquipmentManagementDetailView.xib */; };
+		FA6F5A1E2C98726000C28E67 /* EquipmentManagementDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */; };
+		FA6F5A1F2C98726000C28E67 /* EquipmentManagementDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A122C98726000C28E67 /* EquipmentManagementDetailRouter.swift */; };
+		FA6F5A202C98726000C28E67 /* EquipmentManagementDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A132C98726000C28E67 /* EquipmentManagementDetailInteractor.swift */; };
+		FA6F5A212C98726000C28E67 /* EquipmentManagementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A142C98726000C28E67 /* EquipmentManagementDetailView.swift */; };
+		FA6F5A222C98726000C28E67 /* EquipmentManagementDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A162C98726000C28E67 /* EquipmentManagementDetailEntity.swift */; };
+		FA6F5A262C9885F700C28E67 /* MutationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A242C9885F700C28E67 /* MutationItemCell.swift */; };
+		FA6F5A272C9885F700C28E67 /* MutationItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6F5A252C9885F700C28E67 /* MutationItemCell.xib */; };
+		FA6F5A282C9885F700C28E67 /* MutationItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6F5A252C9885F700C28E67 /* MutationItemCell.xib */; };
+		FA6F5A292C9885F700C28E67 /* MutationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A242C9885F700C28E67 /* MutationItemCell.swift */; };
+		FA6F5A2E2C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A2C2C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift */; };
+		FA6F5A2F2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6F5A2D2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib */; };
+		FA6F5A302C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6F5A2D2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib */; };
+		FA6F5A312C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A2C2C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift */; };
 		FA74E3652C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */; };
 		FA74E3662C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3672C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
@@ -1045,24 +1067,40 @@
 		FACCC1B22C7F31C30023CA43 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A62C7F31C30023CA43 /* DashboardView.swift */; };
 		FACCC1B32C7F31C30023CA43 /* DashboardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */; };
 		FACCC1B42C7F31C30023CA43 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACCC1A72C7F31C30023CA43 /* DashboardView.xib */; };
+		FAD272722C9703FB008603E4 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD272702C9703FB008603E4 /* FloatingActionButton.swift */; };
+		FAD272732C9703FB008603E4 /* FloatingActionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD272712C9703FB008603E4 /* FloatingActionButton.xib */; };
+		FAD272742C9703FB008603E4 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD272702C9703FB008603E4 /* FloatingActionButton.swift */; };
+		FAD272752C9703FB008603E4 /* FloatingActionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD272712C9703FB008603E4 /* FloatingActionButton.xib */; };
+		FAD2727A2C970D63008603E4 /* FloatingActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD272782C970D63008603E4 /* FloatingActionCell.swift */; };
+		FAD2727B2C970D63008603E4 /* FloatingActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD272792C970D63008603E4 /* FloatingActionCell.xib */; };
+		FAD2727C2C970D63008603E4 /* FloatingActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD272782C970D63008603E4 /* FloatingActionCell.swift */; };
+		FAD2727D2C970D63008603E4 /* FloatingActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD272792C970D63008603E4 /* FloatingActionCell.xib */; };
 		FAE08BAF2C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */; };
 		FAE08BB02C84721E00E456E4 /* DashboardView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */; };
 		FAE08BB42C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */; };
 		FAE08BB52C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
 		FAE08BB62C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
 		FAE08BB72C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */; };
-		FAF3CCB22C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */; };
-		FAF3CCB32C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */; };
-		FAF3CCB42C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */; };
-		FAF3CCB52C8F66D400630A96 /* EquipmentManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */; };
-		FAF3CCB62C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */; };
-		FAF3CCB72C8F66D400630A96 /* EquipmentManagementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */; };
-		FAF3CCB82C8F66D400630A96 /* EquipmentManagementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */; };
-		FAF3CCB92C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */; };
-		FAF3CCBA2C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */; };
-		FAF3CCBB2C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */; };
-		FAF3CCBC2C8F66D400630A96 /* EquipmentManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */; };
-		FAF3CCBD2C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */; };
+		FAF380FA2C94BD26004B63FE /* MutationBotomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */; };
+		FAF380FB2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
+		FAF380FC2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
+		FAF380FD2C94BD26004B63FE /* MutationBotomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */; };
+		FAF381012C94FC21004B63FE /* EquipmentManagementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF381002C94FC20004B63FE /* EquipmentManagementCell.xib */; };
+		FAF381022C94FC21004B63FE /* EquipmentManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380FF2C94FC20004B63FE /* EquipmentManagementCell.swift */; };
+		FAF381032C94FC21004B63FE /* EquipmentManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380FF2C94FC20004B63FE /* EquipmentManagementCell.swift */; };
+		FAF381042C94FC21004B63FE /* EquipmentManagementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF381002C94FC20004B63FE /* EquipmentManagementCell.xib */; };
+		FAF3CCB22C8F66D400630A96 /* EquipmentManagementListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAC2C8F66D400630A96 /* EquipmentManagementListPresenter.swift */; };
+		FAF3CCB32C8F66D400630A96 /* EquipmentManagementListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAD2C8F66D400630A96 /* EquipmentManagementListRouter.swift */; };
+		FAF3CCB42C8F66D400630A96 /* EquipmentManagementListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAE2C8F66D400630A96 /* EquipmentManagementListInteractor.swift */; };
+		FAF3CCB52C8F66D400630A96 /* EquipmentManagementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAF2C8F66D400630A96 /* EquipmentManagementListView.swift */; };
+		FAF3CCB62C8F66D400630A96 /* EquipmentManagementListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCB12C8F66D400630A96 /* EquipmentManagementListEntity.swift */; };
+		FAF3CCB72C8F66D400630A96 /* EquipmentManagementListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCB02C8F66D400630A96 /* EquipmentManagementListView.xib */; };
+		FAF3CCB82C8F66D400630A96 /* EquipmentManagementListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCB02C8F66D400630A96 /* EquipmentManagementListView.xib */; };
+		FAF3CCB92C8F66D400630A96 /* EquipmentManagementListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAC2C8F66D400630A96 /* EquipmentManagementListPresenter.swift */; };
+		FAF3CCBA2C8F66D400630A96 /* EquipmentManagementListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAD2C8F66D400630A96 /* EquipmentManagementListRouter.swift */; };
+		FAF3CCBB2C8F66D400630A96 /* EquipmentManagementListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAE2C8F66D400630A96 /* EquipmentManagementListInteractor.swift */; };
+		FAF3CCBC2C8F66D400630A96 /* EquipmentManagementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAF2C8F66D400630A96 /* EquipmentManagementListView.swift */; };
+		FAF3CCBD2C8F66D400630A96 /* EquipmentManagementListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCB12C8F66D400630A96 /* EquipmentManagementListEntity.swift */; };
 		FAF3CCC52C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */; };
 		FAF3CCC62C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */; };
 		FAF3CCC72C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */; };
@@ -1597,6 +1635,17 @@
 		FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardCardView.xib; sourceTree = "<group>"; };
 		FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationCardView.swift; sourceTree = "<group>"; };
 		FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInformationCardView.xib; sourceTree = "<group>"; };
+		FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentManagementListView+Delegate.swift"; sourceTree = "<group>"; };
+		FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailPresenter.swift; sourceTree = "<group>"; };
+		FA6F5A122C98726000C28E67 /* EquipmentManagementDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailRouter.swift; sourceTree = "<group>"; };
+		FA6F5A132C98726000C28E67 /* EquipmentManagementDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailInteractor.swift; sourceTree = "<group>"; };
+		FA6F5A142C98726000C28E67 /* EquipmentManagementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailView.swift; sourceTree = "<group>"; };
+		FA6F5A152C98726000C28E67 /* EquipmentManagementDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentManagementDetailView.xib; sourceTree = "<group>"; };
+		FA6F5A162C98726000C28E67 /* EquipmentManagementDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailEntity.swift; sourceTree = "<group>"; };
+		FA6F5A242C9885F700C28E67 /* MutationItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutationItemCell.swift; sourceTree = "<group>"; };
+		FA6F5A252C9885F700C28E67 /* MutationItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MutationItemCell.xib; sourceTree = "<group>"; };
+		FA6F5A2C2C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationReturningBottomSheet.swift; sourceTree = "<group>"; };
+		FA6F5A2D2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationReturningBottomSheet.xib; sourceTree = "<group>"; };
 		FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalSummaryCardView.swift; sourceTree = "<group>"; };
 		FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalSummaryCardView.xib; sourceTree = "<group>"; };
 		FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBottomSheet.swift; sourceTree = "<group>"; };
@@ -1619,15 +1668,23 @@
 		FACCC1A62C7F31C30023CA43 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		FACCC1A72C7F31C30023CA43 /* DashboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		FACCC1A82C7F31C30023CA43 /* DashboardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEntity.swift; sourceTree = "<group>"; };
+		FAD272702C9703FB008603E4 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
+		FAD272712C9703FB008603E4 /* FloatingActionButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingActionButton.xib; sourceTree = "<group>"; };
+		FAD272782C970D63008603E4 /* FloatingActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionCell.swift; sourceTree = "<group>"; };
+		FAD272792C970D63008603E4 /* FloatingActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingActionCell.xib; sourceTree = "<group>"; };
 		FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView+Delegate.swift"; sourceTree = "<group>"; };
 		FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverviewPanelView.swift; sourceTree = "<group>"; };
 		FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusOverviewPanelView.xib; sourceTree = "<group>"; };
-		FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementPresenter.swift; sourceTree = "<group>"; };
-		FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementRouter.swift; sourceTree = "<group>"; };
-		FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementInteractor.swift; sourceTree = "<group>"; };
-		FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementView.swift; sourceTree = "<group>"; };
-		FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentManagementView.xib; sourceTree = "<group>"; };
-		FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementEntity.swift; sourceTree = "<group>"; };
+		FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutationBotomSheet.swift; sourceTree = "<group>"; };
+		FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MutationBotomSheet.xib; sourceTree = "<group>"; };
+		FAF380FF2C94FC20004B63FE /* EquipmentManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementCell.swift; sourceTree = "<group>"; };
+		FAF381002C94FC20004B63FE /* EquipmentManagementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentManagementCell.xib; sourceTree = "<group>"; };
+		FAF3CCAC2C8F66D400630A96 /* EquipmentManagementListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementListPresenter.swift; sourceTree = "<group>"; };
+		FAF3CCAD2C8F66D400630A96 /* EquipmentManagementListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementListRouter.swift; sourceTree = "<group>"; };
+		FAF3CCAE2C8F66D400630A96 /* EquipmentManagementListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementListInteractor.swift; sourceTree = "<group>"; };
+		FAF3CCAF2C8F66D400630A96 /* EquipmentManagementListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementListView.swift; sourceTree = "<group>"; };
+		FAF3CCB02C8F66D400630A96 /* EquipmentManagementListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentManagementListView.xib; sourceTree = "<group>"; };
+		FAF3CCB12C8F66D400630A96 /* EquipmentManagementListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementListEntity.swift; sourceTree = "<group>"; };
 		FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementPresenter.swift; sourceTree = "<group>"; };
 		FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementRouter.swift; sourceTree = "<group>"; };
 		FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementInteractor.swift; sourceTree = "<group>"; };
@@ -2289,8 +2346,11 @@
 			children = (
 				CEB8C36D2C610DDD0040B485 /* AssetMaintenanceInfoCell */,
 				CE6286912C19D09A00CB552F /* CorrectiveCell */,
+				FAF380FE2C94FBFF004B63FE /* EquipmentManagementCell */,
+				FAD272772C970D4D008603E4 /* FloatingActionCell */,
 				CEC1B0672BA1ECB400DF6A4F /* HistoryCell */,
 				CE9F90F02B4F758C004C027A /* MenuItemCell */,
+				FA6F5A232C9885C600C28E67 /* MutationItemCell */,
 				CE5EC2E22C3CE327005D5426 /* SelectionCell */,
 				CEC802892C20B645002EE193 /* SelectTechnicialCell */,
 				CEAF9E382C5A307500EFBBC2 /* StepperCell */,
@@ -2934,8 +2994,10 @@
 				CEB05F462C6071A5004BA1AE /* Document */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CEE862032C5CF66D00AA4317 /* EditTechnical */,
+				FA6F5A0F2C9865B800C28E67 /* Equip */,
 				CEB05F602C60C6D0004BA1AE /* EquipmentMaintenance */,
-				FAF3CCAB2C8F66BA00630A96 /* EquipmentManagement */,
+				FA6F5A102C98724500C28E67 /* EquipmentManagementDetail */,
+				FAF3CCAB2C8F66BA00630A96 /* EquipmentManagementList */,
 				FAF3CCD12C8F7FFC00630A96 /* EquipmentMutationSelection */,
 				CEE8CB862BF7C8E7006E59B7 /* HistoryDetail */,
 				CEC1B0542BA1E37600DF6A4F /* HistoryList */,
@@ -3082,6 +3144,7 @@
 				CE25F4712C2BB75B00F994F7 /* DatePicker */,
 				CE0F20CE2B754B51008702E0 /* Dropdown */,
 				CEB05F592C60BB7C004BA1AE /* Empty */,
+				FAD2726F2C9703DA008603E4 /* FloatingActionButton */,
 				CE497AE42C344AAF00D565EE /* Form */,
 				CE90D9302C2E8F9300D3C2AF /* HelpBanner */,
 				CE14C2192B5C382D0034B9FE /* ImageCard */,
@@ -3132,6 +3195,7 @@
 		CECB77792B4C791D0069AC05 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				FAF380F42C94BCFF004B63FE /* MutationBotomSheet */,
 				CECB777A2B4C79270069AC05 /* AllCategoriesBottomSheet */,
 				CEE67D382B54428400D0844B /* AssetBottomSheet */,
 				CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */,
@@ -3568,6 +3632,53 @@
 			path = ProfileInformationCard;
 			sourceTree = "<group>";
 		};
+		FA6F5A0F2C9865B800C28E67 /* Equip */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Equip;
+			sourceTree = "<group>";
+		};
+		FA6F5A102C98724500C28E67 /* EquipmentManagementDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FA6F5A2A2C9894A500C28E67 /* BottomSheet */,
+				FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */,
+				FA6F5A122C98726000C28E67 /* EquipmentManagementDetailRouter.swift */,
+				FA6F5A132C98726000C28E67 /* EquipmentManagementDetailInteractor.swift */,
+				FA6F5A142C98726000C28E67 /* EquipmentManagementDetailView.swift */,
+				FA6F5A152C98726000C28E67 /* EquipmentManagementDetailView.xib */,
+				FA6F5A162C98726000C28E67 /* EquipmentManagementDetailEntity.swift */,
+			);
+			path = EquipmentManagementDetail;
+			sourceTree = "<group>";
+		};
+		FA6F5A232C9885C600C28E67 /* MutationItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA6F5A242C9885F700C28E67 /* MutationItemCell.swift */,
+				FA6F5A252C9885F700C28E67 /* MutationItemCell.xib */,
+			);
+			path = MutationItemCell;
+			sourceTree = "<group>";
+		};
+		FA6F5A2A2C9894A500C28E67 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA6F5A2B2C9894AC00C28E67 /* ConfirmationReturningBottomSheet */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		FA6F5A2B2C9894AC00C28E67 /* ConfirmationReturningBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA6F5A2C2C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift */,
+				FA6F5A2D2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib */,
+			);
+			path = ConfirmationReturningBottomSheet;
+			sourceTree = "<group>";
+		};
 		FA74E3622C81EA32002CC8A3 /* StatisticalSummaryCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -3668,6 +3779,24 @@
 			path = WorkLoadSection;
 			sourceTree = "<group>";
 		};
+		FAD2726F2C9703DA008603E4 /* FloatingActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				FAD272702C9703FB008603E4 /* FloatingActionButton.swift */,
+				FAD272712C9703FB008603E4 /* FloatingActionButton.xib */,
+			);
+			path = FloatingActionButton;
+			sourceTree = "<group>";
+		};
+		FAD272772C970D4D008603E4 /* FloatingActionCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAD272782C970D63008603E4 /* FloatingActionCell.swift */,
+				FAD272792C970D63008603E4 /* FloatingActionCell.xib */,
+			);
+			path = FloatingActionCell;
+			sourceTree = "<group>";
+		};
 		FAE08BB12C84ACF700E456E4 /* StatusOverviewPanel */ = {
 			isa = PBXGroup;
 			children = (
@@ -3677,17 +3806,36 @@
 			path = StatusOverviewPanel;
 			sourceTree = "<group>";
 		};
-		FAF3CCAB2C8F66BA00630A96 /* EquipmentManagement */ = {
+		FAF380F42C94BCFF004B63FE /* MutationBotomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				FAF3CCAC2C8F66D400630A96 /* EquipmentManagementPresenter.swift */,
-				FAF3CCAD2C8F66D400630A96 /* EquipmentManagementRouter.swift */,
-				FAF3CCAE2C8F66D400630A96 /* EquipmentManagementInteractor.swift */,
-				FAF3CCAF2C8F66D400630A96 /* EquipmentManagementView.swift */,
-				FAF3CCB02C8F66D400630A96 /* EquipmentManagementView.xib */,
-				FAF3CCB12C8F66D400630A96 /* EquipmentManagementEntity.swift */,
+				FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */,
+				FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */,
 			);
-			path = EquipmentManagement;
+			path = MutationBotomSheet;
+			sourceTree = "<group>";
+		};
+		FAF380FE2C94FBFF004B63FE /* EquipmentManagementCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAF380FF2C94FC20004B63FE /* EquipmentManagementCell.swift */,
+				FAF381002C94FC20004B63FE /* EquipmentManagementCell.xib */,
+			);
+			path = EquipmentManagementCell;
+			sourceTree = "<group>";
+		};
+		FAF3CCAB2C8F66BA00630A96 /* EquipmentManagementList */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3CCAC2C8F66D400630A96 /* EquipmentManagementListPresenter.swift */,
+				FAF3CCAD2C8F66D400630A96 /* EquipmentManagementListRouter.swift */,
+				FAF3CCAE2C8F66D400630A96 /* EquipmentManagementListInteractor.swift */,
+				FAF3CCAF2C8F66D400630A96 /* EquipmentManagementListView.swift */,
+				FAF3CCB02C8F66D400630A96 /* EquipmentManagementListView.xib */,
+				FAF3CCB12C8F66D400630A96 /* EquipmentManagementListEntity.swift */,
+				FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */,
+			);
+			path = EquipmentManagementList;
 			sourceTree = "<group>";
 		};
 		FAF3CCBE2C8F7F0500630A96 /* RoomRequirement */ = {
@@ -3809,6 +3957,7 @@
 				CEC207B42B4AFF830073FA1E /* CategoryCardCVC.xib in Resources */,
 				CEB8C3572C60D4D50040B485 /* CalibrationInformationView.xib in Resources */,
 				CE0EC4A52B775F9A00888BE8 /* AssetCVC.xib in Resources */,
+				FAD2727B2C970D63008603E4 /* FloatingActionCell.xib in Resources */,
 				CE916A932C0643B500C8B153 /* Roboto-Regular.ttf in Resources */,
 				CE3108652BE264CC00660275 /* GeneralInformationView.xib in Resources */,
 				CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
@@ -3825,6 +3974,7 @@
 				CECB3DE52B45E119004A260D /* Roboto-Light.ttf in Resources */,
 				CE8B88D52C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */,
 				CE497AF52C34569A00D565EE /* ElectricInputSectionView.xib in Resources */,
+				FA6F5A2F2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib in Resources */,
 				CEE862192C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib in Resources */,
 				CEC207A12B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEF049AA2C1C4AA6006B6FFD /* SelectView.xib in Resources */,
@@ -3832,6 +3982,7 @@
 				CEE79EDC2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CE422DD92BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
 				FA49E5B72C807A4600267925 /* ProfileInformationCardView.xib in Resources */,
+				FA6F5A272C9885F700C28E67 /* MutationItemCell.xib in Resources */,
 				CEC2C8412BD1756500A9D454 /* SearchTextField.xib in Resources */,
 				CEB8C3702C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */,
 				CECB3DB12B45D963004A260D /* LaunchScreen.storyboard in Resources */,
@@ -3866,6 +4017,7 @@
 				CECB3DEB2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CECB3E0D2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				FACCC1A92C7F31C30023CA43 /* DashboardView.xib in Resources */,
+				FAF380FA2C94BD26004B63FE /* MutationBotomSheet.xib in Resources */,
 				CE9E7DA22B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21B2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CEE8620A2C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
@@ -3876,7 +4028,7 @@
 				FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
 				CEC1B0632BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B12C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
-				FAF3CCB72C8F66D400630A96 /* EquipmentManagementView.xib in Resources */,
+				FAF3CCB72C8F66D400630A96 /* EquipmentManagementListView.xib in Resources */,
 				CEB8C3692C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
 				CE7545532C3ADE09002234F8 /* InputBottomSheet.xib in Resources */,
 				CEADA5042C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */,
@@ -3897,6 +4049,7 @@
 				CEF4E0D52C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
 				CE7D4E892C581D4D001F8D67 /* WorkSheetApprovalListView.xib in Resources */,
 				CE9286622C60D29C004F1245 /* InformationSectionView.xib in Resources */,
+				FA6F5A1C2C98726000C28E67 /* EquipmentManagementDetailView.xib in Resources */,
 				CECB3DDF2B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F132B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CE9878882C5ACA5F008E0F77 /* ValWorkSheetCell.xib in Resources */,
@@ -3946,6 +4099,7 @@
 				CE9E7DA62B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CEC927D42C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
 				FAE08BB42C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */,
+				FAD272732C9703FB008603E4 /* FloatingActionButton.xib in Resources */,
 				CEAF27EB2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2172B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9342C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
@@ -3974,6 +4128,7 @@
 				CECB3DAC2B45D962004A260D /* Main.storyboard in Resources */,
 				CE9E7DBC2B531E4600240A7D /* UploadMediaBottomSheet.xib in Resources */,
 				CE3108712BE2659F00660275 /* AdditionalDocumentsView.xib in Resources */,
+				FAF381012C94FC21004B63FE /* EquipmentManagementCell.xib in Resources */,
 				CEE8CB952BF7C8FD006E59B7 /* HistoryDetailView.xib in Resources */,
 				CECB3DFD2B45E137004A260D /* Lato-Regular.ttf in Resources */,
 				CE7064F92BFF57D500BB5BA7 /* AccordionCell.xib in Resources */,
@@ -3997,6 +4152,7 @@
 				CEC207B52B4AFF830073FA1E /* CategoryCardCVC.xib in Resources */,
 				CEB8C3592C60D4D50040B485 /* CalibrationInformationView.xib in Resources */,
 				CE0EC4A62B775F9A00888BE8 /* AssetCVC.xib in Resources */,
+				FAD2727D2C970D63008603E4 /* FloatingActionCell.xib in Resources */,
 				CE916A942C0643B500C8B153 /* Roboto-Regular.ttf in Resources */,
 				CE3108662BE264CC00660275 /* GeneralInformationView.xib in Resources */,
 				CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
@@ -4013,6 +4169,7 @@
 				CECB3DE62B45E119004A260D /* Roboto-Light.ttf in Resources */,
 				CE8B88D82C29BCD300AF8F63 /* StatusFilterCell.xib in Resources */,
 				CE497AF72C34569A00D565EE /* ElectricInputSectionView.xib in Resources */,
+				FA6F5A302C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib in Resources */,
 				CEE8621B2C5D870C00AA4317 /* SelectTechnicalDataBottomSheet.xib in Resources */,
 				CEC207A22B4AD6870073FA1E /* HomeScreenView.xib in Resources */,
 				CEF049AC2C1C4AA6006B6FFD /* SelectView.xib in Resources */,
@@ -4020,6 +4177,7 @@
 				CEE79EDD2B713E9C0063D844 /* CustomHeaderView.xib in Resources */,
 				CE422DDA2BE5779F004B405A /* AdditionDocumentCVC.xib in Resources */,
 				FA49E5B92C807A4600267925 /* ProfileInformationCardView.xib in Resources */,
+				FA6F5A282C9885F700C28E67 /* MutationItemCell.xib in Resources */,
 				CEC2C8422BD1756500A9D454 /* SearchTextField.xib in Resources */,
 				CEB8C3722C610E040040B485 /* AssetMaintenanceInfoCell.xib in Resources */,
 				CECB3DC62B45DAFF004A260D /* LaunchScreen.storyboard in Resources */,
@@ -4054,6 +4212,7 @@
 				CECB3DEC2B45E119004A260D /* Roboto-BlackItalic.ttf in Resources */,
 				CECB3E0E2B45E137004A260D /* Lato-Bold.ttf in Resources */,
 				FACCC1B42C7F31C30023CA43 /* DashboardView.xib in Resources */,
+				FAF380FD2C94BD26004B63FE /* MutationBotomSheet.xib in Resources */,
 				CE9E7DA32B52B80500240A7D /* ProfileMenuTVC.xib in Resources */,
 				CE14C21C2B5C38620034B9FE /* ImageCardView.xib in Resources */,
 				CEE862102C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
@@ -4064,7 +4223,7 @@
 				FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
 				CEC1B0642BA1E39700DF6A4F /* HistoryListView.xib in Resources */,
 				CEF049B32C1C626A006B6FFD /* SelectTechnicianBottomSheet.xib in Resources */,
-				FAF3CCB82C8F66D400630A96 /* EquipmentManagementView.xib in Resources */,
+				FAF3CCB82C8F66D400630A96 /* EquipmentManagementListView.xib in Resources */,
 				CEB8C36B2C60D5B30040B485 /* PreventiveInformationView.xib in Resources */,
 				CE7545552C3ADE09002234F8 /* InputBottomSheet.xib in Resources */,
 				CEADA5062C59358E005BF97D /* ApproveWorkSheetBottomSheet.xib in Resources */,
@@ -4085,6 +4244,7 @@
 				CEF4E0D72C07B30D00444EA9 /* AddPreventiveBottomSheet.xib in Resources */,
 				CE7D4E8A2C581D4D001F8D67 /* WorkSheetApprovalListView.xib in Resources */,
 				CE9286652C60D29C004F1245 /* InformationSectionView.xib in Resources */,
+				FA6F5A1D2C98726000C28E67 /* EquipmentManagementDetailView.xib in Resources */,
 				CECB3DE02B45E119004A260D /* Roboto-ThinItalic.ttf in Resources */,
 				CEFB4F142B4930460033D37D /* RegistrationHospitalView.xib in Resources */,
 				CE9878892C5ACA5F008E0F77 /* ValWorkSheetCell.xib in Resources */,
@@ -4134,6 +4294,7 @@
 				CE9E7DA72B530F6100240A7D /* BasePopUpView.xib in Resources */,
 				CEC927D62C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
 				FAE08BB72C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */,
+				FAD272752C9703FB008603E4 /* FloatingActionButton.xib in Resources */,
 				CEAF27EC2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2182B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9362C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
@@ -4162,6 +4323,7 @@
 				CECB3DC82B45DAFF004A260D /* Main.storyboard in Resources */,
 				CE9E7DBD2B531E4600240A7D /* UploadMediaBottomSheet.xib in Resources */,
 				CE3108722BE2659F00660275 /* AdditionalDocumentsView.xib in Resources */,
+				FAF381042C94FC21004B63FE /* EquipmentManagementCell.xib in Resources */,
 				CEE8CB962BF7C8FD006E59B7 /* HistoryDetailView.xib in Resources */,
 				CECB3DFE2B45E137004A260D /* Lato-Regular.ttf in Resources */,
 				CE7064FB2BFF57D500BB5BA7 /* AccordionCell.xib in Resources */,
@@ -4261,6 +4423,7 @@
 				CE29F8E62BF9256B0077405C /* HistoryDetailView+Collection.swift in Sources */,
 				CECB3E252B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6D2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
+				FAF381022C94FC21004B63FE /* EquipmentManagementCell.swift in Sources */,
 				CEE07C8D2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */,
 				CE8208832B82391F00CD4242 /* NotificationListInteractor.swift in Sources */,
 				FAC12A152C7FA2C900DBAB83 /* ComplaintSectionView.swift in Sources */,
@@ -4277,8 +4440,10 @@
 				CE497AF42C34569A00D565EE /* ElectricInputSectionView.swift in Sources */,
 				CEE67D2B2B54394900D0844B /* WorkSheetMonitoringFunctionListView.swift in Sources */,
 				CEB8C3642C60D5730040B485 /* MonitoringInformationView.swift in Sources */,
+				FAF380FB2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */,
 				CEC207AD2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897132B77394D006CB552 /* ToastView.swift in Sources */,
+				FAD2727A2C970D63008603E4 /* FloatingActionCell.swift in Sources */,
 				CED9132F2C2B361C0011A16D /* PreventiveMaintenanceListView+Delegate.swift in Sources */,
 				CEF049952C1C1CF9006B6FFD /* DelayCorrectiveListView+Delegate.swift in Sources */,
 				CE58FA532C0B82930067D8C4 /* PhysicalMonitoringSectionView.swift in Sources */,
@@ -4366,6 +4531,12 @@
 				CEE79EC32B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CEFD6D202BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
 				CE4012532B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
+				FA6F5A172C98726000C28E67 /* EquipmentManagementDetailPresenter.swift in Sources */,
+				FA6F5A182C98726000C28E67 /* EquipmentManagementDetailRouter.swift in Sources */,
+				FA6F5A192C98726000C28E67 /* EquipmentManagementDetailInteractor.swift in Sources */,
+				FA6F5A1A2C98726000C28E67 /* EquipmentManagementDetailView.swift in Sources */,
+				FA6F5A1B2C98726000C28E67 /* EquipmentManagementDetailEntity.swift in Sources */,
+				FA6F5A0D2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */,
 				CECB77772B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				FACCC1AA2C7F31C30023CA43 /* DashboardPresenter.swift in Sources */,
 				FACCC1AB2C7F31C30023CA43 /* DashboardRouter.swift in Sources */,
@@ -4385,6 +4556,7 @@
 				CEAF063D2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E472B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEE07C932B9F408A00EFBFB8 /* PreventiveMaintenanceListView.swift in Sources */,
+				FAD272722C9703FB008603E4 /* FloatingActionButton.swift in Sources */,
 				CEFB4F112B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEEED8762B7A86CB00672952 /* ScanEntity.swift in Sources */,
 				CEE67D3D2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
@@ -4482,11 +4654,13 @@
 				CE4255F42BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE1434452C4B5543008D2C18 /* ScanView+Delegate.swift in Sources */,
 				CE67F6662C632AFB0080DC1D /* ConfirmExitBottomSheet.swift in Sources */,
+				FA6F5A2E2C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift in Sources */,
 				CEE8CB972BF7C8FD006E59B7 /* HistoryDetailEntity.swift in Sources */,
 				CE9E7D7F2B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CEAF27E82BDE098B00CCC5EE /* SignatureBottomSheet.swift in Sources */,
 				CEC2079D2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
 				CE4255E92BA704E5002B558C /* LogBookListInteractor.swift in Sources */,
+				FA6F5A262C9885F700C28E67 /* MutationItemCell.swift in Sources */,
 				CE90B15D2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
@@ -4542,11 +4716,11 @@
 				CE3108632BE264CC00660275 /* GeneralInformationView.swift in Sources */,
 				CEC207992B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE4255E72BA704E5002B558C /* LogBookListRouter.swift in Sources */,
-				FAF3CCB22C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */,
-				FAF3CCB32C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */,
-				FAF3CCB42C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */,
-				FAF3CCB52C8F66D400630A96 /* EquipmentManagementView.swift in Sources */,
-				FAF3CCB62C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */,
+				FAF3CCB22C8F66D400630A96 /* EquipmentManagementListPresenter.swift in Sources */,
+				FAF3CCB32C8F66D400630A96 /* EquipmentManagementListRouter.swift in Sources */,
+				FAF3CCB42C8F66D400630A96 /* EquipmentManagementListInteractor.swift in Sources */,
+				FAF3CCB52C8F66D400630A96 /* EquipmentManagementListView.swift in Sources */,
+				FAF3CCB62C8F66D400630A96 /* EquipmentManagementListEntity.swift in Sources */,
 				CE9878802C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
 				CEC1B05F2BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				FA49E5B82C807A4600267925 /* ProfileInformationCardView.swift in Sources */,
@@ -4626,6 +4800,7 @@
 				CE29F8E72BF9256B0077405C /* HistoryDetailView+Collection.swift in Sources */,
 				CECB3E262B45E399004A260D /* UINavigationController+Ext.swift in Sources */,
 				CE9E7D6E2B529EB300240A7D /* ChangePasswordPresenter.swift in Sources */,
+				FAF381032C94FC21004B63FE /* EquipmentManagementCell.swift in Sources */,
 				CEE07C8E2B9F408A00EFBFB8 /* PreventiveMaintenanceListPresenter.swift in Sources */,
 				CE8208842B82391F00CD4242 /* NotificationListInteractor.swift in Sources */,
 				FAC12A162C7FA2C900DBAB83 /* ComplaintSectionView.swift in Sources */,
@@ -4642,8 +4817,10 @@
 				CE497AF62C34569A00D565EE /* ElectricInputSectionView.swift in Sources */,
 				CEE67D2C2B54394900D0844B /* WorkSheetMonitoringFunctionListView.swift in Sources */,
 				CEB8C3662C60D5730040B485 /* MonitoringInformationView.swift in Sources */,
+				FAF380FC2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */,
 				CEC207AE2B4AF4420073FA1E /* NSAttributedString+Ext.swift in Sources */,
 				CEC897142B77394D006CB552 /* ToastView.swift in Sources */,
+				FAD2727C2C970D63008603E4 /* FloatingActionCell.swift in Sources */,
 				CED913302C2B361C0011A16D /* PreventiveMaintenanceListView+Delegate.swift in Sources */,
 				CEF049962C1C1CF9006B6FFD /* DelayCorrectiveListView+Delegate.swift in Sources */,
 				CE58FA552C0B82930067D8C4 /* PhysicalMonitoringSectionView.swift in Sources */,
@@ -4731,6 +4908,12 @@
 				CEE79EC42B70ED9B0063D844 /* WorkSheetDetailView.swift in Sources */,
 				CEFD6D212BF2713C00A8BA04 /* WorkSheetCorrectiveDetailRouter.swift in Sources */,
 				CE4012542B5D9A0D00517F7C /* SelectActionBottomSheet.swift in Sources */,
+				FA6F5A1E2C98726000C28E67 /* EquipmentManagementDetailPresenter.swift in Sources */,
+				FA6F5A1F2C98726000C28E67 /* EquipmentManagementDetailRouter.swift in Sources */,
+				FA6F5A202C98726000C28E67 /* EquipmentManagementDetailInteractor.swift in Sources */,
+				FA6F5A212C98726000C28E67 /* EquipmentManagementDetailView.swift in Sources */,
+				FA6F5A222C98726000C28E67 /* EquipmentManagementDetailEntity.swift in Sources */,
+				FA6F5A0E2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */,
 				CECB77782B4C75E10069AC05 /* BottomSheetView.swift in Sources */,
 				FACCC1AF2C7F31C30023CA43 /* DashboardPresenter.swift in Sources */,
 				FACCC1B02C7F31C30023CA43 /* DashboardRouter.swift in Sources */,
@@ -4750,6 +4933,7 @@
 				CEAF063E2B6F8EE200239C97 /* ExpiredBottomSheet.swift in Sources */,
 				CECB3E482B45E660004A260D /* BaseNonNavigationController.swift in Sources */,
 				CEE07C942B9F408A00EFBFB8 /* PreventiveMaintenanceListView.swift in Sources */,
+				FAD272742C9703FB008603E4 /* FloatingActionButton.swift in Sources */,
 				CEFB4F122B4930460033D37D /* RegistrationHospitalView.swift in Sources */,
 				CEEED8772B7A86CB00672952 /* ScanEntity.swift in Sources */,
 				CEE67D3E2B5442C300D0844B /* AssetBottomSheet.swift in Sources */,
@@ -4847,11 +5031,13 @@
 				CE4255F52BA740AF002B558C /* LogBookCVC.swift in Sources */,
 				CE1434462C4B5543008D2C18 /* ScanView+Delegate.swift in Sources */,
 				CE67F6672C632AFB0080DC1D /* ConfirmExitBottomSheet.swift in Sources */,
+				FA6F5A312C9894E200C28E67 /* ConfirmationReturningBottomSheet.swift in Sources */,
 				CEE8CB982BF7C8FD006E59B7 /* HistoryDetailEntity.swift in Sources */,
 				CE9E7D802B529EE800240A7D /* EditProfilePresenter.swift in Sources */,
 				CEAF27E92BDE098B00CCC5EE /* SignatureBottomSheet.swift in Sources */,
 				CEC2079E2B4AD6870073FA1E /* HomeScreenInteractor.swift in Sources */,
 				CE4255EA2BA704E5002B558C /* LogBookListInteractor.swift in Sources */,
+				FA6F5A292C9885F700C28E67 /* MutationItemCell.swift in Sources */,
 				CE90B15E2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EC02B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
@@ -4907,11 +5093,11 @@
 				CE3108642BE264CC00660275 /* GeneralInformationView.swift in Sources */,
 				CEC2079A2B4AD6870073FA1E /* HomeScreenPresenter.swift in Sources */,
 				CE4255E82BA704E5002B558C /* LogBookListRouter.swift in Sources */,
-				FAF3CCB92C8F66D400630A96 /* EquipmentManagementPresenter.swift in Sources */,
-				FAF3CCBA2C8F66D400630A96 /* EquipmentManagementRouter.swift in Sources */,
-				FAF3CCBB2C8F66D400630A96 /* EquipmentManagementInteractor.swift in Sources */,
-				FAF3CCBC2C8F66D400630A96 /* EquipmentManagementView.swift in Sources */,
-				FAF3CCBD2C8F66D400630A96 /* EquipmentManagementEntity.swift in Sources */,
+				FAF3CCB92C8F66D400630A96 /* EquipmentManagementListPresenter.swift in Sources */,
+				FAF3CCBA2C8F66D400630A96 /* EquipmentManagementListRouter.swift in Sources */,
+				FAF3CCBB2C8F66D400630A96 /* EquipmentManagementListInteractor.swift in Sources */,
+				FAF3CCBC2C8F66D400630A96 /* EquipmentManagementListView.swift in Sources */,
+				FAF3CCBD2C8F66D400630A96 /* EquipmentManagementListEntity.swift in Sources */,
 				CE9878832C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
 				CEC1B0602BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				FA49E5BA2C807A4600267925 /* ProfileInformationCardView.swift in Sources */,
