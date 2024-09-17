@@ -136,6 +136,13 @@ extension HomeScreenView {
                 }
             }
             .store(in: &anyCancellable)
+        
+        presenter.$isLoading
+            .sink { [weak self] isLoading in
+                guard let self else { return }
+                isLoading ? self.showLoadingPopup() : self.hideLoadingPopup()
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupNavigationView() {

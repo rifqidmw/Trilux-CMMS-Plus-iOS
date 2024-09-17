@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="bottomSheetView" destination="DtP-GZ-fTl" id="0iM-88-GrX"/>
                 <outlet property="dismissAreaView" destination="JL0-Jv-s1D" id="B7Z-4A-G1S"/>
+                <outlet property="initialHeightTableViewConstraint" destination="Qtr-X1-FmU" id="2Nr-wS-346"/>
                 <outlet property="tableView" destination="gWw-Ym-NIQ" id="KCy-LK-Xgr"/>
                 <outlet property="view" destination="b0p-7v-YTv" id="JOf-L0-dAj"/>
             </connections>
@@ -45,18 +46,20 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gWw-Ym-NIQ">
-                            <rect key="frame" x="24" y="68" width="345" height="248"/>
+                            <rect key="frame" x="24" y="68" width="345" height="230"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="230" id="Qtr-X1-FmU"/>
+                            </constraints>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="340" id="0XW-SK-WRy"/>
                         <constraint firstAttribute="trailing" secondItem="gWw-Ym-NIQ" secondAttribute="trailing" constant="24" id="N3i-K3-LcZ"/>
                         <constraint firstItem="qgo-it-M7A" firstAttribute="leading" secondItem="DtP-GZ-fTl" secondAttribute="leading" constant="24" id="XMF-L4-lmO"/>
                         <constraint firstItem="gWw-Ym-NIQ" firstAttribute="top" secondItem="qgo-it-M7A" secondAttribute="bottom" constant="24" id="ceq-Ra-YhM"/>
                         <constraint firstItem="qgo-it-M7A" firstAttribute="top" secondItem="DtP-GZ-fTl" secondAttribute="top" constant="24" id="dcl-RE-Bub"/>
-                        <constraint firstAttribute="bottom" secondItem="gWw-Ym-NIQ" secondAttribute="bottom" constant="24" id="fQg-mb-EgK"/>
+                        <constraint firstAttribute="bottom" secondItem="gWw-Ym-NIQ" secondAttribute="bottom" constant="42" id="fQg-mb-EgK"/>
                         <constraint firstItem="gWw-Ym-NIQ" firstAttribute="leading" secondItem="DtP-GZ-fTl" secondAttribute="leading" constant="24" id="q6k-yk-xie"/>
                     </constraints>
                 </view>

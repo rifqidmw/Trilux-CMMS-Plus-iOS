@@ -137,6 +137,13 @@ enum Endpoint {
     case deleteLk(id: String?)
     case dashboardStatistic
     case engineerDashboardStatistic(month: String?, year: String?, id: String?)
+    case submissionList
+    case requestList
+    case returningLoan(limit: Int, page: Int)
+    case returningBorrowed(limit: Int, page: Int)
+    case submissionDetail(id: String?)
+    case submissionDelete(id: String?)
+    case approveRequest(id: String?)
 }
 
 // MARK: - PATH URL
@@ -308,6 +315,20 @@ extension Endpoint {
             return "statistic/lk"
         case .engineerDashboardStatistic(month: let month, year: let year, id: let id):
             return "statistic/teknisi?bulan=\(month ?? "")&tahun=\(year ?? "")&id=\(id ?? "")"
+        case .submissionList:
+            return "reqrelokasi/pengajuan"
+        case .requestList:
+            return "reqrelokasi/permintaan"
+        case .returningLoan(limit: let limit, page: let page):
+            return "reqreturnasi/pinjaman?q=&limit=\(limit)&page=\(page)"
+        case .returningBorrowed(limit: let limit, page: let page):
+            return "reqreturnasi/dipinjam?q=&limit=\(limit)&page=\(page)"
+        case .submissionDetail(id: let id):
+            return "reqrelokasi/detail?id=\(id ?? "")"
+        case .submissionDelete(id: let id):
+            return "reqrelokasi/delete?id=\(id ?? "")"
+        case .approveRequest(id: let id):
+            return "reqrelokasi/approve?id=\(id ?? "")"
         }
     }
     

@@ -113,7 +113,7 @@ class BaseRouter {
     }
     
     func navigateToEquipmentManagement(from navigation: UINavigationController, _ type: EquipmentManagementType) {
-        let vc = EquipmentManagementRouter().showView(type: type)
+        let vc = EquipmentManagementListRouter().showView(type: type)
         navigation.pushViewController(vc, animated: true)
     }
     
