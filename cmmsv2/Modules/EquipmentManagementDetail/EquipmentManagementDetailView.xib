@@ -18,6 +18,7 @@
                 <outlet property="customNavigationView" destination="bXK-Qo-GzG" id="1Qd-nC-Qki"/>
                 <outlet property="dateView" destination="KlX-TC-S9c" id="evD-DL-PiS"/>
                 <outlet property="deleteButton" destination="BCQ-Z5-quf" id="9gN-v9-thL"/>
+                <outlet property="deleteButtonHeightConstraint" destination="GGl-Pc-GAK" id="XOt-gU-VKY"/>
                 <outlet property="generalInfoHeaderView" destination="9u3-x9-5LW" id="ewW-mI-31V"/>
                 <outlet property="generalInformationContainerView" destination="jLW-Wc-Dx6" id="NhI-Hg-W8S"/>
                 <outlet property="initialHeightTableViewConstraint" destination="Wal-UO-O6i" id="QA3-fx-FVz"/>

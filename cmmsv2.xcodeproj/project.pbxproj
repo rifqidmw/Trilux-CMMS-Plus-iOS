@@ -1027,6 +1027,8 @@
 		FA74E3662C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3672C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */; };
+		FAA0E3402C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */; };
+		FAA0E3412C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */; };
 		FAA68D0D2C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
 		FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
 		FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
@@ -1648,6 +1650,7 @@
 		FA6F5A2D2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationReturningBottomSheet.xib; sourceTree = "<group>"; };
 		FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalSummaryCardView.swift; sourceTree = "<group>"; };
 		FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalSummaryCardView.xib; sourceTree = "<group>"; };
+		FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentManagementListView+Collection.swift"; sourceTree = "<group>"; };
 		FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBottomSheet.swift; sourceTree = "<group>"; };
 		FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingBottomSheet.xib; sourceTree = "<group>"; };
 		FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionView.swift; sourceTree = "<group>"; };
@@ -3826,6 +3829,7 @@
 				FAF3CCB02C8F66D400630A96 /* EquipmentManagementListView.xib */,
 				FAF3CCB12C8F66D400630A96 /* EquipmentManagementListEntity.swift */,
 				FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */,
+				FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */,
 			);
 			path = EquipmentManagementList;
 			sourceTree = "<group>";
@@ -4621,6 +4625,7 @@
 				CEEFDA6B2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
 				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
+				FAA0E3402C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */,
 				CE9E7D852B529EE800240A7D /* EditProfileView.swift in Sources */,
 				CE90D9332C2E8FAD00D3C2AF /* HelpBannerView.swift in Sources */,
 				CE8208892B82391F00CD4242 /* NotificationListEntity.swift in Sources */,
@@ -4998,6 +5003,7 @@
 				CEEFDA6C2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
 				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
+				FAA0E3412C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */,
 				CE9E7D862B529EE800240A7D /* EditProfileView.swift in Sources */,
 				CE90D9352C2E8FAD00D3C2AF /* HelpBannerView.swift in Sources */,
 				CE82088A2B82391F00CD4242 /* NotificationListEntity.swift in Sources */,

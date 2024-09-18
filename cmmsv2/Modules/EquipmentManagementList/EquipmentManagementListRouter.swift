@@ -27,8 +27,8 @@ extension EquipmentManagementListRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func navigateToEquipmentManagementDetail(from navigation: UINavigationController, _ id: String?) {
-        let vc = EquipmentManagementDetailRouter().showView(type: .loan, id ?? "")
+    func navigateToEquipmentManagementDetail(from navigation: UINavigationController, _ id: String?, type: EquipmentManagementType) {
+        let vc = EquipmentManagementDetailRouter().showView(type: type, id ?? "")
         navigation.pushViewController(vc, animated: true)
     }
     
