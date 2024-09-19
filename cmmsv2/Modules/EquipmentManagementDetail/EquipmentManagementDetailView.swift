@@ -24,9 +24,11 @@ class EquipmentManagementDetailView: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var initialHeightTableViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var deleteButton: GeneralButton!
+    @IBOutlet weak var deleteButtonHeightConstraint: NSLayoutConstraint!
     
     var presenter: EquipmentManagementDetailPresenter?
     var data: [SubmissionDetail] = []
+    var mutationData: [MutationDetailDetail] = []
     
     override func didLoad() {
         super.didLoad()
@@ -52,37 +54,22 @@ extension EquipmentManagementDetailView {
     
     private func bindingData() {
         guard let presenter else { return }
-        presenter.$submissionDetailData
-            .sink { [weak self] data in
-                guard let self,
-                      let data,
-                      let detail = data.data,
-                      let list = detail.detail
-                else { return }
-                self.data = list
-                self.reloadTableViewWithAnimation(self.tableView)
-                self.hideLoadingPopup()
-                
-                self.generalInfoHeaderView.configure(icon: "ic_notes_board", title: detail.alatname ?? "-", type: .plain)
-                self.requestedInstallationView.configureView(title: "Instalasi Pemohon", value: detail.location_pemohon ?? "-")
-                
-                if let createdAtString = detail.created_at, let createdAtDate = parseDate(from: createdAtString) {
-                    let formattedDate = String.formattedDate(createdAtDate)
-                    self.dateView.configureView(title: "Tanggal", value: formattedDate)
-                    
-                    let formattedTime = String.formattedTime(createdAtDate)
-                    self.timeView.configureView(title: "Waktu", value: formattedTime)
-                } else {
-                    self.dateView.configureView(title: "Tanggal", value: "-")
-                    self.timeView.configureView(title: "Waktu", value: "-")
+        switch presenter.type {
+        case .loan, .returning:
+            presenter.$submissionDetailData
+                .sink { [weak self] data in
+                    guard let self else { return }
+                    self.setupSubmissionData(data)
                 }
-                
-                self.installationProviderView.configureView(title: "Instalasi Penyedia", value: detail.to_instalasi ?? "-")
-                self.assetLoanCountView.configureView(title: "Jumlah Permintaan Alat", value: detail.qty ?? "-")
-                self.assetApproveCountView.configureView(title: "Jumlah Approve Alat", value: detail.qty_approve ?? "-")
-                self.calculateTotalHeight(for: self.tableView)
-            }
-            .store(in: &anyCancellable)
+                .store(in: &anyCancellable)
+        case .mutation:
+            presenter.$mutationDetailData
+                .sink { [weak self] data in
+                    guard let self else { return }
+                    self.setupMutationData(data)
+                }
+                .store(in: &anyCancellable)
+        }
         
         presenter.$deleteSubmissionData
             .sink { [weak self] data in
@@ -101,6 +88,7 @@ extension EquipmentManagementDetailView {
     }
     
     private func setupView() {
+        guard let presenter else { return }
         self.showLoadingPopup()
         self.customNavigationView.configure(toolbarTitle: "Detail Mutasi", type: .plain)
         [self.generalInformationContainerView,
@@ -110,6 +98,14 @@ extension EquipmentManagementDetailView {
             $0.addShadow(4, position: .bottom, opacity: 0.2)
         }
         self.deleteButton.configure(title: "Hapus", backgroundColor: UIColor.customIndicatorColor3, titleColor: UIColor.customIndicatorColor4)
+        
+        switch presenter.type {
+        case .loan, .returning:
+            break
+        case .mutation:
+            self.deleteButton.isHidden = true
+            self.deleteButtonHeightConstraint.constant = 0
+        }
     }
     
     private func setupAction() {
@@ -150,12 +146,78 @@ extension EquipmentManagementDetailView {
         self.tableView.isScrollEnabled = false
     }
     
+    private func setupSubmissionData(_ data: SubmissionDetailEntity?) {
+        guard let data,
+              let detail = data.data,
+              let list = detail.detail
+        else { return }
+        self.containerAssetListView.isHidden = list.isEmpty
+        self.data = list
+        self.reloadTableViewWithAnimation(self.tableView)
+        self.hideLoadingPopup()
+        
+        self.generalInfoHeaderView.configure(icon: "ic_notes_board", title: detail.alatname ?? "-", type: .plain)
+        self.requestedInstallationView.configureView(title: "Instalasi Pemohon", value: detail.location_pemohon ?? "-")
+        
+        if let createdAtString = detail.created_at, let createdAtDate = parseDate(from: createdAtString) {
+            let formattedDate = String.formattedDate(createdAtDate)
+            self.dateView.configureView(title: "Tanggal", value: formattedDate)
+            
+            let formattedTime = String.formattedTime(createdAtDate)
+            self.timeView.configureView(title: "Waktu", value: formattedTime)
+        } else {
+            self.dateView.configureView(title: "Tanggal", value: "-")
+            self.timeView.configureView(title: "Waktu", value: "-")
+        }
+        
+        self.installationProviderView.configureView(title: "Instalasi Penyedia", value: detail.to_instalasi ?? "-")
+        self.assetLoanCountView.configureView(title: "Jumlah Permintaan Alat", value: detail.qty ?? "-")
+        self.assetApproveCountView.configureView(title: "Jumlah Approve Alat", value: detail.qty_approve ?? "-")
+        self.calculateTotalHeight(for: self.tableView)
+    }
+    
+    private func setupMutationData(_ data: MutationDetailEntity?) {
+        guard let data,
+              let detail = data.data,
+              let list = detail.detail
+        else { return }
+        self.containerAssetListView.isHidden = list.isEmpty
+        self.mutationData = list
+        self.reloadTableViewWithAnimation(self.tableView)
+        self.hideLoadingPopup()
+        
+        self.generalInfoHeaderView.configure(icon: "ic_notes_board", title: detail.alatName ?? "-", type: .plain)
+        self.requestedInstallationView.configureView(title: "Instalasi Pemohon", value: detail.locationPemohon ?? "-")
+        
+        if let createdAtString = detail.createdAt, let createdAtDate = parseDate(from: createdAtString) {
+            let formattedDate = String.formattedDate(createdAtDate)
+            self.dateView.configureView(title: "Tanggal", value: formattedDate)
+            
+            let formattedTime = String.formattedTime(createdAtDate)
+            self.timeView.configureView(title: "Waktu", value: formattedTime)
+        } else {
+            self.dateView.configureView(title: "Tanggal", value: "-")
+            self.timeView.configureView(title: "Waktu", value: "-")
+        }
+        
+        self.installationProviderView.configureView(title: "Instalasi Penyedia", value: detail.toInstalasi ?? "-")
+        self.assetLoanCountView.configureView(title: "Jumlah Permintaan Alat", value: detail.qty ?? "-")
+        self.assetApproveCountView.configureView(title: "Jumlah Approve Alat", value: detail.qtyApprove ?? "-")
+        self.calculateTotalHeight(for: self.tableView)
+    }
+    
 }
 
 extension EquipmentManagementDetailView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        switch presenter?.type {
+        case .loan, .returning:
+            return self.data.count
+        case .mutation:
+            return self.mutationData.count
+        default: return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -164,8 +226,15 @@ extension EquipmentManagementDetailView: UITableViewDataSource, UITableViewDeleg
             return UITableViewCell()
         }
         
-        let adjustedData = self.data[indexPath.row]
-        cell.setupCell(adjustedData.imgUrl ?? "", firstRoom: adjustedData.from_room_text ?? "-", secondRoom: adjustedData.to_room_text ?? "-", serialNumber: adjustedData.serial ?? "-")
+        switch presenter?.type {
+        case .loan, .returning:
+            let adjustedData = self.data[indexPath.row]
+            cell.setupCell(adjustedData.imgUrl ?? "", firstRoom: adjustedData.from_room_text ?? "-", secondRoom: adjustedData.to_room_text ?? "-", serialNumber: adjustedData.serial ?? "-")
+        case .mutation:
+            let adjustedData = self.mutationData[indexPath.row]
+            cell.setupCell(adjustedData.imgUrl ?? "", firstRoom: adjustedData.fromRoomText ?? "-", secondRoom: adjustedData.toRoomText ?? "-", serialNumber: adjustedData.serial ?? "-")
+        default: break
+        }
         
         return cell
     }

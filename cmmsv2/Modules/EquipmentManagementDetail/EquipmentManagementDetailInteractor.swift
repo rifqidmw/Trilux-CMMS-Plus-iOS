@@ -17,4 +17,12 @@ class EquipmentManagementDetailInteractor: BaseInteractor {
         return api.requestApiPublisher(.submissionDelete(id: id ?? ""))
     }
     
+    func getMutationDetail(id: String?) -> AnyPublisher<MutationDetailEntity, Error> {
+        return api.requestApiPublisher(.mutationDetail(id: id ?? ""))
+    }
+    
+    func deleteMutation(id: String?) -> AnyPublisher<ReturningEntity, Error> {
+        return api.requestApiPublisher(.mutationDelete(id: id ?? ""))
+    }
+    
 }

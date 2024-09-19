@@ -29,4 +29,12 @@ class EquipmentManagementListInteractor: BaseInteractor {
         return api.requestApiPublisher(.approveRequest(id: id ?? ""))
     }
     
+    func getMutationSubmissionList() -> AnyPublisher<MutationRequestEntity, Error> {
+        return api.requestApiPublisher(.mutationSubmission)
+    }
+    
+    func getMutationRequestList() -> AnyPublisher<MutationRequestEntity, Error> {
+        return api.requestApiPublisher(.mutationRequest)
+    }
+    
 }

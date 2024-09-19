@@ -75,6 +75,9 @@ extension EquipmentManagementCell {
         case .readyTaken:
             self.statusView.backgroundColor = UIColor.customSecondaryColor
             self.statusLabel.textColor = UIColor.customPrimaryColor
+        case .submission:
+            self.statusView.backgroundColor = UIColor.customIndicatorColor2
+            self.statusLabel.textColor = UIColor.customIndicatorColor11
         default: break
         }
     }

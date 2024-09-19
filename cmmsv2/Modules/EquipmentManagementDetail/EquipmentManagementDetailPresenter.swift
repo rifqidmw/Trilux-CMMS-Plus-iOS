@@ -16,7 +16,9 @@ class EquipmentManagementDetailPresenter: BasePresenter {
     var id: String?
     
     @Published public var submissionDetailData: SubmissionDetailEntity?
+    @Published public var mutationDetailData: MutationDetailEntity?
     @Published public var deleteSubmissionData: ReturningEntity?
+    @Published public var deleteMutationData: ReturningEntity?
     
     @Published public var errorMessage: String = ""
     @Published public var isLoading: Bool = false
@@ -34,7 +36,12 @@ class EquipmentManagementDetailPresenter: BasePresenter {
 extension EquipmentManagementDetailPresenter {
     
     func fetchInitialData() {
-        fetchSubmissionDetail(id: self.id ?? "")
+        switch type {
+        case .loan, .returning:
+            fetchSubmissionDetail(id: self.id ?? "")
+        case .mutation:
+            fetchMutationDetail(id: self.id ?? "")
+        }
     }
     
     func fetchSubmissionDetail(id: String?) {
@@ -79,6 +86,54 @@ extension EquipmentManagementDetailPresenter {
                 receiveValue: { deleteSubmissionData in
                     DispatchQueue.main.async {
                         self.deleteSubmissionData = deleteSubmissionData
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchMutationDetail(id: String?) {
+        self.isLoading = true
+        interactor.getMutationDetail(id: id)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { mutationData in
+                    DispatchQueue.main.async {
+                        self.mutationDetailData = mutationData
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func deleteMutation(id: String?) {
+        self.isLoading = true
+        interactor.deleteMutation(id: id)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { deleteMutationData in
+                    DispatchQueue.main.async {
+                        self.deleteMutationData = deleteMutationData
                     }
                 }
             )

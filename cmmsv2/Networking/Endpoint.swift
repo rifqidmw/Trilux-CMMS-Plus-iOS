@@ -144,6 +144,10 @@ enum Endpoint {
     case submissionDetail(id: String?)
     case submissionDelete(id: String?)
     case approveRequest(id: String?)
+    case mutationSubmission
+    case mutationRequest
+    case mutationDetail(id: String?)
+    case mutationDelete(id: String?)
 }
 
 // MARK: - PATH URL
@@ -329,6 +333,14 @@ extension Endpoint {
             return "reqrelokasi/delete?id=\(id ?? "")"
         case .approveRequest(id: let id):
             return "reqrelokasi/approve?id=\(id ?? "")"
+        case .mutationSubmission:
+            return "reqmutasi/pengajuan"
+        case .mutationRequest:
+            return "reqmutasi/permintaan"
+        case .mutationDetail(id: let id):
+            return "reqmutasi/detail?id=\(id ?? "")"
+        case .mutationDelete(id: let id):
+            return "reqmutasi/delete?id=\(id ?? "")"
         }
     }
     

@@ -20,6 +20,8 @@ class EquipmentManagementListPresenter: BasePresenter {
     @Published public var returningLoanData: EquipmentManagementRequestEntity?
     @Published public var returningBorrowedData: EquipmentManagementRequestEntity?
     @Published public var approvedRequestedData: ReturningEntity?
+    @Published public var mutationSubmissionData: MutationRequestEntity?
+    @Published public var mutationRequestData: MutationRequestEntity?
     let floatingActionData: [FloatingActionEntity] = [
         FloatingActionEntity(image: "plus", title: "Pilih dari list"),
         FloatingActionEntity(image: "barcode.viewfinder", title: "Scan")
@@ -46,10 +48,12 @@ extension EquipmentManagementListPresenter {
     
     func fetchInitData() {
         switch type {
-        case .returning:
-            fetchReturningLoanList(limit: limit, page: page)
         case .loan:
             fetchEquipmentSubmission()
+        case .returning:
+            fetchReturningLoanList(limit: limit, page: page)
+        case .mutation:
+            fetchMutationSubmission()
         }
     }
     
@@ -151,6 +155,34 @@ extension EquipmentManagementListPresenter {
             .store(in: &anyCancellable)
     }
     
+    func fetchMutationSubmission() {
+        isLoading = true
+        interactor.getMutationSubmissionList()
+            .sink(
+                receiveCompletion: handleCompletion(_:),
+                receiveValue: { submissionData in
+                    DispatchQueue.main.async {
+                        self.mutationSubmissionData = submissionData
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchMutationRequest() {
+        isLoading = true
+        interactor.getMutationRequestList()
+            .sink(
+                receiveCompletion: handleCompletion(_:),
+                receiveValue: { requestData in
+                    DispatchQueue.main.async {
+                        self.mutationRequestData = requestData
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
 }
 
 extension EquipmentManagementListPresenter {
@@ -159,8 +191,8 @@ extension EquipmentManagementListPresenter {
         router.navigateToAssetMedicList(navigation: navigation)
     }
     
-    func navigateToEquipmentManagementDetail(from navigation: UINavigationController, _ id: String?) {
-        router.navigateToEquipmentManagementDetail(from: navigation, id ?? "")
+    func navigateToEquipmentManagementDetail(from navigation: UINavigationController, _ id: String?, type: EquipmentManagementType) {
+        router.navigateToEquipmentManagementDetail(from: navigation, id ?? "", type: type)
     }
     
     func showApproveConfirmationPopUp(from navigation: UINavigationController, id: String?, _ delegate: ConfirmationReturningBottomDelegate) {
