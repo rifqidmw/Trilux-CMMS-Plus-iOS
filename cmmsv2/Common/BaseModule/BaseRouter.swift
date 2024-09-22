@@ -127,4 +127,9 @@ class BaseRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToComplaintList(navigation: UINavigationController, type: ComplaintType? = .engineer) {
+        let vc = ComplaintListRouter().showView(type ?? .engineer)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

@@ -16,6 +16,7 @@ class AssetDetailPresenter: BasePresenter {
     let id: String?
     var trackData: [TrackComplaintData] = []
     
+    @Published public var assetData: AssetDetailEntity?
     @Published public var assetInfoData: EquipmentDetail?
     @Published public var assetFilesData: [File] = []
     @Published public var assetCostData: EquipmentMainCoast?
@@ -67,6 +68,7 @@ extension AssetDetailPresenter {
                         guard let data = asset.data,
                               let equipment = data.equipment
                         else { return }
+                        self.assetData = asset
                         self.assetInfoData = equipment
                     }
                 }

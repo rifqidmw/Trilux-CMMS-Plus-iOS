@@ -148,6 +148,8 @@ enum Endpoint {
     case mutationRequest
     case mutationDetail(id: String?)
     case mutationDelete(id: String?)
+    case deleteComplaint(id: String?)
+    case updateComplaint(data: UpdateComplaintRequestEntity?, id: String?)
 }
 
 // MARK: - PATH URL
@@ -341,6 +343,10 @@ extension Endpoint {
             return "reqmutasi/detail?id=\(id ?? "")"
         case .mutationDelete(id: let id):
             return "reqmutasi/delete?id=\(id ?? "")"
+        case .deleteComplaint(id: let id):
+            return "complains/delete?id=\(id ?? "")"
+        case .updateComplaint(data: let data, id: let id):
+            return "complains/update?id=\(id ?? "")"
         }
     }
     
@@ -361,7 +367,8 @@ extension Endpoint {
                 .createPreventive,
                 .saveWorkSheet,
                 .approveWorkSheet,
-                .saveTechnical:
+                .saveTechnical,
+                .updateComplaint:
             return .post
         default:
             return .get
@@ -583,6 +590,15 @@ extension Endpoint {
                 "urut_medik": data.urutMedik,
                 "usia": data.usia,
                 "year": data.year
+            ]
+            return params
+        case .updateComplaint(data: let data, id: let id):
+            let params: [String: Any] = [
+                "equipment_id": data?.equipmentId ?? "",
+                "title": data?.title ?? "",
+                "descriptions": data?.descriptions ?? "",
+                "image_id": data?.imageId ?? "",
+                "delete_images": data?.deleteImages ?? ""
             ]
             return params
         default:

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,6 +21,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComplaintListView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="actionTabBarView" destination="0Px-yF-if3" id="o1H-Qa-KjW"/>
+                <outlet property="containerSearchTextField" destination="1XM-oq-2WH" id="V8x-av-2y4"/>
+                <outlet property="containerTitleView" destination="FZp-jQ-v7Z" id="ZN6-ab-Ylw"/>
                 <outlet property="customNavigationView" destination="BWD-rp-SPd" id="vjI-Ec-cC0"/>
                 <outlet property="emptyView" destination="deO-B1-Uxy" id="01l-7a-tZW"/>
                 <outlet property="searchTextField" destination="6gR-B5-Myb" id="xL6-UN-Yjf"/>
@@ -41,58 +43,86 @@
                         <constraint firstAttribute="height" constant="56" id="GHA-l3-hR7"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-B5-Myb" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
-                    <rect key="frame" x="16" y="139" width="361" height="48"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="Y5H-58-Q8i"/>
-                    </constraints>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar Pengaduan Korektif" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuq-NE-PXG">
-                    <rect key="frame" x="16" y="203" width="361" height="17"/>
-                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                    <color key="textColor" name="customDarkGrayColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I1E-Az-4MH">
-                    <rect key="frame" x="0.0" y="228" width="393" height="534"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u3y-UM-dci">
+                    <rect key="frame" x="0.0" y="139" width="393" height="623"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pna-sc-pQF">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="534"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </tableView>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deO-B1-Uxy">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XM-oq-2WH">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty_document" translatesAutoresizingMaskIntoConstraints="NO" id="bdv-qN-vI9">
-                                    <rect key="frame" x="161.66666666666666" y="-35" width="70" height="70"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="70" id="GYB-RU-hT9"/>
-                                        <constraint firstAttribute="width" constant="70" id="TtH-BU-wcZ"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data tidak ditemukan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-Po-uXs">
-                                    <rect key="frame" x="16" y="51" width="361" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="Upf-aN-WP4"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                    <color key="textColor" name="placeholderColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-B5-Myb" customClass="SearchTextField" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="0.0" width="361" height="48"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Qxp-Po-uXs" secondAttribute="trailing" constant="16" id="3Fc-5U-qLX"/>
-                                <constraint firstItem="Qxp-Po-uXs" firstAttribute="leading" secondItem="deO-B1-Uxy" secondAttribute="leading" constant="16" id="aa4-qo-Ynf"/>
-                                <constraint firstItem="Qxp-Po-uXs" firstAttribute="top" secondItem="bdv-qN-vI9" secondAttribute="bottom" constant="16" id="o5T-m7-5MC"/>
-                                <constraint firstItem="bdv-qN-vI9" firstAttribute="centerY" secondItem="deO-B1-Uxy" secondAttribute="centerY" id="pkm-KP-eV7"/>
-                                <constraint firstItem="bdv-qN-vI9" firstAttribute="centerX" secondItem="deO-B1-Uxy" secondAttribute="centerX" id="wVL-Oh-ssS"/>
+                                <constraint firstAttribute="height" constant="48" id="H6v-HL-iUk"/>
+                                <constraint firstItem="6gR-B5-Myb" firstAttribute="leading" secondItem="1XM-oq-2WH" secondAttribute="leading" constant="16" id="IC1-pg-4pV"/>
+                                <constraint firstAttribute="bottom" secondItem="6gR-B5-Myb" secondAttribute="bottom" id="M7w-ut-scT"/>
+                                <constraint firstAttribute="trailing" secondItem="6gR-B5-Myb" secondAttribute="trailing" constant="16" id="S2S-De-HOg"/>
+                                <constraint firstItem="6gR-B5-Myb" firstAttribute="top" secondItem="1XM-oq-2WH" secondAttribute="top" id="qcy-me-WJ8"/>
                             </constraints>
                         </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I1E-Az-4MH">
+                            <rect key="frame" x="0.0" y="64" width="393" height="559"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZp-jQ-v7Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="18"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar Pengaduan Korektif" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuq-NE-PXG">
+                                            <rect key="frame" x="16" y="0.0" width="361" height="18"/>
+                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                            <color key="textColor" name="customDarkGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="xuq-NE-PXG" secondAttribute="trailing" constant="16" id="1ed-gF-wgo"/>
+                                        <constraint firstItem="xuq-NE-PXG" firstAttribute="top" secondItem="FZp-jQ-v7Z" secondAttribute="top" id="T1k-zW-ppr"/>
+                                        <constraint firstAttribute="bottom" secondItem="xuq-NE-PXG" secondAttribute="bottom" id="cMa-5p-ZLp"/>
+                                        <constraint firstAttribute="height" constant="18" id="pnZ-zl-W2R"/>
+                                        <constraint firstItem="xuq-NE-PXG" firstAttribute="leading" secondItem="FZp-jQ-v7Z" secondAttribute="leading" constant="16" id="uqQ-Aj-wSq"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pna-sc-pQF">
+                                    <rect key="frame" x="0.0" y="26" width="393" height="533"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </tableView>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deO-B1-Uxy">
+                                    <rect key="frame" x="0.0" y="559" width="393" height="0.0"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty_document" translatesAutoresizingMaskIntoConstraints="NO" id="bdv-qN-vI9">
+                                            <rect key="frame" x="161.66666666666666" y="-35" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="GYB-RU-hT9"/>
+                                                <constraint firstAttribute="width" constant="70" id="TtH-BU-wcZ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data tidak ditemukan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxp-Po-uXs">
+                                            <rect key="frame" x="16" y="51" width="361" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Upf-aN-WP4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                            <color key="textColor" name="placeholderColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Qxp-Po-uXs" secondAttribute="trailing" constant="16" id="3Fc-5U-qLX"/>
+                                        <constraint firstItem="Qxp-Po-uXs" firstAttribute="leading" secondItem="deO-B1-Uxy" secondAttribute="leading" constant="16" id="aa4-qo-Ynf"/>
+                                        <constraint firstItem="Qxp-Po-uXs" firstAttribute="top" secondItem="bdv-qN-vI9" secondAttribute="bottom" constant="16" id="o5T-m7-5MC"/>
+                                        <constraint firstItem="bdv-qN-vI9" firstAttribute="centerY" secondItem="deO-B1-Uxy" secondAttribute="centerY" id="pkm-KP-eV7"/>
+                                        <constraint firstItem="bdv-qN-vI9" firstAttribute="centerX" secondItem="deO-B1-Uxy" secondAttribute="centerX" id="wVL-Oh-ssS"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vXk-px-pyf">
@@ -114,23 +144,17 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0Px-yF-if3" secondAttribute="bottom" id="00I-H6-25n"/>
-                <constraint firstItem="I1E-Az-4MH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5NJ-eG-Rnf"/>
-                <constraint firstItem="I1E-Az-4MH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Alm-7e-rRk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6gR-B5-Myb" secondAttribute="trailing" constant="16" id="Aza-TB-Ql2"/>
+                <constraint firstItem="u3y-UM-dci" firstAttribute="top" secondItem="BWD-rp-SPd" secondAttribute="bottom" constant="24" id="2hg-hM-4wn"/>
                 <constraint firstItem="BWD-rp-SPd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EEc-D4-4rx"/>
                 <constraint firstItem="0Px-yF-if3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FeG-VQ-7q2"/>
-                <constraint firstItem="xuq-NE-PXG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Nch-NR-Lua"/>
                 <constraint firstItem="BWD-rp-SPd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OcT-qK-xCl"/>
-                <constraint firstItem="6gR-B5-Myb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VQX-mG-y1i"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xuq-NE-PXG" secondAttribute="trailing" constant="16" id="VzO-V8-Ayr"/>
-                <constraint firstItem="0Px-yF-if3" firstAttribute="top" secondItem="I1E-Az-4MH" secondAttribute="bottom" id="a9V-To-ghb"/>
+                <constraint firstItem="0Px-yF-if3" firstAttribute="top" secondItem="u3y-UM-dci" secondAttribute="bottom" id="PqP-sS-h4H"/>
                 <constraint firstItem="0Px-yF-if3" firstAttribute="top" secondItem="vXk-px-pyf" secondAttribute="bottom" id="dE3-cC-7FZ"/>
+                <constraint firstAttribute="trailing" secondItem="u3y-UM-dci" secondAttribute="trailing" id="gas-j7-XQd"/>
                 <constraint firstItem="0Px-yF-if3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iLe-ah-d9C"/>
                 <constraint firstItem="BWD-rp-SPd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lqE-EK-nak"/>
+                <constraint firstItem="u3y-UM-dci" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="m0M-RN-BGk"/>
                 <constraint firstItem="vXk-px-pyf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n3M-Iz-KPu"/>
-                <constraint firstItem="xuq-NE-PXG" firstAttribute="top" secondItem="6gR-B5-Myb" secondAttribute="bottom" constant="16" id="pnD-OP-a7Q"/>
-                <constraint firstItem="I1E-Az-4MH" firstAttribute="top" secondItem="xuq-NE-PXG" secondAttribute="bottom" constant="8" id="udh-c6-K6I"/>
-                <constraint firstItem="6gR-B5-Myb" firstAttribute="top" secondItem="BWD-rp-SPd" secondAttribute="bottom" constant="24" id="xLo-Ul-sqY"/>
             </constraints>
             <point key="canvasLocation" x="5.343511450381679" y="20.422535211267608"/>
         </view>

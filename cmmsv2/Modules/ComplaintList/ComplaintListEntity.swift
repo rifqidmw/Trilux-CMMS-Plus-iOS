@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum ComplaintType {
+    case engineer
+    case room
+}
+
 struct ComplaintEntity: Codable {
     let count: Int?
     let data: ComplaintData?
@@ -427,3 +432,20 @@ struct DeleteComplaintData: Codable {
         case complainId = "complain_id"
     }
 }
+
+struct DeleteComplaintResponseEntity: Codable {
+    let count: Int?
+    let data: DeleteComplaintResponseData?
+    let message: String?
+    let status: Int?
+    let reff: ReffData?
+}
+
+struct DeleteComplaintResponseData: Codable {
+    let message: String?
+    
+    enum CodingKeys: CodingKey {
+        case message
+    }
+}
+

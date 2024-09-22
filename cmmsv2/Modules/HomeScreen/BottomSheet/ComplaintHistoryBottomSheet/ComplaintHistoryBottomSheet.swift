@@ -1,21 +1,26 @@
 //
-//  WorkSheetBottomSheet.swift
+//  ComplaintHistoryBottomSheet.swift
 //  cmmsv2
 //
-//  Created by PRO M1 2020 8/256 on 14/01/24.
+//  Created by macbook  on 21/09/24.
 //
 
 import UIKit
 import Combine
 
-class WorkSheetBottomSheet: BaseNonNavigationController {
+protocol ComplaintHistoryBottomSheetDelegate: AnyObject {
+    func didTapComplaintList()
+    func didTapComplaintRoomHistoryList()
+}
+
+class ComplaintHistoryBottomSheet: BaseNonNavigationController {
     
     @IBOutlet weak var dismissAreaView: UIView!
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var initialHeightTableViewConstraint: NSLayoutConstraint!
     
-    weak var delegate: WorkSheetBottomSheetDelegate?
+    weak var delegate: ComplaintHistoryBottomSheetDelegate?
     var data: [MenuModel] = complaintData
     
     override func didLoad() {
@@ -26,13 +31,12 @@ class WorkSheetBottomSheet: BaseNonNavigationController {
     
 }
 
-extension WorkSheetBottomSheet {
+extension ComplaintHistoryBottomSheet {
     
     private func setupBody() {
         setupView()
         setupAction()
         setupTableView()
-        calculateTotalHeight(for: self.tableView)
     }
     
     private func setupTableView() {
@@ -61,7 +65,7 @@ extension WorkSheetBottomSheet {
     
 }
 
-extension WorkSheetBottomSheet: UITableViewDataSource, UITableViewDelegate {
+extension ComplaintHistoryBottomSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -83,19 +87,11 @@ extension WorkSheetBottomSheet: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 0:
             self.dismissBottomSheet() {
-                delegate.didTapWorkSheetFunctionMonitoring()
+                delegate.didTapComplaintList()
             }
         case 1:
             self.dismissBottomSheet() {
-                delegate.didTapWorkSheetCorrective()
-            }
-        case 2:
-            self.dismissBottomSheet() {
-                delegate.didTapMaintenancePreventive()
-            }
-        case 3:
-            self.dismissBottomSheet() {
-                delegate.didTapCalibration()
+                delegate.didTapComplaintRoomHistoryList()
             }
         default: break
         }

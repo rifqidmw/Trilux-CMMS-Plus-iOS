@@ -25,6 +25,17 @@ class CorrectiveTVC: UITableViewCell {
     @IBOutlet weak var actionButton: GeneralButton!
     @IBOutlet weak var secondActionButton: GeneralButton!
     
+    @IBOutlet weak var containerRoomView: UIView!
+    @IBOutlet weak var complaintImageView: UIImageView!
+    @IBOutlet weak var complaintStatusView: UIView!
+    @IBOutlet weak var complaintStatusLabel: UILabel!
+    @IBOutlet weak var complaintStatusViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var complaintTitle: UILabel!
+    @IBOutlet weak var chronologyLabel: UILabel!
+    @IBOutlet weak var roomLabel: UILabel!
+    @IBOutlet weak var complaintDateLabel: UILabel!
+    @IBOutlet weak var editingComplaintView: UIView!
+    
     var anyCancellable = Set<AnyCancellable>()
     static let identifier = String(describing: CorrectiveTVC.self)
     static let nib = {
@@ -40,6 +51,12 @@ class CorrectiveTVC: UITableViewCell {
         self.actionButton.makeCornerRadius(8)
         self.secondActionButton.makeCornerRadius(8)
         self.statusView.makeCornerRadius(4)
+        
+        self.complaintImageView.makeCornerRadius(18)
+        self.containerRoomView.makeCornerRadius(8)
+        self.containerRoomView.addShadow(4, position: .bottom, opacity: 0.2)
+        self.complaintStatusView.makeCornerRadius(4)
+        self.editingComplaintView.makeCornerRadius(4)
         self.showSkeletonAnimation()
     }
     
@@ -52,33 +69,47 @@ class CorrectiveTVC: UITableViewCell {
 
 extension CorrectiveTVC {
     
-    func setupCell(data: Complaint, delegate: CorrectiveCellDelegate, complaint: Complaint) {
+    func setupCell(data: Complaint, delegate: CorrectiveCellDelegate, complaint: Complaint, type: ComplaintType? = .engineer) {
         hideSkeletonAnimation()
-        correctiveImageView.loadImageUrl(data.valEquipmentImg ?? "")
-        dateLabel.text = "\(data.txtComplainTime ?? "") • \(data.txtRuangan ?? "")"
-        titleLabel.text = data.valEquipmentName ?? ""
-        descriptionLabel.text = data.txtSenderName ?? ""
-        
-        let titleTechnician = NSAttributedString.stylizedText("Teknisi: ", font: UIFont.robotoBold(10), color: UIColor.customPlaceholderColor)
-        let techLabel = NSAttributedString.stylizedText(data.txtEngineerName ?? "-", font: UIFont.robotoBold(10), color: UIColor.customDarkGrayColor)
-        
-        let fullTechnicianLabel = NSMutableAttributedString()
-        fullTechnicianLabel.append(titleTechnician)
-        fullTechnicianLabel.append(techLabel)
-        
-        self.technicianLabel.attributedText = fullTechnicianLabel
-        
-        let titleDamage = NSAttributedString.stylizedText("Kerusakan: ", font: UIFont.robotoBold(10), color: UIColor.customPlaceholderColor)
-        let damagedLabel = NSAttributedString.stylizedText(data.txtTitle ?? "-", font: UIFont.robotoBold(10), color: UIColor.customDarkGrayColor)
-        
-        let fullDamagedLabel = NSMutableAttributedString()
-        fullDamagedLabel.append(titleDamage)
-        fullDamagedLabel.append(damagedLabel)
-        
-        self.damageLabel.attributedText = fullDamagedLabel
-        
         configureStatus(status: CorrectiveStatusType(rawValue: ((data.txtStatus ?? .none) ?? "")) ?? .none)
-        configureActionButton(data: data)
+        switch type {
+        case .engineer:
+            containerView.isHidden = false
+            correctiveImageView.loadImageUrl(data.valEquipmentImg ?? "")
+            dateLabel.text = "\(data.txtComplainTime ?? "") • \(data.txtRuangan ?? "")"
+            titleLabel.text = data.valEquipmentName ?? ""
+            descriptionLabel.text = data.txtSenderName ?? ""
+            
+            let titleTechnician = NSAttributedString.stylizedText("Teknisi: ", font: UIFont.robotoBold(10), color: UIColor.customPlaceholderColor)
+            let techLabel = NSAttributedString.stylizedText(data.txtEngineerName ?? "-", font: UIFont.robotoBold(10), color: UIColor.customDarkGrayColor)
+            
+            let fullTechnicianLabel = NSMutableAttributedString()
+            fullTechnicianLabel.append(titleTechnician)
+            fullTechnicianLabel.append(techLabel)
+            
+            self.technicianLabel.attributedText = fullTechnicianLabel
+            
+            let titleDamage = NSAttributedString.stylizedText("Kerusakan: ", font: UIFont.robotoBold(10), color: UIColor.customPlaceholderColor)
+            let damagedLabel = NSAttributedString.stylizedText(data.txtTitle ?? "-", font: UIFont.robotoBold(10), color: UIColor.customDarkGrayColor)
+            
+            let fullDamagedLabel = NSMutableAttributedString()
+            fullDamagedLabel.append(titleDamage)
+            fullDamagedLabel.append(damagedLabel)
+            
+            self.damageLabel.attributedText = fullDamagedLabel
+            configureActionButton(data: data)
+        case .room:
+            containerRoomView.isHidden = false
+            complaintImageView.loadImageUrl(data.valEquipmentImg ?? "")
+            roomLabel.text = data.txtRuangan ?? "-"
+            complaintDateLabel.text = data.txtComplainTime ?? "-"
+            complaintTitle.text = data.txtTitle ?? "-"
+            chronologyLabel.text = data.txtDescriptions ?? "-"
+            if let isDelegatable = data.valDelegatable {
+                editingComplaintView.isHidden = !isDelegatable
+            }
+        default: break
+        }
         
         actionButton.gesture()
             .sink { _ in
@@ -146,54 +177,99 @@ extension CorrectiveTVC {
     
     private func configureStatus(status: CorrectiveStatusType) {
         self.statusLabel.text = status.getStringValue().capitalized
+        self.complaintStatusLabel.text = status.getStringValue().capitalized
         
         switch status {
         case .open:
             statusView.backgroundColor = UIColor.customLightGreenColor
             statusLabel.textColor = UIColor.customIndicatorColor8
             statusViewWidthConstraint.constant = 50
+            
+            complaintStatusView.backgroundColor = UIColor.customLightGreenColor
+            complaintStatusLabel.textColor = UIColor.customIndicatorColor8
+            complaintStatusViewWidthConstraint.constant = 50
         case .closed:
             statusView.backgroundColor = UIColor.customSecondaryColor
             statusLabel.textColor = UIColor.customPrimaryColor
             statusViewWidthConstraint.constant = 52
+            
+            complaintStatusView.backgroundColor = UIColor.customSecondaryColor
+            complaintStatusLabel.textColor = UIColor.customPrimaryColor
+            complaintStatusViewWidthConstraint.constant = 52
         case .progress:
             statusView.backgroundColor = UIColor.customIndicatorColor2
             statusLabel.textColor = UIColor.customIndicatorColor11
             statusViewWidthConstraint.constant = 56
+            
+            complaintStatusView.backgroundColor = UIColor.customIndicatorColor2
+            complaintStatusLabel.textColor = UIColor.customIndicatorColor11
+            complaintStatusViewWidthConstraint.constant = 56
         case .delay:
             statusView.backgroundColor = UIColor.customIndicatorColor2
             statusLabel.textColor = UIColor.customIndicatorColor11
             statusViewWidthConstraint.constant = 54
+            
+            complaintStatusView.backgroundColor = UIColor.customIndicatorColor2
+            complaintStatusLabel.textColor = UIColor.customIndicatorColor11
+            complaintStatusViewWidthConstraint.constant = 54
         default: break
         }
     }
     
     private func showSkeletonAnimation() {
-        [self.correctiveImageView,
-         self.dateLabel,
-         self.titleLabel,
-         self.descriptionLabel,
-         self.statusView,
-         self.technicianLabel,
-         self.damageLabel,
-         self.actionButton,
-         self.secondActionButton].forEach {
-            $0.isSkeletonable = true
-            $0.showAnimatedGradientSkeleton()
+        let showSkeletonEngineerView = [self.correctiveImageView,
+                                        self.complaintImageView,
+                                        self.dateLabel,
+                                        self.complaintDateLabel,
+                                        self.titleLabel,
+                                        self.complaintTitle]
+        
+        let showSkeletonRoomView = [self.descriptionLabel,
+                                    self.chronologyLabel,
+                                    self.statusView,
+                                    self.complaintStatusView,
+                                    self.technicianLabel,
+                                    self.roomLabel,
+                                    self.damageLabel,
+                                    self.actionButton,
+                                    self.secondActionButton]
+        
+        showSkeletonEngineerView.forEach {
+            $0?.isSkeletonable = true
+            $0?.showAnimatedGradientSkeleton()
+        }
+        
+        showSkeletonRoomView.forEach {
+            $0?.isSkeletonable = true
+            $0?.showAnimatedGradientSkeleton()
         }
     }
     
     private func hideSkeletonAnimation() {
-        [self.correctiveImageView,
-         self.dateLabel,
-         self.titleLabel,
-         self.descriptionLabel,
-         self.statusView,
-         self.technicianLabel,
-         self.damageLabel,
-         self.actionButton,
-         self.secondActionButton].forEach {
-            $0.hideSkeleton()
+        let hideSkeletonEngineerView = [self.correctiveImageView,
+                                        self.complaintImageView,
+                                        self.dateLabel,
+                                        self.complaintDateLabel,
+                                        self.titleLabel,
+                                        self.complaintTitle]
+        
+        let hideSkeletonRoomView = [self.descriptionLabel,
+                                    self.chronologyLabel,
+                                    self.statusView,
+                                    self.complaintStatusView,
+                                    self.technicianLabel,
+                                    self.roomLabel,
+                                    self.damageLabel,
+                                    self.actionButton,
+                                    self.secondActionButton]
+        
+        hideSkeletonEngineerView.forEach {
+            $0?.hideSkeleton()
+        }
+        
+        hideSkeletonRoomView.forEach {
+            $0?.hideSkeleton()
         }
     }
+    
 }

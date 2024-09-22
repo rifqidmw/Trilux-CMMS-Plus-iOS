@@ -11,7 +11,9 @@ import SkeletonView
 class ComplaintListView: BaseViewController {
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
+    @IBOutlet weak var containerSearchTextField: UIView!
     @IBOutlet weak var searchTextField: SearchTextField!
+    @IBOutlet weak var containerTitleView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var actionTabBarView: ActionBarView!
@@ -106,10 +108,26 @@ extension ComplaintListView {
                 }
             }
             .store(in: &anyCancellable)
+        
+        presenter.$deletedComplaintData
+            .sink { [weak self] data in
+                guard let self, let data else { return }
+                self.hideLoadingPopup()
+                self.dismissBottomSheet()
+                self.reloadTableViewWithAnimation(self.tableView)
+                
+                if data.message == "Success" {
+                    self.fetchInitialData()
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
+                }
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupView() {
-        customNavigationView.configure(toolbarTitle: "Pengaduan Korektif", type: .plain)
+        guard let presenter else { return }
+        customNavigationView.configure(toolbarTitle: presenter.type == .engineer ? "Pengaduan Korektif" : "Daftar Pengaduan", type: .plain)
         actionTabBarView.configure(fourthIcon: "gearshape", fourthTitle: "Status")
         actionTabBarView.delegate = self
         searchTextField.delegate = self
@@ -117,6 +135,11 @@ extension ComplaintListView {
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.tableView.showAnimatedGradientSkeleton()
+        }
+        
+        if presenter.type == .room {
+            self.containerTitleView.isHidden = true
+            self.containerSearchTextField.isHidden = true
         }
     }
     
@@ -142,6 +165,8 @@ extension ComplaintListView {
         tableView.register(CorrectiveTVC.nib, forCellReuseIdentifier: CorrectiveTVC.identifier)
         tableView.separatorStyle = .none
         tableView.isSkeletonable = true
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
         tableView.showAnimatedGradientSkeleton()
     }
     
@@ -155,12 +180,13 @@ extension ComplaintListView: SkeletonTableViewDataSource, SkeletonTableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CorrectiveTVC.identifier, for: indexPath) as? CorrectiveTVC,
-              let complaint = presenter?.complaint[indexPath.row]
+              let complaint = presenter?.complaint[indexPath.row],
+              let presenter
         else {
             return UITableViewCell()
         }
         
-        cell.setupCell(data: self.data[indexPath.row], delegate: self, complaint: complaint)
+        cell.setupCell(data: self.data[indexPath.row], delegate: self, complaint: complaint, type: presenter.type)
         
         return cell
     }
@@ -173,7 +199,20 @@ extension ComplaintListView: SkeletonTableViewDataSource, SkeletonTableViewDeleg
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        presenter.navigateToComplaintDetail(navigation: navigation, id: String(self.data[indexPath.row].id ?? 0))
+        let adjustedData = self.data[indexPath.row]
+        switch presenter.type {
+        case .engineer:
+            presenter.navigateToComplaintDetail(navigation: navigation, id: String(adjustedData.id ?? 0))
+        case .room:
+            if let isDelegatable = adjustedData.valDelegatable {
+                if isDelegatable {
+                    // MARK: - TEMPORARY SET
+                    presenter.showComplaintActionBottomSheet(from: navigation, delegate: self, String(adjustedData.id ?? 0), type: .delegate, valType: "0")
+                } else {
+                    presenter.showComplaintActionBottomSheet(from: navigation, delegate: self, String(adjustedData.id ?? 0), type: .detail)
+                }
+            }
+        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

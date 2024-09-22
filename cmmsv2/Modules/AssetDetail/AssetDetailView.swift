@@ -64,6 +64,20 @@ extension AssetDetailView {
     
     private func bindingData() {
         guard let presenter else { return }
+        presenter.$assetData
+            .sink { [weak self] data in
+                guard let self,
+                      let data,
+                      let navigation = self.navigationController
+                else { return }
+                if data.status == 301 {
+                    self.showAlert(title: "Terjadi Kesalahan!", message: data.message) {
+                        navigation.popViewController(animated: true)
+                    }
+                }
+            }
+            .store(in: &anyCancellable)
+        
         presenter.$assetInfoData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
