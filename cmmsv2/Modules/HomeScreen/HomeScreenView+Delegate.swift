@@ -122,7 +122,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapHistoryComplaintListCategory() {
-        self.showAlert(title: "Daftar & Riwayat Pengaduan")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showBottomSheetComplaintHistory(navigation: navigation, delegate: self)
     }
     
     func didTapRoomRequirementCategory() {
@@ -257,7 +260,27 @@ extension HomeScreenView: AllCategoriesBottomSheetDelegate {
     }
     
     func didTapComplaintHistoryList() {
-        self.showAlert(title: "Daftar & Riwayat Pengaduan")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        navigation.dismiss(animated: true) {
+            presenter.showBottomSheetComplaintHistory(navigation: navigation, delegate: self)
+        }
+    }
+    
+}
+
+extension HomeScreenView: ComplaintHistoryBottomSheetDelegate {
+    
+    func didTapComplaintList() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToComplaintList(navigation: navigation, type: .room)
+    }
+    
+    func didTapComplaintRoomHistoryList() {
+        AppLogger.log("-- GO TO COMPLAINT ROOM HISTORY LIST")
     }
     
 }

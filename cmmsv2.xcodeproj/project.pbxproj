@@ -1001,6 +1001,10 @@
 		FA49E5B82C807A4600267925 /* ProfileInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */; };
 		FA49E5B92C807A4600267925 /* ProfileInformationCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */; };
 		FA49E5BA2C807A4600267925 /* ProfileInformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */; };
+		FA55E8352C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55E8332C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift */; };
+		FA55E8362C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA55E8342C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib */; };
+		FA55E8372C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55E8332C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift */; };
+		FA55E8382C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA55E8342C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib */; };
 		FA6F5A0D2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */; };
 		FA6F5A0E2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */; };
 		FA6F5A172C98726000C28E67 /* EquipmentManagementDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */; };
@@ -1027,12 +1031,30 @@
 		FA74E3662C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3672C81EA64002CC8A3 /* StatisticalSummaryCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */; };
 		FA74E3682C81EA64002CC8A3 /* StatisticalSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */; };
+		FA9B43A52C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B43A32C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift */; };
+		FA9B43A62C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B43A42C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib */; };
+		FA9B43A72C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B43A32C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift */; };
+		FA9B43A82C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B43A42C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib */; };
 		FAA0E3402C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */; };
 		FAA0E3412C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */; };
 		FAA68D0D2C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
 		FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
 		FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
 		FAA68D102C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
+		FAA9C96F2CA050EE00735C85 /* EditComplaintView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9C96E2CA050EE00735C85 /* EditComplaintView+Delegate.swift */; };
+		FAA9C9702CA050EE00735C85 /* EditComplaintView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9C96E2CA050EE00735C85 /* EditComplaintView+Delegate.swift */; };
+		FAB6370E2C9F51690030CDD6 /* EditComplaintPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6370A2C9F51690030CDD6 /* EditComplaintPresenter.swift */; };
+		FAB6370F2C9F51690030CDD6 /* EditComplaintRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6370B2C9F51690030CDD6 /* EditComplaintRouter.swift */; };
+		FAB637102C9F51690030CDD6 /* EditComplaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6370C2C9F51690030CDD6 /* EditComplaintView.swift */; };
+		FAB637112C9F51690030CDD6 /* EditComplaintEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB637082C9F51690030CDD6 /* EditComplaintEntity.swift */; };
+		FAB637122C9F51690030CDD6 /* EditComplaintInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB637092C9F51690030CDD6 /* EditComplaintInteractor.swift */; };
+		FAB637132C9F51690030CDD6 /* EditComplaintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB6370D2C9F51690030CDD6 /* EditComplaintView.xib */; };
+		FAB637142C9F51690030CDD6 /* EditComplaintPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6370A2C9F51690030CDD6 /* EditComplaintPresenter.swift */; };
+		FAB637152C9F51690030CDD6 /* EditComplaintRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6370B2C9F51690030CDD6 /* EditComplaintRouter.swift */; };
+		FAB637162C9F51690030CDD6 /* EditComplaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB6370C2C9F51690030CDD6 /* EditComplaintView.swift */; };
+		FAB637172C9F51690030CDD6 /* EditComplaintEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB637082C9F51690030CDD6 /* EditComplaintEntity.swift */; };
+		FAB637182C9F51690030CDD6 /* EditComplaintInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB637092C9F51690030CDD6 /* EditComplaintInteractor.swift */; };
+		FAB637192C9F51690030CDD6 /* EditComplaintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB6370D2C9F51690030CDD6 /* EditComplaintView.xib */; };
 		FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */; };
 		FAC12A0E2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
 		FAC12A0F2C7FA1D300DBAB83 /* ProfileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */; };
@@ -1083,6 +1105,10 @@
 		FAE08BB52C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
 		FAE08BB62C84AD1000E456E4 /* StatusOverviewPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */; };
 		FAE08BB72C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */; };
+		FAE2DAB92C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */; };
+		FAE2DABA2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */; };
+		FAE2DABB2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */; };
+		FAE2DABC2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */; };
 		FAF380FA2C94BD26004B63FE /* MutationBotomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */; };
 		FAF380FB2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
 		FAF380FC2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
@@ -1637,6 +1663,8 @@
 		FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardCardView.xib; sourceTree = "<group>"; };
 		FA49E5B52C807A4600267925 /* ProfileInformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationCardView.swift; sourceTree = "<group>"; };
 		FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInformationCardView.xib; sourceTree = "<group>"; };
+		FA55E8332C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteComplaintConfirmBottomSheet.swift; sourceTree = "<group>"; };
+		FA55E8342C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteComplaintConfirmBottomSheet.xib; sourceTree = "<group>"; };
 		FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentManagementListView+Delegate.swift"; sourceTree = "<group>"; };
 		FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailPresenter.swift; sourceTree = "<group>"; };
 		FA6F5A122C98726000C28E67 /* EquipmentManagementDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailRouter.swift; sourceTree = "<group>"; };
@@ -1650,9 +1678,18 @@
 		FA6F5A2D2C9894E200C28E67 /* ConfirmationReturningBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationReturningBottomSheet.xib; sourceTree = "<group>"; };
 		FA74E3632C81EA64002CC8A3 /* StatisticalSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticalSummaryCardView.swift; sourceTree = "<group>"; };
 		FA74E3642C81EA64002CC8A3 /* StatisticalSummaryCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticalSummaryCardView.xib; sourceTree = "<group>"; };
+		FA9B43A32C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintHistoryBottomSheet.swift; sourceTree = "<group>"; };
+		FA9B43A42C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintHistoryBottomSheet.xib; sourceTree = "<group>"; };
 		FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentManagementListView+Collection.swift"; sourceTree = "<group>"; };
 		FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBottomSheet.swift; sourceTree = "<group>"; };
 		FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingBottomSheet.xib; sourceTree = "<group>"; };
+		FAA9C96E2CA050EE00735C85 /* EditComplaintView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditComplaintView+Delegate.swift"; sourceTree = "<group>"; };
+		FAB637082C9F51690030CDD6 /* EditComplaintEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComplaintEntity.swift; sourceTree = "<group>"; };
+		FAB637092C9F51690030CDD6 /* EditComplaintInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComplaintInteractor.swift; sourceTree = "<group>"; };
+		FAB6370A2C9F51690030CDD6 /* EditComplaintPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComplaintPresenter.swift; sourceTree = "<group>"; };
+		FAB6370B2C9F51690030CDD6 /* EditComplaintRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComplaintRouter.swift; sourceTree = "<group>"; };
+		FAB6370C2C9F51690030CDD6 /* EditComplaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComplaintView.swift; sourceTree = "<group>"; };
+		FAB6370D2C9F51690030CDD6 /* EditComplaintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditComplaintView.xib; sourceTree = "<group>"; };
 		FAC12A0B2C7FA1D300DBAB83 /* ProfileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionView.swift; sourceTree = "<group>"; };
 		FAC12A0C2C7FA1D300DBAB83 /* ProfileSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSectionView.xib; sourceTree = "<group>"; };
 		FAC12A122C7FA2C900DBAB83 /* ComplaintSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintSectionView.swift; sourceTree = "<group>"; };
@@ -1678,6 +1715,8 @@
 		FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardView+Delegate.swift"; sourceTree = "<group>"; };
 		FAE08BB22C84AD1000E456E4 /* StatusOverviewPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverviewPanelView.swift; sourceTree = "<group>"; };
 		FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusOverviewPanelView.xib; sourceTree = "<group>"; };
+		FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectComplaintActionBottomSheet.swift; sourceTree = "<group>"; };
+		FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectComplaintActionBottomSheet.xib; sourceTree = "<group>"; };
 		FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutationBotomSheet.swift; sourceTree = "<group>"; };
 		FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MutationBotomSheet.xib; sourceTree = "<group>"; };
 		FAF380FF2C94FC20004B63FE /* EquipmentManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementCell.swift; sourceTree = "<group>"; };
@@ -2873,8 +2912,10 @@
 		CEC802882C20B5F7002EE193 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				CECA02D52C7334AB00008ECC /* DeleteComplaintBottomSheet */,
 				CEF049982C1C1FE0006B6FFD /* AddComplaintBottomSheet */,
+				CECA02D52C7334AB00008ECC /* DeleteComplaintBottomSheet */,
+				FA55E8322C9F4543006AB3D5 /* DeleteComplaintConfirmBottomSheet */,
+				FAE2DAB62C9F221000F7EC73 /* SelectComplaintActionBottomSheet */,
 				CEF049AD2C1C624C006B6FFD /* SelectTechnicianBottomSheet */,
 			);
 			path = BottomSheet;
@@ -2995,6 +3036,7 @@
 				CE4D12162C096029007184B2 /* DelayCorrectiveDetail */,
 				CEC1B06E2BA217BE00DF6A4F /* DelayCorrectiveList */,
 				CEB05F462C6071A5004BA1AE /* Document */,
+				FA55E8392C9F4FD6006AB3D5 /* EditComplaint */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CEE862032C5CF66D00AA4317 /* EditTechnical */,
 				FA6F5A0F2C9865B800C28E67 /* Equip */,
@@ -3199,10 +3241,11 @@
 		CECB77792B4C791D0069AC05 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				FAF380F42C94BCFF004B63FE /* MutationBotomSheet */,
 				CECB777A2B4C79270069AC05 /* AllCategoriesBottomSheet */,
 				CEE67D382B54428400D0844B /* AssetBottomSheet */,
+				FA9B43A22C9EEF460049C101 /* ComplaintHistoryBottomSheet */,
 				CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */,
+				FAF380F42C94BCFF004B63FE /* MutationBotomSheet */,
 				CE1DDDB72C5EB5320078FA6E /* ReminderPreventiveBottomSheet */,
 				CEE67D312B54425300D0844B /* WorkSheetBottomSheet */,
 			);
@@ -3636,6 +3679,29 @@
 			path = ProfileInformationCard;
 			sourceTree = "<group>";
 		};
+		FA55E8322C9F4543006AB3D5 /* DeleteComplaintConfirmBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA55E8332C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift */,
+				FA55E8342C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib */,
+			);
+			path = DeleteComplaintConfirmBottomSheet;
+			sourceTree = "<group>";
+		};
+		FA55E8392C9F4FD6006AB3D5 /* EditComplaint */ = {
+			isa = PBXGroup;
+			children = (
+				FAB637082C9F51690030CDD6 /* EditComplaintEntity.swift */,
+				FAB637092C9F51690030CDD6 /* EditComplaintInteractor.swift */,
+				FAB6370A2C9F51690030CDD6 /* EditComplaintPresenter.swift */,
+				FAB6370B2C9F51690030CDD6 /* EditComplaintRouter.swift */,
+				FAB6370C2C9F51690030CDD6 /* EditComplaintView.swift */,
+				FAB6370D2C9F51690030CDD6 /* EditComplaintView.xib */,
+				FAA9C96E2CA050EE00735C85 /* EditComplaintView+Delegate.swift */,
+			);
+			path = EditComplaint;
+			sourceTree = "<group>";
+		};
 		FA6F5A0F2C9865B800C28E67 /* Equip */ = {
 			isa = PBXGroup;
 			children = (
@@ -3696,6 +3762,15 @@
 				FAE08BAE2C84721E00E456E4 /* DashboardView+Delegate.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		FA9B43A22C9EEF460049C101 /* ComplaintHistoryBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA9B43A32C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift */,
+				FA9B43A42C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib */,
+			);
+			path = ComplaintHistoryBottomSheet;
 			sourceTree = "<group>";
 		};
 		FAA68D0A2C87A18B00A2C8EF /* RatingBottomSheet */ = {
@@ -3799,6 +3874,15 @@
 				FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */,
 			);
 			path = StatusOverviewPanel;
+			sourceTree = "<group>";
+		};
+		FAE2DAB62C9F221000F7EC73 /* SelectComplaintActionBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */,
+				FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */,
+			);
+			path = SelectComplaintActionBottomSheet;
 			sourceTree = "<group>";
 		};
 		FAF380F42C94BCFF004B63FE /* MutationBotomSheet */ = {
@@ -3954,6 +4038,7 @@
 				CEB8C3572C60D4D50040B485 /* CalibrationInformationView.xib in Resources */,
 				CE0EC4A52B775F9A00888BE8 /* AssetCVC.xib in Resources */,
 				FAD2727B2C970D63008603E4 /* FloatingActionCell.xib in Resources */,
+				FAB637192C9F51690030CDD6 /* EditComplaintView.xib in Resources */,
 				CE916A932C0643B500C8B153 /* Roboto-Regular.ttf in Resources */,
 				CE3108652BE264CC00660275 /* GeneralInformationView.xib in Resources */,
 				CE4012552B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
@@ -3988,6 +4073,7 @@
 				CE4012192B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CE1DDDC12C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */,
 				CEE780C12C0C56AA001BA9C2 /* ElectricTVC.xib in Resources */,
+				FAE2DAB92C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib in Resources */,
 				CE6867FC2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
 				FA0DEE712C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
@@ -4083,7 +4169,9 @@
 				CE829B052C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C72C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
+				FA55E8362C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib in Resources */,
 				CECB3DAE2B45D963004A260D /* Assets.xcassets in Resources */,
+				FA9B43A82C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib in Resources */,
 				CECB3E092B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91072B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
 				CEF43CC12C3F35E900B34FE2 /* SelectStatusBottomSheet.xib in Resources */,
@@ -4149,6 +4237,7 @@
 				CEB8C3592C60D4D50040B485 /* CalibrationInformationView.xib in Resources */,
 				CE0EC4A62B775F9A00888BE8 /* AssetCVC.xib in Resources */,
 				FAD2727D2C970D63008603E4 /* FloatingActionCell.xib in Resources */,
+				FAB637132C9F51690030CDD6 /* EditComplaintView.xib in Resources */,
 				CE916A942C0643B500C8B153 /* Roboto-Regular.ttf in Resources */,
 				CE3108662BE264CC00660275 /* GeneralInformationView.xib in Resources */,
 				CE4012562B5D9A0D00517F7C /* SelectActionBottomSheet.xib in Resources */,
@@ -4183,6 +4272,7 @@
 				CE40121A2B5D58EB00517F7C /* EvidenceEquipmentCVC.xib in Resources */,
 				CE1DDDC32C5ED99D0078FA6E /* ReminderPreventiveCell.xib in Resources */,
 				CEE780C32C0C56AA001BA9C2 /* ElectricTVC.xib in Resources */,
+				FAE2DABB2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib in Resources */,
 				CE6867FD2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
 				FA0DEE722C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
@@ -4278,7 +4368,9 @@
 				CE829B062C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C92C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
+				FA55E8382C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib in Resources */,
 				CECB3DC72B45DAFF004A260D /* Assets.xcassets in Resources */,
+				FA9B43A62C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib in Resources */,
 				CECB3E0A2B45E137004A260D /* Lato-ThinItalic.ttf in Resources */,
 				CE9F91082B4F970D004C027A /* DetailAssetBottomSheet.xib in Resources */,
 				CEF43CC22C3F35E900B34FE2 /* SelectStatusBottomSheet.xib in Resources */,
@@ -4606,6 +4698,11 @@
 				CEF5D7C52B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CE90B1572B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
 				CE4255E52BA704E5002B558C /* LogBookListPresenter.swift in Sources */,
+				FAB637142C9F51690030CDD6 /* EditComplaintPresenter.swift in Sources */,
+				FAB637152C9F51690030CDD6 /* EditComplaintRouter.swift in Sources */,
+				FAB637162C9F51690030CDD6 /* EditComplaintView.swift in Sources */,
+				FAB637172C9F51690030CDD6 /* EditComplaintEntity.swift in Sources */,
+				FAB637182C9F51690030CDD6 /* EditComplaintInteractor.swift in Sources */,
 				CEFD6D242BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.swift in Sources */,
 				CE90B1592B99605700515AD6 /* ComplaintListView.swift in Sources */,
 				CE9E7DC22B531E5800240A7D /* UploadMediaBottomSheet.swift in Sources */,
@@ -4660,6 +4757,7 @@
 				FA6F5A262C9885F700C28E67 /* MutationItemCell.swift in Sources */,
 				CE90B15D2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EBF2B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
+				FA55E8352C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift in Sources */,
 				CE9E7DA92B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECC8F6A2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DA52B45D962004A260D /* AppDelegate.swift in Sources */,
@@ -4758,6 +4856,7 @@
 				CEE79ED22B71222B0063D844 /* AssetSectionView.swift in Sources */,
 				CE1DDDC22C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */,
 				CEAF9E3B2C5A309300EFBBC2 /* StepperCell.swift in Sources */,
+				FAE2DABA2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */,
 				CE0A8CD52C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */,
 				CE58FA682C0C32410067D8C4 /* PreventiveTVC.swift in Sources */,
 				CECB3DA72B45D962004A260D /* SceneDelegate.swift in Sources */,
@@ -4769,6 +4868,7 @@
 				CEE8CB932BF7C8FD006E59B7 /* HistoryDetailView.swift in Sources */,
 				CE8B88CF2C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */,
 				CEB6A6F82C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift in Sources */,
+				FAA9C96F2CA050EE00735C85 /* EditComplaintView+Delegate.swift in Sources */,
 				CE82D4562B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA02B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208852B82391F00CD4242 /* NotificationListView.swift in Sources */,
@@ -4779,6 +4879,7 @@
 				CEE67D292B54394900D0844B /* WorkSheetMonitoringFunctionListInteractor.swift in Sources */,
 				CE9F910A2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE82D45A2B47DDB200A54124 /* LoginEntity.swift in Sources */,
+				FA9B43A72C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift in Sources */,
 				CEE64B9F2C4EAF0A00335013 /* Alignment.swift in Sources */,
 				CE4255EB2BA704E5002B558C /* LogBookListView.swift in Sources */,
 				CE7327462BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */,
@@ -4984,6 +5085,11 @@
 				CEF5D7C62B6D311700FDE752 /* SplashScreenRouter.swift in Sources */,
 				CE90B1582B99605700515AD6 /* ComplaintListInteractor.swift in Sources */,
 				CE4255E62BA704E5002B558C /* LogBookListPresenter.swift in Sources */,
+				FAB6370E2C9F51690030CDD6 /* EditComplaintPresenter.swift in Sources */,
+				FAB6370F2C9F51690030CDD6 /* EditComplaintRouter.swift in Sources */,
+				FAB637102C9F51690030CDD6 /* EditComplaintView.swift in Sources */,
+				FAB637112C9F51690030CDD6 /* EditComplaintEntity.swift in Sources */,
+				FAB637122C9F51690030CDD6 /* EditComplaintInteractor.swift in Sources */,
 				CEFD6D252BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.swift in Sources */,
 				CE90B15A2B99605700515AD6 /* ComplaintListView.swift in Sources */,
 				CE9E7DC32B531E5800240A7D /* UploadMediaBottomSheet.swift in Sources */,
@@ -5038,6 +5144,7 @@
 				FA6F5A292C9885F700C28E67 /* MutationItemCell.swift in Sources */,
 				CE90B15E2B99605700515AD6 /* ComplaintListEntity.swift in Sources */,
 				CEE79EC02B70ED9B0063D844 /* WorkSheetDetailRouter.swift in Sources */,
+				FA55E8372C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift in Sources */,
 				CE9E7DAA2B530F6D00240A7D /* BasePopUpView.swift in Sources */,
 				CECC8F6C2C2338BE0071DF75 /* DatePickerBottomSheet.swift in Sources */,
 				CECB3DC22B45DAFF004A260D /* AppDelegate.swift in Sources */,
@@ -5136,6 +5243,7 @@
 				CEE79ED32B71222B0063D844 /* AssetSectionView.swift in Sources */,
 				CE1DDDC42C5ED99D0078FA6E /* ReminderPreventiveCell.swift in Sources */,
 				CEAF9E3D2C5A309300EFBBC2 /* StepperCell.swift in Sources */,
+				FAE2DABC2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */,
 				CE0A8CD72C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */,
 				CE58FA6A2C0C32410067D8C4 /* PreventiveTVC.swift in Sources */,
 				CECB3DC32B45DAFF004A260D /* SceneDelegate.swift in Sources */,
@@ -5147,6 +5255,7 @@
 				CEE8CB942BF7C8FD006E59B7 /* HistoryDetailView.swift in Sources */,
 				CE8B88D02C29890F00AF8F63 /* FilterStatusBottomSheet.swift in Sources */,
 				CEB6A6F92C4C13FF00D279E1 /* WorkSheetMonitoringFunctionListView+Delegate.swift in Sources */,
+				FAA9C9702CA050EE00735C85 /* EditComplaintView+Delegate.swift in Sources */,
 				CE82D4572B47DDB200A54124 /* LoginView.swift in Sources */,
 				CE9E7DA12B52B80500240A7D /* ProfileMenuTVC.swift in Sources */,
 				CE8208862B82391F00CD4242 /* NotificationListView.swift in Sources */,
@@ -5157,6 +5266,7 @@
 				CEE67D2A2B54394900D0844B /* WorkSheetMonitoringFunctionListInteractor.swift in Sources */,
 				CE9F910B2B4F9717004C027A /* DetailAssetBottomSheet.swift in Sources */,
 				CE82D45B2B47DDB200A54124 /* LoginEntity.swift in Sources */,
+				FA9B43A52C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift in Sources */,
 				CEE64BA02C4EAF0A00335013 /* Alignment.swift in Sources */,
 				CE4255EC2BA704E5002B558C /* LogBookListView.swift in Sources */,
 				CE7327472BECA849000AD875 /* ComplaintDetailPresenter.swift in Sources */,

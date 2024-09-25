@@ -10,10 +10,13 @@ import UIKit
 class ComplaintListPresenter: BasePresenter {
     
     private let interactor: ComplaintListInteractor
-    private let router = ComplaintListRouter()
+    private let router: ComplaintListRouter
+    var type: ComplaintType
     
-    init(interactor: ComplaintListInteractor) {
+    init(interactor: ComplaintListInteractor, router: ComplaintListRouter, type: ComplaintType) {
         self.interactor = interactor
+        self.router = router
+        self.type = type
     }
     
     var technicianList: SelectTechnicianEntity?
@@ -21,6 +24,7 @@ class ComplaintListPresenter: BasePresenter {
     @Published public var advanceWorkSheet: CreateLanjutanEntity?
     @Published public var acceptCorrective: AcceptCorrectiveEntity?
     @Published public var deletedLkData: DeleteComplaintEntity?
+    @Published public var deletedComplaintData: DeleteComplaintResponseEntity?
     var filterStatusData: [StatusFilterEntity] = [
         StatusFilterEntity(id: "0", status: .open),
         StatusFilterEntity(id: "1", status: .progress),
@@ -211,6 +215,30 @@ extension ComplaintListPresenter {
             .store(in: &anyCancellable)
     }
     
+    func deleteComplaint(id: String?) {
+        self.isLoading = true
+        interactor.deleteComplaint(id ?? "")
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.isLoading = false
+                    case .failure(let error):
+                        AppLogger.log(error, logType: .kNetworkResponseError)
+                        self.errorMessage = error.localizedDescription
+                        self.isLoading = false
+                        self.isError = true
+                    }
+                },
+                receiveValue: { deletedComplaint in
+                    DispatchQueue.main.async {
+                        self.deletedComplaintData = deletedComplaint
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
 }
 
 extension ComplaintListPresenter {
@@ -246,6 +274,26 @@ extension ComplaintListPresenter {
         bottomSheet.delegate = delegate
         bottomSheet.type = .multiple
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func showComplaintActionBottomSheet(from navigation: UINavigationController, delegate: SelectComplaintActionBottomSheetDelegate, _ id: String?, type: SelectComplaintType, valType: String? = nil) {
+        let bottomSheet = SelectComplaintActionBottomSheet(nibName: String(describing: SelectComplaintActionBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.type = type
+        bottomSheet.id = id ?? ""
+        bottomSheet.valType = valType ?? ""
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func showDeleteConfirmationPopUp(from navigation: UINavigationController, delegate: DeleteComplaintConfirmBottomSheetDelegate, _ id: String?) {
+        let bottomSheet = DeleteComplaintConfirmBottomSheet(nibName: String(describing: DeleteComplaintConfirmBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        bottomSheet.id = id ?? ""
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func navigateToEditComplaint(from navigation: UINavigationController, _ id: String?, valType: String?) {
+        router.navigateToEditComplaint(from: navigation, id ?? "", valType: valType ?? "")
     }
     
 }

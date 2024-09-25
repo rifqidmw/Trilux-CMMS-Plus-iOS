@@ -125,4 +125,8 @@ extension BasePresenter {
         router.navigateToEquipmentMutationSelection(from: navigation)
     }
     
+    func navigateToComplaintList(navigation: UINavigationController, type: ComplaintType? = .engineer) {
+        router.navigateToComplaintList(navigation: navigation, type: type)
+    }
+    
 }

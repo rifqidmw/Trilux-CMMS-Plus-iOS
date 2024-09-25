@@ -42,4 +42,8 @@ class ComplaintListInteractor: BaseInteractor {
         return api.requestApiPublisher(.deleteLk(id: idLk ?? ""))
     }
     
+    func deleteComplaint(_ id: String?) -> AnyPublisher<DeleteComplaintResponseEntity, Error> {
+        return api.requestApiPublisher(.deleteComplaint(id: id ?? ""))
+    }
+    
 }

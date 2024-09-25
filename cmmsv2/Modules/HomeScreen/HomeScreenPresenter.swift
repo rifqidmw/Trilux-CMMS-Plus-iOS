@@ -168,6 +168,12 @@ extension HomeScreenPresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
+    func showBottomSheetComplaintHistory(navigation: UINavigationController, delegate: ComplaintHistoryBottomSheetDelegate) {
+        let bottomSheet = ComplaintHistoryBottomSheet(nibName: String(describing: ComplaintHistoryBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
     func showExpiredBottomSheet(navigation: UINavigationController, expiredDate: String) {
         let bottomSheet = ExpiredBottomSheet(nibName: String(describing: ExpiredBottomSheet.self), bundle: nil)
         bottomSheet.expiredDate = expiredDate
@@ -200,10 +206,6 @@ extension HomeScreenPresenter {
     
     func navigateToNotificationList(navigation: UINavigationController) {
         router.navigateToNotificationList(navigation: navigation)
-    }
-    
-    func navigateToComplaintList(navigation: UINavigationController) {
-        router.navigateToComplaintList(navigation: navigation)
     }
     
     func navigateToCalibrationList(navigation: UINavigationController) {

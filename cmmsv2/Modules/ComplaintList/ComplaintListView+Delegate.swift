@@ -134,3 +134,45 @@ extension ComplaintListView: ActionBarViewDelegate, SearchTextFieldDelegate, Fil
     }
     
 }
+
+extension ComplaintListView: SelectComplaintActionBottomSheetDelegate {
+    
+    func didTapDetailComplaint(_ id: String?) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToComplaintDetail(navigation: navigation, id: id ?? "")
+    }
+    
+    func didTapEditComplaint(_ id: String?, valType: String?) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToEditComplaint(from: navigation, id ?? "", valType: valType ?? "")
+    }
+    
+    func didTapDeleteComplaint(_ id: String?) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showDeleteConfirmationPopUp(from: navigation, delegate: self, id ?? "")
+    }
+    
+    func didTapDetailComplaintDelegatable(_ id: String?) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToComplaintDetail(navigation: navigation, id: id ?? "")
+    }
+    
+}
+
+extension ComplaintListView: DeleteComplaintConfirmBottomSheetDelegate {
+    
+    func didConfirmationDeleteComplaint(_ id: String?) {
+        guard let presenter else { return }
+        presenter.deleteComplaint(id: id ?? "")
+        self.showLoadingPopup()
+    }
+    
+}

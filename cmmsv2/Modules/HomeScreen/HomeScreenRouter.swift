@@ -60,11 +60,6 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func navigateToComplaintList(navigation: UINavigationController) {
-        let vc = ComplaintListRouter().showView()
-        navigation.pushViewController(vc, animated: true)
-    }
-    
     func navigateToCalibrationList(navigation: UINavigationController) {
         let vc = CalibrationListRouter().showView()
         navigation.dismiss(animated: true)

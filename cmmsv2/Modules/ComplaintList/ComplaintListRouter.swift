@@ -9,12 +9,21 @@ import UIKit
 
 class ComplaintListRouter: BaseRouter {
     
-    func showView() -> ComplaintListView {
+    func showView(_ type: ComplaintType) -> ComplaintListView {
         let interactor = ComplaintListInteractor()
-        let presenter = ComplaintListPresenter(interactor: interactor)
+        let presenter = ComplaintListPresenter(interactor: interactor, router: self, type: type)
         let view = ComplaintListView(nibName: String(describing: ComplaintListView.self), bundle: nil)
         view.presenter = presenter
         return view
+    }
+    
+}
+
+extension ComplaintListRouter {
+    
+    func navigateToEditComplaint(from navigation: UINavigationController, _ id: String?, valType: String?) {
+        let vc = EditComplaintRouter().showView(id ?? "", valType: valType ?? "")
+        navigation.pushViewController(vc, animated: true)
     }
     
 }

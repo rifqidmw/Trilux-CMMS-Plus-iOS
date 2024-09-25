@@ -275,6 +275,11 @@ let worksheetData: [MenuModel] = [
     MenuModel(image: "ic_work_sheet_arrow", title: "Kalibrasi", subTitle: "Lihat data kalibrasi")
 ]
 
+let complaintData: [MenuModel] = [
+    MenuModel(image: "ic_notes_statistic_fill_rounded", title: "Daftar Pengaduan", subTitle: "Lihat daftar pengaduan"),
+    MenuModel(image: "ic_notes_stop_watch_fill_rounded", title: "Riwayat Pengaduan", subTitle: "Lihat riwayat pengaduan")
+]
+
 let detailInformationData: [CategoryModel] = [
     CategoryModel(image: "ic_bill", title: .monitoringFunction),
     CategoryModel(image: "ic_bubble_chat_with_gear", title: .preventive),

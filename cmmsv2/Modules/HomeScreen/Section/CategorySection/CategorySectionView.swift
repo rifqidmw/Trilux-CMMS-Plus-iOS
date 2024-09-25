@@ -123,7 +123,7 @@ extension CategorySectionView: UICollectionViewDataSource, UICollectionViewDeleg
         case .mutating:
             delegate.didTapMutatingCategory()
         case .historyComplaintList:
-            delegate.didTapComplaintHistoryCategory()
+            delegate.didTapHistoryComplaintListCategory()
         case .roomRequirement:
             delegate.didTapRoomRequirementCategory()
         case .assetSuggest:
