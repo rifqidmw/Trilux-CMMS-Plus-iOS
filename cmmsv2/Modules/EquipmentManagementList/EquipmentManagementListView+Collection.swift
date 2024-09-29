@@ -38,6 +38,8 @@ extension EquipmentManagementListView: SkeletonTableViewDataSource, SkeletonTabl
             } else {
                 return self.mutationRequestData.count
             }
+        case .amprah:
+            return self.amprahListData.count
         default: break
         }
         
@@ -188,6 +190,38 @@ extension EquipmentManagementListView: SkeletonTableViewDataSource, SkeletonTabl
                     assetCount: fullAssetCountText,
                     status: adjustedData.statusText ?? "-")
             }
+        case .amprah:
+            let adjustedData = self.amprahListData[indexPath.row]
+            let destinationInstallation = NSAttributedString.stylizedText(adjustedData.valRuangan ?? "-", font: UIFont.robotoBold(12), color: UIColor.customPrimaryColor)
+            
+            let brandTitle = NSAttributedString.stylizedText("Brand: ", font: UIFont.robotoRegular(10), color: UIColor.customPlaceholderColor)
+            let brand = NSAttributedString.stylizedText(adjustedData.valBrand ?? "-", font: UIFont.robotoBold(12), color: UIColor.customPrimaryColor)
+            
+            let fullBrandText = NSMutableAttributedString()
+            fullBrandText.append(brandTitle)
+            fullBrandText.append(brand)
+            
+            let typeTitle = NSAttributedString.stylizedText("Type: ", font: UIFont.robotoRegular(10), color: UIColor.customPlaceholderColor)
+            let typeText = NSAttributedString.stylizedText(adjustedData.valType ?? "-", font: UIFont.robotoBold(12), color: UIColor.customPrimaryColor)
+            
+            let fullTypeText = NSMutableAttributedString()
+            fullTypeText.append(typeTitle)
+            fullTypeText.append(typeText)
+            
+            let snTitle = NSAttributedString.stylizedText("Serial Number: ", font: UIFont.robotoRegular(10), color: UIColor.customPlaceholderColor)
+            let snText = NSAttributedString.stylizedText(adjustedData.valSerial ?? "-", font: UIFont.robotoBold(12), color: UIColor.customPrimaryColor)
+            
+            let fullSnText = NSMutableAttributedString()
+            fullSnText.append(snTitle)
+            fullSnText.append(snText)
+            
+            cell.setupCell(
+                destination: destinationInstallation,
+                title: adjustedData.valName ?? "-",
+                brand: fullBrandText,
+                type: fullTypeText,
+                serialNumber: fullSnText
+            )
         }
         
         return cell
@@ -216,6 +250,9 @@ extension EquipmentManagementListView: SkeletonTableViewDataSource, SkeletonTabl
             } else {
                 presenter.navigateToEquipmentManagementDetail(from: navigation, self.mutationRequestData[indexPath.row].idMT ?? "", type: .mutation)
             }
+        case .amprah:
+            let idSelected = self.amprahListData[indexPath.row].id
+            presenter.showRoomListBottomSheet(navigation: navigation, self, id: idSelected)
         }
     }
     
@@ -227,7 +264,7 @@ extension EquipmentManagementListView: SkeletonTableViewDataSource, SkeletonTabl
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         
-        if presenter.type == .returning {
+        if presenter.type == .returning || presenter.type == .amprah {
             if maximumOffset - currentOffset <= 0.0 && presenter.isCanLoad {
                 self.showSpinner(true)
                 

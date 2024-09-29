@@ -346,7 +346,10 @@ extension HomeScreenView: MutationBottomSheetDelegate {
     }
     
     func didTapAmprah() {
-        self.showAlert(title: "Amprah")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToEquipmentManagement(from: navigation, .amprah)
     }
     
 }

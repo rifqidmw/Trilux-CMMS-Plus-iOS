@@ -43,7 +43,7 @@ enum UserRole: String {
             self = .ipsrs
         case "2":
             self = .engineer
-        case "3":
+        case "3", "13":
             self = .room
         default:
             self = .unknown

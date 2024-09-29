@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4J-ie-O0P" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJp-ra-7fz" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
@@ -91,9 +91,9 @@
                 <constraint firstItem="B4J-ie-O0P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Pu-A0-Jce"/>
                 <constraint firstItem="fJp-ra-7fz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ICp-O1-N9C"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B4J-ie-O0P" secondAttribute="trailing" id="JfF-9M-Bq0"/>
-                <constraint firstItem="B4J-ie-O0P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Maf-JS-y4Q"/>
+                <constraint firstItem="B4J-ie-O0P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Maf-JS-y4Q"/>
                 <constraint firstItem="fJp-ra-7fz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hhi-Dm-Kve"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B4J-ie-O0P" secondAttribute="bottom" id="z0e-Vm-aWK"/>
+                <constraint firstAttribute="bottom" secondItem="B4J-ie-O0P" secondAttribute="bottom" id="z0e-Vm-aWK"/>
                 <constraint firstAttribute="bottom" secondItem="fJp-ra-7fz" secondAttribute="bottom" id="z8c-YE-nrc"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="-1.4084507042253522"/>

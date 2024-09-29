@@ -41,6 +41,7 @@ extension EquipmentManagementDetailPresenter {
             fetchSubmissionDetail(id: self.id ?? "")
         case .mutation:
             fetchMutationDetail(id: self.id ?? "")
+        case .amprah: break
         }
     }
     

@@ -150,6 +150,9 @@ enum Endpoint {
     case mutationDelete(id: String?)
     case deleteComplaint(id: String?)
     case updateComplaint(data: UpdateComplaintRequestEntity?, id: String?)
+    case amprahList(limit: Int, page: Int)
+    case getRoomList
+    case amprahMutation(data: AmprahMutationRequest?)
 }
 
 // MARK: - PATH URL
@@ -345,8 +348,14 @@ extension Endpoint {
             return "reqmutasi/delete?id=\(id ?? "")"
         case .deleteComplaint(id: let id):
             return "complains/delete?id=\(id ?? "")"
-        case .updateComplaint(data: let data, id: let id):
+        case .updateComplaint(data: _, id: let id):
             return "complains/update?id=\(id ?? "")"
+        case .amprahList(limit: let limit, page: let page):
+            return "reqamprah/penerimaan?q=&limit=\(limit)&page=\(page)"
+        case .getRoomList:
+            return "reqamprah/get_list_room"
+        case .amprahMutation(data: let data):
+            return "reqamprah/pindah"
         }
     }
     
@@ -368,7 +377,8 @@ extension Endpoint {
                 .saveWorkSheet,
                 .approveWorkSheet,
                 .saveTechnical,
-                .updateComplaint:
+                .updateComplaint,
+                .amprahMutation:
             return .post
         default:
             return .get
@@ -592,13 +602,19 @@ extension Endpoint {
                 "year": data.year
             ]
             return params
-        case .updateComplaint(data: let data, id: let id):
+        case .updateComplaint(data: let data, id: _):
             let params: [String: Any] = [
                 "equipment_id": data?.equipmentId ?? "",
                 "title": data?.title ?? "",
                 "descriptions": data?.descriptions ?? "",
                 "image_id": data?.imageId ?? "",
                 "delete_images": data?.deleteImages ?? ""
+            ]
+            return params
+        case .amprahMutation(data: let data):
+            let params: [String: Any] = [
+                "id": data?.id ?? "",
+                "id_room": data?.idRoom ?? ""
             ]
             return params
         default:

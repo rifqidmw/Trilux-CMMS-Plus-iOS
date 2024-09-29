@@ -37,4 +37,16 @@ class EquipmentManagementListInteractor: BaseInteractor {
         return api.requestApiPublisher(.mutationRequest)
     }
     
+    func getAmprahList(limit: Int, page: Int) -> AnyPublisher<AmprahListEntity, Error> {
+        return api.requestApiPublisher(.amprahList(limit: limit, page: page))
+    }
+    
+    func getAmprahRoomList() -> AnyPublisher<AmprahRoomEntity, Error> {
+        return api.requestApiPublisher(.getRoomList)
+    }
+    
+    func amprahMutation(data: AmprahMutationRequest?) -> AnyPublisher<AmprahMutationResponse, Error> {
+        return api.requestApiPublisher(.amprahMutation(data: data))
+    }
+    
 }

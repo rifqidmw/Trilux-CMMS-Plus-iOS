@@ -69,6 +69,7 @@ extension EquipmentManagementDetailView {
                     self.setupMutationData(data)
                 }
                 .store(in: &anyCancellable)
+        case .amprah: break
         }
         
         presenter.$deleteSubmissionData
@@ -105,6 +106,7 @@ extension EquipmentManagementDetailView {
         case .mutation:
             self.deleteButton.isHidden = true
             self.deleteButtonHeightConstraint.constant = 0
+        case .amprah: break
         }
     }
     

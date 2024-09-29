@@ -21,6 +21,10 @@ class EquipmentManagementCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var assetCountLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var brandLabel: UILabel!
+    @IBOutlet weak var serialNumberLabel: UILabel!
+    @IBOutlet weak var containerStatusView: UIStackView!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     
@@ -43,24 +47,59 @@ class EquipmentManagementCell: UITableViewCell {
 extension EquipmentManagementCell {
     
     func setupCell(
-        destination: NSAttributedString?,
-        date: String?,
-        title: String?,
-        description: String?,
-        assetCount: NSAttributedString?,
+        destination: NSAttributedString? = nil,
+        date: String? = nil,
+        title: String? = nil,
+        description: String? = nil,
+        brand: NSAttributedString? = nil,
+        type: NSAttributedString? = nil,
+        serialNumber: NSAttributedString? = nil,
+        assetCount: NSAttributedString? = nil,
         status: String? = nil) {
             self.hideAnimationSkeleton()
             self.statusView.isHidden = true
+            self.destinationInstallationTitleLabel.isHidden = true
+            self.dateTitleLabel.isHidden = true
+            self.titleLabel.isHidden = true
+            self.descriptionLabel.isHidden = true
+            self.assetCountLabel.isHidden = true
+            self.containerStatusView.isHidden = true
+            
             if let destination {
+                self.destinationInstallationTitleLabel.isHidden = false
                 self.destinationInstallationTitleLabel.attributedText = destination
             }
-            self.dateTitleLabel.text = date ?? "-"
-            self.titleLabel.text = title ?? "-"
-            self.descriptionLabel.text = description ?? "-"
+            if let date {
+                self.dateTitleLabel.isHidden = false
+                self.dateTitleLabel.text = date
+            }
+            if let title {
+                self.titleLabel.isHidden = false
+                self.titleLabel.text = title
+            }
+            if let description {
+                self.descriptionLabel.isHidden = false
+                self.descriptionLabel.text = description
+            }
+            if let brand {
+                self.descriptionLabel.isHidden = false
+                self.brandLabel.attributedText = brand
+            }
+            if let type {
+                self.typeLabel.isHidden = false
+                self.typeLabel.attributedText = type
+            }
+            if let serialNumber {
+                self.serialNumberLabel.isHidden = false
+                self.serialNumberLabel.attributedText = serialNumber
+            }
             if let assetCount {
+                self.containerStatusView.isHidden = false
+                self.assetCountLabel.isHidden = false
                 self.assetCountLabel.attributedText = assetCount
             }
             if let status {
+                self.containerStatusView.isHidden = false
                 self.setupStatusView(status: EquipmentStatusTextType(rawValue: status))
             }
         }

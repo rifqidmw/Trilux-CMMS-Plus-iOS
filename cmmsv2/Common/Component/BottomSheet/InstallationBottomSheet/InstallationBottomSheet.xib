@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsF-Vp-IwS" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVq-IP-i48" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
@@ -89,12 +89,12 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="dsF-Vp-IwS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7Yv-E8-ydl"/>
+                <constraint firstItem="dsF-Vp-IwS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7Yv-E8-ydl"/>
                 <constraint firstItem="vVq-IP-i48" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dm4-SJ-mZW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dsF-Vp-IwS" secondAttribute="trailing" id="E5L-Q0-XwO"/>
                 <constraint firstAttribute="bottom" secondItem="vVq-IP-i48" secondAttribute="bottom" id="iU7-BQ-Uez"/>
                 <constraint firstItem="dsF-Vp-IwS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kFK-Vt-0fE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dsF-Vp-IwS" secondAttribute="bottom" id="psF-jp-JVO"/>
+                <constraint firstAttribute="bottom" secondItem="dsF-Vp-IwS" secondAttribute="bottom" id="psF-jp-JVO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vVq-IP-i48" secondAttribute="trailing" id="s8o-qZ-YfC"/>
             </constraints>
             <point key="canvasLocation" x="124" y="-1"/>

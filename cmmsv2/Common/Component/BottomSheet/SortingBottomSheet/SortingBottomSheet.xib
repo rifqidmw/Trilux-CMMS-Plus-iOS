@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MF4-DC-0Oo" userLabel="DismissAreaView">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXX-FD-NbI" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
@@ -95,10 +95,10 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MF4-DC-0Oo" secondAttribute="trailing" id="KJe-kU-RuK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MF4-DC-0Oo" secondAttribute="bottom" id="LBc-oR-mCg"/>
+                <constraint firstAttribute="bottom" secondItem="MF4-DC-0Oo" secondAttribute="bottom" id="LBc-oR-mCg"/>
                 <constraint firstAttribute="bottom" secondItem="IXX-FD-NbI" secondAttribute="bottom" id="YnI-jt-HlF"/>
                 <constraint firstItem="MF4-DC-0Oo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fuw-F7-XEX"/>
-                <constraint firstItem="MF4-DC-0Oo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jTb-gX-ufQ"/>
+                <constraint firstItem="MF4-DC-0Oo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jTb-gX-ufQ"/>
                 <constraint firstItem="IXX-FD-NbI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s0Y-6L-JX6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IXX-FD-NbI" secondAttribute="trailing" id="yPH-dZ-OvB"/>
             </constraints>

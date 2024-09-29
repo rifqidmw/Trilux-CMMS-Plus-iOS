@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomListBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="qQ2-ue-ANi" id="fba-Ra-DQ7"/>
+                <outlet property="containerTextFieldView" destination="zTk-Qk-mNr" id="dnv-vX-td8"/>
+                <outlet property="dismissAreaView" destination="Sfh-u7-Y4Z" id="6zD-OQ-gYK"/>
+                <outlet property="tableView" destination="RhU-Vd-iP0" id="iUe-QY-tpt"/>
+                <outlet property="textField" destination="5TM-jk-Ee5" id="m2v-6i-HNm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sfh-u7-Y4Z" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQ2-ue-ANi" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="64" width="393" height="788"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Mtu-yw-DyI">
+                            <rect key="frame" x="16" y="64" width="361" height="690"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Ruangan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF5-4r-GOB">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="qOF-PA-5va"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTk-Qk-mNr">
+                                    <rect key="frame" x="0.0" y="34" width="361" height="48"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cari ruangan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5TM-jk-Ee5">
+                                            <rect key="frame" x="16" y="0.0" width="329" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" name="customLightGrayColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="5TM-jk-Ee5" secondAttribute="trailing" constant="16" id="9yF-Cs-V2q"/>
+                                        <constraint firstItem="5TM-jk-Ee5" firstAttribute="top" secondItem="zTk-Qk-mNr" secondAttribute="top" id="ol0-Qb-mmx"/>
+                                        <constraint firstAttribute="height" constant="48" id="qCT-f1-KQz"/>
+                                        <constraint firstItem="5TM-jk-Ee5" firstAttribute="leading" secondItem="zTk-Qk-mNr" secondAttribute="leading" constant="16" id="uFV-Ch-L2u"/>
+                                        <constraint firstAttribute="bottom" secondItem="5TM-jk-Ee5" secondAttribute="bottom" id="xaz-fx-3iF"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-Vd-iP0">
+                                    <rect key="frame" x="0.0" y="98" width="361" height="592"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Mtu-yw-DyI" secondAttribute="trailing" constant="16" id="08L-2u-8ly"/>
+                        <constraint firstItem="Mtu-yw-DyI" firstAttribute="top" secondItem="qQ2-ue-ANi" secondAttribute="top" constant="64" id="O7x-xC-saa"/>
+                        <constraint firstItem="Mtu-yw-DyI" firstAttribute="leading" secondItem="qQ2-ue-ANi" secondAttribute="leading" constant="16" id="vgQ-t0-QhS"/>
+                        <constraint firstAttribute="bottom" secondItem="Mtu-yw-DyI" secondAttribute="bottom" constant="34" id="xOF-Yf-VAQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sfh-u7-Y4Z" secondAttribute="trailing" id="08L-HO-PKg"/>
+                <constraint firstAttribute="trailing" secondItem="qQ2-ue-ANi" secondAttribute="trailing" id="47n-jt-aaE"/>
+                <constraint firstItem="Sfh-u7-Y4Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JDW-oc-gRF"/>
+                <constraint firstItem="qQ2-ue-ANi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ULO-7A-gJf"/>
+                <constraint firstAttribute="bottom" secondItem="qQ2-ue-ANi" secondAttribute="bottom" id="gYp-IX-bSA"/>
+                <constraint firstAttribute="bottom" secondItem="Sfh-u7-Y4Z" secondAttribute="bottom" id="s8v-Ba-wUZ"/>
+                <constraint firstItem="Sfh-u7-Y4Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xFF-hD-mUu"/>
+                <constraint firstItem="qQ2-ue-ANi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="y5P-lg-VGf"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
