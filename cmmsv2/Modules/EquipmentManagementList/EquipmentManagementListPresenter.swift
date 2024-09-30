@@ -22,6 +22,9 @@ class EquipmentManagementListPresenter: BasePresenter {
     @Published public var approvedRequestedData: ReturningEntity?
     @Published public var mutationSubmissionData: MutationRequestEntity?
     @Published public var mutationRequestData: MutationRequestEntity?
+    @Published public var amprahList: AmprahListEntity?
+    @Published public var mutationResponse: AmprahMutationResponse?
+    var amprahRoomList: [AmprahRoomData] = []
     let floatingActionData: [FloatingActionEntity] = [
         FloatingActionEntity(image: "plus", title: "Pilih dari list"),
         FloatingActionEntity(image: "barcode.viewfinder", title: "Scan")
@@ -54,6 +57,9 @@ extension EquipmentManagementListPresenter {
             fetchReturningLoanList(limit: limit, page: page)
         case .mutation:
             fetchMutationSubmission()
+        case .amprah:
+            fetchAmprahList(limit: limit, page: page)
+            fetchRoomList()
         }
     }
     
@@ -65,6 +71,20 @@ extension EquipmentManagementListPresenter {
                 receiveValue: { submissionData in
                     DispatchQueue.main.async {
                         self.equipmentSubmissionData = submissionData
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchRoomList() {
+        isLoading = true
+        interactor.getAmprahRoomList()
+            .sink(
+                receiveCompletion: handleCompletion(_:),
+                receiveValue: { amprahRoom in
+                    DispatchQueue.main.async {
+                        self.amprahRoomList = amprahRoom.data ?? []
                     }
                 }
             )
@@ -107,6 +127,34 @@ extension EquipmentManagementListPresenter {
                 receiveValue: { returningBorrowedData in
                     DispatchQueue.main.async {
                         self.returningBorrowedData = returningBorrowedData
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func fetchAmprahList(limit: Int, page: Int) {
+        isLoading = true
+        interactor.getAmprahList(limit: limit, page: page)
+            .sink(
+                receiveCompletion: handleCompletion(_:),
+                receiveValue: { amprahList in
+                    DispatchQueue.main.async {
+                        self.amprahList = amprahList
+                    }
+                }
+            )
+            .store(in: &anyCancellable)
+    }
+    
+    func mutationAmprah(_ data: AmprahMutationRequest?) {
+        isLoading = true
+        interactor.amprahMutation(data: data)
+            .sink(
+                receiveCompletion: handleCompletion(_:),
+                receiveValue: { response in
+                    DispatchQueue.main.async {
+                        self.mutationResponse = response
                     }
                 }
             )
@@ -200,6 +248,14 @@ extension EquipmentManagementListPresenter {
         bottomSheet.id = id ?? ""
         bottomSheet.delegate = delegate
         bottomSheet.type = .approve
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func showRoomListBottomSheet(navigation: UINavigationController, _ delegate: RoomListBottomSheetDelegate, id: String?) {
+        let bottomSheet = RoomListBottomSheet(nibName: String(describing: RoomListBottomSheet.self), bundle: nil)
+        bottomSheet.data = amprahRoomList
+        bottomSheet.id = id ?? ""
+        bottomSheet.delegate = delegate
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

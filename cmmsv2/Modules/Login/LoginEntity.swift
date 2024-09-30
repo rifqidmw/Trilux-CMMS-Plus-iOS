@@ -94,7 +94,15 @@ struct User: Codable {
         txtTelepon = try container.decodeIfPresent(String.self, forKey: .txtTelepon)
         valToken = try container.decodeIfPresent(String.self, forKey: .valToken)
         valScope = try container.decodeIfPresent(ValScope.self, forKey: .valScope)
-        valPeringkat = try container.decodeIfPresent([Int].self, forKey: .valPeringkat)
+        
+        if let intArray = try? container.decode([Int].self, forKey: .valPeringkat) {
+            valPeringkat = intArray
+        } else if let stringValue = try? container.decode(String.self, forKey: .valPeringkat), let intFromString = Int(stringValue) {
+            valPeringkat = [intFromString]
+        } else {
+            valPeringkat = nil
+        }
+        
         valDeviceToken = try container.decodeIfPresent(String.self, forKey: .valDeviceToken)
         isPolisi = try container.decodeIfPresent(String.self, forKey: .isPolisi)
         ttd = try container.decodeIfPresent(String.self, forKey: .ttd)

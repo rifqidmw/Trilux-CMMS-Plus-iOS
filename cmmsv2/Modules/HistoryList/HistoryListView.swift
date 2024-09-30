@@ -38,11 +38,7 @@ extension HistoryListView {
     
     private func fetchInitialData() {
         guard let presenter else { return }
-        if RoleManager.shared.currentUserRole == .ipsrs {
-            presenter.fetchInitData(woType: 1)
-        } else {
-            presenter.fetchInitData()
-        }
+        presenter.fetchInitData(woType: 1)
     }
     
     private func bindingData() {

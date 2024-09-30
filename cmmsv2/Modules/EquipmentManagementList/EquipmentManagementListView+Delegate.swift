@@ -29,3 +29,14 @@ extension EquipmentManagementListView: FloatingActionButtonDelegate, Confirmatio
     }
     
 }
+
+extension EquipmentManagementListView: RoomListBottomSheetDelegate {
+    
+    func didSelectRoom(_ room: AmprahRoomData, id: String) {
+        guard let presenter else { return }
+        self.showLoadingPopup()
+        let data =  AmprahMutationRequest(id: id, idRoom: room.id)
+        presenter.mutationAmprah(data)
+    }
+    
+}

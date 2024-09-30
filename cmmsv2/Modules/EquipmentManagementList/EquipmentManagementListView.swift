@@ -24,6 +24,7 @@ class EquipmentManagementListView: BaseViewController {
     var loanData: [EquipmentManagementRequestData] = []
     var mutationSubmissionData: [MutationRequestData] = []
     var mutationRequestData: [MutationRequestData] = []
+    var amprahListData: [AmprahListData] = []
     
     override func didLoad() {
         super.didLoad()
@@ -159,6 +160,41 @@ extension EquipmentManagementListView {
                 self.tableView.hideSkeleton()
             }
             .store(in: &anyCancellable)
+        
+        presenter.$amprahList
+            .sink { [weak self] data in
+                guard let self,
+                      let data,
+                      let dataList = data.data
+                else {
+                    self?.showSpinner(false)
+                    return
+                }
+                self.amprahListData = dataList
+                self.reloadTableViewWithAnimation(self.tableView)
+                self.tableView.hideSkeleton()
+            }
+            .store(in: &anyCancellable)
+        
+        presenter.$mutationResponse
+            .sink { [weak self] data in
+                guard let self,
+                      let data
+                else {
+                    self?.showSpinner(false)
+                    return
+                }
+                self.hideLoadingPopup()
+                presenter.fetchInitData()
+                self.reloadTableViewWithAnimation(self.tableView)
+                if data.message == "Success" {
+                    self.showAlert(title: "Pemberitahuan", message: "Perpindahan amprah berhasil")
+                } else {
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message)
+                }
+                
+            }
+            .store(in: &anyCancellable)
     }
     
     private func setupTableView() {
@@ -172,7 +208,7 @@ extension EquipmentManagementListView {
     
     private func setupView() {
         guard let presenter else { return }
-        self.customNavigationView.configure(toolbarTitle: presenter.type == .returning ? "Pengembalian Alat" : presenter.type == .mutation ? "Mutasi" : "Peminjaman Alat", type: .plain)
+        self.customNavigationView.configure(toolbarTitle: getToolbarTitle(for: presenter.type), type: .plain)
         self.floatingActionButton.data = presenter.floatingActionData
         self.floatingActionButton.delegate = self
         
@@ -181,28 +217,56 @@ extension EquipmentManagementListView {
         switch presenter.type {
         case .loan:
             segmentedItems = [.submission, .request]
-            if segmentedControl.selectedSegmentIndex == 0 {
-                self.floatingActionButton.isHidden = false
-            }
-        case .returning:
-            segmentedItems = [.loan, .borrowed]
+            self.floatingActionButton.isHidden = (segmentedControl.selectedSegmentIndex != 0)
         case .mutation:
             segmentedItems = [.submission, .request]
-            if segmentedControl.selectedSegmentIndex == 0 {
-                self.floatingActionButton.isHidden = false
-            }
+            self.floatingActionButton.isHidden = false
+        case .returning:
+            segmentedItems = [.loan, .borrowed]
+            self.floatingActionButton.isHidden = true
+        case .amprah:
+            segmentedItems = []
+            self.segmentedControl.isHidden = true
+            self.floatingActionButton.isHidden = true
         }
         
+        setupSegmentedControl(with: segmentedItems)
+        
+        DispatchQueue.main.async {
+            self.tableView.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    private func getToolbarTitle(for type: EquipmentManagementType) -> String {
+        switch type {
+        case .returning: return "Pengembalian Alat"
+        case .mutation: return "Mutasi"
+        case .loan: return "Peminjaman Alat"
+        case .amprah: return "Amprah"
+        }
+    }
+    
+    private func setupSegmentedControl(with items: [EquipmentManagementSegmentedType]) {
         segmentedControl.removeAllSegments()
         
-        for (index, item) in segmentedItems.enumerated() {
+        for (index, item) in items.enumerated() {
             segmentedControl.insertSegment(withTitle: item.getStringValue(), at: index, animated: false)
         }
         
         segmentedControl.selectedSegmentIndex = 0
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.tableView.showAnimatedGradientSkeleton()
+        segmentedControl.isHidden = items.isEmpty
+    }
+    
+    private func updateVisibilityFloatingButton(_ type: EquipmentManagementType) {
+        switch type {
+        case .loan:
+            self.floatingActionButton.isHidden = (segmentedControl.selectedSegmentIndex != 0)
+        case .returning:
+            self.floatingActionButton.isHidden = true
+        case .amprah:
+            self.floatingActionButton.isHidden = true
+        case .mutation:
+            self.floatingActionButton.isHidden = false
         }
     }
     
@@ -222,10 +286,11 @@ extension EquipmentManagementListView {
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         guard let selectedSegmentTitle = sender.titleForSegment(at: sender.selectedSegmentIndex),
               let selectedType = EquipmentManagementSegmentedType(rawValue: selectedSegmentTitle),
-              let presenter else { return }
+              let presenter
+        else { return }
         
-        self.floatingActionButton.isHidden = true
         let isLoan = presenter.type == .loan
+        self.updateVisibilityFloatingButton(presenter.type)
         switch selectedType {
         case .submission:
             isLoan ? presenter.fetchEquipmentSubmission() : presenter.fetchMutationSubmission()

@@ -11,6 +11,7 @@ enum EquipmentManagementType {
     case loan
     case returning
     case mutation
+    case amprah
 }
 
 enum EquipmentManagementSegmentedType: String, CaseIterable {
@@ -331,5 +332,112 @@ struct MutationRequestDetail: Codable {
         case brandName = "brandname"
         case idMT = "id_mt"
         case dateAmbil = "date_ambil"
+    }
+}
+
+struct AmprahListEntity: Codable {
+    let data: [AmprahListData]?
+    let reff: ReffData?
+    let message: String?
+    let status: Int?
+}
+
+struct AmprahListData: Codable {
+    let id: String?
+    let valName: String?
+    let valImage: String?
+    let valQR: String?
+    let valSerial: String?
+    let valBrand: String?
+    let valType: String?
+    let valRuangan: String?
+    let txtSubRuangan: String?
+    let txtLokasiName: String?
+    let valRoomId: String?
+    let txtRoomId: String?
+    let badgeAsset: String?
+    let badgeTeknis: String?
+    let sttQR: String?
+    let idAlat: String?
+    let isNonMedik: String?
+    let lkStatic: String?
+    let klpNonMedik: String?
+    let klpNonMedikName: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, valName, valImage, valQR, valSerial, valBrand, valType, valRuangan, txtSubRuangan, txtLokasiName, valRoomId, txtRoomId, badgeAsset, badgeTeknis, idAlat, isNonMedik = "is_nonmedik", sttQR = "stt_qr", lkStatic = "lk_static", klpNonMedik = "klp_nonmedik", klpNonMedikName = "klp_nonmedik_name"
+    }
+}
+
+struct AmprahRoomEntity: Codable {
+    let data: [AmprahRoomData]?
+    let message: String?
+    let status: Int?
+}
+
+struct AmprahRoomData: Codable {
+    let id: String?
+    let text: String?
+}
+
+struct AmprahMutationRequest: Codable {
+    let id: String?
+    let idRoom :String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case idRoom = "id_room"
+    }
+}
+
+struct AmprahMutationResponse: Codable {
+    let data: AmprahMutationData?
+    let message: String?
+    let status: Int?
+}
+
+struct AmprahMutationData: Codable {
+    let id: String?
+    let valName: String?
+    let valImage: String?
+    let valQR: String?
+    let valSerial: String?
+    let valBrand: String?
+    let valType: String?
+    let valRuangan: String?
+    let txtSubRuangan: String?
+    let txtLokasiName: String?
+    let valRoomId: String?
+    let txtRoomId: String?
+    let badgeAsset: String?
+    let badgeTeknis: String?
+    let sttQR: String?
+    let idAlat: String?
+    let isNonmedik: String?
+    let lkStatic: String?
+    let klpNonmedik: String?
+    let klpNonmedikName: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case valName
+        case valImage
+        case valQR
+        case valSerial
+        case valBrand
+        case valType
+        case valRuangan
+        case txtSubRuangan
+        case txtLokasiName
+        case valRoomId
+        case txtRoomId
+        case badgeAsset
+        case badgeTeknis
+        case sttQR = "stt_qr"
+        case idAlat = "id_alat"
+        case isNonmedik = "is_nonmedik"
+        case lkStatic = "lk_static"
+        case klpNonmedik = "klp_nonmedik"
+        case klpNonmedikName = "klp_nonmedik_name"
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ce0-mb-J2h" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnm-G7-aFY" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
@@ -88,8 +88,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Bnm-G7-aFY" secondAttribute="bottom" id="BGF-3U-giM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ce0-mb-J2h" secondAttribute="bottom" id="CkZ-FI-1JO"/>
-                <constraint firstItem="Ce0-mb-J2h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ibe-3j-r4T"/>
+                <constraint firstAttribute="bottom" secondItem="Ce0-mb-J2h" secondAttribute="bottom" id="CkZ-FI-1JO"/>
+                <constraint firstItem="Ce0-mb-J2h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ibe-3j-r4T"/>
                 <constraint firstItem="Bnm-G7-aFY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="LeG-DA-fwp"/>
                 <constraint firstItem="Ce0-mb-J2h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mij-y9-hx5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ce0-mb-J2h" secondAttribute="trailing" id="Rdx-rv-5oC"/>
