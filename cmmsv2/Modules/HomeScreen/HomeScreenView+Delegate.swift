@@ -280,7 +280,10 @@ extension HomeScreenView: ComplaintHistoryBottomSheetDelegate {
     }
     
     func didTapComplaintRoomHistoryList() {
-        AppLogger.log("-- GO TO COMPLAINT ROOM HISTORY LIST")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToHistoryList(navigation: navigation)
     }
     
 }
