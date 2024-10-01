@@ -137,7 +137,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapRatingCategory() {
-        self.showAlert(title: "Rating")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToRatingListPage(navigation: navigation)
     }
     
 }

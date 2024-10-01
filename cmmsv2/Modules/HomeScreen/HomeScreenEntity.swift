@@ -224,8 +224,8 @@ let categoryDataRoom: [CategoryModel] = [
     CategoryModel(image: "ic_notes_with_pencil", title: .historyComplaintList),
     CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
     CategoryModel(image: "ic_bubble_chat", title: .roomRequirement),
-    CategoryModel(image: "ic_bubble_chat", title: .assetSuggest),
-    CategoryModel(image: "ic_rating_circle", title: .rating)
+    CategoryModel(image: "ic_rating_circle", title: .rating),
+    CategoryModel(image: "ic_bubble_chat", title: .assetSuggest)
 ]
 
 let categoryBottomSheetEngineerData: [CategoryModel] = [

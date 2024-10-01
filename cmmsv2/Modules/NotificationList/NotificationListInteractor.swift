@@ -23,7 +23,6 @@ class NotificationListInteractor: BaseInteractor {
     
     func getComplaintList() -> AnyPublisher<ComplaintEntity, Error> {
         return api.requestApiPublisher(.getComplaintList())
-        
     }
     
 }
