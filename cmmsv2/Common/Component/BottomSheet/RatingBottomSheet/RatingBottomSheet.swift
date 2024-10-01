@@ -175,7 +175,9 @@ extension RatingBottomSheet {
                       let delegate = self.delegate,
                       let isCanRating = self.data?.woDetail?.valCanRating
                 else { return }
-                delegate.didTapRating(isCanRating: isCanRating)
+                self.dismissBottomSheet() {
+                    delegate.didTapRating(isCanRating: isCanRating)
+                }
             }
             .store(in: &anyCancellable)
     }
