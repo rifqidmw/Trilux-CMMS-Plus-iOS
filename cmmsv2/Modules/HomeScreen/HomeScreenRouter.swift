@@ -102,4 +102,9 @@ extension HomeScreenRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToRatingListPage(navigation: UINavigationController) {
+        let vc = RatingListRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

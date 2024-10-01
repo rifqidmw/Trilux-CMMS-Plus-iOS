@@ -240,4 +240,8 @@ extension HomeScreenPresenter {
         router.navigateToDashboardPage(navigation: navigation)
     }
     
+    func navigateToRatingListPage(navigation: UINavigationController) {
+        router.navigateToRatingListPage(navigation: navigation)
+    }
+    
 }

@@ -153,6 +153,7 @@ enum Endpoint {
     case amprahList(limit: Int, page: Int)
     case getRoomList
     case amprahMutation(data: AmprahMutationRequest?)
+    case ratingList(woStatus: String?, limit: Int, page: Int)
 }
 
 // MARK: - PATH URL
@@ -354,8 +355,10 @@ extension Endpoint {
             return "reqamprah/penerimaan?q=&limit=\(limit)&page=\(page)"
         case .getRoomList:
             return "reqamprah/get_list_room"
-        case .amprahMutation(data: let data):
+        case .amprahMutation:
             return "reqamprah/pindah"
+        case .ratingList(woStatus: let woStatus, limit: let limit, page: let page):
+            return generateRatingListURL(woStatus: woStatus ?? "", limit: limit, page: page)
         }
     }
     
@@ -922,6 +925,22 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/listapprove" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateRatingListURL(
+        woStatus: String? = nil,
+        limit: Int?,
+        page: Int?
+    ) -> String {
+        let queryString = [
+            woStatus.map { "wo_status=\($0)" },
+            limit.map { "limit=\($0)" },
+            page.map { "page=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "lk/list" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }
