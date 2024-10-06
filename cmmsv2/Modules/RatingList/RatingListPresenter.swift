@@ -57,7 +57,7 @@ extension RatingListPresenter {
                         guard let data = ratingData.data,
                               let ratingList = data.wo
                         else { return }
-                        self.ratingList = ratingList
+                        self.ratingList.append(contentsOf: ratingList)
                     }
                 }
             )

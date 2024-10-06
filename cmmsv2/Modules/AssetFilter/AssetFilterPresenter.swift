@@ -224,7 +224,7 @@ extension AssetFilterPresenter {
         bottomSheet.delegate = delegate
         bottomSheet.optionalDelegate = optionalDelegate
         bottomSheet.data = self.categoryFilterData
-        bottomSheet.type = .cateogry
+        bottomSheet.type = .category
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

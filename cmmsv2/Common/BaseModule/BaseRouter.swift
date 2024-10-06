@@ -117,11 +117,6 @@ class BaseRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
-    func navigateToRoomRequirement(from navigation: UINavigationController) {
-        let vc = RoomRequirementRouter().showView()
-        navigation.pushViewController(vc, animated: true)
-    }
-    
     func navigateToEquipmentMutationSelection(from navigation: UINavigationController) {
         let vc = EquipmentMutationSelectionRouter().showView()
         navigation.pushViewController(vc, animated: true)
@@ -129,6 +124,11 @@ class BaseRouter {
     
     func navigateToComplaintList(navigation: UINavigationController, type: ComplaintType? = .engineer) {
         let vc = ComplaintListRouter().showView(type ?? .engineer)
+        navigation.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToRoomRequirementListPage(navigation: UINavigationController, for type: AssetType) {
+        let vc = RoomRequirementListRouter().showView(type)
         navigation.pushViewController(vc, animated: true)
     }
     

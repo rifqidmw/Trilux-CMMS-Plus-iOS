@@ -126,8 +126,6 @@ extension CategorySectionView: UICollectionViewDataSource, UICollectionViewDeleg
             delegate.didTapHistoryComplaintListCategory()
         case .roomRequirement:
             delegate.didTapRoomRequirementCategory()
-        case .assetSuggest:
-            delegate.didTapAssetSuggestCategory()
         case .rating:
             delegate.didTapRatingCategory()
         case .none:

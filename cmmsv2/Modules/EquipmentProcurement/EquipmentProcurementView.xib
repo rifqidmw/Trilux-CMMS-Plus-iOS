@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EquipmentProcurementView" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="qda-Ip-ac8" id="LE3-x9-VGt"/>
+                <outlet property="caseCountTextField" destination="3Ha-8e-Jsn" id="dnq-Dj-yWS"/>
+                <outlet property="characteristicSelectView" destination="udC-zh-Q3E" id="Nys-EQ-yID"/>
+                <outlet property="customNavigationView" destination="6pR-Df-pna" id="geu-T3-eRY"/>
+                <outlet property="dateSelectView" destination="x9t-IA-3Wa" id="9dQ-TO-Yn6"/>
+                <outlet property="equipmentImageView" destination="jSB-fI-YA8" id="YNq-vP-3cZ"/>
+                <outlet property="medicalAssetSelectView" destination="5Lf-KD-1Am" id="kMI-ML-ThK"/>
+                <outlet property="patientCountTextField" destination="V2D-gd-0u1" id="eFf-vL-fr8"/>
+                <outlet property="productServiceCountTextField" destination="DIs-PQ-eUq" id="NMS-dy-LD0"/>
+                <outlet property="referenceCountTextField" destination="Q5g-1R-aap" id="efs-vv-IfO"/>
+                <outlet property="roomSelectView" destination="7CP-Zb-tY7" id="7Wg-Lu-FUZ"/>
+                <outlet property="specificationTextField" destination="RZj-ED-QPL" id="ZQ9-AI-6tr"/>
+                <outlet property="suggestionCountSelectView" destination="SMw-Ja-SC6" id="zDV-gp-3J1"/>
+                <outlet property="suggestionTypeSelectView" destination="yjX-uI-iHJ" id="Ljc-3M-ECM"/>
+                <outlet property="utilityCountTextField" destination="8xV-wO-ySJ" id="dyy-UU-cRO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="workUnitSelectView" destination="4Gl-P3-gIn" id="pDR-lp-VLP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="BackgroundView" customModule="cmmsv2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pR-Df-pna" customClass="CustomNavigationView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="ZjE-Sb-4qM"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDW-Kc-m7f">
+                    <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R7N-5s-Vaa">
+                            <rect key="frame" x="16" y="16" width="361" height="1047"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_room_requirement_background" translatesAutoresizingMaskIntoConstraints="NO" id="jSB-fI-YA8">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="203"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="jSB-fI-YA8" secondAttribute="height" multiplier="16:9" id="8OI-5i-17D"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-P3-gIn" userLabel="Unit Kerja" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="219" width="361" height="72"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="q7F-NK-7CT"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CP-Zb-tY7" userLabel="Ruangan Sub Unit" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="307" width="361" height="72"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="sfM-8c-IJD"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-KD-1Am" userLabel="Alat Medik" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="395" width="361" height="72"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="s17-0r-Wz0"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-wC-Co7">
+                                    <rect key="frame" x="0.0" y="483" width="361" height="72"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMw-Ja-SC6" userLabel="Jumlah Usulan" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="72"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjX-uI-iHJ" userLabel="Tipe Usulan" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="72"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="hIi-Ap-gdo"/>
+                                    </constraints>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9t-IA-3Wa" userLabel="Tanggal" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="571" width="361" height="72"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="4Xj-0U-3Wn"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udC-zh-Q3E" userLabel="Sifat" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="659" width="361" height="72"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="nFg-iJ-FM3"/>
+                                    </constraints>
+                                </view>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-xN-bfH" userLabel="Addition Stack View">
+                                    <rect key="frame" x="0.0" y="739" width="361" height="248"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CzT-50-Lqx">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="72"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-8e-Jsn" userLabel="Jumlah Kasus" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="72"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2D-gd-0u1" userLabel="Jumlah Pasien" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="72"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="JBg-V5-e23"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Oz-B1-sa5">
+                                            <rect key="frame" x="0.0" y="88" width="361" height="72"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-1R-aap" userLabel="Jumlah Rujukan" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="72"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xV-wO-ySJ" userLabel="Jumlah Utilitas" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                                    <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="72"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="8W7-8Q-amm"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIs-PQ-eUq" userLabel="Jumlah Produk Layanan" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="176" width="361" height="72"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="j6p-a4-KBZ"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaK-eE-Qgy" userLabel="Justifikasi" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="739" width="361" height="100"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="HlQ-yQ-5zS"/>
+                                    </constraints>
+                                </view>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="k7S-Ae-fYi" userLabel="Penggantian">
+                                    <rect key="frame" x="0.0" y="739" width="361" height="160"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccs-A0-Py2" userLabel="Jumlah Usulan" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="72"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="5kf-rR-2si"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYI-EN-U3q" userLabel="Kondisi Alat" customClass="SelectView" customModule="cmmsv2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="88" width="361" height="72"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="jxu-AU-0d2"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZj-ED-QPL" userLabel="Spesifikasi" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="747" width="361" height="100"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="zSp-Rh-TQg"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhc-eX-KYw" customClass="MediaSectionView" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="863" width="361" height="120"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="iLI-en-tD0"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qda-Ip-ac8" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="999" width="361" height="48"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="FKL-GS-Uyv"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="R7N-5s-Vaa" firstAttribute="top" secondItem="TDW-Kc-m7f" secondAttribute="top" constant="16" id="2KM-pA-Jva"/>
+                        <constraint firstItem="R7N-5s-Vaa" firstAttribute="leading" secondItem="TDW-Kc-m7f" secondAttribute="leading" constant="16" id="5Dh-3N-leP"/>
+                        <constraint firstItem="R7N-5s-Vaa" firstAttribute="centerX" secondItem="TDW-Kc-m7f" secondAttribute="centerX" id="8ba-Rs-tig"/>
+                        <constraint firstAttribute="bottom" secondItem="R7N-5s-Vaa" secondAttribute="bottom" constant="16" id="T1z-sz-w06"/>
+                        <constraint firstAttribute="trailing" secondItem="R7N-5s-Vaa" secondAttribute="trailing" constant="16" id="rJE-B2-Ygp"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="TDW-Kc-m7f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2A9-Q9-gpO"/>
+                <constraint firstItem="6pR-Df-pna" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CYk-GU-eft"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TDW-Kc-m7f" secondAttribute="trailing" id="Igl-vV-FnW"/>
+                <constraint firstItem="6pR-Df-pna" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LoW-ou-IRI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TDW-Kc-m7f" secondAttribute="bottom" id="Qzg-eH-mMp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6pR-Df-pna" secondAttribute="trailing" id="S0b-eU-gzZ"/>
+                <constraint firstItem="TDW-Kc-m7f" firstAttribute="top" secondItem="6pR-Df-pna" secondAttribute="bottom" id="Yul-bf-l5A"/>
+            </constraints>
+            <point key="canvasLocation" x="93" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_room_requirement_background" width="366" height="188"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

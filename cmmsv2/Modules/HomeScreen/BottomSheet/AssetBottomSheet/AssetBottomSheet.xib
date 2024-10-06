@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67q-5m-Gzi" userLabel="Dismiss Area View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="493"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="552"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-tR-pXN" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
@@ -74,7 +74,7 @@
                 <constraint firstItem="H0u-tR-pXN" firstAttribute="leading" secondItem="sSc-sB-rug" secondAttribute="leading" id="Kdz-yY-Dex"/>
                 <constraint firstItem="67q-5m-Gzi" firstAttribute="trailing" secondItem="sSc-sB-rug" secondAttribute="trailing" id="PU5-Y6-Kid"/>
                 <constraint firstItem="H0u-tR-pXN" firstAttribute="trailing" secondItem="sSc-sB-rug" secondAttribute="trailing" id="QNz-hE-wzK"/>
-                <constraint firstItem="67q-5m-Gzi" firstAttribute="top" secondItem="sSc-sB-rug" secondAttribute="top" id="mnP-oS-gh6"/>
+                <constraint firstItem="67q-5m-Gzi" firstAttribute="top" secondItem="296-GW-ysa" secondAttribute="top" id="mnP-oS-gh6"/>
             </constraints>
             <point key="canvasLocation" x="154.96183206106869" y="-33.098591549295776"/>
         </view>

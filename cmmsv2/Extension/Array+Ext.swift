@@ -12,4 +12,8 @@ extension Array {
         guard index >= 0 && index < count else { return nil }
         return self[index]
     }
+    
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
 }

@@ -18,10 +18,14 @@
             <connections>
                 <outlet property="applyButton" destination="SvP-nF-COg" id="hxs-qc-Us4"/>
                 <outlet property="assetCollectionView" destination="72M-vC-q8a" id="6ls-kp-xdZ"/>
+                <outlet property="assetConditionStackView" destination="P1u-ee-OEk" id="0Qq-sP-BpV"/>
                 <outlet property="assetConditionTitle" destination="HWB-v1-Wc1" id="0jS-nI-h7i"/>
                 <outlet property="bottomSheetView" destination="edN-jd-vQa" id="5Ud-p1-Fka"/>
                 <outlet property="dismissAreaView" destination="s3n-3a-8rI" id="ed9-3Y-cc0"/>
+                <outlet property="initialHeightAssetConditionConstraint" destination="Oe2-Xb-d8l" id="xV7-ST-U1f"/>
+                <outlet property="initialHeightStatusConditionConstraint" destination="Dqm-Rm-fZI" id="bBO-nv-0nH"/>
                 <outlet property="statusCalibrationCollectionView" destination="Y5x-Fp-CSK" id="QQ5-uk-O0g"/>
+                <outlet property="statusCalibrationStackView" destination="HlJ-Pg-7Ru" id="98C-ZE-NoO"/>
                 <outlet property="statusCalibrationTitle" destination="6hu-PA-tti" id="LxU-bM-EsO"/>
                 <outlet property="titlePageLabel" destination="goB-hk-Pua" id="yub-ct-Agl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -74,6 +78,9 @@
                                                     </collectionViewFlowLayout>
                                                 </collectionView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="130" id="Oe2-Xb-d8l"/>
+                                            </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HlJ-Pg-7Ru">
                                             <rect key="frame" x="0.0" y="146" width="361" height="70"/>
@@ -117,7 +124,6 @@
                         <constraint firstItem="naS-68-XAo" firstAttribute="leading" secondItem="edN-jd-vQa" secondAttribute="leading" constant="16" id="ZGr-Wp-oct"/>
                         <constraint firstAttribute="trailing" secondItem="naS-68-XAo" secondAttribute="trailing" constant="16" id="fKf-Bk-1k4"/>
                         <constraint firstItem="naS-68-XAo" firstAttribute="top" secondItem="edN-jd-vQa" secondAttribute="top" constant="34" id="q7z-Pz-7Mi"/>
-                        <constraint firstAttribute="height" constant="384" id="xPC-Zb-fbC"/>
                     </constraints>
                 </view>
             </subviews>

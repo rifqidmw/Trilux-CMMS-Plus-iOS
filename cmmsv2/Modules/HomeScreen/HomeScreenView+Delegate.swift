@@ -129,11 +129,10 @@ extension HomeScreenView: HomeScreenCategoryDelegate {
     }
     
     func didTapRoomRequirementCategory() {
-        self.showAlert(title: "Kebutuhan Ruangan")
-    }
-    
-    func didTapAssetSuggestCategory() {
-        self.showAlert(title: "Usulan Alat")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showBottomSheetRoomRequirement(navigation: navigation, delegate: self)
     }
     
     func didTapRatingCategory() {
@@ -356,6 +355,24 @@ extension HomeScreenView: MutationBottomSheetDelegate {
               let navigation = self.navigationController
         else { return }
         presenter.navigateToEquipmentManagement(from: navigation, .amprah)
+    }
+    
+}
+
+extension HomeScreenView: RoomRequirementBottomSheetDelegate {
+    
+    func didTapRequirementMedic() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToRoomRequirementListPage(navigation: navigation, for: .medic)
+    }
+    
+    func didTapRequirementNonMedic() {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToRoomRequirementListPage(navigation: navigation, for: .nonMedic)
     }
     
 }

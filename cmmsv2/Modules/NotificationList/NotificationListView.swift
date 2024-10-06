@@ -285,7 +285,7 @@ extension NotificationListView: SkeletonCollectionViewDelegate, SkeletonCollecti
         case .assetLoan:
             presenter.navigateToEquipmentManagement(from: navigation, .loan)
         case .roomRequirement:
-            presenter.navigateToRoomRequirement(from: navigation)
+            presenter.navigateToRoomRequirementListPage(navigation: navigation, for: .medic) // Temporary For Usage
         case .mutation:
             presenter.navigateToEquipmentMutationSelection(from: navigation)
         default:

@@ -39,7 +39,7 @@ extension AssetListView: SortingBottomSheetDelegate, SortingBottomSheetDelegateO
         switch type {
         case .plain:
             presenter.fetchInitData(sort: sort.sortType?.getStringValue().lowercased())
-        case .cateogry:
+        case .category:
             presenter.fetchInitData(category: sort.sortType?.getStringValue().lowercased())
         }
         self.reloadCollectionViewWithAnimation(self.collectionView)
@@ -67,11 +67,11 @@ extension AssetListView: InstallationBottomSheetDelegate {
 
 extension AssetListView: ConditionFilterBottomSheetDelegate {
     
-    func didTapApplyFilterCondition(_ asset: AssetConditionEntity, _ status: CalibrationConditionEntity) {
+    func didTapApplyFilterCondition(_ asset: AssetConditionEntity?, _ status: CalibrationConditionEntity?) {
         guard let presenter else { return }
-        let selectedAssetFilter = asset.assetCondition?.getStringValue().lowercased()
+        let selectedAssetFilter = asset?.assetCondition?.getStringValue().lowercased()
             .replacingOccurrences(of: " ", with: "_")
-        let selectedStatus = status.calibrationCondition?.getStringValue().lowercased()
+        let selectedStatus = status?.calibrationCondition?.getStringValue().lowercased()
             .replacingOccurrences(of: " ", with: "_")
         self.showLoadingPopup()
         presenter.fetchInitData(condition: selectedAssetFilter, sttCalibration: selectedStatus)

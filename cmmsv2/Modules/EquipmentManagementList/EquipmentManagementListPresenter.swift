@@ -17,12 +17,12 @@ class EquipmentManagementListPresenter: BasePresenter {
     
     @Published public var equipmentSubmissionData: EquipmentManagementSubmissionEntity?
     @Published public var equipmentRequestData: EquipmentManagementRequestEntity?
-    @Published public var returningLoanData: EquipmentManagementRequestEntity?
-    @Published public var returningBorrowedData: EquipmentManagementRequestEntity?
+    @Published public var returningLoanData: [EquipmentManagementRequestData] = []
+    @Published public var returningBorrowedData: [EquipmentManagementRequestData] = []
     @Published public var approvedRequestedData: ReturningEntity?
     @Published public var mutationSubmissionData: MutationRequestEntity?
     @Published public var mutationRequestData: MutationRequestEntity?
-    @Published public var amprahList: AmprahListEntity?
+    @Published public var amprahList: [AmprahListData] = []
     @Published public var mutationResponse: AmprahMutationResponse?
     var amprahRoomList: [AmprahRoomData] = []
     let floatingActionData: [FloatingActionEntity] = [
@@ -112,7 +112,8 @@ extension EquipmentManagementListPresenter {
                 receiveCompletion: handleCompletion(_:),
                 receiveValue: { returningLoanData in
                     DispatchQueue.main.async {
-                        self.returningLoanData = returningLoanData
+                        guard let data = returningLoanData.data else { return }
+                        self.returningLoanData.append(contentsOf: data)
                     }
                 }
             )
@@ -126,7 +127,8 @@ extension EquipmentManagementListPresenter {
                 receiveCompletion: handleCompletion(_:),
                 receiveValue: { returningBorrowedData in
                     DispatchQueue.main.async {
-                        self.returningBorrowedData = returningBorrowedData
+                        guard let data = returningBorrowedData.data else { return }
+                        self.returningBorrowedData.append(contentsOf: data)
                     }
                 }
             )
@@ -140,7 +142,8 @@ extension EquipmentManagementListPresenter {
                 receiveCompletion: handleCompletion(_:),
                 receiveValue: { amprahList in
                     DispatchQueue.main.async {
-                        self.amprahList = amprahList
+                        guard let data = amprahList.data else { return }
+                        self.amprahList.append(contentsOf: data)
                     }
                 }
             )

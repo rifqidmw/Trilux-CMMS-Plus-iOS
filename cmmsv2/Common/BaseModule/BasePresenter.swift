@@ -117,16 +117,16 @@ extension BasePresenter {
         router.navigateToEquipmentManagement(from: navigation, type)
     }
     
-    func navigateToRoomRequirement(from navigation: UINavigationController) {
-        router.navigateToRoomRequirement(from: navigation)
-    }
-    
     func navigateToEquipmentMutationSelection(from navigation: UINavigationController) {
         router.navigateToEquipmentMutationSelection(from: navigation)
     }
     
     func navigateToComplaintList(navigation: UINavigationController, type: ComplaintType? = .engineer) {
         router.navigateToComplaintList(navigation: navigation, type: type)
+    }
+    
+    func navigateToRoomRequirementListPage(navigation: UINavigationController, for type: AssetType) {
+        router.navigateToRoomRequirementListPage(navigation: navigation, for: type)
     }
     
 }

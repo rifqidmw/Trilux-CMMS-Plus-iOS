@@ -174,6 +174,12 @@ extension HomeScreenPresenter {
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     
+    func showBottomSheetRoomRequirement(navigation: UINavigationController, delegate: RoomRequirementBottomSheetDelegate) {
+        let bottomSheet = RoomRequirementBottomSheet(nibName: String(describing: RoomRequirementBottomSheet.self), bundle: nil)
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
     func showExpiredBottomSheet(navigation: UINavigationController, expiredDate: String) {
         let bottomSheet = ExpiredBottomSheet(nibName: String(describing: ExpiredBottomSheet.self), bundle: nil)
         bottomSheet.expiredDate = expiredDate
