@@ -21,8 +21,8 @@ class RoomRequirementListRouter: BaseRouter {
 
 extension RoomRequirementListRouter {
     
-    func navigateToEquipmentProcurement(from navigation: UINavigationController) {
-        let vc = EquipmentProcurementRouter().showView()
+    func navigateToEquipmentProcurement(from navigation: UINavigationController, _ data: RoomRequirementListData? = nil) {
+        let vc = EquipmentProcurementRouter().showView(data)
         navigation.pushViewController(vc, animated: true)
     }
     

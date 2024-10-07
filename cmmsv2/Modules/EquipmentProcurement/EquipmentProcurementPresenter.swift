@@ -10,10 +10,13 @@ import Foundation
 class EquipmentProcurementPresenter: BasePresenter {
     
     private let interactor: EquipmentProcurementInteractor
-    private let router = EquipmentProcurementRouter()
+    private let router: EquipmentProcurementRouter
+    let data: RoomRequirementListData?
     
-    init(interactor: EquipmentProcurementInteractor) {
+    init(interactor: EquipmentProcurementInteractor, router: EquipmentProcurementRouter, data: RoomRequirementListData?) {
         self.interactor = interactor
+        self.router = router
+        self.data = data
     }
     
 }

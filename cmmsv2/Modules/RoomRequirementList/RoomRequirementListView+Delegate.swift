@@ -83,3 +83,29 @@ extension RoomRequirementListView: SortingBottomSheetDelegate, ConditionFilterBo
     }
     
 }
+
+extension RoomRequirementListView: ActionRoomReqBottomSheetDelegate {
+    
+    func didTapProgress(_ data: RoomRequirementListData) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.showProgressRoomBottomSheet(from: navigation, for: data.myProgress ?? [])
+    }
+    
+    func didTapDetail(_ data: RoomRequirementListData) {
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToEquipmentProcurement(from: navigation, data)
+    }
+    
+    func didTapUpdate(_ data: RoomRequirementListData) {
+        AppLogger.log("UPDATE")
+    }
+    
+    func didTapDelete(_ data: RoomRequirementListData) {
+        AppLogger.log("DELETE")
+    }
+    
+}

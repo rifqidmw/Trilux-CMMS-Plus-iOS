@@ -142,8 +142,8 @@ extension RoomRequirementListPresenter {
 
 extension RoomRequirementListPresenter {
     
-    func navigateToEquipmentProcurement(from navigation: UINavigationController) {
-        router.navigateToEquipmentProcurement(from: navigation)
+    func navigateToEquipmentProcurement(from navigation: UINavigationController, _ data: RoomRequirementListData? = nil) {
+        router.navigateToEquipmentProcurement(from: navigation, data)
     }
     
     func showSortBottomSheet(from navigation: UINavigationController, _ delegate: SortingBottomSheetDelegate) {
@@ -165,6 +165,20 @@ extension RoomRequirementListPresenter {
         let bottomSheet = DatePickerBottomSheet(nibName: String(describing: DatePickerBottomSheet.self), bundle: nil)
         bottomSheet.type = .year
         bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func showActionBottomSheet(from navigation: UINavigationController, type: RoomRequirementStatusType, _ delegate: ActionRoomReqBottomSheetDelegate, for data: RoomRequirementListData) {
+        let bottomSheet = ActionRoomReqBottomSheet(nibName: String(describing: ActionRoomReqBottomSheet.self), bundle: nil)
+        bottomSheet.type = type
+        bottomSheet.data = data
+        bottomSheet.delegate = delegate
+        router.showBottomSheet(navigation: navigation, view: bottomSheet)
+    }
+    
+    func showProgressRoomBottomSheet(from navigation: UINavigationController, for data: [Progress]) {
+        let bottomSheet = ProgressRoomReqBottomSheet(nibName: String(describing: ProgressRoomReqBottomSheet.self), bundle: nil)
+        bottomSheet.data = data
         router.showBottomSheet(navigation: navigation, view: bottomSheet)
     }
     

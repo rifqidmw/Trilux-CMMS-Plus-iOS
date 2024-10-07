@@ -9,9 +9,9 @@ import UIKit
 
 class EquipmentProcurementRouter {
     
-    func showView() -> EquipmentProcurementView {
+    func showView(_ data: RoomRequirementListData? = nil) -> EquipmentProcurementView {
         let interactor = EquipmentProcurementInteractor()
-        let presenter = EquipmentProcurementPresenter(interactor: interactor)
+        let presenter = EquipmentProcurementPresenter(interactor: interactor, router: self, data: data)
         let view = EquipmentProcurementView(nibName: String(describing: EquipmentProcurementView.self), bundle: nil)
         view.presenter = presenter
         return view

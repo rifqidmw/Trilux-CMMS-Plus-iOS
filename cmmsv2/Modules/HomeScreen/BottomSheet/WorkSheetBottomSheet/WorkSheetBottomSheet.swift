@@ -16,7 +16,7 @@ class WorkSheetBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var initialHeightTableViewConstraint: NSLayoutConstraint!
     
     weak var delegate: WorkSheetBottomSheetDelegate?
-    var data: [MenuModel] = complaintData
+    var data: [MenuModel] = worksheetData
     
     override func didLoad() {
         super.didLoad()

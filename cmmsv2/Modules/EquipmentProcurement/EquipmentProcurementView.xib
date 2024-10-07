@@ -12,18 +12,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EquipmentProcurementView" customModule="cmmsv2" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="qda-Ip-ac8" id="LE3-x9-VGt"/>
+                <outlet property="additionContainerStackView" destination="5ul-xN-bfH" id="tEF-W1-3Ic"/>
                 <outlet property="caseCountTextField" destination="3Ha-8e-Jsn" id="dnq-Dj-yWS"/>
                 <outlet property="characteristicSelectView" destination="udC-zh-Q3E" id="Nys-EQ-yID"/>
                 <outlet property="customNavigationView" destination="6pR-Df-pna" id="geu-T3-eRY"/>
                 <outlet property="dateSelectView" destination="x9t-IA-3Wa" id="9dQ-TO-Yn6"/>
+                <outlet property="equipmentAgeTextField" destination="ccs-A0-Py2" id="43b-gc-2yc"/>
+                <outlet property="equipmentConditionSelectView" destination="MYI-EN-U3q" id="BkV-oj-8Pa"/>
                 <outlet property="equipmentImageView" destination="jSB-fI-YA8" id="YNq-vP-3cZ"/>
+                <outlet property="justificationTextField" destination="eaK-eE-Qgy" id="at5-cB-t9H"/>
+                <outlet property="mediaSectionView" destination="Rhc-eX-KYw" id="9T3-e1-rgc"/>
                 <outlet property="medicalAssetSelectView" destination="5Lf-KD-1Am" id="kMI-ML-ThK"/>
                 <outlet property="patientCountTextField" destination="V2D-gd-0u1" id="eFf-vL-fr8"/>
                 <outlet property="productServiceCountTextField" destination="DIs-PQ-eUq" id="NMS-dy-LD0"/>
                 <outlet property="referenceCountTextField" destination="Q5g-1R-aap" id="efs-vv-IfO"/>
+                <outlet property="replacementContainerStackView" destination="k7S-Ae-fYi" id="iiD-yh-PCf"/>
                 <outlet property="roomSelectView" destination="7CP-Zb-tY7" id="7Wg-Lu-FUZ"/>
                 <outlet property="specificationTextField" destination="RZj-ED-QPL" id="ZQ9-AI-6tr"/>
-                <outlet property="suggestionCountSelectView" destination="SMw-Ja-SC6" id="zDV-gp-3J1"/>
+                <outlet property="suggestionCountTextField" destination="SMw-Ja-SC6" id="oKm-QU-izc"/>
                 <outlet property="suggestionTypeSelectView" destination="yjX-uI-iHJ" id="Ljc-3M-ECM"/>
                 <outlet property="utilityCountTextField" destination="8xV-wO-ySJ" id="dyy-UU-cRO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -46,7 +52,7 @@
                     <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R7N-5s-Vaa">
-                            <rect key="frame" x="16" y="16" width="361" height="1047"/>
+                            <rect key="frame" x="16" y="16" width="361" height="1027"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_room_requirement_background" translatesAutoresizingMaskIntoConstraints="NO" id="jSB-fI-YA8">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="203"/>
@@ -159,7 +165,7 @@
                                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="k7S-Ae-fYi" userLabel="Penggantian">
                                     <rect key="frame" x="0.0" y="739" width="361" height="160"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccs-A0-Py2" userLabel="Jumlah Usulan" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccs-A0-Py2" userLabel="Usia Alat yang Diganti" customClass="GeneralTextField" customModule="cmmsv2" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="72"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -183,14 +189,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhc-eX-KYw" customClass="MediaSectionView" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="863" width="361" height="120"/>
+                                    <rect key="frame" x="0.0" y="863" width="361" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="iLI-en-tD0"/>
+                                        <constraint firstAttribute="height" constant="100" id="iLI-en-tD0"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qda-Ip-ac8" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="999" width="361" height="48"/>
+                                    <rect key="frame" x="0.0" y="979" width="361" height="48"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="FKL-GS-Uyv"/>
@@ -199,6 +205,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="R7N-5s-Vaa" firstAttribute="top" secondItem="TDW-Kc-m7f" secondAttribute="top" constant="16" id="2KM-pA-Jva"/>
                         <constraint firstItem="R7N-5s-Vaa" firstAttribute="leading" secondItem="TDW-Kc-m7f" secondAttribute="leading" constant="16" id="5Dh-3N-leP"/>

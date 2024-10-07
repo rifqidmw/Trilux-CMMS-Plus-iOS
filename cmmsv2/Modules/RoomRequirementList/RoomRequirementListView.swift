@@ -157,7 +157,8 @@ extension RoomRequirementListView: SkeletonTableViewDataSource, SkeletonTableVie
         guard let presenter,
               let navigation = self.navigationController
         else { return }
-        
+        let adjustedData = self.data[indexPath.row]
+        presenter.showActionBottomSheet(from: navigation, type: RoomRequirementStatusType(rawValue: adjustedData.namaStatus ?? "") ?? .none, self, for: adjustedData)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

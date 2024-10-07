@@ -1163,6 +1163,16 @@
 		FAE2DABA2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */; };
 		FAE2DABB2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */; };
 		FAE2DABC2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */; };
+		FAF36AF42CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */; };
+		FAF36AF52CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */; };
+		FAF36AFA2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */; };
+		FAF36AFB2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */; };
+		FAF36AFC2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */; };
+		FAF36AFD2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */; };
+		FAF36B012CB459D300059F46 /* ProgressRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */; };
+		FAF36B022CB459D300059F46 /* ProgressRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */; };
+		FAF36B032CB459D300059F46 /* ProgressRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */; };
+		FAF36B042CB459D300059F46 /* ProgressRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */; };
 		FAF380FA2C94BD26004B63FE /* MutationBotomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */; };
 		FAF380FB2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
 		FAF380FC2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
@@ -1195,6 +1205,10 @@
 		FAF3CCE12C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */; };
 		FAF3CCE22C8F801100630A96 /* EquipmentMutationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */; };
 		FAF3CCE32C8F801100630A96 /* EquipmentMutationSelectionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */; };
+		FAF889102CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */; };
+		FAF889112CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */; };
+		FAF889122CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */; };
+		FAF889132CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1787,6 +1801,11 @@
 		FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusOverviewPanelView.xib; sourceTree = "<group>"; };
 		FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectComplaintActionBottomSheet.swift; sourceTree = "<group>"; };
 		FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectComplaintActionBottomSheet.xib; sourceTree = "<group>"; };
+		FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentProcurementView+Delegate.swift"; sourceTree = "<group>"; };
+		FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRoomReqBottomSheet.swift; sourceTree = "<group>"; };
+		FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressRoomReqBottomSheet.xib; sourceTree = "<group>"; };
+		FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRoomCell.swift; sourceTree = "<group>"; };
+		FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressRoomCell.xib; sourceTree = "<group>"; };
 		FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutationBotomSheet.swift; sourceTree = "<group>"; };
 		FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MutationBotomSheet.xib; sourceTree = "<group>"; };
 		FAF380FF2C94FC20004B63FE /* EquipmentManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementCell.swift; sourceTree = "<group>"; };
@@ -1803,6 +1822,8 @@
 		FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionView.swift; sourceTree = "<group>"; };
 		FAF3CCD62C8F801100630A96 /* EquipmentMutationSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentMutationSelectionView.xib; sourceTree = "<group>"; };
 		FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionEntity.swift; sourceTree = "<group>"; };
+		FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRoomReqBottomSheet.swift; sourceTree = "<group>"; };
+		FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionRoomReqBottomSheet.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2456,6 +2477,7 @@
 				CEC1B0672BA1ECB400DF6A4F /* HistoryCell */,
 				CE9F90F02B4F758C004C027A /* MenuItemCell */,
 				FA6F5A232C9885C600C28E67 /* MutationItemCell */,
+				FAF36AFE2CB459A800059F46 /* ProgressRoomCell */,
 				FA30402D2CAB9F1F000E65A0 /* RatingCell */,
 				FA66722E2CB120B800C055F7 /* RoomRequirementCell */,
 				CE5EC2E22C3CE327005D5426 /* SelectionCell */,
@@ -3804,6 +3826,7 @@
 		FA5B52572CAE3D8400BA733F /* RoomRequirementList */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8890C2CB2F42D00BA3824 /* BottomSheet */,
 				FA5B52582CAE3E1100BA733F /* RoomRequirementListEntity.swift */,
 				FA5B52592CAE3E1100BA733F /* RoomRequirementListInteractor.swift */,
 				FA5B525A2CAE3E1100BA733F /* RoomRequirementListPresenter.swift */,
@@ -3906,6 +3929,7 @@
 				FAA17C762CB1542000630D74 /* EquipmentProcurementRouter.swift */,
 				FAA17C772CB1542000630D74 /* EquipmentProcurementView.swift */,
 				FAA17C782CB1542000630D74 /* EquipmentProcurementView.xib */,
+				FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */,
 			);
 			path = EquipmentProcurement;
 			sourceTree = "<group>";
@@ -4022,6 +4046,24 @@
 			path = SelectComplaintActionBottomSheet;
 			sourceTree = "<group>";
 		};
+		FAF36AF72CB4554000059F46 /* ProgressRoomReqBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */,
+				FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */,
+			);
+			path = ProgressRoomReqBottomSheet;
+			sourceTree = "<group>";
+		};
+		FAF36AFE2CB459A800059F46 /* ProgressRoomCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */,
+				FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */,
+			);
+			path = ProgressRoomCell;
+			sourceTree = "<group>";
+		};
 		FAF380F42C94BCFF004B63FE /* MutationBotomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -4066,6 +4108,24 @@
 				FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */,
 			);
 			path = EquipmentMutationSelection;
+			sourceTree = "<group>";
+		};
+		FAF8890C2CB2F42D00BA3824 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8890D2CB2F44000BA3824 /* ActionRoomReqBottomSheet */,
+				FAF36AF72CB4554000059F46 /* ProgressRoomReqBottomSheet */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		FAF8890D2CB2F44000BA3824 /* ActionRoomReqBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */,
+				FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */,
+			);
+			path = ActionRoomReqBottomSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4202,6 +4262,7 @@
 				CE6867FC2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
 				FA0DEE712C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
+				FAF36B042CB459D300059F46 /* ProgressRoomCell.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0B2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
 				CEEED8742B7A86CB00672952 /* ScanView.xib in Resources */,
@@ -4272,6 +4333,7 @@
 				CE75455A2C3AF221002234F8 /* AddTaskSectionView.xib in Resources */,
 				CE4D121D2C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				FAF36AFB2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */,
 				CE1DDDBA2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */,
 				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D262BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
@@ -4319,6 +4381,7 @@
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF43A352C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				FAF889102CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */,
 				CEC1B06C2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
 				CE73274E2BECA849000AD875 /* ComplaintDetailView.xib in Resources */,
 				CE916A802C06372000C8B153 /* CalibrationSectionView.xib in Resources */,
@@ -4407,6 +4470,7 @@
 				CE6867FD2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
 				FA0DEE722C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
+				FAF36B012CB459D300059F46 /* ProgressRoomCell.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0C2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
 				CEEED8752B7A86CB00672952 /* ScanView.xib in Resources */,
@@ -4477,6 +4541,7 @@
 				CE75455C2C3AF221002234F8 /* AddTaskSectionView.xib in Resources */,
 				CE4D12232C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				FAF36AFD2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */,
 				CE1DDDBC2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */,
 				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D272BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
@@ -4524,6 +4589,7 @@
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF43A372C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				FAF889122CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */,
 				CEC1B06D2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
 				CE73274F2BECA849000AD875 /* ComplaintDetailView.xib in Resources */,
 				CE916A822C06372000C8B153 /* CalibrationSectionView.xib in Resources */,
@@ -4723,6 +4789,7 @@
 				CE5EC2DF2C3CE1D5005D5426 /* SparePartBottomSheet.swift in Sources */,
 				CEE07C972B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift in Sources */,
 				CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */,
+				FAF36B032CB459D300059F46 /* ProgressRoomCell.swift in Sources */,
 				CEB703A12BA87FBD004583C7 /* PreventiveCalendarListRouter.swift in Sources */,
 				CEF049B72C1C80D2006B6FFD /* SelectTechnicialCell.swift in Sources */,
 				CE2E3AF62BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
@@ -4864,11 +4931,13 @@
 				FAA17C832CB1542000630D74 /* EquipmentProcurementInteractor.swift in Sources */,
 				CEB8C3712C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */,
 				CEE8CB912BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
+				FAF36AFA2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */,
 				CE74361F2BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CE7C3BD42C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */,
 				CE422DD72BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6B2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
+				FAF36AF52CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */,
 				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				FAA0E3402C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */,
@@ -4936,6 +5005,7 @@
 				CEADA5032C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */,
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEC336F92B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
+				FAF889112CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D252B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift in Sources */,
 				CEB05F4E2C6072D4004BA1AE /* DocumentPresenter.swift in Sources */,
@@ -5125,6 +5195,7 @@
 				CE5EC2E02C3CE1D5005D5426 /* SparePartBottomSheet.swift in Sources */,
 				CEE07C982B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift in Sources */,
 				CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */,
+				FAF36B022CB459D300059F46 /* ProgressRoomCell.swift in Sources */,
 				CEB703A22BA87FBD004583C7 /* PreventiveCalendarListRouter.swift in Sources */,
 				CEF049B92C1C80D2006B6FFD /* SelectTechnicialCell.swift in Sources */,
 				CE2E3AF72BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
@@ -5266,11 +5337,13 @@
 				FAA17C7E2CB1542000630D74 /* EquipmentProcurementInteractor.swift in Sources */,
 				CEB8C3732C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */,
 				CEE8CB922BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
+				FAF36AFC2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */,
 				CE7436202BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CE7C3BD72C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */,
 				CE422DD82BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6C2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
+				FAF36AF42CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */,
 				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				FAA0E3412C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */,
@@ -5338,6 +5411,7 @@
 				CEADA5052C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */,
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEC336FA2B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
+				FAF889132CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D262B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift in Sources */,
 				CEB05F542C6072D4004BA1AE /* DocumentPresenter.swift in Sources */,
