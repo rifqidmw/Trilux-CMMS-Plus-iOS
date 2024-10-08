@@ -10,7 +10,7 @@ import Combine
 
 enum SortingBottomSheetType {
     case plain
-    case cateogry
+    case category
 }
 
 protocol SortingBottomSheetDelegate: AnyObject {
@@ -72,7 +72,7 @@ extension SortingBottomSheet {
                 selectedIndex = IndexPath(row: 0, section: 0)
                 selectedSortItem = data[0]
             }
-        case .cateogry:
+        case .category:
             allCategoryButton.isHidden = false
             titleLabel.text = "Kategori"
         default: break

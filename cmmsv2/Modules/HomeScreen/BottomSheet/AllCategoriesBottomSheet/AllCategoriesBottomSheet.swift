@@ -191,10 +191,6 @@ extension AllCategoriesBottomSheet: UICollectionViewDataSource, UICollectionView
             self.dismissBottomSheet() {
                 delegate.didTapRoomRequirementCategory()
             }
-        case .assetSuggest:
-            self.dismissBottomSheet() {
-                delegate.didTapAssetSuggestCategory()
-            }
         case .rating:
             self.dismissBottomSheet() {
                 delegate.didTapRatingCategory()

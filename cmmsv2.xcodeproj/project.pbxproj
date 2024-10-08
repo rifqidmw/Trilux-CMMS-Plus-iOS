@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04215FE81D148BCC2E527EBB /* Pods_cmmsv2_DEV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783C2821C28073D76A44C366 /* Pods_cmmsv2_DEV.framework */; };
-		5AC2B1AACC0BCC0313E58D7C /* Pods_cmmsv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB1D615025482C54FBE7942 /* Pods_cmmsv2.framework */; };
+		AB6FE1AC720CF3F47A8F60EB /* Pods_cmmsv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D303DBA8C9C605CA6FF452A6 /* Pods_cmmsv2.framework */; };
+		AE169B89FC05C2A8A13BFB6A /* Pods_cmmsv2_DEV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8394BD6136146A85715B8C68 /* Pods_cmmsv2_DEV.framework */; };
 		CE0A8CD52C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A8CD32C089F7A0050F576 /* PreventiveCategoryTVC.swift */; };
 		CE0A8CD62C089F7A0050F576 /* PreventiveCategoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8CD42C089F7A0050F576 /* PreventiveCategoryTVC.xib */; };
 		CE0A8CD72C089F7A0050F576 /* PreventiveCategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A8CD32C089F7A0050F576 /* PreventiveCategoryTVC.swift */; };
@@ -1001,6 +1001,8 @@
 		FA0DEE712C80E221005EA0E0 /* DashboardCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */; };
 		FA0DEE722C80E221005EA0E0 /* DashboardCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */; };
 		FA0DEE732C80E221005EA0E0 /* DashboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DEE6E2C80E221005EA0E0 /* DashboardCardView.swift */; };
+		FA1B57742CB0162700D88F43 /* RoomRequirementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B57732CB0162700D88F43 /* RoomRequirementListView+Delegate.swift */; };
+		FA1B57752CB0162700D88F43 /* RoomRequirementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B57732CB0162700D88F43 /* RoomRequirementListView+Delegate.swift */; };
 		FA3040212CAB9D99000E65A0 /* RatingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30401F2CAB9D99000E65A0 /* RatingListView.swift */; };
 		FA3040222CAB9D99000E65A0 /* RatingListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30401E2CAB9D99000E65A0 /* RatingListRouter.swift */; };
 		FA3040232CAB9D99000E65A0 /* RatingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30401C2CAB9D99000E65A0 /* RatingListInteractor.swift */; };
@@ -1025,6 +1027,26 @@
 		FA55E8362C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA55E8342C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib */; };
 		FA55E8372C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55E8332C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift */; };
 		FA55E8382C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA55E8342C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib */; };
+		FA5B525E2CAE3E1100BA733F /* RoomRequirementListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B52582CAE3E1100BA733F /* RoomRequirementListEntity.swift */; };
+		FA5B525F2CAE3E1100BA733F /* RoomRequirementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B525C2CAE3E1100BA733F /* RoomRequirementListView.swift */; };
+		FA5B52602CAE3E1100BA733F /* RoomRequirementListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B525A2CAE3E1100BA733F /* RoomRequirementListPresenter.swift */; };
+		FA5B52612CAE3E1100BA733F /* RoomRequirementListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B52592CAE3E1100BA733F /* RoomRequirementListInteractor.swift */; };
+		FA5B52622CAE3E1100BA733F /* RoomRequirementListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B525B2CAE3E1100BA733F /* RoomRequirementListRouter.swift */; };
+		FA5B52632CAE3E1100BA733F /* RoomRequirementListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B525D2CAE3E1100BA733F /* RoomRequirementListView.xib */; };
+		FA5B52642CAE3E1100BA733F /* RoomRequirementListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B52582CAE3E1100BA733F /* RoomRequirementListEntity.swift */; };
+		FA5B52652CAE3E1100BA733F /* RoomRequirementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B525C2CAE3E1100BA733F /* RoomRequirementListView.swift */; };
+		FA5B52662CAE3E1100BA733F /* RoomRequirementListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B525A2CAE3E1100BA733F /* RoomRequirementListPresenter.swift */; };
+		FA5B52672CAE3E1100BA733F /* RoomRequirementListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B52592CAE3E1100BA733F /* RoomRequirementListInteractor.swift */; };
+		FA5B52682CAE3E1100BA733F /* RoomRequirementListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B525B2CAE3E1100BA733F /* RoomRequirementListRouter.swift */; };
+		FA5B52692CAE3E1100BA733F /* RoomRequirementListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B525D2CAE3E1100BA733F /* RoomRequirementListView.xib */; };
+		FA5B52742CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B52732CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib */; };
+		FA5B52752CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B52722CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift */; };
+		FA5B52762CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B52722CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift */; };
+		FA5B52772CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B52732CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib */; };
+		FA6672372CB1246900C055F7 /* RoomRequirementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6672362CB1246900C055F7 /* RoomRequirementCell.xib */; };
+		FA6672382CB1246900C055F7 /* RoomRequirementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6672352CB1246900C055F7 /* RoomRequirementCell.swift */; };
+		FA6672392CB1246900C055F7 /* RoomRequirementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6672352CB1246900C055F7 /* RoomRequirementCell.swift */; };
+		FA66723A2CB1246900C055F7 /* RoomRequirementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6672362CB1246900C055F7 /* RoomRequirementCell.xib */; };
 		FA6F5A0D2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */; };
 		FA6F5A0E2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */; };
 		FA6F5A172C98726000C28E67 /* EquipmentManagementDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */; };
@@ -1057,6 +1079,18 @@
 		FA9B43A82C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B43A42C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib */; };
 		FAA0E3402C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */; };
 		FAA0E3412C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */; };
+		FAA17C792CB1542000630D74 /* EquipmentProcurementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA17C782CB1542000630D74 /* EquipmentProcurementView.xib */; };
+		FAA17C7A2CB1542000630D74 /* EquipmentProcurementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C752CB1542000630D74 /* EquipmentProcurementPresenter.swift */; };
+		FAA17C7B2CB1542000630D74 /* EquipmentProcurementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C762CB1542000630D74 /* EquipmentProcurementRouter.swift */; };
+		FAA17C7C2CB1542000630D74 /* EquipmentProcurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C772CB1542000630D74 /* EquipmentProcurementView.swift */; };
+		FAA17C7D2CB1542000630D74 /* EquipmentProcurementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C732CB1542000630D74 /* EquipmentProcurementEntity.swift */; };
+		FAA17C7E2CB1542000630D74 /* EquipmentProcurementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C742CB1542000630D74 /* EquipmentProcurementInteractor.swift */; };
+		FAA17C7F2CB1542000630D74 /* EquipmentProcurementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C752CB1542000630D74 /* EquipmentProcurementPresenter.swift */; };
+		FAA17C802CB1542000630D74 /* EquipmentProcurementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C762CB1542000630D74 /* EquipmentProcurementRouter.swift */; };
+		FAA17C812CB1542000630D74 /* EquipmentProcurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C772CB1542000630D74 /* EquipmentProcurementView.swift */; };
+		FAA17C822CB1542000630D74 /* EquipmentProcurementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C732CB1542000630D74 /* EquipmentProcurementEntity.swift */; };
+		FAA17C832CB1542000630D74 /* EquipmentProcurementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA17C742CB1542000630D74 /* EquipmentProcurementInteractor.swift */; };
+		FAA17C842CB1542000630D74 /* EquipmentProcurementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA17C782CB1542000630D74 /* EquipmentProcurementView.xib */; };
 		FAA68D0D2C87A1B800A2C8EF /* RatingBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */; };
 		FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
 		FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */; };
@@ -1129,6 +1163,16 @@
 		FAE2DABA2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */; };
 		FAE2DABB2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */; };
 		FAE2DABC2C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */; };
+		FAF36AF42CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */; };
+		FAF36AF52CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */; };
+		FAF36AFA2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */; };
+		FAF36AFB2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */; };
+		FAF36AFC2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */; };
+		FAF36AFD2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */; };
+		FAF36B012CB459D300059F46 /* ProgressRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */; };
+		FAF36B022CB459D300059F46 /* ProgressRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */; };
+		FAF36B032CB459D300059F46 /* ProgressRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */; };
+		FAF36B042CB459D300059F46 /* ProgressRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */; };
 		FAF380FA2C94BD26004B63FE /* MutationBotomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */; };
 		FAF380FB2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
 		FAF380FC2C94BD26004B63FE /* MutationBotomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */; };
@@ -1149,18 +1193,6 @@
 		FAF3CCBB2C8F66D400630A96 /* EquipmentManagementListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAE2C8F66D400630A96 /* EquipmentManagementListInteractor.swift */; };
 		FAF3CCBC2C8F66D400630A96 /* EquipmentManagementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCAF2C8F66D400630A96 /* EquipmentManagementListView.swift */; };
 		FAF3CCBD2C8F66D400630A96 /* EquipmentManagementListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCB12C8F66D400630A96 /* EquipmentManagementListEntity.swift */; };
-		FAF3CCC52C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */; };
-		FAF3CCC62C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */; };
-		FAF3CCC72C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */; };
-		FAF3CCC82C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */; };
-		FAF3CCC92C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */; };
-		FAF3CCCA2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */; };
-		FAF3CCCB2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */; };
-		FAF3CCCC2C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */; };
-		FAF3CCCD2C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */; };
-		FAF3CCCE2C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */; };
-		FAF3CCCF2C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */; };
-		FAF3CCD02C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */; };
 		FAF3CCD82C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD22C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift */; };
 		FAF3CCD92C8F801100630A96 /* EquipmentMutationSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD32C8F801100630A96 /* EquipmentMutationSelectionRouter.swift */; };
 		FAF3CCDA2C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */; };
@@ -1173,14 +1205,17 @@
 		FAF3CCE12C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */; };
 		FAF3CCE22C8F801100630A96 /* EquipmentMutationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */; };
 		FAF3CCE32C8F801100630A96 /* EquipmentMutationSelectionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */; };
+		FAF889102CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */; };
+		FAF889112CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */; };
+		FAF889122CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */; };
+		FAF889132CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		091050D50A6B535F4F65456A /* Pods-cmmsv2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2/Pods-cmmsv2.release.xcconfig"; sourceTree = "<group>"; };
-		0DB1D615025482C54FBE7942 /* Pods_cmmsv2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmmsv2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2032044EA43460AEFB56E80C /* Pods-cmmsv2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2/Pods-cmmsv2.debug.xcconfig"; sourceTree = "<group>"; };
-		287DD405FF6CE31488A083FF /* Pods-cmmsv2 DEV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.debug.xcconfig"; sourceTree = "<group>"; };
-		783C2821C28073D76A44C366 /* Pods_cmmsv2_DEV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmmsv2_DEV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51B5E4E8F9032FEB6423C943 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
+		6EE6CCD05BC72B3110CCD852 /* Pods-cmmsv2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2/Pods-cmmsv2.release.xcconfig"; sourceTree = "<group>"; };
+		8394BD6136146A85715B8C68 /* Pods_cmmsv2_DEV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmmsv2_DEV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C28C1A675B6555004262BF51 /* Pods-cmmsv2 DEV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0A8CD32C089F7A0050F576 /* PreventiveCategoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventiveCategoryTVC.swift; sourceTree = "<group>"; };
 		CE0A8CD42C089F7A0050F576 /* PreventiveCategoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreventiveCategoryTVC.xib; sourceTree = "<group>"; };
 		CE0B3AE32B9B869100A55B81 /* WorkSheetCorrectiveListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetCorrectiveListPresenter.swift; sourceTree = "<group>"; };
@@ -1679,10 +1714,13 @@
 		CEFD6D1C2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSheetCorrectiveDetailView.xib; sourceTree = "<group>"; };
 		CEFD6D1D2BF2713C00A8BA04 /* WorkSheetCorrectiveDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetCorrectiveDetailEntity.swift; sourceTree = "<group>"; };
 		CEFE59B62B5EBF9200BE73CB /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		D303DBA8C9C605CA6FF452A6 /* Pods_cmmsv2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmmsv2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84788E2614504D80C6657E1 /* Pods-cmmsv2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2.debug.xcconfig"; path = "Target Support Files/Pods-cmmsv2/Pods-cmmsv2.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09E9D22CA9D87C00876EAE /* RoomListBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListBottomSheet.swift; sourceTree = "<group>"; };
 		FA09E9D32CA9D87C00876EAE /* RoomListBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomListBottomSheet.xib; sourceTree = "<group>"; };
 		FA0DEE6E2C80E221005EA0E0 /* DashboardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCardView.swift; sourceTree = "<group>"; };
 		FA0DEE6F2C80E221005EA0E0 /* DashboardCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardCardView.xib; sourceTree = "<group>"; };
+		FA1B57732CB0162700D88F43 /* RoomRequirementListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoomRequirementListView+Delegate.swift"; sourceTree = "<group>"; };
 		FA30401B2CAB9D99000E65A0 /* RatingListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingListEntity.swift; sourceTree = "<group>"; };
 		FA30401C2CAB9D99000E65A0 /* RatingListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingListInteractor.swift; sourceTree = "<group>"; };
 		FA30401D2CAB9D99000E65A0 /* RatingListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingListPresenter.swift; sourceTree = "<group>"; };
@@ -1695,6 +1733,16 @@
 		FA49E5B62C807A4600267925 /* ProfileInformationCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInformationCardView.xib; sourceTree = "<group>"; };
 		FA55E8332C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteComplaintConfirmBottomSheet.swift; sourceTree = "<group>"; };
 		FA55E8342C9F4673006AB3D5 /* DeleteComplaintConfirmBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteComplaintConfirmBottomSheet.xib; sourceTree = "<group>"; };
+		FA5B52582CAE3E1100BA733F /* RoomRequirementListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementListEntity.swift; sourceTree = "<group>"; };
+		FA5B52592CAE3E1100BA733F /* RoomRequirementListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementListInteractor.swift; sourceTree = "<group>"; };
+		FA5B525A2CAE3E1100BA733F /* RoomRequirementListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementListPresenter.swift; sourceTree = "<group>"; };
+		FA5B525B2CAE3E1100BA733F /* RoomRequirementListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementListRouter.swift; sourceTree = "<group>"; };
+		FA5B525C2CAE3E1100BA733F /* RoomRequirementListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementListView.swift; sourceTree = "<group>"; };
+		FA5B525D2CAE3E1100BA733F /* RoomRequirementListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomRequirementListView.xib; sourceTree = "<group>"; };
+		FA5B52722CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementBottomSheet.swift; sourceTree = "<group>"; };
+		FA5B52732CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomRequirementBottomSheet.xib; sourceTree = "<group>"; };
+		FA6672352CB1246900C055F7 /* RoomRequirementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementCell.swift; sourceTree = "<group>"; };
+		FA6672362CB1246900C055F7 /* RoomRequirementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomRequirementCell.xib; sourceTree = "<group>"; };
 		FA6F5A0C2C9860A400C28E67 /* EquipmentManagementListView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentManagementListView+Delegate.swift"; sourceTree = "<group>"; };
 		FA6F5A112C98726000C28E67 /* EquipmentManagementDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailPresenter.swift; sourceTree = "<group>"; };
 		FA6F5A122C98726000C28E67 /* EquipmentManagementDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementDetailRouter.swift; sourceTree = "<group>"; };
@@ -1711,6 +1759,12 @@
 		FA9B43A32C9EEF660049C101 /* ComplaintHistoryBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintHistoryBottomSheet.swift; sourceTree = "<group>"; };
 		FA9B43A42C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintHistoryBottomSheet.xib; sourceTree = "<group>"; };
 		FAA0E33F2C9A0067004DE759 /* EquipmentManagementListView+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentManagementListView+Collection.swift"; sourceTree = "<group>"; };
+		FAA17C732CB1542000630D74 /* EquipmentProcurementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentProcurementEntity.swift; sourceTree = "<group>"; };
+		FAA17C742CB1542000630D74 /* EquipmentProcurementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentProcurementInteractor.swift; sourceTree = "<group>"; };
+		FAA17C752CB1542000630D74 /* EquipmentProcurementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentProcurementPresenter.swift; sourceTree = "<group>"; };
+		FAA17C762CB1542000630D74 /* EquipmentProcurementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentProcurementRouter.swift; sourceTree = "<group>"; };
+		FAA17C772CB1542000630D74 /* EquipmentProcurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentProcurementView.swift; sourceTree = "<group>"; };
+		FAA17C782CB1542000630D74 /* EquipmentProcurementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentProcurementView.xib; sourceTree = "<group>"; };
 		FAA68D0B2C87A1B800A2C8EF /* RatingBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBottomSheet.swift; sourceTree = "<group>"; };
 		FAA68D0C2C87A1B800A2C8EF /* RatingBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingBottomSheet.xib; sourceTree = "<group>"; };
 		FAA9C96E2CA050EE00735C85 /* EditComplaintView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditComplaintView+Delegate.swift"; sourceTree = "<group>"; };
@@ -1747,6 +1801,11 @@
 		FAE08BB32C84AD1000E456E4 /* StatusOverviewPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusOverviewPanelView.xib; sourceTree = "<group>"; };
 		FAE2DAB72C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectComplaintActionBottomSheet.swift; sourceTree = "<group>"; };
 		FAE2DAB82C9F222D00F7EC73 /* SelectComplaintActionBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectComplaintActionBottomSheet.xib; sourceTree = "<group>"; };
+		FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentProcurementView+Delegate.swift"; sourceTree = "<group>"; };
+		FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRoomReqBottomSheet.swift; sourceTree = "<group>"; };
+		FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressRoomReqBottomSheet.xib; sourceTree = "<group>"; };
+		FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRoomCell.swift; sourceTree = "<group>"; };
+		FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressRoomCell.xib; sourceTree = "<group>"; };
 		FAF380F82C94BD26004B63FE /* MutationBotomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutationBotomSheet.swift; sourceTree = "<group>"; };
 		FAF380F92C94BD26004B63FE /* MutationBotomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MutationBotomSheet.xib; sourceTree = "<group>"; };
 		FAF380FF2C94FC20004B63FE /* EquipmentManagementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementCell.swift; sourceTree = "<group>"; };
@@ -1757,19 +1816,14 @@
 		FAF3CCAF2C8F66D400630A96 /* EquipmentManagementListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementListView.swift; sourceTree = "<group>"; };
 		FAF3CCB02C8F66D400630A96 /* EquipmentManagementListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentManagementListView.xib; sourceTree = "<group>"; };
 		FAF3CCB12C8F66D400630A96 /* EquipmentManagementListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManagementListEntity.swift; sourceTree = "<group>"; };
-		FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementPresenter.swift; sourceTree = "<group>"; };
-		FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementRouter.swift; sourceTree = "<group>"; };
-		FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementInteractor.swift; sourceTree = "<group>"; };
-		FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementView.swift; sourceTree = "<group>"; };
-		FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomRequirementView.xib; sourceTree = "<group>"; };
-		FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequirementEntity.swift; sourceTree = "<group>"; };
 		FAF3CCD22C8F801100630A96 /* EquipmentMutationSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionPresenter.swift; sourceTree = "<group>"; };
 		FAF3CCD32C8F801100630A96 /* EquipmentMutationSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionRouter.swift; sourceTree = "<group>"; };
 		FAF3CCD42C8F801100630A96 /* EquipmentMutationSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionInteractor.swift; sourceTree = "<group>"; };
 		FAF3CCD52C8F801100630A96 /* EquipmentMutationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionView.swift; sourceTree = "<group>"; };
 		FAF3CCD62C8F801100630A96 /* EquipmentMutationSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentMutationSelectionView.xib; sourceTree = "<group>"; };
 		FAF3CCD72C8F801100630A96 /* EquipmentMutationSelectionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMutationSelectionEntity.swift; sourceTree = "<group>"; };
-		FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmmsv2 DEV.release.xcconfig"; path = "Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV.release.xcconfig"; sourceTree = "<group>"; };
+		FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRoomReqBottomSheet.swift; sourceTree = "<group>"; };
+		FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionRoomReqBottomSheet.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1777,7 +1831,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC2B1AACC0BCC0313E58D7C /* Pods_cmmsv2.framework in Frameworks */,
+				AB6FE1AC720CF3F47A8F60EB /* Pods_cmmsv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1785,31 +1839,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04215FE81D148BCC2E527EBB /* Pods_cmmsv2_DEV.framework in Frameworks */,
+				AE169B89FC05C2A8A13BFB6A /* Pods_cmmsv2_DEV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13AF8736BBE9AD0FDDF87F76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D303DBA8C9C605CA6FF452A6 /* Pods_cmmsv2.framework */,
+				8394BD6136146A85715B8C68 /* Pods_cmmsv2_DEV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B37F19D939CC28597B209408 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2032044EA43460AEFB56E80C /* Pods-cmmsv2.debug.xcconfig */,
-				091050D50A6B535F4F65456A /* Pods-cmmsv2.release.xcconfig */,
-				287DD405FF6CE31488A083FF /* Pods-cmmsv2 DEV.debug.xcconfig */,
-				FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */,
+				D84788E2614504D80C6657E1 /* Pods-cmmsv2.debug.xcconfig */,
+				6EE6CCD05BC72B3110CCD852 /* Pods-cmmsv2.release.xcconfig */,
+				C28C1A675B6555004262BF51 /* Pods-cmmsv2 DEV.debug.xcconfig */,
+				51B5E4E8F9032FEB6423C943 /* Pods-cmmsv2 DEV.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		C0DD56430016F841B36450DA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0DB1D615025482C54FBE7942 /* Pods_cmmsv2.framework */,
-				783C2821C28073D76A44C366 /* Pods_cmmsv2_DEV.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE0A8CD22C089EFC0050F576 /* Cell */ = {
@@ -2416,7 +2470,6 @@
 		CE90B1872B9A1EBE00515AD6 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				FA30402D2CAB9F1F000E65A0 /* RatingCell */,
 				CEB8C36D2C610DDD0040B485 /* AssetMaintenanceInfoCell */,
 				CE6286912C19D09A00CB552F /* CorrectiveCell */,
 				FAF380FE2C94FBFF004B63FE /* EquipmentManagementCell */,
@@ -2424,6 +2477,9 @@
 				CEC1B0672BA1ECB400DF6A4F /* HistoryCell */,
 				CE9F90F02B4F758C004C027A /* MenuItemCell */,
 				FA6F5A232C9885C600C28E67 /* MutationItemCell */,
+				FAF36AFE2CB459A800059F46 /* ProgressRoomCell */,
+				FA30402D2CAB9F1F000E65A0 /* RatingCell */,
+				FA66722E2CB120B800C055F7 /* RoomRequirementCell */,
 				CE5EC2E22C3CE327005D5426 /* SelectionCell */,
 				CEC802892C20B645002EE193 /* SelectTechnicialCell */,
 				CEAF9E382C5A307500EFBBC2 /* StepperCell */,
@@ -3003,7 +3059,7 @@
 				CECB3DA32B45D962004A260D /* cmmsv2 */,
 				CECB3DA22B45D962004A260D /* Products */,
 				B37F19D939CC28597B209408 /* Pods */,
-				C0DD56430016F841B36450DA /* Frameworks */,
+				13AF8736BBE9AD0FDDF87F76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3070,11 +3126,11 @@
 				FA55E8392C9F4FD6006AB3D5 /* EditComplaint */,
 				CE9E7D652B529D9E00240A7D /* EditProfile */,
 				CEE862032C5CF66D00AA4317 /* EditTechnical */,
-				FA6F5A0F2C9865B800C28E67 /* Equip */,
 				CEB05F602C60C6D0004BA1AE /* EquipmentMaintenance */,
 				FA6F5A102C98724500C28E67 /* EquipmentManagementDetail */,
 				FAF3CCAB2C8F66BA00630A96 /* EquipmentManagementList */,
 				FAF3CCD12C8F7FFC00630A96 /* EquipmentMutationSelection */,
+				FAA17C722CB153EA00630D74 /* EquipmentProcurement */,
 				CEE8CB862BF7C8E7006E59B7 /* HistoryDetail */,
 				CEC1B0542BA1E37600DF6A4F /* HistoryList */,
 				CEC207922B4AD64E0073FA1E /* HomeScreen */,
@@ -3086,7 +3142,7 @@
 				CEE07C862B9F405F00EFBFB8 /* PreventiveMaintenanceList */,
 				FA30401A2CAB9D7A000E65A0 /* RatingList */,
 				CE82D4492B47DD8E00A54124 /* RegistrationHospital */,
-				FAF3CCBE2C8F7F0500630A96 /* RoomRequirement */,
+				FA5B52572CAE3D8400BA733F /* RoomRequirementList */,
 				CEEED8652B7A86A800672952 /* Scan */,
 				CEF72EEE2B4681D200815E4C /* SplashScreen */,
 				CE9E7D642B529D9400240A7D /* UserProfile */,
@@ -3280,6 +3336,7 @@
 				CEAF063A2B6F8E9400239C97 /* ExpiredBottomSheet */,
 				FAF380F42C94BCFF004B63FE /* MutationBotomSheet */,
 				CE1DDDB72C5EB5320078FA6E /* ReminderPreventiveBottomSheet */,
+				FA5B52712CAE4AD100BA733F /* RoomRequirementBottomSheet */,
 				CEE67D312B54425300D0844B /* WorkSheetBottomSheet */,
 			);
 			path = BottomSheet;
@@ -3766,11 +3823,37 @@
 			path = EditComplaint;
 			sourceTree = "<group>";
 		};
-		FA6F5A0F2C9865B800C28E67 /* Equip */ = {
+		FA5B52572CAE3D8400BA733F /* RoomRequirementList */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8890C2CB2F42D00BA3824 /* BottomSheet */,
+				FA5B52582CAE3E1100BA733F /* RoomRequirementListEntity.swift */,
+				FA5B52592CAE3E1100BA733F /* RoomRequirementListInteractor.swift */,
+				FA5B525A2CAE3E1100BA733F /* RoomRequirementListPresenter.swift */,
+				FA5B525B2CAE3E1100BA733F /* RoomRequirementListRouter.swift */,
+				FA5B525C2CAE3E1100BA733F /* RoomRequirementListView.swift */,
+				FA5B525D2CAE3E1100BA733F /* RoomRequirementListView.xib */,
+				FA1B57732CB0162700D88F43 /* RoomRequirementListView+Delegate.swift */,
 			);
-			path = Equip;
+			path = RoomRequirementList;
+			sourceTree = "<group>";
+		};
+		FA5B52712CAE4AD100BA733F /* RoomRequirementBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA5B52722CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift */,
+				FA5B52732CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib */,
+			);
+			path = RoomRequirementBottomSheet;
+			sourceTree = "<group>";
+		};
+		FA66722E2CB120B800C055F7 /* RoomRequirementCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA6672352CB1246900C055F7 /* RoomRequirementCell.swift */,
+				FA6672362CB1246900C055F7 /* RoomRequirementCell.xib */,
+			);
+			path = RoomRequirementCell;
 			sourceTree = "<group>";
 		};
 		FA6F5A102C98724500C28E67 /* EquipmentManagementDetail */ = {
@@ -3835,6 +3918,20 @@
 				FA9B43A42C9EEF660049C101 /* ComplaintHistoryBottomSheet.xib */,
 			);
 			path = ComplaintHistoryBottomSheet;
+			sourceTree = "<group>";
+		};
+		FAA17C722CB153EA00630D74 /* EquipmentProcurement */ = {
+			isa = PBXGroup;
+			children = (
+				FAA17C732CB1542000630D74 /* EquipmentProcurementEntity.swift */,
+				FAA17C742CB1542000630D74 /* EquipmentProcurementInteractor.swift */,
+				FAA17C752CB1542000630D74 /* EquipmentProcurementPresenter.swift */,
+				FAA17C762CB1542000630D74 /* EquipmentProcurementRouter.swift */,
+				FAA17C772CB1542000630D74 /* EquipmentProcurementView.swift */,
+				FAA17C782CB1542000630D74 /* EquipmentProcurementView.xib */,
+				FAF36AF32CB43EFA00059F46 /* EquipmentProcurementView+Delegate.swift */,
+			);
+			path = EquipmentProcurement;
 			sourceTree = "<group>";
 		};
 		FAA68D0A2C87A18B00A2C8EF /* RatingBottomSheet */ = {
@@ -3949,6 +4046,24 @@
 			path = SelectComplaintActionBottomSheet;
 			sourceTree = "<group>";
 		};
+		FAF36AF72CB4554000059F46 /* ProgressRoomReqBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAF36AF82CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift */,
+				FAF36AF92CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib */,
+			);
+			path = ProgressRoomReqBottomSheet;
+			sourceTree = "<group>";
+		};
+		FAF36AFE2CB459A800059F46 /* ProgressRoomCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAF36AFF2CB459D300059F46 /* ProgressRoomCell.swift */,
+				FAF36B002CB459D300059F46 /* ProgressRoomCell.xib */,
+			);
+			path = ProgressRoomCell;
+			sourceTree = "<group>";
+		};
 		FAF380F42C94BCFF004B63FE /* MutationBotomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -3982,19 +4097,6 @@
 			path = EquipmentManagementList;
 			sourceTree = "<group>";
 		};
-		FAF3CCBE2C8F7F0500630A96 /* RoomRequirement */ = {
-			isa = PBXGroup;
-			children = (
-				FAF3CCBF2C8F7F1A00630A96 /* RoomRequirementPresenter.swift */,
-				FAF3CCC02C8F7F1A00630A96 /* RoomRequirementRouter.swift */,
-				FAF3CCC12C8F7F1A00630A96 /* RoomRequirementInteractor.swift */,
-				FAF3CCC22C8F7F1A00630A96 /* RoomRequirementView.swift */,
-				FAF3CCC32C8F7F1A00630A96 /* RoomRequirementView.xib */,
-				FAF3CCC42C8F7F1A00630A96 /* RoomRequirementEntity.swift */,
-			);
-			path = RoomRequirement;
-			sourceTree = "<group>";
-		};
 		FAF3CCD12C8F7FFC00630A96 /* EquipmentMutationSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -4008,6 +4110,24 @@
 			path = EquipmentMutationSelection;
 			sourceTree = "<group>";
 		};
+		FAF8890C2CB2F42D00BA3824 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8890D2CB2F44000BA3824 /* ActionRoomReqBottomSheet */,
+				FAF36AF72CB4554000059F46 /* ProgressRoomReqBottomSheet */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		FAF8890D2CB2F44000BA3824 /* ActionRoomReqBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8890E2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift */,
+				FAF8890F2CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib */,
+			);
+			path = ActionRoomReqBottomSheet;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -4015,11 +4135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CECB3DB52B45D963004A260D /* Build configuration list for PBXNativeTarget "cmmsv2" */;
 			buildPhases = (
-				B1F828802C17257180A4E598 /* [CP] Check Pods Manifest.lock */,
+				CD8F99A961987931115EE5BD /* [CP] Check Pods Manifest.lock */,
 				CECB3D9D2B45D962004A260D /* Sources */,
 				CECB3D9E2B45D962004A260D /* Frameworks */,
 				CECB3D9F2B45D962004A260D /* Resources */,
-				B867EE6A3FB3204C8A20C7C0 /* [CP] Embed Pods Frameworks */,
+				A008260FDDBDCD72905C7A6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4034,11 +4154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CECB3DC92B45DAFF004A260D /* Build configuration list for PBXNativeTarget "cmmsv2 DEV" */;
 			buildPhases = (
-				C3C0696F1E59F1DC63932336 /* [CP] Check Pods Manifest.lock */,
+				7122141E681C1425562C37B8 /* [CP] Check Pods Manifest.lock */,
 				CECB3DC02B45DAFF004A260D /* Sources */,
 				CECB3DC42B45DAFF004A260D /* Frameworks */,
 				CECB3DC52B45DAFF004A260D /* Resources */,
-				115D31EFC55EAFDF3E294A9B /* [CP] Embed Pods Frameworks */,
+				FC9DF001597B77488BF5009B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4142,6 +4262,7 @@
 				CE6867FC2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
 				FA0DEE712C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B82B4B04550073FA1E /* CategorySectionView.xib in Resources */,
+				FAF36B042CB459D300059F46 /* ProgressRoomCell.xib in Resources */,
 				CE9E7D872B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0B2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
 				CEEED8742B7A86CB00672952 /* ScanView.xib in Resources */,
@@ -4153,6 +4274,7 @@
 				CE916A882C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				FA3040262CAB9D99000E65A0 /* RatingListView.xib in Resources */,
 				CE0EC4B22B79094400888BE8 /* ActionBarView.xib in Resources */,
+				FA5B52692CAE3E1100BA733F /* RoomRequirementListView.xib in Resources */,
 				CEBF70C12C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */,
 				CEE780BA2C0C558B001BA9C2 /* ElectricSectionView.xib in Resources */,
 				CE2329F52C42EC010087450A /* MediaSectionView.xib in Resources */,
@@ -4171,6 +4293,7 @@
 				CEE8620A2C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
 				CE4255ED2BA704E5002B558C /* LogBookListView.xib in Resources */,
 				CE54428D2B47262D0022047D /* GeneralButton.xib in Resources */,
+				FA66723A2CB1246900C055F7 /* RoomRequirementCell.xib in Resources */,
 				CE7064F02BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
 				FAC12A0D2C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
 				FAA68D0E2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
@@ -4210,6 +4333,7 @@
 				CE75455A2C3AF221002234F8 /* AddTaskSectionView.xib in Resources */,
 				CE4D121D2C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E072B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				FAF36AFB2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */,
 				CE1DDDBA2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */,
 				CE9E7DAF2B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D262BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
@@ -4231,7 +4355,6 @@
 				CE7C3BD52C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CED8BBD02C76556100B37EC6 /* DashboardChartView.xib in Resources */,
 				FAC12A2F2C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */,
-				FAF3CCCA2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */,
 				CE829B052C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C72C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F52B4F776B004C027A /* MenuItemTVC.xib in Resources */,
@@ -4251,12 +4374,14 @@
 				CEC927D42C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
 				FAE08BB42C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */,
 				FAD272732C9703FB008603E4 /* FloatingActionButton.xib in Resources */,
+				FA5B52772CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib in Resources */,
 				CEAF27EB2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2172B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9342C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
 				CECB3E012B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF43A352C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CB2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				FAF889102CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */,
 				CEC1B06C2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
 				CE73274E2BECA849000AD875 /* ComplaintDetailView.xib in Resources */,
 				CE916A802C06372000C8B153 /* CalibrationSectionView.xib in Resources */,
@@ -4275,6 +4400,7 @@
 				CE0B3AF12B9B869100A55B81 /* WorkSheetCorrectiveListView.xib in Resources */,
 				CE9878812C5A86E2008E0F77 /* TrackProgressBottomSheet.xib in Resources */,
 				CE82D4582B47DDB200A54124 /* LoginView.xib in Resources */,
+				FAA17C842CB1542000630D74 /* EquipmentProcurementView.xib in Resources */,
 				CE9BC1CA2BE3D19400D20086 /* InformationDetailView.xib in Resources */,
 				CECB3DAC2B45D962004A260D /* Main.storyboard in Resources */,
 				CE9E7DBC2B531E4600240A7D /* UploadMediaBottomSheet.xib in Resources */,
@@ -4344,6 +4470,7 @@
 				CE6867FD2C6A80790031C345 /* WorkSheetApprovalDetailView.xib in Resources */,
 				FA0DEE722C80E221005EA0E0 /* DashboardCardView.xib in Resources */,
 				CEC207B92B4B04550073FA1E /* CategorySectionView.xib in Resources */,
+				FAF36B012CB459D300059F46 /* ProgressRoomCell.xib in Resources */,
 				CE9E7D882B529EE800240A7D /* EditProfileView.xib in Resources */,
 				CECB3E0C2B45E137004A260D /* Lato-BlackItalic.ttf in Resources */,
 				CEEED8752B7A86CB00672952 /* ScanView.xib in Resources */,
@@ -4355,6 +4482,7 @@
 				CE916A8A2C0640C100C8B153 /* CalibrationTVC.xib in Resources */,
 				FA30402C2CAB9D99000E65A0 /* RatingListView.xib in Resources */,
 				CE0EC4B32B79094400888BE8 /* ActionBarView.xib in Resources */,
+				FA5B52632CAE3E1100BA733F /* RoomRequirementListView.xib in Resources */,
 				CEBF70C32C5836CC00DB40A0 /* WorkSheetApprovalTVC.xib in Resources */,
 				CEE780BC2C0C558B001BA9C2 /* ElectricSectionView.xib in Resources */,
 				CE2329F72C42EC010087450A /* MediaSectionView.xib in Resources */,
@@ -4373,6 +4501,7 @@
 				CEE862102C5CF6B000AA4317 /* EditTechnicalView.xib in Resources */,
 				CE4255EE2BA704E5002B558C /* LogBookListView.xib in Resources */,
 				CE54428E2B47262D0022047D /* GeneralButton.xib in Resources */,
+				FA6672372CB1246900C055F7 /* RoomRequirementCell.xib in Resources */,
 				CE7064F22BFF4E1D00BB5BA7 /* AccordionView.xib in Resources */,
 				FAC12A102C7FA1D300DBAB83 /* ProfileSectionView.xib in Resources */,
 				FAA68D0F2C87A1B800A2C8EF /* RatingBottomSheet.xib in Resources */,
@@ -4412,6 +4541,7 @@
 				CE75455C2C3AF221002234F8 /* AddTaskSectionView.xib in Resources */,
 				CE4D12232C09604B007184B2 /* DelayCorrectiveDetailView.xib in Resources */,
 				CECB3E082B45E137004A260D /* Lato-Thin.ttf in Resources */,
+				FAF36AFD2CB4559F00059F46 /* ProgressRoomReqBottomSheet.xib in Resources */,
 				CE1DDDBC2C5EB5510078FA6E /* ReminderPreventiveBottomSheet.xib in Resources */,
 				CE9E7DB02B53148A00240A7D /* LogoutPopUpBottomSheet.xib in Resources */,
 				CEFD6D272BF2713C00A8BA04 /* WorkSheetCorrectiveDetailView.xib in Resources */,
@@ -4433,7 +4563,6 @@
 				CE7C3BD62C0F6DEA00B78740 /* CustomLoadingView.xib in Resources */,
 				CED8BBD12C76556100B37EC6 /* DashboardChartView.xib in Resources */,
 				FAC12A322C7FA3F500DBAB83 /* WorkLoadSectionView.xib in Resources */,
-				FAF3CCCB2C8F7F1A00630A96 /* RoomRequirementView.xib in Resources */,
 				CE829B062C4FFF3B0056F429 /* InstallationBottomSheet.xib in Resources */,
 				CEF4E0C92C077FE300444EA9 /* LoadPreventiveCVC.xib in Resources */,
 				CE9F90F62B4F776B004C027A /* MenuItemTVC.xib in Resources */,
@@ -4453,12 +4582,14 @@
 				CEC927D62C5BFD3D008B00EE /* ValWorkSheetCorrectionCell.xib in Resources */,
 				FAE08BB72C84AD1000E456E4 /* StatusOverviewPanelView.xib in Resources */,
 				FAD272752C9703FB008603E4 /* FloatingActionButton.xib in Resources */,
+				FA5B52742CAE4AEC00BA733F /* RoomRequirementBottomSheet.xib in Resources */,
 				CEAF27EC2BDE099E00CCC5EE /* SignatureBottomSheet.xib in Resources */,
 				CE14C2182B5C36E10034B9FE /* WorkSheetCorrectiveBottomSheet.xib in Resources */,
 				CE90D9362C2E8FAD00D3C2AF /* HelpBannerView.xib in Resources */,
 				CECB3E022B45E137004A260D /* Lato-LightItalic.ttf in Resources */,
 				CEF43A372C54026B0066B65A /* ConditionFilterBottomSheet.xib in Resources */,
 				CEF5D7CC2B6D311700FDE752 /* SplashScreenView.xib in Resources */,
+				FAF889122CB2F4A200BA3824 /* ActionRoomReqBottomSheet.xib in Resources */,
 				CEC1B06D2BA1ED2800DF6A4F /* HistoryTVC.xib in Resources */,
 				CE73274F2BECA849000AD875 /* ComplaintDetailView.xib in Resources */,
 				CE916A822C06372000C8B153 /* CalibrationSectionView.xib in Resources */,
@@ -4477,6 +4608,7 @@
 				CE0B3AF22B9B869100A55B81 /* WorkSheetCorrectiveListView.xib in Resources */,
 				CE9878822C5A86E2008E0F77 /* TrackProgressBottomSheet.xib in Resources */,
 				CE82D4592B47DDB200A54124 /* LoginView.xib in Resources */,
+				FAA17C792CB1542000630D74 /* EquipmentProcurementView.xib in Resources */,
 				CE9BC1CB2BE3D19400D20086 /* InformationDetailView.xib in Resources */,
 				CECB3DC82B45DAFF004A260D /* Main.storyboard in Resources */,
 				CE9E7DBD2B531E4600240A7D /* UploadMediaBottomSheet.xib in Resources */,
@@ -4491,24 +4623,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		115D31EFC55EAFDF3E294A9B /* [CP] Embed Pods Frameworks */ = {
+		7122141E681C1425562C37B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cmmsv2 DEV-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1F828802C17257180A4E598 /* [CP] Check Pods Manifest.lock */ = {
+		A008260FDDBDCD72905C7A6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2/Pods-cmmsv2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2/Pods-cmmsv2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cmmsv2/Pods-cmmsv2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD8F99A961987931115EE5BD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4530,43 +4684,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B867EE6A3FB3204C8A20C7C0 /* [CP] Embed Pods Frameworks */ = {
+		FC9DF001597B77488BF5009B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2/Pods-cmmsv2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2/Pods-cmmsv2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cmmsv2/Pods-cmmsv2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3C0696F1E59F1DC63932336 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cmmsv2 DEV-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cmmsv2 DEV/Pods-cmmsv2 DEV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4614,11 +4746,6 @@
 				CEC1B0612BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CEB05F5D2C60BBB5004BA1AE /* EmptyView.swift in Sources */,
 				CECB3E442B45E637004A260D /* BaseInteractor.swift in Sources */,
-				FAF3CCC52C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */,
-				FAF3CCC62C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */,
-				FAF3CCC72C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */,
-				FAF3CCC82C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */,
-				FAF3CCC92C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */,
 				CE9E7D952B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				FAC12A302C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */,
 				CEF43A362C54026B0066B65A /* ConditionFilterBottomSheet.swift in Sources */,
@@ -4645,12 +4772,14 @@
 				CEE8CB8D2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */,
 				CE2329F42C42EC010087450A /* MediaSectionView.swift in Sources */,
 				CEE67D272B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift in Sources */,
+				FA1B57742CB0162700D88F43 /* RoomRequirementListView+Delegate.swift in Sources */,
 				CE7D4E842C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift in Sources */,
 				CE7D4E852C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift in Sources */,
 				CE7D4E862C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift in Sources */,
 				CE7D4E872C581D4D001F8D67 /* WorkSheetApprovalListView.swift in Sources */,
 				CE7D4E882C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift in Sources */,
 				CECB3E102B45E273004A260D /* CGSize+Ext.swift in Sources */,
+				FA5B52762CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift in Sources */,
 				CE31086F2BE2659F00660275 /* AdditionalDocumentsView.swift in Sources */,
 				CEFA758E2B768E4500B74E1B /* AssetListRouter.swift in Sources */,
 				CEF4E0CD2C07ACF500444EA9 /* PreventiveSchedulerBottomSheet.swift in Sources */,
@@ -4660,6 +4789,7 @@
 				CE5EC2DF2C3CE1D5005D5426 /* SparePartBottomSheet.swift in Sources */,
 				CEE07C972B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift in Sources */,
 				CEB7A6412B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */,
+				FAF36B032CB459D300059F46 /* ProgressRoomCell.swift in Sources */,
 				CEB703A12BA87FBD004583C7 /* PreventiveCalendarListRouter.swift in Sources */,
 				CEF049B72C1C80D2006B6FFD /* SelectTechnicialCell.swift in Sources */,
 				CE2E3AF62BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
@@ -4735,6 +4865,11 @@
 				CEF43CC72C3F408E00B34FE2 /* StatusSection.swift in Sources */,
 				CE916A892C0640C100C8B153 /* CalibrationTVC.swift in Sources */,
 				CE3108552BE20D2000660275 /* AssetDetailView.swift in Sources */,
+				FA5B52642CAE3E1100BA733F /* RoomRequirementListEntity.swift in Sources */,
+				FA5B52652CAE3E1100BA733F /* RoomRequirementListView.swift in Sources */,
+				FA5B52662CAE3E1100BA733F /* RoomRequirementListPresenter.swift in Sources */,
+				FA5B52672CAE3E1100BA733F /* RoomRequirementListInteractor.swift in Sources */,
+				FA5B52682CAE3E1100BA733F /* RoomRequirementListRouter.swift in Sources */,
 				CEFA75922B768E4500B74E1B /* AssetListView.swift in Sources */,
 				CEEED8702B7A86CB00672952 /* ScanInteractor.swift in Sources */,
 				CEF0499B2C1C2061006B6FFD /* AddComplaintBottomSheet.swift in Sources */,
@@ -4789,13 +4924,20 @@
 				CEC207A32B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CE0F20D02B754B73008702E0 /* DropdownView.swift in Sources */,
 				CECB3E412B45E62B004A260D /* BasePresenter.swift in Sources */,
+				FAA17C7F2CB1542000630D74 /* EquipmentProcurementPresenter.swift in Sources */,
+				FAA17C802CB1542000630D74 /* EquipmentProcurementRouter.swift in Sources */,
+				FAA17C812CB1542000630D74 /* EquipmentProcurementView.swift in Sources */,
+				FAA17C822CB1542000630D74 /* EquipmentProcurementEntity.swift in Sources */,
+				FAA17C832CB1542000630D74 /* EquipmentProcurementInteractor.swift in Sources */,
 				CEB8C3712C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */,
 				CEE8CB912BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
+				FAF36AFA2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */,
 				CE74361F2BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD262B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CE7C3BD42C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */,
 				CE422DD72BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6B2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
+				FAF36AF52CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */,
 				CEB7A63E2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E312B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				FAA0E3402C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */,
@@ -4863,6 +5005,7 @@
 				CEADA5032C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */,
 				CEFB4F0D2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEC336F92B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
+				FAF889112CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */,
 				CEFB4F0F2B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D252B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift in Sources */,
 				CEB05F4E2C6072D4004BA1AE /* DocumentPresenter.swift in Sources */,
@@ -4893,6 +5036,7 @@
 				FAF3CCB52C8F66D400630A96 /* EquipmentManagementListView.swift in Sources */,
 				FAF3CCB62C8F66D400630A96 /* EquipmentManagementListEntity.swift in Sources */,
 				CE9878802C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
+				FA6672392CB1246900C055F7 /* RoomRequirementCell.swift in Sources */,
 				CEC1B05F2BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				FA49E5B82C807A4600267925 /* ProfileInformationCardView.swift in Sources */,
 				CEC1B05D2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
@@ -5008,11 +5152,6 @@
 				CEC1B0622BA1E39700DF6A4F /* HistoryListView.swift in Sources */,
 				CEB05F5F2C60BBB5004BA1AE /* EmptyView.swift in Sources */,
 				CECB3E452B45E637004A260D /* BaseInteractor.swift in Sources */,
-				FAF3CCCC2C8F7F1A00630A96 /* RoomRequirementPresenter.swift in Sources */,
-				FAF3CCCD2C8F7F1A00630A96 /* RoomRequirementRouter.swift in Sources */,
-				FAF3CCCE2C8F7F1A00630A96 /* RoomRequirementInteractor.swift in Sources */,
-				FAF3CCCF2C8F7F1A00630A96 /* RoomRequirementView.swift in Sources */,
-				FAF3CCD02C8F7F1A00630A96 /* RoomRequirementEntity.swift in Sources */,
 				CE9E7D962B529F4500240A7D /* UserProfileInteractor.swift in Sources */,
 				FAC12A312C7FA3F500DBAB83 /* WorkLoadSectionView.swift in Sources */,
 				CEF43A382C54026B0066B65A /* ConditionFilterBottomSheet.swift in Sources */,
@@ -5039,12 +5178,14 @@
 				CEE8CB8E2BF7C8FD006E59B7 /* HistoryDetailPresenter.swift in Sources */,
 				CE2329F62C42EC010087450A /* MediaSectionView.swift in Sources */,
 				CEE67D282B54394900D0844B /* WorkSheetMonitoringFunctionListRouter.swift in Sources */,
+				FA1B57752CB0162700D88F43 /* RoomRequirementListView+Delegate.swift in Sources */,
 				CE7D4E8B2C581D4D001F8D67 /* WorkSheetApprovalListPresenter.swift in Sources */,
 				CE7D4E8C2C581D4D001F8D67 /* WorkSheetApprovalListRouter.swift in Sources */,
 				CE7D4E8D2C581D4D001F8D67 /* WorkSheetApprovalListInteractor.swift in Sources */,
 				CE7D4E8E2C581D4D001F8D67 /* WorkSheetApprovalListView.swift in Sources */,
 				CE7D4E8F2C581D4D001F8D67 /* WorkSheetApprovalListEntity.swift in Sources */,
 				CECB3E112B45E273004A260D /* CGSize+Ext.swift in Sources */,
+				FA5B52752CAE4AEC00BA733F /* RoomRequirementBottomSheet.swift in Sources */,
 				CE3108702BE2659F00660275 /* AdditionalDocumentsView.swift in Sources */,
 				CEFA758F2B768E4500B74E1B /* AssetListRouter.swift in Sources */,
 				CEF4E0CF2C07ACF500444EA9 /* PreventiveSchedulerBottomSheet.swift in Sources */,
@@ -5054,6 +5195,7 @@
 				CE5EC2E02C3CE1D5005D5426 /* SparePartBottomSheet.swift in Sources */,
 				CEE07C982B9F408A00EFBFB8 /* PreventiveMaintenanceListEntity.swift in Sources */,
 				CEB7A6422B69734100D27FFF /* NSPersistentContainer+Ext.swift in Sources */,
+				FAF36B022CB459D300059F46 /* ProgressRoomCell.swift in Sources */,
 				CEB703A22BA87FBD004583C7 /* PreventiveCalendarListRouter.swift in Sources */,
 				CEF049B92C1C80D2006B6FFD /* SelectTechnicialCell.swift in Sources */,
 				CE2E3AF72BA09E4C00094AD0 /* CalibrationListView.swift in Sources */,
@@ -5129,6 +5271,11 @@
 				CEF43CCA2C3F408E00B34FE2 /* StatusSection.swift in Sources */,
 				CE916A8B2C0640C100C8B153 /* CalibrationTVC.swift in Sources */,
 				CE3108562BE20D2000660275 /* AssetDetailView.swift in Sources */,
+				FA5B525E2CAE3E1100BA733F /* RoomRequirementListEntity.swift in Sources */,
+				FA5B525F2CAE3E1100BA733F /* RoomRequirementListView.swift in Sources */,
+				FA5B52602CAE3E1100BA733F /* RoomRequirementListPresenter.swift in Sources */,
+				FA5B52612CAE3E1100BA733F /* RoomRequirementListInteractor.swift in Sources */,
+				FA5B52622CAE3E1100BA733F /* RoomRequirementListRouter.swift in Sources */,
 				CEFA75932B768E4500B74E1B /* AssetListView.swift in Sources */,
 				CEEED8712B7A86CB00672952 /* ScanInteractor.swift in Sources */,
 				CEF0499D2C1C2061006B6FFD /* AddComplaintBottomSheet.swift in Sources */,
@@ -5183,13 +5330,20 @@
 				CEC207A42B4AD6870073FA1E /* HomeScreenEntity.swift in Sources */,
 				CE0F20D12B754B73008702E0 /* DropdownView.swift in Sources */,
 				CECB3E422B45E62B004A260D /* BasePresenter.swift in Sources */,
+				FAA17C7A2CB1542000630D74 /* EquipmentProcurementPresenter.swift in Sources */,
+				FAA17C7B2CB1542000630D74 /* EquipmentProcurementRouter.swift in Sources */,
+				FAA17C7C2CB1542000630D74 /* EquipmentProcurementView.swift in Sources */,
+				FAA17C7D2CB1542000630D74 /* EquipmentProcurementEntity.swift in Sources */,
+				FAA17C7E2CB1542000630D74 /* EquipmentProcurementInteractor.swift in Sources */,
 				CEB8C3732C610E040040B485 /* AssetMaintenanceInfoCell.swift in Sources */,
 				CEE8CB922BF7C8FD006E59B7 /* HistoryDetailInteractor.swift in Sources */,
+				FAF36AFC2CB4559F00059F46 /* ProgressRoomReqBottomSheet.swift in Sources */,
 				CE7436202BDEAFD700283CA1 /* UIImage+Ext.swift in Sources */,
 				CEF5FD272B4A74DA003A72B7 /* BackgroundView.swift in Sources */,
 				CE7C3BD72C0F6DEA00B78740 /* CustomLoadingView.swift in Sources */,
 				CE422DD82BE5779F004B405A /* AdditionDocumentCVC.swift in Sources */,
 				CEEFDA6C2BDFEAD600DFF70B /* FileUploader.swift in Sources */,
+				FAF36AF42CB43EFB00059F46 /* EquipmentProcurementView+Delegate.swift in Sources */,
 				CEB7A63F2B696F0600D27FFF /* NSManagedObjectContext+Ext.swift in Sources */,
 				CECB3E322B45E414004A260D /* UIApplication+Ext.swift in Sources */,
 				FAA0E3412C9A0067004DE759 /* EquipmentManagementListView+Collection.swift in Sources */,
@@ -5257,6 +5411,7 @@
 				CEADA5052C59358E005BF97D /* ApproveWorkSheetBottomSheet.swift in Sources */,
 				CEFB4F0E2B4930460033D37D /* RegistrationHospitalRouter.swift in Sources */,
 				CEC336FA2B6E76BF00B16026 /* HomeScreenView+Delegate.swift in Sources */,
+				FAF889132CB2F4A200BA3824 /* ActionRoomReqBottomSheet.swift in Sources */,
 				CEFB4F102B4930460033D37D /* RegistrationHospitalInteractor.swift in Sources */,
 				CEE67D262B54394900D0844B /* WorkSheetMonitoringFunctionListPresenter.swift in Sources */,
 				CEB05F542C6072D4004BA1AE /* DocumentPresenter.swift in Sources */,
@@ -5287,6 +5442,7 @@
 				FAF3CCBC2C8F66D400630A96 /* EquipmentManagementListView.swift in Sources */,
 				FAF3CCBD2C8F66D400630A96 /* EquipmentManagementListEntity.swift in Sources */,
 				CE9878832C5A86E2008E0F77 /* TrackProgressBottomSheet.swift in Sources */,
+				FA6672382CB1246900C055F7 /* RoomRequirementCell.swift in Sources */,
 				CEC1B0602BA1E39700DF6A4F /* HistoryListInteractor.swift in Sources */,
 				FA49E5BA2C807A4600267925 /* ProfileInformationCardView.swift in Sources */,
 				CEC1B05E2BA1E39700DF6A4F /* HistoryListRouter.swift in Sources */,
@@ -5507,7 +5663,7 @@
 		};
 		CECB3DB62B45D963004A260D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2032044EA43460AEFB56E80C /* Pods-cmmsv2.debug.xcconfig */;
+			baseConfigurationReference = D84788E2614504D80C6657E1 /* Pods-cmmsv2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -5537,7 +5693,7 @@
 		};
 		CECB3DB72B45D963004A260D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 091050D50A6B535F4F65456A /* Pods-cmmsv2.release.xcconfig */;
+			baseConfigurationReference = 6EE6CCD05BC72B3110CCD852 /* Pods-cmmsv2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -5567,7 +5723,7 @@
 		};
 		CECB3DCA2B45DAFF004A260D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 287DD405FF6CE31488A083FF /* Pods-cmmsv2 DEV.debug.xcconfig */;
+			baseConfigurationReference = C28C1A675B6555004262BF51 /* Pods-cmmsv2 DEV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDEV;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -5597,7 +5753,7 @@
 		};
 		CECB3DCB2B45DAFF004A260D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB7E0DD1E86C1E18A0FED489 /* Pods-cmmsv2 DEV.release.xcconfig */;
+			baseConfigurationReference = 51B5E4E8F9032FEB6423C943 /* Pods-cmmsv2 DEV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDEV;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

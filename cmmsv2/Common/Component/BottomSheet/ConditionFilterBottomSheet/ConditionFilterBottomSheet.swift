@@ -9,7 +9,12 @@ import UIKit
 import Combine
 
 protocol ConditionFilterBottomSheetDelegate: AnyObject {
-    func didTapApplyFilterCondition(_ asset: AssetConditionEntity, _ status: CalibrationConditionEntity)
+    func didTapApplyFilterCondition(_ asset: AssetConditionEntity?, _ status: CalibrationConditionEntity?)
+}
+
+enum ConditionFilterBottomSheetType {
+    case multiple
+    case single
 }
 
 class ConditionFilterBottomSheet: BaseNonNavigationController {
@@ -18,12 +23,17 @@ class ConditionFilterBottomSheet: BaseNonNavigationController {
     @IBOutlet weak var bottomSheetView: BottomSheetView!
     @IBOutlet weak var titlePageLabel: UILabel!
     @IBOutlet weak var applyButton: GeneralButton!
+    @IBOutlet weak var assetConditionStackView: UIStackView!
     @IBOutlet weak var assetConditionTitle: UILabel!
     @IBOutlet weak var assetCollectionView: UICollectionView!
+    @IBOutlet weak var initialHeightAssetConditionConstraint: NSLayoutConstraint!
+    @IBOutlet weak var statusCalibrationStackView: UIStackView!
     @IBOutlet weak var statusCalibrationTitle: UILabel!
     @IBOutlet weak var statusCalibrationCollectionView: UICollectionView!
+    @IBOutlet weak var initialHeightStatusConditionConstraint: NSLayoutConstraint!
     
     weak var delegate: ConditionFilterBottomSheetDelegate?
+    var type: ConditionFilterBottomSheetType? = .multiple
     var assetFilterData: [AssetConditionEntity] = []
     var selectedAssetFilter: AssetConditionEntity?
     var calibrationFilterData: [CalibrationConditionEntity] = []
@@ -44,6 +54,22 @@ extension ConditionFilterBottomSheet {
         setupAction()
         setupCollectionView(assetCollectionView)
         setupCollectionView(statusCalibrationCollectionView)
+        switch type {
+        case .multiple:
+            self.assetConditionTitle.text = "Kondisi Aset"
+            self.assetConditionStackView.isHidden = false
+            self.statusCalibrationTitle.text = "Kondisi Kalibrasi"
+            self.initialHeightAssetConditionConstraint.constant = 130
+            self.initialHeightStatusConditionConstraint.constant = 70
+            self.statusCalibrationStackView.isHidden = false
+        case .single:
+            self.assetConditionTitle.isHidden = true
+            self.assetConditionStackView.isHidden = false
+            self.statusCalibrationStackView.isHidden = true
+            self.initialHeightAssetConditionConstraint.constant = 80
+            self.initialHeightStatusConditionConstraint.constant = 0
+        default: break
+        }
     }
     
     private func setupView() {
@@ -64,13 +90,10 @@ extension ConditionFilterBottomSheet {
     private func setupAction() {
         applyButton.gesture()
             .sink { [weak self] _ in
-                guard let self,
-                      let delegate = self.delegate,
-                      let selectedAssetFilter,
-                      let selectedCalibrationStatusFilter
-                else { return }
+                guard let self else { return }
+                let delegate = self.delegate
                 self.dismissBottomSheet() {
-                    delegate.didTapApplyFilterCondition(selectedAssetFilter, selectedCalibrationStatusFilter)
+                    delegate?.didTapApplyFilterCondition(self.selectedAssetFilter, self.selectedCalibrationStatusFilter)
                 }
             }
             .store(in: &anyCancellable)

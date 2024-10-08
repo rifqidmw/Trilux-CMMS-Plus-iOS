@@ -375,6 +375,9 @@ enum AssetConditionType: String, Codable {
     case notOperated = "Tidak Beroprasi"
     case damaged = "Rusak"
     case badlyDamaged = "Rusak Berat"
+    case forwarded = "Diteruskan"
+    case pending = "Pending"
+    case rejected = "Ditolak"
     case none = ""
     
     init?(rawValue: String) {
@@ -384,6 +387,9 @@ enum AssetConditionType: String, Codable {
         case "Rusak": self = .damaged
         case "Rusak Berat": self = .badlyDamaged
         case "Terbaru": self = .badlyDamaged
+        case "Diteruskan": self = .forwarded
+        case "Pending": self = .pending
+        case "Ditolak": self = .rejected
         case "": self = .none
         default: self = .none
         }
@@ -405,6 +411,27 @@ enum StatusCalibrationConditionType: String, Codable {
         case "Semua Status Kalibrasi": self = .all
         case "Laik": self = .laik
         case "Tidak Laik": self = .unlaik
+        case "": self = .none
+        default: self = .none
+        }
+    }
+    
+    func getStringValue() -> String {
+        return rawValue
+    }
+}
+
+enum RoomRequirementStatusType: String, Codable {
+    case scoring = "Skoring"
+    case budgeting = "Penganggaran"
+    case submission = "Pengajuan"
+    case none = ""
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "Skoring": self = .scoring
+        case "Pengangaran": self = .budgeting
+        case "Pengajuan": self = .submission
         case "": self = .none
         default: self = .none
         }

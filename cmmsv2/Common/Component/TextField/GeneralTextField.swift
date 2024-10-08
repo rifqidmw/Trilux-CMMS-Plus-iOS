@@ -55,7 +55,7 @@ extension GeneralTextField {
         
     }
     
-    func configure(title: String, placeholder: String, type: GeneralTextFieldType = .normal) {
+    func configure(title: String, placeholder: String, type: GeneralTextFieldType = .normal, isDisabled: Bool = false) {
         titleLabel.text = title
         textField.configurePlaceHolder(font: UIFont.robotoRegular(14), color: UIColor.customPlaceholderColor, placeHolderText: placeholder)
         
@@ -84,8 +84,12 @@ extension GeneralTextField {
             containerDefaultLabelView.makeCornerRadius(8, .leftCurve)
             defaultLabel.makeCornerRadius(12)
             showHideButton.isHidden = true
-            
         }
+        
+        textField.isUserInteractionEnabled = !isDisabled
+        showHideButton.isUserInteractionEnabled = !isDisabled
+        showHideButton.tintColor = isDisabled ? UIColor.customPrimaryColor : UIColor.customPlaceholderColor
+        textField.textColor = isDisabled ? UIColor.customPlaceholderColor : UIColor.customDarkGrayColor
     }
     
 }

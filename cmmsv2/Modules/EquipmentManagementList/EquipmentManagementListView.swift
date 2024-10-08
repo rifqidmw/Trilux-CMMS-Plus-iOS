@@ -29,6 +29,7 @@ class EquipmentManagementListView: BaseViewController {
     override func didLoad() {
         super.didLoad()
         self.setupBody()
+        self.validateUser()
     }
     
 }
@@ -82,14 +83,12 @@ extension EquipmentManagementListView {
         
         presenter.$returningLoanData
             .sink { [weak self] data in
-                guard let self,
-                      let data,
-                      let dataList = data.data
+                guard let self
                 else {
                     self?.showSpinner(false)
                     return
                 }
-                self.loanData = dataList
+                self.loanData = data
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
             }
@@ -97,14 +96,12 @@ extension EquipmentManagementListView {
         
         presenter.$returningBorrowedData
             .sink { [weak self] data in
-                guard let self,
-                      let data,
-                      let dataList = data.data
+                guard let self
                 else {
                     self?.showSpinner(false)
                     return
                 }
-                self.borrowedData = dataList
+                self.borrowedData = data
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
             }
@@ -163,14 +160,12 @@ extension EquipmentManagementListView {
         
         presenter.$amprahList
             .sink { [weak self] data in
-                guard let self,
-                      let data,
-                      let dataList = data.data
+                guard let self
                 else {
                     self?.showSpinner(false)
                     return
                 }
-                self.amprahListData = dataList
+                self.amprahListData = data
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
             }

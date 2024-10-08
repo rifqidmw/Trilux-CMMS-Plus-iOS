@@ -40,7 +40,6 @@ protocol HomeScreenCategoryDelegate: AnyObject {
     func didTapMutatingCategory()
     func didTapHistoryComplaintListCategory()
     func didTapRoomRequirementCategory()
-    func didTapAssetSuggestCategory()
     func didTapRatingCategory()
 }
 
@@ -65,7 +64,6 @@ protocol AllCategoriesBottomSheetDelegate: AnyObject {
     func didTapMutatingCategory()
     func didTapComplaintHistoryList()
     func didTapRoomRequirementCategory()
-    func didTapAssetSuggestCategory()
     func didTapRatingCategory()
 }
 
@@ -79,6 +77,11 @@ protocol WorkSheetBottomSheetDelegate: AnyObject {
 protocol AssetBottomSheetDelegate: AnyObject {
     func didTapAssetMedic()
     func didTapAssetNonMedic()
+}
+
+protocol RoomRequirementBottomSheetDelegate: AnyObject {
+    func didTapRequirementMedic()
+    func didTapRequirementNonMedic()
 }
 
 protocol MutationBottomSheetDelegate: AnyObject {
@@ -158,7 +161,6 @@ enum CategoryTitle: String {
     case mutating = "Perpindahan"
     case historyComplaintList = "Daftar & Riwayat Pengaduan"
     case roomRequirement = "Kebutuhan Ruangan"
-    case assetSuggest = "Usulan Alat"
     case rating = "Rating"
     case none = ""
     
@@ -185,7 +187,6 @@ enum CategoryTitle: String {
         case "Perpindahan": self = .mutating
         case "Daftar & Riwayat Pengaduan": self = .historyComplaintList
         case "Kebutuhan Ruangan": self = .roomRequirement
-        case "Usulan Alat": self = .assetSuggest
         case "Rating": self = .rating
         case "": self = .none
         default: self = .none
@@ -224,8 +225,7 @@ let categoryDataRoom: [CategoryModel] = [
     CategoryModel(image: "ic_notes_with_pencil", title: .historyComplaintList),
     CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
     CategoryModel(image: "ic_bubble_chat", title: .roomRequirement),
-    CategoryModel(image: "ic_rating_circle", title: .rating),
-    CategoryModel(image: "ic_bubble_chat", title: .assetSuggest)
+    CategoryModel(image: "ic_rating_circle", title: .rating)
 ]
 
 let categoryBottomSheetEngineerData: [CategoryModel] = [
@@ -252,13 +252,22 @@ let categoryBottomSheetRoomData: [CategoryModel] = [
     CategoryModel(image: "ic_notes_with_pencil", title: .historyComplaintList),
     CategoryModel(image: "ic_calendar_with_wrench", title: .preventiveCalendar),
     CategoryModel(image: "ic_bubble_chat", title: .roomRequirement),
-    CategoryModel(image: "ic_bubble_chat", title: .assetSuggest),
     CategoryModel(image: "ic_rating_circle", title: .rating)
 ]
 
 let assetData: [MenuModel] = [
     MenuModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Tambah data aset medik"),
     MenuModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Tambah data aset non medik")
+]
+
+let requestEquipmentData: [MenuModel] = [
+    MenuModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Lihat data usulan aset medik"),
+    MenuModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Lihat data usulan aset non medik")
+]
+
+let roomRequirementData: [MenuModel] = [
+    MenuModel(image: "ic_wheel_chair_fill", title: "Medik", subTitle: "Lihat data kebutuhan ruangan medik"),
+    MenuModel(image: "ic_stethoscope_fill", title: "Non-Medik", subTitle: "Lihat data kebutuhan ruangan non medik")
 ]
 
 let mutationData: [MenuModel] = [

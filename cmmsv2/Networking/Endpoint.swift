@@ -154,6 +154,13 @@ enum Endpoint {
     case getRoomList
     case amprahMutation(data: AmprahMutationRequest?)
     case ratingList(woStatus: String?, limit: Int, page: Int)
+    case roomRequirementList(
+        condition: String?,
+        keyword: String?,
+        year: String?,
+        type: String?,
+        page: Int,
+        sort: String?)
 }
 
 // MARK: - PATH URL
@@ -359,6 +366,14 @@ extension Endpoint {
             return "reqamprah/pindah"
         case .ratingList(woStatus: let woStatus, limit: let limit, page: let page):
             return generateRatingListURL(woStatus: woStatus ?? "", limit: limit, page: page)
+        case .roomRequirementList(condition: let condition, keyword: let keyword, year: let year, type: let type, page: let page, sort: let sort):
+            return generateRoomRequirementListURL(
+                condition: condition ?? "",
+                keyword: keyword ?? "",
+                year: year ?? "",
+                type: type,
+                page: page,
+                sort: sort ?? "")
         }
     }
     
@@ -941,6 +956,28 @@ extension Endpoint {
         ].compactMap { $0 }.joined(separator: "&")
         
         let url = "lk/list" + (queryString.isEmpty ? "" : "?\(queryString)")
+        
+        return url.replacingOccurrences(of: "", with: "%20")
+    }
+    
+    private func generateRoomRequirementListURL(
+        condition: String? = nil,
+        keyword: String? = nil,
+        year: String? = nil,
+        type: String? = nil,
+        page: Int?,
+        sort: String? = nil
+    ) -> String {
+        let queryString = [
+            condition.map { "filter=\($0)" },
+            keyword.map { "q=\($0)" },
+            type.map { "t=\($0)" },
+            year.map { "tahun=\($0)" },
+            page.map { "page=\($0)" },
+            sort.map { "sort=\($0)" }
+        ].compactMap { $0 }.joined(separator: "&")
+        
+        let url = "plankebutuhan/index" + (queryString.isEmpty ? "" : "?\(queryString)")
         
         return url.replacingOccurrences(of: "", with: "%20")
     }

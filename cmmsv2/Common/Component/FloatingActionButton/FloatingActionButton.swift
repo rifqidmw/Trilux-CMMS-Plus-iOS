@@ -12,6 +12,10 @@ protocol FloatingActionButtonDelegate: AnyObject {
     func didTapActionItem(_ idx: Int)
 }
 
+protocol FloatingButtonDelegate: AnyObject {
+    func didTapButton()
+}
+
 class FloatingActionButton: UIView {
     
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +35,9 @@ class FloatingActionButton: UIView {
             toggleButtons(isOpened)
         }
     }
+    var isCanOpened: Bool = true
     weak var delegate: FloatingActionButtonDelegate?
+    weak var tappedDelegate: FloatingButtonDelegate?
     @Published public var totalHeightTable: CGFloat = 0
     var anyCancellable = Set<AnyCancellable>()
     
@@ -57,6 +63,10 @@ class FloatingActionButton: UIView {
 
 extension FloatingActionButton {
     
+    func configure(_ isCanOpenned: Bool) {
+        self.isCanOpened = isCanOpenned
+    }
+    
     private func configureSharedComponent() {
         self.openedAddButton.layer.cornerRadius = self.openedAddButton.bounds.width / 1.6
         self.openedAddButton.clipsToBounds = true
@@ -75,19 +85,30 @@ extension FloatingActionButton {
     }
     
     private func setupAction() {
-        self.openedAddButton.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.isOpened.toggle()
-            }
-            .store(in: &anyCancellable)
-        
-        self.closedAddButton.gesture()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                self.isOpened.toggle()
-            }
-            .store(in: &anyCancellable)
+        if !isCanOpened {
+            self.openedAddButton.gesture()
+                .sink { [weak self] _ in
+                    guard let self else { return }
+                    self.isOpened.toggle()
+                }
+                .store(in: &anyCancellable)
+            
+            self.closedAddButton.gesture()
+                .sink { [weak self] _ in
+                    guard let self else { return }
+                    self.isOpened.toggle()
+                }
+                .store(in: &anyCancellable)
+        } else {
+            self.closedAddButton.gesture()
+                .sink { [weak self] _ in
+                    guard let self,
+                          let delegate = self.tappedDelegate
+                    else { return }
+                    delegate.didTapButton()
+                }
+                .store(in: &anyCancellable)
+        }
     }
     
     private func toggleButtons(_ isOpened: Bool, animated: Bool = true) {

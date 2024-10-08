@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActionRoomReqBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="pjf-OY-lJp" id="dkC-GH-HB0"/>
+                <outlet property="deleteButton" destination="Zuq-av-I21" id="LBx-sM-J5h"/>
+                <outlet property="detailButton" destination="qyX-Zn-Kcz" id="ZB6-dw-ICC"/>
+                <outlet property="dismissAreaView" destination="HtA-fM-v4R" id="MDo-Ln-2od"/>
+                <outlet property="progressButton" destination="qRt-aQ-Vy0" id="juI-Gl-mSw"/>
+                <outlet property="updateButton" destination="Iix-5a-R3A" id="2Ut-wg-Ckl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtA-fM-v4R" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjf-OY-lJp" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="642" width="393" height="210"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Aksi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-Sm-jqF">
+                            <rect key="frame" x="16" y="34" width="361" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="obn-oX-LSA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                            <color key="textColor" name="customDarkGrayColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="OjB-V2-dIi">
+                            <rect key="frame" x="16" y="68" width="361" height="108"/>
+                            <subviews>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zuq-av-I21" userLabel="Delete Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="-48" width="361" height="48"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="vb7-Wr-usA"/>
+                                    </constraints>
+                                </view>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iix-5a-R3A" userLabel="Update Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="-48" width="361" height="48"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="OlK-0t-AaT"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRt-aQ-Vy0" userLabel="Progress Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="cij-AT-bsm"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyX-Zn-Kcz" userLabel="Detail Button" customClass="GeneralButton" customModule="cmmsv2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="60" width="361" height="48"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="rEa-Hl-FdL"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bBf-Sm-jqF" firstAttribute="leading" secondItem="pjf-OY-lJp" secondAttribute="leading" constant="16" id="2o3-8Z-iqU"/>
+                        <constraint firstItem="bBf-Sm-jqF" firstAttribute="top" secondItem="pjf-OY-lJp" secondAttribute="top" constant="34" id="czu-Qs-wQO"/>
+                        <constraint firstAttribute="bottom" secondItem="OjB-V2-dIi" secondAttribute="bottom" constant="34" id="hJi-rF-VgB"/>
+                        <constraint firstItem="OjB-V2-dIi" firstAttribute="top" secondItem="bBf-Sm-jqF" secondAttribute="bottom" constant="16" id="kuX-yi-iFi"/>
+                        <constraint firstAttribute="trailing" secondItem="bBf-Sm-jqF" secondAttribute="trailing" constant="16" id="rxB-Wv-l1T"/>
+                        <constraint firstItem="OjB-V2-dIi" firstAttribute="leading" secondItem="pjf-OY-lJp" secondAttribute="leading" constant="16" id="uFQ-S2-AEy"/>
+                        <constraint firstAttribute="trailing" secondItem="OjB-V2-dIi" secondAttribute="trailing" constant="16" id="xQn-Y7-sga"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pjf-OY-lJp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PPS-Ii-BJl"/>
+                <constraint firstItem="HtA-fM-v4R" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Siy-oS-h8Y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HtA-fM-v4R" secondAttribute="trailing" id="aUc-bW-8gK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pjf-OY-lJp" secondAttribute="trailing" id="oyu-hl-4ck"/>
+                <constraint firstAttribute="bottom" secondItem="pjf-OY-lJp" secondAttribute="bottom" id="tq9-ua-Hmt"/>
+                <constraint firstAttribute="bottom" secondItem="HtA-fM-v4R" secondAttribute="bottom" id="vnU-g2-oCo"/>
+                <constraint firstItem="HtA-fM-v4R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zmN-QC-HST"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

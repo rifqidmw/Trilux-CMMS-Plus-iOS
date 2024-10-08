@@ -51,6 +51,8 @@ extension LoadPreventiveView: DatePickerBottomSheetDelegate {
                 dateFormatter.dateFormat = "MM-yyyy"
                 let monthString = dateFormatter.string(from: date)
                 bottomSheet.selectedMonth = monthString
+            case .year:
+                break
             }
             bottomSheet.updateSelectedData()
         }

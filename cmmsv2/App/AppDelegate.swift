@@ -8,7 +8,6 @@
 import UIKit
 import netfox
 import SDWebImage
-import DropDown
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #if DEBUG
         NFX.sharedInstance().start()
 #endif
-        DropDown.startListeningToKeyboard()
         
         SDImageCache.shared.config.maxDiskAge = 60 * 60 * 24 * 7 // 1 week
         SDImageCache.shared.config.maxMemoryCost = 1024 * 1024 * 20 // 20MB

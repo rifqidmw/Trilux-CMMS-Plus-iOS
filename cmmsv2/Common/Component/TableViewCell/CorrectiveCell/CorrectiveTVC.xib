@@ -30,10 +30,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uzt-0t-B8u">
-                        <rect key="frame" x="16" y="8" width="418" height="157"/>
+                        <rect key="frame" x="16" y="8" width="418" height="276"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKs-pr-oc8" userLabel="Container Engineer Cell View">
-                                <rect key="frame" x="0.0" y="-269" width="418" height="269"/>
+                                <rect key="frame" x="0.0" y="276" width="418" height="269"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RJM-em-AYg">
                                         <rect key="frame" x="16" y="16" width="386" height="237"/>
@@ -82,13 +82,13 @@
                                                                 <rect key="frame" x="0.0" y="66" width="250" height="35"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSu-GS-EnP">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="15.333333333333334"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="15.666666666666666"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="10"/>
                                                                         <color key="textColor" name="customDarkGrayColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbL-dc-okL">
-                                                                        <rect key="frame" x="0.0" y="19.333333333333343" width="250" height="15.666666666666664"/>
+                                                                        <rect key="frame" x="0.0" y="19.666666666666686" width="250" height="15.333333333333336"/>
                                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="10"/>
                                                                         <color key="textColor" name="customDarkGrayColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -172,8 +172,8 @@
                                     <constraint firstItem="RJM-em-AYg" firstAttribute="top" secondItem="RKs-pr-oc8" secondAttribute="top" constant="16" id="z4G-bw-eMM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-Xn-tAY" userLabel="Container Room Cell View">
-                                <rect key="frame" x="0.0" y="0.0" width="418" height="157"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-Xn-tAY" userLabel="Container Room Cell View">
+                                <rect key="frame" x="0.0" y="276" width="418" height="157"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-dZ-XPN">
                                         <rect key="frame" x="16" y="16" width="386" height="125"/>
@@ -228,7 +228,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzG-Vm-X6B">
-                                                                <rect key="frame" x="0.0" y="13.333333333333336" width="250" height="13"/>
+                                                                <rect key="frame" x="0.0" y="13.333333333333314" width="250" height="13"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                                                 <color key="textColor" name="customDarkGrayColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -236,7 +236,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vN3-GC-Voe">
-                                                        <rect key="frame" x="0.0" y="54.333333333333329" width="250" height="48.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="54.333333333333314" width="250" height="48.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kronologi Kerusakan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbL-TZ-hZg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="24.333333333333332"/>
@@ -245,7 +245,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTn-XV-dFg">
-                                                                <rect key="frame" x="0.0" y="24.333333333333343" width="250" height="24.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="24.333333333333371" width="250" height="24.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                                                 <color key="textColor" name="customDarkGrayColor"/>
                                                                 <nil key="highlightedColor"/>
