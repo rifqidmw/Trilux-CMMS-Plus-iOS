@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,9 +72,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="V7E-Ie-9A5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0yi-7S-o4K"/>
+                <constraint firstItem="y3E-sH-Fiz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="46L-LN-ulQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="z7d-6t-DJP" secondAttribute="bottom" id="B3K-cs-bja"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V7E-Ie-9A5" secondAttribute="bottom" constant="16" id="MKT-Sx-i3h"/>
-                <constraint firstItem="y3E-sH-Fiz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="O9h-g8-w1V"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y3E-sH-Fiz" secondAttribute="trailing" constant="16" id="PoV-EO-ncs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="z7d-6t-DJP" secondAttribute="trailing" id="UnI-Br-AhX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="y3E-sH-Fiz" secondAttribute="bottom" constant="16" id="Ymi-c4-XmW"/>

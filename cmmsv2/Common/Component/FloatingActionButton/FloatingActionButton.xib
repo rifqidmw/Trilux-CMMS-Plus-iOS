@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -36,35 +36,35 @@
                     </constraints>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nc-3i-Qnk">
-                    <rect key="frame" x="329" y="754" width="48" height="48"/>
+                    <rect key="frame" x="272.33333333333331" y="754" width="104.66666666666669" height="48"/>
                     <subviews>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esb-bN-TGQ" userLabel="Opened Button View">
-                            <rect key="frame" x="0.0" y="0.0" width="36" height="48"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esb-bN-TGQ" userLabel="Opened Button View">
+                            <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="48"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DEa-k0-4nJ">
-                                    <rect key="frame" x="12" y="14.333333333333329" width="0.0" height="19.666666666666679"/>
+                                    <rect key="frame" x="12" y="14.333333333333329" width="18" height="19.666666666666679"/>
                                     <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tambah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3z-qo-sit">
-                                    <rect key="frame" x="24" y="12" width="0.0" height="24"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tambah" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDf-dD-hNc">
+                                    <rect key="frame" x="42" y="12" width="50.666666666666657" height="24"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                     <color key="textColor" systemColor="systemBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" name="customPrimaryColor"/>
                             <constraints>
+                                <constraint firstItem="hDf-dD-hNc" firstAttribute="trailing" secondItem="esb-bN-TGQ" secondAttribute="trailing" constant="-12" id="4cy-iA-670"/>
+                                <constraint firstAttribute="bottom" secondItem="hDf-dD-hNc" secondAttribute="bottom" constant="12" id="AgY-QC-Gen"/>
+                                <constraint firstItem="hDf-dD-hNc" firstAttribute="top" secondItem="esb-bN-TGQ" secondAttribute="top" constant="12" id="Ay8-hs-G0L"/>
                                 <constraint firstAttribute="bottom" secondItem="DEa-k0-4nJ" secondAttribute="bottom" constant="12" id="BPW-Br-g8R"/>
-                                <constraint firstItem="s3z-qo-sit" firstAttribute="leading" secondItem="DEa-k0-4nJ" secondAttribute="trailing" constant="12" id="HkH-90-W0U"/>
                                 <constraint firstAttribute="height" constant="48" id="NPY-Co-Mof"/>
                                 <constraint firstItem="DEa-k0-4nJ" firstAttribute="top" secondItem="esb-bN-TGQ" secondAttribute="top" constant="12" id="RYF-0W-6n3"/>
-                                <constraint firstAttribute="trailing" secondItem="s3z-qo-sit" secondAttribute="trailing" constant="12" id="YWS-J9-UuS"/>
-                                <constraint firstAttribute="bottom" secondItem="s3z-qo-sit" secondAttribute="bottom" constant="12" id="mbx-IS-QML"/>
                                 <constraint firstItem="DEa-k0-4nJ" firstAttribute="leading" secondItem="esb-bN-TGQ" secondAttribute="leading" constant="12" id="ogK-ch-to7"/>
-                                <constraint firstItem="s3z-qo-sit" firstAttribute="top" secondItem="esb-bN-TGQ" secondAttribute="top" constant="12" id="ym7-Xt-Gzp"/>
+                                <constraint firstItem="hDf-dD-hNc" firstAttribute="leading" secondItem="DEa-k0-4nJ" secondAttribute="trailing" constant="12" id="tQc-jP-Uf1"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-CX-mOD" userLabel="Closed Button View">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-CX-mOD" userLabel="Closed Button View">
                             <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0yT-3W-F83">

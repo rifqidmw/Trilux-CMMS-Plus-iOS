@@ -60,8 +60,13 @@ extension NotificationListPresenter {
                         guard let data = notif.data,
                               let notification = data.notifications
                         else { return }
-                        self.notification.append(contentsOf: notification)
-                        AppManager.setNotificationList(notification)
+                        
+                        let filteredData = notification.filter { newItem in
+                            !self.notification.contains(where: { $0.id == newItem.id })
+                        }
+                        
+                        self.notification.append(contentsOf: filteredData)
+                        AppManager.setNotificationList(filteredData)
                         AppManager.setIsOpenedNotification(true)
                     }
                 }

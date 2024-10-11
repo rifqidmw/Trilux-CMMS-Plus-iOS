@@ -57,7 +57,12 @@ extension RatingListPresenter {
                         guard let data = ratingData.data,
                               let ratingList = data.wo
                         else { return }
-                        self.ratingList.append(contentsOf: ratingList)
+                        
+                        let filteredData = ratingList.filter { newItem in
+                            !self.ratingList.contains(where: { $0.id == newItem.id })
+                        }
+                        
+                        self.ratingList.append(contentsOf: filteredData)
                     }
                 }
             )

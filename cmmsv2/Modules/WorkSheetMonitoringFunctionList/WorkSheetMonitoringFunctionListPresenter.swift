@@ -94,7 +94,12 @@ extension WorkSheetMonitoringFunctionListPresenter {
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
                             )
                         }
-                        self.workSheetData.append(contentsOf: worksheetList)
+                        
+                        let filteredData = worksheetList.filter { newItem in
+                            !self.workSheetData.contains(where: { $0.idLK == newItem.idLK })
+                        }
+                        
+                        self.workSheetData.append(contentsOf: filteredData)
                     }
                 }
             )

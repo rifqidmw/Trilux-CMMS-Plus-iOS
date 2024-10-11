@@ -212,7 +212,12 @@ extension EquipmentMaintenancePresenter {
                 receiveValue: { complaint in
                     DispatchQueue.main.async {
                         guard let complaintList = complaint.data else { return }
-                        self.equipmentComplaintInfoData.append(contentsOf: complaintList)
+                        
+                        let filteredData = complaintList.filter { newItem in
+                            !self.equipmentComplaintInfoData.contains(where: { $0.idComplain == newItem.idComplain })
+                        }
+                        
+                        self.equipmentComplaintInfoData.append(contentsOf: filteredData)
                     }
                 }
             )

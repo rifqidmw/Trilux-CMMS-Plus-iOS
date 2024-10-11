@@ -104,7 +104,12 @@ extension HistoryListPresenter {
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
                             )
                         }
-                        self.historyData.append(contentsOf: workSheetList)
+                        
+                        let filteredData = workSheetList.filter { newItem in
+                            !self.historyData.contains(where: { $0.idLK == newItem.idLK })
+                        }
+                        
+                        self.historyData.append(contentsOf: filteredData)
                     }
                 }
             )

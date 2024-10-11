@@ -127,7 +127,12 @@ extension PreventiveMaintenanceListPresenter {
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
                             )
                         }
-                        self.preventiveData.append(contentsOf: preventiveData)
+                        
+                        let filteredData = preventiveData.filter { newItem in
+                            !self.preventiveData.contains(where: { $0.idLK == newItem.idLK })
+                        }
+                        
+                        self.preventiveData.append(contentsOf: filteredData)
                     }
                 }
             )

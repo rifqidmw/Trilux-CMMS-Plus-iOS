@@ -72,7 +72,12 @@ extension WorkSheetApprovalListPresenter {
                         guard let data = approval.data,
                               let approvalList = data.wo
                         else { return }
-                        self.approvalList.append(contentsOf: approvalList)
+                        
+                        let filteredData = approvalList.filter { newItem in
+                            !self.approvalList.contains(where: { $0.id == newItem.id })
+                        }
+                        
+                        self.approvalList.append(contentsOf: filteredData)
                     }
                 }
             )
