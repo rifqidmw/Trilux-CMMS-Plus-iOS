@@ -47,7 +47,7 @@ extension ConfirmationReturningBottomSheet {
             title: isDeleteType ? "Konfirmasi Hapus" : "Setuju Relokasi Alat",
             firstMessage: isDeleteType ? "Apakah Anda yakin untuk menghapus data pinjaman alat ini?" : "Apakah Anda yakin untuk menyetujui relokasi alat ini?",
             leftButtonTitle: "Tidak",
-            rightButtonTitle: "Ya, Hapus")
+            rightButtonTitle: isDeleteType ? "Ya, Hapus" : "Ya, Setujui")
     }
     
     private func setupAction() {

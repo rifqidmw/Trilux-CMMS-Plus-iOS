@@ -109,6 +109,11 @@ extension WorkSheetCorrectiveListPresenter {
                         guard let data = worksheet.data,
                               let worksheet = data.wo
                         else { return }
+                        
+                        let filteredWorkSheet = worksheet.filter { newItem in
+                            !self.workOrderData.contains(where: { $0.id == newItem.id })
+                        }
+                        
                         let workSheetList = worksheet.compactMap { item in
                             return WorkSheetListEntity(
                                 idLK: item.valEquipmentId ?? "",
@@ -123,8 +128,13 @@ extension WorkSheetCorrectiveListPresenter {
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
                             )
                         }
-                        self.workSheetData.append(contentsOf: workSheetList)
-                        self.workOrderData.append(contentsOf: worksheet)
+                        
+                        let filteredWorkSheetList = workSheetList.filter { newItem in
+                            !self.workSheetData.contains(where: { $0.idLK == newItem.idLK })
+                        }
+                        
+                        self.workSheetData.append(contentsOf: filteredWorkSheetList)
+                        self.workOrderData.append(contentsOf: filteredWorkSheet)
                     }
                 }
             )

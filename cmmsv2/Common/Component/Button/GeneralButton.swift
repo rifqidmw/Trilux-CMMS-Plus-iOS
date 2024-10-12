@@ -47,6 +47,9 @@ extension GeneralButton {
         iconMagnifyingGlass.isHidden = true
         containerView.backgroundColor = backgroundColor
         
+        containerView.makeCornerRadius(8)
+        containerView.addShadow(4, position: .bottom, color: UIColor.customDarkGrayColor.cgColor, opacity: 0.2)
+        
         switch type {
         case .normal:
             titleLabel.isHidden = false
@@ -55,8 +58,6 @@ extension GeneralButton {
             searchLabel.isHidden = false
             iconMagnifyingGlass.isHidden = false
             containerView.backgroundColor = UIColor.white
-            containerView.makeCornerRadius(8)
-            containerView.addShadow(4, color: UIColor.customDarkGrayColor.cgColor, opacity: 0.2)
         case .withIcon:
             titleLabel.isHidden = false
             iconImageView.isHidden = false

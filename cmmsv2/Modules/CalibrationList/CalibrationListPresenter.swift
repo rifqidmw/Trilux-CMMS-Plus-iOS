@@ -78,7 +78,12 @@ extension CalibrationListPresenter {
                                 status: WorkSheetStatus(rawValue: item.txtStatus ?? "") ?? WorkSheetStatus.none
                             )
                         }
-                        self.calibrationData.append(contentsOf: calibrationData)
+                        
+                        let filteredData = calibrationData.filter { newItem in
+                            !self.calibrationData.contains(where: { $0.idLK == newItem.idLK })
+                        }
+                        
+                        self.calibrationData.append(contentsOf: filteredData)
                     }
                 }
             )

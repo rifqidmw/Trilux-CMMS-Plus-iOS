@@ -30,7 +30,7 @@ class FloatingActionButton: UIView {
             self.tableView.reloadData()
         }
     }
-    var isOpened: Bool = false {
+    @Published public var isOpened: Bool = false {
         didSet {
             toggleButtons(isOpened)
         }
@@ -68,10 +68,12 @@ extension FloatingActionButton {
     }
     
     private func configureSharedComponent() {
-        self.openedAddButton.layer.cornerRadius = self.openedAddButton.bounds.width / 1.6
+        self.openedAddButton.makeCornerRadius(22)
+        self.openedAddButton.addShadow(4, position: .bottom, opacity: 0.4)
         self.openedAddButton.clipsToBounds = true
         self.closedAddButton.layer.cornerRadius = self.closedAddButton.bounds.width / 2
         self.closedAddButton.clipsToBounds = true
+        self.closedAddButton.addShadow(4, position: .bottom, opacity: 0.4)
         self.toggleButtons(isOpened, animated: false)
     }
     
@@ -85,46 +87,46 @@ extension FloatingActionButton {
     }
     
     private func setupAction() {
-        if !isCanOpened {
-            self.openedAddButton.gesture()
-                .sink { [weak self] _ in
-                    guard let self else { return }
-                    self.isOpened.toggle()
-                }
-                .store(in: &anyCancellable)
-            
-            self.closedAddButton.gesture()
-                .sink { [weak self] _ in
-                    guard let self else { return }
-                    self.isOpened.toggle()
-                }
-                .store(in: &anyCancellable)
-        } else {
-            self.closedAddButton.gesture()
-                .sink { [weak self] _ in
-                    guard let self,
-                          let delegate = self.tappedDelegate
-                    else { return }
-                    delegate.didTapButton()
-                }
-                .store(in: &anyCancellable)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.closedAddButton.addGestureRecognizer(tapGesture)
+        
+        if isCanOpened {
+            let openGesture = UITapGestureRecognizer(target: self, action: #selector(toggleOpenState))
+            self.openedAddButton.addGestureRecognizer(openGesture)
         }
     }
     
+    @objc private func handleTap() {
+        if isCanOpened {
+            toggleOpenState()
+        }
+        tappedDelegate?.didTapButton()
+    }
+    
+    @objc private func toggleOpenState() {
+        isOpened.toggle()
+    }
+    
     private func toggleButtons(_ isOpened: Bool, animated: Bool = true) {
+        guard isCanOpened else {
+            return
+        }
+        
         let duration: TimeInterval = animated ? 0.3 : 0
         
         UIView.animate(withDuration: duration, animations: {
             if isOpened {
-                self.openedAddButton.alpha = 1
-                self.closedAddButton.alpha = 0
+                self.openedAddButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.closedAddButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                 self.tableView.alpha = 1
                 self.tableView.isHidden = false
+                self.calculateTotalHeight(for: self.tableView)
             } else {
-                self.openedAddButton.alpha = 0
-                self.closedAddButton.alpha = 1
+                self.openedAddButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                self.closedAddButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 self.tableView.alpha = 0
                 self.tableView.isHidden = true
+                self.initialHeightTableView.constant = .zero
             }
         }) { _ in
             self.openedAddButton.isHidden = !isOpened

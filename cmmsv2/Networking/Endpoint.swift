@@ -161,6 +161,9 @@ enum Endpoint {
         type: String?,
         page: Int,
         sort: String?)
+    case getListInstallation
+    case getListEquipment(id: String?)
+    case createMutationSubmission(data: MutationSubmissionRequest?)
 }
 
 // MARK: - PATH URL
@@ -374,6 +377,12 @@ extension Endpoint {
                 type: type,
                 page: page,
                 sort: sort ?? "")
+        case .getListInstallation:
+            return "reqmutasi/get_list_instalasi"
+        case .getListEquipment(id: let id):
+            return "reqmutasi/get_alat_instalasi?id=\(id ?? "")"
+        case .createMutationSubmission:
+            return "reqmutasi/create"
         }
     }
     
@@ -396,7 +405,8 @@ extension Endpoint {
                 .approveWorkSheet,
                 .saveTechnical,
                 .updateComplaint,
-                .amprahMutation:
+                .amprahMutation,
+                .createMutationSubmission:
             return .post
         default:
             return .get
@@ -633,6 +643,13 @@ extension Endpoint {
             let params: [String: Any] = [
                 "id": data?.id ?? "",
                 "id_room": data?.idRoom ?? ""
+            ]
+            return params
+        case .createMutationSubmission(data: let data):
+            let params: [String: Any] = [
+                "to_instalasi": data?.toInstallasi ?? "",
+                "id_alat": data?.equipmentId ?? "",
+                "qty": data?.qty ?? ""
             ]
             return params
         default:

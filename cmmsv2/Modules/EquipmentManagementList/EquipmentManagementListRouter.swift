@@ -32,4 +32,9 @@ extension EquipmentManagementListRouter {
         navigation.pushViewController(vc, animated: true)
     }
     
+    func navigateToMutationSubmission(from navigation: UINavigationController) {
+        let vc = MutationSubmissionRouter().showView()
+        navigation.pushViewController(vc, animated: true)
+    }
+    
 }

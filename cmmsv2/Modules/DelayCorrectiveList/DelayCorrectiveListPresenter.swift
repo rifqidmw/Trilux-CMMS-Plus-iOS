@@ -80,7 +80,12 @@ extension DelayCorrectiveListPresenter {
                         guard let data = complains.data,
                               let complainsData = data.complains
                         else { return }
-                        self.complaint.append(contentsOf: complainsData)
+                        
+                        let filteredData = complainsData.filter { newItem in
+                            !self.complaint.contains(where: { $0.id == newItem.id })
+                        }
+                        
+                        self.complaint.append(contentsOf: filteredData)
                     }
                 }
             )

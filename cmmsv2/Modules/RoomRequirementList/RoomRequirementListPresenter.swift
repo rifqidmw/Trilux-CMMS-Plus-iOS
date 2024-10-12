@@ -119,7 +119,12 @@ extension RoomRequirementListPresenter {
             receiveValue: { usulanData in
                 DispatchQueue.main.async {
                     guard let data = usulanData.data else { return }
-                    self.roomRequirementList.append(contentsOf: data)
+                    
+                    let filteredData = data.filter { newItem in
+                        !self.roomRequirementList.contains(where: { $0.idAlat == newItem.idAlat })
+                    }
+                    
+                    self.roomRequirementList.append(contentsOf: filteredData)
                 }
             }
         )

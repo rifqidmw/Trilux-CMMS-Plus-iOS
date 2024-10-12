@@ -156,10 +156,13 @@ extension AssetFilterPresenter {
                 receiveValue: { asset in
                     DispatchQueue.main.async {
                         guard let data = asset.data,
-                              let equipment = data.equipments
+                              let newData = data.equipments
                         else { return }
                         self.equipmentData = asset
-                        self.equipment.append(contentsOf: equipment)
+                        let filteredData = newData.filter { newItem in
+                            !self.equipment.contains(where: { $0.id == newItem.id })
+                        }
+                        self.equipment.append(contentsOf: filteredData)
                     }
                 }
             )

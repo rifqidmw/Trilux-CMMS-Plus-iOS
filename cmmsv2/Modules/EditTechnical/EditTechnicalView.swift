@@ -245,7 +245,7 @@ extension EditTechnicalView {
                 if data.message == "Success" {
                     navigation.popViewController(animated: true)
                 } else {
-                    self.showAlert(title: data.message ?? "")
+                    self.showAlert(title: "Terjadi Kesalahan", message: data.message ?? "")
                 }
             }
             .store(in: &anyCancellable)

@@ -30,6 +30,19 @@ extension EquipmentManagementListView: FloatingActionButtonDelegate, Confirmatio
     
 }
 
+extension EquipmentManagementListView: FloatingButtonDelegate {
+    
+    func didTapButton() {
+        AppLogger.log("-- CLICKED")
+        guard let presenter,
+              let navigation = self.navigationController
+        else { return }
+        presenter.navigateToMutationSubmission(from: navigation)
+        
+    }
+    
+}
+
 extension EquipmentManagementListView: RoomListBottomSheetDelegate {
     
     func didSelectRoom(_ room: AmprahRoomData, id: String) {

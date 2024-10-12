@@ -32,6 +32,11 @@ class EquipmentManagementListView: BaseViewController {
         self.validateUser()
     }
     
+    override func willAppear() {
+        super.willAppear()
+        self.fetchInitialData()
+    }
+    
 }
 
 extension EquipmentManagementListView {
@@ -63,6 +68,7 @@ extension EquipmentManagementListView {
                 self.submissionData = dataList
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
+                self.showSpinner(false)
             }
             .store(in: &anyCancellable)
         
@@ -78,6 +84,7 @@ extension EquipmentManagementListView {
                 self.requestData = dataList
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
+                self.showSpinner(false)
             }
             .store(in: &anyCancellable)
         
@@ -91,6 +98,7 @@ extension EquipmentManagementListView {
                 self.loanData = data
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
+                self.showSpinner(false)
             }
             .store(in: &anyCancellable)
         
@@ -104,14 +112,33 @@ extension EquipmentManagementListView {
                 self.borrowedData = data
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
+                self.showSpinner(false)
             }
             .store(in: &anyCancellable)
         
         self.floatingActionButton.$totalHeightTable
             .sink { [weak self] totalHeight in
                 guard let self else { return }
-                self.initialHeightFloatingActionButton.constant = totalHeight + 48
+                if self.floatingActionButton.isOpened {
+                    self.initialHeightFloatingActionButton.constant = totalHeight + 48
+                } else {
+                    self.initialHeightFloatingActionButton.constant = 48
+                }
                 self.view.layoutIfNeeded()
+            }
+            .store(in: &anyCancellable)
+        
+        floatingActionButton.$isOpened
+            .sink { [weak self] isOpened in
+                guard let self else { return }
+                self.updateFloatingButtonHeight(isOpened: isOpened)
+            }
+            .store(in: &anyCancellable)
+        
+        floatingActionButton.$totalHeightTable
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.updateFloatingButtonHeight(isOpened: self.floatingActionButton.isOpened)
             }
             .store(in: &anyCancellable)
         
@@ -140,6 +167,7 @@ extension EquipmentManagementListView {
                 self.mutationSubmissionData = dataList
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
+                self.showSpinner(false)
             }
             .store(in: &anyCancellable)
         
@@ -155,6 +183,7 @@ extension EquipmentManagementListView {
                 self.mutationRequestData = dataList
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
+                self.showSpinner(false)
             }
             .store(in: &anyCancellable)
         
@@ -168,6 +197,7 @@ extension EquipmentManagementListView {
                 self.amprahListData = data
                 self.reloadTableViewWithAnimation(self.tableView)
                 self.tableView.hideSkeleton()
+                self.showSpinner(false)
             }
             .store(in: &anyCancellable)
         
@@ -190,6 +220,18 @@ extension EquipmentManagementListView {
                 
             }
             .store(in: &anyCancellable)
+    }
+    
+    private func updateFloatingButtonHeight(isOpened: Bool) {
+        if isOpened {
+            self.initialHeightFloatingActionButton.constant = self.floatingActionButton.totalHeightTable + 48
+        } else {
+            self.initialHeightFloatingActionButton.constant = 48
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     private func setupTableView() {
@@ -216,6 +258,8 @@ extension EquipmentManagementListView {
         case .mutation:
             segmentedItems = [.submission, .request]
             self.floatingActionButton.isHidden = false
+            self.floatingActionButton.tappedDelegate = self
+            self.floatingActionButton.configure(false)
         case .returning:
             segmentedItems = [.loan, .borrowed]
             self.floatingActionButton.isHidden = true

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MutationSubmissionBottomSheet" customModule="cmmsv2" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetView" destination="bra-23-34t" id="6ZU-OQ-P79"/>
+                <outlet property="containerTextFieldView" destination="FuH-GK-oVy" id="xZP-rB-BQl"/>
+                <outlet property="dismissAreaView" destination="NtR-ty-y7s" id="Ahy-mA-pAY"/>
+                <outlet property="searchTextField" destination="rJ2-tf-PAf" id="91F-lK-V6o"/>
+                <outlet property="tableView" destination="bxL-JG-KRC" id="cu5-eC-uWb"/>
+                <outlet property="titleLabel" destination="yFo-w2-Xvo" id="FOj-D7-doj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtR-ty-y7s" userLabel="Dismiss Area View">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bra-23-34t" customClass="BottomSheetView" customModule="cmmsv2" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="218" width="393" height="634"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xVS-I0-Y00">
+                            <rect key="frame" x="16" y="34" width="361" height="566"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilih Instalasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFo-w2-Xvo">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="PAk-dN-Wxx"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                    <color key="textColor" name="customDarkGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuH-GK-oVy">
+                                    <rect key="frame" x="0.0" y="34" width="361" height="48"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cari instalasi yang diinginkan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rJ2-tf-PAf">
+                                            <rect key="frame" x="16" y="0.0" width="329" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" name="customLightGrayColor"/>
+                                    <constraints>
+                                        <constraint firstItem="rJ2-tf-PAf" firstAttribute="top" secondItem="FuH-GK-oVy" secondAttribute="top" id="Hvf-je-Ha5"/>
+                                        <constraint firstAttribute="trailing" secondItem="rJ2-tf-PAf" secondAttribute="trailing" constant="16" id="aZM-VT-0Dt"/>
+                                        <constraint firstAttribute="height" constant="48" id="b3b-pT-uep"/>
+                                        <constraint firstItem="rJ2-tf-PAf" firstAttribute="leading" secondItem="FuH-GK-oVy" secondAttribute="leading" constant="16" id="cs8-up-3xd"/>
+                                        <constraint firstAttribute="bottom" secondItem="rJ2-tf-PAf" secondAttribute="bottom" id="ywp-Kv-MdU"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bxL-JG-KRC">
+                                    <rect key="frame" x="0.0" y="98" width="361" height="468"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xVS-I0-Y00" firstAttribute="leading" secondItem="bra-23-34t" secondAttribute="leading" constant="16" id="4yb-od-DLc"/>
+                        <constraint firstItem="xVS-I0-Y00" firstAttribute="top" secondItem="bra-23-34t" secondAttribute="top" constant="34" id="5M1-N1-9EU"/>
+                        <constraint firstAttribute="trailing" secondItem="xVS-I0-Y00" secondAttribute="trailing" constant="16" id="l3e-ek-nRd"/>
+                        <constraint firstAttribute="bottom" secondItem="xVS-I0-Y00" secondAttribute="bottom" constant="34" id="svu-EL-VF1"/>
+                        <constraint firstAttribute="height" constant="634" id="tyJ-MU-1DU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NtR-ty-y7s" secondAttribute="trailing" id="FgK-Ek-lAy"/>
+                <constraint firstItem="bra-23-34t" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ifk-Vp-Dwk"/>
+                <constraint firstItem="bra-23-34t" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rbs-ab-kLf"/>
+                <constraint firstAttribute="bottom" secondItem="bra-23-34t" secondAttribute="bottom" id="Ycz-dR-NLi"/>
+                <constraint firstItem="NtR-ty-y7s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cRT-lO-VAu"/>
+                <constraint firstItem="NtR-ty-y7s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tIe-Vf-VbV"/>
+                <constraint firstAttribute="bottom" secondItem="NtR-ty-y7s" secondAttribute="bottom" id="vWk-37-DwD"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="customDarkGrayColor">
+            <color red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customLightGrayColor">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
